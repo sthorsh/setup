@@ -1,0 +1,4 @@
+$if bash
+  Space: magic-space
+$endif
+
