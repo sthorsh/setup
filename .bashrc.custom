@@ -38,4 +38,5 @@ export PATH=${PATH}:${JAVA_HOME}/bin:${M2_HOME}/bin
 
 # customizations++
 source ~/.bashrc.mvn
+source /usr/share/autojump/autojump.sh
 
