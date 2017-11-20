@@ -16,6 +16,7 @@ alias la="ls -alF --color=auto"
 alias p='echo -e ${PATH//:/"\n"}' 
 alias ps="ps axfo user,uid,pid,ppid,%cpu,%mem,tty,stat,cmd --heading" 
 alias x="exit"
+alias gtfusecl='cd /usr/lib/jboss-fuse/'
 
 # Exports
 export LESS="--LINE-NUMBERS --LONG-PROMPT"
