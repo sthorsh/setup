@@ -1,4 +1,5 @@
 echo "sourcing .bashrc_custom...." 
+
 if [ -n "$DISPLAY" -a "$TERM" == "xterm"  ]; then
     export TERM=xterm-256color
 fi
@@ -9,39 +10,40 @@ stty -ixon -ixoff
 bind -r "\C-q"
 bind "'\C-q': unix-filename-rubout"
 
+# Remap capslock to ctrl (tmux)
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+
 # Aliases
 alias l="ls -l --color=auto"
 alias la="ls -alF --color=auto"
 alias p='echo -e ${PATH//:/"\n"}' 
 alias ps="ps axfo user,uid,pid,ppid,%cpu,%mem,tty,stat,cmd --heading" 
-alias x="exit"
-alias gtfusecl='cd /usr/lib/jboss-fuse/'
 alias tm='tmux -f ~/.tmux.boot.conf attach'
+alias x="exit"
 
 # Exports
-export LESS="--LINE-NUMBERS --LONG-PROMPT"
 export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-export HISTSIZE=10000
 export HISTFILESIZE=10000
+export HISTSIZE=10000
+export LESS="--LINE-NUMBERS --LONG-PROMPT"
+export VISUAL=/usr/bin/vim
 
 # Options
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-# CLIB specific
+##### CLIB specific ######
+alias gtfusecl='cd /usr/lib/jboss-fuse/'
+alias h2="java -cp ~/.m2/repository/com/h2database/h2/1.4.191/h2-1.4.191.jar org.h2.tools.Server"
 alias mci="mvn clean install"
-alias mcist="mvn clean install -Dmaven.test.skip=true"
 alias mcifc="mvn clean install -Pfindbugs,checkstyle"
+alias mcist="mvn clean install -Dmaven.test.skip=true"
 
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_144
 export M2_HOME=/usr/lib/apache-maven
 export PATH=${PATH}:${JAVA_HOME}/bin:${M2_HOME}/bin
 
-# customizations++
+# Customizations++
 source ~/.bashrc.mvn
 source /usr/share/autojump/autojump.sh
-
-# Remap capslock to ctrl
-/usr/bin/setxkbmap -option "ctrl:nocaps"
 
