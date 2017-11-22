@@ -1,5 +1,4 @@
-echo "sourcing .bashrc_custom...."
-
+echo "sourcing .bashrc_custom...." 
 if [ -n "$DISPLAY" -a "$TERM" == "xterm"  ]; then
     export TERM=xterm-256color
 fi
@@ -17,6 +16,7 @@ alias p='echo -e ${PATH//:/"\n"}'
 alias ps="ps axfo user,uid,pid,ppid,%cpu,%mem,tty,stat,cmd --heading" 
 alias x="exit"
 alias gtfusecl='cd /usr/lib/jboss-fuse/'
+alias tm='tmux -f ~/.tmux.boot.conf attach'
 
 # Exports
 export LESS="--LINE-NUMBERS --LONG-PROMPT"
@@ -41,4 +41,7 @@ export PATH=${PATH}:${JAVA_HOME}/bin:${M2_HOME}/bin
 # customizations++
 source ~/.bashrc.mvn
 source /usr/share/autojump/autojump.sh
+
+# Remap capslock to ctrl
+/usr/bin/setxkbmap -option "ctrl:nocaps"
 
