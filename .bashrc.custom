@@ -18,7 +18,8 @@ alias l="ls -l --color=auto"
 alias la="ls -alF --color=auto"
 alias p='echo -e ${PATH//:/"\n"}' 
 alias ps="ps axfo user,uid,pid,ppid,%cpu,%mem,tty,stat,cmd --heading" 
-alias tm='tmux -f ~/.tmux.boot.conf attach'
+alias tm="tmux"
+alias tma='tmux -f ~/.tmux.boot.conf attach'
 alias x="exit"
 
 # Exports
@@ -34,7 +35,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 ##### CLIB specific ######
 alias gtfusecl='cd /usr/lib/jboss-fuse/'
-alias h2="java -cp ~/.m2/repository/com/h2database/h2/1.4.191/h2-1.4.191.jar org.h2.tools.Server"
+alias h2="java -cp ~/.m2/repository/com/h2database/h2/1.4.191/h2-1.4.191.jar org.h2.tools.Server &"
 alias mci="mvn clean install"
 alias mcifc="mvn clean install -Pfindbugs,checkstyle"
 alias mcist="mvn clean install -Dmaven.test.skip=true"
