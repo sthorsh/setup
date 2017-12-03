@@ -33,6 +33,12 @@ export VISUAL=/usr/bin/vim
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
+# Completion
+bind "TAB:menu-complete"
+bind "set show-all-if-ambiguous on"
+# No completion on first tab
+bind "set menu-complete-display-prefix on"
+
 ##### CLIB specific ######
 alias gtfusecl='cd /usr/lib/jboss-fuse/'
 alias h2="java -cp ~/.m2/repository/com/h2database/h2/1.4.191/h2-1.4.191.jar org.h2.tools.Server &"
