@@ -1,0 +1,112 @@
+echo -n "~/.bashrc.custom:  "
+[[ $- == *i*  ]] && echo -n 'interactive ' || echo -n 'non-interactive '
+shopt -q login_shell && echo 'login' || echo 'non-login'
+
+# if not interactive, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# avoid duplicate PATH entries
+add_to_path () {
+  if ! echo $PATH | /bin/grep -Eq "(^|:)$1($|:)"; then
+    export PATH=$PATH:$1
+  else
+    echo "path already contains $1 - not added"
+  fi
+}
+
+# if term supports it, use prompt with colors
+# $ tree /lib/terminfo will show all terminals
+case "$TERM" in
+    xterm|xterm-color|*-256color) color_prompt=yes;;
+esac
+if [ "$color_prompt" != yes ]; then
+    PS1='\u@\h \w \$ '
+  else
+    if [[ ${EUID} != 0 ]] ; then
+        PS1='\e[01;32m\u@\h\e[01;34m[\w]\e[01;32m\$\e[00m '
+    else
+        PS1='\e[01;31m\h \W \$\e[00m '
+    fi
+fi
+unset color_prompt
+
+# vim needs this
+if [ -n "$DISPLAY" -a "$TERM" == "xterm"  ]; then
+  export TERM=xterm-256color
+fi
+
+# enable programmable completion
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# don't exit bash on ctrl-d
+set -o ignoreeof
+# don't overwrite files with >
+set -o noclobber
+# in ls or grep, use ** for recursion
+shopt -s globstar
+
+# editor of choice
+export EDITOR=/usr/bin/vim
+# list in memory
+export HISTSIZE=5000
+# file on disk
+export HISTFILESIZE=10000
+# ignore duplicate lines or lines starting with space
+export HISTCONTROL=ignoreboth
+# improved less
+export LESS='--LINE-NUMBERS --LONG-PROMPT'
+# on each cmd append to history file, clear history list, read history file
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# visual editor of choice
+export VISUAL=/usr/bin/vim
+# in /opt|usr|usr/java|usr/lib|usr/lib/jvm|usr/local|usr/local/java/
+# create java home e.g /java-8-oracle/ or jdk-8u151-linux-x64/
+# create soft link to java home e.g /opt/java → /opt/java-8-oracle/
+export JAVA_HOME=/usr/lib/jvm/java
+add_to_path ${JAVA_HOME}/bin/
+export MAVEN_HOME=/usr/lib/apache-maven
+add_to_path ${MAVEN_HOME}/bin/
+
+# aliases
+alias grep='grep --color=auto'
+alias l='ls -alF --color=auto --group-directories-first'
+alias ls='ls --color=auto --group-directories-first'
+alias path='echo -e ${PATH//:/"\n"}' 
+alias ps='ps -ef'
+alias x='exit'
+alias mci='mvn clean install'
+alias mcifc='mvn clean install -Pfindbugs,checkstyle'
+alias mcist='mvn clean install -Dmaven.test.skip=true'
+ 
+# remove binding to stty stop
+bind -r '\C-s'
+# remove binding to stty start
+bind -r '\C-q'
+# bind to readline function
+bind 'tab:menu-complete'
+# bind to readline function
+bind '"\C-q":unix-filename-rubout'
+# set readline variable 
+bind 'set show-all-if-ambiguous on'
+# set readline variable
+bind 'set menu-complete-display-prefix on'
+
+# disable stty xon/xoff flow control
+stty -ixon
+# disable stty start/stop characters
+stty -ixoff
+
+# maven completion
+source ~/.bashrc.mvn
+# autojump needs this
+source /usr/share/autojump/autojump.sh
+
