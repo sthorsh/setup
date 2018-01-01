@@ -26,7 +26,7 @@ if [ "$color_prompt" != yes ]; then
     PS1='\u@\h \w \$ '
   else
     if [[ ${EUID} != 0 ]] ; then
-        PS1='\e[01;32m\u@\h\e[01;34m[\w]\e[01;32m\$\e[00m '
+        PS1='\[\e[01;32m\]\u@\h\[\e[01;34m\][\w]\[\e[01;32m\]\$\[\e[00m\] '
     else
         PS1='\e[01;31m\h \W \$\e[00m '
     fi
@@ -109,4 +109,5 @@ stty -ixoff
 source ~/.bashrc.mvn
 # autojump needs this
 source /usr/share/autojump/autojump.sh
+
 
