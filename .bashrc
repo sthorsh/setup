@@ -105,9 +105,11 @@ stty -ixon
 # disable stty start/stop characters
 stty -ixoff
 
+# remap capsloc to ctrl
+setxkbmap -option ctrl:nocaps
+
 # maven completion
 source ~/.bashrc.mvn
 # autojump needs this
 source /usr/share/autojump/autojump.sh
-
 
