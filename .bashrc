@@ -105,8 +105,10 @@ stty -ixon
 # disable stty start/stop characters
 stty -ixoff
 
-# remap capsloc to ctrl
+# remap capslock to ctrl
 setxkbmap -option ctrl:nocaps
+# disable ctrl
+xmodmap -e 'keycode 37 = NoSymbol'
 
 # maven completion
 source ~/.bashrc.mvn
