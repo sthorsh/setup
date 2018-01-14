@@ -75,6 +75,7 @@ export JAVA_HOME=/usr/lib/jvm/java
 add_to_path ${JAVA_HOME}/bin/
 export MAVEN_HOME=/usr/lib/apache-maven
 add_to_path ${MAVEN_HOME}/bin/
+add_to_path /opt/gradle/bin
 
 # aliases
 alias grep='grep --color=auto'
