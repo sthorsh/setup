@@ -79,7 +79,8 @@ add_to_path /opt/gradle/bin
 
 # aliases
 alias grep='grep --color=auto'
-alias l='ls -alF --color=auto --group-directories-first'
+alias l='ls -lF --color=auto --group-directories-first'
+alias la='ls -alF --color=auto --group-directories-first'
 alias ls='ls --color=auto --group-directories-first'
 alias path='echo -e ${PATH//:/"\n"}' 
 alias ps='ps -ef'
