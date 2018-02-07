@@ -88,6 +88,7 @@ alias x='exit'
 alias mci='mvn clean install'
 alias mcifc='mvn clean install -Pfindbugs,checkstyle'
 alias mcist='mvn clean install -Dmaven.test.skip=true'
+alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
  
 # remove binding to stty stop
 bind -r '\C-s'
