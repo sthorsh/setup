@@ -1,10 +1,11 @@
 <keymap version="1" name="Default for XWin copy" parent="Default for XWin">
   <action id="ActivateFavoritesToolWindow" />
   <action id="ActivateMavenProjectsToolWindow">
-    <keyboard-shortcut first-keystroke="alt 0" />
-  </action>
-  <action id="ActivateModuleDependenciesToolWindow">
     <keyboard-shortcut first-keystroke="alt 2" />
+  </action>
+  <action id="ActivateMessagesToolWindow" />
+  <action id="ActivateModuleDependenciesToolWindow">
+    <keyboard-shortcut first-keystroke="alt 0" />
   </action>
   <action id="CloseAllEditorsButActive">
     <keyboard-shortcut first-keystroke="shift ctrl o" />
