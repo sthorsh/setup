@@ -53,6 +53,8 @@ set -o ignoreeof
 set -o noclobber
 # in ls or grep, use ** for recursion
 shopt -s globstar
+# append new history items to .bash_history
+shopt -s histappend              
 
 # editor of choice
 export EDITOR=/usr/bin/vim
@@ -76,6 +78,8 @@ add_to_path ${JAVA_HOME}/bin/
 export MAVEN_HOME=/usr/lib/apache-maven
 add_to_path ${MAVEN_HOME}/bin/
 add_to_path /opt/gradle/bin
+# command line fuzzy finder fzf
+export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 
 # aliases
 alias grep='grep --color=auto'
@@ -113,20 +117,10 @@ setxkbmap -option ctrl:nocaps
 # disable ctrl
 xmodmap -e 'keycode 37 = NoSymbol'
 
-# maven completion
-source ~/.bashrc.mvn
-# autojump needs this
-source /usr/share/autojump/autojump.sh
-
-
-# add this configuration to ~/.bashrc
-export HH_CONFIG=hicolor         # get more colors
-shopt -s histappend              # append new history items to .bash_history
-export HISTCONTROL=ignorespace   # leading space hides commands from history
-export HISTFILESIZE=10000        # increase history file size (default is 500)
-export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
-
-# command line fuzzy finder
+# for autojump
+[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
+# for fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
+# for mvn completion
+[ -f ~/.bashrc.mvn ] && source ~/.bashrc.mvn
+
