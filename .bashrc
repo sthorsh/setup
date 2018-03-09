@@ -117,10 +117,10 @@ setxkbmap -option ctrl:nocaps
 # disable ctrl
 xmodmap -e 'keycode 37 = NoSymbol'
 
-# for autojump
+# autojump
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
-# for fzf
+# fuzzy fnder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# for mvn completion
+# mvn completion
 [ -f ~/.bashrc.mvn ] && source ~/.bashrc.mvn
 
