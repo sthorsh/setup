@@ -94,6 +94,7 @@ alias mcifc='mvn clean install -Pfindbugs,checkstyle'
 alias mcist='mvn clean install -Dmaven.test.skip=true'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
+alias squirrel='~/apps/squirrel-sql-3.8.1/squirrel-sql.sh 2>&1 &'
  
 # remove binding to stty stop
 bind -r '\C-s'
