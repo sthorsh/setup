@@ -57,7 +57,7 @@ hi StatusLine ctermfg=230 ctermbg=238
 
 " Highlight 81st column (Damian Conway plugin)
 hi ColorColumn ctermbg=red
-call matchadd ('ColorColumn', '\%81v',100)
+call matchadd ('ColorColumn', '\%161v',100)
 
 " MBE plugin
 hi MBEVisibleActiveNormal ctermfg=230 ctermbg=238
@@ -96,7 +96,7 @@ set history=500
 set laststatus=2
 set shiftwidth=2
 set softtabstop=2
-set textwidth=80
+set textwidth=160
 
 " Strings
 set cpoptions+=$

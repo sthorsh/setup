@@ -83,6 +83,7 @@ export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 
 # aliases
 alias grep='grep --color=auto'
+alias gtf='cd /usr/lib/jboss-fuse/'
 alias l='ls -lF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
 alias ls='ls --color=auto --group-directories-first'
@@ -94,7 +95,7 @@ alias mcifc='mvn clean install -Pfindbugs,checkstyle'
 alias mcist='mvn clean install -Dmaven.test.skip=true'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
-alias squirrel='~/apps/squirrel-sql-3.8.1/squirrel-sql.sh 2>&1 &'
+alias squirrel='~/Install/squirrel-sql-3.8.1/squirrel-sql.sh 2>&1 &'
  
 # remove binding to stty stop
 bind -r '\C-s'
@@ -125,4 +126,10 @@ xmodmap -e 'keycode 37 = NoSymbol'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # mvn completion
 [ -f ~/.bashrc.mvn ] && source ~/.bashrc.mvn
+
+# start clipboard manager
+if ! pgrep -x "clipit" > /dev/null 
+then 
+  clipit & 
+fi
 
