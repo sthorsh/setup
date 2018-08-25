@@ -1,0 +1,59 @@
+Camel start
+- Logger: Apache Camel 2.20.0 CamelContext:camel-1 is starting
+- Starter interne tjenester
+- Beregner startrekkefølgen
+- Bereder rutene
+- Starter rutene
+- Logger: Apache Camel 2.20.0 CamelContext:camel-1 started in 0.328 secs
+
+Camel shutdown
+- Logger: Apache Camel 2.20.0 CamelContext:camel-1 is shutting down
+- Logger: Starting to graceful shutdown 1 routes (timeout 300 secs)
+- Stenger rutene  i motsatt rekkefølge av oppstart
+- Logger: Graceful shutdown of 1 routes completed in 4 secs
+- Logger: Apache Camel 2.20.0 CamelContext:camel-1 is shutdown in 0.033 secs
+                      
+CamelContext 
+- addComponent(String, Component): void
+- addInterceptStrategy(InterceptStrategy): void
+- addRoutes(RoutesBuilder): void
+- createProducerTemplate(): ProducerTemplate
+- getClassResolver(): ClassResolver 
+- getComponent(String): Component
+- getComponentNames(): List<String>
+- getEndpoint(String): Endpoint
+- getEndpointMap(): Map<String, Endpoint>
+- getLanguageNames(): List<String>
+- getRegistry(): Registry
+- getRoute(String): Route
+- getRoutes(): List<Route>
+- getRouteDefinition(String): RouteDefinition
+- getRouteDefinitions(): List<RouteDefinition>
+- getTypeConverter(): TypeConverter
+- getTypeConverterRegistry(): TypeConverterRegistry 
+- resolvePropertyPlaceholders(String): String
+- setDelayer(Long): void
+- setHandleFault(Boolean): void
+- setStreamCaching(Boolean): void
+- setTracing(Boolean): void
+↑ start(): void
+- startRoute(String): void
+↑ stop(): void
+- stopRoute(String): void
+- ...
+
+Route
+- getId(): String
+- ...
+
+RouteDefinition
+- adviceWith(CamelContext, RouteBuilder): RouteDefinition
+- autoStartup(boolean): RouteDefinition
+- handleFault(): RouteDefinition
+- routeId(String): RouteDefinition
+- errorHandler(ErrorHandlerFactory): RouteDefinition
+- startupOrder(int): RouteDefinition
+- streamCaching(): RouteDefinition
+- tracing(): RouteDefinition
+- ...
+

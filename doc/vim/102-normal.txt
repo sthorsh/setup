@@ -1,0 +1,71 @@
+@a-z                         repeat macro N times
+@:                           repeat ex cmd
+@@                           repeat @a-z or @: N times
+A                            Append to EOL N times
+B                            Words Backward
+C                            Change to EOL
+D                            Delete to EOL
+E                            EOW forward
+F                            Find backward
+G                            Nth line
+H                            High
+I                            Insert at BOL N times
+J                            Join lines
+K                            Keyword lookup
+L                            Low
+M                            Middle
+N                            Next * # g* g# gd gD / ?
+O                            Open N lines
+P                            Put before
+Q                            @='n.' (.vimrc)
+R                            Replace
+S                            same as cc
+T                            Till
+U                            Undo line change
+V                            Visual line mode
+W                            Words forward
+X                            same as dh
+Y                            Yank to EOL
+ZZ                           write file and quit (:wq, :x)
+ZQ                           force quit (:q!)
+[                            bracket mode
+]                            bracket mode
+^                            soft BOL
+_                            N-1 lines down + soft BOL
+
+`                            mark
+a                            append N times
+b                            words backward
+["a]c[cmo]                   change {op}
+["a]d[dmo]                   delete {op}
+do                           diff obtain
+dp                           diff put
+e                            EOw forward
+f                            find forward
+g                            g mode
+h                            left
+i                            insert N times
+j                            down
+k                            up
+l                            right
+m{a-zA-Z}                    mark
+n                            next * # g* g# gD gd / ?
+o                            open N lines
+["a]p                        put after
+q{a-zA-Z}                    record macro
+q/ q?                        re mode cmdwin
+q:                           ex mode cmdwin
+r                            replace
+s                            same as cl
+t                            till
+u                            undo
+v                            visual mode
+w                            word forward
+x                            same as dl
+["x]y[ymo]                   yank {op}
+z                            z mode
+{                            paragraphs backward
+|                            column N
+}                            paragraphs forward
+~                            swap case of char under cursor
+

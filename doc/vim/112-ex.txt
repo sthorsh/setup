@@ -1,0 +1,54 @@
+:[r]m[N]                     move range to line N
+:make t                      make target
+:marks                       print marks
+:[nvic]map                   print mappings
+:[r]norm [cmd]               execute normal mode cmd in range
+:[r]norm @a                  execute normal mode macro in range
+
+:[N]put                      put below line N
+
+:[r]sort [n]                 sort [numeric]                     
+
+:ta t                        tag
+:tj t                        tag jump
+:ts t                        tag select
+
+:pta t                       preview tag
+:ptj t                       preview tag jump
+:pts t                       preview tag select
+:pwd                         print working directory
+
+:[N]r f                      [move to line N] and read file content
+:[N]r! cmd                   [move to line N] and read bash-cmd stdout
+:redir > f                   redirect to file
+:redir @a>                   redirect to register
+:redir END
+:reg                         print registers content
+:[r]retab
+:ru f                        read ex-cmds from file in 'rtp'
+
+:script                      print name of sourced scripts
+:set                         print options with non-default values
+:sil cmd                     silent ex-cmd
+:so  f                       read ex-cmds from file eg :so %
+:sta t                       split tag
+:stj t                       split tag jump
+:sts t                       split tag select
+:[r]s/re/str/cegn [N]        substitute re with str [in range] or [next N lines]
+:syn on                      syntax on
+
+:[r]t[N]                     copy range to line N
+:tags                        print tag stack
+
+:undolist                    print undolist
+:up [f]                      write % [or file f]
+
+:vers                        print version number
+:vert cmd                    vertical ex-cmd
+
+:w [f]                       write % [or file f]
+:wq [f]                      write-quit % [or file f]
+:windo cmd                   execute ex-cmd in windows
+
+:[r]y                        yank range
+

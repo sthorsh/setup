@@ -1,0 +1,11 @@
+Normal
+<leader>M               :MBEToggle
+
+Cursor
+k                       move up
+j                       move down
+o                       open (evt CR)
+s                       split open
+v                       vertical split open
+d                       delete
+

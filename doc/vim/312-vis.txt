@@ -1,0 +1,3 @@
+Visual block
+:B ex-cmd     eg :s/p/str/, :sort
+:S re

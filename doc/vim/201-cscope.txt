@@ -1,0 +1,26 @@
+Normal
+ctrl-\_c                find functions Calling THIS function
+ctrl-\_d                find functions calleD by THIS function
+ctrl-\_e                find THIS Egrep pattern
+ctrl-\_f                find THIS File
+ctrl-\_g                find THIS definition
+ctrl-\_i                find files Including THIS file (C)
+ctrl-\_s                find THIS symbol
+ctrl-\_t                find THIS text string
+ctrl-t                  jump back from cscope tag
+
+Ex
+:cs                     
+:cs add cscope.out      add database connection
+:[s]cs f c f            find functions calling function f
+:[s]cs f d f            find functions called by function f
+:[s]cs f e p            find egrep pattern p
+:[s]cs f f file         find file file
+:[s]cs f g DEF          find definition DEF
+:[s]cs f i file         find files including file
+:[s]cs f s main         find C symbol main
+:[s]cs f t "foo"        find text string "foo"
+
+Bash
+alias cs='cscope -RUbq $(find src/syntaxtree/ -name *.java)'
+

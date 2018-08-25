@@ -1,0 +1,62 @@
+usage   
+/r                    regex r
+/r/o                  regex r, offset o
+/                     repeat r with o 
+//                    repeat r without o
+//o                   repeat r with new o
+
+offset
+-N                    N lines back
++N                    N lines down
+b-N                   N chars back from beginning of match 
+b+N                   N chars forward from end of match 
+e-n                   N chars back from end of match
+e+n                   N chars forward from beginning of match
+;/q                   first q after r
+
+mode
+\V                    metachar: \
+\v                    metachar: $%&()*+.<=>?@[\]^{|} 	
+
+case
+\C                    case sensitive
+\c                    case insensitive
+
+escape
+\                     enables if \V, disables if \v		
+
+classes
+.                     wildcard
+[]                    char set, interval: -, negation: ^
+\d                    [0-9]
+\D                    [^0-9]
+\s                    [ \t\n]
+\S                    [^\s]
+\w                    [0-9A-Za-z_]
+\W                    [^0-9A-Za-z_]
+...
+
+logical
+&                     and
+|                     or
+@!                    not
+
+quantifier
+*                     0..N
++                     1..N 
+?                     0..1
+{}                    {N}, {,N}, {N,}, {M,N}
+
+anchors
+^                     beginning of line
+$                     end of line
+<                     beginning of word
+>                     end of word
+\zs                   start of match
+\ze                   end of match (zoom)
+	
+capture
+()                    grouping
+\N                    backreference
+%                     %(...) has no backreference
+

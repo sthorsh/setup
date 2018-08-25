@@ -1,0 +1,57 @@
+tmux                          start
+tmux new -s test [-d]         start new named session [detached]
+tmux attach -t test           attach to session
+tmux kill-session -t test     kill session
+tmux ls                       list sessions
+tmux new -n vindu
+exit                          exit session | window | pane
+-------------------------------------------------------------------
+
+ctrl-a                        prefix
+
+ctrl-a s                      list sessions
+ctrl-a (                      to previous session
+ctrl-a )                      to next session
+ctrl-a d                      detach from session
+
+ctrl-a c                      create new window → :new-window
+ctrl-a ,                      rename window
+ctrl-0...9                    move to window
+ctrl-a n                      move to next window
+ctrl-a p                      move to prev window
+ctrl-a w                      move to window
+ctrl-a f                      move to window
+
+ctrl-a %                      new pane
+ctrl-a "                      new pane
+ctrl-a o                      cycle through panes
+ctrl-a ←↓↑→                   move to pane
+ctrl-a 1-5                    default pane layout 1-5
+ctrl-a space                  cycle through default pane layouts
+ctrl-a q                      display pane number
+ctrl-a x                      exit pane
+
+ctrl-a z                      toggle «full screen»
+
+ctrl-a Esc                    vi-mode
+ctrl-yubedf                   scroll 
+hjkl wW fFnN etc              move  
+?/nN                          search
+vV | Esc                      select | clear select
+y                             copy to tmux&system buffer
+dD                            delete
+p | ctrl[-shift]-v            paste from tmux|system buffer
+q                             quit vi-mode
+
+ctrl-a :                      cmd mode
+
+#---------------------------------------------------------------------
+
+:new-window -n test           
+:source-file ~/.tmux.conf 
+
+:capture-pane
+:list-buffers
+:choose-buffer
+:show-buffer
+:save-buffer fil

@@ -1,0 +1,4 @@
+Normal
+,,f[c]                            find char c
+,,w                               word forward
+

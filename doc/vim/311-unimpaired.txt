@@ -1,0 +1,24 @@
+Normal
+[]<Space>                          add line
+[]aA                               arglist
+[]bB                               buflist
+[]e                                move line
+[]f                                traverse current file's dir
+[]lL                               location list
+[]oc                               :set cursorline
+[]od                               :diffthis
+[]oh                               :set hlsearch
+[]oi                               :set ignorecase
+[]ol                               :set list
+[]on                               :set number
+[]or                               :set relativenumber
+[]os                               :set spell
+[]ou                               :set cursorcolumn
+[]ov                               :set virtualedit
+[]ow                               :set wrap
+[]ox                               :set cursorline :set cursorcolumn
+[]qQ                               quickfix list
+[]u[umt]                           encode or decode url
+[]x[xmt]                           encode or decode xml
+[]y[ymt]                           encode or decode c string
+

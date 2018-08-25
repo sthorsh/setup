@@ -1,0 +1,26 @@
+                                                  Object
+                                                     |
+                                   ------------------|-------------------
+                                   |                 |                  |
+                                   |              Assert                |
+                                   |                 |                  |
+                                   |                 |                  |
+    ProducerTemplate        [ServiceSupport]    TestSupport    AvailablePortFinder
+            |                      |                 |
+            |<---------------------|                 |
+            |                      |                 |
+[DefaultProducerTemplate]  [DefaultEndpoint]         |
+                                   |                 |
+                                   |                 |
+                             MockEndpoint    CamelTestSupport
+                                                     |
+                              -----------------------|
+                              |                      |
+                              |           CamelBlueprintTestSupport
+                              |                      |
+                              |                      |
+                              |                      |
+                        ClibTestSupport   ClibIntegrationTestSupport
+                              |                      |
+                              |                      |
+                             ...                    ...

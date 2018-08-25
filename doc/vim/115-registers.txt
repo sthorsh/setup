@@ -1,0 +1,15 @@
+Register
+a-z             c, d, q, y (A-Z appends)
+"               c, d, y, v_p
+0               y
+1-9             linewise c, d, v_p
+-               charwise c, d, v_p
+*               OS clipboard (+clipboard required)
++               OS control-c (+clipboard required)
+.               i, I...
+:               :
+%               name of current file
+/               /, ?, *, #, g*, g#, gd, gD
+#               name of alternate file
+=               eg @='n.'<CR> or i_Ctrl-r=
+_               black hole

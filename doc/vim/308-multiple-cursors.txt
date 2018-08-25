@@ -1,0 +1,7 @@
+Normal
+Ctrl-n                             next virtual cursor
+Ctrl-p                             previous virtual cursor
+Ctrl-x                             skip virtual cursor
+
+Ex
+:MultipleCursorFind [re]           add cursors

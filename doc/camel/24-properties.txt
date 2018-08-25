@@ -1,0 +1,30 @@
+Komponent   
+- URI format            properties:key?options
+
+Plassholder 
+- Property              {{key:default}}
+- VM property           {{sys:key:default}}
+- OS variabel           {{env:key:default}}
+
+Java
+- URI                   from|to("properties:uri")
+- URI                   from|to("properties:direct:{{name}}");
+- URI                   from|to("{{uri}}")
+- URI                   from|to("file:{{path}}
+- Log                   log("{{key}}") 
+- Placeholder           multicast().placeholder("stopOnException", "key") 
+- Simple                simple("{{key}}")
+- PropertyInject        @PropertyInject("key")
+- ProducerTempate       template.sendBody("{{uri}}", body) 
+- ProducerTempate       template.sendBody("direct:{{name}}", body)
+
+Blueprint   
+- URI                   ftp://{{host}}/{{path}}?options
+- ...
+
+Lokasjon
+- Last fra classpath    classpath:my.properties
+- Last fra filsystem    file:src/main/resources/my.properties
+- Lookup i register     ref:map
+- Blueprint service     blueprint:my.properties
+

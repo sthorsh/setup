@@ -1,0 +1,25 @@
+usage
+vim [args] [file ..]         eg vim; vim foo.c; vim $(ls); vim *
+vim [args] -                 eg ls | vim -
+vim [args] -t tag            eg vim -t foo
+
+args
+ -M                          modifiable off
+ -O[N]		             open N windows
+ -R                          readonly mode
+ -W <script>                 write cmds to script
+ -b                          binary mode
+ -d                          diff mode
+ -h                          help
+ -l			     lisp mode
+ -s <script>                 read cmds from script
+ -u <vimrc>                  use vimrc instead of .vimrc
+ -x                          edit encrypted files
+ +N                          start at line N
+ +                           start at eof
+--noplugin                   not loading plugin scripts
+--remote [files]             edit <files> in Vim server
+--serverlist                 list Vim servers
+--servername <name>          start Vim server
+--version                    version information
+

@@ -1,0 +1,47 @@
+Lasting           
+- Auto            CIA 6.1.2
+- Manuelt         CIA 6.1.1
+
+camel-core
+- bean            → bean:key?method=bar
+- browse          
+- class           → class:acme.Foo?method=bar
+- controlbus       
+- dataformat      → dataformat:name:[un]marshal?options
+- dataset         ↔ dataset:key?options
+- direct          ↔ direct:name?options (synkron, CamelContext)
+- direct-vm       ↔ direct-vm:name?options (synkron, JVM)
+- file            ↔ file:directory?options
+- language        
+- log             → log:name?options
+- mock            → mock:uri?options
+- properties      ↔ properties:key?locations=poc.properties
+- ref             ↔ ref:key
+- rest          
+- scheduler       → scheduler:name?options
+- seda            ↔ seda:queue?options (asynkron, CamelContext)
+- stub            ↔ stub:uri
+- test            → test:uri
+- timer           → timer:name?repeatCount=1
+- validation      → validator:resourceUri?options
+- vm              ↔ vm:queue?options (asynkron, JVM)
+- xslt            → xslt:resourceUri?options
+
+camel-xxx
+- activemq        ↔ activemq:type:name?options (asynkron, remote)
+- freemarker      → freemarker:resourceUri?options
+- ftp             ↔ ftp://host:directory?options
+- jms             ↔ jms:type:name?options (asynkron, remote)
+- quartz2         → quartz2:name?options
+- stream          ↔ stream:in|out|err?options
+- velocity        → velocity:resourceUri?options
+- ...
+
+URIs
+- Bean            filter=#beanId
+- Property        password={{pwd}}
+- Raw verdi       password=RAW(+&+)
+- Dynamisk URI    file:{{path}}
+- Dynamisk URI    toD("file:${path}")
+- XML DSL opts    opt=val&amp;opt=val
+

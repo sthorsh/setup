@@ -1,0 +1,45 @@
+BuilderSupport
+- body(): ValueBuilder
+- constant(O): ValueBuilder
+- deadLetterChannel(String): DeadLetterChannelBuilder
+- defaultErrorHandler(): DefaultErrorHandlerBuilder
+- exchangeProperty(S): ValueBuilder
+- header(S): ValueBuilder
+- jsonpath(S): ValueBuilder
+- language(S, S): ValueBuilder
+- method(Class<?>): ValueBuilder
+- noErrorHandler(): NoErrorHandlerBuilder
+- regexReplaceAll(E, S, S): ValueBuilder
+- simple(S): SimpleBuilder
+- systemProperty(S): ValueBuilder
+- xpath(S): XPathBuilder
+
+DefaultErrorHandlerBuilder
+· redeliveryPolicy: RedeliveryPolicy
+- onPrepareFailure(Processor): DefaultErrorHandlerBuilder
+- onRedelivery(Processor): DefaultErrorHandlerBuilder
+- retryAttemptedLogLevel(LoggingLevel): DefaultErrorHandlerBuilder
+- retryWhile(Expression): DefaultErrorHandlerBuilder
+- useOriginalMessage(): DefaultErrorHandlerBuilder
+- ...
+
+RedeliveryPolicy
+- asyncDelayedRedelivery(): DefaultErrorHandlerBuilder
+- backOffMultiplier(double): RedeliveryPolicy
+- collisionAvoidancePercent(double): RedeliveryPolicy
+- maximumRedeliveries(int): RedeliveryPolicy
+- maximumRedeliveryDelay(long): RedeliveryPolicy
+- redeliveryDelay(long): RedeliveryPolicy
+- useExponentialBackOff(): RedeliveryPolicy
+- ...
+
+NotifyBuilder (ifm testing)
+- from(String): NotifyBuilder
+- whenDone(int): NotifyBuilder
+- whenCompleted(int): NotifyBuilder
+- whenFailed(int): NotifyBuilder
+- create(): NotifyBuilder
+- matches(long, TimeUnit): boolean
+- matchesMockWaitTime(): boolean 
+- ...
+

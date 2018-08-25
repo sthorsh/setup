@@ -132,3 +132,9 @@ then
   clipit & 
 fi
 
+# start terminal drop-down
+if ! pgrep -x "guake" > /dev/null 2>&1
+then 
+  guake > /dev/null 2>&1 &
+fi
+

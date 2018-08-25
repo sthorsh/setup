@@ -1,0 +1,27 @@
+fold
+za                           toggle fold
+zA                           toggle fold recursively
+zd                           delete fold
+zD                           delete fold recursively
+zE                           delete all folds
+zf[mo]                       fold {op}
+zi                           toggle foldenable
+zj                           j to fold
+zk                           k to fold
+zm                           fold more ie foldlevel--
+zM                           close all folds
+zr                           fold reduce ie foldlevel++
+zR                           open all folds
+
+redraw
+zt                           cursorline at top
+zz                           cursorline at middle
+zb                           cursorline at bottom
+
+spell
+z=                           suggest word
+zg                           add to spellfile («good»)
+zG                           add to spellfile and internal word list
+zw                           add to spellfile («wrong»)
+zW                           add to spellfile and internal word list
+

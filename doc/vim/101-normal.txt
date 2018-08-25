@@ -1,0 +1,46 @@
+ctrl-6                       edit Nth file (:e#N)
+ctrl-]                       jump to Nth tag (:ta)
+ctrl-a                       add N
+ctrl-b                       scroll back
+ctrl-c                       cmd interrupt
+ctrl-d                       scroll down
+ctrl-e                       scroll down
+ctrl-f                       scroll down
+ctrl-g                       print file information
+ctrl-i                       jump to newer in jumplist
+ctrl-l                       clear screen
+ctrl-o                       jump to older in jumplist
+ctrl-r                       redo
+ctrl-t                       jump to older in tagstack
+ctrl-u                       scroll back
+ctrl-v                       visual block mode
+ctrl-w                       window mode
+ctrl-x                       subtract N
+ctrl-y                       scroll back
+ctrl-z                       suspend Vim
+
+<Space>                      no highlighting (.vimrc)
+![!mo]                       filter N times {op}
+"                            register
+#                            word under cursor backward
+$                            N lines down + hard BOL
+%                            match paren
+&                            :s//~/& (.vimrc)
+'                            mark
+(                            sentences backward
+)                            sentences forward
+*                            word under cursor forward
++                            N lines down + soft BOL
+,                            leader (.vimrc)
+-                            N lines up + soft BOL
+.                            repeat
+/                            re mode
+0                            hard BOL
+1-9                          N
+:                            ex mode
+;                            next f, F, t, T
+<[<mo]                       indent N times {op}
+=[=mo]                       format N times {op}
+>[>mo]                       indent N times {op}
+?                            re mode
+

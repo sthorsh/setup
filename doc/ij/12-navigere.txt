@@ -1,0 +1,23 @@
+NAVIGERE
+
+ctrl-b               dekl ↔  bruk
+ctrl-alt-b           dekl|bruk → impl
+ctrl-shift-b         id → type
+
+ctrl-u               klasse|metode → base/super
+
+ctrl-shift-t         subjekt ↔ test
+
+alt-f1               velg i ...
+
+f11                  lag anon merke
+ctrl-f11             lag mnem merke
+ctrl-shift-0..9      lag num merke
+ctrl-0..9            til num merke
+
+ctrl-h               hierarki klasse|supertype|subtype
+ctrl-alt-h           hierarki callers|callees
+ctrl-shift-h         hierarki metode
+
+ctrl-shift-bs...     til forrige endring
+ctrl-alt-←→          tilbake|frem

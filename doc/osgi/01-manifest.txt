@@ -1,0 +1,56 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1511443943808
+Build-Jdk: 1.8.0_144
+Built-By: svein
+Bundle-Blueprint:
+  OSGI-INF/blueprint/accounting-flow-ctx.xml,
+  OSGI-INF/blueprint/accounting-flow-dao-ctx.xml,
+  OSGI-INF/blueprint/accounting-flow-osgi-ctx.xml
+Bundle-ManifestVersion: 2
+Bundle-Name: clib :: integrations :: flow-accounting
+Bundle-SymbolicName:
+  com.colorline.clib.integrations.flow-accounting;
+  [blueprint.graceperiod:=true; blueprint.timeout:=10000]
+Bundle-Version: 18.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package:
+  com.colorline.clib.service.accounting;version="18.0.0";
+  uses:="com.colorline.clib.service.accounting.dao",
+  com.colorline.clib.service.common.dao;version="18.0.0";
+  uses:="javax.sql,org.springframework.jdbc.core",
+  com.colorline.clib.service.countrycode;version="18.0.0";
+  uses:="org.springframework.jdbc.core",
+Export-Service:
+  com.colorline.clib.service.metadata.multi.MultiMetaDataService,
+  com.colorline.clib.service.ClibService,
+  com.colorline.clib.service.accounting.ClibAccountingService
+Import-Package:
+  com.colorline.clib.contract.dynamics365.model;version="[18.0,19)",
+  com.colorline.clib.service.accounting;version="[18.0,19)",
+  com.colorline.clib.common.errorhandler.aggregator;version="[18.0,19)",
+  com.fasterxml.jackson.databind;version="[2.6,3)",
+  com.google.common.base;version="[17.0,18)",
+  javax.sql,javax.xml.bind,javax.xml.datatype,javax.xml.transform,
+  org.apache.camel;version="[2.15,3)",
+  org.apache.camel.component.http;version="[2.15,3)",
+  org.apache.camel.dataformat.bindy.annotation;version="[2.15,3)",
+  org.apache.camel.model;version="[2.15,3)",
+  org.apache.camel.processor.aggregate;version="[2.15,3)",
+  org.apache.camel.spi;version="[2.15,3)",
+  org.apache.commons.lang;version="[2.6,3)",
+  org.apache.cxf.common.util;version="[3.0,4)",
+  org.joda.time;version="[2.5,3)",
+  org.osgi.service.blueprint;version="[1.0.0,2.0.0)",
+  org.slf4j;version="[1.7,2)",
+  org.springframework.dao,
+  org.springframework.jdbc.core,
+  org.springframework.transaction,
+  oracle.jdbc, oracle.sql
+Import-Service:
+  com.colorline.clib.service.accounting.ClibAccountingService;multiple:=false,
+  org.apache.camel.Component;multiple:=false,
+  com.colorline.clib.service.ClibService;multiple:=false,
+  javax.sql.DataSource;multiple:=false;filter=(osgi.jndi.service.name=jdbc/clib)
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.2.0.201605172007
+

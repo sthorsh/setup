@@ -1,0 +1,67 @@
+Syntaks
+- ${lhs} op ${rhs}|'string'|literal|null
+
+Variabler
+- camelId
+- routeId
+- exchange (2.16)
+- exchangeId
+- exchangeProperty.foo
+- exchangeProperty.map[key]
+- exception
+- exception.message
+- exception.stacktrace
+- id
+- header.foo
+- header.map[key]
+- headers
+- body
+- out.body
+- out.header.foo
+- messageHistory (2.17)
+- null
+- threadName
+- file:absolute[.path]
+- file:ext|length|modified
+- file:name[.ext|.noext][.single]
+- file:onlyname[.noext][.single]
+- file:parent|path|size
+- sys.foo
+- sysenv.foo
+
+Funksjoner
+- headerAs(key,type)
+- bodyAs(type)
+- mandatoryBodyAs(type)
+- collate(group) (2.17)
+- skip(number) (2.19)
+- bean:beanId.methodName
+- ref:beanId
+- properties:key:default
+- properties-location:locations:key
+- date:command:pattern
+- random(min, max) (2.16)
+- type:name.field
+
+OGNL: kun metoder
+- camelcontext.ognl
+- exchange.ognl (2.16)
+- exchangeProperty.foo.ognl
+- exception.ognl
+- header.foo.ognl
+- body.ognl
+- bodyAs(type).ognl (2.18)
+- mandatoryBodyAs(type).ognl (2.18)
+
+Operatorer
+- ++ --
+- == =~ < <= > >= !=
+- [not] contains 
+- [not] in 
+- [not] is 
+- [not] range 
+- [not] regex 
+- starts|ends with
+- && dvs expr && expr
+- || dvs expr || expr
+

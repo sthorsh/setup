@@ -1,0 +1,45 @@
+insert
+ctrl-a                      same as previous
+ctrl-e                      char below cursor
+ctrl-k                      digraph
+ctrl-r{register}            from register
+ctrl-v                      verbatim ascii, tab, unicode
+ctrl-y                      char above cursor
+
+complete
+ctrl-p                      string, use .,w,b,u,t,i ('cpt')
+ctrl-n                      string, use .,w,b,u,t,i ('cpt')
+ctrl-x ctrl-i               string, use .,i
+ctrl-x ctrl-p               string, use ., search backwards
+ctrl-x ctrl-n               string, use ., search downwards
+ctrl-x ctrl-k               string, use /usr/share/dict/words ('dict')
+ctrl-x ctrl-d               definition name, use .,i 
+ctrl-x ctrl-f               file name
+ctrl-x ctrl-l               line, use .,w,b,u,t,i ('cpt')
+ctrl-x ctrl-]               tag name, use ./tags
+
+popupmenu
+ctrl-p                      previous
+ctrl-n                      next
+ctrl-h                      backspace
+ctrl-l                      right
+ctrl-e                      end
+ctrl-y                      yes
+
+format
+ctrl-d                      indent <
+ctrl-t                      indent >
+
+ctrl-o                      one cmd
+ctrl-g_j                    smart j
+ctrl-g_k                    smart k
+
+ctrl
+ctrl-c/alt-l                interrupt
+ctrl-h/BS                   delete char
+ctrl-i/TAB                  
+ctrl-j/LF                   enter
+ctrl-m/CR                   enter
+ctrl-u                      delete to bol
+ctrl-w                      delete word
+

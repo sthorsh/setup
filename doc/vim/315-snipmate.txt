@@ -1,0 +1,61 @@
+Insert
+<Tab>             expand snippet, goto next tab stop
+<S-Tab>           goto previous tab stop
+<C-r><Tab>        show all snippets
+
+java.snippets
+/*
+/**
+ab                abstract
+as                assert test : "Failure message";
+br                break;
+ca                catch(Exception e)
+case              case :
+cl                class Foo {}
+co                static public final String var = ;
+cos               static public final String var = "";
+d.al              List<Object> list = new ArrayList<Object>();
+d.hm              Map<Object, Object> map = new HashMap<Object, Object>();
+d.hs              Set<Object> set = new HashSet<Object>();
+d.st              Stack<Object> stack = new Stack<Object>();
+date              2015-10-06
+datetime          2015-10-06 11:04
+debug             Logger.debug(param);
+def               default :
+eif               else if ()
+el                else
+error             Logger.error(param);
+ext               extends
+fi                final
+fo                for ( : ) { }
+for               for (int i = 0; i < 10; i++) { }
+get               public String get(){ return this.; }
+if                if () { }         
+ifel              if () { } else{ } 
+im                import
+imp               implements
+in                interface Foo extends Parent
+info              Logger.info(param);
+j.u               java.util.
+lorem             Lorem ipsum dolor ... id est laborum.
+m                 void method() throws
+main              public static void main (String[] args) { }
+pr                private
+pu                public
+re                return
+set               public void set(String x){ this.x = x; }
+singlet           singleton pattern
+sop               System.out.println();
+sopf              System.out.printf("Message", args);
+st                static
+sw                switch () {}
+sy                synchronized
+t                 public void testName() throws Exception { }
+thr               throw
+ths               throws
+try               try { } catch(Exception e) { }
+tryf              try { } catch(Exception e) { } finally { }
+v                 String var = null;
+warn              Logger.warn(param);
+wh                while () { }
+

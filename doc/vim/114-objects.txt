@@ -1,0 +1,11 @@
+Object
+[ai]p                        paragraph
+[ai]s                        sentence
+[ai]t                        tag
+[ai]w                        word
+[ai]W                        Word
+[ai](                        (...)
+[ai][                        [...]
+[ai]{                        {...}
+[ai]"                        "..."
+[ai]'                        '...'

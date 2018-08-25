@@ -1,0 +1,29 @@
+insert
+ctrl-k                      digraph
+ctrl-r x                    from register x
+ctrl-r ctrl-a               Word under cursor
+ctrl-r ctrl-f               name of file under cursor
+ctrl-r ctrl-p               name of path of file under cursor
+ctrl-r ctrl-w               word under cursor
+ctrl-v                      ascii eg 065, tab, unicode eg u03bb
+
+cmdwin
+ctrl-f                      open cmdwin
+ctrl-f ctrl-c               exit cmdwin, use cmdline
+
+complete
+ctrl-p                      complete previous cmd
+ctrl-n                      complete next cmd
+
+ctrl
+ctrl-b                      cursor to bol
+ctrl-c/alt-l                interrupt
+ctrl-d                      cmd, file, tag name completion (only :)
+ctrl-e                      cursor to eol
+ctrl-h/BS                   delete char
+ctrl-i/TAB                  cmd, file, tag name completion (only :)
+ctrl-j/LF                   enter
+ctrl-m/CR                   enter
+ctrl-u                      delete to bol
+ctrl-w                      delete word
+

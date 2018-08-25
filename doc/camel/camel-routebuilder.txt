@@ -1,0 +1,39 @@
+﻿                                                          Object
+                                                             |
+                                                             |
+                                                      BuilderSupport
+                                                             |
+                                                             |
+                                           org.apache.camel.builder.RouteBuilder
+                                                             |
+                                                             |
+     ----------------------------------------------------------------------------------------------------------------------------------
+     |                                                       |                                                                        |
+     |                                                       |                                                                        |
+     |                                      -----------------|                                                                        |
+     |                                      |                |                                                                        |
+     |                                      |                |                                                                        |
+     |                                      |         CacheRouteBuilder                                                               |
+     |                                      |                |                                                                        |
+     |                                      |                |                                                                        |
+     |                  --------------------(--------------------------------------                                                   |
+     |                  |                   |                                     |                                                   |
+     |                  |                   |                                     |                                                   |
+     |            NoErrorHandling-        Event-                            ErrorHandling-                                       AdviceWith-
+     |              RouteBuilder        RouteBuilder                         RouteBuilder                                       RouteBuilder
+     |                  |                   |                                     |                                                   |
+     |                  |                   |                    --------------------------------------------------------             |
+     |                  |                   |                    |                |                                     |             |
+     |                  |                   |                    |                |                                     |             |
+     |                  |                   |                    |       SingletonRouteBuilder                  AuditRouteBuilder     |
+     |                  |                   |                    |                |                                     |             |
+     |                  |                   |                    |                |                                     |             |
+     |                  |                   |                    |                |----------------                     |             |
+     |                  |                   |                    |                |               |                     |             |
+     |                  |                   |                    |                |         FileTransfer-               |             |
+   [...]               ...                 ...                  ...              ...        RouteBuilder               ...           ...
+
+common-errorhandler  service            synk flow         flow/støtterute     asynk flow                           asynk flow
+from(direct:)        from(direct:)      eventFrom(cxf:)   from(direct:)       singleAuditedFrom(activemq:)         auditedFrom(activemq:)
+from(jetty:)                            eventFrom(jetty:)                     singleAuditedFrom(ftp:)              auditedFrom(seda:)
+                                                                              singleAuditedFrom(quartz:)

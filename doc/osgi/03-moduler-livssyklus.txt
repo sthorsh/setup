@@ -1,0 +1,79 @@
+Livssyklus
+- Installed
+- Resolved
+- Starting
+- Active
+- Stopping
+- Uninstalled
+
+Operasjoner
+- install URL
+- resolve N
+- start N
+- stop N
+- refresh N
+- update N
+- uninstall N
+
+install
+- Les JAR-fil fra URL (mvn repo) til bundle cache
+- Instansier Bundle-objekt (id, URL, INSTALLED etc)
+
+resolve
+- For hver Import-Package finn 1 Export-Package
+- CL₃; CL₂ → CL₃; CL₁ → CL₂ → CL₃ (transitiv)
+- Resolved & unresolved → resolved (entydig)
+- Resolved & resolved: > ver; < id (entydig)
+- Unresolved & unresolved: > ver, < id (entydig)
+- Hvis p ← B → C → p: bruk uses i C (konsistent)
+- Klasselasting krever resolved bundles (wiring done)
+
+start 
+- Hvis bundle har aktivator: kall start()
+
+Aktiv
+- Klasser i java.*: parent CL
+- Klasser i Import-Package: CL i ekstern bundle
+- Andre klasser: bundle CL fra Bundle-Classpath
+
+stop 
+- Hvis bundle har aktivator: kall stop()
+
+update
+- Step 1: les oppdatert JAR fra URL til bundle cache
+- Klasser i ikke-eksporterte pakker: synlige
+- Klasser i eksporterte pakker && ubrukt: synlige
+- Klasser i eksporterte pakker && i bruk: synlige vha refresh N (step 2)
+
+uninstall 
+- Step 1: slett N fra liste over installerte bundles
+- Klasser i ikke-eksporterte pakker: slettes
+- Klasser i eksporterte pakker && ubrukt: slettes
+- Klasser i eksporterte pakker && i bruk: slettes vha refresh N (step 2)
+
+refresh
+- Etter install L: rewire N fra pakke p i M til nyere p i L
+- Etter update N: oppdater klasser, beregn og restart avhengighetsgraf (step 2)
+- Etter uninstall N: slett klasser, beregn og restart avhengighetsgraf (step 2)
+
+org.osgi.framework.BundleActivator
+- start()
+- stop()
+
+org.osgi.framework.BundleContext
+- installBundle()
+
+org.osgi.framework.Bundle
+- getId() (runtime id: 0...N)
+- getHeaders()
+- getLocation() (runtime id: URL → bundle JAR fil)
+- getState()
+- getSymbolicName()
+- start()
+- stop()
+- update()
+- uninstall()
+
+org.osgi.service.packageadmin.PackageAdmin
+- resolveBundles()
+- refreshPackages()

@@ -1,0 +1,39 @@
+Normal
+ctrl-p                  >>> _
+
+Cursorline
+ctrl-k                  move up
+ctrl-j                  move down
+ctrl-m                  open (evt CR)
+ctrl-s                  split open
+ctrl-v                  vertical split open
+ctrl-z                  toggle mark
+ctrl-o                  open marks
+
+Cmdline
+ctrl-p                  previous
+ctrl-n                  next
+ctrl-a                  move to BOL
+ctrl-e                  move to EOL
+ctrl-l                  move right
+ctrl-h                  delete char (evt BS)
+ctrl-w                  delete word
+ctrl-u                  delete to BOL
+ctrl-y                  create file in . or mark
+
+Mode
+ctrl-f                  forward
+ctrl-b                  back
+ctrl-d                  file or path
+ctrl-r                  regex or string
+
+Fn keys
+<F5>                    purge cache
+<F7>                    wipe MRU list
+
+Help
+?<CR>                   ctrlp-mappings
+
+Quit
+ctrl-c                  interrupt (evt alt-l)
+

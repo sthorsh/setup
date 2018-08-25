@@ -1,0 +1,8 @@
+Ex
+:PluginInstall [p ...]       install p or all plugins in .vimrc
+:PluginUpdate  [p ...]       update  p or all plugins in .vimrc
+:PluginList
+:PluginSearch  [re]            
+:PluginClean
+:Plugin p                    used in .vimrc to load p on startup
+

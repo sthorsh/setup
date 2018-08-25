@@ -1,0 +1,49 @@
+URL
+- http://easymock.org/user-guide.html
+
+Mocking av 
+- Interface
+- Konkrete klasser
+
+Faser
+- Declare 
+- Create
+- Inject
+- [Reset] 
+- Record
+- Replay
+- [Test]
+- Verify
+
+API create
+- mock()
+- niceMock()
+- strictMock()
+
+API reset
+- reset(mock) 
+
+API record
+- anyObject()       arg skal være Object
+- anyString()       arg skal være String
+- anyDouble()       arg skal være Double
+- anyLong()         arg skal være Long
+- anyBoolean()      arg skal være Boolean
+- contains()        arg skal inneholde...
+- eq()              arg skal være lik...
+- isNull()          arg skal være null
+- notNull()         arg skal ikke være null
+- and(m₁, m₂)       arg skal matche m₁ og m₂
+- expect(k)         ved kall k,...
+- expectLastCall()  ved foregående kall,...
+- andReturn(v)      returner v...
+- andThrow(e)       kast e...
+- times(n)          n ganger
+- anyTimes()        vilkårlig antall ganger
+
+API replay
+- replay(mock)
+
+API verify
+- verify(mock)
+

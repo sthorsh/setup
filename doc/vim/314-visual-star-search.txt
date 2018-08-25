@@ -1,0 +1,4 @@
+Visual
+*         search phrase forward
+#         search phrase backward
+

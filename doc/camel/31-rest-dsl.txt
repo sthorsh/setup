@@ -1,0 +1,77 @@
+Rest DSL
+- Fremhever rest- og http-begreper (verb)
+- Konsumenter eksponerer restfulle tjenester: 2.14
+- Produsenter kaller restfulle tjenester: 2.19 (CIA 10.2.6)
+- Dekker 95% av brukstilfellene (jax-rs dekker de siste 5%)
+
+Virkemåte
+- Rest dsl er syntakssukker for camel core's rest-komponent
+- Feks rest("/foo").get("{id}") → from("rest:get:foo/{id}")
+- Dvs at Camel skriver om hver rest-service til en Camel-rute
+
+Sekvensdiagram m/binding
+- Klient → konsument: request
+- Konsument → RestBindingProcessor: incoming json|xml message
+- RestBindingProcessor → prosessor: pojo
+- RestBindingProcessor ← prosessor: pojo
+- Konsument ← RestBindingProcessor: outgoing pojo message
+- Klient ← konsument: response
+
+Datautveksling
+- Request: path, query, header, body, form
+- Respons: header, body
+
+Komponenter
+- camel-jetty: http server
+- camel-netty4-http: http lib
+- camel-restlet: rest lib
+- camel-servlet: i tomcat, wildfly
+- camel-spark-rest: rest lib
+- camel-undertow: jboss http server
+- camel-swagger-java: dokumentasjon
+
+restConfiguration()
+ .component("jetty") 
+ .scheme("http|https")
+ .host("0.0.0.0")
+ .port("8181")
+ .contextPath("/")
+ .componentProperty(key, value)
+ .bindingMode(RestBindingMode.auto|json|json_xml|off|xml)
+ .skipBindingOnErrorCode(true)
+ .dataFormatProperty(key, value)
+ .apiContextPath("/api/acme/doc") // enabler swagger-java
+ .apiProperty(key, value)
+ .enableCORS(true)
+  
+onException(Exception.class)
+ .handled(true)
+ .setHeader(Exchange.HTTP_RESPONSE_CODE, constant(500))
+ .setBody(constant(""));
+
+rest() 
+ .get().outType().to() → 200 
+ .post().type().to() → 201
+ .put().type().to() → 200, 201
+ .delete().to() → 202
+
+URLs
+- http://localhost:8888/api/acme/employee
+- http://localhost:8888/api/acme/doc
+- http://localhost:8888/api/acme/swagger.json
+
+Klienter
+- curl
+- swagger web-console
+
+------------
+3. Feilkoder
+onException(IllegalArgumentException.class)
+  .handled(true)
+  .setHeader(Exchange.HTTP_RESPONSE_CODE, constant(500))
+  .setBody(simple("${exception.message}"));
+
+camel.apache.org
+- rest-dsl
+- swagger-java
+

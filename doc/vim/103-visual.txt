@@ -1,0 +1,31 @@
+Visual
+ctrl-v                  visual block
+V                       visual line
+v                       normal
+
+Visual block
+ctrl-v                  normal
+V                       visual line
+v                       visual
+A                       Append
+C                       Change
+D                       Delete
+I                       Insert 
+
+Visual line
+ctrl-v                  visual block
+V                       normal
+v                       visual
+
+Select text
+{motion}                
+[ai][object]            
+
+Move cursor
+O                       Other end
+o                       other end
+
+Replace text
+P                       
+p                       
+

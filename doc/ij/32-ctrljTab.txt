@@ -1,0 +1,43 @@
+CTRL-J TAB
+        
+[ctrl-j]str tab
+- FO                      formatter
+- fori                    for
+- gwt                     given when then
+- ifn                     if null
+- inn                     if not null
+- inst                    if instance of
+- it✶                     iterate
+- p✶                      private/public...
+- s✶                      System...
+- St                      String
+- thr                     throw new
+- toar                    to array
+
+[ctrl-j]str tab
+- expr!                   boolean
+- expr.arg                ✶ 
+- expr.as[sert]           boolean
+- expr.c[ast]             ✶ 
+- expr.e[lse]             boolean
+- expr.fi[eld]            ✶ 
+- expr.for                List|Set|...
+- expr.fori               int
+- expr.fo[rmat]           String
+- expr.forr               int
+- expr.if                 boolean
+- expr.inst               Object
+- expr.iter               List|Set|...
+- expr.nn                 Object
+- expr.null               Object
+- expr.par                ✶ 
+- expr.req[uireNonNull]   Object
+- expr.ret[urn]           ✶ 
+- expr.sout               ✶ 
+- expr.sw[itch]           int|String|...
+- expr.sy[nchronized]     Object
+- expr.th[row]            Exception
+- expr.try                statement
+- expr.var                expr
+- expr.w[hile]            boolean
+

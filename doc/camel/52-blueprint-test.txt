@@ -1,0 +1,30 @@
+Arv
+• CamelBlueprintTestSupport
+
+Felt
+• producer for direct:input
+• mock* for mock:*
+• easyMock deklarer
+
+setConfigAdminInitialConfiguration()
+• sett property-verdier
+• returner persistence-id 
+
+getBlueprintDescriptor() 
+• returner bundle-descriptor
+
+getBundleFilter()
+• returner bundle-filter
+
+useOverridePropertiesWithPropertiesComponent()
+• override property-verdier
+• returner properties
+
+addServicesOnStartup()
+• legg til tjeneste(r)
+
+@Test
+• Given
+• When
+• Then
+

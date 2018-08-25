@@ -1,0 +1,9 @@
+Normal                         
+gc[cmo]                            toggle comment {op}
+gcgc                               uncomment adjacent lines
+
+Visual
+v_gc                               toggle comment
+
+Ex
+:Com                               toggle comment :g/foo/Com

@@ -1,0 +1,26 @@
+PROSJEKT
+
+☰                         kontekstmeny
+alt-↓                     velg tab
+ctrl-alt-⏎                tittellinjemeny
+ctrl-shift-←→             resize vindu
+
+→                         åpne|ned
+←                         ut|lukk
+⏎                         åpne|lukk|vis src (løv)
+↑↓                        opp|ned
+home|end                  topp|bunn
+
+np*                       åpne nivå
+ctrl--                    lukk alle
+.*                        søk: case-insensitivt, delstrenger
+
+f4                        til src (løv)
+ctrl-⏎                    toggle prosjektstruktur
+
+alt-insert                ny node
+ctrl-alt-shift-insert     ny scratch
+
+escape                    til editor
+shift-escape              skjule vindu
+

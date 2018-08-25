@@ -1,0 +1,53 @@
+Versjon
+$ openssl version -a
+
+Connect til service
+$ openssl s_client -connect www.feistyduck.com:443
+$ openssl s_client -connect www.feistyduck.com:443 [-CAfile ...]
+$ openssl s_client -connect www.feistyduck.com:443 [-showcerts ]
+
+Ekstrakt sertifikat
+  $ echo | openssl s_client -connect www.feistyduck.com:444 2>&1 > fd.crt
+  $ sed --quiet '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' < fd.crt > www.feistyduck.com.crt
+
+  Lag privat nøkkel
+  $ openssl genrsa -aes128 -out fd.key 2048
+  $ cat fd.key
+  $ openssl rsa -text -in fd.key
+
+  Lag public nøkkel
+  $ openssl rsa -in fd.key -pubout -out fd-public.key
+  $ cat fd-public.key
+
+  Lag CSR
+  $ openssl req -new -key fd.key -out fd.csr
+  $ openssl req -text -in fd.csr -noout
+
+  Lag og signer sertifikat
+  $ openssl x509 -req -days 365 -in fd.csr -signkey fd.key -out fd.crt
+  $ openssl x509 -text -in fd.crt
+
+  Lag CAs: TODO
+  - Privat rot CA
+  - Privat subordinate CA
+
+-------------
+Seks nivåer (1st)
+- data ⇐⇒ data
+- xml  ⇐⇒ xml    xml-dsig, customer key
+- soap ⇐⇒ soap   xml-dsig, sender key == customer key
+- http ⇐⇒ http  
+- tls  ⇐⇒ tls    private key != customer key (?)
+- tcp  ⇐⇒ tcp 
+
+To nivåer
+- Forretningsdata: feks business autentisering m/xml-dsig
+- Datakommunikasjon: feks communication autentisering m/xml-dsig
+
+getUserInfo
+uploadFile
+downloadFile
+downloadFileList
+
+validere XML iht skjema *.xsd
+

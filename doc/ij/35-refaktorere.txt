@@ -1,0 +1,10 @@
+REFAKTORERE
+
+ctrl-alt-c          constant
+ctrl-alt-f          felt
+ctrl-alt-m          metode
+ctrl-alt-p          param
+ctrl-alt-v          variabel
+
+ctrl-alt-shift-t    refaktorer this
+

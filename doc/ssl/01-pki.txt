@@ -1,0 +1,63 @@
+Modell
+- Klient
+- Subjekt
+- CAs
+- Web server
+- CRL server
+- OCSP server
+
+Subjekt
+- Genererer nøkkelpar
+- Sender CSR til en CA
+- Mottar sertifikat fra CA
+- Installerer sertifikat på web server
+- Overfører sertifikatkjede (løv,rot] til klient
+
+CA
+- Rot (~100) el underordnet (~1000)
+- Signerer CSR med egen hemmelig nøkkel
+- Utsteder sertifikat til ethvert domene
+- Skiller mellom DV-, OV- og EV-sertifikater
+- Er registrert i ett eller flere programmer
+- Ref Apple Root Certificate Program
+- Ref Microsoft Trusted Root Certificate Program
+- Ref Mozilla Root Store Policy → Mozillas trust store
+
+Klient
+- Bygger sertifikatkjeden (path building)
+- Forankrer kjeden i et rotsertifikat i en trust store
+
+Sertifikat
+- Version: v3
+- Serial number: N med ≥20 bit entropi
+- Signature: sha1rsa
+- Issuer: c=no, o=buypass, cn=www.buypass.com
+- Validity: fra-til
+- Subject: cn=www.acme.com
+- Public key: algoritme, pk₁
++ Authority information access: URL  
++ Subject information access: URL
++ Authority key identifier: hash(pk₀)
++ Subject key identifier: hash(pk₁) 
++ Key usage: digitalSignature ...
++ Extended key usage: TLS Web Server Authentication ...
++ Subject alternative name: www.acme.com acme.com ...
++ CRL distribution point: URL
+- Signature algorithm: sha1rsa
+- Signature value: rsa(sha1(pk₀))
+   
+Sertifikatdata
+- ASN: abstrakt definisjon
+- BER: binær enkoding
+- DER: binær entydig definisjon
+- PEM: base64 av DER ref RFC 7468
+
+Noen standarder
+- CA/B baseline requirements (2012)
+- IETF RFC 5280 (2008)
+- IETF RFC 3279 (2002)
+- ITU-T X.509 (1988)
+
+URLs
+∙ http://blog.palominolabs.com/2011/10/18/java-2-way-tlsssl-client-certificates-and-pkcs12-vs-jks-keystores/index.html
+

@@ -1,0 +1,47 @@
+REDIGERE
+
+ht                      rykk utvalg →
+shift-ht                rykk utvalg ←
+
+ctrl-shift-↑↓           mv metode|stmt
+alt-shift-↑↓            mv ln
+ctrl-alt-shift-←→       mv arg|param|element
+
+ctrl-alt-⏎              newline ↑
+shift-⏎                 newline ↓
+
+ctrl-c                  cp ln|navn&node|utvalg
+ctrl-shift-c            cp path|utvalg
+ctrl-alt-shift-c        cp ref|utvalg
+
+ctrl-d                  dup ln|utvalg
+
+ctrl-⏎                  split ln
+ctrl-shift-j            join ln's
+
+ctrl-alt-l              formater alt|utvalg
+ctrl-alt-o              optimaliser imports
+
+alt-shift-m             record makro
+alt-m                   utføre makro
+
+ctrl-r                  repl forrige|alt-↓|ny|valgt str
+ctrl-shift-r            repl forrige|alt-↓|ny|valgt str
+
+alt-shift-u             uppercase
+
+ctrl-v                  paste text|node
+ctrl-shift-v            paste fra stack
+ctrl-alt-shift-v        paste simple
+
+ctrl-x                  cut ln|navn&node|utvalg
+
+ctrl-y                  del ln|utvalg
+bs                      del tegn
+delete                  del tegn|node|utvalg
+ctrl-bs                 del ord
+ctrl-delete             del ord
+
+ctrl-z                  undo
+ctrl-shift-z            redo
+

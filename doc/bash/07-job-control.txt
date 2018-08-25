@@ -1,0 +1,9 @@
+cmd &       start cmd i bakgrunnen
+
+ctrl-c      intr ref stty -a (tty driver)
+ctrl-d      eof ref stty -a
+ctrl-z      susp ref stty -a (tty driver)
+
+NB!
+- http://www.linusakesson.net/programming/tty/index.php
+

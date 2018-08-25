@@ -1,0 +1,6 @@
+Normal
+cx[xmo]                            1st: select, 2nd: exchange {op}
+cxc                                clear selection
+
+Visual
+v_X                                1st: select, 2nd: exchange

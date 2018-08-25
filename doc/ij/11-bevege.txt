@@ -1,0 +1,26 @@
+BEVEGE
+
+←→                   char
+ctrl-←→              word
+home|end             line start|end
+
+↑↓                   line
+ctrl-g               line:col
+ctrl-home|end        text start|end
+
+ctrl-shift-m         match {}()[]<>
+ctrl-altgr-7|0       blokk start|end
+
+alt-↑↓               metode
+ctrl-f12             metode
+
+ctrl-f3              finn str
+ctrl-f7              finn bruk
+ctrl-shift-f7        finn str|bruk|extends|implements|throw|return
+ctrl-f               finn forrige|alt-↓|ny|valgt str
+ctrl-l|f3            finn forekomst ↓
+shift-ctrl-l|f3      finn forekomst ↑
+
+f2                   feil|advarsel ↓
+shift-f2             feil|advarsel ↑
+

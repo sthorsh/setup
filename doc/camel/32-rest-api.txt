@@ -1,0 +1,45 @@
+RestConfigurationDefinition
+- component(String): RestConfigurationDefinition
+- scheme(String): RestConfigurationDefinition
+- host(String): RestConfigurationDefinition
+- port(int): RestConfigurationDefinition
+- contextPath(String): RestConfigurationDefinition
+- componentProperty(String, String): RestConfigurationDefinition
+- bindingMode(RestBindingMode): RestConfigurationDefinition
+- dataFormatProperty(String): RestConfigurationDefinition
+- skipBindingOnErrorCode(boolean): RestConfigurationDefinition
+- apiContextPath(String): RestConfigurationDefinition
+- enableCORS(boolean): RestConfigurationDefinition
+- ...
+
+RestDefinition
+- get(String): RestDefinition
+- post(String): RestDefinition
+- put(String): RestDefinition
+- delete(String): RestDefinition
+- type(Class<?>): RestDefinition 
+- outType(Class<?>): RestDefinition 
+- apiDocs(boolean): RestDefinition 
+- description(String): RestDefinition
+- param(): RestOperationParamDefinition
+- responseMessage(): RestOperationResponseMsgDefinition 
+- to(String): RestDefinition
+
+RestOperationParamDefinition
+- name(String): RestOperationParamDefinition 
+- description(String): RestOperationParamDefinition
+- type(RestParamType): RestOperationParamDefinition
+- dataType(String): RestOperationParamDefinition
+- endParam(): RestDefinition
+
+RestOperationResponseMsgDefinition
+- code(String): RestOperationResponseMsgDefinition
+- message(String): RestOperationResponseMsgDefinition
+- header(String): RestOperationResponseHeaderDefinition 
+- endResponseMessage(): RestDefinition 
+
+RestOperationResponseHeaderDefinition
+- dataType(String): RestOperationResponseHeaderDefinition
+- description(String): RestOperationResponseHeaderDefinition
+- endResponseHeader(): RestOperationResponseMsgDefinition
+

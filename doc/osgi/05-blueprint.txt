@@ -1,0 +1,65 @@
+Spesifikasjon
+- OSGi Blueprint
+
+Implementasjon
+- Apache Aries mfl
+
+Komponent
+- Bean: konstruksjon, DI, lifecycle callbacks
+- Reference: pekerkjede bean → proxy → service-objekt
+- Service: publiserer (if, bean, metadata) som tjeneste
+- Environment: tilgang til OSGi- og Blueprint-container
+
+bean
+✓ id="a"
+✓ class="A"
+- activation="eager|lazy*"
+- scope="singleton*|prototype"
+✓ factory-method="getInstance"
+✓ init-method="init"
+✓ destroy-method="close"
+✓ argument value="${}"
+✓ argument type="boolean" value="true"
+✓ argument ref="b"
+✓ argument ref="blueprintBundle"
+- argument ref="blueprintBundleContext"
+- argument ref="blueprintContainer"
+- argument ref="blueprintConverter"
+✓ property name="p" value="foo"
+✓ property name="p" value="${questback.password}"
+✓ property name="p" value="{{mipro.service.endpoint}}"
+✓ property name="p" ref="b"
+- property name="p" bean|service|reference
+- property name="p" array|list|props|map|set (kun map i clib)
+
+reference|reference-list
+✓ id="b"
+✓ interface="B"
+✓ filter="(osgi.jndi.service.name=jdbc/clib)"
+- availability="mandatory*|optional"
+- activation="eager|lazy*"
+- timeout="" (ms to wait for service to reappear)
+- reference-listener
+
+service
+✓ id="c"
+✓ interface="C"
+✓ ref="a"
+- activation="eager|lazy*"
+- interfaces
+✓ service-properties entry key="" value="" (metadata)
+
+Livssyklus
+- ...
+- Injisere avhengigheter
+- Registrere tjenester
+- Instansiere komponent
+- ...
+
+Utvidelser
+✓ xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+✓ xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.1.0"
+✓ xmlns="http://camel.apache.org/schema/blueprint"
+✓ xmlns:camel-cxf="http://camel.apache.org/schema/blueprint/cxf"
+
+

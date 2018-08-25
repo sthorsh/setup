@@ -1,0 +1,18 @@
+□ alias
+
+□ bg
+□ bind [-pvPV]
+□ break
+□ builtin <builtin>
+
+□ caller
+□ case
+□ cd [dir]
+□ command <command>
+□ compgen
+□ complete
+□ compopt
+□ continue
+□ coproc
+
+

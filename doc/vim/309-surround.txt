@@ -1,0 +1,26 @@
+Normal
+ys[smt]<r>                        surround {op}
+ySS<r>                            surround line
+cs<t><r>                          change surround
+ds<t>                             delete surround
+
+Visual
+v_S<r>                            visual surrond
+V_S<r>                            visual line surround
+v_b_S<r>                          visual block surround
+
+Target <t>
+()                                may span N lines
+{}                                may span N lines
+[]                                may span N lines
+<>                                may span N lines
+!"#$%&'*+,-./:;=>?@\^_`|~         current line only
+
+Replacement <r>
+()                                ( ... ) or (...)
+{}                                { ... } or {...}
+[]                                [ ... ] or [...]
+<>                                <t>...</t> or <...>
+Ctrl-t                            <t><LF>...<LF></t>
+!"#$%&'*+-./0-9:;=?@\^_`|~        literally
+

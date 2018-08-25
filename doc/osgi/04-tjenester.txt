@@ -1,0 +1,76 @@
+Kontrakt
+- Et interface (if)
+- Klient programmerer mot/ser kun if
+- Provider og klient kan utvikles separat
+- CLIB: bundle service-dwh WeatherDwhService
+
+Implementasjon
+- En klasse (pojo, tjenesteobjektet)
+- En kontrakt kan ha flere implementasjoner
+- Provider kan swappe inn/ut implementasjoner
+- CLIB: bundle service-dwh WeatherDwhServiceImpl
+
+Metadata (evt)
+- Et Map<K,V> (meta)
+- Keys: service.id sid, service.ranking srk mfl
+- Rammeverk kan rangere vha max(srk) og min(sid)
+- Klient kan slå opp med query, rammeverk filtrerer
+
+Provider
+- Gjør arbeid for en klient (caller)
+- En klasse feks org.osgi.framework.BundleActivator
+- CLIB: n/a
+
+Klient
+- Delegerer arbeid til en provider (callee)
+- En klasse feks org.osgi.framework.BundleActivator
+- CLIB: bundle flow-weather WeatherForecastRoute
+
+Register
+- Provider bruker register API'et: publisere
+- Klient bruker register API'et: polle, lytte, tracke
+
+Provider API
+- serviceRegistration = bctx.registerService(if, pojo, meta)
+- serviceRegistration.setProperties(meta)
+- serviceRegistration.unregister()
+
+Klient API: poller
+- serviceReference = bctx.getServiceReference(if)
+- Foo foo = bctx.getService(serviceReference)
+- foo.bar()
+
+Klient API: lytter
+- bctx.addServiceListener(serviceListener)
+- Foo foo = bundleContext.getService(serviceReference)
+- foo.bar()
+
+Klient API: tracker
+- serviceTracker = new ServiceTracker(bctx, if, null)
+- serviceTracker.open()
+- Foo foo = serviceTracker.getService();
+- foo.bar()
+
+OSGi core servicesserviceTracker
+- org.osgi.service.packageadmin.PackageAdmin
+- org.osgi.service.permissionadmin.PermissionAdmin
+- org.osgi.service.condpermadmin.ConditionalPermissionAdmin
+- org.osgi.service.startlevel.StartLevel
+- org.osgi.service.url.URLHandlers
+- org.osgi.framework.hooks.service.ServiceHooks
+
+OSGi compendium services
+- org.osgi.service.application.ApplicationAdmin
+→ org.osgi.service.blueprint.BlueprintContainer
+- org.osgi.service.cm.ConfigurationAdmin
+→ org.osgi.service.component.DeclarativeServices
+- mfl
+
+OSGi enterprise services
+- javax.transaction.JTA
+- org.osgi.jmx.JMX
+- org.osgi.service.JDBC
+- org.osgi.service.JNDI
+- org.osgi.service.JPA
+- org.osgi.service.remoteserviceadmin.RemoteServiceAdmin
+

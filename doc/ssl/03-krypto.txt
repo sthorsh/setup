@@ -1,0 +1,47 @@
+Hensikt
+- Autentisering
+- Konfidensialitet
+- Integritet
+
+Symmetrisk kryptering: AES
+- Klartekst: 128 bit block size
+- Algoritme: AES blokkchiffer
+- Nøkkel k: 128/192/256 bits
+- Chiffertekst
+
+Blokkchiffermodus: CBC 
+- Klartekst P₁
+- Initvektor IV: P₁ xor IV₁
+- Algoritme
+- Nøkkel
+- Chiffertekst C₁ → IV₂ ...
+
+Asymmetrisk kryptering: RSA (PKI)
+- Klartekst
+- Algoritme: RSA
+- Public nøkkel pk: klienten krypterer med pk
+- Privat nøkkel sk: klienten signerer med sk
+- Chiffertekst
+
+Hashing: SHA-256
+- Data
+- Hash-funksjon: SHA-256
+- Sjekksum: 256 bits
+
+Meldingsautentisering
+- Data
+- Hash-funksjon: SHA-256
+- Autentiseringsnøkkel: k
+- Sjekksum aka MAC: 256 bits
+- Ref: https://snl.no/autentikator
+
+Digital signatur (PKI)
+- Step 1: checksum = hash(document)
+- Step 2: encoded-checksum = der-encode(algorithm-id, checksum)
+- Step 3: digital-signature = rsa(encoded-checksum, private key)
+
+Tilfeldig tall RN
+- Step 1: TRNG genererer entropy
+- Step 2: CSPRNG med entropy som seed genererer RN
+- Step 3: RN brukes av nøkler, CBC IV, SSL handshake RANDOM mm
+

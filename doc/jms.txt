@@ -1,0 +1,38 @@
+API
+- Create message
+- Send message
+- Receive message
+- Read message
+- javax.jms.ConnectionFactory
+
+Begreper
+- Message
+- Sender(q), publisher(t), produsent(qt), klient(qt)
+- Receiver(q), subscriber(t), konsument(qt), klient(qt)
+- Provider, broker
+- Queue, punkt-til-punkt
+- Topic, publish-subsribe
+
+Fordeler
+- Asynkront: vs tcp
+- Frikoblet: vs tcp
+- Pålitelig: vs udp
+
+Moduser
+- Asynkron: request
+- Synkron: request-reply
+
+Modeller
+- Punkt-til-punkt
+- Publish/subscribe
+
+Message: hode
+- Navn: gyldig iht Java
+- Verdi: wrapper/primitiv
+
+Message: kropp
+- BytesMessage 
+- MapMessage
+- ObjectMessage
+- StreamMessage
+- TextMessage

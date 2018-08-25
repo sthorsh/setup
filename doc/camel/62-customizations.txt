@@ -1,0 +1,32 @@
+Custom expression
+- Implementerer org.apache.camel.Expression
+
+Custom predicate
+- Implementerer org.apache.camel.Predicate
+
+Custom komponent
+- camel-archetype-component
+- Implementerer org.apache.camel.Component
+
+Custom API-komponent
+- camel-archetype-api-component
+- Implementerer org.apache.camel.Component
+- Alt1: komponent → api.jar + api-javadoc.jar
+- Alt2: komponent → api.jar + api.signaturfil
+- Feks: camel-box → API for tjenesten box.com (bibliotek)
+
+Custom dataformat
+- camel-archetype-dataformat
+- Implementerer org.apache.camel.spi.DataFormat
+
+Custom prosessor
+- Implementerer org.apache.camel.Processor 
+
+Custom typekonverter  
+- Alt1: vha @Converter
+- Alt2: implementer TypeConverter (ref Fuse 45.3)
+
+Custom interceptor
+- Ref CIA1 11.4
+- Ref CIA2 9.4.3
+

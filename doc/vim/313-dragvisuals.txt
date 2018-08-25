@@ -1,0 +1,12 @@
+Visual block
+↑              move up
+←              move left
+→              move right
+↓              move down
+
+Visual line
+↑              move up
+←              move left
+→              move right
+↓              move down
+

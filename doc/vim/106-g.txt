@@ -1,0 +1,50 @@
+g Ctrl-]                ref Ctrl-], but :tj (not :ta)
+g]                      ref Ctrl-], but :ts (not :ta)
+
+g#                      ref #, but no \< \>
+g*                      ref *, but no \< \>
+
+g;                      changelist back
+g,                      changelist forward
+
+g-                      undotree back
+g+                      undotree forward
+
+gU[Umo]                 {op} uppercase
+gu[umo]                 {op} lowercase
+gq[qmo]                 {op} format
+gw[wmo]                 {op} format
+g?[?mo]                 {op} rot13 encode
+g@[mo]                  {op} call 'opfunc'
+g~[~mo]                 {op} swap case
+
+g&                      ref &, but global
+
+gD                      goto Declaration
+gd                      goto declaration
+gE                      ref E, but backward
+ge                      ref e, but backward
+gf                      goto file
+gg                      Nth line
+gI                      ref I, but hard (not soft)
+gi                      ref i, but continue previous
+gJ                      ref J, but no space
+gm                      middle of screen
+gN                      ref N, but start visual mode
+gn                      ref n, but start visual mode
+go                      Nth byte
+gP                      ref P, but cursor after text
+gp                      ref p, but cursor after text
+gv                      ref v, but continue previous
+
+g0                      ref 0, but wrap
+g^                      ref ^, but wrap
+gj                      ref j, but wrap
+gk                      ref k, but wrap
+g_                      ref _, but EOL (not BOL)
+g$                      ref $, but wrap
+
+g Ctrl-g                ref Ctrl-g, but cursor information
+ga                      print ascii
+g8                      print UTF-8
+

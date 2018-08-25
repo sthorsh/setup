@@ -1,0 +1,72 @@
+range [r]
+N                         Nth line
+.[±N]                     current line [±N]
+$[-N]                     last line [-N]
+M,N                       from line M to line N
+%                         same as 1,$
+N,                        same as N,.
+,N                        same as .,N
+/re/[±N]                  line with re [±N]
+/re/,/re/                 from line with re to line with re
+'x[±N]                    line with mark x [±N]
+'x,'y                     from line with mark x to line with mark y
+
+metachars
+%                         name current file (see :grep, :so)
+%%                        path current file (.vimrc) (see :e)
+#                         name alternate fil
+##                        name arglist files
+#N                        name buffer N
+*                         wildcard (see :arga)
+**                        wildcard (see :arga)
+|                         ex-cmd separator
+
+--------
+:[r]!cmd                  [filter range] or execute bash-cmd
+:[r]!!                    repeat !cmd
+
+:[r]&& [N]                :[r]s//~/& [in range] or [next N lines]
+:[r]&  [N]                :[r]s//~   [in range] or [next N lines]
+
+:[N]@:                    [move to line N] and execute last ex-cmd
+:[N]@a                    [move to line N] and execute register as ex-cmd
+:[N]@@                    repeat @: or @a
+
+:arga files               add files to arglist eg :arga *.c; :arga **/*.c
+:argd files               delete files from arglist
+:argdo cmd                execute ex-cmd on arglist
+:args [files]             print arglist [or define it]
+
+:bad f                    add file to buflist
+:[r]bd                    delete files in range from buflist
+:bufdo cmd                execute ex-cmd on buflist
+:buffers                  print buflist (or use :ls)
+
+:cd d                     change dir
+:changes                  print changelist
+:checkpath                print included files not found in path
+:color                    print colorscheme
+:com                      print user-defined ex-cmds
+:copen                    open quickfix window
+
+:diffs [f]                diff split file
+
+:e f                      edit file eg :e %%
+
+:filetype                 print filetype status
+
+:g/re/cmd                 execute ex-cmd in %
+:g/re/norm cmd            execute normal mode cmd in %
+:g/re/norm @a             execute normal mode macro in %
+:grep re files            eg :grep re %
+
+:h                        help
+:hi                       print highlight groups
+:his                      print cmd history
+
+:jumps                    print jumplist
+
+:let                      print variable names and values
+
+:lopen                    open location-list window (syntastic)
+

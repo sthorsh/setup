@@ -1,0 +1,15 @@
+SØK
+
+shift-shift          ctrl-e mfl
+
+ctrl-e...            søk nylig fil
+ctrl-shift-e...      søk nylig endret fil
+
+ctrl-n               søk klasse
+ctrl-shift-n         søk fil
+ctrl-alt-shift-n     søk symbol
+
+ctrl-alt-7           finn bruk
+ctrl-shift-f         finn forrige|alt-↓|ny|valgt str
+alt-eft              finn struktur
+

@@ -1,0 +1,40 @@
+[/             /* backward
+]/             */ forward
+
+[#             #if, #ifdef, #elif, #else backward (C)
+]#             #elif, #else, #endif forward
+	       
+[(             ( backward
+])             ) forward
+	      
+[[             { in col 1 backward   
+[]             } in col 1 backward
+]]             { in col 1 forward
+][             } in col 1 forward
+	     
+[{             { backward
+]}             } forward
+	    
+[c             diff forward
+]c             diff backward
+	   
+[s             spell error backward
+]s             spell error forward
+	  
+[z             beginning of fold backward
+]z             end of fold forward
+
+[d             start from line 1, print 1st def (C)
+[D             start from line 1, print all defs
+[Ctrl-d        start from line 1, 1st def forward
+]d             start from line ., print 1st def 
+]D             start from line ., print all defs 
+]Ctrl-d        start from line ., 1st def forward
+
+[i             start from line 1, print 1st string (C)
+[I             start from line 1, print all strings
+[Ctrl-i        start from line 1, 1st string forward
+]i             start from line ., print 1st string 
+]I             start from line ., print all strings 
+]Ctrl-i        start from line ., 1st string forward
+

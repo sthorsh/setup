@@ -1,0 +1,55 @@
+OSGi arkitektur
+- Komponenter
+- Tjenester: SOA i en VM
+- Livssyklus: remote mgmt ops
+- Moduler: pakking og deling av kode
+
+OSGi frameworks
+- Apache Felix
+- Eclipse Equinox
+- Knopflerfish
+
+Komponenter
+- Handler om: komponent-basert utvikling, referanser, tjenester mmm
+
+Service layer
+- Handler om: interaksjon og kommunikasjon mellom moduler
+
+Tjenester
+- SOA i en VM
+- Klart skille mellom interface og implementasjon
+
+Lifecycle layer
+- Handler om: execution-time module mgmt (operasjoner)
+- Handler om: aksess til det underliggende OSGi-rammeverket (API)
+- Definerer bundle lifecycle operations (remote mgmt)
+- Definerer bundles aksess til egen execution context (self mgmt)
+
+Modularitet
+- Dele opp koden i logiske biter (partisjon)
+- Hver bit representerer et seperate concern
+- Moduler captures et programs logiske struktur
+- Hver bit er selvstendig (pakking og utrulling)
+- Bitene er avhengige av hverandre (samarbeider)
+- Eksplisitt management av avhengighter (wiring)
+- Hver bit skjuler implementasjon (enkapsulering)
+- Modul != pakke: partisjonering men !enkapsulering
+- Modul != klasse: enkapsulering, men for finkornet
+
+Modullaget
+- Hander om: pakking (per-bundle JAR) og deling av kode
+- Bundle = JAR-fil + metadata (exports/imports mm)
+- En bundle deklarerer eksplisitt hvilke pakker den eksporterer (API)
+- En bundle deklarerer eksplisitt hvilke pakker den importerer (avhengigheter)
+- Modullaget handler om pakking av kode i JAR + metadata (mindre om koding) 
+
+--- YOUTUBE ----------
+Hvorfor OSGi (Lipsky)?
+- Eksplisitt management av avhengigheter
+- Enkapsulering
+- Versjonering
+- Lazy initialisering av moduler
+- Dynamisk oppdatering av moduler (ingen nedetid)
+
+...
+

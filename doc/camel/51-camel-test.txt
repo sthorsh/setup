@@ -1,0 +1,51 @@
+Arv
+• CamelTestSupport
+
+Felt
+• producer for direct:input
+• mockOutput for mock:output
+• mockError for mock:error
+• mockXxx for mock:xxx
+• mockDirectXxx for mock:direct:xxx
+• easyMock deklarer
+
+setUp()
+• super.setUp()
+• mock*.when|
+• easyMock record
+• context.start() (kun hvis isUseAdviceWith())
+
+postProcessTest()
+• super.postProcessTest()                                   
+• context.addReg|(new IS|("direct:xxx", true))
+
+createRouteBuilder()
+• nytt subject
+• returner subject
+• sett uri direct:input
+• sett uri mock:output 
+• sett uri mock:error
+• sett uri mock:xxx
+• easyMock instansier & injiser
+• sett ref til stub
+
+isUseAdviceWith()
+• return true
+
+@Test
+• Given
+  • context.get|.adviceWith(|): RouteDefinition
+  • replay(easyMock)
+• When
+  • producer.send|
+  • T reply = producer.request|
+• Then
+  • assert|
+  • mock*.getExchanges().|
+  • mock*.expected|
+  • mock*.expects|
+  • mock*.message(n).|
+  • mock*.allMessages().|
+  • assertMockEndpointsSatisfied();
+  • verify(easyMock)
+

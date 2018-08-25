@@ -1,0 +1,43 @@
+@Produce
+- uri(): String
+
+ProducerTemplate
+- send|(): void|Object|Exchange 
+- request|(): T|Object|Exchange
+- async|(): Future<T|Object|Exchange> 
+
+@EndpointInject
+- uri(): String
+
+MockEndpoint
+- when|(): void
+- getExchanges(): List<Exchange>
+- expected|(): void|AssertionClause
+- expects|(): void|AssertionClause
+- message(int): AssertionClause
+- allMessages(): AssertionClause 
+- assert|(): void|Exchange
+
+TestSupport 
+· log.trace|debug|info|warn|error(String): void
+- createDirectory(String): void
+- deleteDirectory(String): void
+- assert|()): void|Collection<T> 
+
+CamelTestSupport
+· context: CamelContext
+· template: ProducerTemplate
+- setUp(): void
+- postProcessTest(): void
+- createRouteBuilder(): RouteBuilder
+- isUseAdviceWith(): boolean
+- sendBody(String, Object): void
+- assertMockEndpointsSatisfied(): void
+
+CamelBlueprintTestSupport
+- setConfigAdminInitialConfiguration(Properties): String
+- getBlueprintDescriptor(): String
+- getBundleFilter(): String
+- useOverridePropertiesWithConfigAdmin(): String
+- addServicesOnStartup(Map<String, KeyValueHolder<Object, Dictionary>>): void
+

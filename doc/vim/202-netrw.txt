@@ -1,0 +1,5 @@
+Ex
+:Exp        explore directory of current file
+:H          explore directory of current file (horizontal split)
+:Ve         explore directory of current file (vertical split)
+

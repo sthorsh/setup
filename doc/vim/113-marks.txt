@@ -1,0 +1,7 @@
+Mark
+a-z         mark a-z (local)
+A-Z         mark A-Z (global)
+0-9         mark of cursor position on Nth last Vim exit
+"           mark of cursor position on last buffer exit
+[ ]         mark of cursor position on last yank
+

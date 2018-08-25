@@ -1,0 +1,33 @@
+Modul
+- Implementasjon
+- Public API (evt)
+- Avhengigheter (evt)
+
+Modularitet
+- Logisk modularitet: enkapsulert kode + avhengigheter
+- Fysisk modularitet: enhet for pakking og deployering
+
+Bundle
+- A physical unit of modularity¹ in the form of a JAR file² containing code,
+  resources and metadata³, where the boundary of the JAR file⁴ also serves as
+  the boundary for logical encapsulation at execution time⁵
+→ Begrepet bundle dekker både fysisk og logisk enkapsulering av klasser
+
+Metadata: META-INF/MANIFEST.MF
+- Headere for identifikasjon
+- Headere for modularisering
+- Headere for human-readable informasjon
+
+Identifikasjon (statisk)
+- Bundle-SymbolicName: com.acme.aib.fbc-core-jms
+- Bundle-Version: Major.minor.micro|patch.qualifier (www.semver.org)
+
+Modularitet
+- Bundle-Classpath: .
+- Export-Package: com.acme.aib.svc.dwh; version="1.2.3", ...
+- Export-Package: com.acme.aib.svc.dwh; version="1.2.3"; uses:="javax.servlet"
+- Import-Package: com.acme.aib.api.dwh; version="[1,2.0)", ...
+
+Byggesystem
+- maven-bundle-plugin (bnd)
+

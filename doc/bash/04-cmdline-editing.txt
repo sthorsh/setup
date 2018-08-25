@@ -1,0 +1,59 @@
+ctrl-l                      clear-screen
+alt-N                       digit-arg
+
+ctrl-b                      backward-char
+ctrl-f                      forward-char
+alt-b                       backward-char
+alt-f                       forward-word
+ctrl-a                      beginning-of-line
+ctrl-e                      end-of-line
+ctrl-]                      character-search
+ctrl-alt-]                  character-search-backward
+
+ctrl-v                      quoted-insert (verbatim)
+alt-c                       capitalize-word
+alt-l                       lowercase-word
+alt-u                       uppercase-word
+ctrl-t                      transpose-chars
+alt-t                       transpose-words
+
+ctrl-h | bs                 backward-delete-char
+ctrl-d                      delete-char
+ctrl-w                      unix-word-rubout (cp)
+ctrl-q                      unix-filename-rubout (cp)
+alt-d                       kill-word (cp)
+ctrl-u                      unix-line-discard (cp)
+ctrl-k                      kill-line (cp)
+ctrl-y [alt-y]              yank [yank-pop]
+
+ctrl-r [ctrl-rghjm]         reverse-search-history
+ctrl-p                      previous-line
+ctrl-n                      next-line
+ctrl-o                      operate-and-get-next
+alt-...                     insert-last-arg
+alt-N-...                   insert-nth-arg
+!*␣                         magic-space: expand args
+!N␣                         magic-space: expand nth cmd
+^x^y␣                       magic-space: expand previous line, 1st x→y
+
+tab [tab]                   menu-complete: $ ~ @ cmd /
+alt-*                       insert-completions: $ ~ @ cmd /
+alt-{                       complete-into-braces: filenames
+ctrl-alt-i [ctrl-alt-i]     dynamic-complete-history: strings
+alt-g                       glob-complete-word: * ?
+
+ctrl-alt-e                  shell-expand-line: var, alias, ~
+ctrl-x *                    glob-expand-word: * ?
+
+ctrl-x ctrl-u               undo
+alt-r                       revert-line
+
+ctrl-j | lf                 accept-line (nix eol)
+ctrl-m | cr                 accept-line (mac eol)
+return | crlf               accept-line (win eol)
+
+ctrl-x (                    start-kbd-macro
+ctrl-x )                    end-kbd-macro
+ctrl-x e                    call-last-kbd-macro
+ctrl-x ctrl-e               edit-and-execute-command
+

@@ -1,0 +1,42 @@
+ctrl-w s                :split
+ctrl-w v                :vertical split
+ctrl-w es               :split | :e#N
+ctrl-w ev               :vertical split | :e#N
+ctrl-w ns               :new
+ctrl-w nv               :vertical new
+
+ctrl-w }                :pta t
+ctrl-w g-}              :ptj t
+ctrl-w ]                :sta t   
+ctrl-w g-ctrl-]         :stj t
+ctrl-w g-]              :sts t
+
+ctrl-w d                split definition-search
+ctrl-w i                split include-search
+ctrl-w f                split goto file
+
+ctrl-w x                exchange
+
+ctrl-w h                move left
+ctrl-w j                move down
+ctrl-w k                move up
+ctrl-w l                move right
+ctrl-w P                move to preview window
+ctrl-w p                move to previous window
+ctrl-w W                move up or left
+ctrl-w w                move down or right
+
+ctrl-w =                equalize
+ctrl-w _                h=N
+ctrl-w +                h++
+ctrl-w -                h--
+ctrl-w |                w=N
+ctrl-w <                w--
+ctrl-w >                w++
+
+ctrl-w c                :close
+ctrl-w o                close other windows
+ctrl-w z                close preview window
+
+ctrl-w q                :quit
+             

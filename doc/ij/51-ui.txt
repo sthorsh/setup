@@ -1,0 +1,20 @@
+UI
+
+ctrl-↑↓           scroll opp|ned
+ctrl-m            scroll til midten
+
+alt-|             splitt editor
+alt--             splitt editor
+alt-,             til neste splitt
+alt-.             unsplit
+
+alt-0-9           vinduer
+alt-f12           terminal
+
+shift-escape      skjul aktivt vindu
+ctrl-shift-f12    skjul i.e toggle vinduer
+
+ctrl-f4           lukk tab|editor|vindu
+ctrl-shift-o      lukk andre tabs
+ctrl-shift-f4     lukk aktivt vindu fra editor
+

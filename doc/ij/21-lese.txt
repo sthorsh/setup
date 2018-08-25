@@ -1,0 +1,19 @@
+LESE
+
+ctrl-d            diff node vs fil
+alt-v,m           diff node vs editor
+alt-v,b           diff clipboard vs editor
+
+ctrl-shift-i      definisjon node|id
+
+ctrl-p            params
+ctrl-shift-p      expr type
+
+alt-q             context
+ctrl-q            javadoc
+
+ctrl-alt-x,p      xpath expr
+ 
+ctrl-f1           feil|advarsel
+shift-f1          javadoc eksternt
+

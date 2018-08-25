@@ -1,0 +1,9 @@
+Normal
+,t                                 tabularize on first comma
+
+Ex
+:Tab /re/[lcr]N[lcr]N[lcr]N        tabularize
+:Tab                               reuse pattern
+:AddTabularPattern tp              add tabular pattern
+:Tab tp                            use tabular pattern
+

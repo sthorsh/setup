@@ -1,0 +1,47 @@
+Exchange
+- EXCEPTION_CAUGHT: String = "CamelExceptionCaught"
+- FILE_NAME: String = "CamelFileName"
+- FILE_NAME_ONLY: String = "CamelFileNameOnly"
+- REDELIVERED: String = "CamelRedelivered"
+- getContext(): CamelContext
+- getException(): Exception
+- getExchangeId(): String
+- getIn(): Message
+- getOut(): Message
+- getPattern(): ExchangePattern
+- getProperty(String, Class<T>): T
+- getProperties(): Map<String, Object> 
+- getUnitOfWork(): UnitOfWork
+- setException(Throwable): void
+- setExchangeId(String): void
+- setIn(Message): void
+- setOut(Message): void
+- setPattern(ExchangePattern): void
+- setProperty(String, Object): void
+- setUnitOfWork(UnitOfWork): void
+- ...
+
+DefaultExchange
+- setProperties(Map<String, Object>): void
+- ...
+
+Message
+- getAttachment(String): DataHandler
+- getAttachments(): Map<String, DataHandler>
+- getBody(Class<T>): T
+- getExchange(): Exchange
+- getHeader(String, Class<T>): T
+- getHeaders(): Map<String, Object>
+- getMessageId(): String
+- isFault(): boolean
+- setAttachments(Map<String, DataHandler>): void
+- setBody(Object): void
+- setFault(boolean): void
+- setHeader(String, Object): void
+- setHeaders(Map<String, Object>): void
+- setMessageId(String): void
+- ...
+
+DefaultMessage
+- ...
+

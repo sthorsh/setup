@@ -1,0 +1,54 @@
+Component
+- createEndpoint(String): Endpoint
+- useRawUri(): boolean
+↑ getCamelContext(): CamelContext
+
+DefaultComponent
+- ...
+
+Endpoint
+- createConsumer(Processor): Consumer
+- createPollingConsumer(): PollingConsumer
+- createProducer(): Producer
+- createExchange(): Exchange
+- createExchange(ExchangePattern): Exchange
+- getCamelContext(): CamelContext
+- getEndpointUri(): String
+↑ isSingleton(): boolean
+↑ start(): void
+↑ stop(): void
+
+DefaultEndpoint
+- ...
+
+Consumer
+↑ getEndpoint(): Endpoint
+↑ start(): void
+↑ stop(): void
+
+DefaultConsumer
+- ...
+
+Producer
+↑ process(Exchange): void (entrypunkt)
+↑ isSingleton(): boolean
+↑ getEndpoint(): Endpoint
+↑ start(): void
+↑ stop(): void
+
+DefaultProducer
+- ...
+
+ProducerTemplate
+- sendBody(String, Object): void
+- sendBodyAndHeader(String, Object, String, Object): void
+- sendBodyAndProperty(String, Object, String, Object): void
+- requestBody(String, Object): Object
+- requestBodyAndHeader(String, Object, String, Object): Object
+- asyncSendBody(String, Object): CompletableFuture<Object>
+- asyncRequestBody(String, Object): CompletableFuture<Object>
+- ...
+ 
+DefaultProducerTemplate
+- ...
+

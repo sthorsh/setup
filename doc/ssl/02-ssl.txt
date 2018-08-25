@@ -1,0 +1,88 @@
+TLS/SSL
+- TLS 1.3: 2017, working draft
+- TLS 1.2: 2008, RFC 5246
+- TLS 1.1: 2006
+- TLS 1.0: 1999
+- SSL 3.0: 1996
+- SSL 2.0: 1995
+- SSL 1.0: n/a
+
+Mål
+- Sikkerhet: autentisering, konfidensialitet, integritet
+- Interoperabilitet
+- Utvidbarhet
+- Effektivitet
+
+Lag
+- Handshake protocol
+- Record protocol: symmetrisk kryptografi, keyed MAC
+
+Handshake
+- ClientHello
+    ∙ version: TLSv1.2
+    ∙ client_random: 23:48:...:4b:93 (cr)
+    ∙ session_id
+    ∙ cipher_suites: ecdhe-rsa-aes256-gcm-sha384 ...
+    ∙ compression_methods: null ...
+    ∙ extensions
+- ServerHello
+    ∙ version: TLSv1.2
+    ∙ server_random: 0e:b3:...:77:11 (sr)
+    ∙ session_id: 32:e8...a0:7f 
+    ∙ cipher_suite: ecdhe-rsa-aes256-gcm-sha384
+    ∙ compression_method: null
+    ∙ extensions
+- Certificate
+    ∙ certificate_list: X509 certificate chaini in ASN.1 DER encoding
+- ServerKeyExchange (ecdhe)
+    ∙ dh_g: 5
+    ∙ dh_p: 23
+    ∙ dh_Ys: 5³ % 23 = 10
+    ∙ params_signature
+    → premaster secret ps = 4³ % 23 = 18
+    → master secret s = PRF(ps, "master secret", cr+sr)
+    → key block kb = PRF(s, "key expansion", cr+sr)
+    → Genererer max 2 krypteringsnøkler, 2 IVs, 2 MAC-nøkler
+- CertificateRequest
+    ∙ certificate_types: rsa_sign ...
+    ∙ supported_signature_algorithms: rsa_sha256 ...
+    ∙ certificate_authorities
+- ServerHelloDone
+- Certificate
+    ∙ certificate_list: X509 certificate chain in ASN.1 DER encoding
+- ClientKeyExchange (ecdhe)
+    ∙ dh_Yc: 5⁴ % 23 = 4
+    → premaster secret ps = 10⁴ % 23 = 18
+    → master secret s = PRF(ps, "master secret", cr+sr)
+    → key block kb = PRF(s, "key expansion", cr+sr)
+    → Genererer max 2 krypteringsnøkler, 2 IVs, 2 MAC-nøkler
+---------------------------------------------------------------------------
+CertificateVerify
+□ Klient sender signatur for melding 1-8 til server
+
+ChangeCipherSpec
+□ Kryptering enabled: sender 1 til server
+
+Finished
+□ PRF(s₁, "client finished", hash(handshake)) (12 bytes)
+
+ChangeCipherSpec
+□ Kryptering enabled: sender 1 til klient
+
+Finished
+□ PRF(s₁, "server finished", hash(handshake)) (12 bytes)
+
+Dataoverføring m/CBC
+□ Beregn MAC av TLS sekvensnummer, TLS header og plaintext
+□ Legg til padding
+□ Generer initialiseringsvektor IV
+□ Vha CBC krypter plaintext, MAC og padding
+□ Send TLS header, IV og ciphertext
+
+Shutdown
+□ Klient sender close_notify alert
+
+Shutdown
+□ Server sender close_notify alert
+
+
