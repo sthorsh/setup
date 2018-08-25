@@ -77,25 +77,24 @@ export JAVA_HOME=/usr/lib/jvm/java
 add_to_path ${JAVA_HOME}/bin/
 export MAVEN_HOME=/usr/lib/apache-maven
 add_to_path ${MAVEN_HOME}/bin/
-add_to_path /opt/gradle/bin
 # command line fuzzy finder fzf
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 
 # aliases
 alias grep='grep --color=auto'
 alias gtf='cd /usr/lib/jboss-fuse/'
+alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
 alias l='ls -lF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
 alias ls='ls --color=auto --group-directories-first'
-alias path='echo -e ${PATH//:/"\n"}' 
-alias ps='ps -ef'
-alias x='exit'
 alias mci='mvn clean install'
 alias mcifc='mvn clean install -Pfindbugs,checkstyle'
 alias mcist='mvn clean install -Dmaven.test.skip=true'
-alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
+alias p='echo -e ${PATH//:/"\n"}' 
+alias ps='ps -ef'
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
 alias squirrel='~/Install/squirrel-sql-3.8.1/squirrel-sql.sh 2>&1 &'
+alias x='exit'
  
 # remove binding to stty stop
 bind -r '\C-s'
