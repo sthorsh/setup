@@ -96,5 +96,5 @@ fi
 echo "all done..."
 
 # Clean up favorites
-# terminal, chromium, files, settings, ...
+# terminal, chrome, firefox, files, settings, ...
 
