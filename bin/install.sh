@@ -58,6 +58,10 @@ sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
 # sudo apt-get update
 sudo apt-get -u dselect-upgrade
 
+# Install google chrome
+echo "installing chrome..."
+sudo apt install -y chromium-browser
+  
 # # Install Java
 echo "installing java..."
 if command -v java > /dev/null 2>&1
@@ -91,7 +95,7 @@ else
   sudo tar -xf install/ideaIC-2018.2.2-no-jdk.tar.gz -C /usr/lib
   sudo ln -sf /usr/lib/idea-IC-182.4129.33/ /usr/lib/idea-IC
 fi
-  
+
 # All done
 echo "all done..."
 
@@ -99,5 +103,5 @@ echo "all done..."
 # terminal, chrome, firefox, files, settings, ...
 
 # Set background
-# Settings -> background
+# ubuntu-logo.jpg
 
