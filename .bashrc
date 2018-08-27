@@ -81,6 +81,7 @@ add_to_path ${MAVEN_HOME}/bin/
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 
 # aliases
+alias gradle="/opt/gradle/bin/gradle"
 alias grep='grep --color=auto'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
@@ -94,6 +95,7 @@ alias p='echo -e ${PATH//:/"\n"}'
 alias ps='ps -ef'
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
 alias squirrel='~/Install/squirrel-sql-3.8.1/squirrel-sql.sh 2>&1 &'
+alias squirrel='/opt/squirrel-sql/squirrel-sql.sh 2>&1 &'
 alias x='exit'
  
 # remove binding to stty stop
