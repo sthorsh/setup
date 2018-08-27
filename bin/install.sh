@@ -60,7 +60,7 @@ sudo apt-get -u dselect-upgrade
 
 # Install google chrome
 echo "installing chrome..."
-sudo apt install -y chromium-browser
+sudo apt-get install -y chromium-browser
   
 # # Install Java
 echo "installing java..."
@@ -69,8 +69,8 @@ then
   echo "java already installed, skipping..."
 else
   sudo add-apt-repository ppa:webupd8team/java
-  sudo apt update
-  sudo apt install -y oracle-java8-set-default
+  sudo apt-get update
+  sudo apt-get install -y oracle-java8-set-default
   sudo ln -sf /usr/lib/jvm/java-8-oracle/ /usr/lib/jvm/java
 fi
     

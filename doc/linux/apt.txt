@@ -1,13 +1,13 @@
 apt
-- apt autoremove    remove unwanted pkgs      apt-get autoremove	
+- apt autoremove    remove unwanted pkgs      apt-get autoremove        
 - apt edit-sources  edit sources list         -                     
-- apt full-upgrade  upgrade pkgs              apt-get dist-upgrade	
-- apt install	    install pkg               apt-get install	
-- apt list	    list pkgs                 -                     
-- apt purge	    remove pkg + config       apt-get purge	        
-- apt remove	    remove pkg                apt-get remove	
-- apt search	    search for program        apt-cache search	
-- apt show	    show pkg details          apt-cache show	
-- apt update	    refresh repo index        apt-get update	
-- apt upgrade	    upgrade upgradable pkgs   apt-get upgrade	
+- apt full-upgrade  upgrade pkgs              apt-get dist-upgrade      
+- apt install       install pkg               apt-get install   
+- apt list          list pkgs                 -                     
+- apt purge         remove pkg + config       apt-get purge             
+- apt remove        remove pkg                apt-get remove    
+- apt search        search for program        apt-cache search  
+- apt show          show pkg details          apt-cache show    
+- apt update        refresh repo index        apt-get update    
+- apt upgrade       upgrade upgradable pkgs   apt-get upgrade   
 
