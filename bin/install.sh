@@ -10,7 +10,7 @@
 # git config --global user.email sthorsh@gmail.com
 # git init
 # git remote add origin https://github.com/sthorsh/setup.git
-# rm ~/.bashrc
+# cp ~/.bashrc ~/.bashrc.ubuntu
 # git pull --rebase origin master
 
 # Install vim
