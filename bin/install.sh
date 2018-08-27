@@ -1,3 +1,6 @@
+# Patch Ubuntu
+# Use software updater
+
 # If alt-left|right switches tty
 # sudo reboot
 
@@ -10,7 +13,7 @@
 # git config --global user.email sthorsh@gmail.com
 # git init
 # git remote add origin https://github.com/sthorsh/setup.git
-# cp ~/.bashrc ~/.bashrc.ubuntu
+# mv ~/.bashrc ~/.bashrc.ubuntu
 # git pull --rebase origin master
 
 # Install vim
@@ -102,5 +105,5 @@ echo "all done..."
 # ubuntu-logo.jpg
 
 # Clean up favorites
-# terminal, chrome, firefox, slack, files, filezilla, screenshot, settings
+# terminal, chrome, firefox, slack, files, filezilla, screenshot, settings, software updater
 
