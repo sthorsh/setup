@@ -51,11 +51,10 @@ if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
   
 # Install Ubuntu packages: https://www.linuxquestions.org/questions/linux-software-2/dpkg-set-selections-fails-to-find-hundreds-of-packages-4175617954/
 echo "installing packages..."
-# sudo apt-get update
+sudo apt-get update
 sudo apt-get install -y dselect
 sudo dselect update
 sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
-# sudo apt-get update
 sudo apt-get -u dselect-upgrade
 
 # Install google chrome
@@ -99,9 +98,9 @@ fi
 # All done
 echo "all done..."
 
-# Clean up favorites
-# terminal, chrome, firefox, slack, files, filezilla, screenshot, settings
-
 # Set background
 # ubuntu-logo.jpg
+
+# Clean up favorites
+# terminal, chrome, firefox, slack, files, filezilla, screenshot, settings
 
