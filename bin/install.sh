@@ -98,3 +98,6 @@ echo "all done..."
 # Clean up favorites
 # terminal, chrome, firefox, files, settings, ...
 
+# Set background
+# Settings -> background
+
