@@ -1,28 +1,25 @@
-# If alt-left|right switches tty
-# sudo reboot
-
-# Remap capslock to ctrl
-# gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-
-# Install and pull from Git
-# sudo apt-get install -y git
-# git config --global user.name svein
-# git config --global user.email sthorsh@gmail.com
-# git init
-# git remote add origin https://github.com/sthorsh/setup.git
-# mv ~/.bashrc ~/.bashrc-ubuntu
-# git pull --rebase origin master
-
-# Install vim
-# sudo apt-get install -y vim
-# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-# Launch vim and run :PluginInstall
-  
 # Download intellij
 # ideaIC-2018.2.2-no-jdk.tar.gz from jetbrains.com
 
-# Disable gnome settings
-echo "disabling settings..."
+# Backup bash config
+mv ~/.bashrc ~/.bashrc-ubuntu
+
+# Install and pull from Git
+sudo apt-get install -y git
+git config --global user.name svein
+git config --global user.email sthorsh@gmail.com
+git init
+git remote add origin https://github.com/sthorsh/setup.git
+git pull --rebase origin master
+
+# Install vim
+sudo apt-get install -y vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  
+# Edit gnome settings
+echo "editing gnome settings..."
+# Remap capslock to ctrl
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
 # Disable alt-pipe
 gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']" 
 # Disable ctrl-alt-shift arrow
@@ -106,4 +103,10 @@ echo "all done..."
 
 # Patch packages
 # Use software updater
+
+# Configure vim
+# Launch and run :PluginInstall
+
+# If alt-left|right switches tty
+# sudo reboot
 
