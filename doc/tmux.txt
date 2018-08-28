@@ -4,17 +4,11 @@ c                 create window
 ,                 rename window
 ctrl-0..9         move to window
 
+ctrl-a q                      display pane number
+ctrl-a x                      exit pane
+ctrl-a space                  cycle through default pane layouts
+
 ---------------------------------------------------------------------
-
-  ctrl-a %                      new pane
-  ctrl-a "                      new pane
-  ctrl-a o                      cycle through panes
-  ctrl-a ←↓↑→                   move to pane
-  ctrl-a 1-5                    default pane layout 1-5
-  ctrl-a space                  cycle through default pane layouts
-  ctrl-a q                      display pane number
-  ctrl-a x                      exit pane
-
   ctrl-a :                      cmd mode
 
   ctrl-a Esc                    vi-mode
