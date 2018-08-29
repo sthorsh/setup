@@ -1,45 +1,96 @@
+DEFAULT MODE
+
 c                 create window
 ,                 rename window
 1..9              goto window
-
 q 1..9            goto pane
+{}                swap panes
 x                 exit pane
 
----------------------------------------------------------------------
-  ctrl-a :                      cmd mode
-
-  ctrl-a Esc                    vi-mode
-  ctrl-yubedf                   scroll 
-  hjkl wW fFnN etc              move  
-  ?/nN                          search
-  vV | Esc                      select | clear select
-  y                             copy to tmux&system buffer
-  dD                            delete
   p | ctrl[-shift]-v            paste from tmux|system buffer
-  q                             quit vi-mode
-   
   ctrl-a s                      list sessions
   ctrl-a (                      to previous session
   ctrl-a )                      to next session
   ctrl-a d                      detach from session
-
   ctrl-a z                      toggle «full screen»
+  :                             cmd mode
 
-  ----------------------------
-  tmux                          start
-  tmux new -s test [-d]         start new named session [detached]
-  tmux attach -t test           attach to session
-  tmux kill-session -t test     kill session
-  tmux ls                       list sessions
-  tmux new -n vindu
-  exit                          exit session | window | pane
+---------------------------------------------------------------------
+COPY-MODE-VI
+  -            append-selection                     
+  - A          append-selection-and-cancel          
+  - ^          back-to-indentation                  
+  - Space      begin-selection                      
+  - L          bottom-line                          
+  - q          cancel                               
+  - Escape     clear-selection                      
+  - D          copy-end-of-line                     
+  -            copy-line                            
+  -            copy-pipe <command>                  
+  -            copy-pipe-and-cancel <command>       
+  -            copy-selection                       
+  - Enter      copy-selection-and-cancel            
+  - j          cursor-down                          
+  - h          cursor-left                          
+  - l          cursor-right                         
+  - k          cursor-up                            
+  - $          end-of-line                          
+  - :          goto-line <line>                     
+  - C-d        halfpage-down                        
+  - C-u        halfpage-up                          
+  - G          history-bottom                       
+  - g          history-top                          
+  - ;          jump-again                           
+  - F          jump-backward <to>                   
+  - f          jump-forward <to>                    
+  - ,          jump-reverse                         
+  - T          jump-to-backward <to>                
+  - t          jump-to-forward <to>                 
+  - M          middle-line                          
+  - }          next-paragraph                       
+  - W          next-space                           
+  - E          next-space-end                       
+  - w          next-word                            
+  - e          next-word-end                        
+  - o          other-end                            
+  - C-f        page-down                            
+  - C-b        page-up                              
+  - {          previous-paragraph                   
+  - B          previous-space                       
+  - b          previous-word                        
+  - v          rectangle-toggle                     
+  - C-e        scroll-down                          
+  - C-y        scroll-up                            
+  - n          search-again                         
+  - ?          search-backward <for>                
+  - /          search-forward <for>                 
+  -            search-backward-incremental <for>    
+  -            search-forward-incremental <for>     
+  - N          search-reverse                       
+  - V          select-line                          
+  - 0          start-of-line                        
+  -            stop-selection                       
+  - H          top-line                             
 
-  ----------------------------
+---------------------------------------------------------------------
+tmux.conf
+---------------------------------------------------------------------
+tmux.boot.conf
+---------------------------------------------------------------------
+commands
   :new-window -n test           
   :source-file ~/.tmux.conf 
-
   :capture-pane
   :list-buffers
   :choose-buffer
   :show-buffer
   :save-buffer fil
+---------------------------------------------------------------------
+tmux
+  $ tmux                          start
+  $ tmux new -s test [-d]         start new named session [detached]
+  $ tmux attach -t test           attach to session
+  $ tmux kill-session -t test     kill session
+  $ tmux ls                       list sessions
+  $ tmux new -n vindu
+
