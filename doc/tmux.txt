@@ -1,12 +1,9 @@
-ctrl-a            prefix       
-
 c                 create window
 ,                 rename window
-ctrl-0..9         move to window
+1..9              goto window
 
-ctrl-a q                      display pane number
-ctrl-a x                      exit pane
-ctrl-a space                  cycle through default pane layouts
+q 1..9            goto pane
+x                 exit pane
 
 ---------------------------------------------------------------------
   ctrl-a :                      cmd mode
