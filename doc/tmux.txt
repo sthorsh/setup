@@ -1,90 +1,95 @@
-DEFAULT MODE
-
-c                 create window
-,                 rename window
-1..9              goto window
-q 1..9            goto pane
-{}                swap panes
-x                 exit pane
-
-  p | ctrl[-shift]-v            paste from tmux|system buffer
-  ctrl-a s                      list sessions
-  ctrl-a (                      to previous session
-  ctrl-a )                      to next session
-  ctrl-a d                      detach from session
-  ctrl-a z                      toggle «full screen»
-  :                             cmd mode
+ctrl-a                 
+- ()                   session goto
+- s                    session list
+- d                    session detach
+- c                    window create
+- ctrl-hl              window goto
+- 1..9                 window goto
+- ctrl-shift-←→        window swap
+- |\-_                 window split
+- ,                    window rename
+- hjkl                 pane goto
+- q 1..9               pane goto
+- {}                   pane swap
+- HJKL                 pane resize
+- z                    pane toggle
+- ctrl-w               pane close
+- P                    paste tmux buffer
+- ctrl-v               paste system clipboard
+- r                    reload conf
+- alt-c                copy-mode-vi
+- :                    command-mode
 
 ---------------------------------------------------------------------
-COPY-MODE-VI
+copy-mode-vi
   -            append-selection                     
-  - A          append-selection-and-cancel          
-  - ^          back-to-indentation                  
-  - Space      begin-selection                      
-  - L          bottom-line                          
-  - q          cancel                               
-  - Escape     clear-selection                      
-  - D          copy-end-of-line                     
+
   -            copy-line                            
   -            copy-pipe <command>                  
-  -            copy-pipe-and-cancel <command>       
   -            copy-selection                       
-  - Enter      copy-selection-and-cancel            
-  - j          cursor-down                          
-  - h          cursor-left                          
-  - l          cursor-right                         
-  - k          cursor-up                            
-  - $          end-of-line                          
-  - :          goto-line <line>                     
-  - C-d        halfpage-down                        
-  - C-u        halfpage-up                          
-  - G          history-bottom                       
-  - g          history-top                          
-  - ;          jump-again                           
-  - F          jump-backward <to>                   
-  - f          jump-forward <to>                    
-  - ,          jump-reverse                         
-  - T          jump-to-backward <to>                
-  - t          jump-to-forward <to>                 
-  - M          middle-line                          
-  - }          next-paragraph                       
-  - W          next-space                           
-  - E          next-space-end                       
-  - w          next-word                            
-  - e          next-word-end                        
-  - o          other-end                            
-  - C-f        page-down                            
-  - C-b        page-up                              
-  - {          previous-paragraph                   
-  - B          previous-space                       
-  - b          previous-word                        
-  - v          rectangle-toggle                     
-  - C-e        scroll-down                          
-  - C-y        scroll-up                            
-  - n          search-again                         
-  - ?          search-backward <for>                
-  - /          search-forward <for>                 
   -            search-backward-incremental <for>    
   -            search-forward-incremental <for>     
-  - N          search-reverse                       
-  - V          select-line                          
-  - 0          start-of-line                        
   -            stop-selection                       
+  - $          end-of-line                          
+  - ,          jump-reverse                         
+  - /          search-forward <for>                 
+  - 0          start-of-line                        
+  - :          goto-line <line>                     
+  - ;          jump-again                           
+  - ?          search-backward <for>                
+  - A          append-selection-and-cancel          
+  - B          previous-space                       
+  - C-b        page-up                              
+  - C-d        halfpage-down                        
+  - C-e        scroll-down                          
+  - C-f        page-down                            
+  - C-u        halfpage-up                          
+  - C-y        scroll-up                            
+  - D          copy-end-of-line                     
+  - E          next-space-end                       
+  - Enter      copy-selection-and-cancel            
+  - Escape     clear-selection                      
+  - F          jump-backward <to>                   
+  - G          history-bottom                       
   - H          top-line                             
-
----------------------------------------------------------------------
-tmux.conf
+  - L          bottom-line                          
+  - M          middle-line                          
+  - N          search-reverse                       
+  - Space      begin-selection                      
+  - T          jump-to-backward <to>                
+  - V          select-line                          
+  - W          next-space                           
+  - ^          back-to-indentation                  
+  - b          previous-word                        
+  - e          next-word-end                        
+  - f          jump-forward <to>                    
+  - g          history-top                          
+  - h          cursor-left                          
+  - j          cursor-down                          
+  - k          cursor-up                            
+  - l          cursor-right                         
+  - n          search-again                         
+  - o          other-end                            
+  - q          cancel                               
+  - r          rectangle-toggle 
+  - t          jump-to-forward <to>                 
+  - v          begin-selection     
+  - w          next-word                            
+  - y          copy-pipe-and-cancel <command>       
+  - {          previous-paragraph                   
+  - }          next-paragraph                       
 ---------------------------------------------------------------------
 tmux.boot.conf
 ---------------------------------------------------------------------
 commands
-  :new-window -n test           
-  :source-file ~/.tmux.conf 
-  :capture-pane
+  :list-clients
+  :list-sessions
+  :list-windows
+  :list-panes
   :list-buffers
-  :choose-buffer
-  :show-buffer
-  :save-buffer fil
+  :list-commands
+  :list-keys
+  :...
 ---------------------------------------------------------------------
 tmux
   $ tmux                          start

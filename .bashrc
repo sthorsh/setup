@@ -94,7 +94,7 @@ alias mcist='mvn clean install -Dmaven.test.skip=true'
 alias p='echo -e ${PATH//:/"\n"}' 
 alias ps='ps -ef'
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
-alias squirrel='~/Install/squirrel-sql-3.8.1/squirrel-sql.sh 2>&1 &'
+alias squirrel='~/install/squirrel-sql-3.8.1/squirrel-sql.sh 2>&1 &'
 alias squirrel='/opt/squirrel-sql/squirrel-sql.sh 2>&1 &'
 alias x='exit'
  
