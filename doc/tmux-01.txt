@@ -23,25 +23,11 @@ ctrl-a
 ---------------------------------------------------------------------
 copy-mode-vi
 ---------------------------------------------------------------------
+commands :
+---------------------------------------------------------------------
+tmux $
+---------------------------------------------------------------------
 tmux.conf
 ---------------------------------------------------------------------
 tmux.boot.conf
----------------------------------------------------------------------
-commands
-:list-clients
-:list-sessions
-:list-windows
-:list-panes
-:list-buffers
-:list-commands
-:list-keys
-:....
----------------------------------------------------------------------
-tmux
-$ tmux                          start
-$ tmux new -s test [-d]         start new named session [detached]
-$ tmux attach -t test           attach to session
-$ tmux kill-session -t test     kill session
-$ tmux ls                       list sessions
-$ tmux new -n vindu
 
