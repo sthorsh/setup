@@ -1,33 +1,35 @@
-ctrl-a                 
-- ()                   session goto
-- s                    session list
-- d                    session detach
-- c                    window create
-- ctrl-hl              window goto
-- 1..9                 window goto
-- ctrl-shift-←→        window swap
-- |\-_                 window split
-- ,                    window rename
-- hjkl                 pane goto
-- q 1..9               pane goto
-- {}                   pane swap
-- HJKL                 pane resize
-- z                    pane toggle
-- ctrl-w               pane close
-- P                    paste tmux buffer
-- ctrl-v               paste system clipboard
-- r                    reload conf
-- alt-c                copy-mode-vi
-- :                    command-mode
+prexif
+ ctrl-a
 
----------------------------------------------------------------------
-copy-mode-vi
----------------------------------------------------------------------
-commands :
----------------------------------------------------------------------
-tmux $
----------------------------------------------------------------------
-tmux.conf
----------------------------------------------------------------------
-tmux.boot.conf
+session
+ ()              goto
+ s               list
+ d               detach
+
+window
+ c               create
+ ,               rename
+ ctrl-hl         goto
+ 1..9            goto
+ ctrl-shift-←→   move
+ |\-_            split i.e create pane
+
+pane
+ hjkl            goto
+ q 1..9          goto
+ {}              swap
+ HJKL            resize
+ z               toggle full screen
+ ctrl-w          close
+
+paste
+ P               from buffer
+ ctrl-v          from clipboard
+
+reload
+ r               reload tmux.conf
+
+mode
+ alt-c           copy-mode-vi
+ :               command-mode
 

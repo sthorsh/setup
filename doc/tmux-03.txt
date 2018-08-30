@@ -1,18 +1,23 @@
 commands
-:list-clients
-:list-sessions
-:list-windows
-:list-panes
-:list-buffers
-:list-commands
-:list-keys
-:....
+ :list-clients
+ :list-sessions
+ :list-windows
+ :list-panes
+ :list-buffers
+ :list-commands
+ :list-keys 
+ ...
 
 tmux
-$ tmux                          start
-$ tmux new -s test [-d]         start new named session [detached]
-$ tmux attach -t test           attach to session
-$ tmux kill-session -t test     kill session
-$ tmux ls                       list sessions
-$ tmux new -n vindu
+ $ tmux                          start tmux
+ $ tmux new -s [foo] [-d]        start new session [named] [detached]
+ $ tmux attach -t test           attach session
+ $ tmux kill-session -t test     kill session
+ $ tmux ls                       list sessions
+ ...
+
+---------------------------------------------------------------------
+tmux.conf
+---------------------------------------------------------------------
+tmux.boot.conf
 

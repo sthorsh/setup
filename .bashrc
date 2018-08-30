@@ -126,7 +126,9 @@ xmodmap -e 'keycode 37 = NoSymbol'
 # fuzzy fnder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # mvn completion
-[ -f ~/.bashrc.mvn ] && source ~/.bashrc.mvn
+[ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
+# tmux completion
+[ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
 
 # start clipboard manager
 if ! pgrep -x "clipit" > /dev/null 
