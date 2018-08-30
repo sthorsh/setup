@@ -1,6 +1,3 @@
-# Download intellij
-# ideaIC-2018.2.2-no-jdk.tar.gz from jetbrains.com
-
 # Backup bash config
 mv ~/.bashrc ~/.bashrc-ubuntu
 
@@ -81,13 +78,13 @@ else
   sudo ln -sf /usr/lib/apache-maven-3.5.4/ /usr/lib/apache-maven
 fi
 
-# Install Intellij 
+# Install Intellij (ref: https://data.services.jetbrains.com/products/releases?code=IIC)
 echo "installing intellij..."
 if command -v /usr/lib/idea-IC/bin/idea.sh 2>&1
 then
   echo "intellij already installed, skipping..."
 else
-  mv ~/Downloads/ideaIC-2018.2.2-no-jdk.tar.gz install
+  wget --directory-prefix=install https://download.jetbrains.com/idea/ideaIC-2018.2.2-no-jdk.tar.gz
   sudo tar -xf install/ideaIC-2018.2.2-no-jdk.tar.gz -C /usr/lib
   sudo ln -sf /usr/lib/idea-IC-182.4129.33/ /usr/lib/idea-IC
 fi
