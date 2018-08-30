@@ -35,7 +35,7 @@ commands
 :list-buffers
 :list-commands
 :list-keys
-:...
+:....
 ---------------------------------------------------------------------
 tmux
 $ tmux                          start
