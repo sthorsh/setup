@@ -22,45 +22,26 @@ ctrl-a
 
 ---------------------------------------------------------------------
 copy-mode-vi
-- hjkl
-- 0^$
-- bBeEwW
-- fFtT,;
-- gG:
-- HML
-- {}
-- /?nN
-- ctrl-bdefuy
-  - A          append-selection-and-cancel          
-  - y          copy-pipe-and-cancel <command>       
-  - Enter      copy-selection-and-cancel            
-  -            stop-selection                       
-  - D          copy-end-of-line                     
-  - Escape     clear-selection                      
-  - Space      begin-selection                      
-  - V          select-line                          
-  - o          other-end                            
-  - q          cancel                               
-  - r          rectangle-toggle 
-  - v          begin-selection     
+---------------------------------------------------------------------
+tmux.conf
 ---------------------------------------------------------------------
 tmux.boot.conf
 ---------------------------------------------------------------------
 commands
-  :list-clients
-  :list-sessions
-  :list-windows
-  :list-panes
-  :list-buffers
-  :list-commands
-  :list-keys
-  :...
+:list-clients
+:list-sessions
+:list-windows
+:list-panes
+:list-buffers
+:list-commands
+:list-keys
+:...
 ---------------------------------------------------------------------
 tmux
-  $ tmux                          start
-  $ tmux new -s test [-d]         start new named session [detached]
-  $ tmux attach -t test           attach to session
-  $ tmux kill-session -t test     kill session
-  $ tmux ls                       list sessions
-  $ tmux new -n vindu
+$ tmux                          start
+$ tmux new -s test [-d]         start new named session [detached]
+$ tmux attach -t test           attach to session
+$ tmux kill-session -t test     kill session
+$ tmux ls                       list sessions
+$ tmux new -n vindu
 
