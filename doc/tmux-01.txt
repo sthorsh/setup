@@ -1,0 +1,27 @@
+new 
+ $ tmux 
+ $ tmux new -s s [-n w] [-d]
+
+list
+ $ tmux list-clients|sessions|windows|panes
+ $ tmux list-buffers|commands|keys
+
+attach
+ $ tmux attach [-t s:w.p]
+
+select
+ $ tmux select-window -t 0:1
+ $ tmux select-pane -t 0:1.1
+
+split
+ $ tmux split [-h] [-t s:w.p]
+
+send
+ $ tmux send-keys [-t s:w.p] 'echo foo' C-m
+
+kill
+ $ tmux kill-session -t s
+ $ tmux kill-window -t s:w
+ $ tmux kill-pane -t s:w.p
+ $ tmux kill-server
+
