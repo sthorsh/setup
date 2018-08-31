@@ -1,0 +1,15 @@
+commands
+ :list-clients
+ :list-sessions
+ :list-windows
+ :list-panes
+ :list-buffers
+ :list-commands
+ :list-keys 
+ ...
+
+---------------------------------------------------------------------
+tmux.conf
+---------------------------------------------------------------------
+tmux.boot.conf
+
