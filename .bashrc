@@ -81,6 +81,7 @@ add_to_path ${MAVEN_HOME}/bin/
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 
 # aliases
+alias bang="~/bin/tmux_bang.sh"
 alias gradle="/opt/gradle/bin/gradle"
 alias grep='grep --color=auto'
 alias gtf='cd /usr/lib/jboss-fuse/'
@@ -117,9 +118,9 @@ stty -ixon
 stty -ixoff
 
 # remap capslock to ctrl
-setxkbmap -option ctrl:nocaps
+#setxkbmap -option ctrl:nocaps
 # disable ctrl
-xmodmap -e 'keycode 37 = NoSymbol'
+#xmodmap -e 'keycode 37 = NoSymbol'
 
 # autojump
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
@@ -129,16 +130,4 @@ xmodmap -e 'keycode 37 = NoSymbol'
 [ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
 # tmux completion
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
-
-# start clipboard manager
-if ! pgrep -x "clipit" > /dev/null 
-then 
-  clipit & 
-fi
-
-# start terminal drop-down
-if ! pgrep -x "guake" > /dev/null 2>&1
-then 
-  guake > /dev/null 2>&1 &
-fi
 

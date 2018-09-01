@@ -33,7 +33,7 @@ tmux-cmds
  :load
  :lock
  :move
- :new -s s -n w -d
+ :new-session|window ...
  :next
  :paste
  :pipe
@@ -50,7 +50,7 @@ tmux-cmds
  :set
  :show
  :source
- :split -h -t s:w.p
+ :split-window -h -t s:w.p
  :start
  :suspend
  :swap
