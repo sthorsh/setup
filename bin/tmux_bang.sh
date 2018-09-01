@@ -1,9 +1,10 @@
-#todo: /usr/lib -> /usr/lib/jboss/fuse
+# todo: tmux_bang.sh
+# todo: ssh keys → github
 
 tmux has-session -t s1
 if [ $? != 0 ]
 then
-  echo "creating session and 1st window..."
+  echo "creating session..."
   tmux new-session -s s1 -n home -d
   sleep 1
 
@@ -29,35 +30,59 @@ then
   sleep 1
 
   # Start apps
-  echo "starting clipit..."
-  if ! pgrep -x clipit
-    then clipit > /dev/null 2>&1 &
+  if ! pgrep -x clipit > /dev/null
+    then 
+      echo "starting clipit..."
+      clipit > /dev/null 2>&1 &
+    else echo "clipit already running..."
   fi
   sleep 1
 
-  echo "starting guake..."
-  if ! pgrep -x guake
+  if ! pgrep -x guake > /dev/null
     then 
+      echo "starting guake..."
       guake > /dev/null 2>&1 &
+    else echo "guake already running..."
   fi
   sleep 1
 
-  echo "starting chrome..."
-  if ! pgrep -x chromium-browser
+  if ! pgrep -x chromium-browse > /dev/null
     then 
+      echo "starting chrome..."
       chromium-browser > /dev/null 2>&1 &
+    else echo "chrome already running..."
   fi
 
   sleep 1
-  echo "starting firefox..."
-  if ! pgrep -x firefox
-    then
+  if ! pgrep -x firefox > /dev/null
+    then 
+      echo "starting firefox..."
       firefox > /dev/null 2>&1 &
+    else echo "firefox already running..."
   fi
+  sleep 1
+
+  if ! pgrep -x slack > /dev/null 2>&1
+    then 
+      echo "starting slack..."
+      slack > /dev/null 2>&1 &
+    else echo "slack already running..."
+  fi
+  sleep 1
+
+  if pgrep java --list-full | grep idea > /dev/null 2>&1
+    then echo "intellij already running..."
+    else 
+      echo "starting intellij..."
+      /bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &
+  fi
+
   echo "all done..."
 
 else
   echo "session s1 already exists..."
 fi
+
+# attach to session
 tmux attach -t s1:1.1
 

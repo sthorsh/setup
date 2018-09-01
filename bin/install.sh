@@ -51,11 +51,16 @@ sudo dselect update
 sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
 sudo apt-get -u dselect-upgrade
 
-# Install google chrome
+# Install chrome
 echo "installing chrome..."
 sudo apt-get install -y chromium-browser
   
-# # Install Java
+# Install slack
+wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.1-amd64.deb"
+sudo apt-get install gdebi-core -y
+sudo gdebi install/slack-desktop-3.3.1-amd64.deb
+
+# Install Java
 echo "installing java..."
 if command -v java > /dev/null 2>&1
 then
@@ -92,17 +97,20 @@ fi
 # All done
 echo "all done..."
 
-# Set background
-# ubuntu-logo.jpg
-
-# Set favourites
-# terminal, chrome, firefox, slack, files, filezilla, screenshot, settings, software updater
-
 # Patch packages
 # Use software updater
 
+# Configure git
+# Add ssh key to github
+
 # Configure vim
 # Launch and run :PluginInstall
+
+# Set background
+# ubuntu-logo.jpg
+
+# Set favorites
+# terminal, chrome, firefox, slack, files, filezilla, screenshot, settings, software-updater
 
 # If alt-left|right switches tty
 # sudo reboot
