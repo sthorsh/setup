@@ -1,4 +1,4 @@
-# todo: /usr/lib -> /usr/lib/jboss/fuse
+#todo: /usr/lib -> /usr/lib/jboss/fuse
 
 tmux has-session -t s1
 if [ $? != 0 ]
