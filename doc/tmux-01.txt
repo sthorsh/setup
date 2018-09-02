@@ -24,7 +24,7 @@ tmux-cmds
  :display
  :find
  :has
- :if
+ :if-shell -t s:w.p shell-command command [command]
  :join
  :kill-session|window|pane|server -t s:w.p
  :last

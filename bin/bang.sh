@@ -157,6 +157,14 @@ else
 fi
 sleep 1
 
+# Clone tpm from git
+if [ -d ~/.tmux/plugins/tpm ]
+then
+  echo "tmux tpm already cloned, skipping..."
+else
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # All done
 echo "all done..."
 

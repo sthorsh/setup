@@ -1,5 +1,5 @@
 prexif
- ctrl-a
+ ctrl-a          command prefix
 
 session
  ()              goto
@@ -39,5 +39,5 @@ mode
  :               command-mode
 
 bindings
- ?
+ ?               list bindings
 
