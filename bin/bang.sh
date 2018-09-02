@@ -145,7 +145,7 @@ sleep 1
 
 # Install squirrel
 echo "installing squirrel..."
-if  [ -f /usr/lib/squirrelsql/squirrel-sql.sh ]
+if [ -f /usr/lib/squirrelsql/squirrel-sql.sh ]
 then
   echo "squirrel already installed, skipping..."
 else
