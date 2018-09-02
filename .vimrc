@@ -33,6 +33,7 @@ set nocompatible
     Plugin 'MarcWeber/vim-addon-mw-utils'       "snipmate
     Plugin 'honza/vim-snippets'                 "snipmate
     Plugin 'garbas/vim-snipmate'                "snipmate
+    Plugin 'christoomey/vim-tmux-navigator'
     " Plugin 'tpope/vim-fugitive'
     " Plugin 'Valloric/YouCompleteMe'
   call vundle#end()

@@ -21,35 +21,35 @@ then
   sleep 1
 
   # 2nd window
-  echo "creating 2nd window..."
-  tmux new-window -t s1 -n fuse -c /usr/lib
-  tmux split -t s1:2.1 -c /usr/lib
-  tmux split -t s1:2.1 -h -c /usr/lib
-  tmux select-pane -t s1:2.1
-  tmux send-keys -t s1:2.1 "echo boom" C-m
-  tmux send-keys -t s1:2.1 "echo bin/fuse start" C-m
-  tmux send-keys -t s1:2.2 "echo /usr/lib/apace-activemq/bin/activemq start"
-  tmux send-keys -t s1:2.3 "echo tail -f data/log/fuse.log" C-m
-  sleep 1
+  # echo "creating 2nd window..."
+  # tmux new-window -t s1 -n fuse -c /usr/lib
+  # tmux split -t s1:2.1 -c /usr/lib
+  # tmux split -t s1:2.1 -h -c /usr/lib
+  # tmux select-pane -t s1:2.1
+  # tmux send-keys -t s1:2.1 "echo boom" C-m
+  # tmux send-keys -t s1:2.1 "echo bin/fuse start" C-m
+  # tmux send-keys -t s1:2.2 "echo /usr/lib/apace-activemq/bin/activemq start"
+  # tmux send-keys -t s1:2.3 "echo tail -f data/log/fuse.log" C-m
+  # sleep 1
 
   # 3rd window
-  echo "creating 3rd window..."
-  tmux new-window -t s1 -n stianbb # ssh stianbb
-  sleep 1
+  # echo "creating 3rd window..."
+  # tmux new-window -t s1 -n stianbb # ssh stianbb
+  # sleep 1
 
-  # 4rd window
-  echo "creating 4th window..."
-  tmux new-window -t s1 -n remote
-  sleep 1
+  # # 4rd window
+  # echo "creating 4th window..."
+  # tmux new-window -t s1 -n remote
+  # sleep 1
 
-  # 5th window
-  echo "creating 5th window..."
-  tmux new-window -t s1 -n tbd
-  sleep 1
+  # # 5th window
+  # echo "creating 5th window..."
+  # tmux new-window -t s1 -n tbd
+  # sleep 1
 
-  # Go home
-  tmux select-pane -t s1:1.1
-  sleep 1
+  # # Go home
+  # tmux select-pane -t s1:1.1
+  # sleep 1
 
   # Start apps
   if ! pgrep -x clipit > /dev/null
