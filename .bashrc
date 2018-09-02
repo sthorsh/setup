@@ -81,7 +81,6 @@ add_to_path ${MAVEN_HOME}/bin/
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 
 # aliases
-alias bang="~/bin/tmux_bang.sh"
 alias gradle="/opt/gradle/bin/gradle"
 alias grep='grep --color=auto'
 alias gtf='cd /usr/lib/jboss-fuse/'
@@ -92,6 +91,7 @@ alias ls='ls --color=auto --group-directories-first'
 alias mci='mvn clean install'
 alias mcifc='mvn clean install -Pfindbugs,checkstyle'
 alias mcist='mvn clean install -Dmaven.test.skip=true'
+alias onboot="~/bin/tmux_onboot.sh"
 alias p='echo -e ${PATH//:/"\n"}' 
 alias ps='ps -ef'
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
