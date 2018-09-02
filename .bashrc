@@ -95,8 +95,7 @@ alias onboot="~/bin/tmux_onboot.sh"
 alias p='echo -e ${PATH//:/"\n"}' 
 alias ps='ps -ef'
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
-alias squirrel='~/install/squirrel-sql-3.8.1/squirrel-sql.sh 2>&1 &'
-alias squirrel='/opt/squirrel-sql/squirrel-sql.sh 2>&1 &'
+alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
 alias x='exit'
  
 # remove binding to stty stop
@@ -130,4 +129,3 @@ stty -ixoff
 [ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
 # tmux completion
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
-

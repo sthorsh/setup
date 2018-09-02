@@ -1,21 +1,41 @@
-# Prerequisite: download sqldeveloper
-# http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
-# mv ~/Downloads/sqldeveloper-* ~/install/
+# TODOs
+# hidpi 3840x2160 resolution support for squirrel see run_scaled.sh
+# hidpi 3840x2160 resolution support for sqldeveloper
 
-# Backup bash config
-mv ~/.bashrc ~/.bashrc-ubuntu
+# Prerequisites
+# Download sqldeveloper to ~/install/
 
 # Install and pull from Git
-sudo apt-get install -y git
-git config --global user.name svein
-git config --global user.email sthorsh@gmail.com
-git init
-git remote add origin https://github.com/sthorsh/setup.git
-git pull --rebase origin master
+git --version 2>&1 >/dev/null
+if [ ! $? -eq 0 ]
+then
+  echo "installing git..."
+  sudo apt-get install -y git
+  echo "configuring git..."
+  git config --global user.name svein
+  git config --global user.email sthorsh@gmail.com
+  echo "initializing local git..."
+  git init
+  git remote add origin https://github.com/sthorsh/setup.git
+  echo "pulling from remote git..."
+  # Backup ubuntu bash config
+  mv ~/.bashrc ~/.bashrc-ubuntu
+  git pull --rebase origin master
+else
+  echo "git already installed, skipping..."
+fi
 
 # Install vim
-sudo apt-get install -y vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim --version 2>&1 >/dev/null
+if [ ! $? -eq 0 ]
+then
+  echo "installing git..."
+  sudo apt-get install -y vim
+  echo "git clone vim bundle..."
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+  echo "vim already installed, skipping..."
+fi
 
 # Edit gnome settings
 echo "editing gnome settings..."
@@ -47,7 +67,7 @@ if [ -d ~/Public ]; then rm -rf ~/Public/; fi
 if [ -d ~/Templates ]; then rm -rf ~/Templates/; fi
 if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
 
-# Install Ubuntu packages: https://www.linuxquestions.org/questions/linux-software-2/dpkg-set-selections-fails-to-find-hundreds-of-packages-4175617954/
+# Install Ubuntu packages
 echo "installing packages..."
 sudo apt-get update
 sudo apt-get install -y dselect
@@ -58,6 +78,7 @@ sudo apt-get -u dselect-upgrade
 # Install chrome
 echo "installing chrome..."
 sudo apt-get install -y chromium-browser
+sleep 1
 
 # Install slack
 echo "installing slack..."
@@ -69,6 +90,7 @@ else
   sudo apt-get install gdebi-core -y
   sudo gdebi install/slack-desktop-3.3.1-amd64.deb
 fi
+sleep 1
 
 # Install Java
 echo "installing java..."
@@ -81,8 +103,9 @@ else
   sudo apt-get install -y oracle-java8-set-default
   sudo ln -sf /usr/lib/jvm/java-8-oracle/ /usr/lib/jvm/java
 fi
+sleep 1
 
-# # Install Maven
+# Install Maven
 echo "installing maven..."
 if command -v mvn > /dev/null 2>&1
 then
@@ -92,8 +115,9 @@ else
   sudo tar -xf install/apache-maven-3.5.4-bin.tar.gz -C /usr/lib
   sudo ln -sf /usr/lib/apache-maven-3.5.4/ /usr/lib/apache-maven
 fi
+sleep 1
 
-# Install Intellij (ref: https://data.services.jetbrains.com/products/releases?code=IIC)
+# Install Intellij
 echo "installing intellij..."
 if command -v /usr/lib/idea-IC/bin/idea.sh 2>&1
 then
@@ -103,6 +127,7 @@ else
   sudo tar -xf install/ideaIC-2018.2.2-no-jdk.tar.gz -C /usr/lib
   sudo ln -sf /usr/lib/idea-IC-182.4129.33/ /usr/lib/idea-IC
 fi
+sleep 1
 
 # Install sqldeveloper
 echo "installing sqldeveloper..."
@@ -116,6 +141,21 @@ else
   fi
   sudo unzip ~/install/sqldeveloper-18.2.0.183.1748-no-jre.zip -d /usr/lib > /dev/null
 fi
+sleep 1
+
+# Install squirrel
+echo "installing squirrel..."
+if  [ -f /usr/lib/squirrelsql/squirrel-sql.sh ]
+then
+  echo "squirrel already installed, skipping..."
+else
+  sudo rm -rf /usr/lib/squirrelsql*
+  wget --directory-prefix=install https://sourceforge.net/projects/squirrel-sql/files/1-stable/3.8.1-plainzip/squirrelsql-3.8.1-standard.zip
+  sudo unzip install/squirrelsql-3.8.1-standard.zip -d /usr/lib > /dev/null
+  sudo ln -sf /usr/lib/squirrelsql-3.8.1-standard/ /usr/lib/squirrelsql
+  sudo chmod -R +x /usr/lib/squirrelsql
+fi
+sleep 1
 
 # All done
 echo "all done..."
