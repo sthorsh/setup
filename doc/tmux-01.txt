@@ -12,8 +12,8 @@ tmux-cmds
  :attach -t s:w.p
  :bind
  :break
- :capture
- :choose
+ :capture-pane
+ :choose-client|session|window|buffer → j k d...
  :clear
  :clock
  :command
@@ -44,7 +44,7 @@ tmux-cmds
  :respawn
  :rotate
  :run
- :save
+ :save-buffer <file>
  :select-window|pane -t s:w.p
  :send-keys -t s:w.p 'echo foo' C-m
  :set
@@ -58,9 +58,4 @@ tmux-cmds
  :unbind
  :unlink
  :wait
-
----------
-tmux.conf
---------------
-tmux.boot.conf
 

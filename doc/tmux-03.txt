@@ -29,12 +29,6 @@ jump
  ;         jump-again
  ,         jump-reverse
 
-search
- /         search-forward-incremental (tmux.conf)
- ?         search-backward-incremental (tmux.conf)
- n         search-again
- N         search-reverse
-
 scroll
  C-e       scroll-down
  C-d       halfpage-down
@@ -42,6 +36,12 @@ scroll
  C-y       scroll-up
  C-b       page-up
  C-u       halfpage-up
+
+search
+ /         search-forward-incremental (tmux.conf)
+ ?         search-backward-incremental (tmux.conf)
+ n         search-again
+ N         search-reverse
 
 select
  v         begin-selection (tmux.conf)

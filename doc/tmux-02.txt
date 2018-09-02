@@ -22,18 +22,20 @@ pane
  {}              swap
  HJKL            resize
  z               toggle full screen
+ !               turn pane into window
  space           cycle through layouts
  ctrl-w          close
 
 paste
- P               from buffer
+ P               from paste buffer
+ =               from selected paste buffer
  ctrl-v          from clipboard
 
 reload
  r               reload tmux.conf
 
 mode
- alt-c           copy-mode-vi
+ alt-c           copy-mode-vi i.e terminal-output-buffer mode
  :               command-mode
 
 bindings

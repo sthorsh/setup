@@ -1,3 +1,7 @@
+# Prerequisite: download sqldeveloper
+# http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
+# mv ~/Downloads/sqldeveloper-* ~/install/
+
 # Backup bash config
 mv ~/.bashrc ~/.bashrc-ubuntu
 
@@ -12,7 +16,7 @@ git pull --rebase origin master
 # Install vim
 sudo apt-get install -y vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  
+
 # Edit gnome settings
 echo "editing gnome settings..."
 # Remap capslock to ctrl
@@ -33,7 +37,7 @@ if [ ! -e ~/doc ]; then mkdir ~/doc; fi
 if [ ! -e ~/etc ]; then mkdir ~/etc; fi
 if [ ! -e ~/install ]; then mkdir ~/install; fi
 if [ ! -e ~/tmp ]; then mkdir ~/tmp; fi
-  
+
 # Remove directories 
 echo "removing directories..."
 if [ -d ~/Documents ]; then rm -rf ~/Documents/; fi
@@ -42,7 +46,7 @@ if [ -d ~/Pictures ]; then rm -rf ~/Pictures/; fi
 if [ -d ~/Public ]; then rm -rf ~/Public/; fi
 if [ -d ~/Templates ]; then rm -rf ~/Templates/; fi
 if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
-  
+
 # Install Ubuntu packages: https://www.linuxquestions.org/questions/linux-software-2/dpkg-set-selections-fails-to-find-hundreds-of-packages-4175617954/
 echo "installing packages..."
 sudo apt-get update
@@ -54,11 +58,17 @@ sudo apt-get -u dselect-upgrade
 # Install chrome
 echo "installing chrome..."
 sudo apt-get install -y chromium-browser
-  
+
 # Install slack
-wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.1-amd64.deb"
-sudo apt-get install gdebi-core -y
-sudo gdebi install/slack-desktop-3.3.1-amd64.deb
+echo "installing slack..."
+if command -v slack > /dev/null 2>&1
+then
+  echo "slack already installed, skipping..."
+else
+  wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.1-amd64.deb"
+  sudo apt-get install gdebi-core -y
+  sudo gdebi install/slack-desktop-3.3.1-amd64.deb
+fi
 
 # Install Java
 echo "installing java..."
@@ -71,7 +81,7 @@ else
   sudo apt-get install -y oracle-java8-set-default
   sudo ln -sf /usr/lib/jvm/java-8-oracle/ /usr/lib/jvm/java
 fi
-    
+
 # # Install Maven
 echo "installing maven..."
 if command -v mvn > /dev/null 2>&1
@@ -94,6 +104,19 @@ else
   sudo ln -sf /usr/lib/idea-IC-182.4129.33/ /usr/lib/idea-IC
 fi
 
+# Install sqldeveloper
+echo "installing sqldeveloper..."
+if [ -f /usr/lib/sqldeveloper/sqldeveloper.sh ]
+then
+  echo "sqldeveloper already installed, skipping..."
+else
+  if  [ -d /usr/lib/sqldeveloper/ ]
+  then 
+    sudo rm -rf /usr/lib/sqldeveloper/
+  fi
+  sudo unzip ~/install/sqldeveloper-18.2.0.183.1748-no-jre.zip -d /usr/lib > /dev/null
+fi
+
 # All done
 echo "all done..."
 
@@ -114,4 +137,3 @@ echo "all done..."
 
 # If alt-left|right switches tty
 # sudo reboot
-

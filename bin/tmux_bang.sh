@@ -1,6 +1,18 @@
 # todo: tmux_bang.sh
 # todo: ssh keys → github
 
+# if at work, verify basefarm connection
+if [ "$HOSTNAME" == "sveinbb" ] 
+  then 
+    ping -c1 www.basefarm.no > /dev/null
+    if [ $? != 0 ]
+    then
+      echo "basefarm is unreachable, exiting..."
+      exit 0
+    fi
+fi
+
+# if session exists, connect to it
 tmux has-session -t s1
 if [ $? != 0 ]
 then
@@ -22,7 +34,17 @@ then
 
   # 3rd window
   echo "creating 3rd window..."
-  tmux new-window -t s1 -n tbd -c /usr/lib
+  tmux new-window -t s1 -n stianbb # ssh stianbb
+  sleep 1
+
+  # 4rd window
+  echo "creating 4th window..."
+  tmux new-window -t s1 -n remote
+  sleep 1
+
+  # 5th window
+  echo "creating 5th window..."
+  tmux new-window -t s1 -n tbd
   sleep 1
 
   # Go home
