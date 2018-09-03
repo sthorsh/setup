@@ -1,0 +1,9 @@
+tmp
+  ctrl-I  
+
+tmux-resurrect
+  todo
+
+tmux-continuum
+  todo
+
