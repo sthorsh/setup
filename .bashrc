@@ -129,3 +129,22 @@ stty -ixoff
 [ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
 # tmux completion
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
+
+# Make sure clipit is running
+if ! pgrep -x clipit > /dev/null
+then 
+  echo "starting clipit..."
+  clipit > /dev/null 2>&1 &
+else echo "clipit already running..."
+fi
+sleep 1
+
+# Make sure guake is running
+if ! pgrep -x guake > /dev/null
+then 
+  echo "starting guake..."
+    guake > /dev/null 2>&1 &
+  else echo "guake already running..."
+fi
+sleep 1
+

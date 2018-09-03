@@ -168,20 +168,27 @@ fi
 # All done
 echo "all done..."
 
+# If alt-left|right switches tty
+# sudo reboot
+
 # Patch packages
 # Use software updater
 
-# Configure git
+# Git
 # Add ssh key to github
 
-# Configure vim
+# Vim
 # Launch and run :PluginInstall
 
-# Set background
+# Background
 # ubuntu-logo.jpg
 
-# Set favorites
+# Favorites
 # terminal, chrome, firefox, slack, files, filezilla, screenshot, settings, software-updater
 
-# If alt-left|right switches tty
-# sudo reboot
+# Startup applications
+# clipit
+# guake
+# gnome terminal
+# SSH Key Agent: /usr/bin/gnome-keyring-daemon --start --components=ssh (GNOME Keyring: SSH Agent)
+
