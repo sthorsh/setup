@@ -39,9 +39,10 @@ if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
 sleep 1
 
 # Git
-git --version 2>&1 >/dev/null
-if [ ! $? -eq 0 ]
+if command -v git > /dev/null 2>&1
 then
+  echo "git already installed, skipping..."
+else
   echo "installing git..."
   sudo apt-get install -y git
   echo "configuring git..."
@@ -54,21 +55,18 @@ then
   # Backup ubuntu bash config
   mv ~/.bashrc ~/.bashrc-ubuntu
   git pull --rebase origin master
-else
-  echo "git already installed, skipping..."
 fi
 sleep 1
 
 # Vim
-vim --version 2>&1 >/dev/null
-if [ ! $? -eq 0 ]
+if command -v vim > /dev/null 2>&1
 then
-  echo "installing git..."
+  echo "vim already installed, skipping..."
+else
+  echo "installing vim..."
   sudo apt-get install -y vim
   echo "git clone vim bundle..."
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-else
-  echo "vim already installed, skipping..."
 fi
 sleep 1
 
@@ -82,14 +80,15 @@ fi
 sleep 1
 
 # Ubuntu packages
-sudo apt-get update
-if command -v dselect > /dev/null 2>&1
+if [ -f /usr/lib/jvm/java ]
 then
   echo "apt update and upgrade..."
+  sudo apt-get update
   sudo apt-get -u dist-upgrade
 else
   echo "apt update and install..."
   sudo apt-get install -y dselect
+  sudo apt-get update
   sudo dselect update
   sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
   sudo apt-get -u dselect-upgrade
