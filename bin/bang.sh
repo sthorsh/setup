@@ -80,7 +80,7 @@ fi
 sleep 1
 
 # Ubuntu packages
-if [ -f /usr/lib/jvm/java ]
+if [ -e /usr/lib/jvm/java ]
 then
   echo "apt update and upgrade..."
   sudo apt-get update
