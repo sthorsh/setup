@@ -83,7 +83,7 @@ sleep 1
 
 # Ubuntu packages
 sudo apt-get update
-if command -v chromium-browser > /dev/null 2>&1
+if command -v dselect > /dev/null 2>&1
 then
   echo "apt update and upgrade..."
   sudo apt-get -u dist-upgrade
