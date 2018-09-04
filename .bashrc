@@ -137,7 +137,6 @@ then
   clipit > /dev/null 2>&1 &
 else echo "clipit already running..."
 fi
-sleep 1
 
 # Make sure guake is running
 if ! pgrep -x guake > /dev/null
@@ -146,5 +145,4 @@ then
     guake > /dev/null 2>&1 &
   else echo "guake already running..."
 fi
-sleep 1
 

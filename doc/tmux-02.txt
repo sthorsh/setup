@@ -23,6 +23,7 @@ pane
  HJKL            resize
  z               toggle full screen
  !               turn pane into window
+ ctrl-m          multicursor all panes
  space           cycle through layouts
  ctrl-w          close
 
