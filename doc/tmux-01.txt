@@ -1,44 +1,44 @@
 prexif
-  ctrl-a          prefix
+    C-a          prefix
 
 session
-  ()      goto
-  s       session list
-  d       detach
+    ()      goto
+    v       session list
+    d       detach
 
 window
-  c               create
-  ,               rename
-  hl              goto
-  1..9            goto
-  ctrl-f          find by string
-  ctrl-w          window list
-  ctrl-shift-←→   move
-  ctrl-w          close window/pane
+    c               create
+    ,               rename
+    hl              goto
+    1..9            goto
+    ctrl-f          find by string
+    ctrl-w          window list
+    ctrl-shift-←→   move
+    ctrl-w          close window/pane
 
 pane
-   ctrl-a |\-_            create pane i.e split window
-   ctrl-a q 1..9          goto
-   ctrl-hjkl    
-   hjkl            resize
-   z               toggle full screen
-   {}              swap
-   !               turn pane into window
-   ctrl-m          multicursor all panes
-   space           cycle through layouts
+     ctrl-a |\-_            create pane i.e split window
+     ctrl-a q 1..9          goto
+     ctrl-hjkl    
+     hjkl            resize
+     z               toggle full screen
+     {}              swap
+     !               turn pane into window
+     ctrl-m          multicursor all panes
+     space           cycle through layouts
 
-  paste
-   P               from paste buffer
-   =               from selected paste buffer
-   ctrl-v          from clipboard
+paste
+     P               from paste buffer
+     =               from selected paste buffer
+     ctrl-v          from clipboard
 
-  reload
-   r               reload tmux.conf
+reload
+     r               reload tmux.conf
 
-  mode
-   alt-c           copy-mode-vi i.e terminal-output-buffer mode
-   :               command-mode
+mode
+     alt-c           copy-mode-vi i.e terminal-output-buffer mode
+     :               command-mode
 
-  bindings
-   ?               list bindings
+bindings
+     ?               list bindings
 
