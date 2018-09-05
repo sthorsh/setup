@@ -172,6 +172,7 @@ echo "all done..."
 
 # Git
 # Add key to github
+# git remote set-url origin git://github.com/sthorsh/setup.git
 
 # Vim
 # Run :PluginInstall
