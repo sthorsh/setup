@@ -10,7 +10,7 @@ set nocompatible
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
-    Plugin 'anshin/vim-wombat256'
+    "Plugin 'vim-scripts/wombat256.vim'
     Plugin 'kien/ctrlp.vim'
     Plugin 'fholgado/minibufexpl.vim'
     Plugin 'sjl/gundo.vim'
@@ -34,8 +34,8 @@ set nocompatible
     Plugin 'honza/vim-snippets'                 "snipmate
     Plugin 'garbas/vim-snipmate'                "snipmate
     Plugin 'christoomey/vim-tmux-navigator'
-    " Plugin 'tpope/vim-fugitive'
-    " Plugin 'Valloric/YouCompleteMe'
+    "Plugin 'tpope/vim-fugitive'
+    "Plugin 'Valloric/YouCompleteMe'
   call vundle#end()
 
 "--------------------------------------
