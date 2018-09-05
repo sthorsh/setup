@@ -1,22 +1,11 @@
-# TODOs
-# squirrel: hidpi 3840x2160 resolution support for squirrel ref run_scaled.sh
-# sqldeveloper: hidpi 3840x2160 resolution support
+# Howto 
+# wget --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/bin/bang.sh
+# chmod +x bang.sh
+# ~/.bang.sh
 
-# Prerequisites
-# Download sqldeveloper to ~/install/
-
-# Gnome
-echo "editing gnome settings..."
-# Disable alt-pipe
-gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']" 
-# Disable ctrl-alt-shift arrow
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['disabled']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']" 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['disabled']"
-# Remap capslock to ctrl
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-sleep 1
+# Todos 
+# squirrel hidpi 3840x2160 resolution support ref run_scaled.sh
+# sqldeveloper hidpi 3840x2160 resolution support ref run_scaled.sh
 
 # Create directories
 echo "creating directories..."
@@ -41,18 +30,14 @@ sleep 1
 # Git
 if command -v git > /dev/null 2>&1
 then
-  echo "git already installed, skipping..."
+  echo "git installed..."
 else
   echo "installing git..."
   sudo apt-get install -y git
-  echo "configuring git..."
   git config --global user.name svein
   git config --global user.email sthorsh@gmail.com
-  echo "initializing local git..."
   git init
   git remote add origin https://github.com/sthorsh/setup.git
-  echo "pulling from remote git..."
-  # Backup ubuntu bash config
   mv ~/.bashrc ~/.bashrc-ubuntu
   git pull --rebase origin master
 fi
@@ -61,7 +46,7 @@ sleep 1
 # Vim
 if command -v vim > /dev/null 2>&1
 then
-  echo "vim already installed, skipping..."
+  echo "vim installed..."
 else
   echo "installing vim..."
   sudo apt-get install -y vim
@@ -73,7 +58,7 @@ sleep 1
 # Tmux
 if [ -d ~/.tmux/plugins/tpm ]
 then
-  echo "tmux tpm already cloned, skipping..."
+  echo "tmux tpm cloned..."
 else
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
@@ -83,8 +68,7 @@ sleep 1
 if [ -e /usr/lib/jvm/java ]
 then
   echo "apt update and upgrade..."
-  sudo apt-get update
-  sudo apt-get -u dist-upgrade
+    sudo apt-get update && sudo apt-get -u dist-upgrade
 else
   echo "apt update and install..."
   sudo apt-get install -y dselect
@@ -98,7 +82,7 @@ sleep 1
 # Chrome
 if command -v chromium-browser > /dev/null 2>&1
 then
-  echo "chrome already installed, skipping..."
+  echo "chrome installed..."
 else
   echo "installing chrome..."
   sudo apt-get install -y chromium-browser
@@ -108,7 +92,7 @@ sleep 1
 # Slack
 if command -v slack > /dev/null 2>&1
 then
-  echo "slack already installed, skipping..."
+  echo "slack installed..."
 else
   echo "installing slack..."
   wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.1-amd64.deb"
@@ -120,7 +104,7 @@ sleep 1
 # Java
 if command -v java > /dev/null 2>&1
 then
-  echo "java already installed, skipping..."
+  echo "java installed..."
 else
   echo "installing java..."
   sudo add-apt-repository ppa:webupd8team/java
@@ -133,7 +117,7 @@ sleep 1
 # Maven
 if command -v mvn > /dev/null 2>&1
 then
-  echo "maven already installed, skipping..."
+  echo "maven installed..."
 else
   echo "installing maven..."
   wget --directory-prefix=install http://apache.uib.no/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
@@ -145,7 +129,7 @@ sleep 1
 # Intellij
 if command -v /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1
 then
-  echo "intellij already installed, skipping..."
+  echo "intellij installed..."
 else
   echo "installing intellij..."
   wget --directory-prefix=install https://download.jetbrains.com/idea/ideaIC-2018.2.2-no-jdk.tar.gz
@@ -154,27 +138,12 @@ else
 fi
 sleep 1
 
-# SQLdeveloper
-if [ -f /usr/lib/sqldeveloper/sqldeveloper.sh ]
-then
-  echo "sqldeveloper already installed, skipping..."
-else
-  echo "installing sqldeveloper..."
-  if  [ -d /usr/lib/sqldeveloper/ ]
-  then 
-    sudo rm -rf /usr/lib/sqldeveloper/
-  fi
-  sudo unzip ~/install/sqldeveloper-18.2.0.183.1748-no-jre.zip -d /usr/lib > /dev/null
-fi
-sleep 1
-
 # Squirrel
 if [ -f /usr/lib/squirrelsql/squirrel-sql.sh ]
 then
-  echo "squirrel already installed, skipping..."
+  echo "squirrel installed..."
 else
   echo "installing squirrel..."
-  sudo rm -rf /usr/lib/squirrelsql*
   wget --directory-prefix=install https://sourceforge.net/projects/squirrel-sql/files/1-stable/3.8.1-plainzip/squirrelsql-3.8.1-standard.zip
   sudo unzip install/squirrelsql-3.8.1-standard.zip -d /usr/lib > /dev/null
   sudo ln -sf /usr/lib/squirrelsql-3.8.1-standard/ /usr/lib/squirrelsql
@@ -182,18 +151,30 @@ else
 fi
 sleep 1
 
+# Gnome
+echo "editing gnome settings..."
+# Disable alt-pipe
+gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']" 
+# Disable ctrl-alt-shift arrow
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['disabled']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']" 
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['disabled']"
+# Remap capslock to ctrl
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
+sleep 1
 
-# All done
+# Done
 echo "all done..."
 
 # Git
-# Add ssh key to github
+# Add key to github
 
 # Vim
-# Launch and run :PluginInstall
+# Run :PluginInstall
 
 # Patch packages
-# Use software updater
+# Software updater
 
 # Background
 # ubuntu-logo.jpg
@@ -201,11 +182,14 @@ echo "all done..."
 # Favorites
 # terminal, chrome, firefox, slack, files, filezilla, screenshot, settings, software-updater
 
-# Startup applications
-# clipit
-# guake
+# Startup apps
 # gnome terminal
 # SSH Key Agent: /usr/bin/gnome-keyring-daemon --start --components=ssh (GNOME Keyring: SSH Agent)
+
+# SQL developer
+# Download to ~/install/
+# sudo unzip ~/install/sqldeveloper-18.2.0.183.1748-no-jre.zip -d /usr/lib > /dev/null
+# sudo ln -sf /usr/lib/sqldeveloper-18.2.0.183.1748-no-jre /usr/lib/sqldeveloper
 
 # If alt-left|right switches tty
 # sudo reboot
