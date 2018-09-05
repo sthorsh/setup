@@ -168,7 +168,7 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier'
 sleep 1
 
 # Done
-echo "all done..."
+echo "done..."
 
 # Clean up
 # rm ~/bang.sh
@@ -178,17 +178,17 @@ echo "all done..."
 # git remote set-url origin git@github.com:sthorsh/setup.git
 
 # Vim
-# Run :PluginInstall
+# :PluginInstall
 
-# Background
-# ubuntu-logo.jpg
+# Startup apps
+# guake
+# gnome-terminal
 
 # Favorites
 # terminal, chrome, firefox, slack, files, filezilla, screenshot, settings, software-updater
 
-# Startup apps
-# gnome terminal
-# SSH Key Agent: /usr/bin/gnome-keyring-daemon --start --components=ssh (GNOME Keyring: SSH Agent)
+# Background
+# ubuntu-logo.jpg
 
 # SQL developer
 # Download to ~/install/
