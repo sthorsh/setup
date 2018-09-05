@@ -167,6 +167,9 @@ sleep 1
 # Done
 echo "all done..."
 
+# Clean up
+# rm ~/bang.sh
+
 # Git
 # Add key to github
 
