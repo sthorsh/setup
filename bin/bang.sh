@@ -174,8 +174,9 @@ echo "done..."
 # rm ~/bang.sh
 
 # Git
-# Add key to github
+# create SSH key
 # git remote set-url origin git@github.com:sthorsh/setup.git
+# add key to github
 
 # Vim
 # :PluginInstall
