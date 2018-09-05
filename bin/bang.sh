@@ -7,6 +7,9 @@
 # squirrel hidpi 3840x2160 resolution support ref run_scaled.sh
 # sqldeveloper hidpi 3840x2160 resolution support ref run_scaled.sh
 
+# Patch ubuntu
+echo "run software updater, reboot, remove me..." && exit 0
+
 # Create directories
 echo "creating directories..."
 if [ ! -e ~/bin ]; then mkdir ~/bin; fi
@@ -176,9 +179,6 @@ echo "all done..."
 
 # Vim
 # Run :PluginInstall
-
-# Patch packages
-# Software updater
 
 # Background
 # ubuntu-logo.jpg
