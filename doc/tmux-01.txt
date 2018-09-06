@@ -1,36 +1,37 @@
 prexif
-+ C-a          prefix
++ C-a           prefix
 
 client
-  C-a d        detach-client
+  C-a d         detach-client
 
 session
 
 windows
-  C-a c        create new-window
-  C-a ,        rename-window
-  C-a n        next-window
-  C-a p        previous-window
-  C-a 1-9      select-window 1-9
-  C-a f        find-window name|title|content
-+ C-S-←→       swap-window
-  C-a &        kill-window
+  C-a c         create new-window
+  C-a ,         rename-window
+  C-a n         next-window
+  C-a p         previous-window
+  C-a 1-9       select-window 1-9
+  C-a f         find-window name|title|content
++ C-S-←→        swap-window
+  C-a &         kill-window
 
 panes
-  C-a "        split-window
-  C-a %        split-window
-  C-a q 1-9    select-pane
-  C-a {}       swap-pane
-  C-a z        resize-pane zoom|unzoom
-  C-a Space    next-layout
-  C-a !        break-pane off from its window
-  C-a x        kill-pane
++ C-a |         create pane (%)
++ C-a -         create pane (")
+  C-a q 1-9     select-pane
+  C-a {}        swap-pane
+  C-a z         resize-pane zoom|unzoom
+  C-a Space     next-layout
+  C-a !         break-pane off
++ C-A-s         sync panes
+  C-a x         kill-pane
 
 paste
-  C-a ]        paste-buffer
-  C-a =        choose-buffer
+  C-a ]         paste-buffer
+  C-a =         choose-buffer
 
-mode
-  C-a [       copy-mode-vi 
-  C-a :       command-mode
+modes
++ C-a C-c       copy-mode-vi ([)
+  C-a :         command-mode
 

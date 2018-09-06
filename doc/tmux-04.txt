@@ -1,9 +1,8 @@
-tmp
-  ctrl-I  
+Tmux plugin manager
+  C-a C-I     install plugins
+  C-a C-U     update plugins
 
-tmux-resurrect
-  todo
-
-tmux-continuum
-  todo
+Tmux resurrect
+  C-a C-s     save environment
+  C-a C-r     restore environment
 
