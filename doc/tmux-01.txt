@@ -1,44 +1,42 @@
 prexif
-    C-a          prefix
+• C-a          prefix
 
-session
-    ()      goto
-    v       session list
-    d       detach
+        session
+            d       detach
 
 window
-    c               create
-    ,               rename
-    hl              goto
-    1..9            goto
-    ctrl-f          find by string
-    ctrl-w          window list
-    ctrl-shift-←→   move
-    ctrl-w          close window/pane
+  C-a c        create new-window
+  C-a ,        rename-window
+  C-a n        next-window
+  C-a p        previous-window
+  C-a 1-9      select-window 1-9
+  C-a f        find-window name|title|content
+• C-S-←→       swap-window
+  C-a &        kill-window
 
-pane
-     ctrl-a |\-_            create pane i.e split window
-     ctrl-a q 1..9          goto
-     ctrl-hjkl    
-     hjkl            resize
-     z               toggle full screen
-     {}              swap
-     !               turn pane into window
-     ctrl-m          multicursor all panes
-     space           cycle through layouts
+        pane
+             ctrl-a |\-_            create pane i.e split window
+             ctrl-a q 1..9          goto
+             ctrl-hjkl    
+             hjkl            resize
+             z               toggle full screen
+             {}              swap
+             !               turn pane into window
+             ctrl-m          multicursor all panes
+             space           cycle through layouts
 
-paste
-     P               from paste buffer
-     =               from selected paste buffer
-     ctrl-v          from clipboard
+        paste
+             P               from paste buffer
+             =               from selected paste buffer
+             ctrl-v          from clipboard
 
-reload
-     r               reload tmux.conf
+        reload
+             r               reload tmux.conf
 
-mode
-     alt-c           copy-mode-vi i.e terminal-output-buffer mode
-     :               command-mode
+        mode
+             alt-c           copy-mode-vi i.e terminal-output-buffer mode
+             :               command-mode
 
-bindings
-     ?               list bindings
+        bindings
+             ?               list bindings
 
