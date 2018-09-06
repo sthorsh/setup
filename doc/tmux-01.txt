@@ -1,8 +1,10 @@
 prexif
 + C-a          prefix
 
+client
+  C-a d        detach-client
+
 session
-            d       detach
 
 windows
   C-a c        create new-window
@@ -25,17 +27,10 @@ panes
   C-a x        kill-pane
 
 paste
-             P               from paste buffer
-             =               from selected paste buffer
-             ctrl-v          from clipboard
-
-reload
-             r               reload tmux.conf
+  C-a ]        paste-buffer
+  C-a =        choose-buffer
 
 mode
-             alt-c           copy-mode-vi i.e terminal-output-buffer mode
-             :               command-mode
-
-bindings
-             ?               list bindings
+  C-a [       copy-mode-vi 
+  C-a :       command-mode
 
