@@ -1,7 +1,7 @@
 prexif
-• C-a          prefix
++ C-a          prefix
 
-        session
+session
             d       detach
 
 windows
@@ -11,34 +11,31 @@ windows
   C-a p        previous-window
   C-a 1-9      select-window 1-9
   C-a f        find-window name|title|content
-• C-S-←→       swap-window
++ C-S-←→       swap-window
   C-a &        kill-window
 
 panes
   C-a "        split-window
   C-a %        split-window
-  C-a {}       swap-pane
   C-a q 1-9    select-pane
+  C-a {}       swap-pane
+  C-a z        resize-pane zoom|unzoom
+  C-a Space    next-layout
+  C-a !        break-pane off from its window
   C-a x        kill-pane
-             ctrl-hjkl    
-             hjkl            resize
-             z               toggle full screen
-             !               turn pane into window
-             ctrl-m          multicursor all panes
-             space           cycle through layouts
 
-        paste
+paste
              P               from paste buffer
              =               from selected paste buffer
              ctrl-v          from clipboard
 
-        reload
+reload
              r               reload tmux.conf
 
-        mode
+mode
              alt-c           copy-mode-vi i.e terminal-output-buffer mode
              :               command-mode
 
-        bindings
+bindings
              ?               list bindings
 
