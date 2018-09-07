@@ -9,8 +9,8 @@ session
 windows
   C-a c         create new-window
   C-a ,         rename-window
-  C-a n         next-window
-  C-a p         previous-window
++ C-a C-h       next window (n)
++ C-a C-l       prev window (p)
   C-a 1-9       select-window 1-9
   C-a f         find-window name|title|content
 + C-S-←→        swap-window
@@ -21,17 +21,26 @@ panes
 + C-a -         create pane (")
   C-a q 1-9     select-pane
   C-a {}        swap-pane
++ C-A-←↑↓→      resize-pane
   C-a z         resize-pane zoom|unzoom
-  C-a Space     next-layout
   C-a !         break-pane off
 + C-A-s         sync panes
+  C-a Space     next-layout
   C-a x         kill-pane
-
-paste
-  C-a ]         paste-buffer
-  C-a =         choose-buffer
++ C-A-o         kill other panes
 
 modes
 + C-a C-c       copy-mode-vi ([)
   C-a :         command-mode
+
+paste
+  C-a p         paste-buffer (])
+  C-a =         choose-buffer
++ C-a C-v       paste from clipboard
+
+logging
++ C-a L         log to <window>.log on|off
+
+config
++ C-a r         reload .tmux.conf
 

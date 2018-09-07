@@ -156,15 +156,19 @@ sleep 1
 
 # Gnome
 echo "editing gnome settings..."
+# Capslock to ctrl
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
 # Disable alt-pipe
 gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']" 
-# Disable ctrl-alt-shift arrow
+# Disable key bindings for workspaces
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']" 
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['disabled']"
-# Remap capslock to ctrl
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
 sleep 1
 
 # Done
