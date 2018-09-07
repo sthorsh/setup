@@ -1,61 +1,61 @@
 move
- b         previous-word
- B         previous-space
- e         next-word-end
- E         next-space-end
- g         history-top
- G         history-bottom
- h         cursor-left
- H         top-line
- j         cursor-down
- k         cursor-up
- l         cursor-right
- L         bottom-line
- M         middle-line
- w         next-word
- W         next-space
- 0         start-of-line
- $         end-of-line
- ^         back-to-indentation
- {         previous-paragraph
- }         next-paragraph
- :         goto-line <line>
+  b         previous-word
+  B         previous-space
+  e         next-word-end
+  E         next-space-end
+  g         history-top
+  G         history-bottom
+  h         cursor-left
+  H         top-line
+  j         cursor-down
+  k         cursor-up
+  l         cursor-right
+  L         bottom-line
+  M         middle-line
+  w         next-word
+  W         next-space
+  0         start-of-line
+  $         end-of-line
+  ^         back-to-indentation
+  {         previous-paragraph
+  }         next-paragraph
+  :         goto-line <line>
 
 jump
- f         jump-forward
- F         jump-backward
- t         jump-to-forward <to>
- T         jump-to-backward <to>
- ;         jump-again
- ,         jump-reverse
+  f         jump-forward
+  F         jump-backward
+  t         jump-to-forward <to>
+  T         jump-to-backward <to>
+  ;         jump-again
+  ,         jump-reverse
 
 scroll
- C-e       scroll-down
- C-d       halfpage-down
- C-f       page-down
- C-y       scroll-up
- C-b       page-up
- C-u       halfpage-up
+  C-e       scroll-down
+  C-d       halfpage-down
+  C-f       page-down
+  C-y       scroll-up
+  C-b       page-up
+  C-u       halfpage-up
 
 search
- /         search-forward-incremental (tmux.conf)
- ?         search-backward-incremental (tmux.conf)
- n         search-again
- N         search-reverse
+  /         search-forward-inc
+  ?         search-backward-inc
+  n         search-again
+  N         search-reverse
 
 select
- v         begin-selection (tmux.conf)
- V         select-line
- r         rectangle-toggle (tmux.conf)
- o         other-end of selection
- Escape    clear-selection
+  v         visual (Space)
+  V         visual line
+  C-v       visual block
+  o         other-end
+  Space     clear-selection (Escape)
 
 copy
- A         append-selection-and-quit
- D         copy-end-of-line-and-quit
- y         copy-pipe-and-quit (tmux.conf)
- Enter     copy-selection-and-quit
+  A         append
+  Y         copy to EOL (D)
+  C-j       copy to buffer
+  y         copy to buffer and clipboard (•)
 
 quit
- q         quit copy-mode-vi
+  q         quit copy-mode-vi
 

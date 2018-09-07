@@ -1,8 +1,8 @@
-Tmux plugin manager
-  C-a C-I     install plugins
-  C-a C-U     update plugins
+tpm
+  C-a C-I       install plugins
+  C-a C-U       update plugins
 
-Tmux resurrect
-  C-a C-s     save environment
-  C-a C-r     restore environment
+tmux-resurrect
+  C-a C-s       save environment
+  C-a C-r       restore environment
 

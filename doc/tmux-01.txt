@@ -1,5 +1,5 @@
 prexif
-+ C-a           prefix
+  C-a           prefix (C-b)
 
 client
   C-a d         detach-client
@@ -9,38 +9,40 @@ session
 windows
   C-a c         create new-window
   C-a ,         rename-window
-+ C-a C-h       prev window (n)
-+ C-a C-l       next window (p)
+  C-a C-h       prev window (n)
+  C-a C-l       next window (p)
   C-a 1-9       select-window 1-9
   C-a f         find-window name|title|content
-+ C-S-←→        swap-window
-+ C-a C-w       kill window (&)
+  C-S-←→        swap-window (•)
+  C-a C-w       kill window (&)
 
 panes
-+ C-a |         create pane (%)
-+ C-a -         create pane (")
+  C-a |         create pane (%)
+  C-a -         create pane (")
+  C-a o         select-pane
+  C-a hjkl      select-pane (•)
   C-a q 1-9     select-pane
   C-a {}        swap-pane
-+ C-A-←↑↓→      resize-pane
+  C-A-←↑↓→      resize-pane (•)
   C-a z         resize-pane zoom|unzoom
   C-a !         break-pane off
-+ C-A-s         sync panes
+  C-A-s         sync panes (•)
   C-a Space     next-layout
   C-a x         kill-pane
-+ C-A-o         kill other panes
+  C-A-o         kill other panes (•)
 
 config
-+ C-a r         reload .tmux.conf
+  C-a r         reload tmux.conf (•)
 
 log
-+ C-a L         toggle <window>.log on|off
+  C-a L         toggle <window>.log on|off (•)
 
 modes
-+ C-a C-c       copy-mode-vi ([)
+  C-a C-c       copy-mode-vi ([)
   C-a :         command-mode
 
 paste
   C-a p         paste-buffer (])
   C-a =         choose-buffer
-+ C-a C-v       paste from clipboard
+  C-a C-v       paste from clipboard (•)
 
