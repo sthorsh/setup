@@ -84,6 +84,7 @@ export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 alias gradle="/opt/gradle/bin/gradle"
 alias grep='grep --color=auto'
 alias gtf='cd /usr/lib/jboss-fuse/'
+alias gtm='cd /usr/lib/apache-activemq/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
 alias l='ls -lF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
