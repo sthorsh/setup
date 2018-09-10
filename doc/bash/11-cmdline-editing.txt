@@ -1,39 +1,38 @@
-  C-b                     backward-char
-  A-b                     backward-word
-  C-a                     beginning-of-line
-  C-f                     forward-char
-  A-f                     forward-word
-  C-e                     end-of-line
-  C-]                     character-search
-  C-A-]                   character-search-backward
+C-b                  backward-char
+A-b                  backward-word
+C-a                  beginning-of-line
+C-f                  forward-char
+A-f                  forward-word
+C-e                  end-of-line
+C-]                  character-search
+C-A-]                character-search-backward
 
-  A-c                     capitalize-word (conflict fzf)
-  A-l                     lowercase-word
-  A-u                     uppercase-word
-  C-t                     transpose-chars (conflict fzf)
-  A-t                     transpose-words
-  C-v                     quoted-insert i.e verbatim
+A-c                  capitalize-word (conflict fzf)
+A-l                  lowercase-word
+A-u                  uppercase-word
+C-t                  transpose-chars (conflict fzf)
+A-t                  transpose-words
+C-v                  quoted-insert i.e verbatim
 
----------------------------------------------------
-  C-h | bs                backward-delete-char
-  C-q                     unix-filename-rubout (cp)
-  C-w                     unix-word-rubout (cp)
-  C-u                     unix-line-discard (cp)
-  C-d                     delete-char
-  A-d                     kill-word (cp)
-  C-k                     kill-line (cp)
+C-h | bs             backward-delete-char
+C-q                  unix-filename-rubout (cp)
+C-w                  unix-word-rubout (cp)
+C-u                  unix-line-discard (cp)
+C-d                  delete-char
+A-d                  kill-word (cp)
+C-k                  kill-line (cp)
 
----------------------------------------------------
-  ctrl-p                      previous-line
-  ctrl-n                      next-line
-  ctrl-o                      operate-and-get-next
-  ctrl-r [ctrl-rghjm]         reverse-search-history
+C-p                  previous-line
+C-n                  next-line
+C-o                  operate-and-get-next
+C-r *|C-h C-r C-gjm  reverse-search-history
 
 ---------------------------------------------------
-  ctrl-y                     yank
-  ctrl-y alt-y               yank-pop i.e rotate and yank ?
-  alt-...                     yank-last-arg
-  alt-N-... | N C-A-y         yank-nth-arg
+  C-y                yank
+  C-y A-y...         yank-pop
+  C-A-y              yank 1st arg
+  A-N-...            yank-nth-arg
+  A-...              yank-last-arg
 ---------------------------------------------------
 
   !*␣                         magic-space: expand args
