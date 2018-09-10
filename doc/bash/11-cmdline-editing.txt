@@ -1,69 +1,70 @@
-alt-N                       digit-arg
+  C-b                     backward-char
+  A-b                     backward-word
+  C-a                     beginning-of-line
+  C-f                     forward-char
+  A-f                     forward-word
+  C-e                     end-of-line
+  C-]                     character-search
+  C-A-]                   character-search-backward
 
-ctrl-b                      backward-char
-alt-b                       backward-char
-ctrl-f                      forward-char
-alt-f                       forward-word
-ctrl-a                      beginning-of-line
-ctrl-e                      end-of-line
-ctrl-]                      character-search
-ctrl-alt-]                  character-search-backward
+  A-c                     capitalize-word (conflict fzf)
+  A-l                     lowercase-word
+  A-u                     uppercase-word
+  C-t                     transpose-chars (conflict fzf)
+  A-t                     transpose-words
+  C-v                     quoted-insert i.e verbatim
 
-alt-c                       capitalize-word
-alt-l                       lowercase-word
-alt-u                       uppercase-word
-ctrl-t                      transpose-chars
-alt-t                       transpose-words
-ctrl-v                      quoted-insert (verbatim)
+---------------------------------------------------
+  C-h | bs                backward-delete-char
+  C-q                     unix-filename-rubout (cp)
+  C-w                     unix-word-rubout (cp)
+  C-u                     unix-line-discard (cp)
+  C-d                     delete-char
+  A-d                     kill-word (cp)
+  C-k                     kill-line (cp)
 
-ctrl-h | bs                 backward-delete-char
-ctrl-d                      delete-char
-ctrl-w                      unix-word-rubout (cp)
-ctrl-q                      unix-filename-rubout (cp)
-alt-d                       kill-word (cp)
-ctrl-u                      unix-line-discard (cp)
-ctrl-k                      kill-line (cp)
-ctrl-y [alt-y]              yank [yank-pop]
+---------------------------------------------------
+  ctrl-p                      previous-line
+  ctrl-n                      next-line
+  ctrl-o                      operate-and-get-next
+  ctrl-r [ctrl-rghjm]         reverse-search-history
 
-ctrl-l                      clear-screen
+---------------------------------------------------
+  ctrl-y                     yank
+  ctrl-y alt-y               yank-pop i.e rotate and yank ?
+  alt-...                     yank-last-arg
+  alt-N-... | N C-A-y         yank-nth-arg
+---------------------------------------------------
 
-ctrl-r [ctrl-rghjm]         reverse-search-history
-ctrl-p                      previous-line
-ctrl-n                      next-line
-ctrl-o                      operate-and-get-next
-alt-...                     insert-last-arg
-alt-N-...                   insert-nth-arg
-!*␣                         magic-space: expand args
-!N␣                         magic-space: expand nth cmd
-^x^y␣                       magic-space: expand previous line, 1st x→y
+  !*␣                         magic-space: expand args
+  !N␣                         magic-space: expand nth cmd
+  ^x^y␣                       magic-space: expand previous line, 1st x→y
 
-tab [tab]                   menu-complete: $ ~ @ cmd /
-alt-*                       insert-completions: $ ~ @ cmd /
-alt-{                       complete-into-braces: filenames
-ctrl-alt-i [ctrl-alt-i]     dynamic-complete-history: strings
-alt-g                       glob-complete-word: * ?
+  tab [tab]                   menu-complete: $ ~ @ cmd /
+  alt-*                       insert-completions: $ ~ @ cmd /
+  alt-{                       complete-into-braces: filenames
+  ctrl-alt-i [ctrl-alt-i]     dynamic-complete-history: strings
+  alt-g                       glob-complete-word: * ?
 
-ctrl-alt-e                  shell-expand-line: var, alias, ~
-ctrl-x *                    glob-expand-word: * ?
+  ctrl-alt-e                  shell-expand-line: var, alias, ~
+  ctrl-x *                    glob-expand-word: * ?
 
-ctrl-x ctrl-u               undo
-alt-r                       revert-line
+  ctrl-l                      clear-screen
+  ctrl-x ctrl-u               undo
+  ctrl-alt-r                  revert-line
 
-ctrl-j | lf                 accept-line (nix eol)
-ctrl-m | cr                 accept-line (mac eol)
-return | crlf               accept-line (win eol)
+  ctrl-j | lf                 accept-line (nix eol)
+  ctrl-m | cr                 accept-line (mac eol)
+  return | crlf               accept-line (win eol)
 
-ctrl-x (                    start-kbd-macro
-ctrl-x )                    end-kbd-macro
-ctrl-x e                    call-last-kbd-macro
-ctrl-x ctrl-e               edit-and-execute-command
+  alt-N                       digit-arg (MOVE IT UP?)
 
-cmd &       start cmd i bakgrunnen
+  ctrl-x (                    start-kbd-macro
+  ctrl-x )                    end-kbd-macro
+  ctrl-x e                    call-last-kbd-macro
+  ctrl-x ctrl-e               edit-and-execute-command
 
-ctrl-c      intr ref stty -a (tty driver)
-ctrl-d      eof ref stty -a
-ctrl-z      susp ref stty -a (tty driver)
-
-NB!
-- http://www.linusakesson.net/programming/tty/index.php
+  ctrl-c                      intr ref stty -a (tty driver)
+  ctrl-d                      eof ref stty -a
+  ctrl-z                      susp ref stty -a (tty driver)
 
