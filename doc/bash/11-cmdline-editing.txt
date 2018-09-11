@@ -1,3 +1,5 @@
+  alt-N                       digit-arg
+
 C-b                    backward-char
 A-b                    backward-word
 C-a                    beginning-of-line
@@ -33,21 +35,19 @@ C-A-y                  yank 1st arg
 A-N A-...              yank-nth-arg
 A-...                  yank-last-arg
 
+tab [tab]              menu-complete: $ ~ @ cmd /
+A-*                    insert-completions: $ ~ @ cmd /
+A-{                    complete-into-braces: filenames
+A-g                    glob-complete-word: * ?
+C-A-i [C-A-i]          dynamic-complete-history 
+
+C-A-e                  shell-expand-line: $, ~, alias
+C-x *                  glob-expand-word: * ?
 !!␣                    expand prev cmd (magic-space)
 !N␣                    expand nth cmd (magic-space)
 !*␣                    expand prev args (magic-space)
 ^x^y␣                  expand prev line, 1st x→y (magic-space)
 
-  tab [tab]                   menu-complete: $ ~ @ cmd /
-  alt-*                       insert-completions: $ ~ @ cmd /
-  alt-{                       complete-into-braces: filenames
-  ctrl-alt-i [ctrl-alt-i]     dynamic-complete-history: strings
-  alt-g                       glob-complete-word: * ?
-
-  ctrl-alt-e                  shell-expand-line: var, alias, ~
-  ctrl-x *                    glob-expand-word: * ?
-
-  ctrl-l                      clear-screen
   ctrl-x ctrl-u               undo
   ctrl-alt-r                  revert-line
 
@@ -55,7 +55,7 @@ A-...                  yank-last-arg
   ctrl-m | cr                 accept-line (mac eol)
   return | crlf               accept-line (win eol)
 
-  alt-N                       digit-arg (MOVE IT UP?)
+  ctrl-l                      clear-screen
 
   ctrl-x (                    start-kbd-macro
   ctrl-x )                    end-kbd-macro
