@@ -1,10 +1,92 @@
-alias 
+      job_spec [&]                                 
+      (( expression ))                             
+      . filename [arguments]                       
+      :                                            
+      [ arg... ]                                   
+      [[ expression ]]                             
+alias
 
-bind 
+bg
+bind
+break
+builtin
 
-cd
+caller 
+      case WORD in [PATTERN [| PATTERN]...) COMM>  
+      cd [-L|[-P [-e]] [-@]] [dir]                 
+      command [-pVv] command [arg ...]             
+      compgen [-abcdefgjksuv] [-o option] [-A ac>  
+      complete [-abcdefgjksuv] [-pr] [-DE] [-o o>  
+      compopt [-o|+o option] [-DE] [name ...]      
+      continue [n]                                 
+      coproc [NAME] command [redirections]         
 
-type 
+      declare [-aAfFgilnrtux] [-p] [name[=value]>  
+      dirs [-clpv] [+N] [-N]                       
+      disown [-h] [-ar] [jobspec ... | pid ...]    
 
-unalias
+      echo [-neE] [arg ...]                        
+      enable [-a] [-dnps] [-f filename] [name ..>  
+      eval [arg ...]                               
+      exec [-cl] [-a name] [command [arguments .>  
+      exit [n]                                     
+      export [-fn] [name[=value] ...] or export >  
 
+      false                                        
+      fc [-e ename] [-lnr] [first] [last] or fc >  
+      fg [job_spec]                                
+      for NAME [in WORDS ... ] ; do COMMANDS; do>  
+      for (( exp1; exp2; exp3 )); do COMMANDS; d>  
+      function name { COMMANDS ; } or name () { >  
+
+      getopts optstring name [arg]                 
+
+      hash [-lr] [-p pathname] [-dt] [name ...]    
+      help [-dms] [pattern ...]                    
+      history [-c] [-d offset] [n] or history -> 
+
+      if COMMANDS; then COMMANDS; [ elif COMMAN> 
+
+      jobs [-lnprs] [jobspec ...] or jobs -x co> 
+
+      kill [-s sigspec | -n signum | -sigspec] > 
+
+      let arg [arg ...]                          
+      local [option] name[=value] ...            
+      logout [n]                                 
+
+      mapfile [-d delim] [-n count] [-O origin]> 
+
+      popd [-n] [+N | -N]                        
+      printf [-v var] format [arguments]         
+      pushd [-n] [+N | -N | dir]                 
+      pwd [-LP]                                  
+     
+      read [-ers] [-a array] [-d delim] [-i tex> 
+      readarray [-n count] [-O origin] [-s coun> 
+      readonly [-aAf] [name[=value] ...] or rea> 
+      return [n]                                 
+
+      select NAME [in WORDS ... ;] do COMMANDS;> 
+      set [-abefhkmnptuvxBCHP] [-o option-name]> 
+      shift [n]                                  
+      shopt [-pqsu] [-o] [optname ...]           
+      source filename [arguments]                
+      suspend [-f]                               
+      test [expr]                                
+
+      time [-p] pipeline                         
+      times                                      
+      trap [-lp] [[arg] signal_spec ...]         
+      true                                       
+      type [-afptP] name [name ...]              
+      typeset [-aAfFgilnrtux] [-p] name[=value]> 
+      ulimit [-SHabcdefiklmnpqrstuvxPT] [limit]  
+      umask [-p] [-S] [mode]                     
+      unalias [-a] name [name ...]               
+      unset [-f] [-v] [-n] [name ...]            
+      until COMMANDS; do COMMANDS; done          
+      variables - Names and meanings of some sh> 
+      wait [-n] [id ...]                         
+      while COMMANDS; do COMMANDS; done          
+      { COMMANDS ; }                             
