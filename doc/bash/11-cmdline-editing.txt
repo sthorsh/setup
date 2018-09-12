@@ -1,4 +1,4 @@
-  alt-N                       digit-arg
+A-N                    digit-arg
 
 C-b                    backward-char
 A-b                    backward-word
@@ -32,37 +32,35 @@ C-r *|C-h C-r C-gjm    reverse-search-history
 C-y                    yank from kill ring
 C-y A-y...             yank-pop from kill ring
 C-A-y                  yank 1st arg
-A-N A-...              yank-nth-arg
-A-...                  yank-last-arg
+A-N A-<dot>...         yank-nth-arg
+A-<dot>...             yank-last-arg
 
-tab [tab]              menu-complete: $ ~ @ cmd /
-A-*                    insert-completions: $ ~ @ cmd /
-A-{                    complete-into-braces: filenames
-A-g                    glob-complete-word: * ?
+Tab...                 menu-complete: $ ~ @ cmd /
+A-{                    complete-into-braces: /
 C-A-i [C-A-i]          dynamic-complete-history 
 
 C-A-e                  shell-expand-line: $, ~, alias
-C-x *                  glob-expand-word: * ?
 !!␣                    expand prev cmd (magic-space)
 !N␣                    expand nth cmd (magic-space)
 !*␣                    expand prev args (magic-space)
 ^x^y␣                  expand prev line, 1st x→y (magic-space)
 
-  ctrl-x ctrl-u               undo
-  ctrl-alt-r                  revert-line
+A-g                    glob-complete-word: * ?
+C-x *                  glob-expand-word: * ?
 
-  ctrl-j | lf                 accept-line (nix eol)
-  ctrl-m | cr                 accept-line (mac eol)
-  return | crlf               accept-line (win eol)
+C-x C-u                undo
+C-A-r                  revert-line
+C-j | lf               accept-line (nix eol)
+C-m | cr               accept-line (mac eol)
+Enter | crlf           accept-line (win eol)
 
-  ctrl-l                      clear-screen
+C-x (                  start-kbd-macro
+C-x )                  end-kbd-macro
+C-x e                  call-last-kbd-macro
+C-x C-e                edit-and-execute-command
 
-  ctrl-x (                    start-kbd-macro
-  ctrl-x )                    end-kbd-macro
-  ctrl-x e                    call-last-kbd-macro
-  ctrl-x ctrl-e               edit-and-execute-command
+C-l                    clear-screen
 
-  ctrl-c                      intr ref stty -a (tty driver)
-  ctrl-d                      eof ref stty -a
-  ctrl-z                      susp ref stty -a (tty driver)
-
+C-c                    intr ref stty -a
+C-d                    eof
+C-z                    susp 
