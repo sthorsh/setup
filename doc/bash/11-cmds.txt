@@ -1,0 +1,6 @@
+alias [-p] [name[=value] ... ]
+
+type [-afptP] name [name ...]
+
+unalias [-a] name [name ...]
+
