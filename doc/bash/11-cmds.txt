@@ -1,6 +1,10 @@
-alias [-p] [name[=value] ... ]
+alias 
 
-type [-afptP] name [name ...]
+bind 
 
-unalias [-a] name [name ...]
+cd
+
+type 
+
+unalias
 
