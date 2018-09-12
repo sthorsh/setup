@@ -1,0 +1,14 @@
+Init-filer
+- Login & interaktivt
+- Login & ikke-interaktivt
+- Ikke-login & interaktivt
+- Ikke-login & ikke-interaktivt
+
+Steps in cmdline processing
+- Fig 7.1 Learning the Bash shell
+
+Quoting
+- None
+- Single/strong
+- Double/weak
+

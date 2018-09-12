@@ -1,0 +1,19 @@
+Former
+  bash && private: $COLUMNS mfl
+  bash && environment/exported: $PATH mfl 
+  egen && private
+  egen && environment/exported
+
+Lister
+  declare -p  private && env/exported
+  set         private && env/exported
+  env         env/exported only
+  export      env/exported only
+
+Tilordne
+  foo=bar
+
+Eksportere 
+  til _en_ subprosess: foo=bar cmd
+  til alle subprosesser: export foo=bar
+
