@@ -5,38 +5,41 @@
       [ arg... ]                                   
       [[ expression ]]                             
 
-alias [NAVN[=VERDI]]
+A
+  alias [NAVN[=VERDI]]
 
-bg [JOBSPEC]
-bind --help
-builtin BUILTIN
+B
+  bg [JOBSPEC]
+  bind --help
+  builtin BUILTIN
 
-caller [N]
-case-in-esac
-cd [DIR]
-command COMMAND
-compgen
-complete
-compopt
-coproc COMMAND
+C
+  caller [N]
+  case-in-esac
+  cd [DIR]
+  command COMMAND
+  compgen
+  complete
+  compopt
+  coproc COMMAND
 
 declare [ATTRS] [NAVN[=VERDI]]
-dirs
+dirs - n/a
 disown [JOBSPEC|PID]    
 
-      echo [-neE] [arg ...]                        
-      enable [-a] [-dnps] [-f filename] [name ..>  
-      eval [arg ...]                               
-      exec [-cl] [-a name] [command [arguments .>  
-      exit [n]                                     
-      export [-fn] [name[=value] ...] or export >  
+echo ARG
+enable BUILTIN
+eval [ARG ...]                               
+exec COMMAND
+exit [N]
+export [NAVN[=VERDI]
 
-      false                                        
-      fc [-e ename] [-lnr] [first] [last] or fc >  
+false                                        
+fc - n/a
 fg [JOBSPEC]                                
-for-do-continue-break-done
-      for (( exp1; exp2; exp3 )); do COMMANDS; d>  
-      function name { COMMANDS ; } or name () { >  
+for-in-do-continue-break-done
+for-(())-do-continue-break-done
+function NAME {...}
 
       getopts optstring name [arg]                 
 
@@ -56,9 +59,9 @@ for-do-continue-break-done
 
       mapfile [-d delim] [-n count] [-O origin]> 
 
-popd (*)
+popd - n/a
       printf [-v var] format [arguments]         
-pushd (*)
+pushd - n/a
       pwd [-LP]                                  
      
       read [-ers] [-a array] [-d delim] [-i tex> 
@@ -72,12 +75,12 @@ pushd (*)
       shopt [-pqsu] [-o] [optname ...]           
       source filename [arguments]                
       suspend [-f]                               
-      test [expr]                                
 
+      test [expr]                                
       time [-p] pipeline                         
       times                                      
       trap [-lp] [[arg] signal_spec ...]         
-      true                                       
+true                                       
       type [-afptP] name [name ...]              
       typeset [-aAfFgilnrtux] [-p] name[=value]> 
       ulimit [-SHabcdefiklmnpqrstuvxPT] [limit]  
