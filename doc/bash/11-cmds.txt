@@ -5,24 +5,24 @@
       [ arg... ]                                   
       [[ expression ]]                             
 
-alias [name[=value]]
+alias [NAVN[=VERDI]]
 
-bg [job_spec]
+bg [JOBSPEC]
 bind --help
-builtin builtin
+builtin BUILTIN
 
 caller [N]
 case-in-esac
-cd [dir]
-command command
-compgen --help
-complete --help
-compopt --help
-coproc command
+cd [DIR]
+command COMMAND
+compgen
+complete
+compopt
+coproc COMMAND
 
-  declare [name[=value]
-      dirs [-clpv] [+N] [-N]                       
-      disown [-h] [-ar] [jobspec ... | pid ...]    
+declare [ATTRS] [NAVN[=VERDI]]
+dirs
+disown [JOBSPEC|PID]    
 
       echo [-neE] [arg ...]                        
       enable [-a] [-dnps] [-f filename] [name ..>  
@@ -33,8 +33,8 @@ coproc command
 
       false                                        
       fc [-e ename] [-lnr] [first] [last] or fc >  
-      fg [job_spec]                                
-  for-do-continue-break-done
+fg [JOBSPEC]                                
+for-do-continue-break-done
       for (( exp1; exp2; exp3 )); do COMMANDS; d>  
       function name { COMMANDS ; } or name () { >  
 
@@ -56,9 +56,9 @@ coproc command
 
       mapfile [-d delim] [-n count] [-O origin]> 
 
-      popd [-n] [+N | -N]                        
+popd (*)
       printf [-v var] format [arguments]         
-      pushd [-n] [+N | -N | dir]                 
+pushd (*)
       pwd [-LP]                                  
      
       read [-ers] [-a array] [-d delim] [-i tex> 
