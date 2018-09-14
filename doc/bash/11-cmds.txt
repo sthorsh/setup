@@ -61,12 +61,11 @@ P
   printf FORMAT [ARG]         
   pushd
   pwd
-       
-      read [-ers] [-a array] [-d delim] [-i tex> 
-      readarray [-n count] [-O origin] [-s coun> 
-      readonly [-aAf] [name[=value] ...] or rea> 
-      return 
-
+R      
+  read [OPTS] [NAME ...]
+  readonly [NAME[=VALUE]]
+  return [N]
+S
       select NAME [in WORDS ... ;] do COMMANDS;> 
       set [-abefhkmnptuvxBCHP] [-o option-name]> 
       shift [n]                                  
@@ -94,3 +93,4 @@ P
       while COMMANDS; do COMMANDS; done          
 
       { COMMANDS ; }                             
+
