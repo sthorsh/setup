@@ -7,12 +7,10 @@
 
 A
   alias [NAVN[=VERDI]]
-
 B
-  bg [JOBSPEC]
+  bg [JOB_ID]
   bind --help
   builtin BUILTIN
-
 C
   caller [N]
   case-in-esac
@@ -22,52 +20,52 @@ C
   complete
   compopt
   coproc COMMAND
-
-declare [ATTRS] [NAVN[=VERDI]]
-dirs - n/a
-disown [JOBSPEC|PID]    
-
-echo ARG
-enable BUILTIN
-eval [ARG ...]                               
-exec COMMAND
-exit [N]
-export [NAVN[=VERDI]
-
-false                                        
-fc - n/a
-fg [JOBSPEC]                                
-for-in-do-continue-break-done
-for-(())-do-continue-break-done
-function NAME {...}
-
-      getopts optstring name [arg]                 
-
-      hash [-lr] [-p pathname] [-dt] [name ...]    
-      help [-dms] [pattern ...]                    
-      history [-c] [-d offset] [n] or history -> 
-
-      if COMMANDS; then COMMANDS; [ elif COMMAN> 
-
-      jobs [-lnprs] [jobspec ...] or jobs -x co> 
-
-      kill [-s sigspec | -n signum | -sigspec] > 
-
-      let arg [arg ...]                          
-      local [option] name[=value] ...            
-      logout [n]                                 
-
-      mapfile [-d delim] [-n count] [-O origin]> 
-
-popd - n/a
-      printf [-v var] format [arguments]         
-pushd - n/a
-      pwd [-LP]                                  
-     
+D
+  declare [ATTRS] [NAVN[=VERDI]]
+  dirs
+  disown [JOB_ID|PID]    
+E
+  echo ARG
+  enable BUILTIN
+  eval [ARG ...]                               
+  exec COMMAND
+  exit [N]
+  export [NAVN[=VERDI]
+F
+  false                                        
+  fc
+  fg [JOB_ID]                                
+  for-in-do-continue-break-done
+  for-(())-do-continue-break-done
+  function NAME {...}
+G
+  getopts OPTSTRING NAME [ARG]                 
+H
+  hash [opts] [NAVN]
+  help [opts] [PATTERN]
+  history [opts] [args]
+I
+  if-then-elif-else-fi
+J
+  jobs [opts] [args]
+K
+  kill [opts] JOB_ID|PID
+L
+  let ARG [ARG ...]                          
+  local [OPTS] NAME[=VALUE]
+  logout [N]                                 
+M
+  mapfile [OPTS] [ARRAY]
+P
+  popd
+  printf FORMAT [ARG]         
+  pushd
+  pwd
+       
       read [-ers] [-a array] [-d delim] [-i tex> 
       readarray [-n count] [-O origin] [-s coun> 
       readonly [-aAf] [name[=value] ...] or rea> 
-      return [n]                                 
+      return 
 
       select NAME [in WORDS ... ;] do COMMANDS;> 
       set [-abefhkmnptuvxBCHP] [-o option-name]> 
@@ -80,15 +78,19 @@ pushd - n/a
       time [-p] pipeline                         
       times                                      
       trap [-lp] [[arg] signal_spec ...]         
-true                                       
+      true
       type [-afptP] name [name ...]              
       typeset [-aAfFgilnrtux] [-p] name[=value]> 
+
       ulimit [-SHabcdefiklmnpqrstuvxPT] [limit]  
       umask [-p] [-S] [mode]                     
       unalias [-a] name [name ...]               
       unset [-f] [-v] [-n] [name ...]            
       until COMMANDS; do COMMANDS; done          
+
       variables - Names and meanings of some sh> 
+
       wait [-n] [id ...]                         
       while COMMANDS; do COMMANDS; done          
+
       { COMMANDS ; }                             
