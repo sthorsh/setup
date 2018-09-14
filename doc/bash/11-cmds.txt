@@ -1,96 +1,81 @@
-      job_spec [&]                                 
-      (( expression ))                             
-      . filename [arguments]                       
-      :                                            
-      [ arg... ]                                   
-      [[ expression ]]                             
+    alias [NAVN[=VERDI]]
+    bg [JOB_ID]
+    bind --help
+    builtin BUILTIN
+    caller [N]
+    case-in-esac
+    cd [DIR]
+    command COMMAND
+    compgen
+    complete
+    compopt
+    coproc COMMAND
+    declare [ATTRS] [NAVN[=VERDI]]
+    dirs
+    disown [JOB_ID|PID]    
+    echo ARG
+    enable BUILTIN
+    eval [ARG ...]                               
+    exec COMMAND
+    exit [N]
+    export [NAVN[=VERDI]
+    false                                        
+    fc
+    fg [JOB_ID]                                
+    for-in-do-continue-break-done
+    for-(())-do-continue-break-done
+    function NAME {...}
+    getopts OPTSTRING NAME [ARG]                 
+    hash [opts] [NAVN]
+    help [opts] [PATTERN]
+    history [opts] [args]
+    if-then-elif-else-fi
+    jobs [opts] [args]
+    kill [opts] JOB_ID|PID
+    let ARG [ARG ...]                          
+    local [OPTS] NAME[=VALUE]
+    logout [N]                                 
+    mapfile [OPTS] [ARRAY]
+    popd
+    printf FORMAT [ARG]         
+    pushd
+    pwd
+    read [OPTS] [NAME ...]
+    readonly [NAME[=VALUE]]
+    return [N]
+    select-in-do-continue-break-done
+    set --help
+    shift [N]                                  
+    shopt --help
+    source filename [args]
+    suspend [-f]                               
+    test [expr]                                
+    time pipeline                         
+    times                                      
+    trap --help
+    true
+    type name
+    ulimit [opts] [limit]  
+    umask [mode]                     
+    unalias name
+    unset [name]
+    until-do-done          
+    wait [job_id|pid]
+    while-do-done          
 
-A
-  alias [NAVN[=VERDI]]
-B
-  bg [JOB_ID]
-  bind --help
-  builtin BUILTIN
-C
-  caller [N]
-  case-in-esac
-  cd [DIR]
-  command COMMAND
-  compgen
-  complete
-  compopt
-  coproc COMMAND
-D
-  declare [ATTRS] [NAVN[=VERDI]]
-  dirs
-  disown [JOB_ID|PID]    
-E
-  echo ARG
-  enable BUILTIN
-  eval [ARG ...]                               
-  exec COMMAND
-  exit [N]
-  export [NAVN[=VERDI]
-F
-  false                                        
-  fc
-  fg [JOB_ID]                                
-  for-in-do-continue-break-done
-  for-(())-do-continue-break-done
-  function NAME {...}
-G
-  getopts OPTSTRING NAME [ARG]                 
-H
-  hash [opts] [NAVN]
-  help [opts] [PATTERN]
-  history [opts] [args]
-I
-  if-then-elif-else-fi
-J
-  jobs [opts] [args]
-K
-  kill [opts] JOB_ID|PID
-L
-  let ARG [ARG ...]                          
-  local [OPTS] NAME[=VALUE]
-  logout [N]                                 
-M
-  mapfile [OPTS] [ARRAY]
-P
-  popd
-  printf FORMAT [ARG]         
-  pushd
-  pwd
-R      
-  read [OPTS] [NAME ...]
-  readonly [NAME[=VALUE]]
-  return [N]
-S
-      select NAME [in WORDS ... ;] do COMMANDS;> 
-      set [-abefhkmnptuvxBCHP] [-o option-name]> 
-      shift [n]                                  
-      shopt [-pqsu] [-o] [optname ...]           
-      source filename [arguments]                
-      suspend [-f]                               
+-----------------
+job_spec [&]                                 
+(( expression ))                             
+. filename [arguments]                       
+:                                            
+[ arg... ]                                   
+[[ expression ]]                             
+{ COMMANDS ; }                             
 
-      test [expr]                                
-      time [-p] pipeline                         
-      times                                      
-      trap [-lp] [[arg] signal_spec ...]         
-      true
-      type [-afptP] name [name ...]              
-      typeset [-aAfFgilnrtux] [-p] name[=value]> 
-
-      ulimit [-SHabcdefiklmnpqrstuvxPT] [limit]  
-      umask [-p] [-S] [mode]                     
-      unalias [-a] name [name ...]               
-      unset [-f] [-v] [-n] [name ...]            
-      until COMMANDS; do COMMANDS; done          
-
-      variables - Names and meanings of some sh> 
-
-      wait [-n] [id ...]                         
-      while COMMANDS; do COMMANDS; done          
-
-      { COMMANDS ; }                             
+shell variabler: navn verdi
+operatorer
+positional params: $1 etc
+shell attributter: ?
+flagg: ±himBCHs
+shell opsjoner: -o option
 
