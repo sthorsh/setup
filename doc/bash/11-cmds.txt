@@ -1,63 +1,76 @@
-alias navn=verdi                vis|definer alias
+alias navn=verdi                vis|def alias
 
-bg job_id                       cmd → cmd &
-bind -pv | arg                  readline fns|vars
-builtin b                       utføre b
+bg job_id                       flytt cmd til bakgrunn
+bind -pv|k:rf|rcmd              vis|bind til readline-fn|var
+builtin bcmd                    utfør bash/builtin cmd
 
-case-in-esac                    utføre cmds iht pattern matching
-cd dir                          change dir
-command cmd                     utføre cmd                     
-coproc cmd                      utføre cmd async
+case-in-esac                    utfør cmds vha pattern matching
+cd dir                          endre working directory
+command cmd                     utfør cmd                     
+coproc cmd                      utfør cmd async
 
-declare -p|F|attrs navn=verdi   vis|deklarer attrs navn verdi
-    disown [JOB_ID|PID]    
+declare -pF | attr name=val     vis|dekl|def var|fn
+disown job_id|pid               fornekt jobb
 
-    echo ARG
-    enable BUILTIN
-    eval [ARG ...]                               
-    exec COMMAND
-    exit [N]
-    export [NAVN[=VERDI]
-    false                                        
-    fg [JOB_ID]                                
-    for-in-do-continue-break-done
-    for-(())-do-continue-break-done
-    function NAME {...}
-    getopts OPTSTRING NAME [ARG]                 
-    hash [opts] [NAVN]
-    help [opts] [PATTERN]
-    history [opts] [args]
-    if-then-elif-else-fi
-    jobs [opts] [args]
-    kill [opts] JOB_ID|PID
-    let ARG [ARG ...]                          
-    local [OPTS] NAME[=VALUE]
-    logout [N]                                 
-    mapfile [OPTS] [ARRAY]
-    printf FORMAT [ARG]         
-    pwd
-    read [OPTS] [NAME ...]
-    readonly [NAME[=VALUE]]
-    return [N]
-    select-in-do-continue-break-done
-    set --help
-    shift [N]                                  
-    shopt --help
-    source filename [args]
-    suspend [-f]                               
-    test [expr]                                
-    time pipeline                         
-    times                                      
-    trap --help
-    true
-    type name
-    ulimit [opts] [limit]  
-    umask [mode]                     
-    unalias name
-    unset [name]
-    until-do-done          
-    wait [job_id|pid]
-    while-do-done          
+echo -en arg ...                skriv til stdout
+eval arg                        utfør arg som cmd
+exec cmd                        erstatt skall med cmd
+exit N                          avslutt skall
+export name=val                 vis|eksporter|def -x vars
+
+false                           returverdi 1
+fg job_id                       flytt cmd til forgrunn
+for-in-do-done                  evt med continue, break
+for-(())-do-done                evt med continue, break
+function name { cmds }          evt name()
+
+getopts optstring name arg      parse opt args
+
+hash -l|cmd                     vis|add-cmd-til hash
+help bcmd                       vis help for alle|en bcmd
+history                         vis history list
+
+if-then-elif-else-fi            utfør cmds vha betingelse
+
+jobs -l                         vis jobber
+
+kill -l | sig job_id|pid        vis signaler | send signal
+
+let arg [arg ...]               eval aritmetisk uttrykk
+local attr name=val             def lokal var
+logout N                        avslutt login-skall           
+
+mapfile array                   les fra stdin til array
+
+printf format arg               skriv til stdout
+pwd                             print working dir
+
+read name ...                   les fra stdin til name ...
+readonly name=val               def ro var    
+return N                        avslutt fn|script m/verdi N
+
+select-in-do-done               evt med continue, break
+  set --help
+  shift [N]                                  
+  shopt --help
+  source filename [args]
+  suspend [-f]                               
+
+  test [expr]                                
+  time pipeline                         
+  times                                      
+  trap --help
+true                                    returverdi 0
+  type name
+
+  ulimit [opts] [limit]  
+  umask [mode]                     
+  unalias name
+  unset [name]
+  until-do-done          
+
+  wait [job_id|pid]
+  while-do-done          
 
 -----------------
 job_spec [&]                                 
@@ -67,7 +80,7 @@ job_spec [&]
 [ arg... ]                                   
 [[ expression ]]                             
 { COMMANDS ; }                             
-
+-----------------
 shell variabler: navn verdi
 operatorer
 positional params: $1 etc
