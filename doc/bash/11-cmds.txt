@@ -1,18 +1,17 @@
-    alias [NAVN[=VERDI]]
-    bg [JOB_ID]
-    bind --help
-    builtin BUILTIN
-    caller [N]
-    case-in-esac
-    cd [DIR]
-    command COMMAND
-    compgen
-    complete
-    compopt
-    coproc COMMAND
-    declare [ATTRS] [NAVN[=VERDI]]
-    dirs
+alias navn=verdi                vis|definer alias
+
+bg job_id                       cmd → cmd &
+bind -pv | arg                  readline fns|vars
+builtin b                       utføre b
+
+case-in-esac                    utføre cmds iht pattern matching
+cd dir                          change dir
+command cmd                     utføre cmd                     
+coproc cmd                      utføre cmd async
+
+declare -p|F|attrs navn=verdi   vis|deklarer attrs navn verdi
     disown [JOB_ID|PID]    
+
     echo ARG
     enable BUILTIN
     eval [ARG ...]                               
@@ -20,7 +19,6 @@
     exit [N]
     export [NAVN[=VERDI]
     false                                        
-    fc
     fg [JOB_ID]                                
     for-in-do-continue-break-done
     for-(())-do-continue-break-done
@@ -36,9 +34,7 @@
     local [OPTS] NAME[=VALUE]
     logout [N]                                 
     mapfile [OPTS] [ARRAY]
-    popd
     printf FORMAT [ARG]         
-    pushd
     pwd
     read [OPTS] [NAME ...]
     readonly [NAME[=VALUE]]
