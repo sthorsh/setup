@@ -1,1 +1,12 @@
-todo
+Boolske/conditional [file] operators/expressions
+- ref help test
+
+Boolske/conditional [string] operators/expressions
+- ref help test
+
+Boolske/conditional [aritmetisk] operators/expressions
+- ref help test
+
+Boolske/conditional [other] operators/expressions
+- ref help test
+

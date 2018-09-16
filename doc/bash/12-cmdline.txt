@@ -1,3 +1,20 @@
+-----------------
+job_spec [&]                                 
+(( expression ))                             
+. filename [arguments]                       
+:                                            
+[ arg... ]                                   
+[[ expression ]]                             
+{ COMMANDS ; }                             
+-----------------
+shell variabler: navn verdi
+operatorer
+positional params: $1 etc
+shell attributter: ?
+flagg: ±himBCHs
+shell opsjoner: -o option
+
+===========================
 Init-filer
 - Login & interaktivt
 - Login & ikke-interaktivt

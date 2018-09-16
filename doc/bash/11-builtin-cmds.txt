@@ -1,0 +1,60 @@
+alias [navn=verdi]                  vis|definer alias
+bg [job_id ...]                     send current-job|job_id ... til bg
+bind -p                             vis keyseq → readline-fn
+  bind -v                           vis readline-var → verdi
+  bind ks:rf                        bind keyseq → readline-fn
+  bind "set rv val"                 bind readline-var → verdi
+builtin b arg ...                   utfør b
+case-in-esac                        help case
+cd arg                              cd til arg
+command c args                      utfør c
+coproc  c args                      utfør c asynkront
+declare -p                          vis vardefs
+  declare -F                        vis fndecls
+  declare ±aAirx... navn=verdi      deklarer|definer var
+disown job_id|pid                   fornekt jobb
+echo -en args                       skriv til stdout
+eval arg                            utfør arg
+exec cmd args                       erstatt skall med cmd
+exit N                              avslutt skall
+export                              vis eksporterte vars
+  export name                       eksporter var
+  export name=val                   definer/eksporter var
+false                               returverdi 1
+fg [job_id]                         send current-job|job_id til fg
+for-in-do-done                      help for
+for-(())-do-done                    man bash
+function name { cmds }              evt name()
+getopts optstring name arg          parse opt args
+hash cmd                            legg cmd til hash
+help [b]                            help alle|en builtin
+history                             vis historieliste
+if-then-elif-else-fi                help if
+jobs -l                             vis jobber
+  kill -l | sig job_id|pid            vis signaler | send signal
+  let arg [arg ...]                   eval aritmetisk uttrykk
+  local attr name=val                 def lokal var
+  logout N                            avslutt login-skall           
+  mapfile array                       les fra stdin til array
+  printf format arg                   skriv til stdout
+  pwd                                 print working dir
+  read name ...                       les fra stdin til name ...
+  readonly name=val                   def ro var    
+  return N                            avslutt fn|script m/verdi N
+  select-in-do-done                   evt continue, break
+  set ±attr|±o opt -- arg ...         vis vars, set attr/opt, set $1,...
+  shift N                             shift $1,$2 ...
+  shopt -p|s|u optname                vis|set|unset shell option
+  source file arg ...                 utfør cmds i file med $1,...
+  test expr                           evaluer boolsk expr
+  time cmd | ...                      time pipeline
+  trap -lp | cmd sig_id               utfør cmd ved sig_id
+  true                                returverdi 0
+  type -a name                        alias, builtin, cmd, script mfl
+  ulimit -a | opt limit               vis|endre user resource limits
+  umask -S | mode     t               vis|endre user file creation mask
+  unalias name                        rm alias
+  unset name                          rm var|fn
+  until-do-done                       evt continue, break
+  wait job_id|pid                     vent på job done
+  while-do-done                       evt continue, break
