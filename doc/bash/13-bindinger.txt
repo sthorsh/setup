@@ -1,3 +1,5 @@
+BINDINGER
+
 A-N                    digit-arg
 
 C-b                    backward-char
