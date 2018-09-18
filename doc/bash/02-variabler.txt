@@ -1,3 +1,8 @@
+$*
+$@
+$_
+$...
+
 BASH_*
 COLORTERM
 COLUMNS=0...
@@ -17,65 +22,36 @@ IGNOREEOF=10
 JAVA_HOME=/usr/lib/jvm/java/
 LANG=en_US.UTF-8
 LC_*=nb_NO.UTF-8
-  LESS=
-  LINENO=
-  LINES=
-  LOGNAME=
-  MACHTYPE=
-  MAILCHECK=
-  MANDATORY_PATH=
-  MAVEN_HOME=
-  OPTERR=
-  OPTIND=
-  OSTYPE=
-  PATH=
-  PIPESTATUS=
-  PPID=
-  PROMPT_COMMAND=
-  PS1=
-  PS2=
-  PS4=
-  PWD=
-  QT4_IM_MODULE=
-  QT_ACCESSIBILITY=
-  QT_IM_MODULE=
-  RANDOM=
-  SECONDS=
-  SESSION_MANAGER=
-  shell=
-  SHELL=
-  SHELLOPTS=
-  SHLVL=
-  snap_bin_path=
-  snap_xdg_path=
-  SSH_AGENT_PID=
-  SSH_AUTH_SOCK=
-  TERM=
-  TEXTDOMAIN=
-  TEXTDOMAINDIR=
-  TMUX=
-  TMUX_PANE=
-  TMUX_PLUGIN_MANAGER_PATH=
-  UID=
-  USER=
-  USERNAME=
-  VISUAL=
-  VTE_VERSION=
-  WINDOWPATH=
-  XAUTHORITY=
-  XDG_CONFIG_DIRS=
-  XDG_CURRENT_DESKTOP=
-  XDG_DATA_DIRS=
-  XDG_MENU_PREFIX=
-  XDG_RUNTIME_DIR=
-  XDG_SEAT=
-  XDG_SESSION_DESKTOP=
-  XDG_SESSION_ID=
-  XDG_SESSION_TYPE=
-  XDG_VTNR $XMODIFIERS=
-  __git_printf_supports_v
-  __grub_script_check_program
-  $_xspecs
+LESS=--LINE-NUMBERS ...
+LINENO=1..70
+LINES=70
+LOGNAME=svein
+MACHTYPE=x86_64-pc-linux-gnu
+MAILCHECK=60
+OPTERR=1
+OPTIND=1
+OSTYPE=linux-gnu
+PATH=/home/svein/bin:...
+PIPESTATUS=0
+PPID=12345
+PROMPT_COMMAND=history -a; ...
+PS*
+PWD=/home/svein
+RANDOM=12345
+SECONDS=1234
+SHELL=/bin/bash
+SHELLOPTS=braceexpand:...
+SHLVL=2
+SSH_AGENT_PID=1327
+TERM=screen-256color
+UID=1000
+USER=svein
+USERNAME=svein
+VISUAL=/usr/bin/vim
+VTE_VERSION=5202
+WINDOWPATH=2
+XAUTHORITY=/run/user/1000/gdm/Xauthority
+XDG_*
 
 -----------------------------------------
 Former
@@ -84,7 +60,7 @@ Former
   egen && private
   egen && environment/exported
 
-Lister
+Vise
   declare -p  private && env/exported
   set         private && env/exported
   env         env/exported only
