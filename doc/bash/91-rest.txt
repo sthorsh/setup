@@ -1,3 +1,5 @@
+CMDLINE
+<env> <cmd> <opt> <arg> <redirect> | ...
 -----------------
 job_spec [&]                                 
 (( expression ))                             

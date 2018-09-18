@@ -1,74 +1,62 @@
-$*
-$@
-$_
-$...
+Special
+  * positional params 
+  @ positional params 
+  # number of positional params
+  _ options on shell invocation
+  ? exit status of prevoius cmd
+  _ last arg of prevoius cmd
+  $ pid of shell process
+  ! pid of last bg cmd
+  0 name of shell or script
 
-BASH_*
-COLORTERM
-COLUMNS=0...
-COMP_WORDBREAKS="'><=;|&(:
-DIRSTACK=~...
-DISPLAY=:0
-EDITOR=/usr/bin/vim
-EUID=1000
-GNOME_*
-GROUPS=1000
-HIST*
-HOME=/home/svein
-HOSTNAME=PF0TK2XW
-HOSTTYPE=x86_64
-IFS='
-IGNOREEOF=10
-JAVA_HOME=/usr/lib/jvm/java/
-LANG=en_US.UTF-8
-LC_*=nb_NO.UTF-8
-LESS=--LINE-NUMBERS ...
-LINENO=1..70
-LINES=70
-LOGNAME=svein
-MACHTYPE=x86_64-pc-linux-gnu
-MAILCHECK=60
-OPTERR=1
-OPTIND=1
-OSTYPE=linux-gnu
-PATH=/home/svein/bin:...
-PIPESTATUS=0
-PPID=12345
-PROMPT_COMMAND=history -a; ...
-PS*
-PWD=/home/svein
-RANDOM=12345
-SECONDS=1234
-SHELL=/bin/bash
-SHELLOPTS=braceexpand:...
-SHLVL=2
-SSH_AGENT_PID=1327
-TERM=screen-256color
-UID=1000
-USER=svein
-USERNAME=svein
-VISUAL=/usr/bin/vim
-VTE_VERSION=5202
-WINDOWPATH=2
-XAUTHORITY=/run/user/1000/gdm/Xauthority
-XDG_*
+Standard
+  BASH_*
+  COLORTERM
+  COLUMNS=0...
+  COMP_WORDBREAKS="'><=;|&(:
+  DIRSTACK=~...
+  DISPLAY=:0
+  EDITOR=/usr/bin/vim
+  EUID=1000
+  GNOME_*
+  GROUPS=1000
+  HIST*
+  HOME=/home/svein
+  HOSTNAME=PF0TK2XW
+  HOSTTYPE=x86_64
+  IFS='
+  IGNOREEOF=10
+  JAVA_HOME=/usr/lib/jvm/java/
+  LANG=en_US.UTF-8
+  LC_*=nb_NO.UTF-8
+  LESS=--LINE-NUMBERS ...
+  LINENO=1..70
+  LINES=70
+  LOGNAME=svein
+  MACHTYPE=x86_64-pc-linux-gnu
+  MAILCHECK=60
+  OPTERR=1
+  OPTIND=1
+  OSTYPE=linux-gnu
+  PATH=/home/svein/bin:...
+  PIPESTATUS=0
+  PPID=12345
+  PROMPT_COMMAND=history -a; ...
+  PS*
+  PWD=/home/svein
+  RANDOM=12345
+  SECONDS=1234
+  SHELL=/bin/bash
+  SHELLOPTS=braceexpand:...
+  SHLVL=2
+  SSH_AGENT_PID=1327
+  TERM=screen-256color
+  UID=1000
+  USER=svein
+  USERNAME=svein
+  VISUAL=/usr/bin/vim
+  VTE_VERSION=5202
+  WINDOWPATH=2
+  XAUTHORITY=/run/user/1000/gdm/Xauthority
+  XDG_*
 
------------------------------------------
-Former
-  bash && private: $COLUMNS mfl
-  bash && environment/exported: $PATH mfl
-  egen && private
-  egen && environment/exported
-
-Vise
-  declare -p  private && env/exported
-  set         private && env/exported
-  env         env/exported only
-  export      env/exported only
-
-Tilordne
-  foo=bar
-
-Eksportere
-  til _en_ subprosess: foo=bar cmd
-  til alle subprosesser: export foo=bar)'"
