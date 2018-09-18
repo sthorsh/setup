@@ -1,0 +1,18 @@
+Cmd-/pipeline
+□ Split cmdline i cmds
+□ Sett opp cmdline I/O
+□ Splitt cmd i tokens
+□ Hvis 1st token er keyword: les neste cmd & loopback
+□ Hvis 1st token er alias: alias expansion & loopback
+□ Brace expansion
+□ Tilde expansion
+□ Parameter expansion
+□ Command substitution
+□ Arithmetic substitution
+□ Word splitting
+□ Pathname expansion
+□ Command lookup: function|builtin|cmd|script
+□ Sett opp cmd I/O
+□ Utfør cmd og fortsett med neste cmd
+
+
