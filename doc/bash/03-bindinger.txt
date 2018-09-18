@@ -39,6 +39,7 @@ A-<dot>...             yank-last-arg
 
 Tab...                 menu-complete: $ ~ @ cmd /
 A-{                    complete-into-braces: /
+A-*                    insert-completions
 C-A-i [C-A-i]          dynamic-complete-history 
 
 C-A-e                  shell-expand-line: $, ~, alias
