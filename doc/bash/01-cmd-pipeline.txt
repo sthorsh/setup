@@ -1,7 +1,8 @@
 Cmd-/pipeline
-  [env] fn|builtin|cmd|script [opts] [args] [redirect] [&] [| ...]
+  env] fn|builtin|cmd|script [opts] [args] [redirect] [&] [| ...]
 
 Prosessering
+  History expansion
 □ Split cmdline i cmds
 □ Sett opp cmdline I/O
 □ Splitt cmd i tokens
@@ -13,7 +14,7 @@ Prosessering
 □ Command substitution
 □ Arithmetic substitution
 □ Word splitting
-□ Asterisk/pathname/wildcard expansion
+  Asterisk/pathname/wildcard expansion
 □ Command lookup: function|builtin|cmd|script
 □ Sett opp cmd I/O
 □ Utfør cmd og fortsett med neste cmd

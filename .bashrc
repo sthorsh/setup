@@ -105,8 +105,9 @@ bind -r '\C-s'
 bind -r '\C-q'
 # bind to readline function
 bind 'tab:menu-complete'
-# bind to readline function
 bind '"\C-q":unix-filename-rubout'
+bind '"\e\C-w":tilde-expand'
+bind '"\e\C-r":glob-expand-word'
 # set readline variable 
 bind 'set show-all-if-ambiguous on'
 # set readline variable

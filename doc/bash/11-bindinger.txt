@@ -41,18 +41,18 @@ Tab...                 menu-complete: $ ~ @ cmd /
 A-{                    complete-into-braces: /
 A-*                    insert-completions
 C-A-i [C-A-i]          dynamic-complete-history 
+A-g                    glob-complete-word: * ?
 
-C-A-e                  shell-expand-line: $, ~, alias
 !!␣                    expand prev cmd (magic-space)
 !N␣                    expand nth cmd (magic-space)
 !*␣                    expand prev args (magic-space)
 ^x^y␣                  expand prev line, 1st x→y (magic-space)
-
-A-g                    glob-complete-word: * ?
-C-x *                  glob-expand-word: * ?
+C-A-w                  tilde-expand
+C-A-e                  shell-expand-line: $, alias
+C-A-r                  glob-expand-word: * ?
 
 C-x C-u                undo
-C-A-r                  revert-line
+A-r                    revert-line
 C-j | lf               accept-line (nix eol)
 C-m | cr               accept-line (mac eol)
 Enter | crlf           accept-line (win eol)
