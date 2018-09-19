@@ -9,7 +9,7 @@ Prosessering
   Alias expansion
   Brace expansion
   Tilde expansion
-□ Param expansion
+  Param expansion
 □ Command substitution
 □ Arithmetic substitution
 □ Word splitting

@@ -56,7 +56,7 @@ Spesielle params
   * positional params 
   @ positional params 
   # number of positional params
-  _ options on shell invocation
+  - options on shell invocation
   ? exit status of prevoius cmd
   _ last arg of prevoius cmd
   $ pid of shell process
