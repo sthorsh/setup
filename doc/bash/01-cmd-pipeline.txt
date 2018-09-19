@@ -24,7 +24,7 @@ Brace expansion
   pre{...}{...}post
 
 Tilde expansion
-  ~ → $HOME
+  ~ →  $HOME
   ~+ → $PWD
   ~- → $OLDPWD
 
