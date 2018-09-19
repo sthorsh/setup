@@ -1,15 +1,4 @@
-Special
-  * positional params 
-  @ positional params 
-  # number of positional params
-  _ options on shell invocation
-  ? exit status of prevoius cmd
-  _ last arg of prevoius cmd
-  $ pid of shell process
-  ! pid of last bg cmd
-  0 name of shell or script
-
-Standard
+Variabler
   BASH_*
   COLORTERM
   COLUMNS=0...
@@ -59,4 +48,18 @@ Standard
   WINDOWPATH=2
   XAUTHORITY=/run/user/1000/gdm/Xauthority
   XDG_*
+
+Posisjonelle params
+  $1..$9..${NN}
+
+Spesielle params
+  * positional params 
+  @ positional params 
+  # number of positional params
+  _ options on shell invocation
+  ? exit status of prevoius cmd
+  _ last arg of prevoius cmd
+  $ pid of shell process
+  ! pid of last bg cmd
+  0 name of shell or script
 
