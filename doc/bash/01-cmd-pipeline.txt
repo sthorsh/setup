@@ -6,16 +6,16 @@ Prosessering
 □ Split cmdline i cmds
 □ Sett opp cmdline I/O
 □ Splitt cmd i tokens
-□ Hvis 1st token er keyword: les neste cmd & loopback
   Alias expansion
+□ Hvis 1st token er keyword: les neste cmd & loopback
   Brace expansion
   Tilde expansion
   Param expansion
-□ Command substitution
+  Command substitution
 □ Arithmetic substitution
 □ Word splitting
   Asterisk/pathname/wildcard expansion
-□ Command lookup: function|builtin|cmd|script
+  Command lookup: fn|builtin|$PATH -x fil
 □ Sett opp cmd I/O
 □ Utfør cmd og fortsett med neste cmd
 
