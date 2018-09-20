@@ -1,23 +1,25 @@
-Cmd-/pipeline
-  env] fn|builtin|cmd|script [opts] [args] [redirect] [&] [| ...]
+Command-/pipeline
+  [env] alias|keyword|fn|builtin|file [opts] [args] [redirect] [&] [| ...]
 
-Prosessering
+Command line processing
   History expansion
-□ Split cmdline i cmds
-□ Sett opp cmdline I/O
-□ Splitt cmd i tokens
-  Alias expansion
-□ Hvis 1st token er keyword: les neste cmd & loopback
-  Brace expansion
-  Tilde expansion
-  Param expansion
-  Command substitution
-□ Arithmetic substitution
-□ Word splitting
-  Asterisk/pathname/wildcard expansion
-  Command lookup: fn|builtin|$PATH -x fil
-□ Sett opp cmd I/O
-□ Utfør cmd og fortsett med neste cmd
+  Splitter pipeline i cmds
+  Setter opp pipeline I/O
+  For hver cmd...
+    Splitt i tokens
+    Alias expansion
+    Opening keyword
+    Brace expansion
+    Tilde expansion
+    Param expansion
+    Command substitution
+  □ Arithmetic substitution
+  □ Word splitting
+    Asterisk/pathname/wildcard expansion
+    Command lookup: fn|builtin|$PATH -x fil
+  □ Setter opp cmd I/O
+  □ Utfører cmd
+  Done
 
 Brace expansion
   pre{x..y..N}post
