@@ -1,24 +1,24 @@
 Command-/pipeline
   [env] alias|keyword|fn|builtin|file [opts] [args] [redirect] [&] [| ...]
 
-Command line processing
+Prosessering
   History expansion
-  Splitter pipeline i cmds
-  Setter opp pipeline I/O
-  For hver cmd...
-    Splitt i tokens
+  Splitter cmdline i cmds
+  Setter opp I/O for cmdline
+  For hver cmd do...
+    Parse og tokeniserer vha ␣ ␉ ␤ ; ( ) < > | &
     Alias expansion
     Opening keyword
-    Brace expansion
-    Tilde expansion
-    Param expansion
-    Command substitution
-  □ Arithmetic substitution
-  □ Word splitting
-    Asterisk/pathname/wildcard expansion
-    Command lookup: fn|builtin|$PATH -x fil
-  □ Setter opp cmd I/O
-  □ Utfører cmd
+    Brace expansion {}
+    Tilde expansion ~
+    Param expansion $ 
+    Cmd substitusjon $()
+    Aritmetisk subsitusjon $(())
+    Parse og tokeniserer vha $IFS
+    Pathname expansion * ?
+    Command lookup
+    Setter opp I/O for cmd mm
+    Utfører cmd
   Done
 
 Brace expansion
@@ -27,7 +27,17 @@ Brace expansion
   pre{...}{...}post
 
 Tilde expansion
-  ~ →  $HOME
-  ~+ → $PWD
-  ~- → $OLDPWD
+  ~  = $HOME
+  ~+ = $PWD
+  ~- = $OLDPWD
+
+Command lookup
+  Function
+  Builtin
+  Executable (-x) fil i $PATH
+
+Quoting
+  '': starter med command lookup
+  "": param exp, cmd- og aritmetisk sub
+  Uten quoting: alle trinn gjennomføres
 
