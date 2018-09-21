@@ -11,15 +11,20 @@ Prosessering
     Opening keyword
     Brace expansion {}
     Tilde expansion ~
-    Param expansion $ 
-    Cmd substitusjon $()
-    Aritmetisk subsitusjon $(())
+    Param expansion $ (svak quoting)
+    Cmd substitusjon $() (svak quoting)
+    Aritmetisk subsitusjon $(()) (svak quoting)
     Parse og tokeniserer vha $IFS
     Pathname expansion * ?
     Command lookup
     Setter opp I/O for cmd mm
     Utfører cmd
   Done
+
+Quoting
+  Uten
+  Svak ""
+  Sterk ''
 
 Brace expansion
   pre{x..y..N}post
@@ -35,9 +40,4 @@ Command lookup
   Function
   Builtin
   Executable (-x) fil i $PATH
-
-Quoting
-  '': starter med command lookup
-  "": param exp, cmd- og aritmetisk sub
-  Uten quoting: alle trinn gjennomføres
 

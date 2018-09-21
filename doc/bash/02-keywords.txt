@@ -1,7 +1,8 @@
 KEYWORDS
  
+[[ expr ]]                utfør conditional cmd
 case-in-esac              help case
-coproc c arg ...          utfør c asynkront
+coproc cmd arg ...        utfør cmd asynkront
 for-in-do-done            help for
 for-(())-do-done          man bash
 function name { cmds }    help function
