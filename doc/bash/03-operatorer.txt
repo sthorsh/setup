@@ -1,8 +1,0 @@
-Test
-  -d fil    eksisterer && er dir
-  -e fil    eksisterer
-  -f fil    eksisterer && er fil
-  -n str    er not-null    
-  ...
-  
-

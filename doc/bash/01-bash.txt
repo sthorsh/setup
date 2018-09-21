@@ -1,0 +1,11 @@
+Initialisering
+  -c str            read cmds from str
+  -i                interactive (*)
+  -l                as-if login shell
+  -r                restricted shell
+  -s                read cmds from stdin (*)
+  -v                print input lines as they are read
+  -x                print cmds as they are executed
+  -D                n/a
+  ±O option         shopt option
+

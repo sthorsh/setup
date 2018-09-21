@@ -1,0 +1,30 @@
+Filer
+  -d fil          eksisterer && er dir
+  -e fil          eksisterer
+  -f fil          eksisterer && er fil
+  -r fil          eksisterer && er readable
+  -w fil          eksisterer && er writeable
+  -x fil          eksisterer && er executable
+  fil1 -nt fil2   fil1 newer than fil2
+  fil1 -ot fil2   fil1 older than fil2
+  ...
+
+Strenger
+  -n str          er not-null    
+  -z str          har lengde zero
+  str1==str2      str1 matches str2
+  str1!=str2      str1 does not match str2 
+  str1~=regex     str1 mathces extended regex
+  str1<str2       str1 sorteres før str2
+  str1>str2       str1 sorteres etter str2
+
+Uttrykk
+  exp1 -eq exp2   exp1 aritmetisk equal exp2
+  exp1 -ne exp2   exp1 aritmetisk not equal exp2
+  exp1 -lt exp2   exp1 less than exp2
+  exp1 -gt exp2   exp1 greater than exp2
+  exp1 -le exp2   exp1 less than or equal exp2
+  exp1 -ge exp2   exp1 greater then or equal exp2
+  exp1 -a exp2    exp1 is true and exp2 is true (ikke aritmetikk) 
+  exp1 -o exp2    exp1 is true or exp2 is true (ikke aritmetikk)
+
