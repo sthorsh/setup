@@ -38,7 +38,7 @@ if [ -n "$DISPLAY" -a "$TERM" == "xterm"  ]; then
   export TERM=xterm-256color
 fi
 
-# enable programmable completion
+# programmable completion
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -47,13 +47,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# don't exit bash on ctrl-d
-set -o ignoreeof
-# don't overwrite files with >
+# options
 set -o noclobber
-# in ls or grep, use ** for recursion
+set -o ignoreeof
 shopt -s globstar
-# append new history items to .bash_history
 shopt -s histappend              
 
 # editor of choice

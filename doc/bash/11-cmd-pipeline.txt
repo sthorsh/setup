@@ -1,5 +1,5 @@
 Command-/pipeline
-  [env] alias|keyword|fn|builtin|file [opts] [args] [redirect] [&] [| ...]
+  [env] alias|keyword|fn|builtin|file [opts] [--] [args] [redirect] [&] [| ...]
 
 Prosessering
   History expansion
