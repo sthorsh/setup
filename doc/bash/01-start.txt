@@ -16,6 +16,6 @@ Definisjoner
   blank                 ␣ ⭾ 
   token                 aka ord
   navn                  aka identifikator
-  metategn              ␣ ⭾ | & ; ( ) < > ␤
+  metategn              blank | & ; ( ) < > ␤
   kontrolloperator      || & && ; ;; ;& ;;& ( ) | |& ␤               
   
