@@ -1,3 +1,6 @@
+Kontrolloperator
+  || & && ; ;; ;& ;;& ( ) | |& ␤
+
 Filer
   -d fil          eksisterer && er dir
   -e fil          eksisterer

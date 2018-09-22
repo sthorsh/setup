@@ -12,10 +12,3 @@ $ bash
   -x                    xtrace
   ...
 
-Definisjoner
-  blank                 ␣ ⭾ 
-  token                 aka ord
-  navn                  aka identifikator
-  metategn              blank | & ; ( ) < > ␤
-  kontrolloperator      || & && ; ;; ;& ;;& ( ) | |& ␤               
-  

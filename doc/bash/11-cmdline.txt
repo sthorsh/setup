@@ -6,7 +6,7 @@ Prosessering
   Splitter cmdline i cmds
   Setter opp I/O for cmdline
   For hver cmd do...
-    Parse og tokeniserer vha ␣ ␉ ␤ ; ( ) < > | &
+    Splitter i tokens vha metategn
     Alias expansion
     Opening keyword
     Brace expansion {}
@@ -21,11 +21,15 @@ Prosessering
     Utfører cmd
   Done
 
-Quoting
-  Uten
-  Svak ""
-  Sterk ''
-
+Metategn              
+  ␣ ⭾ 
+  ( ) 
+  | 
+  & 
+  ; 
+  < >    
+  ␤
+  
 Brace expansion
   pre{x..y..N}post
   pre{str,...}post
@@ -40,4 +44,9 @@ Command lookup
   Function
   Builtin
   Executable (-x) fil i $PATH
+
+Quoting
+  Uten
+  Svak ""
+  Sterk ''
 
