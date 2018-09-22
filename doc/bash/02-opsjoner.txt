@@ -1,89 +1,76 @@
-$ bash
-  --help                help
-  --version             version
-  -c str                ref man bash
-  -i                    interactive
-  -l                    login
-  ±o opt                set option
-  ±O opt                shopt option
-  -r                    restricted
-  -s                    ref man bash
-  -v                    verbose
-  -x                    xtrace
-  ...
+$ set: ref man bash
+  ±o braceexpand                  on
+  ±o noclobber                    on
+  ±o emacs                        on
+  ±o histexpand                   on
+  ±o history                      on
+  ±o hashall                      on
+  ±o ignoreeof                    on
+  ±o monitor                      on
+  ±o allexport                    off
+  ±o errexit                      off
+  ±o errtrace                     off
+  ±o notify                       off
+  ±o noglob                       off
+  ±o keyword                      off
+  ±o physical                     off
+  ±o privileged                   off
+  ±o pipefail                     off
+  ±o posix                        off
+  ±o functrace                    off
+  ±o onecmd                       off
+  ±o nounset                      off
+  ±o verbose                      off
+  ±o vi                           off
+  ±o xtrace                       off
 
-$ set
-  ±o braceexpand        on
-  ±o noclobber          on
-  ±o emacs              on
-  ±o histexpand         on
-  ±o history            on
-  ±o hashall            on
-  ±o ignoreeof          on
-  ±o monitor            on
-  ±o allexport          off
-  ±o errexit            off
-  ±o errtrace           off
-  ±o notify             off
-  ±o noglob             off
-  ±o keyword            off
-  ±o physical           off
-  ±o privileged     	off
-  ±o pipefail       	off
-  ±o posix              off
-  ±o functrace      	off
-  ±o onecmd         	off
-  ±o nounset        	off
-  ±o verbose        	off
-  ±o vi             	off
-  ±o xtrace         	off
+$ shopt: ref man bash
+ -s|-u checkwinsize               on
+ -s|-u cmdhist                    on
+ -s|-u complete_fullquote         on
+ -s|-u expand_aliases             on
+ -s|-u extglob                    on
+ -s|-u extquote                   on
+ -s|-u force_fignore              on
+ -s|-u globstar                   on
+ -s|-u histappend                 on
+ -s|-u interactive_comments	  on
+ -s|-u progcomp                   on
+ -s|-u promptvars                 on
+ -s|-u sourcepath                 on
+ -s|-u autocd                     off
+ -s|-u cdable_vars                off
+ -s|-u cdspell                    off
+ -s|-u checkhash                  off
+ -s|-u checkjobs                  off
+ -s|-u compat31                   off
+ -s|-u compat32                   off
+ -s|-u compat40                   off
+ -s|-u compat41                   off
+ -s|-u compat42                   off
+ -s|-u compat43                   off
+ -s|-u direxpand                  off
+ -s|-u dirspell                   off
+ -s|-u dotglob                    off
+ -s|-u execfail                   off
+ -s|-u extdebug                   off
+ -s|-u failglob                   off
+ -s|-u globasciiranges            off
+ -s|-u gnu_errfmt                 off
+ -s|-u histreedit                 off
+ -s|-u histverify                 off
+ -s|-u hostcomplete               off
+ -s|-u huponexit                  off
+ -s|-u inherit_errexit            off
+ -s|-u lastpipe                   off
+ -s|-u lithist                    off
+ -s|-u login_shell                off
+ -s|-u mailwarn                   off
+ -s|-u no_empty_cmd_completion    off
+ -s|-u nocaseglob                 off
+ -s|-u nocasematch                off
+ -s|-u nullglob                   off
+ -s|-u restricted_shell           off
+ -s|-u shift_verbose              off
+ -s|-u xpg_echo                   off
 
-shopt
-     checkwinsize               on
-     cmdhist                    on
-     complete_fullquote         on
-     expand_aliases             on
-     extglob                    on
-     extquote                   on
-     force_fignore              on
-     globstar                   on
-     histappend                 on
-     interactive_comments	on
-     progcomp                   on
-     promptvars                 on
-     sourcepath                 on
-     autocd                     off
-     cdable_vars                off
-     cdspell                    off
-     checkhash                  off
-     checkjobs                  off
-     compat31                   off
-     compat32                   off
-     compat40                   off
-     compat41                   off
-     compat42                   off
-     compat43                   off
-     direxpand                  off
-     dirspell                   off
-     dotglob                    off
-     execfail                   off
-     extdebug                   off
-     failglob                   off
-     globasciiranges            off
-     gnu_errfmt                 off
-     histreedit                 off
-     histverify                 off
-     hostcomplete               off
-     huponexit                  off
-     inherit_errexit            off
-     lastpipe                   off
-     lithist                    off
-     login_shell                off
-     mailwarn                   off
-     no_empty_cmd_completion	off
-     nocaseglob                 off
-     nocasematch                off
-     nullglob                   off
-     restricted_shell           off
-     shift_verbose              off
-     xpg_echo                   off

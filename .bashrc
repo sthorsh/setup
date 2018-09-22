@@ -1,12 +1,13 @@
-echo -n "~/.bashrc: "
-[[ $- == *i*  ]] && echo -n 'interactive ' || echo -n 'non-interactive '
-shopt -q login_shell && echo 'login' || echo 'non-login'
-
-# if not interactive, don't do anything
+# If not interactive, return
 case $- in
     *i*) ;;
       *) return;;
 esac
+
+# Log on entry
+echo -n "~/.bashrc: "
+[[ $- == *i*  ]] && echo -n 'interactive ' || echo -n 'non-interactive '
+shopt -q login_shell && echo 'login shell' || echo 'non-login shell'
 
 # avoid duplicate PATH entries
 add_to_path () {
