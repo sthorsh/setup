@@ -1,34 +1,26 @@
-Command-/pipeline
-  [env] alias|keyword|fn|builtin|file [opts] [--] [args] [redirect] [&] [| ...]
-
-Prosessering
-  History expansion
-  Splitter cmdline i cmds
-  Setter opp I/O for cmdline
-  For hver cmd do...
-    Splitter i tokens vha metategn
+Simple command
+                Splitter cmdline i cmds
+                Setter opp I/O for cmdline
+                For hver cmd do...
+      Tokeniserer vha metategn
+    History expansion !
     Alias expansion
-    Opening keyword
+                Opening keyword if mfl
     Brace expansion {}
     Tilde expansion ~
     Param expansion $ (svak quoting)
-    Cmd substitusjon $() (svak quoting)
-    Aritmetisk subsitusjon $(()) (svak quoting)
-    Parse og tokeniserer vha $IFS
+    Aritmetisk expansion $(()) (svak quoting)
+    Command substitusjon $() (svak quoting)
+        Tokeniserer vha $IFS
     Pathname expansion * ?
     Command lookup
     Setter opp I/O for cmd mm
     Utfører cmd
+    Cmd returnerer exit code 0..255
   Done
 
 Metategn              
-  ␣ ⭾ 
-  ( ) 
-  | 
-  & 
-  ; 
-  < >    
-  ␤
+  ␣ ⭾ < > | ; & ␤ ( )
   
 Brace expansion
   pre{x..y..N}post

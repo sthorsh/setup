@@ -1,0 +1,9 @@
+Simple command
+- Variabeltilordning(er)
+- Kommando
+- Argument(er)
+- Redirigeringer
+- Kontrolloperator
+
+Pipeline
+
