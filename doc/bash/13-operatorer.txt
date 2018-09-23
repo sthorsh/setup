@@ -31,3 +31,16 @@ Uttrykk
   exp1 -a exp2    exp1 is true and exp2 is true (ikke aritmetikk) 
   exp1 -o exp2    exp1 is true or exp2 is true (ikke aritmetikk)
 
+-----------------------------------------------
+Boolske/conditional [file] operators/expressions
+- ref help test
+
+Boolske/conditional [string] operators/expressions
+- ref help test
+
+Boolske/conditional [aritmetisk] operators/expressions
+- ref help test
+
+Boolske/conditional [other] operators/expressions
+- ref help test
+

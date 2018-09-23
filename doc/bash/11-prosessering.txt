@@ -1,0 +1,38 @@
+  SIMPLE CMD BIG PICTURE
+  - SPLITT
+  - EKSPANDER cmd args (*) + quoterm
+  - REDIRIGER stdin, stdout, stderr
+  - EKSPANDER val i var=val (tilde, param, cmdsub, aritm) 
+      val: quote rm
+      val: tilordnes
+  - Kommandooppslag
+  - evt EVALUER i.e eval
+  - UTFØR
+  - RETURNER
+
+Simple command
+    Skallet leser linje
+    History expansion !
+    Skallet tokeniserer vha ␣ ⭾ < > | ; & ␤ ( ) (metategn)
+    Alias expansion
+    Brace expansion {x..y..N}, {str,...}, {...}{...}
+    Tilde expansion ~ ~+ ~- hhv $HOME $PWD $OLDPWD
+    Param expansion $ (svak quoting)
+    Command substitusjon $() (svak quoting)
+    Aritmetisk expansion $(()) (svak quoting)
+    Skallet tokeniserer vha $IFS
+    Pathname expansion * ? [/]
+      Quote removal ? (quoterm)
+      Redirigerer stdin, stdout, stderr
+    Finner cmd fn, builtin, hash, exec fil i $PATH 
+    Utfører cmd
+    Cmd returnerer exit code 0..255
+
+  Quoting
+    None/Uten
+    Svak/double ""
+    Sterk/single ''
+
+Compound command
+  Opening keyword e.g if, function, {, (
+
