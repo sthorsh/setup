@@ -1,0 +1,39 @@
+Format
+  token=token ... token ... redir ctrl-op
+
+SIMPLE CMD BIG PICTURE
+  - SPLITT
+  - EKSPANDER cmd args (*) + quoterm
+  - REDIRIGER stdin, stdout, stderr
+  - EKSPANDER val i var=val (tilde, param, cmdsub, aritm) 
+      val: quote rm
+      val: tilordnes
+  - Kommandooppslag
+  - evt EVALUER i.e eval
+  - UTFØR
+  - RETURNER
+
+Simple command
+    Leser input: bash -c, terminal, script
+    History expansion !...
+    Tokeniserer input iht quoting og metategn
+    Alias expansion
+      Brace expansion {x..y..N}, {str,...}, {...}{...}
+      Tilde expansion ~ ~+ ~- hhv $HOME $PWD $OLDPWD
+      Param expansion $ (svak quoting)
+      Command substitusjon $() (svak quoting)
+      Aritmetisk expansion $(()) (svak quoting)
+      Skallet tokeniserer vha $IFS
+      Pathname expansion * ? [/]
+        Quote removal ? (quoterm)
+        Redirigerer stdin, stdout, stderr
+      Finner cmd fn, builtin, hash, exec fil i $PATH 
+      Utfører cmd
+      Cmd returnerer exit code 0..255
+
+  Quoting
+    None/Uten
+    Svak/double ""
+    Sterk/single ''
+
+    Splitter input vha ␣ ⭾ < > | ; & ␤ ( )
