@@ -1,0 +1,29 @@
+Format
+  token=token ... token ... redir ctrl-op
+
+Prosessering
+    Leser input: bash -c, terminal, script
+    History expansion: !...
+    Splitter input iht quoting vha metategn: t₁ t₂ ...
+    Alias expansion: cmd [arg ...]
+      Brace expansion {x..y..N}, {str,...}, {...}{...}
+      Tilde expansion ~ ~+ ~- hhv $HOME $PWD $OLDPWD
+      Param expansion $ (svak quoting)
+      Command substitusjon $() (svak quoting)
+      Aritmetisk expansion $(()) (svak quoting)
+      Splitter input vha $IFS
+      Pathname expansion * ? [/]
+        Process substitution
+        Quote removal ? (quoterm)
+        Redirigerer stdin, stdout, stderr
+        Utfører cmd: fn, builtin, hash, $PATH 
+        Evt venter på exit code 0..255
+
+  Quoting
+    None/Uten
+    Svak/double ""
+    Sterk/single ''
+
+  Metategn 
+    ␣ ⭾ < > | ; & ␤ ( )
+
