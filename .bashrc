@@ -49,8 +49,9 @@ if ! shopt -oq posix; then
 fi
 
 # options
-set -o noclobber
 set -o ignoreeof
+set -o noclobber
+set -o notify
 shopt -s globstar
 shopt -s histappend              
 
