@@ -1,24 +1,23 @@
 Bash
-  Et skall for GNU OS
-  En interpreter for et kommandospråk for GNU OS
-  
-Skall
-  En makroprosessor (ekspansjon) som utfører kommandoer
-  En kommandointerpreter dvs UI for GNU-kommandoer
-  Et programmeringsspråk (PL) dvs å kombinere kommandoer
+  Et skall [for GNU OS]
+  En interpreter [for et språk]
+  Et grensesnitt [for kommandoer]
+  En makroprosessor [for ekspansjon]
+  Et programmeringsspråk [for å kombinere kommandoer]
 
-Bruk av skall
-  Interaktivt: input fra keyboard
-  Ikke-interaktivt: input fra fil
+Bruk
+  Interaktiv: input fra tastatur
+  Ikke-interaktivt input fra fil
 
 Features
-- Synkron el asynkron kommandoutførelse
+- Synkron el asynkron utførelse
 - Redirigering av stdin, stdout og stderr
 - Kontroll over en kommando's environment
 - Et antall built-in kommandoer (builtins)
+  ...
 
 Interaktive features
-- Aliaser
+- Alias
 - Kommandohistorikk
 - Kommandolinjeredigering
 - Jobbkontroll
