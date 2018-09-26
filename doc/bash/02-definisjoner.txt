@@ -1,0 +1,29 @@
+exit status
+  0..255
+
+kontrolloperator
+  Et token som utfører en kontrollfunksjon
+  |   pipeline
+  |&  pipeline
+  &   asynkron liste
+  ;   sekvensiell liste (som nl)
+  &&  and liste
+  ||  or liste
+  ()  compound command
+  ;;  case stop
+  ;&  case continue
+  ;;& case continue if match
+
+metategn
+  A character that, when unquoted, separates words. A metacharacter is a
+  space
+  tab
+  newline
+  |
+  &
+  ;
+  (
+  )
+  <
+  >
+
