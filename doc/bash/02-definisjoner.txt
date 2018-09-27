@@ -2,28 +2,31 @@ exit status
   0..255
 
 kontrolloperator
-  Et token som utfører en kontrollfunksjon
+  Utfører en kontrollfunksjon
   |   pipeline
   |&  pipeline
   &   asynkron liste
-  ;   sekvensiell liste (som nl)
-  &&  and liste
-  ||  or liste
+  ;   sekvensiell liste (evt nl)
+  &&  and-liste
+  ||  or-liste
   ()  compound command
-  ;;  case stop
-  ;&  case continue
-  ;;& case continue if match
+  ;;  case break
+  ;&  case fall-through
+  ;;& case fall-through if match
 
 metategn
-  A character that, when unquoted, separates words. A metacharacter is a
-  space
-  tab
-  newline
-  |
-  &
-  ;
-  (
-  )
-  <
-  >
+  Et skilletegn mellom ord
+  space tab < > | & ; ( ) nl
 
+operator
+  Enten en kontrolloperator
+  Eller en redirigeringsoperator
+
+ord
+  Kan ikke inneholde unquoted metategn
+  
+token
+  En tegnsekvens
+  Utgjør en enhet for skallet
+  Er enten et ord eller en operator
+                

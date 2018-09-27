@@ -1,9 +1,9 @@
 Bash
-  Et skall [for GNU OS]
-  En interpreter [for et språk]
-  Et grensesnitt [for kommandoer]
-  En makroprosessor [for ekspansjon]
-  Et programmeringsspråk [for å kombinere kommandoer]
+  Et skall [for Unix]
+  Et tekstbasert UI [for Unix]
+  En interpreter [cmdline → syskall]
+  En makroprosessor [ref ekspansjon]
+  Et programmeringsspråk [kombinasjon av kommandoer]
 
 Bruk
   Interaktiv: input fra tastatur

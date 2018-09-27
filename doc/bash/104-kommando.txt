@@ -1,29 +1,38 @@
-Format
-  token=token ... token ... redir ctrl-op
-
 Prosessering
-    Leser input: bash -c, terminal, script
-    History expansion: !...
-    Splitter input iht quoting vha metategn: t₁ t₂ ...
-    Alias expansion: cmd [arg ...]
+    Leser input
+    Fjerner kommentarer #
+    Ekspander history event ! ^
+    Tokeniserer vha metategn
+    Klassifiserer iht quoting-regler
+    Ekspanderer alias
+    Parser tokens i enkle og sammensatte cmds
       Brace expansion {x..y..N}, {str,...}, {...}{...}
       Tilde expansion ~ ~+ ~- hhv $HOME $PWD $OLDPWD
-      Param expansion $ (svak quoting)
-      Command substitusjon $() (svak quoting)
+      Param/var expansion $ (svak quoting)
       Aritmetisk expansion $(()) (svak quoting)
+      Command substitusjon $() (svak quoting)
+      Process substitusjon (samtidig med 4 foregående)
       Splitter input vha $IFS
       Pathname expansion * ? [/]
-        Process substitution
-        Quote removal ? (quoterm)
-        Redirigerer stdin, stdout, stderr
-        Utfører cmd: fn, builtin, hash, $PATH 
-        Evt venter på exit code 0..255
+        Qoute removal
+        Etablerer redirigering
+        Fjerner redirigeringsoperatorer
+        Utfører cmd
+        Lagrer exit code i $? ved fullføring
 
-  Quoting
-    None/Uten
-    Svak/double ""
-    Sterk/single ''
+Leser input
+  Fra terminal
+  Fra fil (script)
+  Fra bash -c "..."
+  
+  Quoting-regler
+    Escape \
+    Enkelfnutt ''
+    Dobbelfnutt ""
 
-  Metategn 
-    ␣ ⭾ < > | ; & ␤ ( )
+Utfører cmd
+- Funksjon
+- Shell command
+- I hash
+- I $PATH
 
