@@ -6,11 +6,11 @@ Prosessering
     Klassifiserer iht quoting-regler
     Ekspanderer alias
     Parser tokens i enkle og sammensatte cmds
-      Brace expansion {x..y..N}, {str,...}, {...}{...}
-      Tilde expansion ~ ~+ ~- hhv $HOME $PWD $OLDPWD
-      Param/var expansion $ (svak quoting)
-      Aritmetisk expansion $(()) (svak quoting)
-      Command substitusjon $() (svak quoting)
+    Brace expansion
+    Tilde expansion 
+      Param/var expansion $
+      Aritmetisk expansion $(())
+      Command substitusjon $()
       Process substitusjon (samtidig med 4 foregående)
       Splitter input vha $IFS
       Pathname expansion * ? [/]
@@ -24,12 +24,22 @@ Leser input
   Fra terminal
   Fra fil (script)
   Fra bash -c "..."
-  
+
   Quoting-regler
     Escape \
     Enkelfnutt ''
     Dobbelfnutt ""
 
+Brace expansion 
+  {n..n..n} 
+  {char..char} 
+  {n..n}{n..n}
+
+Tilde expansion 
+  ~  $HOME 
+  ~+ $PWD 
+  ~- $OLDPWD
+  
 Utfører cmd
 - Funksjon
 - Shell command
