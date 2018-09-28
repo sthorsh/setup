@@ -8,7 +8,8 @@ Prosessering
     Parser tokens i enkle og sammensatte cmds
     Brace expansion
     Tilde expansion 
-      Param/var expansion $
+    h
+uu Param/var expansion $
       Aritmetisk expansion $(())
       Command substitusjon $()
       Process substitusjon (samtidig med 4 foregående)
