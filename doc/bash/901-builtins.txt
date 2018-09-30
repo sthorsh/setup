@@ -1,5 +1,7 @@
 BUILTIN CMDs
 
+alias navn=verdi                  deklarer navn (og definer verdi)
+
 bg [job_id ...]                   send current-job|job_id ... til bg
 bind -p                           vis keyseq → readline-fn
 bind -v                           vis readline-var → verdi
@@ -14,7 +16,7 @@ continue [N]                      kun ifm keywords for, until, while
 
 declare -p                        vis vardefs
 declare -F                        vis fndecls
-declare ±aAirx... navn=verdi      dekl|def var
+declare ±aAinrx... navn=verdi     dekl|def var NB -n → referanse
 disown job_id|pid                 fornekt jobb
 
 echo -en arg ...                  skriv til stdout
@@ -40,7 +42,7 @@ jobs -l                           vis jobber
 kill [-l] [sig job_id|pid]        vis|send signal(er)
 
 let arg ...                       eval aritmetiske uttrykk
-local -aAirx... navn=verdi        dekl|def lokal var
+local -aAinrx... navn=verdi       dekl|def lokal var NB -n → referanse
 logout [N]                        avslutt login-skall
 
 mapfile array                     les fra stdin til array

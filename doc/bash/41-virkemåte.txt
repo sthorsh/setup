@@ -1,0 +1,21 @@
+Virkemåte
+  Les input: terminal | fil | bash -c
+  Fjern kommentarer #
+  Ekspander history event ! ^
+  Tokeniser vha metategn
+  Klassifiser
+  Ekspander alias
+  Parser tokens i enkle og sammensatte cmds
+  Ekspander brace {n|char..n|char..n}...
+  Ekspander tilde ~ ~+ ~-
+  Ekspander param $
+  Ekspander aritmetikk $(())
+  Kommandosubstitusjon $()
+  Prosesssubstitusjon <() >()
+  Tokeniser vha $IFS
+  Ekspander wildcard * ? [/]
+  Fjern quotes \ "" '' $''
+  Sett opp redirigering og fjern op < > etc
+  Utfør kommando: funksjon|builtin|hash|$PATH
+  Lagre exit code i $?
+

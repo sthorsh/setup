@@ -9,24 +9,3 @@ Bruk
   Interaktiv: input fra tastatur
   Ikke-interaktivt input fra fil
 
-Features
-- Synkron el asynkron utførelse
-- Redirigering av stdin, stdout og stderr
-- Kontroll over en kommando's environment
-- Et antall built-in kommandoer (builtins)
-  ...
-
-Interaktive features
-- Alias
-- Kommandohistorikk
-- Kommandolinjeredigering
-- Jobbkontroll
-  ...
-
-PL features
-- Variabler
-- Flytkontroll-konstruksjoner
-- Quoting
-- Funksjoner
-  ...
-

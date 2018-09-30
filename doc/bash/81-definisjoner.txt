@@ -1,0 +1,41 @@
+blank
+  space tab
+
+exit status
+  0..255
+
+kontrolloperator
+  nl  newline 
+  |   pipeline
+  |&  pipeline
+  ;   liste sekvensielt
+  &   liste i parallell i eget subskall
+  &&  liste OG
+  ||  liste ELLER
+  ()  compound command
+  ;;  case break
+  ;&  case fall-through
+  ;;& case if-match fall-through
+
+metategn (skiller ord)
+  space tab < > | & ; ( ) nl
+
+operator
+  Kontrolloperator
+  Eller redirigeringsoperator
+
+ord
+  Kan ikke inneholde unquoted metategn
+
+parameter
+  Et nummer|spesialtegn|navn som lagrer en verdi
+  
+token
+  En tegnsekvens
+  Utgjør en enhet for skallet
+  Er enten et ord eller en operator
+
+variabel
+  En parameter m/navn og evt attributter
+  Dvs variabel: navn, attributter, verdi
+                

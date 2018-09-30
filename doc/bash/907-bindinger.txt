@@ -47,9 +47,8 @@ A-g                    glob-complete-word: * ?
 !N␣                    expand nth cmd (magic-space)
 !*␣                    expand prev args (magic-space)
 ^x^y␣                  expand prev line, 1st x→y (magic-space)
-C-A-w                  tilde-expand
-C-A-e                  shell-expand-line: $, alias
-C-A-r                  glob-expand-word: * ?
+C-A-e                  shell-expand-line: alias ~ $
+C-A-w                  glob-expand-word: * ? (wildcard)
 
 C-x C-u                undo
 A-r                    revert-line

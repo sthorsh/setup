@@ -49,17 +49,3 @@ Variabler
   XAUTHORITY=/run/user/1000/gdm/Xauthority
   XDG_*
 
-Posisjonelle params
-  $1..$9..${NN}
-
-Spesielle params
-  * positional params 
-  @ positional params 
-  # number of positional params
-  - options on shell invocation
-  ? exit status of prevoius cmd
-  _ last arg of prevoius cmd
-  $ pid of shell process
-  ! pid of last bg cmd
-  0 name of shell or script
-
