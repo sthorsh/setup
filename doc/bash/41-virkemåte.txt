@@ -7,15 +7,15 @@ Virkemåte
   Ekspander alias
   Parser tokens i enkle og sammensatte cmds
   Ekspander brace {n|char..n|char..n}...
-  Ekspander tilde ~ ~+ ~-
-  Ekspander param $
-  Ekspander aritmetikk $(())
+  Ekspander tilde ~ ~+ ~- ~user
+  Ekspander param ${}
   Kommandosubstitusjon $()
+  Ekspander aritmetikk $(())
   Prosesssubstitusjon <() >()
-  Tokeniser vha $IFS
-  Ekspander wildcard * ? [/]
-  Fjern quotes \ "" '' $''
-  Sett opp redirigering og fjern op < > etc
-  Utfør kommando: funksjon|builtin|hash|$PATH
-  Lagre exit code i $?
+  Splitt ord vha $IFS
+  Ekspander wildcard * ? [...]
+  Fjern quotes \ "" ''
+    Sett opp redirigering og fjern op < > etc
+    Utfør kommando: funksjon|builtin|hash|$PATH
+    Lagre exit code i $?
 
