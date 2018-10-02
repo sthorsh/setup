@@ -3,7 +3,7 @@ Virkemåte
   Fjern kommentarer #
   Ekspander history event ! ^
   Tokeniser vha metategn
-  Klassifiser
+  Klassifiserer tokens
   Ekspander alias
   Parser tokens i enkle og sammensatte cmds
   Ekspander brace {n|char..n|char..n}...
@@ -15,7 +15,8 @@ Virkemåte
   Splitt ord vha $IFS
   Ekspander wildcard * ? [...]
   Fjern quotes \ "" ''
-    Sett opp redirigering og fjern op < > etc
+  Sett opp redirigering
+  Fjern redirigeringsoperatorer
     Utfør kommando: funksjon|builtin|hash|$PATH
     Lagre exit code i $?
 
