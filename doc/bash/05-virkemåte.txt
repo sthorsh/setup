@@ -1,4 +1,4 @@
-Virkemåte
+Prosessering
   Les input: terminal | fil | bash -c
   Fjern kommentarer #
   Ekspander history event ! ^
@@ -17,6 +17,29 @@ Virkemåte
   Fjern quotes \ "" ''
   Sett opp redirigering
   Fjern redirigeringsoperatorer
-    Utfør kommando: funksjon|builtin|hash|$PATH
-    Lagre exit code i $?
+  Ekspanderer rhs i var=rhs [cmd] ...
 
+Utførelse
+  Funksjon
+  Evt builtin
+  Evt hash
+  Evt $PATH
+  Evt .../cmd
+  Utfører programmet
+  Venter på fullførelse
+  Lagrer exit code i $?
+
+Environment
+  Et environment er et array av navn=verdi
+  Bash scanner environment og lager params
+  Kommandoer arver environment fra skallet
+  Create: declare -x | export | navn=verdi cmd ...
+  Read: $...
+  Update: navn=verdi
+  Delete: export -n | unset
+
+Excution ennvironment
+
+Exit status
+
+Signaler
