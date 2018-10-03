@@ -20,15 +20,23 @@ Prosessering
   Ekspanderer rhs i var=rhs [cmd] ...
 
 Utførelse
-  Funksjon
-  Evt builtin
-  Evt hash
-  Evt $PATH
-  Evt .../cmd
-  Utfører programmet
-    Environment
-    Exceution Environment
-    Signaler
-  Venter på fullførelse
-  Lagrer exit code i $?
+  Funksjon|builtin|hash|$PATH eller .../cmd
 
+Environment
+  $ env
+
+Exceution environment
+  Alias': bash (alias)
+  Params: bash/cmd hvis eksport
+  Funksjoner: bash/cmd hvis eksport
+  Opsjoner: bash (set shopt)
+  PIDs: bash $$, $PPID mfl (ps)
+  Arbeidskatalog: bash/cmd (pwd)
+  Filopprettelsesmaske: bash/cmd (umask)
+  Åpene filer: bash/cmd (lsof)
+  Traps: bash/cmd (trap)
+  
+Signaler
+
+Fullførelse
+  Lagrer exit code i $?

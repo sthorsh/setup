@@ -9,6 +9,8 @@ Environment
   Manipulasjon: declare, export, unset, name=val cmd ...
 
 Execution environment
+  Et skall har en execution context
+  En kommando har en execution context (delmengde av skallets)
 
 Exit status
   0..255
