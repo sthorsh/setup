@@ -26,20 +26,9 @@ Utførelse
   Evt $PATH
   Evt .../cmd
   Utfører programmet
+    Environment
+    Exceution Environment
+    Signaler
   Venter på fullførelse
   Lagrer exit code i $?
 
-Environment
-  Et environment er et array av navn=verdi
-  Bash scanner environment og lager params
-  Kommandoer arver environment fra skallet
-  Create: declare -x | export | navn=verdi cmd ...
-  Read: $...
-  Update: navn=verdi
-  Delete: export -n | unset
-
-Excution ennvironment
-
-Exit status
-
-Signaler
