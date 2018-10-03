@@ -1,10 +1,19 @@
-blank
+Blank
   space tab
 
-exit status
+Environment
+  En array av strenger (env)
+  Hver streng har formen navn=verdi
+  Skall oppretter params for hvert navn
+  Et skalls' subskall arver dets environment
+  Manipulasjon: declare, export, unset, name=val cmd ...
+
+Execution environment
+
+Exit status
   0..255
 
-kontrolloperator
+Kontrolloperator
   nl  newline 
   |   pipeline
   |&  pipeline
@@ -17,25 +26,26 @@ kontrolloperator
   ;&  case fall-through
   ;;& case if-match fall-through
 
-metategn (skiller ord)
+Metategn
+  Skilletegn for ord
   space tab < > | & ; ( ) nl
 
-operator
+Operator
   Kontrolloperator
   Eller redirigeringsoperator
 
-ord
+Ord
   Kan ikke inneholde unquoted metategn
 
-parameter
+Parameter
   Et nummer|spesialtegn|navn som lagrer en verdi
   
-token
+Token
   En tegnsekvens
   Utgjør en enhet for skallet
   Er enten et ord eller en operator
 
-variabel
+Variabel
   En parameter m/navn og evt attributter
   Dvs variabel: navn, attributter, verdi
                 
