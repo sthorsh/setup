@@ -1,0 +1,29 @@
+Kommandolinje
+  #     kommentar
+  ~     hjemmekatalog
+  $     parameter
+  *     wildcard
+  ?     wildcard
+  []    wildcard
+  <     redirigering
+  >     redirigering
+  |     pipeline
+  !     pipeline not
+  ;     kommandoseparator
+  &     bakgrunnen
+  ()    subskall
+  {}    kommandoblokk
+  /     katalogseparator
+  \     beskyttelse (escaping)
+  ""    beskyttelse (quoting)
+  ''    beskyttelse (quoting)
+  
+Kontrolltaster
+  todo
+
+Regulæruttrykk
+  todo
+
+Strengoperatorer
+  todo
+
