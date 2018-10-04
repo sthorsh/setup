@@ -37,6 +37,15 @@ Exceution environment
   Traps: bash/cmd (trap)
   
 Signaler
+  sighup: exit (1)
+  sigint: fanges og håndteres (2)
+  sigquit: ignoreres (3)
+  sigkill: exit (9)
+  sigterm: ignoreres (15)
+  sigtstp: ignoreres (20)
+  sigttin: ignoreres (21)
+  sigttou: ignoreres (22)
+  ...
 
 Fullførelse
   Lagrer exit code i $?
