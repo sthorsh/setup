@@ -1,5 +1,7 @@
 BINDINGER
 
+C-l                    clear-screen
+
 A-N                    digit-arg
 
 C-b                    backward-char
@@ -54,15 +56,9 @@ C-x C-u                undo
 A-r                    revert-line
 C-j | lf               accept-line (nix eol)
 C-m | cr               accept-line (mac eol)
-Enter | crlf           accept-line (win eol)
 
 C-x (                  start-kbd-macro
 C-x )                  end-kbd-macro
 C-x e                  call-last-kbd-macro
 C-x C-e                edit-and-execute-command
 
-C-l                    clear-screen
-
-C-c                    intr ref stty -a
-C-d                    eof
-C-z                    susp 

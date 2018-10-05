@@ -38,13 +38,11 @@ Exceution environment
   
 Signaler
   sighup: exit (1)
-  sigint: fanges og håndteres (2)
+  sigint: håndteres (2)
   sigquit: ignoreres (3)
   sigkill: exit (9)
   sigterm: ignoreres (15)
   sigtstp: ignoreres (20)
-  sigttin: ignoreres (21)
-  sigttou: ignoreres (22)
   ...
 
 Fullførelse

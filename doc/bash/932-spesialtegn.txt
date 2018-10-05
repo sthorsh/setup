@@ -14,13 +14,17 @@ Kommandolinje
   ()    subskall
   {}    kommandoblokk
   /     katalogseparator
-  \     beskyttelse (escaping)
-  ""    beskyttelse (quoting)
-  ''    beskyttelse (quoting)
+  \     beskyttelse
+  ""    beskyttelse
+  ''    beskyttelse
   
-Kontrolltaster
-  todo
-
+Kontrolltaster (stty)
+  C-c   sigint
+  C-c   sigquit
+  C-d   eof
+  C-z   sigtstp
+  ...
+  
 Regulæruttrykk
   todo
 
