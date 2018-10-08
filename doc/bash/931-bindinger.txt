@@ -45,9 +45,10 @@ A-*                    insert-completions
 C-A-i [C-A-i]          dynamic-complete-history 
 A-g                    glob-complete-word: * ?
 
-!!␣                    expand prev cmd (magic-space)
-!N␣                    expand nth cmd (magic-space)
+!![:0n^$]␣             expand prev cmd (magic-space)
+!N[:0n^$]␣             expand nth cmd (magic-space)
 !*␣                    expand prev args (magic-space)
+!str␣                  expand cmd starting with str (magic-space)
 ^x^y␣                  expand prev line, 1st x→y (magic-space)
 C-A-e                  shell-expand-line: alias ~ $
 C-A-w                  glob-expand-word: * ? (wildcard)
