@@ -29,7 +29,7 @@ C-k                    kill til eol
 
 C-p                    prev cmdline
 C-n                    next cmdline
-    C-r *|C-h|C-r|C-gjm   reverse-search
+C-r *|C-h|C-r|C-gjm    reverse-search
 C-o                    operate-and-get-next
 
 C-y                    yank kill-ring
@@ -37,19 +37,19 @@ C-y A-y...             yank-pop kill-ring
 C-A-y                  yank arg fra prev cmd
 A-...                  yank arg fra prev cmds
 
-  Tab...                 menu-complete: $ ~ @ cmd /
-  A-{                    complete-into-braces: /
-  A-*                    insert-completions
-  C-A-i [C-A-i]          dynamic-complete-history 
-  A-g                    glob-complete-word: * ?
+Tab...                 complete $ ~ @ cmd /
+A-*                    sett inn $ ~ @ cmd / 
+C-A-i...               complete fra history 
+A-{                    complete {}
+A-g                    complete wildcard * ?
 
+C-A-e                  expand alias ~ $
+C-A-w                  expand word * ? 
   !![:0n^$]␣             expand prev cmd (magic-space)
   !N[:0n^$]␣             expand nth cmd (magic-space)
   !*␣                    expand prev args (magic-space)
   !str␣                  expand cmd starting with str (magic-space)
   ^x^y␣                  expand prev line, 1st x→y (magic-space)
-  C-A-e                  shell-expand-line: alias ~ $
-  C-A-w                  glob-expand-word: * ? (wildcard)
 
   C-x C-u                undo
   A-r                    revert-line
