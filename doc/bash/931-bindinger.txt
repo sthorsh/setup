@@ -1,65 +1,63 @@
 BINDINGER
 
-A-N                    digit arg
+A-N                    digit-arg
 
-C-b                    mv char ←
-A-b                    mv word ←
-C-a                    mv to bol
-C-f                    mv char → 
-A-f                    mv word →
-C-e                    mv to eol
-C-]                    search char →
-C-A-]                  search char ←
-
-C-h | bs               del char
-C-q                    kill filename
-C-w                    kill word
-A-d                    kill word
-C-u                    kill line
-C-d                    del char
-C-k                    kill line
-
-C-y                    yank from kill ring
-C-y A-y...             yank-pop from kill ring
-C-A-y                  yank 4st arg
-A-N A-<dot>...         yank-nth-arg
-A-<dot>...             yank-last-arg
-
-A-c                    capitalize-word (conflict fzf)
-A-l                    lowercase-word
-A-u                    uppercase-word
-C-t                    transpose-chars (conflict fzf)
-A-t                    transpose-words
-C-v                    quoted-insert i.e verbatim
+C-b                    go ←
+C-f                    go →        
+A-b                    go ord ←
+A-f                    go ord →  
+C-a                    goto bol
+C-e                    goto eol
+C-]                    søk →    
+C-A-]                  søk ←
 
 C-l                    clear-screen
+C-v                    quoted-insert
+A-c                    capital
+A-l                    lowercase
+A-u                    uppercase
+C-t                    transpose
+A-t                    transpose ord
+                                                    
+C-h | bs               del ←
+C-d                    del →
+C-q                    kill filnavn
+C-w                    kill ord
+A-d                    kill ord
+C-u                    kill til bol
+C-k                    kill til eol
 
-C-p                    previous-line
-C-n                    next-line
+C-p                    prev cmdline
+C-n                    next cmdline
+    C-r *|C-h|C-r|C-gjm   reverse-search
 C-o                    operate-and-get-next
-C-r *|C-h C-r C-gjm    reverse-search-history
 
-Tab...                 menu-complete: $ ~ @ cmd /
-A-{                    complete-into-braces: /
-A-*                    insert-completions
-C-A-i [C-A-i]          dynamic-complete-history 
-A-g                    glob-complete-word: * ?
+C-y                    yank kill-ring
+C-y A-y...             yank-pop kill-ring
+C-A-y                  yank arg fra prev cmd
+A-...                  yank arg fra prev cmds
 
-!![:0n^$]␣             expand prev cmd (magic-space)
-!N[:0n^$]␣             expand nth cmd (magic-space)
-!*␣                    expand prev args (magic-space)
-!str␣                  expand cmd starting with str (magic-space)
-^x^y␣                  expand prev line, 1st x→y (magic-space)
-C-A-e                  shell-expand-line: alias ~ $
-C-A-w                  glob-expand-word: * ? (wildcard)
+  Tab...                 menu-complete: $ ~ @ cmd /
+  A-{                    complete-into-braces: /
+  A-*                    insert-completions
+  C-A-i [C-A-i]          dynamic-complete-history 
+  A-g                    glob-complete-word: * ?
 
-C-x C-u                undo
-A-r                    revert-line
-C-j | lf               accept-line (nix eol)
-C-m | cr               accept-line (mac eol)
+  !![:0n^$]␣             expand prev cmd (magic-space)
+  !N[:0n^$]␣             expand nth cmd (magic-space)
+  !*␣                    expand prev args (magic-space)
+  !str␣                  expand cmd starting with str (magic-space)
+  ^x^y␣                  expand prev line, 1st x→y (magic-space)
+  C-A-e                  shell-expand-line: alias ~ $
+  C-A-w                  glob-expand-word: * ? (wildcard)
 
-C-x (                  start-kbd-macro
-C-x )                  end-kbd-macro
-C-x e                  call-last-kbd-macro
-C-x C-e                edit-and-execute-command
+  C-x C-u                undo
+  A-r                    revert-line
+  C-j | lf               accept-line (nix eol)
+  C-m | cr               accept-line (mac eol)
+
+  C-x (                  start-kbd-macro
+  C-x )                  end-kbd-macro
+  C-x e                  call-last-kbd-macro
+  C-x C-e                edit-and-execute-command
 
