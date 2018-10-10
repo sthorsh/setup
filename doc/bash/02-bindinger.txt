@@ -11,15 +11,15 @@ C-e                    goto eol
 C-]                    søk →    
 C-A-]                  søk ←
 
-C-l                    clear-screen
 C-v                    quoted-insert
+
 A-c                    capital
 A-l                    lowercase
 A-u                    uppercase
 C-t                    transpose
 A-t                    transpose ord
                                                     
-C-h | bs               del ←
+C-h | bs (8)           del ←
 C-d                    del →
 C-q                    kill filnavn
 C-w                    kill ord
@@ -27,34 +27,38 @@ A-d                    kill ord
 C-u                    kill til bol
 C-k                    kill til eol
 
+C-y                    yank kill-ring
+C-y A-y...             yank-pop kill-ring
+
+Tab...                 complete $ ~ @ cmd /
+A-*                    sett inn $ ~ @ cmd / 
+A-{                    complete {}
+A-g                    complete wildcard * ?
+
+C-A-e                  expand ! alias ~ $
+C-A-w                  expand wildcard * ? 
+
+C-l                    clear-screen
+C-x C-u                undo
+A-r                    revert-line
+C-j | lf (10)          accept-line (nix eol)
+C-m | cr (13)          accept-line (mac eol)
+
 C-p                    prev cmdline
 C-n                    next cmdline
 C-r *|C-h|C-r|C-gjm    reverse-search
 C-o                    operate-and-get-next
 
-C-y                    yank kill-ring
-C-y A-y...             yank-pop kill-ring
 C-A-y                  yank arg fra prev cmd
 A-...                  yank arg fra prev cmds
 
-Tab...                 complete $ ~ @ cmd /
-A-*                    sett inn $ ~ @ cmd / 
 C-A-i...               complete fra history 
-A-{                    complete {}
-A-g                    complete wildcard * ?
 
-C-A-e                  expand alias ~ $
-C-A-w                  expand word * ? 
   !![:0n^$]␣             expand prev cmd (magic-space)
   !N[:0n^$]␣             expand nth cmd (magic-space)
   !*␣                    expand prev args (magic-space)
   !str␣                  expand cmd starting with str (magic-space)
   ^x^y␣                  expand prev line, 1st x→y (magic-space)
-
-  C-x C-u                undo
-  A-r                    revert-line
-  C-j | lf               accept-line (nix eol)
-  C-m | cr               accept-line (mac eol)
 
   C-x (                  start-kbd-macro
   C-x )                  end-kbd-macro
