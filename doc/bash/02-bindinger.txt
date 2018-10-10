@@ -1,14 +1,14 @@
 BINDINGER
 
-A-N                    digit-arg
+A-N                    antall, posisjon
 
-C-b                    go ←
-C-f                    go →        
-A-b                    go ord ←
-A-f                    go ord →  
-C-a                    goto bol
-C-e                    goto eol
-C-]                    søk →    
+C-b                    tilbake
+C-f                    fram
+A-b                    tilbake
+A-f                    fram
+C-a                    til bol
+C-e                    til eol
+C-]                    søk →
 C-A-]                  søk ←
 
 C-v                    quoted-insert
@@ -16,9 +16,9 @@ C-v                    quoted-insert
 A-c                    capital
 A-l                    lowercase
 A-u                    uppercase
-C-t                    transpose
-A-t                    transpose ord
-                                                    
+C-t                    transponere
+A-t                    transponere ord
+                                                      
 C-h | bs               del ←
 C-d                    del →
 C-q                    kill filnavn
@@ -27,41 +27,41 @@ A-d                    kill ord
 C-u                    kill til bol
 C-k                    kill til eol
 
-C-y                    yank kill-ring
-C-y A-y...             yank-pop kill-ring
+C-y                    yank fra kill-ring
+C-y A-y...             yank-pop fra kill-ring
 
-Tab...                 fullfør $ ~ @ cmd /
-A-*                    sett inn $ ~ @ cmd / 
-A-{                    fullfør {}
-A-g                    fullfør wildcard * ?
+  Tab...                 fullfør $ ~ @ cmd /
+  A-*                    sett inn $ ~ @ cmd / 
+  A-{                    fullfør {}
+  A-g                    fullfør wildcard * ?
 
-C-A-e                  ekspander ! alias ~ $
-C-A-w                  ekspander wildcard * ? 
+  C-A-e                  ekspander ! alias ~ $
+  C-A-w                  ekspander wildcard * ? 
 
-C-l                    clear-screen
-C-x C-u                undo
-A-r                    revert-line
-C-j | lf               accept-line (nix eol)
-C-m | cr               accept-line (mac eol)
+  C-l                    clear-screen
+  C-x C-u                undo
+  A-r                    revert-line
+  C-j | lf               accept-line (nix eol)
+  C-m | cr               accept-line (mac eol)
 
-C-p                    prev cmdline
-C-n                    next cmdline
-C-r... * C-[gjm]       reverse-search
-C-o                    operate-and-get-next
+  C-p                    prev cmdline
+  C-n                    next cmdline
+  C-r... * C-[gjm]       reverse-search
+  C-o                    operate-and-get-next
 
-C-A-y                  yank arg fra prev cmd
-A-...                  yank arg fra prev cmds
+  C-A-y                  yank arg fra prev cmd
+  A-...                  yank arg fra prev cmds
 
-C-A-i...               fullfør fra history 
+  C-A-i...               fullfør fra history 
 
-!!:^N$                 ekspander prev cmd
-!N:^N$                 ekspander nth cmd
-!*                     ekspander prev args
-!str                   ekspander cmdline: starter m/str
-^x^y␣                  ekspander prev cmdline: 1st x→y
-                              
-C-x (                  ta opp makro
-C-x )                  avslutt opptak
-C-x e                  kall makro
-C-x C-e                edit-og-kall makro
+  !!:^N$                 ekspander prev cmd
+  !N:^N$                 ekspander nth cmd
+  !*                     ekspander prev args
+  !str                   ekspander cmdline: starter m/str
+  ^x^y␣                  ekspander prev cmdline: 1st x→y
+                                
+  C-x (                  ta opp makro
+  C-x )                  avslutt opptak
+  C-x e                  kall makro
+  C-x C-e                edit-og-kall makro
 
