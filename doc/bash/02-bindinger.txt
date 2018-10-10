@@ -30,24 +30,24 @@ C-k                    kill til eol
 C-y                    yank fra kill-ring
 C-y A-y...             yank-pop fra kill-ring
 
-  Tab...                 fullfør $ ~ @ cmd /
-  A-*                    sett inn $ ~ @ cmd / 
-  A-{                    fullfør {}
-  A-g                    fullfør wildcard * ?
+Tab...                 fullføre $ ~ @ cmd /
+A-*                    sett inn $ ~ @ cmd / 
+A-{                    fullføre {}
+A-g                    fullføre wildcard * ?
 
-  C-A-e                  ekspander ! alias ~ $
-  C-A-w                  ekspander wildcard * ? 
+C-A-e                  ekspander alias ~ $ $() $(())
+C-A-w                  ekspander wildcard * ? 
 
-  C-l                    clear-screen
-  C-x C-u                undo
-  A-r                    revert-line
-  C-j | lf               accept-line (nix eol)
-  C-m | cr               accept-line (mac eol)
+C-l                    clear-screen
+C-x C-u                undo
+A-r                    revert-line
+C-j | lf               accept-line (eol nix)
+C-m | cr               accept-line (eol mac)
 
-  C-p                    prev cmdline
-  C-n                    next cmdline
-  C-r... * C-[gjm]       reverse-search
-  C-o                    operate-and-get-next
+C-p                    cmdline ↑
+C-n                    cmdline ↓
+C-r... * C-[gjm]       reverse-search
+C-o                    operate-and-get-next
 
   C-A-y                  yank arg fra prev cmd
   A-...                  yank arg fra prev cmds
