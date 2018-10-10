@@ -125,7 +125,7 @@ stty -ixoff
 # autojump
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
 # fuzzy fnder
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # mvn completion
 [ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
 # tmux completion

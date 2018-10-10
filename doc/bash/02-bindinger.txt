@@ -19,7 +19,7 @@ A-u                    uppercase
 C-t                    transpose
 A-t                    transpose ord
                                                     
-C-h | bs (8)           del ←
+C-h | bs               del ←
 C-d                    del →
 C-q                    kill filnavn
 C-w                    kill ord
@@ -30,38 +30,38 @@ C-k                    kill til eol
 C-y                    yank kill-ring
 C-y A-y...             yank-pop kill-ring
 
-Tab...                 complete $ ~ @ cmd /
+Tab...                 fullfør $ ~ @ cmd /
 A-*                    sett inn $ ~ @ cmd / 
-A-{                    complete {}
-A-g                    complete wildcard * ?
+A-{                    fullfør {}
+A-g                    fullfør wildcard * ?
 
-C-A-e                  expand ! alias ~ $
-C-A-w                  expand wildcard * ? 
+C-A-e                  ekspander ! alias ~ $
+C-A-w                  ekspander wildcard * ? 
 
 C-l                    clear-screen
 C-x C-u                undo
 A-r                    revert-line
-C-j | lf (10)          accept-line (nix eol)
-C-m | cr (13)          accept-line (mac eol)
+C-j | lf               accept-line (nix eol)
+C-m | cr               accept-line (mac eol)
 
 C-p                    prev cmdline
 C-n                    next cmdline
-C-r *|C-h|C-r|C-gjm    reverse-search
+C-r... * C-[gjm]       reverse-search
 C-o                    operate-and-get-next
 
 C-A-y                  yank arg fra prev cmd
 A-...                  yank arg fra prev cmds
 
-C-A-i...               complete fra history 
+C-A-i...               fullfør fra history 
 
-  !![:0n^$]␣             expand prev cmd (magic-space)
-  !N[:0n^$]␣             expand nth cmd (magic-space)
-  !*␣                    expand prev args (magic-space)
-  !str␣                  expand cmd starting with str (magic-space)
-  ^x^y␣                  expand prev line, 1st x→y (magic-space)
-
-  C-x (                  start-kbd-macro
-  C-x )                  end-kbd-macro
-  C-x e                  call-last-kbd-macro
-  C-x C-e                edit-and-execute-command
+!!:^N$                 ekspander prev cmd
+!N:^N$                 ekspander nth cmd
+!*                     ekspander prev args
+!str                   ekspander cmdline: starter m/str
+^x^y␣                  ekspander prev cmdline: 1st x→y
+                              
+C-x (                  ta opp makro
+C-x )                  avslutt opptak
+C-x e                  kall makro
+C-x C-e                edit-og-kall makro
 
