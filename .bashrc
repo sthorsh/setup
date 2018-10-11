@@ -5,9 +5,9 @@ case $- in
 esac
 
 # Log on entry
-echo -n "~/.bashrc: "
-[[ $- == *i*  ]] && echo -n 'interactive ' || echo -n 'non-interactive '
-shopt -q login_shell && echo 'login shell' || echo 'non-login shell'
+shopt -q login_shell && echo -n 'login ' || echo -n 'ikke-login '
+[[ $- == *i*  ]] && echo -n 'interaktivt ' || echo -n 'ikke-interaktivt '
+echo "→  ~/.bashrc"
 
 # avoid duplicate PATH entries
 add_to_path () {

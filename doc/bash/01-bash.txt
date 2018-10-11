@@ -3,9 +3,31 @@ Bash
   Et tekstbasert UI [for Unix]
   En interpreter [cmdline → syskall]
   En makroprosessor [ref ekspansjon]
-  Et programmeringsspråk [kombinasjon av kommandoer]
+  Et programmeringsspråk [kombinasjon av cmds]
 
-Bruk
-  Interaktiv: input fra tastatur
-  Ikke-interaktivt input fra fil
+/bin/bash
+  $ bash --help 
+  $ bash -i       
+  $ bash -l
+  $ bash ±o opt (set)   
+  $ bash ±O opt (shopt)
+  $ bash -r         
+  ...           
+
+Tilstand
+  Login: $0 → -bash
+  Ikke-login: $0 → bash
+  Interaktivt: $- → i
+  Ikke-interaktivt: $- → ikke i
+
+Kombinasjoner
+  Login interaktivt: ssh, tmux
+  Login ikke-interaktivt: ...
+  Ikke-login interaktivt: bash
+  Ikke-login ikke-interaktivt: script
+
+Konfigurasjon
+  ~/.bash_profile: login
+  ~/.bashrc: interaktivt
+  ~/.inputrc: gnu readline
 
