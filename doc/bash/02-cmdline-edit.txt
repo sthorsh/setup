@@ -1,0 +1,65 @@
+Redigering
+  A-N                    antall/posisjon
+
+  C-b                    tilbake
+  C-f                    fram
+  A-b                    tilbake ord
+  A-f                    fram ord
+  C-a                    til bol
+  C-e                    til eol
+  C-]                    søk →
+  C-A-]                  søk ←
+
+  C-v                    quoted-insert
+
+  A-c                    capital
+  A-l                    lowercase
+  A-u                    uppercase
+  C-t                    transponere
+  A-t                    transponere ord
+                                                        
+  C-h | bs               del ←
+  C-d                    del →
+  C-q                    kill filnavn
+  C-w                    kill ord
+  A-d                    kill ord
+  C-u                    kill til bol
+  C-k                    kill til eol
+
+  C-y                    yank kill-ring
+  C-y A-y...             yank-pop kill-ring
+
+  Tab...                 fullfør $ ~ @ cmd /
+  A-*                    fullfør alle $ ~ @ cmd / 
+  A-{                    fullfør {}
+  A-g                    fullfør wildcard * ?
+
+  C-A-e                  ekspander ! alias ~ $ $() $(())
+  C-A-w                  ekspander wildcard * ? 
+
+  C-l                    clear-screen
+  C-x C-u                undo
+  A-r                    revert-line
+  C-j                    lf (eol nix)
+  C-m                    cr (eol mac)
+
+  C-p                    forrige cmdline
+  C-n                    neste cmdline
+  C-r... * C-[gjm]       reverse-search
+  C-o                    operate-and-get-next
+
+  C-A-y                  forrige cmdline: yank
+  A-...                  forrige cmdlines: yank
+
+  C-A-i                  fullfør fra history 
+
+  !![:^N$][:gs/x/y]      forrige cmdline [yank][erstatt]
+  !N[:^N$][:gs/x/y]      cmdline N [yank][erstatt]
+  !x[:^N$][:gs/x/y]      cmdline ^x [yank][erstatt]
+  !*                     forrige cmdline: yank opts/args
+  ^x^y                   forrige cmdline: erstatt første x
+                                  
+  C-x (                  ta opp makro
+  C-x )                  avslutt opptak
+  C-x e                  kall makro
+  C-x C-e                edit-og-kall makro
