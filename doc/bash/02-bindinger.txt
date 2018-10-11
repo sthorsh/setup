@@ -1,11 +1,11 @@
 BINDINGER
 
-A-N                    antall, posisjon
+A-N                    antall/posisjon
 
 C-b                    tilbake
 C-f                    fram
-A-b                    tilbake
-A-f                    fram
+A-b                    tilbake ord
+A-f                    fram ord
 C-a                    til bol
 C-e                    til eol
 C-]                    søk →
@@ -27,41 +27,40 @@ A-d                    kill ord
 C-u                    kill til bol
 C-k                    kill til eol
 
-C-y                    yank fra kill-ring
-C-y A-y...             yank-pop fra kill-ring
+C-y                    yank kill-ring
+C-y A-y...             yank-pop kill-ring
 
-Tab...                 fullføre $ ~ @ cmd /
-A-*                    sett inn $ ~ @ cmd / 
-A-{                    fullføre {}
-A-g                    fullføre wildcard * ?
+Tab...                 fullfør $ ~ @ cmd /
+A-*                    fullfør alle $ ~ @ cmd / 
+A-{                    fullfør {}
+A-g                    fullfør wildcard * ?
 
-C-A-e                  ekspander alias ~ $ $() $(())
+C-A-e                  ekspander ! alias ~ $ $() $(())
 C-A-w                  ekspander wildcard * ? 
 
 C-l                    clear-screen
 C-x C-u                undo
 A-r                    revert-line
-C-j | lf               accept-line (eol nix)
-C-m | cr               accept-line (eol mac)
+C-j                    lf (eol nix)
+C-m                    cr (eol mac)
 
-C-p                    cmdline ↑
-C-n                    cmdline ↓
+C-p                    forrige cmdline
+C-n                    neste cmdline
 C-r... * C-[gjm]       reverse-search
 C-o                    operate-and-get-next
 
-  C-A-y                  yank arg fra prev cmd
-  A-...                  yank arg fra prev cmds
+C-A-y                  forrige cmdline: yank
+A-...                  forrige cmdlines: yank
 
-  C-A-i...               fullfør fra history 
+C-A-i                  fullfør fra history 
 
-  !!:^N$                 ekspander prev cmd
-  !N:^N$                 ekspander nth cmd
-  !*                     ekspander prev args
-  !str                   ekspander cmdline: starter m/str
-  ^x^y␣                  ekspander prev cmdline: 1st x→y
+!![:^N$][:gs/x/y]      forrige cmdline [yank][erstatt]
+!N[:^N$][:gs/x/y]      cmdline N [yank][erstatt]
+!x[:^N$][:gs/x/y]      cmdline ^x [yank][erstatt]
+!*                     forrige cmdline: yank opts/args
+^x^y                   forrige cmdline: erstatt første x
                                 
-  C-x (                  ta opp makro
-  C-x )                  avslutt opptak
-  C-x e                  kall makro
-  C-x C-e                edit-og-kall makro
-
+C-x (                  ta opp makro
+C-x )                  avslutt opptak
+C-x e                  kall makro
+C-x C-e                edit-og-kall makro
