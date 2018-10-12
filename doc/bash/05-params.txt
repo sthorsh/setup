@@ -1,5 +1,20 @@
+Posisjonelle params
+  $1..$9
+  ${NN...}
+
+Spesielle params (read-only)
+  $* posisjonelle params
+  $@ posisjonelle params
+  $# antall posisjonelle params
+  $? exit status
+  $- bash option flagg
+  $$ bash pid
+  $! pid for siste bg cmd
+  $0 navn på skall el script
+  $_ ref gnu bash manual
+
 Variabler
-  BASH_*
+  BASH*
   COLORTERM
   COLUMNS=0...
   COMP_WORDBREAKS="'><=;|&(:

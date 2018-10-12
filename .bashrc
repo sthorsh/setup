@@ -9,15 +9,6 @@ shopt -q login_shell && echo -n 'login ' || echo -n 'ikke-login '
 [[ $- == *i*  ]] && echo -n 'interaktivt ' || echo -n 'ikke-interaktivt '
 echo "→  ~/.bashrc"
 
-# avoid duplicate PATH entries
-add_to_path () {
-  if ! echo $PATH | /bin/grep -Eq "(^|:)$1($|:)"; then
-    export PATH=$PATH:$1
-  else
-    echo "path already contains $1 - not added"
-  fi
-}
-
 # if term supports it, use prompt with colors
 # $ tree /lib/terminfo will show all terminals
 case "$TERM" in
@@ -48,73 +39,27 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# options
-set -o ignoreeof
-set -o noclobber
-set -o notify
-shopt -s globstar
-shopt -s histappend              
+# avoid duplicate PATH entries
+add_to_path () {
+  if ! echo $PATH | /bin/grep -Eq "(^|:)$1($|:)"; then
+    export PATH=$PATH:$1
+  else
+    echo "path already contains $1 - not added"
+  fi
+}
 
-# editor of choice
-export EDITOR=/usr/bin/vim
-# list in memory
-export HISTSIZE=5000
-# file on disk
-export HISTFILESIZE=10000
-# ignore duplicate lines or lines starting with space
-export HISTCONTROL=ignoreboth
-# improved less
-export LESS='--LINE-NUMBERS --LONG-PROMPT'
-# on each cmd append to history file, clear history list, read history file
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-# visual editor of choice
-export VISUAL=/usr/bin/vim
-# in /opt|usr|usr/java|usr/lib|usr/lib/jvm|usr/local|usr/local/java/
-# create java home e.g /java-8-oracle/ or jdk-8u151-linux-x64/
-# create soft link to java home e.g /opt/java → /opt/java-8-oracle/
-export JAVA_HOME=/usr/lib/jvm/java
-add_to_path ${JAVA_HOME}/bin/
-export MAVEN_HOME=/usr/lib/apache-maven
-add_to_path ${MAVEN_HOME}/bin/
-# command line fuzzy finder fzf
-export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
-
-# aliases
-alias gradle="/opt/gradle/bin/gradle"
-alias grep='grep --color=auto'
-alias gtf='cd /usr/lib/jboss-fuse/'
-alias gtm='cd /usr/lib/apache-activemq/'
-alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
-alias l='ls -lF --color=auto --group-directories-first'
-alias la='ls -alF --color=auto --group-directories-first'
-alias ls='ls --color=auto --group-directories-first'
-alias mci='mvn clean install'
-alias mcifc='mvn clean install -Pfindbugs,checkstyle'
-alias mcist='mvn clean install -Dmaven.test.skip=true'
-alias onboot="~/bin/tmux_onboot.sh"
-alias p='echo -e ${PATH//:/"\n"}' 
-alias ps='ps -ef'
-alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
-alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
-alias x='exit'
- 
-# remove binding to stty stop
+# Bindings
 bind -r '\C-s'
-# remove binding to stty start
 bind -r '\C-q'
-# bind to readline function
 bind 'tab:menu-complete'
 bind '"\C-q":unix-filename-rubout'
-#bind '"\e\C-r":tilde-expand'
 bind '"\e\C-w":glob-expand-word'
-# set readline variable 
 bind 'set show-all-if-ambiguous on'
-# set readline variable
 bind 'set menu-complete-display-prefix on'
 
-# disable stty xon/xoff flow control
+# Disable stty xon/xoff flow control
 stty -ixon
-# disable stty start/stop characters
+# Disable stty start/stop characters
 stty -ixoff
 
 # remap capslock to ctrl
@@ -122,13 +67,50 @@ stty -ixoff
 # disable ctrl
 #xmodmap -e 'keycode 37 = NoSymbol'
 
-# autojump
+# Options
+set -o ignoreeof
+set -o noclobber
+set -o notify
+shopt -s globstar
+shopt -s histappend              
+
+# Aliases
+alias gradle="/opt/gradle/bin/gradle"
+alias grep='grep --color=auto'
+alias gta='cd /usr/lib/apache-activemq/'
+alias gtf='cd /usr/lib/jboss-fuse/'
+alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
+alias l='ls -lF --color=auto --group-directories-first'
+alias la='ls -alF --color=auto --group-directories-first'
+alias mvnf='mvn clean install -Pfindbugs,checkstyle'
+alias mvnl='mvn clean install -Dmaven.test.skip=true'
+alias path='echo -e ${PATH//:/"\n"}' 
+alias ps='ps -ef'
+alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
+alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
+alias x='exit'
+ 
+# Variables
+export EDITOR=/usr/bin/vim
+export HISTSIZE=5000
+export HISTFILESIZE=10000
+export HISTCONTROL=ignoreboth
+export LESS='--LINE-NUMBERS --LONG-PROMPT'
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export VISUAL=/usr/bin/vim
+export JAVA_HOME=/usr/lib/jvm/java
+add_to_path ${JAVA_HOME}/bin/
+export MAVEN_HOME=/usr/lib/apache-maven
+add_to_path ${MAVEN_HOME}/bin/
+export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
+
+# Autojump
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
-# fuzzy fnder
+# Fuzzy fnder
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# mvn completion
+# Mvn completion
 [ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
-# tmux completion
+# Tmux completion
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
 
 # Make sure clipit is running
