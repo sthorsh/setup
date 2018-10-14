@@ -1,0 +1,23 @@
+Spesialtegn
+  C-?        erase
+  C-\        sigquit
+  C-c        sigint
+  C-d        eof
+  C-o        discard
+  C-q        start (disabled)
+  C-r        rprnt
+  C-s        stop (disabled)
+  C-u        kill
+  C-v        lnext  
+  C-w        werase
+  C-z        sigtstp
+  
+Input settings
+  [-]ixon
+  [-]ixoff
+  ...
+  
+Ref
+  $ stty -a
+  $ man stty
+  

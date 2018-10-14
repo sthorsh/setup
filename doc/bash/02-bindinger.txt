@@ -1,4 +1,4 @@
-Readline
+Bindinger
   A-N                    antall/posisjon
 
   C-b                    tilbake
@@ -10,7 +10,7 @@ Readline
   C-]                    søk →
   C-A-]                  søk ←
 
-  C-v                    quoted-insert
+  C-v                    quoted-insert (tty lnext)
 
   A-c                    capital
   A-l                    lowercase
@@ -21,9 +21,9 @@ Readline
   C-h | bs               del ←
   C-d                    del →
   C-q                    kill filnavn
-  C-w                    kill ord
+  C-w                    kill ord (tty werase)
   A-d                    kill ord
-  C-u                    kill til bol
+  C-u                    kill til bol (tty kill)
   C-k                    kill til eol
 
   C-y                    yank kill-ring
@@ -63,3 +63,4 @@ Readline
   C-x )                  avslutt opptak
   C-x e                  kall makro
   C-x C-e                edit-og-kall makro
+

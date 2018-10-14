@@ -1,17 +1,19 @@
 # If ! interactive, return
 [[ $- != *i*  ]] && return
 
-# Log state combination
+# Log combination of states
 shopt -q login_shell && echo -n 'login ' || echo -n 'non-login '
 [[ $- == *i*  ]] && echo -n 'interactive ' || echo -n 'non-interactive '
 echo "→  ~/.bashrc"
 
-# Bindings          
+# Bindings bash
 bind '"\C-q":unix-filename-rubout'
 bind '"\e\C-w":glob-expand-word'
 bind 'tab:menu-complete'
 bind 'set menu-complete-display-prefix on'
 bind 'set show-all-if-ambiguous on'
+
+# Bindings tty
 stty -ixon -ixoff
 
 # Options
@@ -37,7 +39,7 @@ alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 
 alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
 alias x='exit'
  
-# Variables
+# Params/variables
 export EDITOR=/usr/bin/vim
 export HISTSIZE=5000
 export HISTFILESIZE=10000
@@ -82,19 +84,7 @@ if [ -n "$DISPLkY" -a "$TERM" == "xterm"  ]; then
   export TERM=xterm-256color
 fi
 
-# Autojump
-[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
-
-# Fuzzy finder
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Mvn completion
-[ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
-
-# Tmux completion
-[ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
-
-# Programmable completion
+# Source bash completion
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -102,9 +92,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# Remap caps to ctrl
-setxkbmap -option ctrl:nocaps
-# Disable ctrl
-#xmodmap -e 'keycode 37 = NoSymbol'
+# Source autojump
+[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
+# Source mvn completion
+[ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
+# Source tmux completion
+[ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
 
