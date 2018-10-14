@@ -5,26 +5,25 @@ Bash
   En makroprosessor [ref ekspansjon]
   Et programmeringsspråk [kombinasjon av cmds]
 
-/bin/bash
-  $ bash --help 
-  $ bash -i       
-  $ bash -l
-  $ bash ±o opt (set)   
-  $ bash ±O opt (shopt)
-  $ bash -r         
-  ...           
-
 Tilstand
-  Login: $0 → -bash
-  Ikke-login: $0 → bash
-  Interaktivt: $- → i
-  Ikke-interaktivt: $- → ikke i
+  Login ($0)
+  Ikke-login
+  Interaktivt ($-)
+  Ikke-interaktivt
 
 Kombinasjoner
-  Login interaktivt: ssh, tmux
+  Login interaktivt: tmux, ssh
   Login ikke-interaktivt: ...
-  Ikke-login interaktivt: bash
-  Ikke-login ikke-interaktivt: script
+  Ikke-login interaktivt: gnome-terminal, guake
+  Ikke-login ikke-interaktivt: script u/hashbang
+
+/bin/bash
+  $ bash -l 
+  $ bash -i 
+  $ bash -r 
+  $ bash ±o opt (set)   
+  $ bash ±O opt (shopt)
+  ...           
 
 Konfigurasjon
   ~/.bash_profile: login

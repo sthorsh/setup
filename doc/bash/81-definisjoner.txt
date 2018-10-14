@@ -50,4 +50,13 @@ Token
 Variabel
   En parameter m/navn og evt attributter
   Dvs variabel: navn, attributter, verdi
+
+TTY
+   the use of a keyboard, mouse, or other hardware to interact with an application on a computer
+
+Sesjon
+  the period of time spent interacting with an application on a computer
+
+TTY sesjon
+  the environment you are in while interacting with your computer
                 

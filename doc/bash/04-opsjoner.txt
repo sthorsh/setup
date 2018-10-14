@@ -1,25 +1,28 @@
 $ set: ref man bash
   ±o braceexpand                  on
-  ±o noclobber                    on
   ±o emacs                        on
+  ±o hashall                      on
   ±o histexpand                   on
   ±o history                      on
-  ±o hashall                      on
   ±o ignoreeof                    on
+  ±o interactive_comments         on
   ±o monitor                      on
+  ±o noclobber                    on
+  ±o notify                       on
   ±o allexport                    off
   ±o errexit                      off
   ±o errtrace                     off
-  ±o notify                       off
-  ±o noglob                       off
+  ±o functrace                    off
   ±o keyword                      off
+  ±o noexec                       off
+  ±o noglob                       off
+  ±o nolog                        off
+  ±o nounset                      off
+  ±o onecmd                       off
   ±o physical                     off
-  ±o privileged                   off
   ±o pipefail                     off
   ±o posix                        off
-  ±o functrace                    off
-  ±o onecmd                       off
-  ±o nounset                      off
+  ±o privileged                   off
   ±o verbose                      off
   ±o vi                           off
   ±o xtrace                       off

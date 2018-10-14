@@ -18,16 +18,18 @@ Kommandolinje
   ""    beskyttelse
   ''    beskyttelse
   
-Kontrolltaster (stty)
-  C-c   sigint
-  C-c   sigquit
-  C-d   eof
-  C-z   sigtstp
-  ...
-  
 Regulæruttrykk
   todo
 
 Strengoperatorer
   todo
 
+Signaler/stty
+  C-c   sigint
+  C-\   sigquit
+  C-d   eof
+  C-q   start
+  C-s   stop
+  C-z   sigtstp
+  ...
+  

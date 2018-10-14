@@ -1,71 +1,18 @@
-# If not interactive, return
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+# If ! interactive, return
+[[ $- != *i*  ]] && return
 
-# Log on entry
-shopt -q login_shell && echo -n 'login ' || echo -n 'ikke-login '
-[[ $- == *i*  ]] && echo -n 'interaktivt ' || echo -n 'ikke-interaktivt '
+# Log state combination
+shopt -q login_shell && echo -n 'login ' || echo -n 'non-login '
+[[ $- == *i*  ]] && echo -n 'interactive ' || echo -n 'non-interactive '
 echo "→  ~/.bashrc"
 
-# if term supports it, use prompt with colors
-# $ tree /lib/terminfo will show all terminals
-case "$TERM" in
-    xterm|xterm-color|*-256color) color_prompt=yes;;
-esac
-if [ "$color_prompt" != yes ]; then
-    PS1='\u@\h \w \$ '
-  else
-    if [[ ${EUID} != 0 ]] ; then
-        PS1='\[\e[01;32m\]\u@\h\[\e[01;34m\][\w]\[\e[01;32m\]\$\[\e[00m\] '
-    else
-        PS1='\e[01;31m\h \W \$\e[00m '
-    fi
-fi
-unset color_prompt
-
-# vim needs this
-if [ -n "$DISPLAY" -a "$TERM" == "xterm"  ]; then
-  export TERM=xterm-256color
-fi
-
-# programmable completion
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-# avoid duplicate PATH entries
-add_to_path () {
-  if ! echo $PATH | /bin/grep -Eq "(^|:)$1($|:)"; then
-    export PATH=$PATH:$1
-  else
-    echo "path already contains $1 - not added"
-  fi
-}
-
-# Bindings
-bind -r '\C-s'
-bind -r '\C-q'
-bind 'tab:menu-complete'
+# Bindings          
 bind '"\C-q":unix-filename-rubout'
 bind '"\e\C-w":glob-expand-word'
-bind 'set show-all-if-ambiguous on'
+bind 'tab:menu-complete'
 bind 'set menu-complete-display-prefix on'
-
-# Disable stty xon/xoff flow control
-stty -ixon
-# Disable stty start/stop characters
-stty -ixoff
-
-# remap capslock to ctrl
-#setxkbmap -option ctrl:nocaps
-# disable ctrl
-#xmodmap -e 'keycode 37 = NoSymbol'
+bind 'set show-all-if-ambiguous on'
+stty -ixon -ixoff
 
 # Options
 set -o ignoreeof
@@ -99,33 +46,65 @@ export LESS='--LINE-NUMBERS --LONG-PROMPT'
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export VISUAL=/usr/bin/vim
 export JAVA_HOME=/usr/lib/jvm/java
-add_to_path ${JAVA_HOME}/bin/
 export MAVEN_HOME=/usr/lib/apache-maven
-add_to_path ${MAVEN_HOME}/bin/
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
+
+# Functions
+add_to_path () {
+  if ! echo $PATH | /bin/grep -Eq "(^|:)$1($|:)"; then
+    export PATH=$PATH:$1
+  else
+    echo "path already contains $1 - not added"
+  fi
+}
+
+# Define PATH
+add_to_path ${JAVA_HOME}/bin/
+add_to_path ${MAVEN_HOME}/bin/
+
+# Define PS1
+case "$TERM" in
+    xterm|xterm-color|*-256color) color_prompt=yes;;
+esac
+if [ "$color_prompt" != yes ]; then
+    PS1='\u@\h \w \$ '
+  else
+    if [[ ${EUID} != 0 ]] ; then
+        PS1='\[\e[01;32m\]\u@\h\[\e[01;34m\][\w]\[\e[01;32m\]\$\[\e[00m\] '
+    else
+        PS1='\e[01;31m\h \W \$\e[00m '
+    fi
+fi
+unset color_prompt
+
+# Define TERM (for vim)
+if [ -n "$DISPLkY" -a "$TERM" == "xterm"  ]; then
+  export TERM=xterm-256color
+fi
 
 # Autojump
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
-# Fuzzy fnder
+
+# Fuzzy finder
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Mvn completion
 [ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
+
 # Tmux completion
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
 
-# Make sure clipit is running
-# if ! pgrep -x clipit > /dev/null
-# then 
-#   echo "starting clipit..."
-#   clipit > /dev/null 2>&1 &
-# else echo "clipit already running..."
-# fi
-# 
-# # Make sure guake is running
-# if ! pgrep -x guake > /dev/null
-# then 
-#   echo "starting guake..."
-#     guake > /dev/null 2>&1 &
-#   else echo "guake already running..."
-# fi
+# Programmable completion
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# Remap caps to ctrl
+setxkbmap -option ctrl:nocaps
+# Disable ctrl
+#xmodmap -e 'keycode 37 = NoSymbol'
 

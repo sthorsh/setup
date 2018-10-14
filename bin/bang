@@ -188,6 +188,7 @@ echo "done..."
 # :PluginInstall
 
 # Startup apps
+# clipit
 # guake
 # gnome-terminal
 
