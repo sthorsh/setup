@@ -1,19 +1,23 @@
+Opts/params
+  -o opt          opt is enabled 
+  -v var          var is set
+
 Filer
-  -e f1           return true|false
-  -f f1           return true|false
-  f1 -nt f2       return true|false
-  f1 -ot f2       return true|false
+  -e f1           exists
+  -f f1           exists && is file
+  f1 -nt f2       newer than
+  f1 -ot f2       older than
   ...
 
-String comparison
-  -z s1           return true|false
-  -n s1           return true|false
-  s1 = s1         return true|false
-  s1 != s2        return true|false
-  s1 > s2         return true|false
-  s1 < s2         return true|false
+Strenger
+  -z s1           zero
+  -n s1           not zero
+  s1 = s1         equal
+  s1 != s2        not equal
+  s1 < s2         alfabetisk før
+  s1 > s2         alfabetisk etter
 
-String length
+Strenger
   ${#s1}          return lengde
 
   String pattern matching
@@ -34,6 +38,8 @@ String substitution
   String extended pattern matching
 
   Aritmetiske operatorer
+    arg1 + arg2 
+    ...
     arg1 -eq arg2   return true|false
     arg1 -ne arg2   return true|false
     arg1 -lt arg2   return true|false
@@ -41,9 +47,7 @@ String substitution
     arg1 -le arg2   return true|false
     arg1 -ge arg2   return true|false
 
-  Annet
-    -o option       true if shell option is enabled 
-    -v var          true if variable var is set
+  Boolske op
     ! exp           true if exp is false
     exp1 -a exp2    exp1 is true and exp2 is true (ikke aritmetikk)
     exp1 -o exp2    exp1 is true or exp2 is true (ikke aritmetikk)
