@@ -35,6 +35,7 @@ alias mvnf='mvn clean install -Pfindbugs,checkstyle'
 alias mvnl='mvn clean install -Dmaven.test.skip=true'
 alias path='echo -e ${PATH//:/"\n"}' 
 alias ps='ps -ef'
+alias soapui="/opt/SoapUI-5.4.0/bin/soapui.sh > /dev/null 2>&1 &"
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
 alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
 alias x='exit'
