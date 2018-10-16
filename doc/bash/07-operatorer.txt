@@ -1,40 +1,54 @@
-Conditional: Filer
-  -d fil          eksisterer && er dir
-  -e fil          eksisterer
-  -f fil          eksisterer && er fil
-  -r fil          eksisterer && er readable
-  -w fil          eksisterer && er writeable
-  -x fil          eksisterer && er executable
-  fil1 -nt fil2   fil1 newer than fil2
-  fil1 -ot fil2   fil1 older than fil2
+Filer
+  -e f1           return true|false
+  -f f1           return true|false
+  f1 -nt f2       return true|false
+  f1 -ot f2       return true|false
   ...
 
-Conditional: Strenger
-  -n str          er not-null    
-  -z str          har lengde zero
-  str1==str2      str1 matches str2
-  str1!=str2      str1 does not match str2 
-  str1~=regex     str1 mathces extended regex
-  str1<str2       str1 sorteres før str2
-  str1>str2       str1 sorteres etter str2
+String comparison
+  -z s1           return true|false
+  -n s1           return true|false
+  s1 = s1         return true|false
+  s1 != s2        return true|false
+  s1 > s2         return true|false
+  s1 < s2         return true|false
 
-Conditional: Aritmetisk
-  exp1 -eq exp2   exp1 equal exp2
-  exp1 -ne exp2   exp1 not equal exp2
-  exp1 -lt exp2   exp1 less than exp2
-  exp1 -gt exp2   exp1 greater than exp2
-  exp1 -le exp2   exp1 less than or equal exp2
-  exp1 -ge exp2   exp1 greater then or equal exp2
+String length
+  ${#s1}          return lengde
 
-Conditional: Annet
-  ! exp           true if exp is false
-  exp1 -a exp2    exp1 is true and exp2 is true (ikke aritmetikk) 
-  exp1 -o exp2    exp1 is true or exp2 is true (ikke aritmetikk)
+  String pattern matching
+  ${s#p}          return s uten p (greedy)
+  ${s##p}         return s uten p (lazy)
+  ${s%p}          return s uten p
+  ${s%%p}         return s uten p
+  ${s/p/r}        return s med r for p
+  ${s//p/r}       return s med r for p
 
-Aritmetiske
-+ - etc
+String substitution
+  ${s1:-s2}       return s1 or s2
+  ${s1:+s2}       return s2 or null
+  ${s1:=s2}       return s1 or set s1=s2 and return s2
+  ${s1:?s2}       return s1 or abort and return s2
+  ${s1:N:N}       return offset:length
 
-Tilordning
-=   set variabelverdi
-=+  append til variabelverdi
+  String extended pattern matching
+
+  Aritmetiske operatorer
+    arg1 -eq arg2   return true|false
+    arg1 -ne arg2   return true|false
+    arg1 -lt arg2   return true|false
+    arg1 -gt arg2   return true|false
+    arg1 -le arg2   return true|false
+    arg1 -ge arg2   return true|false
+
+  Annet
+    -o option       true if shell option is enabled 
+    -v var          true if variable var is set
+    ! exp           true if exp is false
+    exp1 -a exp2    exp1 is true and exp2 is true (ikke aritmetikk)
+    exp1 -o exp2    exp1 is true or exp2 is true (ikke aritmetikk)
+
+  Tilordning
+    =   set variabelverdi
+    =+  append til variabelverdi
 
