@@ -1,58 +1,61 @@
-Opts/params
-  -o opt          opt is enabled 
-  -v var          var is set
-
-Filer
-  -e f1           exists
-  -f f1           exists && is file
-  f1 -nt f2       newer than
-  f1 -ot f2       older than
-  ...
+Opsjoner
+  -o opt          enabled
 
 Strenger
-  -z s1           zero
-  -n s1           not zero
-  s1 = s1         equal
-  s1 != s2        not equal
-  s1 < s2         alfabetisk før
-  s1 > s2         alfabetisk etter
+  -n $s           definert
+  -z $s           udefinert
+  $s₁ = $s₂       equal
+  $s₁ != $s₂      not equal
+  $s₁ < $s₂       alfabetisk før
+  $s₁ < $s₂       alfabetisk etter
 
-Strenger
-  ${#s1}          return lengde
+  Strenger
+    ${#s1}          return lengde
 
-  String pattern matching
-  ${s#p}          return s uten p (greedy)
-  ${s##p}         return s uten p (lazy)
-  ${s%p}          return s uten p
-  ${s%%p}         return s uten p
-  ${s/p/r}        return s med r for p
-  ${s//p/r}       return s med r for p
+    String pattern matching
+    ${s#p}          return s uten p (greedy)
+    ${s##p}         return s uten p (lazy)
+    ${s%p}          return s uten p
+    ${s%%p}         return s uten p
+    ${s/p/r}        return s med r for p
+    ${s//p/r}       return s med r for p
 
-String substitution
-  ${s1:-s2}       return s1 or s2
-  ${s1:+s2}       return s2 or null
-  ${s1:=s2}       return s1 or set s1=s2 and return s2
-  ${s1:?s2}       return s1 or abort and return s2
-  ${s1:N:N}       return offset:length
+  String substitution
+    ${s1:-s2}       return s1 or s2
+    ${s1:+s2}       return s2 or null
+    ${s1:=s2}       return s1 or set s1=s2 and return s2
+    ${s1:?s2}       return s1 or abort and return s2
+    ${s1:N:N}       return offset:length
 
-  String extended pattern matching
+    String extended pattern matching
 
-  Aritmetiske operatorer
-    arg1 + arg2 
+  Variabler
+    -v var          declared
+
+    Aritmetiske operatorer
+
+      arg1 + arg2 
+      ...
+      arg1 -eq arg2   return true|false
+      arg1 -ne arg2   return true|false
+      arg1 -lt arg2   return true|false
+      arg1 -gt arg2   return true|false
+      arg1 -le arg2   return true|false
+      arg1 -ge arg2   return true|false
+
+  Filer
+    -e f1           exists
+    -f f1           exists && is file
+    f1 -nt f2       newer than
+    f1 -ot f2       older than
     ...
-    arg1 -eq arg2   return true|false
-    arg1 -ne arg2   return true|false
-    arg1 -lt arg2   return true|false
-    arg1 -gt arg2   return true|false
-    arg1 -le arg2   return true|false
-    arg1 -ge arg2   return true|false
 
-  Boolske op
-    ! exp           true if exp is false
-    exp1 -a exp2    exp1 is true and exp2 is true (ikke aritmetikk)
-    exp1 -o exp2    exp1 is true or exp2 is true (ikke aritmetikk)
+    Boolske op
+      ! exp           true if exp is false
+      exp1 -a exp2    exp1 is true and exp2 is true (ikke aritmetikk)
+      exp1 -o exp2    exp1 is true or exp2 is true (ikke aritmetikk)
 
-  Tilordning
-    =   set variabelverdi
-    =+  append til variabelverdi
+    Tilordning
+      =   set variabelverdi
+      =+  append til variabelverdi
 
