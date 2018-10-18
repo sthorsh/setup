@@ -1,31 +1,28 @@
 Opsjoner
-  -o opt          enabled
+  -o set-option         hvis on true; false
 
-Strenger
-  -n $s           definert
-  -z $s           udefinert
-  $s₁ = $s₂       equal
-  $s₁ != $s₂      not equal
-  $s₁ < $s₂       alfabetisk før
-  $s₁ < $s₂       alfabetisk etter
-
-  Strenger
-    ${#s1}          return lengde
-
-    String pattern matching
-    ${s#p}          return s uten p (greedy)
-    ${s##p}         return s uten p (lazy)
-    ${s%p}          return s uten p
-    ${s%%p}         return s uten p
-    ${s/p/r}        return s med r for p
-    ${s//p/r}       return s med r for p
-
-  String substitution
-    ${s1:-s2}       return s1 or s2
-    ${s1:+s2}       return s2 or null
-    ${s1:=s2}       return s1 or set s1=s2 and return s2
-    ${s1:?s2}       return s1 or abort and return s2
-    ${s1:N:N}       return offset:length
+Params
+  -n $s                 hvis def true; false
+  -z $s                 hvis udef true; false
+  $s₁ = $s₂             hvis lik true; false
+  $s₁ != $s₂            hvis ulik true; false
+  $s₁ < $s₂             hvis før true; false
+  $s₁ < $s₂             hvis etter true; false
+  ...
+  ${#s}                 lengde
+  ...
+  ${s:offset:lengde}    delstreng
+  ${s₁:-s₂}             hvis def s₁; s₂
+  ${s₁:=s₂}             hvis def s₁; tilordne og s₂
+  ${s₁:?s₂}             hvis def s₁; exit og s₂
+  ${s₁:+s₂}             hvis def s₂; null
+  ...
+      ${s#pattern}          return s uten p (greedy)
+      ${s##p}         return s uten p (lazy)
+      ${s%p}          return s uten p
+      ${s%%p}         return s uten p
+      ${s/p/r}        return s med r for p
+      ${s//p/r}       return s med r for p
 
     String extended pattern matching
 
@@ -34,7 +31,7 @@ Strenger
 
     Aritmetiske operatorer
 
-      arg1 + arg2 
+      arg1 + arg2
       ...
       arg1 -eq arg2   return true|false
       arg1 -ne arg2   return true|false

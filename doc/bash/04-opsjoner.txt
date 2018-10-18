@@ -1,4 +1,4 @@
-$ set: ref man bash
+set: $-
   ±o braceexpand                  on
   ±o emacs                        on
   ±o hashall                      on
@@ -27,7 +27,7 @@ $ set: ref man bash
   ±o vi                           off
   ±o xtrace                       off
 
-$ shopt: ref man bash
+shopt
  -s|-u checkwinsize               on
  -s|-u cmdhist                    on
  -s|-u complete_fullquote         on
