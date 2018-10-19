@@ -1,0 +1,24 @@
+Regnskap
+- Balanse: finansiell stilling ved avslutning av periode
+- Resultat: økonomisk utvikling for samme periode feks 2018
+
+Regnskap
+  Inntekter: hva X tjener
+  Kostnader: hva X bruker
+  Eiendeler: hva X eier
+  Gjeld: hva X skylder
+
+Bokføring
+  Enkel
+  Dobbel
+
+Transaksjoner
+  Debet
+  Kredit
+
+Hovedbok/kontoplan
+  ...
+
+Kostnadssted
+- En avdeling eller underenhet som det er logisk å forsøke å henføre kostnader til
+- Materialforvaltningsavdelingen, tilvirkningsavdelinger, salgsavdeling, administrasjonsavdeling
