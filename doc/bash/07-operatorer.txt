@@ -1,5 +1,22 @@
 Opsjoner
-  -o set-option         hvis on true; false
+  -o set-option         hvis on true
+
+Variabler
+  -v var                hvis deklarert return true
+
+Filer
+  -e f1                 hvis exists return true
+  -f f1                 hvis file return true
+  f1 -nt f2             hvis newer-than return true
+  f1 -ot f2             hvis older-than return true
+      
+Aritmetisk
+  n₁ -eq n₂             hvis eq return true
+  n₁ -ne n₂             hvis ne return true
+  n₁ -lt n₂             hvis lt return true
+  n₁ -gt n₂             hvis gt return true
+  n₁ -le n₂             hvis le return true
+  n₁ -ge n₂             hvis ge return true
 
 Params
   -n $s                 hvis def true; false
@@ -17,35 +34,14 @@ Params
   ${s₁:?s₂}             hvis def s₁; exit og s₂
   ${s₁:+s₂}             hvis def s₂; null
   ...
-      ${s#pattern}          return s uten p (greedy)
-      ${s##p}         return s uten p (lazy)
-      ${s%p}          return s uten p
-      ${s%%p}         return s uten p
-      ${s/p/r}        return s med r for p
-      ${s//p/r}       return s med r for p
+  ${s#p}                del * ? [] fra ^
+  ${s##p}               del * ? [] fra ^ (greedy)
+  ${s%p}                del * ? [] fra $
+  ${s%%p}               del * ? [] fra $ (greedy)
+  ${s/p/r}              sub * ? [] med r
+  ${s//p/r}             sub * ? [] med r (greedy)
 
     String extended pattern matching
-
-  Variabler
-    -v var          declared
-
-    Aritmetiske operatorer
-
-      arg1 + arg2
-      ...
-      arg1 -eq arg2   return true|false
-      arg1 -ne arg2   return true|false
-      arg1 -lt arg2   return true|false
-      arg1 -gt arg2   return true|false
-      arg1 -le arg2   return true|false
-      arg1 -ge arg2   return true|false
-
-  Filer
-    -e f1           exists
-    -f f1           exists && is file
-    f1 -nt f2       newer than
-    f1 -ot f2       older than
-    ...
 
     Boolske op
       ! exp           true if exp is false
