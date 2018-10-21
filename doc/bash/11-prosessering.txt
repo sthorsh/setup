@@ -13,9 +13,19 @@ Prosessering
   Ekspander aritmetikk $(())
   Prosesssubstitusjon ()
   Splitt ord vha $IFS
-  Ekspander wildcard * ? [...]
+  Ekspander wildcards
   Fjern quotes \ "" ''
   Sett opp redirigering
   Fjern redirigeringsoperatorer
   Ekspanderer rhs i var=rhs [cmd] ...
+
+Pattern/wildcard
+  ?
+  *
+  []
+  ?(pattern|...)
+  *(pattern|...)
+  +(pattern|...)
+  @(pattern|...)
+  !(pattern|...)
 

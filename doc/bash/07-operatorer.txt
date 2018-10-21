@@ -1,54 +1,44 @@
-Opsjoner
-  -o set-option         hvis on true
+  [[]]
+    -e fil                  eksisterer
+    -f fil                  er fil
+    ...                     ...
+    -o set-option           er on
+    -v var                  er deklarert
+    -n $str                 er not null
+    -z $s                   er zero
+    fil₁ -nt fil₂           er newer than
+    fil₁ -ot fil₂           er older than
+    $str₁ = $str₂           er lik
+    $str₁ != $str₂          er ulik
+    $str₁ > $str₂           er før
+    $str₁ < $str₂           er etter
+    n₁ -eq n₂               er eq      
+    n₁ -ne n₂               er ne
+    n₁ -lt n₂               er lt
+    n₁ -gt n₂               er gt
+    n₁ -le n₂               er le
+    n₁ -ge n₂               er ge
 
-Variabler
-  -v var                hvis deklarert return true
+  []
+    ! e                     not e
+    e₁ -a e₂                e₁ and e₂
+    e₁ -o e₂                e₁ or e₂
 
-Filer
-  -e f1                 hvis exists return true
-  -f f1                 hvis file return true
-  f1 -nt f2             hvis newer-than return true
-  f1 -ot f2             hvis older-than return true
-      
-Aritmetisk
-  n₁ -eq n₂             hvis eq return true
-  n₁ -ne n₂             hvis ne return true
-  n₁ -lt n₂             hvis lt return true
-  n₁ -gt n₂             hvis gt return true
-  n₁ -le n₂             hvis le return true
-  n₁ -ge n₂             hvis ge return true
+  Params p
+    p=                      assign til p
+    p+=                     append til p
 
-Params
-  -n $s                 hvis def true; false
-  -z $s                 hvis udef true; false
-  $s₁ = $s₂             hvis lik true; false
-  $s₁ != $s₂            hvis ulik true; false
-  $s₁ < $s₂             hvis før true; false
-  $s₁ < $s₂             hvis etter true; false
-  ...
-  ${#s}                 lengde
-  ...
-  ${s:offset:lengde}    delstreng
-  ${s₁:-s₂}             hvis def s₁; s₂
-  ${s₁:=s₂}             hvis def s₁; tilordne og s₂
-  ${s₁:?s₂}             hvis def s₁; exit og s₂
-  ${s₁:+s₂}             hvis def s₂; null
-  ...
-  ${s#p}                del * ? [] fra ^
-  ${s##p}               del * ? [] fra ^ (greedy)
-  ${s%p}                del * ? [] fra $
-  ${s%%p}               del * ? [] fra $ (greedy)
-  ${s/p/r}              sub * ? [] med r
-  ${s//p/r}             sub * ? [] med r (greedy)
-
-    String extended pattern matching
-
-    Boolske op
-      ! exp           true if exp is false
-      exp1 -a exp2    exp1 is true and exp2 is true (ikke aritmetikk)
-      exp1 -o exp2    exp1 is true or exp2 is true (ikke aritmetikk)
-
-    Tilordning
-      =   set variabelverdi
-      =+  append til variabelverdi
+  Params p
+    ${#p}                   lengden
+    ${p:-word}              word el $p
+    ${p:=word}              word-assign el $p
+    ${p:?word}              word-stderr-exit el $p
+    ${p:+word}              null el word
+    ${p:offset:lengde}      substreng
+    ${p#pattern}            rm pattern
+    ${p##pattern}           rm pattern (greedy)
+    ${p%pattern}            rm pattern
+    ${p%%pattern}           rm pattern (greedy)
+    ${p/pattern/string      erstatt pattern
+    ${p//pattern/string     erstatt pattern (alle forekomster)
 
