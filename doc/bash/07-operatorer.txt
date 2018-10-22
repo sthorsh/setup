@@ -1,28 +1,28 @@
-  [[]]
-    -e fil                  eksisterer
-    -f fil                  er fil
-    ...                     ...
-    -o set-option           er on
-    -v var                  er deklarert
-    -n $str                 er not null
-    -z $s                   er zero
-    fil₁ -nt fil₂           er newer than
-    fil₁ -ot fil₂           er older than
-    $str₁ = $str₂           er lik
-    $str₁ != $str₂          er ulik
-    $str₁ > $str₂           er før
-    $str₁ < $str₂           er etter
-    n₁ -eq n₂               er eq      
-    n₁ -ne n₂               er ne
-    n₁ -lt n₂               er lt
-    n₁ -gt n₂               er gt
-    n₁ -le n₂               er le
-    n₁ -ge n₂               er ge
-
-  []
-    ! e                     not e
-    e₁ -a e₂                e₁ and e₂
-    e₁ -o e₂                e₁ or e₂
+[ ... ] [[ ... ]] 
+  -e fil                  eksisterer
+  -f fil                  er fil
+  ...                     ...
+  -o option               er on (kun set, ikke shopt)
+  -v var                  er deklarert
+  -n $p                   er not null
+  -z $p                   er zero
+  fil₁ -nt fil₂           er newer than
+  fil₁ -ot fil₂           er older than
+  $p = word               er lik
+  $p < word               er før
+  $p > word               er etter
+  $p == pattern           er lik
+  $p != pattern           er ulik
+  $p =~ regex             er lik
+  n₁ -eq n₂               er eq      
+  n₁ -ne n₂               er ne
+  n₁ -lt n₂               er lt
+  n₁ -gt n₂               er gt
+  n₁ -le n₂               er le
+  n₁ -ge n₂               er ge
+  ! e                     er false (kun [])
+  e₁ -a e₂                e₁ og e₂ er true (kun [])
+  e₁ -o e₂                e₁ el e₂ er true (kun [])
 
   Params p
     p=                      assign til p
