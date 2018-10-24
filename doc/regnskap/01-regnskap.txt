@@ -1,24 +1,47 @@
 Regnskap
-- Balanse: finansiell stilling ved avslutning av periode
-- Resultat: økonomisk utvikling for samme periode feks 2018
-
+  Års-/kvartalsregnskap: regulert av regnskapsloven
+  Driftsregnskap: ikke regulert av regnskapsloven (internt)
+  
 Regnskap
-  Inntekter: hva X tjener
-  Kostnader: hva X bruker
-  Eiendeler: hva X eier
-  Gjeld: hva X skylder
+  Eiendeler
+  Gjeld
+  Inntekter
+  Kostnader
+
+Balanseregnskap
+  Finansiell stilling ved avslutning av en periode feks 2018
+  Kontogruppe 1, 2
+  
+Resultatregnskap
+  Økonomisk utvikling for en periode feks 2018
+  Kontogruppe 3, 4, 5, 6, 7, 8
+  Summeres opp til et driftsresultat
 
 Bokføring
   Enkel
   Dobbel
 
-Transaksjoner
-  Debet
-  Kredit
-
 Hovedbok/kontoplan
-  ...
+  En kategorisering av transaksjoner som utføres
 
-Kostnadssted
-- En avdeling eller underenhet som det er logisk å forsøke å henføre kostnader til
-- Materialforvaltningsavdelingen, tilvirkningsavdelinger, salgsavdeling, administrasjonsavdeling
+Kostsenter
+  En avdeling/skip som en kostnad/transaksjon knyttes til
+
+Posteringer
+
+Debet
+  Positive tall i regnskapet
+  Balansekonti: innbetalinger
+  Resultatkonti: utgifter
+
+Kredit
+  Negative tall i regnskapet
+  Balansekonti: utbetalinger
+  Resultatkonti: inntekter
+
+Faktura
+
+Giro
+  Betalingsdokument
+  Bokføres ikke før betaling kommer
+
