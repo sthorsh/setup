@@ -25,10 +25,10 @@
   e₁ -o e₂                e₁ el e₂ er true (kun [])
 
   Params p
-    p=                      assign til p
-    p+=                     append til p
 
   Params p
+    p=                      assign til p
+    p+=                     append til p
     ${#p}                   lengden
     ${p:-word}              word el $p
     ${p:=word}              word-assign el $p
