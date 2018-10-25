@@ -1,20 +1,15 @@
-input
+Input
   [n]<word          input
   ...
 
-output
+Output
   [n]>word          output
   [n]>|word         force output
   in]>>word         append output
   ...
 
-stdout/stderr
-  &>word            som >word 2>&1
+Stdout/stderr
+  &>word            som >word 6>&1
   &>>word           som >>word 2>&1
   ...
 
-Generelt
-  En enkelt operator kan står hvor som helst
-  Rekkefølgen mellom to operatorer har betydning
-  ...
-  

@@ -25,10 +25,10 @@ Sammensatt kommando
   select-in-do-done
   (( expr ))
   [[ expr ]]
-  for-in-do-done
-  for-(())-do-done
-  until-do-done
-  while-do-done
+  for-in-do-break-continue-done
+  for-(())-do-break-continue-done
+  until-do-break-continue-done
+  while-do-break-continue-done
   ( list )
   { list; }
 

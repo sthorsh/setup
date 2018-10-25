@@ -1,15 +1,8 @@
 Alias 
-  alias gradle='/opt/gradle/bin/gradle'
   alias grep='grep --color=auto'
-  alias gta='cd /usr/lib/apache-activemq/'
-  alias gtf='cd /usr/lib/jboss-fuse/'
-  alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
   alias l='ls -lF --color=auto --group-directories-first'
   alias la='ls -alF --color=auto --group-directories-first'
-  alias mvnf='mvn clean install -Pfindbugs,checkstyle'
-  alias mvnl='mvn clean install -Dmaven.test.skip=true'
   alias path='echo -e ${PATH//:/"\n"}'
   alias ps='ps -ef'
-  alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
-  alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
   alias x='exit'
+  ...
