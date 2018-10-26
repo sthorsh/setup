@@ -1,56 +1,60 @@
 Selskapsstruktur
-  CLs juridiske enheter
-
-Kostsenter
-  En avdeling/skip som en kostnad/transaksjon knyttes til
+  Juridiske enheter
 
 Kunder
-  De man selger til (salg, inntekter)
+  De man selger til (inntekter)
 
 Leverandører
-  De man kjøper fra (kjøp, utgifter)
+  De man kjøper fra (utgifter)
+
+Regnskap
+  Balanse: stilling feks v/utgang 2018 → balansekonti/-regnskap (klasse 1, 2)
+  Resultat: utvikling feks i løpet 2018 → resultatkonti/-regnskap (klasse 3-8)
+
+Kontoklasser/-grupper
+  Klasse 1: eiendeler → grupper 10-19
+  Klasse 2: egenkapital og gjeld → grupper 20-29
+  Klasse 3: inntekter → grupper 30-39
+  Klasse 4-7: kostnader → grupper 40-79
+  Klasse 8: inntekter og kostnader → grupper 80-89
 
 Hovedbok/kontoplan
-  En kategorisering av transaksjoner som utføres
+  En klassifisering av transaksjoner som utføres
 
-Regnskap
-  Eiendeler
-  Gjeld
-  Inntekter
-  Kostnader
+Kostsenter
+  Avdeling/skip som en kostnad knyttes til
 
-Balanseregnskap
-  Finansiell stilling ved avslutning av en periode feks 2018
-  Kontogruppe 1, 2
+Finansiell postering
+  Selskap
+  Transaksjon: header, postering
   
-Resultatregnskap
-  Økonomisk utvikling for en periode feks 2018
-  Kontogruppe 3, 4, 5, 6, 7, 8
-  Summeres opp til et driftsresultat
-
-Regnskap
-  Års-/kvartalsregnskap: regulert av regnskapsloven
-  Driftsregnskap: ikke regulert av regnskapsloven (internt)
-  
-Bokføring
-  Enkel
-  Dobbel
+Posteringstyper
+  General ledger
+  Customer invoice
+  Customer payment
+  Customer on account payment
+  Supplier invoice
+  Supplier payment
+  Supplier on account payment
+  Travel cost
 
 Debet
   Positive tall i regnskapet
   Balansekonti: innbetalinger
-  Resultatkonti: utgifter
+  Resultatkonti: kostnader
 
 Kredit
   Negative tall i regnskapet
   Balansekonti: utbetalinger
   Resultatkonti: inntekter
 
-Posteringer
-  Å debitere en eiendelskonto innebærer å øke verdi på eiendelen
-  Å debitere en gjeldskonto innebærer at gjelden reduseres
-  Å debitere en inntektskonto innebærer å redusere inntekten
-  Å debitere en kostnadskonto innebærer at kostnadene øker
+Debitering
+  Å debitere en eiendelskonto: å øke verdi på eiendelen
+  Å debitere en gjeldskonto : gjelden reduseres
+  Å debitere en inntektskonto: å redusere inntekten
+  Å debitere en kostnadskonto: kostnadene øker
+
+Dobbel bokføring
 
 Faktura
 
