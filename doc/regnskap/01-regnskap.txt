@@ -1,7 +1,18 @@
-Regnskap
-  Års-/kvartalsregnskap: regulert av regnskapsloven
-  Driftsregnskap: ikke regulert av regnskapsloven (internt)
-  
+Selskapsstruktur
+  CLs juridiske enheter
+
+Kostsenter
+  En avdeling/skip som en kostnad/transaksjon knyttes til
+
+Kunder
+  De man selger til (salg, inntekter)
+
+Leverandører
+  De man kjøper fra (kjøp, utgifter)
+
+Hovedbok/kontoplan
+  En kategorisering av transaksjoner som utføres
+
 Regnskap
   Eiendeler
   Gjeld
@@ -17,17 +28,13 @@ Resultatregnskap
   Kontogruppe 3, 4, 5, 6, 7, 8
   Summeres opp til et driftsresultat
 
+Regnskap
+  Års-/kvartalsregnskap: regulert av regnskapsloven
+  Driftsregnskap: ikke regulert av regnskapsloven (internt)
+  
 Bokføring
   Enkel
   Dobbel
-
-Hovedbok/kontoplan
-  En kategorisering av transaksjoner som utføres
-
-Kostsenter
-  En avdeling/skip som en kostnad/transaksjon knyttes til
-
-Posteringer
 
 Debet
   Positive tall i regnskapet
@@ -38,6 +45,12 @@ Kredit
   Negative tall i regnskapet
   Balansekonti: utbetalinger
   Resultatkonti: inntekter
+
+Posteringer
+  Å debitere en eiendelskonto innebærer å øke verdi på eiendelen
+  Å debitere en gjeldskonto innebærer at gjelden reduseres
+  Å debitere en inntektskonto innebærer å redusere inntekten
+  Å debitere en kostnadskonto innebærer at kostnadene øker
 
 Faktura
 
