@@ -19,46 +19,48 @@ Kontoklasser/-grupper
   Klasse 8: inntekter og kostnader → grupper 80-89
 
 Hovedbok/kontoplan
-  En klassifisering av transaksjoner som utføres
-
+  Klassifisering av transaksjoner
+                  
 Kostsenter
   Avdeling/skip som en kostnad knyttes til
 
 Finansiell postering
   Selskap
-  Transaksjon: header, postering
-  
-Posteringstyper
-  General ledger
-  Customer invoice
-  Customer payment
-  Customer on account payment
-  Supplier invoice
-  Supplier payment
-  Supplier on account payment
-  Travel cost
+  Transaksjon
+
+Transaksjon
+  Header
+  Posteringer
+
+Postering
+  Hovedbok (GeneralLedger)
+  Kundefaktura (CustomerInvoice)
+  Kundebetaling (CustomerPayment)
+  Kundebetaling (CustomerOnAccountPayment)
+  Leverandørfaktura (SupplierInvoice)
+  Leverandørbetaling (SupplierPayment)
+  Leverandørbetaling (SupplierOnAccountPayment)
+  Reisekostnader (TravelCost)
 
 Debet
-  Positive tall i regnskapet
+  Positive tall
   Balansekonti: innbetalinger
   Resultatkonti: kostnader
 
-Kredit
-  Negative tall i regnskapet
-  Balansekonti: utbetalinger
-  Resultatkonti: inntekter
+Debetpostering
+  Postere på venstre side
+  Eiendelskonto: øke en verdi
+  Gjeldskonto : redusere gjeld
+  Inntektskonto: redusere en inntekt
+  Kostnadskonto: øke en kostnad
 
-Debitering
-  Å debitere en eiendelskonto: å øke verdi på eiendelen
-  Å debitere en gjeldskonto : gjelden reduseres
-  Å debitere en inntektskonto: å redusere inntekten
-  Å debitere en kostnadskonto: kostnadene øker
+Kredit
+  Motsatt av debet
+
+Kreditpostering
+  Motsatt av kredit
 
 Dobbel bokføring
-
-Faktura
-
-Giro
-  Betalingsdokument
-  Bokføres ikke før betaling kommer
+  Postering: feks debet
+  Motpostering: feks kredit
 
