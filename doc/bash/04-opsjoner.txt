@@ -1,4 +1,4 @@
-set: $-
+set ±o
   ±o braceexpand                  on
   ±o emacs                        on
   ±o hashall                      on
@@ -27,7 +27,7 @@ set: $-
   ±o vi                           off
   ±o xtrace                       off
 
-shopt
+shopt [-p]
  -s|-u checkwinsize               on
  -s|-u cmdhist                    on
  -s|-u complete_fullquote         on

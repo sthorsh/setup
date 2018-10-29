@@ -13,7 +13,7 @@ Spesielle params (read-only)
   $0 navn på skall el script
   $_ ref gnu bash manual
 
-Variabler
+Builtin variabler
   BASH*
   COLORTERM
   COLUMNS=0...

@@ -1,0 +1,74 @@
+Scanning
+  Les input
+  Fjern kommentarer #
+
+Prosessering
+  Ekspander history event ! ^
+  Tokeniser vha metategn
+  Klassifiser tokens
+  Ekspander alias
+  Parse tokens i enkle og sammensatte cmds
+  Ekspander brace {n|char..n|char..n}...
+  Ekspander tilde ~ ~+ ~- ~user
+  Ekspander param ${}
+  Kommandosubstitusjon $()
+  Ekspander aritmetikk $(())
+  Prosesssubstitusjon ()
+  Splitt ord vha $IFS
+  Ekspander wildcards
+  Fjern quotes \ "" ''
+  Rediriger stdin, stdout, stderr
+  Ekspander og tilordne rhs i var=rhs [cmd] ...
+
+Utførelse
+  Søk-utfør funksjon
+  Søk-utfør builtin
+  Søk-utfør exec fil i hash
+  Søk-utfør exec fil i PATH
+  Hvis cmd med /: utfør i execution environment
+  Hvis søk → hit: utfør i execution environment
+  Vent på fullførelse
+  Lagre exit code i $?
+  
+------------------------
+Exceution environment
+  Opsjoner: bash (set shopt)
+  Alias': bash (alias)
+  Params: bash/cmd hvis eksport
+  Funksjoner: bash/cmd hvis eksport
+  PIDs: bash $$, $PPID mfl (ps)
+  Arbeidskatalog: bash/cmd (pwd)
+  Filopprettelsesmaske: bash/cmd (umask)
+  Åpene filer: bash/cmd (lsof)
+  Traps: bash/cmd (trap)
+  ...
+  
+------------------------
+
+Utførelse
+  $ source script (ett skall)
+  $ ./script (skall, subskall/-prosess)
+  $ ./script & (skall, subskall/-prosess)
+
+Environment
+  $ env
+
+Signaler
+  sighup: exit (1)
+  sigint: håndteres (2)
+  sigquit: ignoreres (3)
+  sigkill: exit (9)
+  sigterm: ignoreres (15)
+  sigtstp: ignoreres (20)
+  ...
+
+Pattern/wildcard
+  ?
+  *
+  []
+  ?(pattern|...)
+  *(pattern|...)
+  +(pattern|...)
+  @(pattern|...)
+  !(pattern|...)
+
