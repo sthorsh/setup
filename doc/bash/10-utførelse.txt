@@ -20,38 +20,33 @@ Prosessering
   Rediriger stdin, stdout, stderr
   Ekspander og tilordne rhs i var=rhs [cmd] ...
 
-Utførelse
-  Søk-utfør funksjon
-  Søk-utfør builtin
-  Søk-utfør exec fil i hash
-  Søk-utfør exec fil i PATH
-  Hvis cmd med /: utfør i execution environment
-  Hvis søk → hit: utfør i execution environment
-  Vent på fullførelse
-  Lagre exit code i $?
+Søk-utfør
+  Funksjon
+  Builtin
+  I hash: xfile
+  I PATH: xfile
+  En xfile med /
   
-------------------------
-Exceution environment
-  Opsjoner: bash (set shopt)
-  Alias': bash (alias)
-  Params: bash/cmd hvis eksport
-  Funksjoner: bash/cmd hvis eksport
-  PIDs: bash $$, $PPID mfl (ps)
-  Arbeidskatalog: bash/cmd (pwd)
-  Filopprettelsesmaske: bash/cmd (umask)
-  Åpene filer: bash/cmd (lsof)
-  Traps: bash/cmd (trap)
-  ...
-  
-------------------------
+Excecution environment
+  Alias: alias
+  Filer: lsof (arv)
+  Funksjoner: env (arv)
+  Katalog: pwd (arv)
+  Maske: umask (arv)
+  Params: env (arv)
+  PID, PPID: ps
+  Opsjoner: set -o | shopt
+  Traps: trap -p
 
-Utførelse
-  $ source script (ett skall)
-  $ ./script (skall, subskall/-prosess)
-  $ ./script & (skall, subskall/-prosess)
+------------------------
 
 Environment
   $ env
+
+Invokering script
+  $ source script (ett skall)
+  $ ./script (skall, subskall/-prosess)
+  $ ./script & (skall, subskall/-prosess)
 
 Signaler
   sighup: exit (1)
