@@ -20,12 +20,22 @@ Prosessering
   Rediriger stdin, stdout, stderr
   Ekspander og tilordne rhs i var=rhs [cmd] ...
 
-Søk-utfør
+Søk-utfør kommando (cmd)
   Funksjon
   Builtin
-  I hash: xfile
-  I PATH: xfile
-  En xfile med /
+  I hash: script|binary (xfile)
+  I PATH: script|binary (xfile)
+  Script|binary med /
+  
+Environment
+  Et array av strenger navn=verdi
+  $ export -p | env : viser environment
+  $ export navn : environment+=navn
+  $ declare +x navn : environment-=navn
+  En kommando arver bash' environment
+  $ navn=verdi cmd : environment+=navn
+  $ set -o allexport: environment+=navn
+  Bash invokeres som ekstern kommando: environment+=$_
   
 Excecution environment
   Alias: alias
@@ -40,9 +50,6 @@ Excecution environment
 
 ------------------------
 
-Environment
-  $ env
-
 Invokering script
   $ source script (ett skall)
   $ ./script (skall, subskall/-prosess)
@@ -55,6 +62,9 @@ Signaler
   sigkill: exit (9)
   sigterm: ignoreres (15)
   sigtstp: ignoreres (20)
+  ...
+
+Exit status
   ...
 
 Pattern/wildcard
