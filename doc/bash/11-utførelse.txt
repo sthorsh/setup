@@ -1,3 +1,9 @@
+Script
+  $ source script
+  $ ./script               
+  $ bash script (ekvivalent m/forrige)
+  $ ./script &
+
 Scanning
   Les input
   Fjern kommentarer #
@@ -48,32 +54,17 @@ Excecution environment
   Opsjoner: set -o | shopt
   Traps: trap -p
 
-------------------------
-
-Invokering script
-  $ source script (ett skall)
-  $ ./script (skall, subskall/-prosess)
-  $ ./script & (skall, subskall/-prosess)
-
 Signaler
-  sighup: exit (1)
-  sigint: håndteres (2)
-  sigquit: ignoreres (3)
-  sigkill: exit (9)
-  sigterm: ignoreres (15)
-  sigtstp: ignoreres (20)
-  ...
+    sighup: exit
+    sigint: fanges
+    sigquit: ignoreres
+    sigabrt: exit
+    sigkill: exit 
+    sigterm: ignoreres
+    sigtstp: ignoreres 
+    ...
 
 Exit status
-  ...
-
-Pattern/wildcard
-  ?
-  *
-  []
-  ?(pattern|...)
-  *(pattern|...)
-  +(pattern|...)
-  @(pattern|...)
-  !(pattern|...)
+  0 success
+  1..255 failure
 
