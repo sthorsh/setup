@@ -1,0 +1,46 @@
+BUILTINS: tldr|help cmd
+
+    []
+    [[]]
+    alias [navn[=verdi]]
+    bg %job_id
+    bind -pvX | keyseq:readline-fn | readline-cmd | -x keyseq:shell-cmd
+    builtin builtin arg
+    cd arg
+    command command arg
+    declare -pF | -f function | ±ainrx... navn=verdi
+    disown job_id | pid
+    echo -n arg
+    enable -n builtin
+    eval arg
+    exec cmd arg
+    exit [N]
+    export [navn[=verdi]]
+    fg %job_id
+    getopts optstring navn arg
+    hash [navn]
+    help [builtin]
+    history
+    jobs -l
+    kill -l | sig %job_id | sig pid
+    let arg ...
+    local -aAinrx... navn=verdi
+    logout [N]
+    mapfile array
+    printf format arg
+    pwd
+    read navn ...
+    readonly [navn=verdi]
+    return [N]
+    set ±o [opt]
+    shift [N]
+    shopt -p | -s opt | -u opt  
+    source fil arg ...
+    trap cmd sig_id
+    type -a name ...
+    ulimit -a
+    umask -S
+    unalias navn                      
+    unset name                        
+    wait [-n] [%job_id|pid]            
+

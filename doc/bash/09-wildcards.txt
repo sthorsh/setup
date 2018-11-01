@@ -1,0 +1,10 @@
+Pattern/wildcard
+  ?
+  *
+  []
+  ?(pattern|...)
+  *(pattern|...)
+  +(pattern|...)
+  @(pattern|...)
+  !(pattern|...)
+
