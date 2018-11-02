@@ -1,14 +1,14 @@
 BUILTINS
 
-  help         [
-  help         [[  
-  help|tldr    alias
-  help|tldr    bg
-  help|tldr*   bind
-  help         builtin 
-  help|tldr    cd
-  help         command 
-    declare -pF | -f function | ±ainrx... navn=verdi
+  help        [
+  help        [[  
+  help|tldr   alias
+  help|tldr   bg
+  help|tldr*  bind
+  help        builtin 
+  help|tldr   cd
+  help        command 
+  help|tldr*  declare 
   help|tldr   disown 
   help|tldr   echo
   help        enable
@@ -23,7 +23,7 @@ BUILTINS
   help|tldr   history
   help|tldr   jobs 
   help|tldr   kill 
-    let arg ...
+  help        let
     local -aAinrx... navn=verdi
     logout [N]
     mapfile array
@@ -35,7 +35,7 @@ BUILTINS
     set ±o [opt]
     shift [N]
     shopt -p | -s opt | -u opt  
-    source fil arg ...
+  help|tldr   source
     trap cmd sig_id
     type -a name ...
     ulimit -a
