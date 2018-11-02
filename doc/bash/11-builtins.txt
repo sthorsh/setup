@@ -1,28 +1,28 @@
 BUILTINS
 
-  help       [
-  help       [[]]
-  help|tldr  alias
-  help|tldr  bg
-  help|tldr* bind
-  help       builtin 
-  help|tldr  cd
-  help       command 
+  help         [
+  help         [[  
+  help|tldr    alias
+  help|tldr    bg
+  help|tldr*   bind
+  help         builtin 
+  help|tldr    cd
+  help         command 
     declare -pF | -f function | ±ainrx... navn=verdi
-  help|tldr disown 
-  help|tldr echo
-  help      enable
-    eval arg
-    exec cmd arg
-  help      exit 
-    export [navn[=verdi]]
-  help|tldr fg 
-  help      getopts 
-  help      hash 
-  help      help
-  help|tldr history
-  help|tldr jobs 
-  help|tldr kill 
+  help|tldr   disown 
+  help|tldr   echo
+  help        enable
+  help|tldr   eval 
+  help        exec
+  help        exit 
+  help|tldr   export
+  help|tldr   fg 
+  help        getopts 
+  help        hash 
+  help        help
+  help|tldr   history
+  help|tldr   jobs 
+  help|tldr   kill 
     let arg ...
     local -aAinrx... navn=verdi
     logout [N]
