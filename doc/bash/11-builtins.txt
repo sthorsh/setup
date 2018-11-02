@@ -27,9 +27,9 @@ BUILTINS
     local -aAinrx... navn=verdi
     logout [N]
     mapfile array
-    printf format arg
+  help|tldr printf
   help|tldr pwd
-    read navn ...
+  help|tldr read
     readonly [navn=verdi]
     return [N]
     set ±o [opt]
