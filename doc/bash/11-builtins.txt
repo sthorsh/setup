@@ -1,13 +1,13 @@
 BUILTINS
 
-  help      [
-  help      [[]]
-  help|tldr alias
-  help|tldr bg
-    bind -pvX | keyseq:readline-fn | readline-cmd | -x keyseq:shell-cmd
-  help      builtin 
-  help|tldr cd
-  help      command 
+  help       [
+  help       [[]]
+  help|tldr  alias
+  help|tldr  bg
+  help|tldr* bind
+  help       builtin 
+  help|tldr  cd
+  help       command 
     declare -pF | -f function | ±ainrx... navn=verdi
   help|tldr disown 
   help|tldr echo
