@@ -1,4 +1,4 @@
-BUILTINS: tldr|help cmd
+BUILTINS
 
   help      [
   help      [[]]
@@ -14,21 +14,21 @@ BUILTINS: tldr|help cmd
   help      enable
     eval arg
     exec cmd arg
-    exit [N]
+  help      exit 
     export [navn[=verdi]]
-    fg %job_id
-    getopts optstring navn arg
-    hash [navn]
-    help [builtin]
-    history
-    jobs -l
-    kill -l | sig %job_id | sig pid
+  help|tldr fg 
+  help      getopts 
+  help      hash 
+  help      help
+  help|tldr history
+  help|tldr jobs 
+  help|tldr kill 
     let arg ...
     local -aAinrx... navn=verdi
     logout [N]
     mapfile array
     printf format arg
-    pwd
+  help|tldr pwd
     read navn ...
     readonly [navn=verdi]
     return [N]
