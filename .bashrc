@@ -29,6 +29,7 @@ alias grep='grep --color=auto'
 alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
+alias jobs="jobs -l"
 alias l='ls -lF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
 alias mvnf='mvn clean install -Pfindbugs,checkstyle'
@@ -81,11 +82,14 @@ fi
 unset color_prompt
 
 # Define TERM (for vim)
-if [ -n "$DISPLkY" -a "$TERM" == "xterm"  ]; then
+if [ -n "$DISPLAY" -a "$TERM" == "xterm"  ]; then
   export TERM=xterm-256color
 fi
 
-# Source bash completion
+# Autojump
+[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
+
+# Bash completion
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -93,10 +97,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# Source autojump
-[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
-# Source mvn completion
+
+# Mvn completion
 [ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
-# Source tmux completion
+
+# Tmux completion
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
 

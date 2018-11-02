@@ -1,17 +1,17 @@
 BUILTINS: tldr|help cmd
 
-    []
-    [[]]
-    alias [navn[=verdi]]
-    bg %job_id
+  help      [
+  help      [[]]
+  help|tldr alias
+  help|tldr bg
     bind -pvX | keyseq:readline-fn | readline-cmd | -x keyseq:shell-cmd
-    builtin builtin arg
-    cd arg
-    command command arg
+  help      builtin 
+  help|tldr cd
+  help      command 
     declare -pF | -f function | ±ainrx... navn=verdi
-    disown job_id | pid
-    echo -n arg
-    enable -n builtin
+  help|tldr disown 
+  help|tldr echo
+  help      enable
     eval arg
     exec cmd arg
     exit [N]
