@@ -10,7 +10,7 @@ Scanning
 
 Prosessering
   Ekspander history event ! ^
-  Tokeniser vha metategn
+  Tokeniser vha space, tab mfl
   Klassifiser tokens
   Ekspander alias
   Parse tokens i enkle og sammensatte cmds
@@ -22,7 +22,7 @@ Prosessering
   Prosesssubstitusjon ()
   Splitt ord vha $IFS
   Ekspander wildcards
-  Fjern quotes \ "" ''
+  Fjern beskyttelse (quotes) \ "" ''
   Rediriger stdin, stdout, stderr
   Ekspander og tilordne rhs i var=rhs [cmd] ...
 

@@ -1,7 +1,7 @@
 Kommando
   Sekvens av ord
   Adskilt av blank
-  Terminert av kontrolloperator
+  Terminert: kontrolloperator
   Exit status: kommandoens exit status
 
 Pipeline
@@ -42,4 +42,21 @@ Funksjon
   function name [()] compound-command [ redirections ]
   Utføres i current shell context (ikke i en ny prosess)
   Exit status: siste kommandos exit status eller return n
+
+--------------------------------------------------
+Kontrolloperator
+  nl    newline
+  |     pipeline
+  |&    pipeline
+  ;     liste sekvensielt
+  &     liste i parallell i eget subskall
+  &&    liste OG
+  ||    liste ELLER
+  ()    compound command (subskall/-prosess)
+  ;;    case break
+  ;&    case fall-through
+  ;;&   case if-match fall-through
+
+Pipeline
+  !     pipeline not
 
