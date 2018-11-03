@@ -3,7 +3,7 @@ Spesialtegn
   C-\        sigquit
   C-c        sigint
   C-d        eof
-  C-o        discard
+  C-o        discard              
   C-q        start (disabled)
   C-r        rprnt
   C-s        stop (disabled)

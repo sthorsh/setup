@@ -1,46 +1,46 @@
-BUILTINS
+BUILTIN CMDs
 
-  help        [
-  help        [[  
-  help|tldr   alias
-  help|tldr   bg
-  help|tldr*  bind
-  help        builtin 
-  help|tldr   cd
-  help        command 
-  help|tldr*  declare 
-  help|tldr   disown 
-  help|tldr   echo
-  help        enable
-  help|tldr   eval 
-  help        exec
-  help        exit 
-  help|tldr   export
-  help|tldr   fg 
-  help        getopts 
-  help        hash 
-  help        help
-  help|tldr   history
-  help|tldr   jobs 
-  help|tldr   kill 
-  help        let
-    local -aAinrx... navn=verdi
-    logout [N]
-    mapfile array
-  help|tldr printf
-  help|tldr pwd
-  help|tldr read
-    readonly [navn=verdi]
-    return [N]
-    set ±o [opt]
-    shift [N]
-    shopt -p | -s opt | -u opt  
-  help|tldr   source
-    trap cmd sig_id
-    type -a name ...
-    ulimit -a
-    umask -S
-    unalias navn                      
-    unset name                        
-    wait [-n] [%job_id|pid]            
+  help          [
+  help          [[
+  help|tldr     alias
+  help|tldr     bg
+  help|tldr*    bind
+  help          builtin
+  help|tldr     cd
+  help          command
+  help|tldr*    declare
+  help|tldr     disown
+  help|tldr     echo
+  help          enable
+  help|tldr     eval
+  help          exec
+  help          exit
+  help|tldr     export
+  help|tldr     fg
+  help          getopts
+  help          hash
+  help          help
+  help|tldr     history
+  help|tldr     jobs
+  help|tldr     kill
+  help          let
+  help          local
+  help          logout
+  help          mapfile
+  help|tldr     printf
+  help|tldr     pwd
+  help|tldr     read
+  help          readonly
+  help          return
+  help|tldr*    set
+  help          shift
+  help|tldr*    shopt
+  help|tldr     source
+  help|tldr     trap
+  help          type
+  help|tldr     ulimit
+  help|tldr     umask
+  help          unalias
+  help          unset
+  help|tldr     wait
 

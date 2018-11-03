@@ -44,6 +44,8 @@ Environment
   Bash invokeres som ekstern kommando: environment+=$_
   
 Excecution environment
+  Et skall har et execution environment
+  En kommando har en execution context (arver en delmengde av skallets)
   Alias: alias
   Filer: lsof (arv)
   Funksjoner: env (arv)
