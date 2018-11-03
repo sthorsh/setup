@@ -1,9 +1,3 @@
-Script
-  $ source script
-  $ ./script               
-  $ bash script (ekvivalent m/forrige)
-  $ ./script &
-
 Scanning
   Les input
   Fjern kommentarer #

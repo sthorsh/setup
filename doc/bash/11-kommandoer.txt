@@ -1,0 +1,62 @@
+Kommando
+  Sekvens: ord
+  Skilletegn: space tab
+  Terminator: newline
+
+Pipeline
+  Sekvens: kommandoer
+  Skilletegn: | |&
+  Terminator: newline
+
+Liste
+  Sekvens: pipelines
+  Skilletegn: ; && || &
+  Terminator: ; & newline
+
+Sammensatt kommando
+    if-then-elif-else-fi
+    case-in-esac
+    select-in-do-done
+    (( expr ))
+    [[ expr ]]
+    for-in-do-break-continue-done
+    for-(())-do-break-continue-done
+    until-do-break-continue-done
+    while-do-break-continue-done
+    ( list )
+    { list; }
+
+  Coprosess
+    coproc [NAME] command [redir]
+    Utføres i et eget subskall (som &)
+    Exit status: commands' exit status
+
+  Funksjon
+    name () compound-command [ redirections ]
+    function name [()] compound-command [ redirections ]
+    Utføres i current shell context (ikke i en ny prosess)
+    Exit status: siste kommandos exit status eller return n
+
+--------------------------------------------------
+Script
+  $ source script
+  $ ./script               
+  $ bash script (ekvivalent m/forrige)
+  $ ./script &
+
+--------------------------------------------------
+Kontrolloperator
+  nl    newline
+  |     pipeline
+  |&    pipeline
+  ;     liste sekvensielt
+  &     liste i parallell i eget subskall
+  &&    liste OG
+  ||    liste ELLER
+  ()    compound command (subskall/-prosess)
+  ;;    case break
+  ;&    case fall-through
+  ;;&   case if-match fall-through
+
+Pipeline
+  !     pipeline not
