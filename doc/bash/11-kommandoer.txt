@@ -1,37 +1,36 @@
-Kommando
+Kommandoer
   Sekvens: ord
   Skilletegn: space tab
   Terminator: newline
 
-Pipeline
+Pipelines
   Sekvens: kommandoer
   Skilletegn: | |&
   Terminator: newline
 
-Liste
+Lister
   Sekvens: pipelines
   Skilletegn: ; && || &
   Terminator: ; & newline
 
-Sammensatt kommando
+Sammensatte kommandoer
     if-then-elif-else-fi
     case-in-esac
     select-in-do-done
     (( expr ))
     [[ expr ]]
-    for-in-do-break-continue-done
-    for-(())-do-break-continue-done
-    until-do-break-continue-done
-    while-do-break-continue-done
-    ( list )
+  for
+  while
+  until
+    ( list 
     { list; }
 
-  Coprosess
+  Coprosesses
     coproc [NAME] command [redir]
     Utføres i et eget subskall (som &)
     Exit status: commands' exit status
 
-  Funksjon
+  Funksjoner
     name () compound-command [ redirections ]
     function name [()] compound-command [ redirections ]
     Utføres i current shell context (ikke i en ny prosess)
