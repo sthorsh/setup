@@ -14,9 +14,9 @@ Lister
   Terminator: ; & newline
 
 Sammensatte kommandoer
-    if-then-elif-else-fi
-    case-in-esac
-    select-in-do-done
+  if
+  case
+  select
     (( expr ))
     [[ expr ]]
   for
