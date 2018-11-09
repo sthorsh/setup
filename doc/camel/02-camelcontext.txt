@@ -1,0 +1,44 @@
+CamelContext 
+      - addComponent(String, Component): void
+      - addInterceptStrategy(InterceptStrategy): void
+  addRoutes(RoutesBuilder): void
+      - createProducerTemplate(): ProducerTemplate
+      - getClassResolver(): ClassResolver 
+      - getComponent(String): Component
+      - getComponentNames(): List<String>
+      - getEndpoint(String): Endpoint
+      - getEndpointMap(): Map<String, Endpoint>
+      - getLanguageNames(): List<String>
+      - getRegistry(): Registry
+      - getRoute(String): Route
+      - getRoutes(): List<Route>
+      - getRouteDefinition(String): RouteDefinition
+      - getRouteDefinitions(): List<RouteDefinition>
+      - getTypeConverter(): TypeConverter
+      - getTypeConverterRegistry(): TypeConverterRegistry 
+      - resolvePropertyPlaceholders(String): String
+      - setDelayer(Long): void
+      - setHandleFault(Boolean): void
+      - setStreamCaching(Boolean): void
+      - setTracing(Boolean): void
+      ↑ start(): void
+      - startRoute(String): void
+      ↑ stop(): void
+      - stopRoute(String): void
+      - ...
+
+Route
+  - getId(): String
+  - ...
+
+RouteDefinition
+  - adviceWith(CamelContext, RouteBuilder): RouteDefinition
+  - autoStartup(boolean): RouteDefinition
+  - handleFault(): RouteDefinition
+  - routeId(String): RouteDefinition
+  - errorHandler(ErrorHandlerFactory): RouteDefinition
+  - startupOrder(int): RouteDefinition
+  - streamCaching(): RouteDefinition
+  - tracing(): RouteDefinition
+  - ...
+

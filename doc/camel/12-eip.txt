@@ -1,16 +1,16 @@
-Ruting
-- Content based router    choice().when().to().otherwise().to().end()
-- Message filter          filter().to()
-- Splitter                split().to().end()
-- Aggregator              aggregate().aggregationRepository().completionXxx()
-- Multicast               multicast().to().end()
-- Recipient list          recipientList(), @RecipientList
-- Routing slip            routingSlip(), @RoutingSlip
-- Dynamic router          dynamicRouter(), @DynamicRouter
-- Load balancer           loadBalance().roundRobin().to().to().end()
-- Wire Tap                wireTap()
+EIPs
+  Aggregator              aggregate()
+    Content based router    choice().when().to().otherwise().to().end()
+  Content Enricher        enrich(), pollEnrich()
+    Dynamic router          dynamicRouter(), @DynamicRouter
+    Load balancer           loadBalance().roundRobin().to().to().end()
+    Message filter          filter().to()
+    Multicast               multicast().to().end()
+    Recipient list          recipientList(), @RecipientList
+    Routing slip            routingSlip(), @RoutingSlip
+    Splitter                split().to().end()
+    Wire Tap                wireTap()
 
 Transformasjoner
-- Message Translator      bean(), process(), transform()
-- Content Enricher        pollEnrich(), enrich()
+  Message Translator      bean(), process(), transform()
 

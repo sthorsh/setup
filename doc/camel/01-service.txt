@@ -1,0 +1,27 @@
+Service
+  start(): void
+  stop(): void
+
+SuspendableService extends Service
+  suspend(): void
+  resume(): void
+  isSuspended(): boolean
+
+ShutdownableService extends Service
+  shutdown(): void
+
+StatefulService extends SuspendableService, ShutdownableService
+  getStatus(): ServiceStatus
+  isStarted(): boolean
+  isStopped(): boolean
+  ...
+
+ServiceSupport implements StatefulService 
+  doStart(): void
+  doStop(): void
+  doSuspend(): void
+  doResume(): void
+  doShutdown(): void
+  getStatus(): ServiceStatus
+  ...
+  

@@ -1,0 +1,46 @@
+BuilderSupport
+        - body(): ValueBuilder
+        - constant(O): ValueBuilder
+        - deadLetterChannel(String): DeadLetterChannelBuilder
+        - defaultErrorHandler(): DefaultErrorHandlerBuilder
+        - exchangeProperty(S): ValueBuilder
+  getContext(): ModelCamelContext 
+  header(String): ValueBuilder
+        - jsonpath(S): ValueBuilder
+        - language(S, S): ValueBuilder
+        - method(Class<?>): ValueBuilder
+        - noErrorHandler(): NoErrorHandlerBuilder
+        - regexReplaceAll(E, S, S): ValueBuilder
+        - simple(S): SimpleBuilder
+        - systemProperty(S): ValueBuilder
+        - xpath(S): XPathBuilder
+        ...
+
+RoutesBuilder
+  ...
+
+RouteBuilder
+  ↓ configure(): void
+        - errorHandler(ErrorHandlerBuilder): void
+        - from(String): RouteDefinition
+        - intercept(): InterceptDefinition
+        - interceptFrom(String): InterceptFromDefinition
+        - interceptSendToEndpoint(String): InterceptSendToEndpointDefinition
+        - onCompletion(): OnCompletionDefinition
+        - onException(Class<? extends Throwable>): OnExceptionDefinition 
+        - rest(String): RestDefinition
+        - restConfiguration(): RestConfigurationDefinition
+        - ...
+
+      AdviceWithRouteBuilder
+        - replaceFromWith(String): void
+        - mockEndpoints): void
+        - mockEndpoints(String...): void
+        - mockEndpointsAndSkip(String...): void e.g jms: → mock:jms: (automocking)
+        - weaveAddFirst(): ProcessorDefinition<?>
+        - weaveAddLast(): ProcessorDefinition<?>
+        - weaveById(String pattern): AdviceWithBuilder<T>
+        - weaveByType(Class<T>): AdviceWithBuilder<T>
+        - weaveByToUri(String): AdviceWithBuilder<T>
+        ...
+
