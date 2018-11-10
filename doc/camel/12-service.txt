@@ -2,21 +2,21 @@ Service
   start(): void
   stop(): void
 
-SuspendableService extends Service
+SuspendableService
   suspend(): void
   resume(): void
   isSuspended(): boolean
 
-ShutdownableService extends Service
+ShutdownableService
   shutdown(): void
 
-StatefulService extends SuspendableService, ShutdownableService
+StatefulService
   getStatus(): ServiceStatus
   isStarted(): boolean
   isStopped(): boolean
   ...
 
-ServiceSupport implements StatefulService 
+ServiceSupport
   doStart(): void
   doStop(): void
   doSuspend(): void

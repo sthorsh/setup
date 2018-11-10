@@ -1,0 +1,41 @@
+BuilderSupport
+  body(): ValueBuilder
+  constant(Object): ValueBuilder
+  exchangeProperty(String): ValueBuilder
+  header(String): ValueBuilder
+  jsonpath(String): ValueBuilder
+  language(String, String): ValueBuilder
+  method(Object, String): ValueBuilder 
+  regexReplaceAll(Expression, String, String): ValueBuilder
+  systemProperty(String): ValueBuilder
+  simple(String): SimpleBuilder
+  xpath(String): XPathBuilder
+  defaultErrorHandler(): DefaultErrorHandlerBuilder
+  noErrorHandler(): NoErrorHandlerBuilder
+  deadLetterChannel(String): DeadLetterChannelBuilder
+  ...
+
+RouteBuilder
+↓ configure(): void
+  from(String): RouteDefinition           
+  getContext(): ModelCamelContext 
+  errorHandler(ErrorHandlerBuilder): void
+  onException(Class<? extends Throwable>): OnExceptionDefinition 
+  onCompletion(): OnCompletionDefinition
+  intercept(): InterceptDefinition
+  restConfiguration(): RestConfigurationDefinition
+  rest(String): RestDefinition
+  ...
+
+AdviceWithRouteBuilder
+  replaceFromWith(String): void
+  mockEndpoints): void
+  mockEndpoints(String...): void
+  mockEndpointsAndSkip(String...): void e.g jms: → mock:jms: (automocking)
+  weaveAddFirst(): ProcessorDefinition<?>
+  weaveAddLast(): ProcessorDefinition<?>
+  weaveById(String pattern): AdviceWithBuilder<T>
+  weaveByType(Class<T>): AdviceWithBuilder<T>
+  weaveByToUri(String): AdviceWithBuilder<T>
+  ...
+

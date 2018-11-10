@@ -1,0 +1,39 @@
+RuntimeConfiguration
+  setDelayer(Long): void
+  setStreamCaching(Boolean): void
+  setTracing(Boolean): void
+  ...
+
+CamelContext
+  addRoutes(RoutesBuilder): void
+      addComponent(String, Component): void
+      addInterceptStrategy(InterceptStrategy): void
+      createProducerTemplate(): ProducerTemplate
+      getClassResolver(): ClassResolver 
+      getComponent(String): Component
+      getComponentNames(): List<String>
+      getDataFormats(): Map<String, DataFormatDefinition>
+      getEndpoint(String): Endpoint
+      getEndpointMap(): Map<String, Endpoint>
+      getLanguageNames(): List<String>
+      getRegistry(): Registry
+      getRoute(String): Route
+      getRoutes(): List<Route>
+      getRouteDefinition(String): RouteDefinition
+      getRouteDefinitions(): List<RouteDefinition>
+      getTypeConverter(): TypeConverter
+      getTypeConverterRegistry(): TypeConverterRegistry 
+      resolvePropertyPlaceholders(String): String
+      startRoute(String): void
+      stopRoute(String): void
+      ...
+
+ModelCamelContext
+  ...
+
+DefaultCamelContext
+  ...
+
+BlueprintCamelContext
+  ...
+

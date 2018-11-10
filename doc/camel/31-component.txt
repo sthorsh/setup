@@ -1,0 +1,49 @@
+Component
+  createEndpoint(String): Endpoint
+  ...
+
+Endpoint
+  createConsumer(Processor): Consumer
+  createProducer(): Producer
+  createExchange(): Exchange
+  ...
+
+Consumer
+  ...
+
+Producer
+  ....
+
+ProducerTemplate
+  sendBody(String, Object): void
+  sendBodyAndHeader(String, Object, String, Object): void
+  sendBodyAndProperty(String, Object, String, Object): void
+  requestBody(String, Object): Object
+  requestBodyAndHeader(String, Object, String, Object): Object
+  ...
+
+Exchange
+  CREATED_TIMESTAMP
+  EXTERNAL_REDELIVERED
+  MESSAGE_HISTORY
+  TO_ENDPOINT
+  ...
+  getContext()
+  get-|setExchangeId()
+  get-|setProperty()
+  get-|setPattern()
+  get-|setUnitOfWork()
+  get-|setException()
+  get-|setIn()
+  get-|setOut()
+  ...
+
+Message
+  getExchange()
+  get-|setMessageId()
+  get-|setHeader[s]()
+  get-|setBody()
+  get-|setAttachments()
+  is-|setFault()
+  ...
+

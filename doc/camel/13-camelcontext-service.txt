@@ -1,0 +1,29 @@
+                                                  Service
+                                                     |
+                                                     |
+                                          ------------------------
+                                          |                      |
+                                          |                      |
+        RuntimeConfiguration    SuspendableService     ShutdownableService
+                  |                   |   |                      |
+                  |                   |   |                      |
+                  |--------------------   ------------------------
+                  |                                  |
+                  |                                  |
+            CamelContext                      StatefulService
+                  |                                  |
+                  |                                  |
+         ModelCamelContext                    ServiceSupport
+                  |                                  |
+                  |                                  |
+                  |-----------------------------------           EventListener
+                  |                                                    |
+                  |                                                    |
+        DefaultCamelContext                  BlueprintListener  ServiceListener
+                  |                                  |                 |
+                  |                                  |                 |
+                  |-----------------------------------------------------
+                  |
+                  |
+       BlueprintCamelContext
+

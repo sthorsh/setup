@@ -12,4 +12,20 @@ Camel shutdown
 - Stenger rutene  i motsatt rekkefølge av oppstart
 - Logger: Graceful shutdown of 1 routes completed in 4 secs
 - Logger: Apache Camel 2.20.0 CamelContext:camel-1 is shutdown in 0.033 secs
+
+    Route
+      - getId(): String
+      - ...
+
+    RouteDefinition
+      - adviceWith(CamelContext, RouteBuilder): RouteDefinition
+      - autoStartup(boolean): RouteDefinition
+      - handleFault(): RouteDefinition
+      - routeId(String): RouteDefinition
+      - errorHandler(ErrorHandlerFactory): RouteDefinition
+      - startupOrder(int): RouteDefinition
+      - streamCaching(): RouteDefinition
+      - tracing(): RouteDefinition
+      - ...
+
                       
