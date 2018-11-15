@@ -28,4 +28,6 @@ Camel shutdown
       - tracing(): RouteDefinition
       - ...
 
+ExpressionSUpport
+  jsonpath(String): T
                       

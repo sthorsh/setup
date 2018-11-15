@@ -2,11 +2,10 @@ BuilderSupport
   body(): ValueBuilder
   constant(Object): ValueBuilder
   header(String): ValueBuilder
-        jsonpath(String): ValueBuilder
         language(String, String): ValueBuilder
-        method(Object, String): ValueBuilder 
+  method(Object, String): ValueBuilder 
   property(String): ValueBuilder
-        regexReplaceAll(Expression, String, String): ValueBuilder
+  regexReplaceAll(Expression, String, String): ValueBuilder
   systemProperty(String): ValueBuilder
   simple(String): SimpleBuilder
         xpath(String): XPathBuilder
