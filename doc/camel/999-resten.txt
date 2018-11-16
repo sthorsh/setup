@@ -27,7 +27,11 @@ Camel shutdown
       - streamCaching(): RouteDefinition
       - tracing(): RouteDefinition
       - ...
+ 
+  PredicateBuilder
+  - and(P, P): P
+  - not(P): P
+  - or(P, P): P
+  - ...
 
-ExpressionSUpport
-  jsonpath(String): T
                       

@@ -4,6 +4,12 @@ Expression
 Predicate
   - matches(Exchange): boolean
 
+ExpressionDefinition
+  todo
+
+ExpressionClause → ExpressionClauseSupport
+  todo
+
 ValueBuilder 
   append(Object): ValueBuilder
   - convertTo(Class<?>): ValueBuilder
