@@ -1,18 +1,10 @@
 BuilderSupport
-    defaultErrorHandler(): DefaultErrorHandlerBuilder
-    noErrorHandler(): NoErrorHandlerBuilder
-    deadLetterChannel(String): DeadLetterChannelBuilder
-    body(): ValueBuilder
-    constant(Object): ValueBuilder
-    header(String): ValueBuilder
-    language(String, String): ValueBuilder
-    method(Object, String): ValueBuilder 
-    property(String): ValueBuilder
-    regexReplaceAll(Expression, String, String): ValueBuilder
-    simple(String): SimpleBuilder
-    systemProperty(String): ValueBuilder
-    xpath(String): XPathBuilder
-    ...
+  defaultErrorHandler(): DefaultErrorHandlerBuilder
+  noErrorHandler(): NoErrorHandlerBuilder
+  deadLetterChannel(String): DeadLetterChannelBuilder
+  regexReplaceAll(Expression, String, String): ValueBuilder
+  systemProperty(String): ValueBuilder
+  ...
 
 RouteBuilder
 ↓ configure(): void
