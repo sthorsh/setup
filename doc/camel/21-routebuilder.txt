@@ -7,11 +7,11 @@ BuilderSupport
   ...
 
 RouteBuilder
-↓ configure(): void
-  from("componentName:endpointName?optionName=value&..."): RouteDefinition           
-        getContext(): ModelCamelContext 
+  configure(): void
         errorHandler(ErrorHandlerBuilder): void
         onException(Class<? extends Throwable>): OnExceptionDefinition 
+  from("componentName:endpointName?optionName=value&..."): RouteDefinition           
+        getContext(): ModelCamelContext 
         onCompletion(): OnCompletionDefinition
         intercept(): InterceptDefinition
         restConfiguration(): RestConfigurationDefinition
