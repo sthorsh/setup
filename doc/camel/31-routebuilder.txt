@@ -1,0 +1,27 @@
+RouteBuilder
+↓ configure(): void
+  getContext(): ModelCamelContext 
+  errorHandler(): void
+  onException(): OnExceptionDefinition 
+  from("componentName:endpointName?optionName=value&..."): RouteDefinition           
+  ...
+
+AdviceWithRouteBuilder
+  replaceFromWith(): void
+  mockEndpoints(): void
+  mockEndpointsAndSkip(): void
+  weaveAddFirst(): ProcessorDefinition<?>
+  weaveAddLast(): ProcessorDefinition<?>
+  weaveById(): AdviceWithBuilder<T>
+  weaveByType(): AdviceWithBuilder<T>
+  weaveByToUri(): AdviceWithBuilder<T>
+  ...
+
+BuilderSupport
+  defaultErrorHandler(): DefaultErrorHandlerBuilder
+  noErrorHandler(): NoErrorHandlerBuilder
+  deadLetterChannel(): DeadLetterChannelBuilder
+  regexReplaceAll(): ValueBuilder
+  systemProperty(): ValueBuilder
+  ...
+

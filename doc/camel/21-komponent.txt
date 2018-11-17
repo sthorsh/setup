@@ -1,0 +1,47 @@
+camel-core
+  bean          to         bean:name?method=name
+  browse        -
+  class         to         class:name?method=name
+  controlbus    -
+  dataformat    to         dataformat:name:unmarshal|marshal?options
+  dataset       -
+  direct        from|to    direct:name?options (CamelContext && synkron)
+  direct-vm     from|to    direct-vm:name?options (JVM && synkron)
+  file          from|to    file:name?options
+  language      -
+  log           to         log:name?options
+  mock          to         mock:name?options
+  properties    from|to    properties:key?options
+  ref           -       
+  rest          -
+  scheduler     from        scheduler:name?options
+  seda          from|to     seda:name?options (CamelContext && asynkron)
+  stub          from|to     stub:uri
+  test          -
+  timer         to    timer:name?options
+    validation       validator:resourceUri?options
+  vm            to|from     vm:name?options (JVM && asynkron)
+    xslt             xslt:resourceUri?options
+
+  camel-xxx
+    activemq         activemq:type:name?options (asynkron, remote)
+    freemarker       freemarker:resourceUri?options
+    ftp              ftp://host:directory?options
+    jms              jms:type:name?options (asynkron, remote)
+    quartz2          quartz2:name?options
+    stream           stream:in|out|err?options
+    velocity         velocity:resourceUri?options
+    ...
+
+  URIs
+    Bean            filter=#beanId
+    Property        password={{pwd}}
+    Raw verdi       password=RAW(+&+)
+    Dynamisk URI    file:{{path}}
+    Dynamisk URI    toD("file:${path}")
+    XML DSL opts    opt=val&amp;opt=val
+
+  Lasting           
+    Auto            CIA 6.1.2
+    Manuelt         CIA 6.1.1
+

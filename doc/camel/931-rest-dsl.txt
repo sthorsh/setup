@@ -30,6 +30,14 @@ Komponenter
 - camel-undertow: jboss http server
 - camel-swagger-java: dokumentasjon
 
+ --------------------
+API
+
+RouteBuilder
+  restConfiguration(): RestConfigurationDefinition restConfigurationDefinition = 
+  rest(String): RestDefinition rest
+  
+
 restConfiguration()
  .component("jetty") 
  .scheme("http|https")
