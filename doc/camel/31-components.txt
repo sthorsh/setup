@@ -1,0 +1,37 @@
+camel-core
+  bean              to(uri)
+  browse            -
+  class             to(uri)
+  controlbus        -
+  dataformat        to(uri)
+  dataset           -
+  direct            from|to(uri)
+  direct-vm         from|to(uri)
+  file              from|to(uri)
+  language          -
+  log               to(uri)
+  mock              to(uri)
+  properties        from|to(uri)
+  ref               -
+  rest              -
+  scheduler         -
+  seda              from|to(uri)
+  stub              from|to(uri)
+  test              -
+  timer             from(uri)
+  validation        to(uri)
+  vm                from|to(uri)
+  xslt              to(uri)
+
+camel-x
+  freemarker        to(uri)
+  ftp               from|to(uri)
+  jms               from|to(uri)
+  quartz2           from(uri)
+  stream            to(uri)
+  ...
+
+External
+  activemq          from|to(uri)
+  ...
+

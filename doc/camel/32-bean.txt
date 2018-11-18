@@ -1,0 +1,36 @@
+URI
+  to("bean:beanName?method=methodName")
+
+Service Activator EIP
+  Node N: requester
+  Bean-node BC: service activator
+  Bean B: pojo service
+  N sender exchange til BC
+  BC resolverer B¹
+  BC resolverer metode²
+  BC medierer args/params
+  BC binder params³
+  BC invokerer B
+  B eksekverer metode
+  B returnerer verdi til BC
+  BC medierer returverdi
+  BC setter exchange.in.body
+
+Resolvere bean¹
+  BC slår opp B i registeret
+  Registeret returnerer B til BC
+
+Resolvere metode²
+  La bean kun ha 1 public metode
+  Ved kall til bean: oppgi metode
+  Hvis overloading: bruk @Handler
+
+Binde params³
+  Bind 1st param til exchange.in.body
+  Bind 2nd param osv til CamelContext mfl
+  Bind 2nd param osv merket @ExchangeProperty mfl til exchange.*
+  Bind 2nd param osv merket @Simple mfl til exchange.in.body.*
+  Bind 2nd param osv til exchange.* mm som Simple|literale "args"
+  Camel ignorerer overflødige args
+  Camel binder overflødige params til tom verdi
+
