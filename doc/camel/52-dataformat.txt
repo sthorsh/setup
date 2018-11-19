@@ -1,15 +1,4 @@
-Bruk
-- Default e.g marshal().csv()
-- Konfigurert e.g marshal(myCsv)
-
-Lasting
-- Autolasting
-
 DataFormat
-- marshal(Exchange, Object, OutputStream): void
-- unmarshal(Exchange, InputStream): Object
-
-Camel
 - avro              objekt ↔ binformat
 - barcode           string ↔ barcode image
 - base64            tekst ↔ enkodet tekst
@@ -41,4 +30,12 @@ Camel
 - yaml              pojo ↔ yaml
 - zip               payload ↔ komprimert payload
 - zipfile           payload ↔ komprimert payload
+
+Bruk
+- Default e.g marshal().csv()
+- Konfigurert e.g marshal(myCsv)
+
+DataFormat
+- marshal(Exchange, Object, OutputStream): void
+- unmarshal(Exchange, InputStream): Object
 
