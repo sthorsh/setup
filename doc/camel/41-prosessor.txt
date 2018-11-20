@@ -1,9 +1,9 @@
 ProcessorDefinition
-      - aggregate(Expression): AggregateDefinition
-      - bean(Class<?>): T
-      - choice(): ChoiceDefinition
-      - convertBodyTo(Class<?>): T
-      - delay(long): DelayDefinition
+  aggregate(): AggregateDefinition
+  bean(): T
+  choice(): ChoiceDefinition
+  convertBodyTo(): T
+  delay(): DelayDefinition
       - dynamicRouter(): ExpressionClause<DynamicRouterDefinition<Type>>
       - enrich(): ExpressionClause<EnrichDefinition> 
       - filter(Predicate): FilterDefinition 

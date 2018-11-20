@@ -9,10 +9,8 @@ Endpoint
   ...
 
 Consumer
-  ...
 
 Producer
-  ....
 
 ProducerTemplate
   sendBody(String, Object): void
@@ -27,15 +25,14 @@ Exchange
   EXTERNAL_REDELIVERED
   MESSAGE_HISTORY
   TO_ENDPOINT
-  ...
   getContext()
   get-|setExchangeId()
   get-|setProperty()
-  get-|setPattern()
-  get-|setUnitOfWork()
-  get-|setException()
   get-|setIn()
   get-|setOut()
+  get-|setException()
+  get-|setPattern()
+  get-|setUnitOfWork()
   ...
 
 Message
@@ -43,7 +40,7 @@ Message
   get-|setMessageId()
   get-|setHeader[s]()
   get-|setBody()
+  is- |setFault()
   get-|setAttachments()
-  is-|setFault()
   ...
 
