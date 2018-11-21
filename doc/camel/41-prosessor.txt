@@ -4,7 +4,7 @@ ProcessorDefinition
   choice(): ChoiceDefinition
   convertBodyTo(): T
   delay(): DelayDefinition
-      - dynamicRouter(): ExpressionClause<DynamicRouterDefinition<Type>>
+  dynamicRouter(): DynamicRouterDefinition<Type>
       - enrich(): ExpressionClause<EnrichDefinition> 
       - filter(Predicate): FilterDefinition 
       - loadBalance(): LoadBalanceDefinition
