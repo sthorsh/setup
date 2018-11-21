@@ -8,22 +8,22 @@ ProcessorDefinition
       - enrich(): ExpressionClause<EnrichDefinition> 
       - filter(Predicate): FilterDefinition 
       - loadBalance(): LoadBalanceDefinition
-      - log(LoggingLevel, String): Type
+  log(): Type
       - marshal(): DataFormatClause<ProcessorDefinition<T>>
       - multicast(): MulticastDefinition
       - onException(Class<? extends Throwable>): OnExceptionDefinition 
       - pipeline(): PipelineDefinition
-      - process(Processor): T
+  process(): T
       - recipientList(): ExpressionClause<RecipientListDefinition<Type>> 
       - routingSlip(): ExpressionClause<RoutingSlipDefinition<Type>>
-      - removeHeader(String): T
-      - removeProperty(String): T
-      - setBody(Expression): T
-      - setExchangePattern(ExchangePattern): T
-      - setHeader(String, Expression): T
-      - setProperty(String, Expression): T
-      - split(Expression): SplitDefinition
-      - to(String): T
+  removeHeader(): T
+  removeProperty(): T
+  setBody(): T
+  setExchangePattern(): T
+  setHeader(): T
+  setProperty(): T
+  split(): SplitDefinition
+  to(): T
       - toD(String): T
       - transform(Expression): T
       - unmarshal(): DataFormatClause<ProcessorDefinition<T>> 
@@ -32,11 +32,11 @@ ProcessorDefinition
       - ...
 
 RouteDefinition
-    routeId(String): RouteDefinition 
-    startupOrder(int): RouteDefinition
-    errorHandler(ErrorHandlerFactory): RouteDefinition
-    delayer(long): RouteDefinition 
-    streamCaching(): RouteDefinition
-    tracing(): RouteDefinition
-    ...
+      routeId(String): RouteDefinition 
+      startupOrder(int): RouteDefinition
+      errorHandler(ErrorHandlerFactory): RouteDefinition
+      delayer(long): RouteDefinition 
+      streamCaching(): RouteDefinition
+      tracing(): RouteDefinition
+      ...
 
