@@ -1,3 +1,12 @@
+RouteDefinition
+  routeId(): RouteDefinition 
+  errorHandler(): RouteDefinition
+  startupOrder(): RouteDefinition
+  delayer(): RouteDefinition 
+  streamCaching(): RouteDefinition
+  tracing(): RouteDefinition
+  ...
+
 ProcessorDefinition
   aggregate(): AggregateDefinition
   bean(): T
@@ -5,7 +14,7 @@ ProcessorDefinition
   convertBodyTo(): T
   delay(): DelayDefinition
   dynamicRouter(): DynamicRouterDefinition<Type>
-      - enrich(): ExpressionClause<EnrichDefinition> 
+  enrich(): ExpressionClause<EnrichDefinition> 
       - filter(Predicate): FilterDefinition 
       - loadBalance(): LoadBalanceDefinition
   log(): Type
@@ -30,13 +39,4 @@ ProcessorDefinition
       - validate(Expression): ValidateDefinition
       - wireTap(Endpoint): WireTapDefinition<Type>
       - ...
-
-RouteDefinition
-      routeId(String): RouteDefinition 
-      startupOrder(int): RouteDefinition
-      errorHandler(ErrorHandlerFactory): RouteDefinition
-      delayer(long): RouteDefinition 
-      streamCaching(): RouteDefinition
-      tracing(): RouteDefinition
-      ...
 
