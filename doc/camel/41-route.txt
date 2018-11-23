@@ -13,18 +13,18 @@ ProcessorDefinition
   choice(): ChoiceDefinition
   convertBodyTo(): T
   delay(): DelayDefinition
-  dynamicRouter(): DynamicRouterDefinition<Type>
+  dynamicRouter(): DynamicRouterDefinition<T>
   enrich(): ExpressionClause<EnrichDefinition> 
-      - filter(Predicate): FilterDefinition 
-      - loadBalance(): LoadBalanceDefinition
-  log(): Type
-      - marshal(): DataFormatClause<ProcessorDefinition<T>>
-      - multicast(): MulticastDefinition
-      - onException(Class<? extends Throwable>): OnExceptionDefinition 
-      - pipeline(): PipelineDefinition
+  filter(): FilterDefinition 
+  loadBalance(): LoadBalanceDefinition
+  log(): T
+  marshal(): DataFormatClause<ProcessorDefinition<T>>
+  multicast(): MulticastDefinition
+  onException(): OnExceptionDefinition 
+  pipeline(): PipelineDefinition
   process(): T
-      - recipientList(): ExpressionClause<RecipientListDefinition<Type>> 
-      - routingSlip(): ExpressionClause<RoutingSlipDefinition<Type>>
+      - recipientList(): ExpressionClause<RecipientListDefinition<T>> 
+      - routingSlip(): ExpressionClause<RoutingSlipDefinition<T>>
   removeHeader(): T
   removeProperty(): T
   setBody(): T
@@ -33,10 +33,10 @@ ProcessorDefinition
   setProperty(): T
   split(): SplitDefinition
   to(): T
-      - toD(String): T
-      - transform(Expression): T
-      - unmarshal(): DataFormatClause<ProcessorDefinition<T>> 
-      - validate(Expression): ValidateDefinition
-      - wireTap(Endpoint): WireTapDefinition<Type>
+      - toD(): T
+      - transform(): T
+  unmarshal(): DataFormatClause<ProcessorDefinition<T>> 
+      - validate(): ValidateDefinition
+      - wireTap(): WireTapDefinition<T>
       - ...
 
