@@ -1,42 +1,42 @@
 RouteDefinition
   routeId(): RouteDefinition 
-  errorHandler(): RouteDefinition
   startupOrder(): RouteDefinition
+  errorHandler(): RouteDefinition
   delayer(): RouteDefinition 
   streamCaching(): RouteDefinition
   tracing(): RouteDefinition
   ...
 
 ProcessorDefinition
-  aggregate(): AggregateDefinition
+· aggregate(): AggregateDefinition
   bean(): T
-  choice(): ChoiceDefinition
+· choice(): ChoiceDefinition
   convertBodyTo(): T
   delay(): DelayDefinition
-  dynamicRouter(): DynamicRouterDefinition<T>
-  enrich(): ExpressionClause<EnrichDefinition> 
-  filter(): FilterDefinition 
-  loadBalance(): LoadBalanceDefinition
+· dynamicRouter(): DynamicRouterDefinition<T>
+· enrich(): ExpressionClause<EnrichDefinition> 
+· filter(): FilterDefinition 
+· loadBalance(): LoadBalanceDefinition
   log(): T
   marshal(): DataFormatClause<ProcessorDefinition<T>>
-  multicast(): MulticastDefinition
+· multicast(): MulticastDefinition
   onException(): OnExceptionDefinition 
-  pipeline(): PipelineDefinition
+· pipeline(): PipelineDefinition
   process(): T
-      - recipientList(): ExpressionClause<RecipientListDefinition<T>> 
-      - routingSlip(): ExpressionClause<RoutingSlipDefinition<T>>
+· recipientList(): RecipientListDefinition<T> 
+· routingSlip(): RoutingSlipDefinition<T>
   removeHeader(): T
   removeProperty(): T
   setBody(): T
   setExchangePattern(): T
   setHeader(): T
   setProperty(): T
-  split(): SplitDefinition
+· split(): SplitDefinition
   to(): T
-      - toD(): T
-      - transform(): T
+  toD(): T
+· transform(): T
   unmarshal(): DataFormatClause<ProcessorDefinition<T>> 
-      - validate(): ValidateDefinition
-      - wireTap(): WireTapDefinition<T>
-      - ...
-
+  validate(): ValidateDefinition
+· wireTap(): WireTapDefinition<T>
+  ...
+  

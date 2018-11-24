@@ -10,6 +10,26 @@ ExpressionDefinition
 ExpressionClause → ExpressionClauseSupport
   todo
 
+ExpressionSupport
+  body(): T
+  constant(Object): T
+  exchangeProperty(): T
+  header(String): T
+  language(String, String): T
+  method(Object, String): T 
+  simple(String): T
+  xpath(String): T
+  ...
+
+ExppressionBuilder
+  regexReplaceAll(Expression, String, String): ValueBuilder
+
+  PredicateBuilder
+  - and(P, P): P
+  - not(P): P
+  - or(P, P): P
+  - ...
+
 ValueBuilder 
   append(Object): ValueBuilder
   - convertTo(Class<?>): ValueBuilder
@@ -37,11 +57,5 @@ ValueBuilder
   - ...
 
   XPathBuilder
-  - ...
-
-  PredicateBuilder
-  - and(P, P): P
-  - not(P): P
-  - or(P, P): P
   - ...
 
