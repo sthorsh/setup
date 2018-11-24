@@ -28,8 +28,8 @@ BuilderSupport
   language(String, String): ValueBuilder
   method(Object, String): ValueBuilder
   regexReplaceAll(): ValueBuilder
-  simple(String): ValueBuilder
+  simple(String): SimpleBuilder
   systemProperty(): ValueBuilder
-  xpath(String): ValueBuilder
+  xpath(String): XPathBuilder
   ...
 

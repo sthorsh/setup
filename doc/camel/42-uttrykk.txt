@@ -1,16 +1,15 @@
 Expression
-  - evaluate(Exchange, Class<T>): T
+  evaluate(Exchange, Class<T>): T
 
 Predicate
-  - matches(Exchange): boolean
+  matches(Exchange): boolean
 
 ExpressionDefinition
-  todo
+  ...
 
 ExpressionClause → ExpressionClauseSupport
-  todo
-
-ExpressionSupport
+  attachments(): T
+  ...
   body(): T
   constant(Object): T
   exchangeProperty(): T
@@ -21,14 +20,14 @@ ExpressionSupport
   xpath(String): T
   ...
 
-ExppressionBuilder
-  regexReplaceAll(Expression, String, String): ValueBuilder
+ExpressionSupport
+  ...
 
-  PredicateBuilder
-  - and(P, P): P
-  - not(P): P
-  - or(P, P): P
-  - ...
+ExpressionAdapter
+  ...
+
+SimpleBuilder
+  ...
 
 ValueBuilder 
   append(Object): ValueBuilder
@@ -53,9 +52,12 @@ ValueBuilder
   - regex(S) : P
   - startsWith(O) : P
 
-  SimpleBuilder
-  - ...
+ExpressionBuilder
+  regexReplaceAll(Expression, String, String): ValueBuilder
 
-  XPathBuilder
-  - ...
+PredicateBuilder
+- and(P, P): P
+- not(P): P
+- or(P, P): P
+- ...
 
