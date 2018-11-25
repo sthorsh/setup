@@ -17,19 +17,3 @@ AdviceWithRouteBuilder
   weaveByToUri(): AdviceWithBuilder<T>
   ...
 
-BuilderSupport
-  defaultErrorHandler(): DefaultErrorHandlerBuilder
-  noErrorHandler(): NoErrorHandlerBuilder
-  deadLetterChannel(): DeadLetterChannelBuilder
-  body(): ValueBuilder
-  constant(Object): ValueBuilder
-  exchangeProperty(): ValueBuilder
-  header(String): ValueBuilder
-  language(String, String): ValueBuilder
-  method(Object, String): ValueBuilder
-  regexReplaceAll(): ValueBuilder
-  simple(String): SimpleBuilder
-  systemProperty(): ValueBuilder
-  xpath(String): XPathBuilder
-  ...
-

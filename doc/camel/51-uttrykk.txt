@@ -1,0 +1,34 @@
+Expression
+  evaluate(Exchange, Class<T>): T
+
+Predicate
+  matches(Exchange): boolean
+
+ExpressionDefinition
+  ...
+
+ExpressionClause → ExpressionClauseSupport
+  attachments(): T
+  body(): T
+  constant(Object): T
+  exchange(): 
+  exchangeProperty(): T
+  header(): T
+  language(): T
+  message(): T
+  method(): T 
+  ognl(): T
+  outBody(): T
+  outHeader(): T
+  outMessage(): T
+  simple(): T
+  tokenize(): T
+  xpath(): T
+  ...
+
+ExpressionSupport
+  ...
+
+ExpressionAdapter
+  ...
+

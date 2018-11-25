@@ -1,0 +1,53 @@
+BuilderSupport
+  defaultErrorHandler(): DefaultErrorHandlerBuilder
+  noErrorHandler(): NoErrorHandlerBuilder
+  deadLetterChannel(): DeadLetterChannelBuilder
+  body(): ValueBuilder
+  constant(): ValueBuilder
+  exchangeProperty(): ValueBuilder
+  header(): ValueBuilder
+  language(): ValueBuilder
+  method(): ValueBuilder
+  regexReplaceAll(): ValueBuilder
+  simple(): SimpleBuilder
+  systemProperty(): ValueBuilder
+  xpath(): XPathBuilder
+  ...
+
+ExpressionBuilder
+  ...
+
+PredicateBuilder
+  and(): Predicate
+  contains(): Predicate
+  endsWith(): Predicate
+  in(): Predicate
+  isEqualTo(): Predicate
+  isGreaterThan(): Predicate
+  isInstanceOf(): Predicate
+  isLessThan(): Predicate
+  isNotEqualTo(): Predicate
+  isNotNull(): Predicate
+  isNull(): Predicate
+  not(): Predicate
+  or(): Predicate
+  regex(): Predicate
+  startsWith(): Predicate
+  ...
+
+SimpleBuilder
+  ...
+
+ValueBuilder 
+  append(): ValueBuilder
+  convertTo(): ValueBuilder
+  method(): ValueBuilder        
+  prepend(): ValueBuilder
+  regexReplaceAll(): ValueBuilder
+  regexTokenize(): ValueBuilder
+  sort(): ValueBuilder
+  tokenize(): ValueBuilder
+
+XPathBuilder
+  ...
+
