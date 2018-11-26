@@ -2,6 +2,7 @@ Syntaks
   null
   ...
   ${...}
+  ${...} op '...'
   ${...} op ${...}
 
 Variabler
@@ -35,36 +36,36 @@ Variabler
   Funksjoner
   bean:beanId.methodName
   bodyAs(type)
-  - collate(group) (2.17)
+  collate(number)
   date:command:pattern
-  - headerAs(key,type)
+  headerAs(key, type)
   mandatoryBodyAs(type)
-  - properties-location:locations:key
-  - properties:key:default
+  properties-location:[locations:]key
+  properties:key[:default]
   random(min,max)
   ref:beanId
-  - skip(number) (2.19)
-  - type:name.field
+  skip(number)
+  type:name.field
 
-  OGNL: kun metoder
-  - camelcontext.ognl
-  - exchange.ognl (2.16)
-  - exchangeProperty.foo.ognl
-  - exception.ognl
-  - header.foo.ognl
-  - body.ognl
-  - bodyAs(type).ognl (2.18)
-  - mandatoryBodyAs(type).ognl (2.18)
+OGNL: kun metoder
+  camelContext.ognl
+  exchange.ognl
+  exchangeProperty.foo.ognl
+  exception.ognl
+  header.foo.ognl
+  body.ognl
+  bodyAs(type).ognl
+  mandatoryBodyAs(type).ognl
 
-  Operatorer
-  - ++ --
-  - == =~ < <= > >= !=
-  - [not] contains 
-  - [not] in 
-  - [not] is 
-  - [not] range 
-  - [not] regex 
-  - starts|ends with
-  - && dvs expr && expr
-  - || dvs expr || expr
+Operatorer
+  ++ --
+  == =~ < <= > >= !=
+  [not] contains 
+  [not] in 
+  [not] is 
+  [not] range 
+  [not] regex 
+  starts|ends with
+  && dvs expr && expr
+  || dvs expr || expr
 
