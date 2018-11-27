@@ -1,0 +1,28 @@
+Registry
+  lookupByName(String): Object
+  lookupByNameAndType(String, Class<T>): T
+  ...
+
+JndiRegistry
+  bind(String, Object): void
+  lookupByName(String): Object
+  lookupByNameAndType(String, Class<T>): T
+  ...
+
+SimpleRegistry
+  put(K, V): V
+  lookupByName(String): Object
+  lookupByNameAndType(String, Class<T>): T
+  ...
+
+OsgiServiceRegistry
+  lookupByName(String): Object
+  lookupByNameAndType(String, Class<T>): T
+  ...
+
+
+BlueprintContainerRegistry
+  lookupByName(String): Object
+  lookupByNameAndType(String, Class<T>): T
+  ...
+
