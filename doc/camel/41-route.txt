@@ -11,7 +11,7 @@ ProcessorDefinition
 · aggregate(): AggregateDefinition
   bean(): T
 · choice(): ChoiceDefinition
-  convertBodyTo(): T
+  convertBodyTo(): T (explicit type conversion)
   delay(): DelayDefinition
 · dynamicRouter(): DynamicRouterDefinition<T>
 · enrich(): ExpressionClause<EnrichDefinition> 

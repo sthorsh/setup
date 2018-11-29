@@ -13,8 +13,6 @@ CamelContext
   getRoutes(): List<Route>
   getRouteDefinitions(): List<RouteDefinition>
   getTypeConverterRegistry(): TypeConverterRegistry 
-  setRegistry(): void
-  setTypeConverterRegistry(): void
   startRoute(): void
   stopRoute(): void
   ...

@@ -40,7 +40,7 @@ SimpleBuilder
 
 ValueBuilder 
   append(): ValueBuilder
-  convertTo(): ValueBuilder
+  convertTo[String](): ValueBuilder (explicit type conversion)
   method(): ValueBuilder        
   prepend(): ValueBuilder
   regexReplaceAll(): ValueBuilder
