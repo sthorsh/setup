@@ -1,5 +1,29 @@
+Object → boolean
+Object → Boolean
+Object → Byte
+Object → Short
+Object → Integer
+Object → Long
+Object → Float
+Object → Double
+Object → Class
+Object → Iterable
+Object → java.util.Iterator
+
+byte[] → String
+byte[] → java.io.InputStream
+byte[] → java.nio.ByteBuffer
+byte[] → javax.xml.transform.dom.DOMSource
+byte[] → javax.xml.transform.sax.SAXSource
+byte[] → javax.xml.transform.stax.StAXSource
+byte[] → javax.xml.transform.stream.StreamSource
+byte[] → org.apache.camel.BytesSource
+byte[] → org.w3c.dom.Document
+char[] → String
+Object[] → java.util.List
+Object[] → java.util.Set
+
 Boolean → String
-CharSequence → java.net.URI
 Short → java.nio.ByteBuffer
 Integer → String
 Integer → java.nio.ByteBuffer
@@ -10,17 +34,7 @@ Long → java.util.Date
 Float → java.nio.ByteBuffer
 Double → java.nio.ByteBuffer
 Iterable → java.util.List
-Object → boolean
-Object → Boolean
-Object → Byte
-Object → Class
-Object → Double
-Object → Float
-Object → Integer
-Object → Iterable
-Object → Long
-Object → Short
-Object → java.util.Iterator
+CharSequence → java.net.URI
 String → char
 String → long
 String → byte[]
@@ -49,19 +63,6 @@ StringBuffer → java.io.InputStream
 StringBuilder → String
 StringBuilder → java.io.InputStream
 
-byte[] → String
-byte[] → java.io.InputStream
-byte[] → java.nio.ByteBuffer
-byte[] → javax.xml.transform.dom.DOMSource
-byte[] → javax.xml.transform.sax.SAXSource
-byte[] → javax.xml.transform.stax.StAXSource
-byte[] → javax.xml.transform.stream.StreamSource
-byte[] → org.apache.camel.BytesSource
-byte[] → org.w3c.dom.Document
-char[] → String
-Object[] → java.util.List
-Object[] → java.util.Set
-
 java.io.File → byte[]
 java.io.File → String
 java.io.File → java.io.BufferedReader
@@ -88,6 +89,9 @@ java.io.Reader → org.apache.camel.StreamCache
 java.io.Reader → org.w3c.dom.Document
 java.io.Writer → javax.xml.stream.XMLEventWriter
 java.io.Writer → javax.xml.stream.XMLStreamWriter
+java.io.BufferedReader → byte[]
+java.io.BufferedReader → String
+java.io.BufferedReader → java.io.InputStream
 java.io.InputStream → byte[]
 java.io.InputStream → String
 java.io.InputStream → java.io.ObjectInput
@@ -106,9 +110,6 @@ java.io.OutputStream → java.io.ObjectOutput
 java.io.OutputStream → java.io.Writer
 java.io.OutputStream → javax.xml.stream.XMLEventWriter
 java.io.OutputStream → javax.xml.stream.XMLStreamWriter
-java.io.BufferedReader → byte[]
-java.io.BufferedReader → String
-java.io.BufferedReader → java.io.InputStream
 java.io.ByteArrayInputStream → org.apache.camel.StreamCache
 java.io.ByteArrayOutputStream → byte[]
 java.io.ByteArrayOutputStream → String
@@ -182,7 +183,6 @@ org.apache.camel.StringSource → org.apache.camel.StreamCache
 org.apache.camel.component.file.GenericFile → String
 org.apache.camel.component.file.GenericFile → java.io.InputStream
 org.apache.camel.component.file.GenericFile → java.io.Serializable
-org.apache.camel.converter.stream.CachedOutputStream →
 
 org.w3c.dom.Node → String
 org.w3c.dom.Node → org.w3c.dom.Document
