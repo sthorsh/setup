@@ -1,0 +1,29 @@
+Virkemåte
+  Gitt rute med bean-node .bean(Class<?>, String>)
+  Camel instansierer og registrerer bean ved oppstart
+  En node sender en exchange til bean-noden
+  Bean-node resolverer bean
+    Bean-noden slår opp i registeret
+    Registeret returnerer bean-instans
+  Bean-node resolverer metode
+    La bean kun ha 1 public metode (beste praksis)
+    Ved kall til bean: oppgi metode
+    Hvis overloading: bruk @Handler
+  Bean-node medierer args/params
+  BC binder params
+    Bind 1st param til exchange.in.body (beste praksis)
+    Bind 2nd param osv til CamelContext mfl
+    Bind 2nd param osv merket @ExchangeProperty mfl til exchange.*
+    Bind 2nd param osv merket @Simple mfl til exchange.in.body.*
+    Bind 2nd param osv til exchange.* mm som Simple|literale "args"
+    Camel ignorerer overflødige args
+    Camel binder overflødige params til tom verdi
+  Bean-noden invokerer bean
+  Bean eksekverer metode
+  Bean returnerer verdi til bean-node
+  Bean-node medierer returverdi
+  Bean-node setter exchange.in.body
+
+URI
+  to("bean:beanName?method=methodName")
+

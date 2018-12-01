@@ -1,9 +1,3 @@
-Custom expression
-- Implementerer org.apache.camel.Expression
-
-Custom predicate
-- Implementerer org.apache.camel.Predicate
-
 Custom komponent
 - camel-archetype-component
 - Implementerer org.apache.camel.Component
@@ -21,6 +15,12 @@ Custom dataformat
 
 Custom prosessor
 - Implementerer org.apache.camel.Processor 
+
+Custom expression
+- Implementerer org.apache.camel.Expression
+
+Custom predicate
+- Implementerer org.apache.camel.Predicate
 
 Custom typekonverter  
 - Alt1: vha @Converter
