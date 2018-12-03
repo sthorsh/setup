@@ -14,28 +14,32 @@ Velge metode
   Bruk @Handler ved overloading
 
 Binde params
-  Bind param 1 til @Body
-  Bind param 2... til CamelContext
-  Bind param 2... til Exchange
-  Bind param 2... til Message
-  Bind param 2... til Exception
-  Bind param 2... til Registry
-  Bind param 2... til TypeConverter
-  Bind param 2... til @ExchangeProperty 
-  Bind param 2... til @ExchangeProperties
-  Bind param 2... til @ExchangeException
-  Bind param 2... til @Header
-  Bind param 2... til @Headers
-  Bind param 2... til @Attachments
+  Param 1 til @Body
+  Param N til CamelContext (built-in types)
+  Param N til Exchange
+  Param N til Message
+  Param N til Exception
+  Param N til Registry
+  Param N til TypeConverter
+  Param N til @Header (annotations)
+  Param N til @Headers
+  Param N til @Attachments
+  Param N til @ExchangeProperty 
+  Param N til @ExchangeProperties
+  Param N til @ExchangeException
+  Param N til @Bean (language annotations)
+  Param N til @Constant
+  Param N til @JsonPath
+  Param N til @Simple
+  Param N til @XPath
+  ...
+  Evt bind i DSL'en dvs .bean(beanType, "foo(...)")
+  Overflødige params gis tom verdi, overflødige args ignoreres
 
-      Bind 2nd param osv til exchange.* mm som Simple|literale "args"
-      Camel ignorerer overflødige args
-      Camel binder overflødige params til tom verdi
+  Kalle metode
 
-Kalle metode
+  Håndtere feil
 
-Håndtere feil
-
-Returnere verdi/
-Sette exchange.in.body
+  Returnere verdi/
+  Sette exchange.in.body
 

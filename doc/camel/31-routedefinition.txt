@@ -8,8 +8,6 @@ RouteDefinition
   ...
 
 FromDefinition
-  getUri(): String
-  getEndpoint(): Endpoint
   ...
 
 ProcessorDefinition
