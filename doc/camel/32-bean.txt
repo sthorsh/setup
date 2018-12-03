@@ -2,12 +2,15 @@ DSL
   .bean(beanType, method)
   .bean(beanName, method)
   .bean(beanReference, method) 
+   method(beanType, method)
+   method(beanName, method)
+   method(beanReference, method) 
   .to("bean:beanType|beanName?method=name")
 
 Bean
   beanType: vha reflection
-  beanName: vha registeret
-  beanReference: vha DI el new
+  beanName: fra registeret
+  beanReference: DI el new
 
 Velge metode
   Alltid oppgi metodenavn
@@ -32,14 +35,14 @@ Binde params
   Param N til @JsonPath
   Param N til @Simple
   Param N til @XPath
-  ...
-  Evt bind i DSL'en dvs .bean(beanType, "foo(...)")
+  Evt bind i DSL dvs .bean(beanType, "foo(...)")
   Overflødige params gis tom verdi, overflødige args ignoreres
 
-  Kalle metode
+Kalle metode
 
-  Håndtere feil
-
-  Returnere verdi/
-  Sette exchange.in.body
+Håndtere feil
+  Camel setter CamelExceptionCaught
+  
+Returnere verdi
+  Camel setter exchange.in.body lik returverdi
 

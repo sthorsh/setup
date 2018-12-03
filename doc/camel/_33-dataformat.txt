@@ -1,3 +1,7 @@
+DSL
+- Default e.g marshal().csv()
+- Konfigurert e.g marshal(myCsv)
+
 DataFormat
 - avro              objekt ↔ binformat
 - barcode           string ↔ barcode image
@@ -31,11 +35,7 @@ DataFormat
 - zip               payload ↔ komprimert payload
 - zipfile           payload ↔ komprimert payload
 
-Bruk
-- Default e.g marshal().csv()
-- Konfigurert e.g marshal(myCsv)
-
-DataFormat
-- marshal(Exchange, Object, OutputStream): void
-- unmarshal(Exchange, InputStream): Object
+API
+  marshal(Exchange, Object, OutputStream): void
+  unmarshal(Exchange, InputStream): Object
 
