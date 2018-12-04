@@ -1,41 +1,44 @@
-API
-  marshal(Exchange, Object, OutputStream): void
-  unmarshal(Exchange, InputStream): Object
-
 DSL
-- Default e.g marshal().csv()
-- Konfigurert e.g marshal(myCsv)
+  .marshal|unmarshal().csv()
+  .marshal|unmarshal(DataFormat dataFormat)
+  .marshal|unmarshal(DataFormatDefinition dataFormatType)
+  .marshal|unmarshal(String dataTypeRef)
+    .to(...)
 
 DataFormat
-- avro              objekt ↔ binformat
-- barcode           string ↔ barcode image
-- base64            tekst ↔ enkodet tekst
-- beanio            pojo ↔ csv, fixed-width, xml
-- bindy             pojo ↔ csv, fixed-width
-- boon              pojo ↔ json
-- castor            pojo ↔ xml
-- crypto            klartekst ↔ kryptert tekst, pgp
-- flatpack          List<Map<String,T>> → OutputStream
-- gzip              payload ↔ komprimert payload
-- hl7               HL7 Message objekt ↔ byte stream
-- ical              payload ↔ ical message
-- jacksonxml        pojo ↔ xml
-- jaxb              objekt ↔ xml
-- jibx              objekt ↔ xml
-- json              pojo ↔ json vha gson, jackson, xstream
-- lzf               payload ↔ komprimert payload
-- mime-multipart    msg w/attachments ↔ mime-multipart msg
-- protobuf          objekt ↔ binformat
-- serialization     serialiserbart objekt ↔ binformat
-- soap              objekt ↔ soap envelope
-- string            tekst ↔ enkodet String e.g UTF-8
-- syslog            payload ↔ rfc3164 message
-- tar               payload ↔ komprimert payload
-- tidymarkup        html ↔ velformet html
-- univocity         Map<String,T> ↔ csv, fixed-width, tsv
-- xmlsecurity       klartekst xml ↔ kryptert xml
-- xstream           objekt ↔ xml
-- yaml              pojo ↔ yaml
-- zip               payload ↔ komprimert payload
-- zipfile           payload ↔ komprimert payload
+  - avro              objekt ⭤ binary
+  - barcode           string ⭤ barcode image
+  - base64            tekst ⭤ enkodet tekst
+  - beanio            pojo ⭤ csv, fixed-width, xml
+  - bindy             pojo ⭤ csv, fixed-width
+  - boon              pojo ⭤ json
+  - castor            pojo ⭤ xml
+  - crypto            klartekst ⭤ kryptert tekst, pgp
+  - flatpack          List<Map<String,T>> → OutputStream
+  - gzip              payload ⭤ komprimert payload
+  - hl7               HL7 Message objekt ⭤ byte stream
+  - ical              payload ⭤ ical message
+  - jacksonxml        pojo ⭤ xml
+  - jaxb              objekt ⭤ xml
+  - jibx              objekt ⭤ xml
+  json              pojo ⭤ json vha xstream, jackson, gson
+  - lzf               payload ⭤ komprimert payload
+  - mime-multipart    msg w/attachments ⭤ mime-multipart msg
+  - protobuf          objekt ⭤ binformat
+  - serialization     serialiserbart objekt ⭤ binformat
+  - soap              objekt ⭤ soap envelope
+  - string            tekst ⭤ enkodet String e.g UTF-8
+  - syslog            payload ⭤ rfc3164 message
+  - tar               payload ⭤ komprimert payload
+  - tidymarkup        html ⭤ velformet html
+  - univocity         Map<String,T> ⭤ csv, fixed-width, tsv
+  - xmlsecurity       klartekst xml ⭤ kryptert xml
+  - xstream           objekt ⭤ xml
+  - yaml              pojo ⭤ yaml
+  - zip               payload ⭤ komprimert payload
+  - zipfile           payload ⭤ komprimert payload
+
+SPI
+  marshal(Exchange, Object, OutputStream): void
+  unmarshal(Exchange, InputStream): Object
 
