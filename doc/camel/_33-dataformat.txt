@@ -1,12 +1,13 @@
 DSL
-  .marshal|unmarshal().csv()
-  .marshal|unmarshal(DataFormat dataFormat)
-  .marshal|unmarshal(DataFormatDefinition dataFormatType)
-  .marshal|unmarshal(String dataTypeRef)
-    .to(...)
+  .marshal|unmarshal().avro()
+  .marshal|unmarshal(DataFormat)
+  .marshal|unmarshal(DataFormatDefinition)
+  .marshal|unmarshal(String)
+  .to(...)
 
-DataFormat
-  - avro              objekt ⭤ binary
+Dataformats
+  asn1    camel-asn1
+  avro    camel-avro
   - barcode           string ⭤ barcode image
   - base64            tekst ⭤ enkodet tekst
   - beanio            pojo ⭤ csv, fixed-width, xml
@@ -21,7 +22,7 @@ DataFormat
   - jacksonxml        pojo ⭤ xml
   - jaxb              objekt ⭤ xml
   - jibx              objekt ⭤ xml
-  json              pojo ⭤ json vha xstream, jackson, gson
+  - json              objekt ⭤ json vha xstream, jackson, gson
   - lzf               payload ⭤ komprimert payload
   - mime-multipart    msg w/attachments ⭤ mime-multipart msg
   - protobuf          objekt ⭤ binformat
