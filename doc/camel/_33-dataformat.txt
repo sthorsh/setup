@@ -1,24 +1,19 @@
 DSL
-  .marshal|unmarshal().avro()
-  .marshal|unmarshal(DataFormat)
-  .marshal|unmarshal(DataFormatDefinition)
-  .marshal|unmarshal(String)
-  .to(...)
+  .[un]marshal().base64()
+  .[un]marshal(DataFormat)
+    .[un]marshal(String)
+    .to(...)
 
 Dataformats
-  asn1    camel-asn1
-  avro    camel-avro
-  - barcode           string ⭤ barcode image
-  - base64            tekst ⭤ enkodet tekst
-  - beanio            pojo ⭤ csv, fixed-width, xml
-  - bindy             pojo ⭤ csv, fixed-width
-  - boon              pojo ⭤ json
-  - castor            pojo ⭤ xml
-  - crypto            klartekst ⭤ kryptert tekst, pgp
-  - flatpack          List<Map<String,T>> → OutputStream
+  camel-base64    Base64DataFormat
+  camel-bindy     BindyCsvDataFormat
+  camel-bindy     BindyFixedLengthDataFormat
+  camel-bindy     BindyKeyValuePairDataFormat
+  camel-boon      BoonDataFormat (pojo/json)
+  camel-crypto    CryptoDataFormat
+  camel-csv       CsvDataFormat
+  camel-flatpack  FlatpackDataFormat
   - gzip              payload ⭤ komprimert payload
-  - hl7               HL7 Message objekt ⭤ byte stream
-  - ical              payload ⭤ ical message
   - jacksonxml        pojo ⭤ xml
   - jaxb              objekt ⭤ xml
   - jibx              objekt ⭤ xml
