@@ -1,0 +1,41 @@
+DSL
+  .marshal().name()
+  .marshal(reference)
+  .marshal("name")
+  .unmarshal().name()
+  .unmarshal(reference)
+  .unmarshal("name")
+
+Data formats
+  camel-core        GzipDataFormat        
+  camel-core        SerializationDataFormat (pojo/blob)
+  camel-core        StringDataFormat
+  camel-core        ZipDataFormat
+  camel-base64      Base64DataFormat
+  camel-bindy       BindyCsvDataFormat
+  camel-bindy       BindyFixedLengthDataFormat
+  camel-bindy       BindyKeyValuePairDataFormat
+  camel-boon        BoonDataFormat (pojo/json)
+  camel-crypto      CryptoDataFormat
+  camel-crypto      PGPDataFormat
+  camel-csv         CsvDataFormat
+  camel-flatpack    FlatpackDataFormat
+  camel-jacksonxml  JacksonXMLDataFormat (pojo/xml)
+  camel-jaxb        JaxbDataFormat (pojo/xml)
+  camel-fastjson    FastjsonDataFormat (pojo/json)
+  camel-gson        GsonDataFormat (pojo/json)
+  camel-jackson     JacksonDataFormat (pojo/json)
+  camel-johnzon     JohnzonDataFormat (pojo/json)
+  camel-lzf         LZFDataFormat
+  camel-soap        SoapJaxbDataFormat
+  camel-tarfile     TarFileDataFormat
+  camel-xmlsecurity XMLSecurityDataFormat (xml/ciphertext)
+  camel-xstream     JsonDataFormat (pojo/json)
+  camel-xstream     XStreamDataFormat (pojo/xml)
+  camel-zipfile     ZipFileDataFormat           
+  ...
+
+SPI
+  marshal(Exchange, Object, OutputStream): void
+  unmarshal(Exchange, InputStream): Object
+
