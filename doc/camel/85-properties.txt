@@ -28,3 +28,7 @@ Lokasjon
 - Lookup i register     ref:map
 - Blueprint service     blueprint:my.properties
 
+TODO
+  vm property: feks java.version, men finn en ref side med ALLE
+  os variabel: feks ? men finn en ref side med ALLE
+

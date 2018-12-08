@@ -1,0 +1,45 @@
+BuilderSupport
+  body(): ValueBuilder
+  constant(): ValueBuilder
+  deadLetterChannel(): DeadLetterChannelBuilder
+  defaultErrorHandler(): DefaultErrorHandlerBuilder
+  exceptionMessage(): ValueBuilder
+  exchangeProperty(): ValueBuilder
+  faultBody(): ValueBuilder
+  header(): ValueBuilder
+  language(): ValueBuilder
+  method(): ValueBuilder
+  noErrorHandler(): NoErrorHandlerBuilder
+  regexReplaceAll(): ValueBuilder
+  simple(): SimpleBuilder
+  systemProperty(): ValueBuilder feks java.home
+  xpath(): XPathBuilder
+
+DefaultErrorHandlerBuilder
+  todo
+
+NoErrorHandlerBuilder
+  todo
+
+DeadLetterChannelBuilder
+  todo
+
+ValueBuilder 
+  append(): ValueBuilder
+  convertTo(): ValueBuilder
+  convertToString(): ValueBuilder 
+  matches(): Predicate
+  method(): ValueBuilder        
+  not(): ValueBuilder
+  prepend(): ValueBuilder
+  regexReplaceAll(): ValueBuilder
+  regexTokenize(): ValueBuilder
+  sort(): ValueBuilder
+  tokenize(): ValueBuilder
+  tokenizePair(): ValueBuilder
+  tokenizeXML(): ValueBuilder
+  xtokenize(): ValueBuilder
+
+XPathBuilder
+  booleanResult(): ...
+

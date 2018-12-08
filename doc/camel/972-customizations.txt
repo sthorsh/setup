@@ -13,11 +13,15 @@ Custom dataformat
 - camel-archetype-dataformat
 - Implementerer org.apache.camel.spi.DataFormat
 
-Custom prosessor
-- Implementerer org.apache.camel.Processor 
-
 Custom expression
 - Implementerer org.apache.camel.Expression
+
+Custom interceptor
+- Ref CIA1 11.4
+- Ref CIA2 9.4.3
+
+Custom prosessor
+- Implementerer org.apache.camel.Processor 
 
 Custom predicate
 - Implementerer org.apache.camel.Predicate
@@ -25,8 +29,4 @@ Custom predicate
 Custom typekonverter  
 - Alt1: vha @Converter
 - Alt2: implementer TypeConverter (ref Fuse 45.3)
-
-Custom interceptor
-- Ref CIA1 11.4
-- Ref CIA2 9.4.3
 
