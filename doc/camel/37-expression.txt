@@ -1,0 +1,33 @@
+Expression
+  evaluate(Exchange, Class<T>): T
+
+ExpressionDefinition
+  ...
+
+ExpressionClause       
+  attachments(): T
+  body(): T
+  constant(Object): T
+  exchange(): T
+  exchangeProperties(): T
+  exchangeProperty(): T
+  expression(new |): T
+  header(): T
+  headers(): T
+  inMessage(): T
+  jsonpath(): T
+  language(): T
+  message(): T
+  method(): T 
+  ognl(): T
+  outBody(): T
+  outHeader(): T
+  outMessage(): T
+  simple(): T
+  tokenize(): T
+  tokenizePair(): T
+  tokenizeXML(): T
+  xpath(): T
+  xtokenize(): T
+  ...
+

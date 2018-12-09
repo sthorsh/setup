@@ -33,7 +33,7 @@ Variabler
   sys.name
   sysenv.name
 
-  Funksjoner
+Funksjoner
   bean:beanId.methodName
   bodyAs(type)
   collate(number)
@@ -46,16 +46,6 @@ Variabler
   ref:beanId
   skip(number)
   type:name.field
-
-OGNL: kun metoder
-  camelContext.ognl
-  exchange.ognl
-  exchangeProperty.foo.ognl
-  exception.ognl
-  header.foo.ognl
-  body.ognl
-  bodyAs(type).ognl
-  mandatoryBodyAs(type).ognl
 
 Operatorer
   ++ --

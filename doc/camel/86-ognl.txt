@@ -1,0 +1,9 @@
+OGNL (ifm simple: kun metoder, ikke felt?)
+  camelContext.ognl
+  exchange.ognl
+  exchangeProperty.foo.ognl
+  exception.ognl
+  header.foo.ognl
+  body.ognl
+  bodyAs(type).ognl
+  mandatoryBodyAs(type).ognl
