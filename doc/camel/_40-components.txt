@@ -1,37 +1,31 @@
 DSL
-
   .from("component:endpoint?option=value&...")
   .to("component:endpoint?option=value&...")
 
-Components
-    camel-core        bean          to(uri)
-    camel-core        browse        -
-    camel-core        class         to(uri)
-    camel-core        controlbus    -
-    camel-core        dataformat    to(uri)
-    camel-core        dataset       -
-    camel-core        direct        from|to(uri)
-    camel-core        direct-vm     from|to(uri)
-    camel-core        file          from|to(uri)
-    camel-core        language      -
-    camel-core        log           to(uri)
-    camel-core        mock          to(uri)
-    camel-core        properties    from|to(uri)
-    camel-core        ref           -
-    camel-core        rest          -
-    camel-core        scheduler     -
-    camel-core        seda          from|to(uri)
-    camel-core        stub          from|to(uri)
-    camel-core        test          -
-    camel-core        timer         from(uri)
-    camel-core        validation    to(uri)
-    camel-core        vm            from|to(uri)
-    camel-core        xslt          to(uri)
-    camel-freemarker  freemarker    to(uri)
-    camel-ftp         ftp           from|to(uri)
-    camel-jms         jms           from|to(uri)
-    camel-quartz2     quartz2       from(uri)
-    camel-stream      stream        to(uri)
-    External          activemq      from|to(uri)
+from
+    camel-core        timer         
+    camel-quartz2     quartz2       
+    ...
+
+from|to
+    camel-core        direct      
+    camel-core        direct-vm   
+    camel-core        file        
+    camel-core        properties  
+    camel-core        rest        
+    camel-core        seda        
+    camel-core        stub        
+    camel-core        vm          
+    camel-ftp         ftp         
+    camel-jms         jms         
+    external          activemq    
+    ...
+
+to
+    camel-core        log         
+    camel-core        mock        
+    camel-core        validation  
+    camel-core        xslt        
+    camel-freemarker  freemarker  
     ...
 
