@@ -3,7 +3,7 @@ RouteBuilder
   getContext(): ModelCamelContext 
   errorHandler(): void
   onException(): OnExceptionDefinition 
-  from("componentName:endpointName?optionName=value&..."): RouteDefinition           
+  from(): RouteDefinition           
   ...
 
 AdviceWithRouteBuilder
