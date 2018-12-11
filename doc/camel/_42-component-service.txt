@@ -1,29 +1,20 @@
-                                                 ...
-                                                  |
-                                                  |
-                                            ServiceSupport                              Processor
-                                                  |                                         |
-                                                  |                                         |
-                  -----------------------------------------------------------------         |
-                  |                    |                                          |         |
-                  |                    |                                          |         |
-    Component     |      Endpoint      |       Consumer            Exchange       |     Producer
-        |         |          |         |           |                   |          |         |
-        |--------------------|         ------------|                   |          ----------|
-        |                    |                     |                   |                    |
- DefaultComponent     DefaultEndpoint       DefaultConsumer     DefaultExchange      DefaultProducer
-        |                    |                     |                   |                    |
-        |                    |                     |                   |                    |
-       ...                  ...                   ...                 ...                  ...
-        |                    |                     |                   |                    |
-        |                    |                     |                   |                    |
-   FooComponent         FooEndpoint           FooConsumer                              FooProducer
-
- createEndpoint()     createConsumer()    Entry punkt: e.g poll()                Entry punkt: process()
-                      createExchange()    endpoint.createExchange()              E.g send body -> stdout
-                      createProducer()    exchange.getIn().setBody(message)
-                                          getProcessor().process(exchange)
-
-
-
-
+                                      ...
+                                       |
+                                       |
+                                 ServiceSupport                  Processor
+                                       |                             |
+                                       |                             |
+                  ------------------------------------------         |
+                  |                                        |         |
+                  |                                        |         |
+   Component      |      Endpoint            Consumer      |      Producer            Exchange
+       |          |         |                   |          |         |                   |
+       |--------------------|                   |--------------------|                   |
+       |                    |                   |                    |                   |
+DefaultComponent     DefaultEndpoint     DefaultConsumer      DefaultProducer     DefaultExchange
+       |                    |                   |                    |                    
+       |                    |                   |                    |                    
+      ...                  ...                 ...                  ...                    
+       |                    |                   |                    |                    
+       |                    |                   |                    |                    
+  FooComponent         FooEndpoint         FooConsumer          FooProducer

@@ -1,9 +1,9 @@
 Component
-  createEndpoint(String): Endpoint
+  createEndpoint(): Endpoint
   ...
 
 Endpoint
-  createConsumer(Processor): Consumer
+  createConsumer(): Consumer
   createProducer(): Producer
   createExchange(): Exchange
   ...
@@ -13,11 +13,11 @@ Consumer
 Producer
 
 ProducerTemplate
-  sendBody(String, Object): void
-  sendBodyAndHeader(String, Object, String, Object): void
-  sendBodyAndProperty(String, Object, String, Object): void
-  requestBody(String, Object): Object
-  requestBodyAndHeader(String, Object, String, Object): Object
+  sendBody(): void
+  sendBodyAndHeader(): void
+  sendBodyAndProperty(): void
+  requestBody(): Object
+  requestBodyAndHeader(): Object
   ...
 
 Exchange
