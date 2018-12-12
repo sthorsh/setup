@@ -1,6 +1,3 @@
-FromDefinition
-  ...
-
 RouteDefinition
   routeId(): RouteDefinition 
   startupOrder(): RouteDefinition
@@ -8,6 +5,11 @@ RouteDefinition
   delayer(): RouteDefinition 
   streamCaching(): RouteDefinition
   tracing(): RouteDefinition
+  getInputs(): List<FromDefinition> 
+  getOutputs(): List<ProcessorDefinition<?>>
+  ...
+
+FromDefinition
   ...
 
 ProcessorDefinition
