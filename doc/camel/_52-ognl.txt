@@ -1,9 +1,13 @@
-OGNL (ifm simple: kun metoder, ikke felt?)
-  camelContext.ognl
-  exchange.ognl
-  exchangeProperty.foo.ognl
-  exception.ognl
-  header.foo.ognl
-  body.ognl
-  bodyAs(type).ognl
-  mandatoryBodyAs(type).ognl
+DSL
+  ognl(): OgnlExpression
+
+#this                 RootObject
+exchange              Exchange  
+exception             exchange.exception
+exchangeId            exchange.exchangeId
+fault                 the Fault message (if any)
+request               the exchange.in message
+response              the exchange.out message (if any)
+properties            the exchange properties
+property(name)        the property by the given name
+property(name, type)  the property by the given name as the given type

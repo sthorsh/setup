@@ -1,3 +1,13 @@
+  OGNL
+    camelContext.ognl
+    exchange.ognl
+    exchangeProperty.foo.ognl
+    exception.ognl
+    header.foo.ognl
+    body.ognl
+    bodyAs(type).ognl
+    mandatoryBodyAs(type).ognl
+
 Syntaks
   null
   ...
@@ -58,4 +68,5 @@ Operatorer
   starts|ends with
   && dvs expr && expr
   || dvs expr || expr
+
 
