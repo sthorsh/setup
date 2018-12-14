@@ -1,13 +1,26 @@
 DSL
   ognl(): OgnlExpression
 
-#this                 RootObject
-exchange              Exchange  
-exception             exchange.exception
-exchangeId            exchange.exchangeId
-fault                 the Fault message (if any)
-request               the exchange.in message
-response              the exchange.out message (if any)
-properties            the exchange properties
-property(name)        the property by the given name
-property(name, type)  the property by the given name as the given type
+Variabler
+  #this
+  context
+  exchange              
+  exchangeId            
+  property(name)        
+  property(name, type)  
+  properties            
+  exception             
+  request               
+  response              
+
+Operatorer
+  {e₁, ...}
+  #{e₁:e₂, ...}
+  @class@static_field
+  @class@static_method()
+  e₁.{e₂}
+  e₁.{? e₂}
+  e₁ in e₂
+  e₁ not in e₂
+  Samt alle Java-operatorene
+  
