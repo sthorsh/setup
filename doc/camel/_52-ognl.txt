@@ -13,14 +13,29 @@ Variabler
   request               
   response              
 
+Literaler
+  null
+  true|false
+  Characters
+  Numerical
+  Strings
+
+Collections
+  collection.size
+  collection.isEmpty
+  map.keys
+  map.values
+
 Operatorer
-  {e₁, ...}
-  #{e₁:e₂, ...}
-  @class@static_field
-  @class@static_method()
-  e₁.{e₂}
-  e₁.{? e₂}
-  e₁ in e₂
-  e₁ not in e₂
-  Samt alle Java-operatorene
-  
+  {e₁, ...}         lag list
+  #{e₁:e₂, ...}     lag map
+  e₁.{e₂}           projeksjon
+  e₁.{? e₂}         seleksjon
+  e₁.{^ e₂}         seleksjon 1st
+  e₁.{$ e₂}         seleksjon siste
+  e₁ in e₂          medlem
+  e₁ not in e₂      ikke-medlem
+  @class@field      statisk felt
+  @class@method()   statisk metode
+  ...               resten av Java's operatorer
+    
