@@ -1,70 +1,69 @@
-Syntaks
-  null
-  ...
-  ${...}
-  ${...} op '...'
-  ${...} op ${...}
+  Syntaks
+    ${...}
+    ${...} op '...'
+    ${...} op ${...}
 
 Variabler
   camelId
   routeId
-  exchange (2.16)
+  exchange 
   exchangeId
   exchangeProperty.name
-  exchangeProperty.map[key]
+  exchangeProperty.myMap[key]
   exception
   exception.message
   exception.stacktrace
   id
   header.name
-  header.map[key]
+  header.myMap[key]
   headers
   body
   out.body
   out.header.name
-  messageHistory (2.17)
-  null
+  messageHistory
   threadName
-  file:absolute[.path]
-  file:ext|length|modified
-  file:name[.ext|.noext][.single]
-  file:onlyname[.noext][.single]
-  file:parent|path|size
-  sys.name
-  sysenv.name
+  sys.name e.g sys.java.home
+  sysenv.name e.g sysenv.PATH
 
-Funksjoner
-  bean:beanId.methodName
-  bodyAs(type)
-  collate(number)
-  date:command:pattern
-  headerAs(key, type)
-  mandatoryBodyAs(type)
-  properties-location:[locations:]key
-  properties:key[:default]
-  random(min,max)
-  ref:beanId
-  skip(number)
-  type:name.field
+File
+    file:absolute[.path]
+    file:ext|length|modified
+    file:name[.ext|.noext][.single]
+    file:onlyname[.noext][.single]
+    file:parent|path|size
 
-Operatorer
-  ++ --
-  == =~ < <= > >= !=
-  [not] contains 
-  [not] in 
-  [not] is 
-  [not] range 
-  [not] regex 
-  starts|ends with
-  && dvs expr && expr
-  || dvs expr || expr
+  Funksjoner
+    bean:beanId.methodName
+    bodyAs(type)
+    collate(number)
+    date:command:pattern
+    headerAs(key, type)
+    mandatoryBodyAs(type)
+    properties-location:[locations:]key
+    properties:key[:default]
+    random(min,max)
+    ref:beanId
+    skip(number)
+    type:name.field
 
-  OGNL
-    camelContext.ognl
-    exchange.ognl
-    exchangeProperty.foo.ognl
-    exception.ognl
-    header.foo.ognl
-    body.ognl
-    bodyAs(type).ognl
-    mandatoryBodyAs(type).ognl
+  Operatorer
+    ++ --
+    == =~ < <= > >= !=
+    [not] contains 
+    [not] in 
+    [not] is 
+    [not] range 
+    [not] regex 
+    starts|ends with
+    && dvs expr && expr
+    || dvs expr || expr
+
+    OGNL
+      camelContext.ognl
+      exchange.ognl
+      exchangeProperty.foo.ognl
+      exception.ognl
+      header.foo.ognl
+      body.ognl
+      bodyAs(type).ognl
+      mandatoryBodyAs(type).ognl
