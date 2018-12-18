@@ -1,7 +1,9 @@
   Syntaks
-    ${...}
-    ${...} op '...'
     ${...} op ${...}
+    ${...} op '...'
+    ${...}
+    literal
+    null
 
 Variabler
   camelId
@@ -25,38 +27,44 @@ Variabler
   sys.name e.g sys.java.home
   sysenv.name e.g sysenv.PATH
 
-File
+Funksjoner
+  ${bean:beanId.methodName}
+  ${bodyAs(type)}
+  ${collate(N)}
+  ${date:command:pattern}
+  ${headerAs(key, type)}
+  ${mandatoryBodyAs(type)}
+  ${properties-location:locations:key:default}
+  ${random(min,max)}
+  ${ref:beanId}
+  ${skip(N)}
+  ${type:name.field}
+
+Operatorer
+    ${lhs}++
+    ${lhs}--
+    ${lhs} == '...'
+    ${lhs} =~ '...'
+    ${lhs} <  '...'
+    ${lhs} <= '...'
+    ${lhs} >  '...'
+    ${lhs} >= '...'
+    ${lhs} != '...'
+    [not] contains 
+    [not] in 
+    [not] is 
+    ${...} [not] range 'N₁..N₂'
+    [not] regex 
+    starts|ends with
+    && dvs expr && expr
+    || dvs expr || expr
+
+  File
     file:absolute[.path]
     file:ext|length|modified
     file:name[.ext|.noext][.single]
     file:onlyname[.noext][.single]
     file:parent|path|size
-
-  Funksjoner
-    bean:beanId.methodName
-    bodyAs(type)
-    collate(number)
-    date:command:pattern
-    headerAs(key, type)
-    mandatoryBodyAs(type)
-    properties-location:[locations:]key
-    properties:key[:default]
-    random(min,max)
-    ref:beanId
-    skip(number)
-    type:name.field
-
-  Operatorer
-    ++ --
-    == =~ < <= > >= !=
-    [not] contains 
-    [not] in 
-    [not] is 
-    [not] range 
-    [not] regex 
-    starts|ends with
-    && dvs expr && expr
-    || dvs expr || expr
 
     OGNL
       camelContext.ognl
@@ -67,3 +75,4 @@ File
       body.ognl
       bodyAs(type).ognl
       mandatoryBodyAs(type).ognl
+
