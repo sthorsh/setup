@@ -1,33 +1,30 @@
 Variabler
-  ${camelId}
-  ${routeId}
-  ${exchange}
-  ${exchangeId}
-  ${exchangeProperty.name}
-  ${exchangeProperty.myMap[key]}
-  ${exception}
-  ${exception.message}
-  ${exception.stacktrace}
-  ${id}
   ${body}
+  ${body.ognl
   ${header.name}
+  ${header.name.ognl}
   ${header.myMap[key]}
   ${headers}
-  ${out.body}
-  ${out.header.name}
-  ${messageHistory}
-  ${threadName}
-  ${sys.name}
-  ${sysenv.name}
-
-    OGNL
-      camelContext.ognl
-      exchange.ognl
-      exchangeProperty.foo.ognl
-      exception.ognl
-      body.ognl
-      header.foo.ognl
-      ...
+    ${out.body}
+    ${out.header.name}
+    ${exchange}
+    ${exchange.ognl}
+    ${exchangeId}
+    ${exchangeProperty.name}
+    ${exchangeProperty.name.ognl}
+    ${exchangeProperty.myMap[key]}
+    ${exception}
+    ${exception.ognl}
+    ${exception.message}
+    ${exception.stacktrace}
+    ${routeId}
+    ${camelId}
+    ${camelContext.ognl}
+    ${id}
+    ${messageHistory}
+    ${threadName}
+    ${sys.name}
+    ${sysenv.name}
 
 Funksjoner
   ${bean:beanId.methodName}
