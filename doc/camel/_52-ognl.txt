@@ -13,13 +13,6 @@ Variabler
   request               
   response              
 
-Literaler
-  null
-  true|false
-  Characters
-  Numerical
-  Strings
-
 Collections
   collection.size
   collection.isEmpty
@@ -39,3 +32,10 @@ Operatorer
   @class@method()   statisk metode
   ...               resten av Java's operatorer
     
+Literaler
+  null
+  true|false
+  Characters
+  Numerical
+  Strings
+
