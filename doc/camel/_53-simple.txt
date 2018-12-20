@@ -1,37 +1,40 @@
-  Syntaks
-    ${...} op ${...}
-    ${...} op '...'
-    ${...}
-    literal
-    null
-
 Variabler
-  camelId
-  routeId
-  exchange 
-  exchangeId
-  exchangeProperty.name
-  exchangeProperty.myMap[key]
-  exception
-  exception.message
-  exception.stacktrace
-  id
-  header.name
-  header.myMap[key]
-  headers
-  body
-  out.body
-  out.header.name
-  messageHistory
-  threadName
-  sys.name e.g sys.java.home
-  sysenv.name e.g sysenv.PATH
+  ${camelId}
+  ${routeId}
+  ${exchange}
+  ${exchangeId}
+  ${exchangeProperty.name}
+  ${exchangeProperty.myMap[key]}
+  ${exception}
+  ${exception.message}
+  ${exception.stacktrace}
+  ${id}
+  ${body}
+  ${header.name}
+  ${header.myMap[key]}
+  ${headers}
+  ${out.body}
+  ${out.header.name}
+  ${messageHistory}
+  ${threadName}
+  ${sys.name}
+  ${sysenv.name}
+
+    OGNL
+      camelContext.ognl
+      exchange.ognl
+      exchangeProperty.foo.ognl
+      exception.ognl
+      body.ognl
+      header.foo.ognl
+      ...
 
 Funksjoner
   ${bean:beanId.methodName}
   ${bodyAs(type)}
   ${collate(N)}
   ${date:command:pattern}
+  ${file:name|length|...} (File language)
   ${headerAs(key, type)}
   ${mandatoryBodyAs(type)}
   ${properties-location:locations:key:default}
@@ -41,38 +44,18 @@ Funksjoner
   ${type:name.field}
 
 Operatorer
-    ${lhs}++
-    ${lhs}--
-    ${lhs} == '...'
-    ${lhs} =~ '...'
-    ${lhs} <  '...'
-    ${lhs} <= '...'
-    ${lhs} >  '...'
-    ${lhs} >= '...'
-    ${lhs} != '...'
-    [not] contains 
-    [not] in 
-    [not] is 
-    ${...} [not] range 'N₁..N₂'
-    [not] regex 
-    starts|ends with
-    && dvs expr && expr
-    || dvs expr || expr
+  ++ --
+  == =~ <  <= >  >= !=
+  contains
+  in
+  is 'String'
+  range '1..100'
+  regex '\\d{4}'
+  starts|ends with '...'
+  not && ||
 
-  File
-    file:absolute[.path]
-    file:ext|length|modified
-    file:name[.ext|.noext][.single]
-    file:onlyname[.noext][.single]
-    file:parent|path|size
-
-    OGNL
-      camelContext.ognl
-      exchange.ognl
-      exchangeProperty.foo.ognl
-      exception.ognl
-      header.foo.ognl
-      body.ognl
-      bodyAs(type).ognl
-      mandatoryBodyAs(type).ognl
+Literaler
+  null
+  numerisk N
+  streng '...'
 
