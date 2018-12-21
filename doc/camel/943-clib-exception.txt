@@ -1,0 +1,23 @@
+                            Object
+                              |
+                              |
+                          Throwable
+                              |
+                              |
+                          Exception
+                              |
+                              |
+   -------------------------------------------------------
+   |                                                     |
+   |                                                     |
+checked                                           RuntimeException
+   |                                                     |
+   |                                                     |
+  ...              ----------------------------------------------------------------------------
+                   |                       |                       |                          |
+                   |                       |                       |                          |
+         ClibContinueException  ClibRecoverableException  ClibWarningException  LsNavHqActivityErrorException
+                                           |                       |            LsNavHqActivityFailedException
+                                           |                       |            ...
+                                LsNavHqRecoverableException       ...
+                                ...
