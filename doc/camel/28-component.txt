@@ -26,21 +26,21 @@ Exchange
   MESSAGE_HISTORY
   TO_ENDPOINT
   getContext()
-  get-|setIn()
-  get-|setOut()
-  get-|setProperty()
-  get-|setExchangeId()
   get-|setException()
+  get-|setExchangeId()
   get-|setPattern()
+  get-|setProperty()
   get-|setUnitOfWork()
+  get-|setIn(): Message
+  get-|setOut(): Message
   ...
 
 Message
   getExchange()
-  get-|setBody()
+  get-|setMessageId()
   get-|setHeader()
   get-|setHeaders()
-  get-|setMessageId()
+  get-|setBody()
   get-|setAttachments()
   is- |setFault()
   ...
