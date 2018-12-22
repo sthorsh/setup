@@ -10,7 +10,7 @@
                 -----------------------------------------------------
                 |                                                   |
                 |                                                   |
-                |                                                 Cache-      
+                |                                                 Cache-
                 |                                              RouteBuilder
                 |                                                   |
                 |                                                   |
@@ -24,20 +24,20 @@
  |              |              |                 |                    ------------------------------------------
  |              |              |                 |                    |                |                       |
  |              |              |                 |                    |                |                       |
- |         AdviceWith-       Event-        NoErrorHandling-           |              Audit-               Singleton-      
+ |         AdviceWith-       Event-        NoErrorHandling-           |              Audit-               Singleton-
  |        RouteBuilder    RouteBuilder       RouteBuilder             |           RouteBuilder           RouteBuilder
  |              |              |                 |                    |                |                       |
  |              |              |                 |                    |                |                       |
  |              |              |                 |                    |                |                       |----------------
  |              |              |                 |                    |                |                       |               |
  |              |              |                 |                    |                |                       |               |
- |              |              |                 |                    |                |                       |         FileTransfer-      
+ |              |              |                 |                    |                |                       |         FileTransfer-
  |              |              |                 |                    |                |                       |         RouteBuilder
  |              |              |                 |                    |                |                       |               |
  |              |              |                 |                    |                |                       |               |
 ...            ...            ...               ...                  ...              ...                     ...             ...
 
-common-errorhandler           synk flow         service              flow/støtterute  asynk flow              asynk flow                  
+common-errorhandler           synk flow         service              flow/støtterute  asynk flow              asynk flow
 from(direct:)                 eventFrom(cxf:)   from(direct:)        from(direct:)    auditedFrom(activemq:)  singleAuditedFrom(activemq:)
-from(jetty:)                  eventFrom(jetty:)                                       auditedFrom(seda:)      singleAuditedFrom(ftp:)     
-                                                                                                              singleAuditedFrom(quartz:)  
+from(jetty:)                  eventFrom(jetty:)                                       auditedFrom(seda:)      singleAuditedFrom(ftp:)
+                                                                                                              singleAuditedFrom(quartz:)
