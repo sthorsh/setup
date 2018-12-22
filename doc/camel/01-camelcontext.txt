@@ -1,3 +1,9 @@
+RuntimeConfiguration
+  setDelayer(): void
+  setStreamCaching(): void
+  setTracing(): void
+  ...
+
 CamelContext
   addComponent(): void
   addEndpoint(): 
@@ -24,11 +30,5 @@ DefaultCamelContext
   ...
 
 BlueprintCamelContext
-  ...
-
-RuntimeConfiguration
-  setDelayer(): void
-  setStreamCaching(): void
-  setTracing(): void
   ...
 
