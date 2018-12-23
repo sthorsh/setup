@@ -1,0 +1,18 @@
+                                Service
+                                   |
+                                   |
+   -------------------------------------------------------------------
+   |             |                 |                                 |
+   |             |                 |                                 |
+   |       StaticService   SuspendableService               ShutdownableService
+   |             |                 |                                 |                
+   |             |                 |                                 |                
+   |             |                 |---------------------------------|
+   |             |                 |                |                |
+   |             |                 |                |                |
+   |             |                 |         StatefulService         |
+   |             |                 |                |                |
+   |             |                 |                |                |
+Consumer  EndpointRegistry    CamelContext    ServiceSupport         |
+...       ...                 ...             ...                   ...
+

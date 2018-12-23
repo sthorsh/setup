@@ -1,0 +1,17 @@
+ RuntimeConfiguration      
+          |                      
+          |                      
+    CamelContext        
+          |             
+          |             
+  ModelCamelContext    
+          |           
+          |           
+ DefaultCamelContext   
+          |
+          |
+          |----------------------------------------
+          |              |                        |        
+          |              |                        |           
+         ...   BlueprintCamelContext   OsgiDefaultCamelContext 
+

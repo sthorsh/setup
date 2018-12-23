@@ -1,0 +1,17 @@
+  Object      Registry
+     |           |
+     |           |
+     |------------
+     |
+     |----------------------------------------------------------
+     |                   |                 |                   |
+     |                   |                 |                   |
+AbstractMap              |                 |                   |
+     |                   |             Lifecycle-              |
+     |                   |          StrategySupport            |
+  HashMap                |                 |                   |
+     |                   |                 |                   |
+     |                   |                 |                   |
+  Simple-              Jndi-         OsgiService-     BlueprintContainer-
+ Registry            Registry          Registry            Registry
+

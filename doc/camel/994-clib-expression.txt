@@ -1,0 +1,22 @@
+                   Expression      Predicate
+                       |               |
+                       |               |
+                       -----------------
+                               |
+                               |
+           -----------------------------------------
+           |                                       |
+           |                                       |
+  ExpressionDefinition                     ExpressionSupport
+           |                                       |
+           |                                       |
+  ConstantExpression                       ExpressionAdapter          
+  ExchangePropertyExpression                       |                 
+  ExpressionClause                                 |                 
+  ConstantExpression                       1-102 in ExpressionBuilder 
+  ExchangePropertyExpression                1-11 in ExpressionClause  
+  ExpressionClause     
+  HeaderExpression
+  MethodCallExpression
+  SimpleExpression
+  ...

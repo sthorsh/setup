@@ -1,0 +1,15 @@
+                                                                 Processor
+                                                                     |
+                                                                     |
+   Component             Endpoint            Consumer             Producer            Exchange
+       |                    |                   |                    |                   |
+       |                    |                   |                    |                   |
+       |                    |                   |                    |                   |
+DefaultComponent     DefaultEndpoint     DefaultConsumer      DefaultProducer     DefaultExchange
+       |                    |                   |                    |                    
+       |                    |                   |                    |                    
+      ...                  ...                 ...                  ...                    
+       |                    |                   |                    |                    
+       |                    |                   |                    |                    
+  FooComponent         FooEndpoint         FooConsumer          FooProducer
+
