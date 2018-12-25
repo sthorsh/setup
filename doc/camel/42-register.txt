@@ -2,13 +2,18 @@ Registry
   lookupByNameAndType(String, Class<T>): T
   ...
 
-SimpleRegistry
-  put(K, V): V
+PropertyPlaceholderDelegateRegistry
+  getRegistry(): Registry
+  lookupByNameAndType(String, Class<T>): T
+  ...
+ 
+JndiRegistry
+  bind(String, Object): void
   lookupByNameAndType(String, Class<T>): T
   ...
 
-JndiRegistry
-  bind(String, Object): void
+SimpleRegistry
+  put(K, V): V
   lookupByNameAndType(String, Class<T>): T
   ...
 

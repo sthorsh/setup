@@ -1,3 +1,6 @@
+DSL
+  .convertBodyTo(Class<?> type, String charset): T
+
 TypeConverter
   convertTo(Class<T>, Object): T
   convertTo(Class<T>, Exchange, Object): T
