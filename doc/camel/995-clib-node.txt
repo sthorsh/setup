@@ -1,0 +1,32 @@
+                                                                  NamedNode
+                                                                      |
+                                                                      |
+                                                        OptionalIdentifiedDefinition            
+                                                                      |
+                                                                      |
+                                                ---------------------------------------------
+                                                |                     |                     |
+                                                |                     |                     |
+                                          FromDefinition     ProcessorDefinition      RestDefinition  ...
+                                                                      |
+                                                                      |
+         ---------------------------------------------------------------------------------------------------------------------------
+         |                    |                             |                          |                    |                      |
+         |                    |                             |                          |                    |                      |
+AggregateDefinition    ExpressionNode               NoOutputDefinition       OnCompletionDefinition  OutputDefinition       RouteDefinition
+ChoiceDefinition         DelayDefinition              BeanDefinition         OnExceptionDefinition     MulticastDefinition  ...
+LoadBalanceDefinition    FilterDefinition             ConvertBodyDefinition                            PipelineDefinition
+                         NoOutputExpressionNode       LogDefinition                                    ...
+                           DynamicRouterDefinition    MarshalDefinition
+                           EnrichDefinition           ProcessDefinition
+                           RecipientListDefinition    RemoveHeaderDefinition
+                           RoutingSlipDefinition      RemovePropertyDefinition                                                    
+                           SetBodyDefinition          SendDefinition
+                           SetHeaderDefinition          ToDefinition
+                           SetPropertyDefinition      SetExchangePropertyDefinition
+                           SortDefinition             StopDefinition
+                           TransformDefinition        ToDynamicDefinition
+                           ValidateDefinition           WireTapDefinition
+                         SplitDefinition              UnmarshalDefinition
+                         ...                          ...
+
