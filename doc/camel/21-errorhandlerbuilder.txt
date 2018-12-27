@@ -1,0 +1,23 @@
+DefaultErrorHandlerBuilder
+  maximumRedeliveries(int)
+  retryAttemptedLogLevel(LoggingLevel)
+  ...
+
+NoErrorHandlerBuilder
+  ...
+
+DeadLetterChannelBuilder
+  ...
+
+-----------------------------------------
+  Skop
+  - Globalt: errorHandler/onException
+  - Kontekst: errorHandler/onException
+  - Rute: errorHandler/onException (onException i rute vinner)
+
+  Konsument
+  - Bridge: CIA 11.4.8 TODO
+  Grenser for feilhåndtering
+  - Feil i konsument: bridgeErrorHandler=true
+  - Feil innenfor exchange lifecycle: per default
+
