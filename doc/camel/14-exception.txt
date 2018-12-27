@@ -1,0 +1,33 @@
+onException()
+    .maximumRedeliveries(n) resende før utmattelse
+    .continued(true) ignorere v/utmattelse
+    .handled(true).bean(...) håndtere v/utmattelse
+    .handled(true).process(...) håndtere v/utmattelse
+    .handled(true).to(uri) rerouting v/utmattelse
+
+onExceptionOccurred()
+
+onRedeliver()
+
+onWhen()
+
+retryWhile()
+
+do-try-catch
+  ... ref einar ...
+
+Bestemme exception policy
+    ingen treff: errorhandler
+    ett eksakt treff: entydig
+    flere eksakte treff: iht skop
+    ett subtypetreff: entydig
+    flere subtypetreff: iht subtypehierarki (gap detection)
+    wrappet exception:
+    Starter med innerst wrappete exception
+    Starter med først definerte onException
+    Matcher hver exception mot hver onException
+    Hvis samme type: direkte treff → ferdig
+    Hvis subtype: beregner gap → fortsetter
+    Resultat: direkte treff, subtypetreff el bom
+
+

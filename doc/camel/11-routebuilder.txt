@@ -1,10 +1,10 @@
 RouteBuilder
-↓ configure(): void
-  getContext(): ModelCamelContext 
-  errorHandler(): void
-  onException(): OnExceptionDefinition 
-  from(): RouteDefinition           
-  ...
+    configure(): void
+    errorHandler(): void
+    onException(): OnExceptionDefinition 
+    from(): RouteDefinition           
+    getContext(): ModelCamelContext 
+    ...
 
 AdviceWithRouteBuilder
   replaceFromWith(): void

@@ -1,6 +1,3 @@
-Builder
-  ...
-
 BuilderSupport
   body(): ValueBuilder
   constant(): ValueBuilder
@@ -18,16 +15,10 @@ BuilderSupport
   systemProperty(): ValueBuilder
   xpath(): XPathBuilder
 
-DeadLetterChannelBuilder
-
-DefaultErrorHandlerBuilder
-
 ExpressionBuilder
   dateExpression(): Expression
   randomExpression(): Expression
   ...
-
-NoErrorHandlerBuilder
 
 PredicateBuilder
   and(): Predicate

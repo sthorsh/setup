@@ -1,0 +1,55 @@
+DefaultErrorHandler
+    Hvis exchange.getException() != null
+      exchange.setProperty(Exchange.EXCEPTION_CAUGHT, e) 
+      Hvis exceptionPolicy != null
+        ...
+      Logger Failed delivery ...
+    Hvis utmattet
+      Logger routetrace 
+      Logger stacktrace
+      Returnerer
+    Hvis redelivery
+      exchange.setException(null)
+      exchange.getIn().copyFrom(data.original.getIn())
+    Delivery/redelivery
+      processor.process(exchange, ...)
+      Hvis done returnerer; else loop back around
+      
+  No error handler
+  - Returnerer
+
+  DeadLetterChannel
+  - Trinn 1-4: som DefaultErrorHandler
+  - Umattelse: setter target til uri
+  - Umattelse: setter exception til null
+  - Umattelse: fjerne headere for redelivery og rollback
+  - Umattelse: endrer evt exhange.in til original fra current
+  - Umattelse: merker exhange med CamelErrorHandlerHandled=true
+  - Umattelse: sender exchange til uri eg activemq:, file:, log:
+  - Umattelse: returnerer til CamelInternalProcessor
+
+  ----------------------------------------------------------
+  Objektgraf
+    Konsument|Processor₁
+    CamelInternalProcessor
+    Pipeline
+    RedeliveryErrorHandler|DelegateAsyncProcessor
+    Processor₂
+
+  Processor₂
+    try ...
+    catch (Throwable e) exchange.setException(e) 
+    callback.done(true)
+    return true
+
+  Skop
+  - Globalt: errorHandler/onException
+  - Kontekst: errorHandler/onException
+  - Rute: errorHandler/onException (onException i rute vinner)
+
+  Konsument
+  - Bridge: CIA 11.4.8 TODO
+  Grenser for feilhåndtering
+  - Feil i konsument: bridgeErrorHandler=true
+  - Feil innenfor exchange lifecycle: per default
+

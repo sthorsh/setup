@@ -1,0 +1,8 @@
+DSL
+  .convertBodyTo(): T
+
+TypeConverter
+  convertTo(): T
+  mandatoryConvertTo(): T
+  tryConvertTo(): T
+
