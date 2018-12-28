@@ -1,0 +1,55 @@
+CamelInternalProcessor:201
+  processor.process(exchange,...)
+
+Pipeline.process():84
+  while it.hasNext() && !exchange.getProperty(Exchange.ROUTE_STOP)
+    processor.process(exchange, ...)
+    hvis exchange.getException() != null → break
+    hvis exchange.getIn().isFault() → break
+    hvis exchange.getOut().isFault() → break
+    hvis exchange.getProperty(Exchange.ERRORHANDLER_HANDLED) → break
+    hvis exchange.getProperty(Exchange.ROUTE_STOP) → break
+  end while
+ 
+DefaultErrorHandler:421
+  while true
+    hvis exchange.getException() != null
+      Exception e = exchange.getException()
+      exchange.setProperty(Exchange.EXCEPTION_CAUGHT, e) 
+      hvis exceptionPolicy != null
+        ...
+      log failed (re)delivery
+    hvis utmattet
+      exchange.setProperty(Exchange.FAILURE_HANDLED
+      exchange.setProperty(Exchange.ERRORHANDLER_HANDLED
+      log routetrace & stacktrace
+      return true|false
+    hvis data.redeliveryCounter > 0
+      exchange.setException(null)
+      exchange.getIn().copyFrom(data.original.getIn())
+    (re)delivery
+      processor.process(exchange)
+    hvis exchange.getException() == null
+      return true
+  end while
+      
+  DeadLetterChannel
+    Trinn 1-4: som DefaultErrorHandler
+    Umattelse: setter target til uri
+    Umattelse: setter exception til null
+    Umattelse: fjerne headere for redelivery og rollback
+    Umattelse: endrer evt exhange.in til original fra curret
+    Umattelse: merker exhange med CamelErrorHandlerHandled=true
+    Umattelse: sender exchange til uri eg activemq:, file:, log:
+    Umattelse: returnerer til CamelInternalProcessor
+
+  No error handler
+  - Returnerer
+
+Processor
+  public boolean process(Exchange exchange, ...) {
+    try { ... }
+    catch (Throwable e) { exchange.setException(e); }
+    return true;
+  }
+
