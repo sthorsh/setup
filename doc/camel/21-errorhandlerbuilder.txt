@@ -3,10 +3,15 @@ DefaultErrorHandlerBuilder
   retryAttemptedLogLevel(LoggingLevel)
   ...
 
+DeadLetterChannelBuilder
+  ...
+
 NoErrorHandlerBuilder
   ...
 
-DeadLetterChannelBuilder
+OnExceptionDefinition
+  continued(): OnExceptionDefinition
+  handled(): OnExceptionDefinition
   ...
 
 -----------------------------------------
