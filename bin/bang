@@ -30,7 +30,7 @@ if [ -d ~/Pictures ]; then rm -rf ~/Pictures/; fi
 if [ -d ~/Public ]; then rm -rf ~/Public/; fi
 if [ -d ~/Templates ]; then rm -rf ~/Templates/; fi
 if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
-if [ -f ~/examples.desktop ]; then rm -rf ~/examples.desktop; fi
+if [ -f ~/examples.desktop ]; then rm ~/examples.desktop; fi
 sleep 1
 
 # Git
