@@ -23,13 +23,14 @@ if [ ! -e ~/tmp ]; then mkdir ~/tmp; fi
 sleep 1
 
 # Remove directories 
-echo "removing directories..."
+echo "removing directories and files..."
 if [ -d ~/Documents ]; then rm -rf ~/Documents/; fi
 if [ -d ~/Music ]; then rm -rf ~/Music/; fi
 if [ -d ~/Pictures ]; then rm -rf ~/Pictures/; fi
 if [ -d ~/Public ]; then rm -rf ~/Public/; fi
 if [ -d ~/Templates ]; then rm -rf ~/Templates/; fi
 if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
+if [ -f ~/examples.desktop ]; then rm -rf ~/examples.desktop; fi
 sleep 1
 
 # Git
@@ -175,8 +176,12 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
 sleep 1
 
-# Final clean up
-rm ~/examples.desktop
+# Create ssh key
+echo "creating ssh key..."
+ssh-keygen -t rsa -b 4096 -C "."
+# Set git remote url for ssh key
+git remote set-url origin git@github.com:sthorsh/setup.git
+sleep 1
 
 # Done
 echo "installation done, will reboot in 5 seconds..."
@@ -187,17 +192,15 @@ echo "installation done, will reboot in 5 seconds..."
 # Clean up
 # rm ~/bang
 
-# Create SSH key
-#ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-# Start SSH agent
-#eval "$(ssh-agent -s)"
-# Add private key to agent
-#ssh-add ~/.ssh/id_rsa
+  # Start SSH agent
+  # eval "$(ssh-agent -s)"
+  # Add private key to agent
+  # ssh-add ~/.ssh/id_rsa
+
 # Copy public key to clipboard
-#xclip -sel clip < ~/.ssh/id_rsa.pub
+# xclip -sel clip < ~/.ssh/id_rsa.pub
 # Add public key to GitHub
 #https://github.com/settings/keys
-# git remote set-url origin git@github.com:sthorsh/setup.git
 
 # Vim
 # :PluginInstall
