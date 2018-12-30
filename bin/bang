@@ -192,7 +192,7 @@ echo "installation done, will reboot in 5 seconds..."
 # Clean up
 # rm ~/bang
 
-  # Start SSH agent
+  # Start SSH agent 
   # eval "$(ssh-agent -s)"
   # Add private key to agent
   # ssh-add ~/.ssh/id_rsa
