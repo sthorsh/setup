@@ -1,5 +1,5 @@
 #! /bin/bash
- 
+
 # In terminal do:
 # wget --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/bin/bang
 # chmod +x bang
@@ -18,7 +18,7 @@ if [ ! -e ~/install ]; then mkdir ~/install; fi
 if [ ! -e ~/tmp ]; then mkdir ~/tmp; fi
 sleep 1
 
-# Remove directories 
+# Remove directories
 echo "removing directories and files..."
 if [ -d ~/Documents ]; then rm -rf ~/Documents/; fi
 if [ -d ~/Music ]; then rm -rf ~/Music/; fi
@@ -160,10 +160,10 @@ echo "editing gnome settings..."
 # Capslock to ctrl
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
 # Disable alt-pipe
-gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']" 
+gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']"
 # Disable key bindings for workspaces
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['disabled']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']" 
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['disabled']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "[disabled]"
@@ -177,19 +177,21 @@ sleep 1
 # Create ssh key
 echo "creating ssh key..."
 ssh-keygen -t rsa -b 4096 -C "."
+# Add ssh key to github
+curl -u "sthorsh" --data '{"title":"","key":"'"$(cat ~/.ssh/id_rsa.pub)"'"}' https://api.github.com/user/keys
 # Set git remote url for ssh key
 git remote set-url origin git@github.com:sthorsh/setup.git
 sleep 1
 
 # Pin favorite-apps
 dconf write /org/gnome/shell/favorite-apps "[
-  'chromium-browser.desktop', 
-  'firefox.desktop', 
-  'gnome-control-center.desktop', 
+  'chromium-browser.desktop',
+  'firefox.desktop',
+  'gnome-control-center.desktop',
   'gnome-screenshot.desktop',
-  'gnome-terminal.desktop', 
-  'nautilus.desktop', 
-  'slack.desktop', 
+  'gnome-terminal.desktop',
+  'nautilus.desktop',
+  'slack.desktop',
   'update-manager.desktop']"
 
 # Done
@@ -203,15 +205,11 @@ echo "installation done..."
 
 # Add ssh public key to github
 # xclip -sel clip < ~/.ssh/id_rsa.pub
-# https://github.com/settings/keys
+# to add: https://github.com/settings/keys
+# to verify: git commit -a -m "test"
 
-# Reboot 
+# Reboot
 # reboot
-
-  # Start SSH agent 
-  # eval "$(ssh-agent -s)"
-  # Add private key to agent
-  # ssh-add ~/.ssh/id_rsa
 
 # SQL developer
 # Download to ~/install/
@@ -221,4 +219,12 @@ echo "installation done..."
 # Todo
 # squirrel hidpi 3840x2160 resolution support ref run_scaled.sh
 # sqldeveloper hidpi 3840x2160 resolution support ref run_scaled.sh
+
+# Todo: programmatically add ssh public key to github
+# Ref: https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
+# NB: Creates a public key. Requires that you are authenticated via Basic Auth, or OAuth with at least [write:public_key] scope.
+# echo enter github ssh key label:
+# read label
+# echo \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
+# curl -u "user" --data \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
 
