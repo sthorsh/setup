@@ -1,6 +1,6 @@
 #! /bin/bash
  
-# From ~
+# In terminal do:
 # wget --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/bin/bang
 # chmod +x bang
 # ~/.bang
@@ -199,7 +199,7 @@ echo "installation done..."
 # rm ~/bang
 
 # Set background
-# ubuntu-logo.jpg
+# ~/.ubuntu-logo.jpg
 
 # Add ssh public key to github
 # xclip -sel clip < ~/.ssh/id_rsa.pub
