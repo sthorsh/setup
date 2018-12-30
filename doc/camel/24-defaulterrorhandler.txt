@@ -1,0 +1,29 @@
+RedeliveryErrorHandler.process()
+  target = null | FatalFallbackErrorHandler
+  deliverToFailureProcessor()
+
+RedeliveryErrorHandler.deliverToFailureProcessor()
+  exchange.setException(null)
+  prepareExchangeAfterFailure()
+  if (!handled)
+    log exhausted delivery
+
+RedeliveryErrorHandler.prepareExchangeAfterFailure()
+  exchange.setProperty(Exchange.FAILURE_HANDLED, true) 
+  exchange.setException(null)
+  if (continued)
+    prepareExchangeForContinue(exchange, ...)
+  if (handled)
+    exchange.setProperty(Exchange.ERRORHANDLER_HANDLED, Boolean.TRUE)
+  else
+    prepareExchangeAfterFailureNotHandled()
+
+RedeliveryErrorHandler.prepareExchangeAfterFailureNotHandled() 
+  exchange.setProperty(Exchange.ERRORHANDLER_HANDLED, false)
+  exchange.setException(exchange.getProperty(Exchange.EXCEPTION_CAUGHT))
+ 
+RedeliveryErrorHandler.prepareExchangeForContinue()
+  exchange.setException(null)
+  exchange.removeProperty(Exchange.FAILURE_HANDLED)
+  log failed delivery to be continued
+

@@ -1,0 +1,33 @@
+RedeliveryErrorHandler.process()
+
+  data.original = defensiveCopyExchangeIfNeeded(exchange)
+
+  while true
+    
+    if (exchange.getException() != null)
+      e = exchange.getException()
+      exchange.setProperty(Exchange.EXCEPTION_CAUGHT, e) 
+      log failed delivery attempt 0,1,2,3...N
+      data.redeliveryCounter++
+
+    if (!isFirst && !shouldRedeliver || exhausted)  
+      target = null
+      exchange.setProperty(Exchange.FAILURE_HANDLED, true)
+      exchange.setProperty(Exchange.ERRORHANDLER_HANDLED, false)
+      exchange.setException(exchange.getProperty(Exchange.EXCEPTION_CAUGHT))
+      log exhausted after delivery attempt N+1
+      return true
+
+    if (data.redeliveryCounter > 0)
+      exchange.setException(null)
+      exchange.getIn().copyFrom(data.original.getIn())
+
+    processor.process(exchange, ...)
+
+    if (exchange.getException() == null || 
+        exchange.getProperty(Exchange.FAILURE_HANDLED)
+        exchange.getProperty(Exchange.REDELIVERY_EXHAUSTED))
+      return
+
+  end while
+

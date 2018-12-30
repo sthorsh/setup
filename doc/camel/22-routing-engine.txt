@@ -1,0 +1,21 @@
+CamelInternalProcessor.process():122
+  processor.process(exchange, ...)
+
+Pipeline.process():84
+  while it.hasNext() && !exchange.getProperty(Exchange.ROUTE_STOP)
+    processor.process(exchange, ...)
+    if (exchange.getException() != null ||
+        exchange.getIn().isFault() || 
+        exchange.getOut().isFault() ||
+        exchange.getProperty(Exchange.ERRORHANDLER_HANDLED) ||
+        exchange.getProperty(Exchange.ROUTE_STOP) ||
+        exchange.isRollbackOnly())
+      break
+  end while
+ 
+RedeliveryErrorHandler.process():421
+      
+Processor.process():N
+  try { ... }
+  catch (Throwable t) { exchange.setException(t); }
+  return
