@@ -25,12 +25,10 @@ sudo apt-get install -y dselect
 sudo dselect update
 sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
 sudo apt-get -u dselect-upgrade
-sleep 1
 
 # To avoid error on first pull from github
 echo "removing package list..."
 if [ -f ~/etc/dpkg-get-selections.log ]; then rm ~/etc/dpkg-get-selections.log; fi
-sleep 1
 
 # Install Chrome
 if command -v google-chrome-stable > /dev/null 2>&1
@@ -43,7 +41,6 @@ else
   sudo apt-get update
   sudo apt-get install google-chrome-stable
 fi
-sleep 1
   
 # Configure Gnome
 echo "configuring gnome..."
@@ -61,7 +58,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
-sleep 1
 
 # Create directories
 echo "creating directories..."
@@ -71,7 +67,6 @@ if [ ! -e ~/doc ]; then mkdir ~/doc; fi
 if [ ! -e ~/etc ]; then mkdir ~/etc; fi
 if [ ! -e ~/install ]; then mkdir ~/install; fi
 if [ ! -e ~/tmp ]; then mkdir ~/tmp; fi
-sleep 1
 
 # Remove directories
 echo "removing directories and files..."
@@ -81,7 +76,6 @@ if [ -d ~/Public ]; then rm -rf ~/Public/; fi
 if [ -d ~/Templates ]; then rm -rf ~/Templates/; fi
 if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
 if [ -f ~/examples.desktop ]; then rm ~/examples.desktop; fi
-sleep 1
 
 # Install Java
 if command -v java > /dev/null 2>&1
@@ -94,7 +88,6 @@ else
   sudo apt-get install -y oracle-java8-set-default
   sudo ln -sf /usr/lib/jvm/java-8-oracle/ /usr/lib/jvm/java
 fi
-sleep 1
 
 # Install Intellij
 if command -v /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1
@@ -105,7 +98,6 @@ then
     wget --directory-prefix=install https://download.jetbrains.com/idea/ideaIC-${IDEA_VERSION}-no-jdk.tar.gz
     sudo tar -xf install/ideaIC-${IDEA_VERSION}-no-jdk.tar.gz -C /usr/lib
   fi
-sleep 1
 
 # Install Maven
 if command -v mvn > /dev/null 2>&1
@@ -117,7 +109,6 @@ else
   sudo tar -xf install/apache-maven-${MAVEN_VERSION}-bin.tar.gz -C /usr/lib
   sudo ln -sf /usr/lib/apache-maven-${MAVEN_VERSION}/ /usr/lib/apache-maven
 fi
-sleep 1
 
 # Install Slack
 if command -v slack > /dev/null 2>&1
@@ -129,7 +120,6 @@ else
   sudo apt-get install gdebi-core -y
   sudo gdebi install/slack-desktop-${SLACK_VERSION}-amd64.deb
 fi
-sleep 1
 
 # Install Squirrel
 if [ -f /usr/lib/squirrelsql/squirrel-sql.sh ]
@@ -142,7 +132,6 @@ else
   sudo ln -sf /usr/lib/squirrelsql-${SQUIRREL_VERSION}-standard/ /usr/lib/squirrelsql
   sudo chmod -R +x /usr/lib/squirrelsql
 fi
-sleep 1
 
 # Backup bashrc before first pull from github
 if [ ! -f ~/.bashrc-ubuntu ]; then mv ~/.bashrc ~/.bashrc-ubuntu; fi
@@ -162,7 +151,6 @@ fi
 # First pull from github
 echo "first pull from github..."
 git pull --rebase origin master
-sleep 1
   
 # Configure tmux
 if [ -d ~/.tmux/plugins/tpm ]
@@ -172,7 +160,6 @@ else
   echo "configure tmux..."
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
-sleep 1
 
 # Configure vim
 if [ -d ~/.vim/bundle/Vundle.vim ]
@@ -183,7 +170,6 @@ else
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +BundleInstall +qall
 fi
-sleep 1
 
 # Create ssh key
 if [ -f ~/.ssh/id_rsa.pub ]
@@ -193,7 +179,6 @@ else
   echo "creating ssh key..."
   ssh-keygen -t rsa -b 4096 -C "."
 fi
-sleep 1
 
 # Pin to desktop
 dconf write /org/gnome/shell/favorite-apps "[
