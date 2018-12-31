@@ -1,12 +1,72 @@
 #! /bin/bash
 
-# In terminal do:
+# To run this script do:
 # wget --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/bin/bang
 # chmod +x bang
 # ~/.bang
 
-# Patch ubuntu
-echo "run software updater, reboot, remove me..." && exit 0
+# Version numbers
+SLACK_VERSION=3.3.3
+IDEA_VERSION=2018.3.2
+MAVEN_VERSION=3.5.4
+SQUIRREL_VERSION=3.8.1
+
+# Things to do before running this script
+echo "check version numbers, remove this line, run again..." && exit 0
+
+# Patch Ubuntu
+echo "patching ubuntu and installing packages..."
+# if [ -e /usr/lib/jvm/java ]
+# then
+#   echo "apt update and upgrade..."
+sudo apt-get update
+sudo apt-get -u dist-upgrade
+# else
+sudo apt-get install -y dselect
+  # sudo apt-get update
+sudo dselect update
+sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
+sudo apt-get -u dselect-upgrade
+# fi
+sleep 1
+
+# Configure Gnome
+echo "configure gnome..."
+# capslock to ctrl
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
+# disable alt-pipe
+gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['disabled']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['disabled']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "[disabled]"
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings:/ close-tab "[disabled]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
+sleep 1
+
+# Install Chrome
+# if command -v chromium-browser > /dev/null 2>&1
+# then
+#   echo "chrome installed..."
+# else
+#   echo "installing chrome..."
+#   sudo apt-get install -y chromium-browser
+# fi
+# sleep 1
+  
+# # Install Vim
+# if command -v vim > /dev/null 2>&1
+# then
+#   echo "vim installed..."
+# else
+#   echo "installing vim..."
+#   sudo apt-get install -y vim
+# fi
+# sleep 1
 
 # Create directories
 echo "creating directories..."
@@ -29,83 +89,7 @@ if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
 if [ -f ~/examples.desktop ]; then rm ~/examples.desktop; fi
 sleep 1
 
-# Git
-if command -v git > /dev/null 2>&1
-then
-  echo "git installed..."
-else
-  echo "installing git..."
-  sudo apt-get install -y git
-  git config --global user.name svein
-  git config --global user.email sthorsh@gmail.com
-  git init
-  git remote add origin https://github.com/sthorsh/setup.git
-  mv ~/.bashrc ~/.bashrc-ubuntu
-  git pull --rebase origin master
-fi
-sleep 1
-
-# Vim
-if command -v vim > /dev/null 2>&1
-then
-  echo "vim installed..."
-else
-  echo "installing vim..."
-  sudo apt-get install -y vim
-  echo "git clone vim bundle..."
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  echo "install vim plugins..."
-  vim +BundleInstall +qall
-fi
-sleep 1
-
-# Tmux
-if [ -d ~/.tmux/plugins/tpm ]
-then
-  echo "tmux tpm cloned..."
-else
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fi
-sleep 1
-
-# Ubuntu packages
-if [ -e /usr/lib/jvm/java ]
-then
-  echo "apt update and upgrade..."
-    sudo apt-get update && sudo apt-get -u dist-upgrade
-else
-  echo "apt update and install..."
-  sudo apt-get install -y dselect
-  sudo apt-get update
-  sudo dselect update
-  sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
-  sudo apt-get -u dselect-upgrade
-fi
-sleep 1
-
-# Chrome
-if command -v chromium-browser > /dev/null 2>&1
-then
-  echo "chrome installed..."
-else
-  echo "installing chrome..."
-  sudo apt-get install -y chromium-browser
-fi
-sleep 1
-
-# Slack
-if command -v slack > /dev/null 2>&1
-then
-  echo "slack installed..."
-else
-  echo "installing slack..."
-  wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.1-amd64.deb"
-  sudo apt-get install gdebi-core -y
-  sudo gdebi install/slack-desktop-3.3.1-amd64.deb
-fi
-sleep 1
-
-# Java
+# Install Java
 if command -v java > /dev/null 2>&1
 then
   echo "java installed..."
@@ -118,69 +102,101 @@ else
 fi
 sleep 1
 
-# Maven
+# Install Intellij
+if command -v /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1
+then
+    echo "intellij installed..."
+  else
+    echo "installing intellij..."
+    wget --directory-prefix=install https://download.jetbrains.com/idea/ideaIC-${IDEA_VERSION}-no-jdk.tar.gz
+    sudo tar -xf install/ideaIC-${IDEA_VERSION}-no-jdk.tar.gz -C /usr/lib
+  fi
+sleep 1
+
+# Install Maven
 if command -v mvn > /dev/null 2>&1
 then
   echo "maven installed..."
 else
   echo "installing maven..."
-  wget --directory-prefix=install http://apache.uib.no/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
-  sudo tar -xf install/apache-maven-3.5.4-bin.tar.gz -C /usr/lib
-  sudo ln -sf /usr/lib/apache-maven-3.5.4/ /usr/lib/apache-maven
+  wget --directory-prefix=install http://apache.uib.no/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
+  sudo tar -xf install/apache-maven-${MAVEN_VERSION}-bin.tar.gz -C /usr/lib
+  sudo ln -sf /usr/lib/apache-maven-${MAVEN_VERSION}/ /usr/lib/apache-maven
 fi
 sleep 1
 
-# Intellij
-if command -v /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1
-then
-  echo "intellij installed..."
-else
-  echo "installing intellij..."
-  wget --directory-prefix=install https://download.jetbrains.com/idea/ideaIC-2018.2.2-no-jdk.tar.gz
-  sudo tar -xf install/ideaIC-2018.2.2-no-jdk.tar.gz -C /usr/lib
-  sudo ln -sf /usr/lib/idea-IC-182.4129.33/ /usr/lib/idea-IC
-fi
-sleep 1
-
-# Squirrel
+# Install Squirrel
 if [ -f /usr/lib/squirrelsql/squirrel-sql.sh ]
 then
   echo "squirrel installed..."
 else
   echo "installing squirrel..."
-  wget --directory-prefix=install https://sourceforge.net/projects/squirrel-sql/files/1-stable/3.8.1-plainzip/squirrelsql-3.8.1-standard.zip
-  sudo unzip install/squirrelsql-3.8.1-standard.zip -d /usr/lib > /dev/null
-  sudo ln -sf /usr/lib/squirrelsql-3.8.1-standard/ /usr/lib/squirrelsql
+  wget --directory-prefix=install https://sourceforge.net/projects/squirrel-sql/files/1-stable/${SQUIRREL_VERSION}-plainzip/squirrelsql-${SQUIRREL_VERSION}-standard.zip
+  sudo unzip install/squirrelsql-${SQUIRREL_VERSION}-standard.zip -d /usr/lib > /dev/null
+  sudo ln -sf /usr/lib/squirrelsql-${SQUIRREL_VERSION}-standard/ /usr/lib/squirrelsql
   sudo chmod -R +x /usr/lib/squirrelsql
 fi
 sleep 1
 
-# Gnome
-echo "editing gnome settings..."
-# Capslock to ctrl
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-# Disable alt-pipe
-gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']"
-# Disable key bindings for workspaces
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['disabled']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['disabled']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "[disabled]"
-gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings:/ close-tab "[disabled]"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
+# Install Slack
+if command -v slack > /dev/null 2>&1
+then
+  echo "slack installed..."
+else
+  echo "installing slack..."
+  wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb"
+  sudo apt-get install gdebi-core -y
+  sudo gdebi install/slack-desktop-${SLACK_VERSION}-amd64.deb
+fi
+sleep 1
+
+# Backup bashrc before pull from github
+if [ ! -f ~/.bashrc-ubuntu ]; then mv ~/.bashrc ~/.bashrc-ubuntu; fi
+
+# Configure git and pull from github
+if git remote -v | grep origin > /dev/null 2>&1; 
+then 
+  echo "git already configured..."
+else 
+  echo "configure git..."
+  git config --global user.name svein
+  git config --global user.email sthorsh@gmail.com
+  git init
+  git remote add origin https://github.com/sthorsh/setup.git
+fi
+echo "pull from github..."
+git pull --rebase origin master
+sleep 1
+  
+# Configure tmux
+if [ -d ~/.tmux/plugins/tpm ]
+then
+  echo "tmux already configured..."
+else
+  echo "configure tmux..."
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+sleep 1
+
+# Configure vim
+if [ -d ~/.vim/bundle/Vundle.vim ]
+then
+  echo "vim already configured..."
+else
+  echo "configure vim..."
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +BundleInstall +qall
+fi
 sleep 1
 
 # Create ssh key
-echo "creating ssh key..."
-ssh-keygen -t rsa -b 4096 -C "."
-# Add ssh key to github
-curl -u "sthorsh" --data '{"title":"","key":"'"$(cat ~/.ssh/id_rsa.pub)"'"}' https://api.github.com/user/keys
-# Set git remote url for ssh key
-git remote set-url origin git@github.com:sthorsh/setup.git
+if [ -f ~/.ssh/id_rsa.pub ]
+then 
+  echo "ssh key already exists..."
+else
+  echo "creating ssh key..."
+  ssh-keygen -t rsa -b 4096 -C "."
+fi
 sleep 1
 
 # Pin favorite-apps
@@ -203,24 +219,32 @@ echo "installation done..."
 # Set background
 # ~/.ubuntu-logo.jpg
 
+# IntelliJ
+# sudo ln -sf /usr/lib/idea-IC-<build-number>/ /usr/lib/idea-IC
+
 # Add ssh public key to github
 # xclip -sel clip < ~/.ssh/id_rsa.pub
-# to add: https://github.com/settings/keys
-# to verify: git commit -a -m "test"
+# https://github.com/settings/keys
+# to verify: git commit -a -m "."; git push origin master;
+
+# Change github access from https to ssh
+# git remote set-url origin git@github.com:sthorsh/setup.git
 
 # Reboot
 # reboot
 
-# SQL developer
+# Install sqldeveloper
 # Download to ~/install/
-# sudo unzip ~/install/sqldeveloper-18.2.0.183.1748-no-jre.zip -d /usr/lib > /dev/null
+# sudo unzip ~/install/sqldeveloper-18.2.0.183.1748-no-jre.zip -d /usr/lib
 # sudo ln -sf /usr/lib/sqldeveloper-18.2.0.183.1748-no-jre /usr/lib/sqldeveloper
 
-# Todo
-# squirrel hidpi 3840x2160 resolution support ref run_scaled.sh
+# Configure sqldeveloper
 # sqldeveloper hidpi 3840x2160 resolution support ref run_scaled.sh
 
-# Todo: programmatically add ssh public key to github
+# Configure squirrel
+# squirrel hidpi 3840x2160 resolution support ref run_scaled.sh
+
+# Add ssh public key to github
 # Ref: https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
 # NB: Creates a public key. Requires that you are authenticated via Basic Auth, or OAuth with at least [write:public_key] scope.
 # echo enter github ssh key label:
