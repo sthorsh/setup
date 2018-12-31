@@ -212,13 +212,13 @@ echo "installation done..."
 # No need for this anymore
 # rm ~/bang
 
-# Set background
+# Automation is too much work
 # ~/.ubuntu-logo.jpg
 
 # Required since jar-filename contains build number
 # sudo ln -sf /usr/lib/idea-IC-<build-number>/ /usr/lib/idea-IC
 
-# Add ssh key to github
+# See below for (possible) automation
 # xclip -sel clip < ~/.ssh/id_rsa.pub
 # Go to: https://github.com/settings/keys
 
@@ -234,6 +234,14 @@ echo "installation done..."
 # Reboot
 # reboot
 
+# Automation of: add ssh public key to github (if possible)
+# Ref: https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
+# NB: Creates a public key. Requires that you are authenticated via Basic Auth, or OAuth with at least [write:public_key] scope.
+# echo enter github ssh key label:
+# read label
+# echo \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
+# curl -u "user" --data \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
+
 # Install sqldeveloper
 # Download to ~/install/
 # sudo unzip ~/install/sqldeveloper-18.2.0.183.1748-no-jre.zip -d /usr/lib
@@ -244,12 +252,4 @@ echo "installation done..."
 
 # Configure squirrel
 # squirrel hidpi 3840x2160 resolution support ref run_scaled.sh
-
-# Add ssh public key to github
-# Ref: https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
-# NB: Creates a public key. Requires that you are authenticated via Basic Auth, or OAuth with at least [write:public_key] scope.
-# echo enter github ssh key label:
-# read label
-# echo \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
-# curl -u "user" --data \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
 
