@@ -198,7 +198,7 @@ sleep 1
 
 # Pin favorite-apps
 dconf write /org/gnome/shell/favorite-apps "[
-  'google-chrome-stable.desktop',
+  'google-chrome.desktop',
   'firefox.desktop',
   'gnome-control-center.desktop',
   'gnome-screenshot.desktop',
