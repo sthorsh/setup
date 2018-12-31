@@ -14,7 +14,7 @@ SQUIRREL_VERSION=3.8.1
 # Reminder before running this script
 echo "check version numbers, remove this line, run again..." && exit 0
 
-# Get package list before patching the os
+# Get package list before patching os
 echo "getting package list from github..."
 wget --directory-prefix=etc --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/etc/dpkg-get-selections.log
 
