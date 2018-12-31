@@ -17,7 +17,6 @@ echo "check version numbers, remove this line, run again..." && exit 0
 # Get package list before patching the os
 echo "getting package list from github..."
 wget --directory-prefix=etc --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/etc/dpkg-get-selections.log
-sleep 1
 
 # Patch Ubuntu
 echo "patching ubuntu and installing packages..."
