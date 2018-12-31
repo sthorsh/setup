@@ -26,7 +26,6 @@ sudo apt-get install -y dselect
 sudo dselect update
 sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
 sudo apt-get -u dselect-upgrade
-# fi
 sleep 1
 
 # To avoid error during initial pull from github
