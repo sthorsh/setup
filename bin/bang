@@ -209,28 +209,30 @@ dconf write /org/gnome/shell/favorite-apps "[
 # Done
 echo "installation done..."
 
-# Reboot
-# reboot
-
-# Verify that this is not necessary
-# sudo apt-get update && apt-get -u dist-upgrade
-
-# Clean up
+# No need for this anymore
 # rm ~/bang
 
 # Set background
 # ~/.ubuntu-logo.jpg
 
-# IntelliJ
+# Required since jar-filename contains build number
 # sudo ln -sf /usr/lib/idea-IC-<build-number>/ /usr/lib/idea-IC
 
-# Add ssh public key to github
+# Add ssh key to github
 # xclip -sel clip < ~/.ssh/id_rsa.pub
-# https://github.com/settings/keys
-# to verify: git commit -a -m "."; git push origin master;
+# Go to: https://github.com/settings/keys
 
 # Change github access from https to ssh
 # git remote set-url origin git@github.com:sthorsh/setup.git
+
+# Test passwordless github ssh access
+# git commit -a -m "."; git push origin master;
+
+# This should not be necessary
+# sudo apt-get update && apt-get -u dist-upgrade
+
+# Reboot
+# reboot
 
 # Install sqldeveloper
 # Download to ~/install/
