@@ -212,13 +212,13 @@ echo "installation done..."
 # No need for this anymore
 # rm ~/bang
 
-# Automation is too much work
-# ~/.ubuntu-logo.jpg
+# Set desktop background (automation is too much work)
+# Use ~/Pictures/ubuntu-logo.jpg
 
 # Required since jar-filename contains build number
 # sudo ln -sf /usr/lib/idea-IC-<build-number>/ /usr/lib/idea-IC
 
-# See below for (possible) automation
+# Add ssh key to github (see end-of-file for possible automation)
 # xclip -sel clip < ~/.ssh/id_rsa.pub
 # Go to: https://github.com/settings/keys
 
