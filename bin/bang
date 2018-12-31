@@ -6,15 +6,15 @@
 # ~/.bang
 
 # Version numbers
-SLACK_VERSION=3.3.3
 IDEA_VERSION=2018.3.2
 MAVEN_VERSION=3.5.4
+SLACK_VERSION=3.3.3
 SQUIRREL_VERSION=3.8.1
 
-# Things to do before running this script
+# Reminder before running this script
 echo "check version numbers, remove this line, run again..." && exit 0
 
-# Get package list before patching ubuntu
+# Get package list before patching the os
 echo "getting package list from github..."
 wget --directory-prefix=etc --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/etc/dpkg-get-selections.log
 sleep 1
@@ -28,7 +28,7 @@ sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
 sudo apt-get -u dselect-upgrade
 sleep 1
 
-# To avoid error during initial pull from github
+# To avoid error on first pull from github
 echo "removing package list..."
 if [ -f ~/etc/dpkg-get-selections.log ]; then rm ~/etc/dpkg-get-selections.log; fi
 sleep 1
@@ -78,7 +78,6 @@ sleep 1
 echo "removing directories and files..."
 if [ -d ~/Documents ]; then rm -rf ~/Documents/; fi
 if [ -d ~/Music ]; then rm -rf ~/Music/; fi
-if [ -d ~/Pictures ]; then rm -rf ~/Pictures/; fi
 if [ -d ~/Public ]; then rm -rf ~/Public/; fi
 if [ -d ~/Templates ]; then rm -rf ~/Templates/; fi
 if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
@@ -146,10 +145,10 @@ else
 fi
 sleep 1
 
-# Backup bashrc before pull from github
+# Backup bashrc before first pull from github
 if [ ! -f ~/.bashrc-ubuntu ]; then mv ~/.bashrc ~/.bashrc-ubuntu; fi
 
-# Configure git and pull from github
+# Configure git
 if git remote -v | grep origin > /dev/null 2>&1; 
 then 
   echo "git already configured..."
@@ -160,7 +159,9 @@ else
   git init
   git remote add origin https://github.com/sthorsh/setup.git
 fi
-echo "pull from github..."
+
+# First pull from github
+echo "first pull from github..."
 git pull --rebase origin master
 sleep 1
   
@@ -195,7 +196,7 @@ else
 fi
 sleep 1
 
-# Pin favorite-apps
+# Pin to desktop
 dconf write /org/gnome/shell/favorite-apps "[
   'google-chrome.desktop',
   'firefox.desktop',
@@ -206,30 +207,28 @@ dconf write /org/gnome/shell/favorite-apps "[
   'slack.desktop',
   'update-manager.desktop']"
 
+# Change github access from https to passwordless ssh
+git remote set-url origin git@github.com:sthorsh/setup.git
+
 # Done
 echo "installation done..."
 
-# No need for this anymore
-# rm ~/bang
+# Add ssh key to github (see further down for possible automation)
+# xclip -sel clip < ~/.ssh/id_rsa.pub
+# Go to: https://github.com/settings/keys
 
-# Set desktop background (automation is too much work)
-# Use ~/Pictures/ubuntu-logo.jpg
+# Test passwordless github ssh access
+# git commit -a -m "."
+# git push origin master
 
 # Required since jar-filename contains build number
 # sudo ln -sf /usr/lib/idea-IC-<build-number>/ /usr/lib/idea-IC
 
-# Add ssh key to github (see end-of-file for possible automation)
-# xclip -sel clip < ~/.ssh/id_rsa.pub
-# Go to: https://github.com/settings/keys
+# Set desktop background (automation is too much work)
+# Use ~/Pictures/ubuntu-logo.jpg
 
-# Change github access from https to ssh
-# git remote set-url origin git@github.com:sthorsh/setup.git
-
-# Test passwordless github ssh access
-# git commit -a -m "."; git push origin master;
-
-# This should not be necessary
-# sudo apt-get update && apt-get -u dist-upgrade
+# No need for this anymore
+# rm ~/bang
 
 # Reboot
 # reboot
