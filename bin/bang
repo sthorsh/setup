@@ -14,28 +14,41 @@ SQUIRREL_VERSION=3.8.1
 # Things to do before running this script
 echo "check version numbers, remove this line, run again..." && exit 0
 
-# We need package list from github before patching ubuntu
-echo "wget package list from github..."
+# Get package list before patching ubuntu
+echo "getting package list from github..."
 wget --directory-prefix=etc --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/etc/dpkg-get-selections.log
+sleep 1
 
 # Patch Ubuntu
 echo "patching ubuntu and installing packages..."
-# if [ -e /usr/lib/jvm/java ]
-# then
-#   echo "apt update and upgrade..."
-sudo apt-get update
-sudo apt-get -u dist-upgrade
-# else
+sudo apt-get update && apt-get -u dist-upgrade
 sudo apt-get install -y dselect
-  # sudo apt-get update
 sudo dselect update
 sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
 sudo apt-get -u dselect-upgrade
 # fi
 sleep 1
 
+# To avoid error during initial pull from github
+echo "removing package list..."
+if [ -f ~/etc/dpkg-get-selections.log ]; then rm ~/etc/dpkg-get-selections.log; fi
+sleep 1
+
+# Install Chrome
+if command -v google-chrome-stable > /dev/null 2>&1
+then
+  echo "chrome already installed..."
+else
+  echo "installing chrome..."
+  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+  sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  sudo apt-get update
+  sudo apt-get install google-chrome-stable
+fi
+sleep 1
+  
 # Configure Gnome
-echo "configure gnome..."
+echo "configuring gnome..."
 # capslock to ctrl
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
 # disable alt-pipe
@@ -51,26 +64,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
 sleep 1
-
-# Install Chrome
-# if command -v chromium-browser > /dev/null 2>&1
-# then
-#   echo "chrome installed..."
-# else
-#   echo "installing chrome..."
-#   sudo apt-get install -y chromium-browser
-# fi
-# sleep 1
-  
-# # Install Vim
-# if command -v vim > /dev/null 2>&1
-# then
-#   echo "vim installed..."
-# else
-#   echo "installing vim..."
-#   sudo apt-get install -y vim
-# fi
-# sleep 1
 
 # Create directories
 echo "creating directories..."
@@ -205,7 +198,7 @@ sleep 1
 
 # Pin favorite-apps
 dconf write /org/gnome/shell/favorite-apps "[
-  'chromium-browser.desktop',
+  'google-chrome-stable.desktop',
   'firefox.desktop',
   'gnome-control-center.desktop',
   'gnome-screenshot.desktop',
@@ -216,6 +209,12 @@ dconf write /org/gnome/shell/favorite-apps "[
 
 # Done
 echo "installation done..."
+
+# Reboot
+# reboot
+
+# Verify that this is not necessary
+# sudo apt-get update && apt-get -u dist-upgrade
 
 # Clean up
 # rm ~/bang
@@ -233,9 +232,6 @@ echo "installation done..."
 
 # Change github access from https to ssh
 # git remote set-url origin git@github.com:sthorsh/setup.git
-
-# Reboot
-# reboot
 
 # Install sqldeveloper
 # Download to ~/install/
