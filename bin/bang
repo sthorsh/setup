@@ -14,6 +14,9 @@ SQUIRREL_VERSION=3.8.1
 # Things to do before running this script
 echo "check version numbers, remove this line, run again..." && exit 0
 
+# We need package list from github before patching ubuntu
+wget --directory-prefix=etc --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/etc/dpkg-get-selections.log
+
 # Patch Ubuntu
 echo "patching ubuntu and installing packages..."
 # if [ -e /usr/lib/jvm/java ]
@@ -125,6 +128,18 @@ else
 fi
 sleep 1
 
+# Install Slack
+if command -v slack > /dev/null 2>&1
+then
+  echo "slack installed..."
+else
+  echo "installing slack..."
+  wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb"
+  sudo apt-get install gdebi-core -y
+  sudo gdebi install/slack-desktop-${SLACK_VERSION}-amd64.deb
+fi
+sleep 1
+
 # Install Squirrel
 if [ -f /usr/lib/squirrelsql/squirrel-sql.sh ]
 then
@@ -135,18 +150,6 @@ else
   sudo unzip install/squirrelsql-${SQUIRREL_VERSION}-standard.zip -d /usr/lib > /dev/null
   sudo ln -sf /usr/lib/squirrelsql-${SQUIRREL_VERSION}-standard/ /usr/lib/squirrelsql
   sudo chmod -R +x /usr/lib/squirrelsql
-fi
-sleep 1
-
-# Install Slack
-if command -v slack > /dev/null 2>&1
-then
-  echo "slack installed..."
-else
-  echo "installing slack..."
-  wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb"
-  sudo apt-get install gdebi-core -y
-  sudo gdebi install/slack-desktop-${SLACK_VERSION}-amd64.deb
 fi
 sleep 1
 
