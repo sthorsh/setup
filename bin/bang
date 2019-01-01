@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# To run this script do:
+# To run this script, do:
 # wget --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/bin/bang
 # chmod +x bang
 # ~/.bang
