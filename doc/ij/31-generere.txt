@@ -1,25 +1,25 @@
 GENERERE
 
-alt-insert
-- ctor
-- getter
-- setter
-- equals() and hashCode()
-- toString()
-- delegatmetoder
-- setup()
-- tearDown()
-- testmetoder
+  alt-insert
+  - ctor
+  - getter
+  - setter
+  - equals() and hashCode()
+  - toString()
+  - delegatmetoder
+  - setup()
+  - tearDown()
+  - testmetoder
 
-implement/override
-- ctrl-i
-- ctrl-o
+  implement/override
+  - ctrl-i
+  - ctrl-o
 
-surround/unwrap
-- ctrl-alt-t
-- ctrl-shift-delete
+  surround/unwrap
+  - ctrl-alt-t
+  - ctrl-shift-delete
 
-kommentarer
-- ctrl-numpad /
-- ctrl-shift-numpad /
+  kommentarer
+  - ctrl-numpad /
+  - ctrl-shift-numpad /
 

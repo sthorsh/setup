@@ -1,6 +1,5 @@
 IDEA
 
-
 Keymaps
 - ctrl-shift-a                action|option
 - ctrl-alt-s                  innstillinger
