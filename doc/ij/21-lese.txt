@@ -3,17 +3,17 @@ LESE
 ctrl-f1           advarsel|feil
 shift-f1          ekstern javadoc
   
-  ctrl-d            diff node m/fil
-  alt-v b           diff clipboard m/editor
-  alt-v m           diff node m/editor
+ctrl-d            diff fil m/fil
+alt-v b           diff clipboard m/editor
+alt-v m           diff fil m/editor
   
-  ctrl-shift-i      definisjon node|id
+ctrl-shift-i      definisjon fil|id
   
-  ctrl-p            params
-  ctrl-shift-p      expr type
+ctrl-p            params
+ctrl-shift-p      expression type
   
-  alt-q             context
-  ctrl-q            javadoc
+ctrl-q            javadoc
+alt-q             kontekst
   
-  ctrl-alt-x,p      xpath expr
+ctrl-alt-x p      xpath expression
    
