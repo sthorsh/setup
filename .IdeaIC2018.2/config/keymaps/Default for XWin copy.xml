@@ -17,10 +17,10 @@
     <keyboard-shortcut first-keystroke="shift ctrl f9" />
   </action>
   <action id="EditorCodeBlockEnd">
-    <keyboard-shortcut first-keystroke="ctrl altGraph 0" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt k" />
   </action>
   <action id="EditorCodeBlockStart">
-    <keyboard-shortcut first-keystroke="ctrl altGraph 7" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt m" />
   </action>
   <action id="EditorToggleCase">
     <keyboard-shortcut first-keystroke="shift alt u" />
@@ -42,6 +42,9 @@
   </action>
   <action id="StartStopMacroRecording">
     <keyboard-shortcut first-keystroke="shift alt m" />
+  </action>
+  <action id="StructuralSearchPlugin.StructuralSearchAction">
+    <keyboard-shortcut first-keystroke="shift ctrl s" />
   </action>
   <action id="Unsplit">
     <keyboard-shortcut first-keystroke="alt period" />

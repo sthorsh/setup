@@ -1,31 +1,20 @@
-MOVE/FIND
+FIND
 
-←→                          char
-ctrl-←→                     word
-home|end                    line start|end
+ctrl-f             finn fritekst|alt-↓|valgt str
 
-↑↓                          line
-ctrl-g                      line:col
-ctrl-home|end               text start|end
+ctrl-f3            cursor-over-str: finn neste str
+ctrl-f7            cursor-over-navn: finn neste bruk
 
-ctrl-shift-m                match {}()[]<>
-ctrl-alt-shift-m|k          blokk start|end
+ctrl-shift-f7      cursor-over-str: fremhev strs
+                   cursor-over-navn: fremhev bruk
+                   cursor-over-extends: fremhev @Override
+                   cursor-over-implements: fremhev @Override
+                   cursor-over-return: fremhev return|throw
+                   cursor-over-throw: fremhev return|throw
 
-alt-↑↓                      metode
-ctrl-f12                    metode
+ctrl-l             finn neste (evt f3)
+ctrl-shift-l       finn forrige (evt shift-f3)
 
-ctrl-f                      finn fritekst|alt-↓|valgt str
-ctrl-f3                     cursor-over-str: finn neste str
-ctrl-f7                     cursor-over-navn: finn neste bruk
-ctrl-shift-f7               cursor-over-str: fremhev strs
-                            cursor-over-navn: fremhev bruk
-                            cursor-over-extends: fremhev @Override
-                            cursor-over-implements: fremhev @Override
-                            cursor-over-return: fremhev return|throw
-                            cursor-over-throw: fremhev return|throw
-ctrl-l | f3                 finn neste
-ctrl-shift-l | shift-f3     finn forrige
-
-f2                          finn neste advarsel|feil
-shift-f2                    finn forrige advarsel|feil
+f2                 finn neste advarsel|feil
+shift-f2           finn forrige advarsel|feil
 

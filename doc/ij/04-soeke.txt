@@ -1,15 +1,13 @@
 SØK
 
-shift-shift          ctrl-e mfl
+ctrl-e...            nylig filer
+ctrl-shift-e...      nylig redigerte filer
 
-ctrl-e...            søk nylig fil
-ctrl-shift-e...      søk nylig endret fil
+ctrl-shift-f         fritekst|alt-↓|valgt str
 
-ctrl-n               søk klasse
-ctrl-shift-n         søk fil
-ctrl-alt-shift-n     søk symbol
+ctrl-n               navn klasse
+ctrl-shift-n         navn fil
+ctrl-alt-shift-n     navn symbol
 
-ctrl-alt-7           finn bruk
-ctrl-shift-f         finn forrige|alt-↓|ny|valgt str
-alt-eft              finn struktur
+ctrl-shift-s         strukturelt søk
 

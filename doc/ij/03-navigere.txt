@@ -1,23 +1,27 @@
 NAVIGERE
 
-ctrl-b               dekl ↔  bruk
+ctrl-b               dekl ↔ bruk (evt ctrl-alt-7: dekl|bruk → bruk)
 ctrl-alt-b           dekl|bruk → impl
-ctrl-shift-b         id → type
-
-ctrl-u               klasse|metode → base/super
-
-ctrl-shift-t         subjekt ↔ test
-
-alt-f1               velg i ...
-
-f11                  lag anon merke
-ctrl-f11             lag mnem merke
-ctrl-shift-0..9      lag num merke
-ctrl-0..9            til num merke
+ctrl-shift-b         navn → type
 
 ctrl-h               hierarki klasse|supertype|subtype
 ctrl-alt-h           hierarki callers|callees
 ctrl-shift-h         hierarki metode
 
+ctrl-shift-t         subjekt ↔ test
+
+ctrl-u               klasse|metode → base/super
+
+alt-f1               select in ...
+
+ctrl-0..9            til bokmerke 0..9
+ctrl-shift-0..9      lag bokmerke 0..9
+
+f11                  lag anonynmt bokmerke
+ctrl-f11             lag bokmerke 0..9A..Z
+shift-f11            til bokmerke A..Z
+
 ctrl-shift-bs...     til forrige endring
+
 ctrl-alt-←→          tilbake|frem
+
