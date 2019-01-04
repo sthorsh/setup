@@ -1,0 +1,20 @@
+FINNE
+
+f2                 finn advarsel|feil ↓
+shift-f2           finn advarsel|feil ↑
+
+ctrl-f3            |str: finn str
+
+ctrl-f7            |navn: finn bruk
+ctrl-shift-f7      |str: fremhev strs
+                   |navn: fremhev bruk
+                   |extends: fremhev @Override
+                   |implements: fremhev @Override
+                   |return: fremhev return|throw
+                   |throw: fremhev return|throw
+
+ctrl-f             finn fritekst|alt-↓ str
+
+ctrl-l             finn forekomst ↓ (evt f3)
+ctrl-shift-l       finn forekomst ↑ (evt shift-f3)
+

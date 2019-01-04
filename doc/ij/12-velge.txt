@@ -1,21 +1,23 @@
 VELGE
 
-  shift-←→                 velg char
-  shift-ctrl-←→            velg word
-  shift-home|end           velg line start|end
+ctrl-a                   velg alt
 
-  shift-↑↓                 velg line|node
-  shift-ctrl-home|end      velg text start|end
-  alt-shift-insert         toggle line|column selection mode
+alt-j                    velg forekomst ↓
+shift-alt-j              velg bort forekomst ↑
+ctrl-alt-shift-j         velg alle forekomster
 
-  ctrl-a                   velg alt
-  ctrl-w                   velg mer
-  ctrl-shift-w             velg mindre
+ctrl-w                   velg mer
+ctrl-shift-w             velg mindre
 
-  alt-j                    velg forekomst ↓
-  shift-alt-j              velg bort forekomst ↑
-  ctrl-alt-shift-j         velg alle forekomster
+shift-←→                 velg char
+ctrl-shift-←→            velg word
+shift-home|end           velg line start|end
 
-  ctrl-ctrl-↑↓             klone markør
-  shift-↑↓                 klone markør (column selection mode)
+alt-shift-insert         toggle modus
+
+shift-↑↓                 velg line|node (linjemodus)
+ctrl-shift-home|end      velg text start|end
+
+shift-↑↓                 velg kolonne (kolonnemodus)
+ctrl-ctrl-↑↓             velg kolonne
 
