@@ -218,13 +218,10 @@ echo "installation done..."
 # Reboot
 # reboot
 
-# Automation of: add ssh public key to github (if possible)
-# Ref: https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
-# NB: Creates a public key. Requires that you are authenticated via Basic Auth, or OAuth with at least [write:public_key] scope.
-# echo enter github ssh key label:
-# read label
-# echo \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
-# curl -u "user" --data \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
+# Install jdkdoc
+# Download from oracle site
+# unzip jdk-8u191-docs-all.zip
+# sudo mv docs/ /usr/lib/jvm/java
 
 # Install sqldeveloper
 # Download to ~/install/
@@ -236,4 +233,12 @@ echo "installation done..."
 
 # Configure squirrel
 # squirrel hidpi 3840x2160 resolution support ref run_scaled.sh
+
+# Automation of: add ssh public key to github (if possible)
+# Ref: https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
+# NB: Creates a public key. Requires that you are authenticated via Basic Auth, or OAuth with at least [write:public_key] scope.
+# echo enter github ssh key label:
+# read label
+# echo \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
+# curl -u "user" --data \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
 

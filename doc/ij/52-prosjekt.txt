@@ -24,3 +24,51 @@ ctrl-alt-shift-insert     ny scratch
 escape                    til editor
 shift-escape              skjule vindu
 
+------------behold kun de som er aktuelle  
+  shift-↑↓                 velg noder
+  ctrl-c                   cp navn|noder
+  ctrl-x                   cut noder
+  ctrl-v                    paste noder
+  delete                    slett noder
+
+------------ 
+  
+REDIGERE - behold kun de som er aktuelle
+
+  ctrl-c                  cp ln
+  ctrl-shift-c            cp path|utvalg
+  ctrl-alt-shift-c        cp ref|utvalg
+  ctrl-d                  dup ln|utvalg
+  ctrl-shift-j            join ln's
+  ctrl-alt-l              formater alt|utvalg
+  alt-shift-m             record makro
+  alt-m                   utføre makro
+  ctrl-alt-o              optimaliser imports
+  ctrl-r                  repl forrige|alt-↓|ny|valgt str
+  ctrl-shift-r            repl forrige|alt-↓|ny|valgt str
+  alt-shift-u             uppercase
+  ctrl-v                  paste text|node
+  ctrl-shift-v            paste fra stack
+  ctrl-alt-shift-v        paste simple
+  ctrl-x                  cut ln|navn&node|utvalg
+  ctrl-y                  del ln|utvalg
+  ctrl-z                  undo
+  ctrl-shift-z            redo
+
+  ht                      rykk utvalg →
+  shift-ht                rykk utvalg ←
+
+  bs                      del tegn
+  ctrl-bs                 del ord
+
+  delete                  del tegn|node|utvalg
+  ctrl-delete             del ord
+
+  ctrl-⏎                  split ln
+  shift-⏎                 newline ↓
+  ctrl-alt-⏎              newline ↑
+                    
+  ctrl-shift-↑↓           mv metode|stmt
+  alt-shift-↑↓            mv ln
+  ctrl-alt-shift-←→       mv arg|param|element
+

@@ -1,0 +1,28 @@
+GENERERE
+
+alt-insert       ctor
+                 getter/setter
+                 delegatmetoder
+                 setup()  
+                 tearDown()
+                 testmetoder
+
+ctrl-i           implement
+ctrl-o           override
+
+ctrl-alt-t       if
+                 if-else
+                 for
+                 while
+                 do-while
+                 try
+                 try-finally
+                 try-catch-finally
+                 synchronized
+                 Runnable
+                 {}
+ctrl-alt-r       remove if, ...
+
+ctrl-num/        //
+ctrl-shift-num/  /**/
+

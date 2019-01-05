@@ -15,7 +15,7 @@ shift-home|end           velg line start|end
 
 alt-shift-insert         toggle modus
 
-shift-↑↓                 velg line|node (linjemodus)
+shift-↑↓                 velg line (linjemodus)
 ctrl-shift-home|end      velg text start|end
 
 shift-↑↓                 velg kolonne (kolonnemodus)
