@@ -1,27 +1,33 @@
 KOMPLETTERE
 
-  ctrl-space                
-  1 Nøkkelord         prefix|
+  [ctrl-space]               
+    Nøkkelord         prefix|
     Navn              pvfmC₀₁₂
     Nytt navn         T |
-  2 Navn              static fm₀₁₂
-  3 Navn              C₃
-    Fullføring        ⭾ ␣ = . ! , ; ctrl-shift-⏎ 
+
+  ctrl-space x 2
+    Navn              static fm₀₁₂
+
+  ctrl-space x 3
+    Navn              C₃
 
   ctrl-shift-space    
-  1 Navn              pvfm, new |, static T T.fm₀₁₂
+    Navn              pvfm, new |, static T T.fm₀₁₂
     Casting           T t = (|)
     Generic           T<S> t = new T<|>()
     Lambdas           stream.reduce(|)
     Builder           DoubleStream ds = |
     Delegering        ref.m(|) → ref.m(params)
     Overriding        super.m(|) → super.m(params)
-  2 Navn              static T S.fm₀₁₂
+
+  ctrl-shift-space    
+    Navn              static T S.fm₀₁₂
     Referanser        ref.fm₀₁₂
     Array             a[...], Arrays.asList(a)
     Collection        c.get(i), c.toArray(new T[0])
-  3 Referanser        ref.fm for String
-    Fullføring        ⭾ ␣ . ! , ; ctrl-shift-⏎ 
+
+  ctrl-shift-space    
+    Referanser        ref.fm for String
 
   ctrl-alt-shift-space
     Strenger          prefix|
@@ -30,4 +36,6 @@ KOMPLETTERE
     Metode            T m(|)
     Setning           int x|= 123
     Setning           if|, for| mfl
+
+  Terminator          ⇥ ! ␣ . , = ; ctrl-shift-↵ 
 
