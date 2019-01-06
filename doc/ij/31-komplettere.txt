@@ -1,41 +1,63 @@
 KOMPLETTERE
 
-  [ctrl-space]               
-    Nøkkelord         prefix|
-    Navn              pvfmC₀₁₂
-    Nytt navn         T |
+C-␣¹
+  nøkkelord
+  navn          C₀¹, f, m, p, v
+  nytt navn     T t
 
-  ctrl-space x 2
-    Navn              static fm₀₁₂
+C-␣²
+  navn          static f₀¹, static m₀₁
 
-  ctrl-space x 3
-    Navn              C₃
+C-␣³
+  navn          C₂, static f₀¹, static m₀₁
 
-  ctrl-shift-space    
-    Navn              pvfm, new |, static T T.fm₀₁₂
-    Casting           T t = (|)
-    Generic           T<S> t = new T<|>()
-    Lambdas           stream.reduce(|)
-    Builder           DoubleStream ds = |
-    Delegering        ref.m(|) → ref.m(params)
-    Overriding        super.m(|) → super.m(params)
+C-S-␣¹
+    navn              fmpv, new |, static T T.fm₀₁
+    casting           T t = (|)
+    generic           T<S> t = new T<|>()
+    lambdas           stream.reduce(|)
+    builder           DoubleStream ds = |
+    delegering        ref.m(|) → ref.m(params)
+    overriding        super.m(|) → super.m(params)
 
-  ctrl-shift-space    
-    Navn              static T S.fm₀₁₂
-    Referanser        ref.fm₀₁₂
-    Array             a[...], Arrays.asList(a)
-    Collection        c.get(i), c.toArray(new T[0])
+C-S-␣²
+    navn              static T S.fm₀¹
+    referanser        ref.fm₀¹
+    array             a[...], Arrays.asList(a)
+    collection        c.get(i), c.toArray(new T[0])
 
-  ctrl-shift-space    
-    Referanser        ref.fm for String
+C-S-␣³
+    referanser        ref.fm for String
 
-  ctrl-alt-shift-space
-    Strenger          prefix|
+C-A-S-␣
+  ord
 
-  ctrl-shift-enter    
-    Metode            T m(|)
-    Setning           int x|= 123
-    Setning           if|, for| mfl
+C-S-↵ 
+      stmt           int x|= 123
+      stmt           if|, for| mfl
+      metode         T m(|)
 
-  Terminator          ⇥ ! ␣ . , = ; ctrl-shift-↵ 
+  Terminator          
+    ⇥ ␣ . , = ! ;
+
+---------------------------
+  Aksess 1: java
+    public
+    protected
+    package
+    private
+
+  Aksess 2: idea
+    0 - samme modul
+    1 - avhengig modul/lib, transitivt avhengig modul/lib
+    2 - uavhengig modul/lib
+
+  ctrl-space && show suggestions as you type (live)
+    | - n/a
+    B| - n/a
+    Bu| - com.oracle.nio.BufferSecrets
+
+  String
+    ctrl-space: spesiell
+    ctrl-shift-space: spesiell
 
