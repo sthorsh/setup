@@ -68,6 +68,7 @@ if [ ! -e ~/dev ]; then mkdir ~/dev; fi
 if [ ! -e ~/doc ]; then mkdir ~/doc; fi
 if [ ! -e ~/etc ]; then mkdir ~/etc; fi
 if [ ! -e ~/install ]; then mkdir ~/install; fi
+if [ ! -e ~/soapui ]; then mkdir ~/soapui; fi
 if [ ! -e ~/tmp ]; then mkdir ~/tmp; fi
 
 # Remove directories
