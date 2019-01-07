@@ -112,6 +112,16 @@ else
   sudo ln -sf /usr/lib/apache-maven-${MAVEN_VERSION}/ /usr/lib/apache-maven
 fi
 
+# Install Postman
+if command -v /opt/Postman/Postman > /dev/null 2>&1
+then
+  echo "postman installed..."
+else
+  echo "installing postman..."
+  wget --directory-prefix=install https://dl.pstmn.io/download/latest/linux?arch=64 -O install/postman.tar.gz
+  sudo tar -xf install/postman.tar.gz -C /opt/
+fi
+
 # Install Slack
 if command -v slack > /dev/null 2>&1
 then
