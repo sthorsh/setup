@@ -1,0 +1,37 @@
+TEMPLATER
+
+[ctrl-j]str⇥
+  fori          for
+  geti          singleton getInstance()
+  ifn           if null
+  inn           if not null
+  inst          if instanceof
+  itar          iterate array
+  itco          iterate Collection
+  iten          iterate Enumeration
+  iter          iterate Iterable|Array
+  itit          iterate Iterator
+  itli          iterate List
+  ittok         iterate tokens from String
+  itve          iterate Vector
+  lazy          lazy initialization
+  lst           last element of array
+  mn            x = Math.min(x,|)
+  mx            x = Math.max(x,|)
+  prsf          private static final
+  psf           public static final
+  psfi          public static final int
+  psfs          private static final String
+  psvm          public static void main(){}
+  ritar         reverse iterate array
+  serr          System.err.println()
+  souf          System.out.printf()
+  sout          System.out.println()
+  soutm         System.out.println() method
+  soutp         System.out.println() param
+  soutv         System.out.println() value
+  St            String
+  thr           throw new
+  toar          to array
+  todo          todo
+
