@@ -1,0 +1,39 @@
+POSTFIX KOMPLETTERING
+
+expr.[ctrl-j]str⇥
+  expr!                  boolean
+  expr.arg               * 
+  expr.assert            boolean
+  expr.cast              * 
+  expr.else              boolean
+  expr.field             * 
+  expr.for               List|Set|...
+  expr.fori              int
+  expr.format            String
+  expr.forr              int
+  expr.if                boolean
+  expr.inst              Object
+  expr.iter              List|Set|...
+  expr.lambda            *
+  expr.new               Object
+  expr.not               boolean
+  expr.notnull           Object
+  expr.opt               *
+  expr.serr              *
+  expr.souf              *
+  expr.soutv             *
+  expr.stream            array
+  expr.twr               AutoCloseable mfl
+  expr.nn                Object
+  expr.null              Object
+  expr.par               * 
+  expr.reqnonnull        Object
+  expr.return            * 
+  expr.sout              * 
+  expr.switch            int|String|...
+  expr.synchronized      Object
+  expr.throw             Exception
+  expr.try               statement
+  expr.var               expr
+  expr.while             boolean
+   
