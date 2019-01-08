@@ -1,16 +1,4 @@
-CTRL-J
-        
-  [ctrl-j]str tab
-    fori                    for
-    ifn                     if null
-    inn                     if not null
-    inst                    if instanceof
-    it*                     iterate ...
-    p*                      private/public...
-    s*                      System...
-    St                      String
-    thr                     throw new
-    toar                    to array
+POSTFIX KOMPLETTERING
 
   [ctrl-j]str tab
     expr!                   boolean

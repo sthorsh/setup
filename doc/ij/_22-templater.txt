@@ -1,0 +1,18 @@
+TEMPLATER
+        
+  [ctrl-j]str tab
+    fori                    for
+    ifn                     if null
+    inn                     if not null
+    inst                    if instanceof
+    it*                     iterate ...
+    lst                     last element of array
+    mn                      x = Math.min(x,|)
+    mx                      x = Math.max(x,|)
+    p*                      private|public static [final] ...
+    ritar                   reverse iterate array
+    s*                      System...
+    St                      String
+    thr                     throw new
+    toar                    to array
+
