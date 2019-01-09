@@ -1,0 +1,31 @@
+INTENSJONER: alt-enter
+
+Java
+  Add Javadoc
+  Add runtime exception(s) to method signature
+  Create subclass
+  Create test
+  Generate missed test methods
+  Iterate
+  Make private|package-private|protected|public
+  Replace if-else with ?:
+  Simplify if-else
+  Surround with try-catch
+  ...
+
+Language injection
+  Inject language or reference
+  ...
+
+Regexp
+  Check regexp
+
+XML
+  Add xsi schema location for external resource
+  Collapse empty tag
+  Fetch external resource
+  Insert namespace prefix
+  Reset to default namespace
+  Manually setup external resource
+  ...
+

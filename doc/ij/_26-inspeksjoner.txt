@@ -1,6 +1,6 @@
-INSPEKSJONER
+INSPEKSJONER: alt-enter
 
-alt-enter: no highlighting, only fix
+No highlighting, only fix
 - Add braces to if statement
 - Object comparison using == instead of equals()
 - Redundant else
@@ -9,7 +9,7 @@ alt-enter: no highlighting, only fix
 - Unnecessary parantheses
 - mfl
 
-f2 alt-enter: advarsel
+Advarsel
 - Field can be local
 - Statement with empty body
 - Replace == with equals
@@ -19,6 +19,15 @@ f2 alt-enter: advarsel
 - Unused declaration
 - mfl
 
-f2 alt-enter: feil
-- mfl
+Feil
+- ...
+ 
+Teknikk
+  C|          import class C
+  new C|      create class C
+  new C(1|)   create constructor
+  c.f|        create field f in C
+  c.m(|)      create method m in C
+  c.m(1|)     add T as 1st param to method m
+  ...
 
