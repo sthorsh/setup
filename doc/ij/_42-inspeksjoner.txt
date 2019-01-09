@@ -1,0 +1,24 @@
+INSPEKSJONER
+
+alt-enter: no highlighting, only fix
+- Add braces to if statement
+- Object comparison using == instead of equals()
+- Redundant else
+- Scope of variable is too broad
+- Tail recursion
+- Unnecessary parantheses
+- mfl
+
+f2 alt-enter: advarsel
+- Field can be local
+- Statement with empty body
+- Replace == with equals
+- StringBuffer may be StringBuilder
+- Throw inside finally block
+- Unnecessary interface modifier
+- Unused declaration
+- mfl
+
+f2 alt-enter: feil
+- mfl
+
