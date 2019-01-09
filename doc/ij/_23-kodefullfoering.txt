@@ -1,0 +1,63 @@
+KOMPLETTERE
+
+C-␣¹
+  nøkkelord
+  navn          C₀¹, f, m, p, v
+  nytt navn     T t
+
+C-␣²
+  navn          static f₀¹, static m₀₁
+
+C-␣³
+  navn          C₂, static f₀¹, static m₀₁
+
+C-S-␣¹
+    navn              fmpv, new |, static T T.fm₀₁
+    casting           T t = (|)
+    generic           T<S> t = new T<|>()
+    lambdas           stream.reduce(|)
+    builder           DoubleStream ds = |
+    delegering        ref.m(|) → ref.m(params)
+    overriding        super.m(|) → super.m(params)
+
+C-S-␣²
+    navn              static T S.fm₀¹
+    referanser        ref.fm₀¹
+    array             a[...], Arrays.asList(a)
+    collection        c.get(i), c.toArray(new T[0])
+
+C-S-␣³
+    referanser        ref.fm for String
+
+C-A-S-␣
+  ord
+
+C-S-↵ 
+      stmt           int x|= 123
+      stmt           if|, for| mfl
+      metode         T m(|)
+
+  Terminator          
+    ⇥ ␣ . , = ! ;
+
+---------------------------
+  Aksess 1: java
+    public
+    protected
+    package
+    private
+
+  Aksess 2: idea
+    0 - samme modul
+    1 - avhengig modul/lib, transitivt avhengig modul/lib
+    2 - uavhengig modul/lib
+
+  ctrl-space && show suggestions as you type (live)
+    | - n/a
+    B| - n/a
+    Bu| - com.oracle.nio.BufferSecrets
+
+  String
+    ctrl-space: spesiell
+    ctrl-shift-space: spesiell
+
