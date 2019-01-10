@@ -1,0 +1,15 @@
+VCS
+
+History
+  alt-shh         show history
+
+Subversion
+  alt-a           annotate
+  alt-ssh         show history
+  alt-ssf         show history for class|method
+
+VCS vindu
+  ctrl-d          diff
+  ctrl-k          commit
+  ctrl-alt-z      revert
+

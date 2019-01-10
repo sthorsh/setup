@@ -1,12 +1,12 @@
-UI
+GUI
 
-ctrl-↑↓           scroll opp|ned
-ctrl-m            scroll til midten
+ctrl-↑↓           scroll editor
+ctrl-m            scroll editor til midten
 
 alt-|             splitt editor
 alt--             splitt editor
 alt-,             til neste splitt
-alt-.             unsplit
+alt-.             unsplit editor
 
 alt-0-9           vinduer
 alt-f12           terminal

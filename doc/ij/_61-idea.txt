@@ -2,6 +2,7 @@ IDEA
 
 Keymaps
 - ctrl-shift-a                action|option
+- shift-shift                 search everywhere
 - ctrl-alt-s                  innstillinger
 - ctrl-alt-shift-s            prosjektstruktur
 
@@ -10,6 +11,3 @@ Config
 - moduler                     ${module.basedir}/mod.iml   
 - globalt                     ~/.IdeaIC2018.1/config/
 - globalt                     ~/.IdeaIC2018.1/system/
-
-Search
-- shift-shift                 search everywhere
