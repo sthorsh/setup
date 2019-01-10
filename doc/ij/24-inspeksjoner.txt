@@ -1,0 +1,24 @@
+INSPEKSJONER: alt-enter
+
+Error
+  Wrong package statement
+  ...
+ 
+Warning
+  Field can be local
+  Statement with empty body
+  StringBuffer may be StringBuilder
+  Throw inside finally block
+  Unnecessary interface modifier
+  Unused declaration
+  ...
+
+No highlighting, only fix
+  Control flow statement without braces
+  Object comparion using == instead of equals()
+  Redundant else
+  Scope of variable is to broad
+  Tail recursion
+  Unnecessary parantheses
+  ...
+
