@@ -1,5 +1,7 @@
 SØK
 
+ctrl-shift-a         all|klasse|fil|symbol|action
+
 ctrl-e...            nylig filer
 ctrl-shift-e...      nylig redigerte filer
 

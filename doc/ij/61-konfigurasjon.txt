@@ -1,0 +1,13 @@
+KONFIGURASJON
+
+Settings
+  ctrl-alt-s                  
+
+Prosjektstruktur
+  ctrl-alt-shift-s
+
+Konfigurasjon
+  ~/.IdeaIC2018.1/config/     globalt
+  ~/.IdeaIC2018.1/system/     globalt
+  ${module.basedir}/mod.iml   per-modul
+  ${project.basedir}/.idea/   per-prosjekt

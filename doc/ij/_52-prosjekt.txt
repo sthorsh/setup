@@ -1,74 +1,38 @@
 PROSJEKT
 
-☰                         kontekstmeny
-alt-↓                     velg tab
-ctrl-alt-⏎                tittellinjemeny
-ctrl-shift-←→             resize vindu
-
-→                         åpne|ned
-←                         ut|lukk
-⏎                         åpne|lukk|vis src (løv)
-↑↓                        opp|ned
-home|end                  topp|bunn
-
-np*                       åpne nivå
-ctrl--                    lukk alle
-.*                        søk: case-insensitivt, delstrenger
-
-f4                        til src (løv)
-ctrl-⏎                    toggle prosjektstruktur
-
-alt-insert                ny node
-ctrl-alt-shift-insert     ny scratch
-
-escape                    til editor
-shift-escape              skjule vindu
-
-------------behold kun de som er aktuelle  
-  shift-↑↓                 velg noder
-  ctrl-c                   cp navn|noder
-  ctrl-x                   cut noder
-  ctrl-v                    paste noder
-  delete                    slett noder
-
------------- 
+  ☰                         kontekstmeny
+  alt-↓                     velg tab
+  ctrl-alt-⏎                tittellinjemeny
+  ctrl-shift-←→             resize vindu
   
-REDIGERE - behold kun de som er aktuelle
+  →                         åpne|ned
+  ←                         ut|lukk
+  ⏎                         åpne|lukk|vis src (løv)
+  ↑↓                        opp|ned
+  home|end                  topp|bunn
+  
+  np*                       åpne nivå
+  ctrl--                    lukk alle
+  .*                        søk: case-insensitivt, delstrenger
+  
+  f4                        til src (løv)
+  ctrl-⏎                    toggle prosjektstruktur
+  
+  alt-insert                ny node
+  ctrl-alt-shift-insert     ny scratch
+  
+  escape                    til editor
+  shift-escape              skjule vindu
 
-  ctrl-c                  cp ln
-  ctrl-shift-c            cp path|utvalg
-  ctrl-alt-shift-c        cp ref|utvalg
-  ctrl-d                  dup ln|utvalg
-  ctrl-shift-j            join ln's
-  ctrl-alt-l              formater alt|utvalg
-  alt-shift-m             record makro
-  alt-m                   utføre makro
-  ctrl-alt-o              optimaliser imports
-  ctrl-r                  repl forrige|alt-↓|ny|valgt str
-  ctrl-shift-r            repl forrige|alt-↓|ny|valgt str
-  alt-shift-u             uppercase
-  ctrl-v                  paste text|node
-  ctrl-shift-v            paste fra stack
-  ctrl-alt-shift-v        paste simple
-  ctrl-x                  cut ln|navn&node|utvalg
-  ctrl-y                  del ln|utvalg
-  ctrl-z                  undo
-  ctrl-shift-z            redo
-
-  ht                      rykk utvalg →
-  shift-ht                rykk utvalg ←
-
-  bs                      del tegn
-  ctrl-bs                 del ord
-
-  delete                  del tegn|node|utvalg
-  ctrl-delete             del ord
-
-  ctrl-⏎                  split ln
-  shift-⏎                 newline ↓
-  ctrl-alt-⏎              newline ↑
-                    
-  ctrl-shift-↑↓           mv metode|stmt
-  alt-shift-↑↓            mv ln
-  ctrl-alt-shift-←→       mv arg|param|element
-
+------------
+  shift-↑↓                 velg noder
+  ctrl-c                   cp navn&node|utvalg
+  ctrl-shift-c             cp path|utvalg
+  ctrl-alt-shift-c         cp referanse|utvalg
+  ctrl-alt-l               formater node|utvalg
+  ctrl-alt-o               optimaliser imports
+  ctrl-v                   paste noder
+  ctrl-x                   cut navn&node|utvalg
+  ctrl-z                   undo
+  ctrl-shift-z             redo
+  delete                   slett node|utvalg
