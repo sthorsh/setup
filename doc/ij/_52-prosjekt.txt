@@ -1,31 +1,38 @@
 PROSJEKT
 
-  ☰                         kontekstmeny
-  alt-↓                     velg tab
-  ctrl-alt-⏎                tittellinjemeny
-  ctrl-shift-←→             resize vindu
+☰                         kontekstmeny
+
+↲                         åpne|lukk|vis src (løv)
+ctrl-↲                    toggle prosjektstruktur
+ctrl-alt-↲                tittellinjemeny
+
+↑↓                        opp|ned
+alt-↓                     velg tab
+shift-↑↓                  velg noder
+
+→                         åpne|ned
+←                         ut|lukk
+ctrl-shift-←→             resize vindu
+
+--------------------------------------
   
-  →                         åpne|ned
-  ←                         ut|lukk
-  ⏎                         åpne|lukk|vis src (løv)
-  ↑↓                        opp|ned
-  home|end                  topp|bunn
-  
-  np*                       åpne nivå
-  ctrl--                    lukk alle
-  .*                        søk: case-insensitivt, delstrenger
-  
+*                         søk: case-insensitivt, delstrenger
+
+num*                      åpne nivå
+ctrl--                    lukk alle
+
+home|end                  topp|bunn
+
   f4                        til src (løv)
-  ctrl-⏎                    toggle prosjektstruktur
-  
-  alt-insert                ny node
-  ctrl-alt-shift-insert     ny scratch
+            
+  alt-insert                ny
+  ctrl-alt-shift-insert     ny scratch-fil
   
   escape                    til editor
   shift-escape              skjule vindu
 
-------------
-  shift-↑↓                 velg noder
+  delete                   slett node|utvalg
+
   ctrl-c                   cp navn&node|utvalg
   ctrl-shift-c             cp path|utvalg
   ctrl-alt-shift-c         cp referanse|utvalg
@@ -35,4 +42,4 @@ PROSJEKT
   ctrl-x                   cut navn&node|utvalg
   ctrl-z                   undo
   ctrl-shift-z             redo
-  delete                   slett node|utvalg
+
