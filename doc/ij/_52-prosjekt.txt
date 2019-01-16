@@ -1,45 +1,50 @@
 PROSJEKT
 
-☰                         kontekstmeny
+  ☰                       kontekstmeny
 
-↲                         åpne|lukk|vis src (løv)
-ctrl-↲                    toggle prosjektstruktur
-ctrl-alt-↲                tittellinjemeny
+  *                       søk (case-insensitivt, delstrenger)
 
-↑↓                        opp|ned
-alt-↓                     velg tab
-shift-↑↓                  velg noder
+  escape                  til editor
+  shift-escape            skjule vindu
 
-→                         åpne|ned
-←                         ut|lukk
-ctrl-shift-←→             resize vindu
+  alt-f1                  select in
+  f4                      til src (løv)
+  shift-f6                rename
 
---------------------------------------
+  ↲                       åpne|lukk|vis src (løv)
+  ctrl-↲                  toggle prosjektstruktur
+  ctrl-alt-↲              tittellinjemeny
+
+  alt-insert              ny
+  ctrl-alt-shift-insert   ny scratch-fil
+
+  delete                  slett node|utvalg
+  alt-delete              safe delete
   
-*                         søk: case-insensitivt, delstrenger
+  home                    topp
+  end                     bunn
 
-num*                      åpne nivå
-ctrl--                    lukk alle
+  ↑↓                      opp|ned
+  alt-↓                   velg tab
+  shift-↑↓                velg noder
 
-home|end                  topp|bunn
+  →                       åpne|ned
+  ←                       ut|lukk
+  ctrl-shift-←→           resize vindu
 
-  f4                        til src (løv)
-            
-  alt-insert                ny
-  ctrl-alt-shift-insert     ny scratch-fil
-  
-  escape                    til editor
-  shift-escape              skjule vindu
+  num*                    åpne nivå
+  ctrl--                  lukk alle
 
-  delete                   slett node|utvalg
-
-  ctrl-c                   cp navn&node|utvalg
-  ctrl-shift-c             cp path|utvalg
-  ctrl-alt-shift-c         cp referanse|utvalg
-  ctrl-alt-l               formater node|utvalg
-  ctrl-alt-o               optimaliser imports
-  ctrl-v                   paste noder
-  ctrl-x                   cut navn&node|utvalg
-  ctrl-z                   undo
-  ctrl-shift-z             redo
+  ctrl-c                  cp navn&node|utvalg
+  ctrl-shift-c            cp path|utvalg
+  ctrl-alt-shift-c        cp referanse|utvalg
+  ctrl-d                  diff
+  ctrl-shift-f            find
+  ctrl-h                  klassehierarki
+  ctrl-alt-l              formater node|utvalg
+  ctrl-alt-o              optimaliser imports
+  ctrl-v                  paste noder
+  ctrl-x                  cut navn&node|utvalg
+  ctrl-z                  undo
+  ctrl-shift-z            redo
 
