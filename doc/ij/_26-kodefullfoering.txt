@@ -1,46 +1,49 @@
-KOMPLETTERE
+KODEFULLFØRING
 
-C-␣¹
+ctrl-space
   nøkkelord
-  navn          C₀¹, f, m, p, v
   nytt navn     T t
+    navn          C₀¹, f, m, p, v
 
-C-␣²
-  navn          static f₀¹, static m₀₁
+Terminator          
+    ⇥ ␣ = ! . , ;
 
-C-␣³
-  navn          C₂, static f₀¹, static m₀₁
+  C-␣²
+    navn          static f₀¹, static m₀₁
 
-C-S-␣¹
-    navn              fmpv, new |, static T T.fm₀₁
-    casting           T t = (|)
-    generic           T<S> t = new T<|>()
-    lambdas           stream.reduce(|)
-    builder           DoubleStream ds = |
-    delegering        ref.m(|) → ref.m(params)
-    overriding        super.m(|) → super.m(params)
+  C-␣³
+    navn          C₂, static f₀¹, static m₀₁
 
-C-S-␣²
-    navn              static T S.fm₀¹
-    referanser        ref.fm₀¹
-    array             a[...], Arrays.asList(a)
-    collection        c.get(i), c.toArray(new T[0])
+  C-S-␣¹
+      navn              fmpv, new |, static T T.fm₀₁
+      casting           T t = (|)
+      generic           T<S> t = new T<|>()
+      lambdas           stream.reduce(|)
+      builder           DoubleStream ds = |
+      delegering        ref.m(|) → ref.m(params)
+      overriding        super.m(|) → super.m(params)
 
-C-S-␣³
-    referanser        ref.fm for String
+  C-S-␣²
+      navn              static T S.fm₀¹
+      referanser        ref.fm₀¹
+      array             a[...], Arrays.asList(a)
+      collection        c.get(i), c.toArray(new T[0])
 
-C-A-S-␣
-  ord
+  C-S-␣³
+      referanser        ref.fm for String
 
-C-S-↵ 
-      stmt           int x|= 123
-      stmt           if|, for| mfl
-      metode         T m(|)
+  C-A-S-␣
+    ord
 
-  Terminator          
-    ⇥ ␣ . , = ! ;
+  C-S-↵ 
+        stmt           int x|= 123
+        stmt           if|, for| mfl
+        metode         T m(|)
 
----------------------------
+  ---------------------------
+Idea
+  Show suggestions as you type
+
   Aksess 1: java
     public
     protected
