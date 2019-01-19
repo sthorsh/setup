@@ -2,17 +2,19 @@ KODEFULLFØRING
 
 ctrl-space
   nøkkelord
-  nytt navn     T t
-    navn          C₀¹, f, m, p, v
+  navn dekl   T t
+  navn bruk   CEI@₁₂₃, f, m, p, v
+
+2nd ctrl-space
+  navn          CEI@.f₁₂₃, CE.m₁₂₃ (static)
 
 Terminator          
     ⇥ ␣ = ! . , ;
 
-  C-␣²
-    navn          static f₀¹, static m₀₁
+............
 
   C-␣³
-    navn          C₂, static f₀¹, static m₀₁
+    navn          C
 
   C-S-␣¹
       navn              fmpv, new |, static T T.fm₀₁
@@ -51,9 +53,9 @@ Idea
     private
 
   Aksess 2: idea
-    0 - samme modul
-    1 - avhengig modul/lib, transitivt avhengig modul/lib
-    2 - uavhengig modul/lib
+    1 - modul + jdk/jre/lib + libs
+    2 - moduler + libs som 1 er avhengig av
+    3 - 
 
   ctrl-space && show suggestions as you type (live)
     | - n/a
