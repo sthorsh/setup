@@ -1,68 +1,66 @@
 KODEFULLFØRING
 
 ctrl-space
-  nøkkelord
-  navn dekl   T t
-  navn bruk   CEI@₁₂₃, f, m, p, v
+  nøkkelord¹
+  navn dekl         T t
+  navn bruk         fmpv
+  navn bruk         CIE@₁₂₃
+  navn bruk²        CIE@.f₁₂₃ (static)
+  navn bruk         CE.m₁₂₃ (static)
+  navn bruk³        CIE@₄
+    terminator        ⇥ ␣ = ! . , ;
 
-2nd ctrl-space
-  navn          CEI@.f₁₂₃, CE.m₁₂₃ (static)
+ctrl-shift-space
+  builder¹          DoubleStream ds = |
+  casting           T t = (|)
+  lambda            stream.reduce(|)
+  navn bruk         fmpv
+  navn bruk         new CI₁₂₃
+  navn bruk         CI.fm₁₂₃: CI (static)
+  navn bruk         E.f₁₂₃: E
+  navn bruk         E.m₁₂₃: E (static)
+  params            ref.m(|) (delegat)
+  params            super.m(|)
+  typeparam         T<S> t = new T<|>
+  array²            a[...]
+  array             Arrays.asList(a)
+  collection        c.get(i)
+  collection        c.toArray(new T[0])
+  navn bruk         CI.fm₁₂₃: !CI (static)
+  referanser        ref.fm₁₂₃
+  referanser³       ref.fm: String
+    terminator        ⇥ ␣ = ! . , ;
 
-Terminator          
-    ⇥ ␣ = ! . , ;
+ctrl-alt-shift-space
+  ord
 
-............
-
-  C-␣³
-    navn          C
-
-  C-S-␣¹
-      navn              fmpv, new |, static T T.fm₀₁
-      casting           T t = (|)
-      generic           T<S> t = new T<|>()
-      lambdas           stream.reduce(|)
-      builder           DoubleStream ds = |
-      delegering        ref.m(|) → ref.m(params)
-      overriding        super.m(|) → super.m(params)
-
-  C-S-␣²
-      navn              static T S.fm₀¹
-      referanser        ref.fm₀¹
-      array             a[...], Arrays.asList(a)
-      collection        c.get(i), c.toArray(new T[0])
-
-  C-S-␣³
-      referanser        ref.fm for String
-
-  C-A-S-␣
-    ord
-
-  C-S-↵ 
-        stmt           int x|= 123
-        stmt           if|, for| mfl
-        metode         T m(|)
+ctrl-shift-enter
+  stmt              if| mfl
+  stmt              int x|= 123
+  metode            T m(|)
 
   ---------------------------
+Synlighet
+  1 - modul + jdk libs + andre libs
+  2 - moduler + libs som 1 er avhengig av (avhengigheter)
+  3 - moduler + libs som 2 er avhengig av (transitive avhengigheter)
+  4 - moduler + libs som 1 ikke er avhengig av (uavhengigheter)
+
+Aksess
+  public
+  protected
+  package
+  private
+
 Idea
-  Show suggestions as you type
+  Vis forslag as you type
 
-  Aksess 1: java
-    public
-    protected
-    package
-    private
+ctrl-space && show suggestions as you type (live)
+  | - n/a
+  B| - n/a
+  Bu| - com.oracle.nio.BufferSecrets
 
-  Aksess 2: idea
-    1 - modul + jdk/jre/lib + libs
-    2 - moduler + libs som 1 er avhengig av
-    3 - 
-
-  ctrl-space && show suggestions as you type (live)
-    | - n/a
-    B| - n/a
-    Bu| - com.oracle.nio.BufferSecrets
-
-  String
-    ctrl-space: spesiell
-    ctrl-shift-space: spesiell
+String
+  ctrl-space: spesiell
+  ctrl-shift-space: spesiell
 
