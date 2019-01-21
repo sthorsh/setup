@@ -1,34 +1,34 @@
 KODEFULLFØRING
 
 ctrl-space
-    nøkkelord¹
-    nytt navn               T t
-    bruk navn               fmpv
-    bruk navn               CIE@₁₂₃
-    static felt             CIE@.f₁₂₃
+  Nøkkelord¹
+  Nytt navn       T |
+  Navn fmpv
+    bruk navn                     CIE@₁₂₃
+    static felt                   CIE@.f₁₂₃
     static metode           CE.m₁₂₃
     bruk navn³              CIE@₄
       terminator              ⇥ ␣ = ! . , ;
 
 ctrl-shift-space
-    builder¹                DoubleStream ds = |
-    casting                 T t = (|)
-    lambda                  stream.reduce(|)
+  builder¹                DoubleStream ds = |
+  cast                    T t = (|)
+  lambda                  Stream.empty().reduce(|)
     bruk navn               fmpv
     bruk navn               new CI₁₂₃
     static felt|metode      CI.fm₁₂₃: CI
     navn bruk               E.f₁₂₃: E
     static metode           E.m₁₂₃: E
-    params                  ref.m(|) (delegat)
-    params                  super.m(|)
-    typeparam               T<S> t = new T<|>
-    array scan²             a[...]
-    array scan              Arrays.asList(a)
-    collection scan         c.get(i)
-    collection scan         c.toArray(new T[0])
+  params arv              super.m(|)
+  params delegat          ref.m(|)
+  typeparam               T<S> t = new T<|>
+  array²                  T t = |
+  array                   List<T> tList = |
+  collection              T t = |
+  collection              T[] ts = |
     static felt|metode      CI.fm₁₂₃: !CI
-    ref scan                ref.fm₁₂₃
-    ref scan³               ref.fm: String
+    ref chain               ref.fm₁₂₃
+    ref chain³              ref.fm: String
       terminator              ⇥ ␣ = ! . , ;
 
 ctrl-alt-shift-space
