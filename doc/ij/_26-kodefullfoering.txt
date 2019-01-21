@@ -1,43 +1,43 @@
 KODEFULLFØRING
 
 ctrl-space
-  nøkkelord¹
-  navn dekl         T t
-  navn bruk         fmpv
-  navn bruk         CIE@₁₂₃
-  navn bruk²        CIE@.f₁₂₃ (static)
-  navn bruk         CE.m₁₂₃ (static)
-  navn bruk³        CIE@₄
-    terminator        ⇥ ␣ = ! . , ;
+    nøkkelord¹
+    nytt navn               T t
+    bruk navn               fmpv
+    bruk navn               CIE@₁₂₃
+    static felt             CIE@.f₁₂₃
+    static metode           CE.m₁₂₃
+    bruk navn³              CIE@₄
+      terminator              ⇥ ␣ = ! . , ;
 
 ctrl-shift-space
-  builder¹          DoubleStream ds = |
-  casting           T t = (|)
-  lambda            stream.reduce(|)
-  navn bruk         fmpv
-  navn bruk         new CI₁₂₃
-  navn bruk         CI.fm₁₂₃: CI (static)
-  navn bruk         E.f₁₂₃: E
-  navn bruk         E.m₁₂₃: E (static)
-  params            ref.m(|) (delegat)
-  params            super.m(|)
-  typeparam         T<S> t = new T<|>
-  array²            a[...]
-  array             Arrays.asList(a)
-  collection        c.get(i)
-  collection        c.toArray(new T[0])
-  navn bruk         CI.fm₁₂₃: !CI (static)
-  referanser        ref.fm₁₂₃
-  referanser³       ref.fm: String
-    terminator        ⇥ ␣ = ! . , ;
+    builder¹                DoubleStream ds = |
+    casting                 T t = (|)
+    lambda                  stream.reduce(|)
+    bruk navn               fmpv
+    bruk navn               new CI₁₂₃
+    static felt|metode      CI.fm₁₂₃: CI
+    navn bruk               E.f₁₂₃: E
+    static metode           E.m₁₂₃: E
+    params                  ref.m(|) (delegat)
+    params                  super.m(|)
+    typeparam               T<S> t = new T<|>
+    array scan²             a[...]
+    array scan              Arrays.asList(a)
+    collection scan         c.get(i)
+    collection scan         c.toArray(new T[0])
+    static felt|metode      CI.fm₁₂₃: !CI
+    ref scan                ref.fm₁₂₃
+    ref scan³               ref.fm: String
+      terminator              ⇥ ␣ = ! . , ;
 
 ctrl-alt-shift-space
-  ord
+    ord
 
 ctrl-shift-enter
-  stmt              if| mfl
-  stmt              int x|= 123
-  metode            T m(|)
+  metode                    T m(|)
+  setning                   if| mfl
+  setning                   int x|= 123
 
   ---------------------------
 Synlighet
