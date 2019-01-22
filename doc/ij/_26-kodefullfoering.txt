@@ -1,11 +1,11 @@
 KODEFULLFØRING
 
 ctrl-space
-  Nøkkelord¹
+ ¹Nøkkelord
   Nytt navn       T |
   Navn fmpv
-    bruk navn                     CIE@₁₂₃
-    static felt                   CIE@.f₁₂₃
+  Navn CEIA₁₂₃
+ ²Navn static f   CEIA.f₁₂₃
     static metode           CE.m₁₂₃
     bruk navn³              CIE@₄
       terminator              ⇥ ␣ = ! . , ;
