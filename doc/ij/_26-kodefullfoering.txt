@@ -2,65 +2,44 @@ KODEFULLFØRING
 
 ctrl-space
  ¹Nøkkelord
-  Nytt navn       T |
-  Navn fmpv
-  Navn CEIA₁₂₃
- ²Navn static f   CEIA.f₁₂₃
-    static metode           CE.m₁₂₃
-    bruk navn³              CIE@₄
-      terminator              ⇥ ␣ = ! . , ;
+  Nytt navn               T |
+  Felt...                 fmpv
+  Klasse...               CEIA₁₂₃
+ ²Static felt|metode      CEI.fm₁₂₃
+ ³Klasse...               CIEA₄
+  Terminator              ⇥ ␣ = ! . , ;
 
 ctrl-shift-space
-  builder¹                DoubleStream ds = |
-  cast                    T t = (|)
-  lambda                  Stream.empty().reduce(|)
-    bruk navn               fmpv
-    bruk navn               new CI₁₂₃
-    static felt|metode      CI.fm₁₂₃: CI
-    navn bruk               E.f₁₂₃: E
-    static metode           E.m₁₂₃: E
-  params arv              super.m(|)
-  params delegat          ref.m(|)
-  typeparam               T<S> t = new T<|>
-  array²                  T t = |
-  array                   List<T> tList = |
-  collection              T t = |
-  collection              T[] ts = |
-    static felt|metode      CI.fm₁₂₃: !CI
-    ref chain               ref.fm₁₂₃
-    ref chain³              ref.fm: String
-      terminator              ⇥ ␣ = ! . , ;
+ ¹Builder                 DoubleStream ds = |
+  Cast                    T t = (|)
+  Felt...                 fmpv
+  Klasse...               new CI₁₂₃
+  Lambda                  Stream.empty().reduce(|)
+  Params arv              super.m(|)
+  Params delegat          ref.m(|)
+  Static felt|metode      CI.fm₁₂₃: CI
+  Typeparam               T<S> t = new T<|>
+ ²Array                   T t = |
+  Array                   List<T> tList = |
+  Collection              T t = |
+  Collection              T[] ts = |
+  Ref felt|metode         ref.fm₁₂₃
+  Static felt|metode      CI.fm₁₂₃: !CI
+ ³Ref String metode       ref.m: String
+  Terminator              ⇥ ␣ = ! . , ;
 
 ctrl-alt-shift-space
-    ord
+  Ord
 
 ctrl-shift-enter
-  metode                    T m(|)
-  setning                   if| mfl
-  setning                   int x|= 123
+  Metode                T m(|)
+  Setning               if| mfl
+  Setning               int x|= 123
 
-  ---------------------------
-Synlighet
-  1 - modul + jdk libs + andre libs
-  2 - moduler + libs som 1 er avhengig av (avhengigheter)
-  3 - moduler + libs som 2 er avhengig av (transitive avhengigheter)
-  4 - moduler + libs som 1 ikke er avhengig av (uavhengigheter)
-
-Aksess
-  public
-  protected
-  package
-  private
-
-Idea
-  Vis forslag as you type
-
-ctrl-space && show suggestions as you type (live)
-  | - n/a
-  B| - n/a
-  Bu| - com.oracle.nio.BufferSecrets
-
-String
-  ctrl-space: spesiell
-  ctrl-shift-space: spesiell
+----
+Skop
+₁ modul + jdk libs + libs
+₂ direkte avhengige moduler + libs
+₃ transitivt avhengige moduler + libs
+₄ andre moduler + libs
 
