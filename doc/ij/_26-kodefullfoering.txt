@@ -1,45 +1,45 @@
 KODEFULLFØRING
 
 ctrl-space
- ¹Nøkkelord
+ ¹Nøkkelord               a| 
   Nytt navn               T |
   Felt...                 fmpv
   Klasse...               CEIA₁₂₃
- ²Static felt|metode      CEI.fm₁₂₃
- ³Klasse...               CIEA₄
+ ²Static member           CEI.fm₁₂₃
+ ³Klasse...               CEIA₄
   Terminator              ⇥ ␣ = ! . , ;
 
 ctrl-shift-space
- ¹Builder                 DoubleStream ds = |
-  Cast                    T t = (|)
-  Felt...                 fmpv
+ ¹Felt...                 fmpv
   Klasse...               new CI₁₂₃
-  Lambda                  Stream.empty().reduce(|)
+  Static member           CI.fm₁₂₃: CI
   Params arv              super.m(|)
   Params delegat          ref.m(|)
-  Static felt|metode      CI.fm₁₂₃: CI
+  Builder                 DoubleStream ds = |
+  Cast                    T t = (|)
+  Lambda                  Stream.empty().reduce(|)
   Typeparam               T<S> t = new T<|>
- ²Array                   T t = |
+ ²Member                  ref.fm₁₂₃
+  Static member           CI.fm₁₂₃: !CI
+  Array                   T t = |
   Array                   List<T> tList = |
   Collection              T t = |
   Collection              T[] ts = |
-  Ref felt|metode         ref.fm₁₂₃
-  Static felt|metode      CI.fm₁₂₃: !CI
- ³Ref String metode       ref.m: String
+ ³String metode           T t = ref.m: T
   Terminator              ⇥ ␣ = ! . , ;
 
 ctrl-alt-shift-space
-  Ord
+  Cyclic expand word
 
 ctrl-shift-enter
-  Metode                T m(|)
-  Setning               if| mfl
-  Setning               int x|= 123
+  Metode                  T m(|)
+  Setning                 if| mfl
+  Setning                 int x|= 123
 
-----
-Skop
-₁ modul + jdk libs + libs
-₂ direkte avhengige moduler + libs
-₃ transitivt avhengige moduler + libs
-₄ andre moduler + libs
+--------------------------------------------------
+Avhengigheter
+₁ mod₁ + jdk-libs + libs₁
+₂ mod₁ → mod₂ + libs₂ (avhengigheter)
+₃ mod₂ → mod₃ + libs₃ (transitive avhengigheter)
+₄ mod₄ + libs₄
 
