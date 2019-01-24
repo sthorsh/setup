@@ -36,10 +36,15 @@ ctrl-shift-enter
   Setning                 if| mfl
   Setning                 int x|= 123
 
---------------------------------------------------
-Avhengigheter
-₁ mod₁ + jdk-libs + libs₁
-₂ mod₁ → mod₂ + libs₂ (avhengigheter)
-₃ mod₂ → mod₃ + libs₃ (transitive avhengigheter)
-₄ mod₄ + libs₄
+------------------- 
+Moduler/biblioteker
+  mod₁ → mod₂
+  mod₂ → mod₃
+  mod₃    
+  mod₄
+  jdk/jre/lib
+  mod₁ → libs₁ 
+  mod₂ → libs₂
+  mod₃ → libs₃
+  mod₄ → libs₄
 

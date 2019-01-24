@@ -7,7 +7,7 @@ Prosjektstruktur
   ctrl-alt-shift-s
 
 Konfigurasjon
-  ~/.IdeaIC2018.1/config/     globalt
-  ~/.IdeaIC2018.1/system/     globalt
   ${module.basedir}/mod.iml   per-modul
   ${project.basedir}/.idea/   per-prosjekt
+  ~/.IdeaIC2018.1/config/     global
+  ~/.IdeaIC2018.1/system/     global 
