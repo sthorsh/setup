@@ -1,0 +1,47 @@
+INTENSJONER: alt-enter
+
+Java
+  Add Javadoc                         CEIfm
+  Add exception to method signature   ref.m|()
+  Add catch clause                    ref.m|()
+  Add T as nth param to method m      ref.m(..., t|)
+  Add dependency on module            CEI| (Module Dependencies + Maven)
+  Add Maven dependency                CEI| (Module Dependencies + Maven)
+  Create class                        C|  
+  Create constructor                  new C(1|)
+  Create enum                         E|
+  Create field                        f|
+  Create field f in C                 ref.f| 
+  Create inner class                  C|
+  Create interface                    I|
+  Create local variable               v|
+  Create method m in C                ref.m|() 
+  Create parameter                    p|
+  Create subclass                     class |C
+  Create test                         class |C
+  Create type parameter T             T|
+  Generate missed test methods        T m|()
+  Implement abstract class            abstract class |C{}
+  Implement method m                  abstract T |m();
+  Import class                        CEI|
+! Iterate                             ref|
+  Make m return T                     return t;|
+  Make private|protected|public       T t|
+  Rename reference                    ref|
+  Replace if-else with ?:             if|
+  Simplify if-else                    if|
+  ...
+  
+Language injection/Regexp
+  Inject language or reference        String s = "|" 
+  Check regexp                        String s = "|" 
+  ...
+  
+XML
+  Collapse empty tag                  <|tag></tag>
+  Fetch external resource             xmlns="|..."
+  Insert namespace prefix             *
+  Reset to default namespace          *
+  Remove tag                          <|tag></tag> 
+  Manually setup external resource    xmlns="|..." 
+  ...

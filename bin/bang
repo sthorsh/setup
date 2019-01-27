@@ -46,20 +46,20 @@ fi
 echo "configuring gnome..."
 # capslock to ctrl
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-# disable alt-pipe
+# alt-pipe
 gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['disabled']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "[disabled]"
-gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings:/ close-tab "[disabled]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
-# ij ctrl-alt-left
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left []
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "[disabled]"
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-8 []
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings:/ close-tab "[disabled]"
 
 # Create directories
 echo "creating directories..."
