@@ -53,6 +53,7 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabl
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left []
+gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []

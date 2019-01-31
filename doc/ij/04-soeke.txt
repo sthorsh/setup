@@ -11,5 +11,5 @@ ctrl-n               navn klasse
 ctrl-shift-n         navn fil
 ctrl-alt-shift-n     navn symbol
 
-ctrl-shift-s         strukturelt søk
+ctrl-alt-s           strukturelt søk
 

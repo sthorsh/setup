@@ -24,5 +24,5 @@ ctrl-u               klasse|metode → base/super
 
 ctrl-shift-bs        til forrige endring
 
-ctrl-alt-←→          tilbake|frem
+shift-alt-←→         tilbake|frem
                            
