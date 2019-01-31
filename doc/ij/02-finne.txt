@@ -3,18 +3,18 @@ FINNE
 f2                 finn advarsel|feil ↓
 shift-f2           finn advarsel|feil ↑
 
-ctrl-f3            |str: finn str
+ctrl-f3            finn ord: ord|
 
-ctrl-f7            |navn: finn bruk
-ctrl-shift-f7      |str: fremhev strs
-                   |navn: fremhev bruk
-                   |extends: fremhev @Override
-                   |implements: fremhev @Override
-                   |return: fremhev return|throw
-                   |throw: fremhev return|throw
+ctrl-f7            finn bruk: navn|
+ctrl-shift-f7      fremhev ord: ord|
+                   fremhev bruk: navn|
+                   fremhev @Override: extends|
+                   fremhev @Override: implements|
+                   fremhev return|throw: return|
+                   fremhev return|throw: throw|
 
-ctrl-f             finn fritekst|alt-↓ str
+ctrl-f             finn fritekst|alt-↓
 
-ctrl-l             finn forekomst ↓ (evt f3)
-ctrl-shift-l       finn forekomst ↑ (evt shift-f3)
+ctrl-l             finn neste forekomst (evt f3)
+ctrl-shift-l       finn forrige forekomst (evt shift-f3)
 
