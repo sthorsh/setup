@@ -11,6 +11,7 @@
   <action id="CloseAllEditorsButActive">
     <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
+  <action id="Console.History.Browse" />
   <action id="ConvertJavaToKotlin" />
   <action id="DebugClass">
     <keyboard-shortcut first-keystroke="shift ctrl f9" />
@@ -29,6 +30,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt space" />
   </action>
   <action id="Kotlin.RunScratch" />
+  <action id="LocalHistory.ShowHistory">
+    <keyboard-shortcut first-keystroke="shift alt h" />
+  </action>
   <action id="NextSplitter">
     <keyboard-shortcut first-keystroke="alt comma" />
   </action>
