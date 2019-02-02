@@ -3,10 +3,10 @@ GUI
 ctrl-↑↓           scroll editor
 ctrl-m            scroll editor til midten
 
-alt-|             splitt editor
-alt--             splitt editor
-alt-,             til neste splitt
+alt-|             split editor
+alt--             split editor
 alt-.             unsplit editor
+alt-,             til neste split
 
 alt-0-9           vinduer
 alt-f12           terminal

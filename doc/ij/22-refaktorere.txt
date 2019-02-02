@@ -1,11 +1,11 @@
 REFAKTORERE
 
+ctrl-alt-shift-t      refaktorer this
+
 ctrl-alt-c            constant
 ctrl-alt-f            felt
 ctrl-alt-m            metode
 ctrl-alt-n            inline metode
-ctrl-alt-p            param (virker ikke i ubuntu 18.04)
+ctrl-alt-p            param (n/a ubuntu 18.04)
 ctrl-alt-v            variabel
-
-ctrl-alt-shift-t      refaktorer this
 

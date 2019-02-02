@@ -1,0 +1,32 @@
+RUN-DEBUG
+
+shift-f10             run 1
+ctrl-shift-f10        run |
+shift-alt-f10         run ...
+
+ctrl-f8               sett stoppunkt
+ctrl-shift-f8         vise stoppunkter
+ctrl-shift-alt-f8     sett engangsstoppunkt
+
+shift-f9              debug 1
+ctrl-shift-f9         debug |
+shift-alt-f9          debug ...
+
+f9                    fortsett til stoppunkt
+ctrl-alt-9            fortsett til cursor
+shift-alt-9           fortsett til stoppunkt el cursor
+
+f8                    step over
+shift-f8              step ut
+shift-alt-f8          step over, glem stoppunkter
+
+f7                    step inn
+shift-f7              step inn, velg metode
+shift-alt-f7          step inn, glem filtere
+
+ctrl-alt-8            eval markert expr
+shift-alt-8           eval expr
+
+shift-alt-0           cursor til execution point
+
+ctrl-f2               stopp debug el run

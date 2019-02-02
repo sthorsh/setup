@@ -9,7 +9,6 @@ shift-escape            skjule vindu
 
 alt-f1                  select in
 f4                      til src (løv)
-shift-f6                rename
 
 ↲                       åpne|lukk|vis src (løv)
 ctrl-↲                  toggle prosjektstruktur
@@ -18,8 +17,8 @@ ctrl-alt-↲              tittellinjemeny
 alt-insert              ny
 ctrl-alt-shift-insert   ny scratch-fil
 
-delete                  slett node|utvalg
-alt-delete              safe delete
+delete                  slett node(r)
+alt-delete              safe slett node(r)
   
 home                    topp
 end                     bunn
@@ -43,6 +42,7 @@ ctrl-shift-f            find
 ctrl-h                  klassehierarki
 ctrl-alt-l              formater node(r)
 ctrl-alt-o              optimaliser imports
+ctrl-alt-shift-t        refaktorere
 ctrl-v                  paste node(r)
 ctrl-x                  cut navn & node(r)
 ctrl-z                  undo

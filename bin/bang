@@ -47,7 +47,7 @@ echo "configuring gnome..."
 # capslock to ctrl
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
 # alt-pipe
-gsettings set org.gnome.desktop.wm.keybindings switch-group "['disabled']"
+gsettings set org.gnome.desktop.wm.keybindings switch-group []
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['disabled']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['disabled']"
