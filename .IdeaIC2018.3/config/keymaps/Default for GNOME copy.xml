@@ -23,6 +23,9 @@
   <action id="EditorCodeBlockStart">
     <keyboard-shortcut first-keystroke="shift ctrl alt k" />
   </action>
+  <action id="EditorSwapSelectionBoundaries">
+    <keyboard-shortcut first-keystroke="shift alt o" />
+  </action>
   <action id="EditorToggleCase">
     <keyboard-shortcut first-keystroke="shift alt u" />
   </action>
@@ -38,7 +41,7 @@
     <keyboard-shortcut first-keystroke="alt comma" />
   </action>
   <action id="PlaybackLastMacro">
-    <keyboard-shortcut first-keystroke="alt m" />
+    <keyboard-shortcut first-keystroke="shift alt m" />
   </action>
   <action id="SplitHorizontally">
     <keyboard-shortcut first-keystroke="alt minus" />
@@ -47,7 +50,7 @@
     <keyboard-shortcut first-keystroke="alt #100007c" />
   </action>
   <action id="StartStopMacroRecording">
-    <keyboard-shortcut first-keystroke="shift alt m" />
+    <keyboard-shortcut first-keystroke="alt m" />
   </action>
   <action id="StructuralSearchPlugin.StructuralSearchAction">
     <keyboard-shortcut first-keystroke="shift alt s" />

@@ -1,11 +1,11 @@
 REFAKTORERE
 
-ctrl-alt-shift-t      refaktorer this
+ctrl-shift-alt-t      refaktorer this
 
-ctrl-alt-c            constant
-ctrl-alt-f            felt
-ctrl-alt-m            metode
+ctrl-alt-c            ekstraher konstant
+ctrl-alt-f            ekstraher felt
+ctrl-alt-m            ekstraher metode
 ctrl-alt-n            inline metode
-ctrl-alt-p            param (n/a ubuntu 18.04)
-ctrl-alt-v            variabel
+ctrl-alt-p            ekstraher param (n/a ubuntu 18.04)
+ctrl-alt-v            ekstraher variabel
 

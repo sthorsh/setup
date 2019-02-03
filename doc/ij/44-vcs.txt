@@ -1,7 +1,7 @@
 VCS
 
-History
-  alt-shift-h     show history
+Local history
+  shift-alt-h     show history
 
 Subversion
   alt-a           annotate

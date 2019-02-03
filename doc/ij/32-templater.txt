@@ -1,6 +1,6 @@
-TEMPLATER
+TEMPLATER (t)
 
-[ctrl-j]str⇥
+[ctrl-j]t⇥    
   fori          for
   geti          singleton getInstance()
   ifn           if null

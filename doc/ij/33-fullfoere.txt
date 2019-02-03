@@ -1,4 +1,4 @@
-KODEFULLFØRING
+FULLFØRING
 
 ctrl-space
  ¹Nøkkelord               a| 
@@ -28,7 +28,7 @@ ctrl-shift-space
  ³String metode           T t = ref.m: T
   Terminator              ⇥ ␣ = ! . , ;
 
-ctrl-alt-shift-space
+ctrl-shift-alt-space
   Cyclic expand word
 
 ctrl-shift-enter

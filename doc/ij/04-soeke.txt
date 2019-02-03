@@ -1,15 +1,15 @@
 SØK
 
-ctrl-shift-a         alt|klasse|fil|symbol|action
+ctrl-shift-a         action
 
 ctrl-e...            nylig filer
 ctrl-shift-e...      nylig redigerte filer
 
-ctrl-shift-f         fritekst|alt-↓|valgt str
+ctrl-shift-f         fritekst|alt-↓
 
-ctrl-n               navn klasse
-ctrl-shift-n         navn fil
-ctrl-alt-shift-n     navn symbol
+ctrl-n               klasse
+ctrl-shift-n         fil
+ctrl-shift-alt-n     symbol
 
-ctrl-alt-s           strukturelt søk
+shift-alt-s          strukturelt søk
 

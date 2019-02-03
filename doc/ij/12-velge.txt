@@ -1,23 +1,22 @@
 VELGE
 
-ctrl-a                   velg alt
-
-alt-j                    velg forekomst ↓
-shift-alt-j              velg bort forekomst ↑
-ctrl-alt-shift-j         velg alle forekomster
-
-ctrl-w                   velg mer
-ctrl-shift-w             velg mindre
-
 shift-←→                 velg char
 ctrl-shift-←→            velg word
+              
+shift-alt-insert         toggle modus
+
 shift-home|end           velg line start|end
-
-alt-shift-insert         toggle modus
-
-shift-↑↓                 velg line (linjemodus)
 ctrl-shift-home|end      velg text start|end
 
-shift-↑↓                 velg kolonne (kolonnemodus)
 ctrl-ctrl-↑↓             velg kolonne
+shift-↑↓                 velg line (linjemodus)
+shift-↑↓                 velg kolonne (kolonnemodus)
+
+ctrl-a                   velg alt
+alt-j                    velg neste
+shift-alt-j              velg bort forrige
+ctrl-shift-alt-j         velg alle
+shift-alt-o              swap selection boundaries (other)
+ctrl-w                   velg mer
+ctrl-shift-w             velg mindre
 

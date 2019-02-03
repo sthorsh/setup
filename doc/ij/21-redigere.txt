@@ -1,39 +1,35 @@
 REDIGERE
 
-⇥                       rykk →
-⇤                       rykk ←
-
-bs                      slett tegn
-ctrl-bs                 slett ord
-
-delete                  slett tegn
-ctrl-delete             slett ord
-
-↵                       crlf
-ctrl-↵                  split ln
-shift-↵                 newline ↓
-ctrl-alt-↵              newline ↑
-
-ctrl-shift-↑↓           mv stmt|metode|class
-ctrl-alt-shift-←→       mv arg|param|element
-
-ctrl-c                  cp ln|utvalg
+ctrl-c                  cp linje|utvalg
 ctrl-shift-c            cp path
-ctrl-alt-shift-c        cp referanse
-ctrl-d                  dup ln|utvalg
-ctrl-shift-j            join ln
+ctrl-shift-alt-c        cp referanse
+ctrl-d                  dup linje|utvalg
+ctrl-shift-j            join
 ctrl-alt-l              formater alt|utvalg
-alt-m                   utføre makro
-alt-shift-m             ta opp makro
+alt-m                   ta opp makro
+shift-alt-m             spill av makro
 ctrl-alt-o              optimaliser import
-ctrl-r                  repl fritekst|alt-↓
-ctrl-shift-r            repl fritekst|alt-↓
-alt-shift-u             uppercase
+ctrl-r                  repl fritekst|alt-↓ i fil
+ctrl-shift-r            repl fritekst|alt-↓ i ...
+shift-alt-u             uppercase
 ctrl-v                  paste
 ctrl-shift-v            paste fra stack
-ctrl-alt-shift-v        paste simple
-ctrl-x                  cut ln|utvalg
-ctrl-y                  del ln|utvalg
+ctrl-shift-alt-v        paste simple
+ctrl-x                  cut linje|utvalg
+ctrl-y                  slett linje|utvalg
 ctrl-z                  undo
 ctrl-shift-z            redo
+
+  tab                         rykk inn
+  shift-tab                   rykk ut
+  ctrl-shift-up|down          mv metode|stmt
+  ctrl-shift-alt-left|right   mv arg|param|element
+  delete                      slett tegn
+  ctrl-delete                 slett ord
+  bs                          slett tegn
+  ctrl-bs                     slett ord
+  enter                       crlf
+  ctrl-enter                  split
+  shift-enter                 newline ↓
+  ctrl-alt-enter              newline ↑
 

@@ -1,48 +1,49 @@
 PROSJEKT
 
-☰                       kontekstmeny
+  ☰                       kontekstmeny
 
-*                       søk (case-insensitivt, delstrenger)
+  *                       søk (case-insensitivt, delstrenger)
 
-escape                  til editor
-shift-escape            skjule vindu
+  escape                  til editor
+  shift-escape            skjule vindu
 
-alt-f1                  select in
-f4                      til src (løv)
+  alt-f1                  select in
 
-↲                       åpne|lukk|vis src (løv)
-ctrl-↲                  toggle prosjektstruktur
-ctrl-alt-↲              tittellinjemeny
+  f4                      til src (løv)
 
-alt-insert              ny
-ctrl-alt-shift-insert   ny scratch-fil
+  ↲                       åpne|lukk|vis src (løv)
+  ctrl-↲                  toggle prosjektstruktur
+  ctrl-alt-↲              tittellinjemeny
 
-delete                  slett node(r)
-alt-delete              safe slett node(r)
-  
-home                    topp
-end                     bunn
+  alt-insert              ny
+  ctrl-shift-alt-insert   ny scratch-fil
 
-↑↓                      opp|ned
-alt-↓                   velg tab
-shift-↑↓                velg noder
+  delete                  slett node(r)
+  alt-delete              safe slett node(r)
+    
+  home                    topp
+  end                     bunn
 
-→                       åpne|ned
-←                       ut|lukk
-ctrl-shift-←→           resize vindu
+  ↑↓                      opp|ned
+  alt-↓                   velg tab
+  shift-↑↓                velg noder
 
-num*                    åpne nivå
-ctrl--                  lukk alle
+  →                       åpne|ned
+  ←                       ut|lukk
+  ctrl-shift-←→           resize vindu
+
+  num*                    åpne nivå
+  ctrl--                  lukk alle
 
 ctrl-c                  cp navn & node(r)
 ctrl-shift-c            cp path(er)
-ctrl-alt-shift-c        cp referanse(r)
+ctrl-shift-alt-c        cp referanse(r)
 ctrl-d                  diff
 ctrl-shift-f            find
 ctrl-h                  klassehierarki
 ctrl-alt-l              formater node(r)
 ctrl-alt-o              optimaliser imports
-ctrl-alt-shift-t        refaktorere
+ctrl-shift-alt-t        refaktorere
 ctrl-v                  paste node(r)
 ctrl-x                  cut navn & node(r)
 ctrl-z                  undo

@@ -5,8 +5,8 @@ Java
   Add exception to method signature   ref.m|()
   Add catch clause                    ref.m|()
   Add T as nth param to method m      ref.m(..., t|)
-  Add dependency on module            CEI| (Module Dependencies + Maven)
-  Add Maven dependency                CEI| (Module Dependencies + Maven)
+  Add dependency on module            CEI|
+  Add Maven dependency                CEI|
   Create class                        C|  
   Create constructor                  new C(1|)
   Create enum                         E|
@@ -24,7 +24,7 @@ Java
   Implement abstract class            abstract class |C{}
   Implement method m                  abstract T |m();
   Import class                        CEI|
-! Iterate                             ref|
+  Iterate                             ref|
   Make m return T                     return t;|
   Make private|protected|public       T t|
   Rename reference                    ref|

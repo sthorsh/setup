@@ -15,6 +15,6 @@ ctrl-shift-f7      fremhev ord: ord|
 
 ctrl-f             finn fritekst|alt-↓
 
-ctrl-l             finn neste forekomst (evt f3)
-ctrl-shift-l       finn forrige forekomst (evt shift-f3)
+ctrl-l             finn neste (evt f3)
+ctrl-shift-l       finn forrige (evt shift-f3)
 

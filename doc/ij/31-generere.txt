@@ -1,38 +1,28 @@
 GENERERE
 
-alt-insert       
-  ctor
-  getter/setter
-  delegatmetoder
-  setup()  
-  tearDown()
-  testmetoder
+alt-insert         konstruktør
+                   getter
+                   setter
+                   delegatmetoder
+                   setup()
+                   tearDown()
+                   testmetoder
 
-ctrl-i
-  implement
+ctrl-num/          //
+ctrl-shift-num/    /**/
 
-ctrl-o
-  override
-
-ctrl-alt-w
-  if
-  if-else
-  for
-  while
-  do-while
-  try
-  try-finally
-  try-catch-finally
-  synchronized
-  Runnable
-  {}
-
-ctrl-alt-r
-  remove wrap
-
-ctrl-num/        
-  //   
-
-ctrl-shift-num/  
-  /**/
+ctrl-i             implement
+ctrl-o             override
+ctrl-alt-r         remove surround
+ctrl-alt-w         surround with if
+                   surround with if-else
+                   surround with while
+                   surround with do-while
+                   surround with for
+                   surround with try-catch
+                   surround with try-finally
+                   surround with try-catch-finally
+                   surround with synchronized
+                   surround with Runnable
+                   surround with {}
 

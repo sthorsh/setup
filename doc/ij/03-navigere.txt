@@ -10,7 +10,7 @@ ctrl-shift-0..9      lag bokmerke 0..9
 
 ctrl-alt-7           dekl|bruk → bruk
 
-ctrl-b               dekl ↔ bruk 
+ctrl-b               dekl → bruk, bruk → dekl
 ctrl-alt-b           dekl|bruk → impl
 ctrl-shift-b         navn → type
 
@@ -18,7 +18,7 @@ ctrl-h               hierarki klasse|supertype|subtype
 ctrl-alt-h           hierarki callers|callees
 ctrl-shift-h         hierarki metode
 
-ctrl-shift-t         subjekt ↔ test
+ctrl-shift-t         klasse → test, test → klasse
 
 ctrl-u               klasse|metode → base/super
 

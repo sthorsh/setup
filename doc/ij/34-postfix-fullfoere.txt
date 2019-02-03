@@ -1,6 +1,6 @@
-POSTFIX KOMPLETTERING
+POSTFIX-FULLFØRE (p)
 
-expr.[ctrl-j]str⇥
+[ctrl-j]p⇥
   expr!                  boolean
   expr.arg               * 
   expr.assert            boolean
@@ -21,6 +21,7 @@ expr.[ctrl-j]str⇥
   expr.opt               *
   expr.serr              *
   expr.souf              *
+  expr.sout              *
   expr.soutv             *
   expr.stream            array
   expr.twr               AutoCloseable mfl
