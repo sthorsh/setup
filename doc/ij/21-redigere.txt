@@ -8,8 +8,8 @@ ctrl-shift-c                cp path
 ctrl-shift-alt-c            cp referanse
 
 ctrl-d                      dup linje|utvalg
-delete                      slett tegn
-ctrl-delete                 slett ord
+delete                      del tegn
+ctrl-delete                 del ord
 
 enter                       crlf
 ctrl-enter                  split
@@ -18,31 +18,31 @@ ctrl-alt-enter              newline ↑
 
 ctrl-shift-j                join
 
-  ctrl-alt-l                  formater alt|utvalg
-  ctrl-shift-alt-left|right   mv arg|param|element
+ctrl-alt-l                  formater alt|utvalg
+ctrl-shift-alt-left|right   mv arg|param|element
 
-  alt-m                       ta opp makro
-  shift-alt-m                 spill av makro
+alt-m                       ta opp makro
+shift-alt-m                 spill av makro
 
-  ctrl-alt-o                  optimaliser import
+ctrl-alt-o                  optimaliser import
 
-  ctrl-r                      repl fritekst|alt-↓ i fil
-  ctrl-shift-r                repl fritekst|alt-↓ i ...
+ctrl-r                      repl fritekst|alt-↓ i fil
+ctrl-shift-r                repl fritekst|alt-↓ i ...
 
-  tab                         rykk inn
-  shift-tab                   rykk ut
+tab                         rykk inn
+shift-tab                   rykk ut
 
-  shift-alt-u                 uppercase
-  ctrl-shift-up|down          mv metode|stmt
+shift-alt-u                 uppercase
+ctrl-shift-up|down          mv metode|stmt
 
-  ctrl-v                      paste
-  ctrl-shift-v                paste fra stack
-  ctrl-shift-alt-v            paste simple
+ctrl-v                      paste
+ctrl-shift-v                paste fra stack
+ctrl-shift-alt-v            paste simple
 
-  ctrl-x                      cut linje|utvalg
+ctrl-x                      cut linje|utvalg
 
-  ctrl-y                      slett linje|utvalg
+ctrl-y                      slett linje|utvalg
 
-  ctrl-z                      undo
-  ctrl-shift-z                redo
+ctrl-z                      undo
+ctrl-shift-z                redo
 

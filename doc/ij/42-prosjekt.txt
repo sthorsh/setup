@@ -1,51 +1,42 @@
 PROSJEKT
 
-  ☰                       kontekstmeny
-
-  *                       søk (case-insensitivt, delstrenger)
-
-  escape                  til editor
-  shift-escape            skjule vindu
-
-  alt-f1                  select in
-
-  f4                      til src (løv)
-
-  ↲                       åpne|lukk|vis src (løv)
-  ctrl-↲                  toggle prosjektstruktur
-  ctrl-alt-↲              tittellinjemeny
-
-  alt-insert              ny
-  ctrl-shift-alt-insert   ny scratch-fil
-
-  delete                  slett node(r)
-  alt-delete              safe slett node(r)
-    
-  home                    topp
-  end                     bunn
-
-  ↑↓                      opp|ned
-  alt-↓                   velg tab
-  shift-↑↓                velg noder
-
-  →                       åpne|ned
-  ←                       ut|lukk
-  ctrl-shift-←→           resize vindu
-
-  num*                    åpne nivå
-  ctrl--                  lukk alle
-
-ctrl-c                  cp navn & node(r)
-ctrl-shift-c            cp path(er)
-ctrl-shift-alt-c        cp referanse(r)
-ctrl-d                  diff
-ctrl-shift-f            find
-ctrl-h                  klassehierarki
-ctrl-alt-l              formater node(r)
-ctrl-alt-o              optimaliser imports
-ctrl-shift-alt-t        refaktorere
-ctrl-v                  paste node(r)
-ctrl-x                  cut navn & node(r)
-ctrl-z                  undo
-ctrl-shift-z            redo
-
+alt-f1                    select in
+f4                        jump to source
+a-zA-Z0-9                 søk
+ctrl-c                    cp navn & node
+ctrl-shift-c              cp path
+ctrl-shift-alt-c          cp referanse
+ctrl-d                    diff fil vs fil
+delete                    slett node
+alt-delete                safe slett node
+down                      ned
+shift-down                velg noder
+alt-down                  velg tab
+end                       til bunn
+  enter                     åpne|lukk|vis src (løv)
+  ctrl-enter                toggle prosjektstruktur
+  ctrl-alt-enter            tittellinjemeny
+  escape                    til editor
+  shift-escape              skjule vindu
+  ctrl-shift-f              find
+  ctrl-h                    klassehierarki
+home                      til topp
+  alt-insert                ny
+  ctrl-shift-alt-insert     ny scratch-fil
+  ctrl-alt-l                formater node(r)
+  left                      ut|lukk
+  ctrl-shift-left           resize vindu
+  ctrl-minus                lukk alle
+  menu                      kontekstmeny
+  numpad*                   åpne nivå
+  ctrl-alt-o                optimaliser imports
+  right                     åpne|ned
+  ctrl-shift-right          resize vindu
+  ctrl-shift-alt-t          refaktorere
+up                        opp
+shift-up                  velg noder
+ctrl-v                    paste node
+ctrl-x                    cut navn & node
+ctrl-z                    undo
+ctrl-shift-z              redo
+            
