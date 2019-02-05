@@ -1,0 +1,42 @@
+PROSJEKT
+
+☰                         kontekstmemy     
+alt-f1                    select in
+f4                        jump to source
+a-zA-Z0-9                 søk
+ctrl-c                    cp navn & node
+ctrl-shift-c              cp path
+ctrl-shift-alt-c          cp referanse
+ctrl-d                    diff fil vs fil
+delete                    slett node
+alt-delete                safe slett node
+down                      ned
+shift-down                velg noder
+alt-down                  velg tab
+end                       til siste node
+enter                     åpne|lukk node, vis løvnode
+ctrl-enter                toggle prosjektstruktur
+ctrl-alt-enter            tittellinjemeny
+escape                    til editor
+shift-escape              skjul prosjektvindu
+ctrl-shift-f              finn i node
+ctrl-h                    klassehierarki
+home                      til første node
+alt-insert                ny ...
+ctrl-shift-alt-insert     ny scratch-fil
+ctrl-alt-l                formater noder
+left                      ut|lukk
+ctrl-shift-left           resize vindu
+ctrl-minus                lukk alt
+numpad*                   åpne nivå
+ctrl-alt-o                optimaliser imports
+right                     åpne|ned
+ctrl-shift-right          resize vindu
+ctrl-shift-alt-t          refaktorere
+up                        opp
+shift-up                  velg noder
+ctrl-v                    paste node
+ctrl-x                    cut navn & node
+ctrl-z                    undo
+ctrl-shift-z              redo
+            
