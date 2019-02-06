@@ -1,4 +1,4 @@
-SØK
+SØKE
 
 ctrl-shift-a         action
 
