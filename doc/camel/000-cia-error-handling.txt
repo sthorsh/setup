@@ -1,0 +1,54 @@
+Klassifisering
+  Recoverable feil
+  Irrecoverable feil
+
+Recoverable feil
+  exchange.getException(): Exception
+  exchange.setException(Throwable): void
+  Clib: ClibRecoverableException
+
+Irrecoverable feil
+  exchange.getException(): Exception
+  exchange.setException(Throwable): void
+  Clib: ClibIrrecoverableException
+
+Irrecoverable errors
+  exchange.getIn|Out().getFault(): boolean
+  exchange.getIn|Out().setFault(true): void
+  Clib: SOAP?
+
+Tommelfingerregler
+  Camel anser alle feil som recoverable (camel error handling pattern)
+  Camel trigger error handler kun hvis exchange.getException() != null
+
+Camel error handlers
+  DefaultErrorHandler 
+  NoErrorHandler 
+  DeadLetterChannel
+
+DefaultErrorHandler extends RedeliveryErrorHandler 
+  Gir opp: som Java
+  Logger routetrace og stacktrace
+  Evt forsøk på nytt: redelivery policy
+  Evt skop
+  Evt exception policy
+  Evt error handling
+
+NoErrorHandler
+  Et tomt skall uten logikk
+
+DeadLetterChannel extends RedeliveryErrorHandler 
+  Håndterer feilen: vha undertrykkelse
+  Flytter feilet|opprinnelig melding til en DLQ (log, fil, database)
+
+----------
+Håndtering
+  Gi opp: propagere feil tilbake til caller
+  Håndtere ved å forsøke på nytt: retry/redelivery
+  Håndtere ved å rute til en annen rute: detour vha exception policies
+  Håndtere ved å ...
+
+Håndtere exception ved å undertrykke den
+  Remove the exception from the exchange
+  Store the exception as property on the exchange
+
