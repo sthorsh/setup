@@ -27,7 +27,9 @@ Camel error handlers
   DeadLetterChannel
 
 DefaultErrorHandler extends RedeliveryErrorHandler 
-  Gir opp: som Java
+  Gir opp
+  Stopper ruting av meldingen
+  Propagerer exchange/feil «bakover»
   Logger routetrace og stacktrace
   Evt forsøk på nytt: redelivery policy
   Evt skop
@@ -38,17 +40,20 @@ NoErrorHandler
   Et tomt skall uten logikk
 
 DeadLetterChannel extends RedeliveryErrorHandler 
-  Håndterer feilen: vha undertrykkelse
+  Undertrykker feilen
+  Camel stopper ruting av meldingen
   Flytter feilet|opprinnelig melding til en DLQ (log, fil, database)
+  Den som kaller anser meldingen for prosessert
+  Evt forsøk på nytt: redelivery policy
+  Evt skop
+  Evt exception policy
+  Evt error handling
 
 ----------
+
 Håndtering
-  Gi opp: propagere feil tilbake til caller
-  Håndtere ved å forsøke på nytt: retry/redelivery
-  Håndtere ved å rute til en annen rute: detour vha exception policies
-  Håndtere ved å ...
-
-Håndtere exception ved å undertrykke den
-  Remove the exception from the exchange
-  Store the exception as property on the exchange
-
+  Propagere feil bakover (gi opp, som Java exception)
+  Fjerne exception fra exchange, lagre den som property (undertrykke feilen)
+  Prøve igjen (redelivery/retry)
+  Rute til en annen rute (detour vha exception policies)
+  ...
