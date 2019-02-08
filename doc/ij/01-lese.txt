@@ -1,7 +1,7 @@
 LESE
 
 ctrl-f1           advarsel|feil
-shift-f1          ekstern javadoc
+shift-f1          javadoc e.g /opt/jdk/docs/api
   
 ctrl-d            diff fil vs fil
 alt-v b           diff clipboard vs editor
@@ -10,10 +10,10 @@ alt-v m           diff fil vs editor
 ctrl-shift-i      definisjon fil|navn
   
 ctrl-p            params
-ctrl-shift-p      expression type
+ctrl-shift-p      expr type
   
-ctrl-q            javadoc
-alt-q             kontekst
+ctrl-q            javadoc popup
+alt-q             context popup
   
-ctrl-alt-x p      xpath
+ctrl-alt-x p      xpath expr
    

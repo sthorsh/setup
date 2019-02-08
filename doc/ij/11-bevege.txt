@@ -1,0 +1,18 @@
+BEVEGE
+
+←→                     venstre|høyre
+ctrl-←→                ord venstre|høyre
+
+↑↓                     opp|ned
+alt-↑↓                 forrige|neste metode
+
+ctrl-f12               felt|metode|indre klasse
+
+home|end               bol|eol
+ctrl-home|end          tekst start|slutt
+
+ctrl-g                 linje:kolonne
+
+ctrl-shift-m           match {}()[]<>
+ctrl-shift-alt-b|m     blokk start|slutt
+
