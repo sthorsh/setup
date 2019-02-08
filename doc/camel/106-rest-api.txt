@@ -1,3 +1,5 @@
+REST API
+
 RestConfigurationDefinition
 - component(String): RestConfigurationDefinition
 - scheme(String): RestConfigurationDefinition

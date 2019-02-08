@@ -21,7 +21,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt m" />
   </action>
   <action id="EditorCodeBlockStart">
-    <keyboard-shortcut first-keystroke="shift ctrl alt k" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt b" />
   </action>
   <action id="EditorSwapSelectionBoundaries">
     <keyboard-shortcut first-keystroke="shift alt o" />

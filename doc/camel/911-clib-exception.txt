@@ -1,0 +1,107 @@
+                                               Object
+                                                 |
+                                                 |
+                                             Throwable
+                                                 |
+                                                 |
+                                             Exception
+                                                 |
+                                                 |
+                                                 |--- checked ---
+                                                 |
+                                                 |
+                                          RuntimeException
+                                                 |
+                                                 |
+              ----------------------------------------------------------------------
+              |                       |                     |                      |
+              |                       |                     |                      |
+              |                 ClibContinue-        ClibRecoverable-         ClibWarning-
+              |                   Exception             Exception              Exception
+              |                       |                     |                      |
+              |                       |                     |                      |
+LsNavHqActivityErrorException        ...       LsNavHqRecoverableException        ...
+LsNavHqActivityFailedException                                     
+
+CFX response mapper                            CXF fault mapper
+
+
+
+
+package com.colorline.clib.common.errorhandler.exception;
+
+/**
+ * Continue exception, when thrown routing of message will continue in camel
+ * route. MessageLog will be marked as OK with errorMessage.
+ * <p>
+ * No need to define onException(..) clause for this exception (or any
+ * exceptions extending this), since this is done by framework in
+ * {@link com.colorline.clib.common.errorhandler.routebuilder.ErrorHandlingRouteBuilder}
+ */
+public class ClibContinueException extends RuntimeException {
+    private static final long serialVersionUID = -6040454360340685263L;
+
+    public ClibContinueException(String message) {
+        super(message);
+    }
+
+    public ClibContinueException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
+
+
+
+
+
+
+package com.colorline.clib.common.errorhandler.exception;
+
+/**
+ * Recoverable exception, when thrown camel will retry sending message.
+ * <p>
+ * Must define onException(..) clause for this exception (or any exceptions
+ * extending this). In
+ * {@link com.colorline.clib.common.errorhandler.routebuilder.ErrorHandlingRouteBuilder}
+ * there are supporting methods for this that can be used when configuring
+ * route; <br\>
+ * onException(ClibRecoverableException.class, maximumRedeliveries, delay)
+ */
+public class ClibRecoverableException extends RuntimeException {
+    private static final long serialVersionUID = 3496520900120773939L;
+
+    public ClibRecoverableException(String message) {
+        super(message);
+    }
+
+    public ClibRecoverableException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
+
+
+
+
+
+
+package com.colorline.clib.common.errorhandler.exception;
+
+/**
+ * Warning exception, when thrown routing of message is stopped by camel route.
+ * MessageLog will be marked as OK with errorMessage.
+ * <p>
+ * No need to define onException(..) clause for this exception (or any
+ * exceptions extending this), since this is done by framework in
+ * {@link com.colorline.clib.common.errorhandler.routebuilder.ErrorHandlingRouteBuilder}
+ */
+public class ClibWarningException extends RuntimeException {
+    private static final long serialVersionUID = -932517919685450128L;
+
+    public ClibWarningException(String message) {
+        super(message);
+    }
+
+    public ClibWarningException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}

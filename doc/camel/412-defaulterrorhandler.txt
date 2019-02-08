@@ -1,3 +1,5 @@
+DEFAULTERRORHANDLER
+
 RedeliveryErrorHandler.process()
   target = null | FatalFallbackErrorHandler
   deliverToFailureProcessor()

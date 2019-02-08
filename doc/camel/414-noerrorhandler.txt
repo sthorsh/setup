@@ -1,3 +1,5 @@
+NOERRORHANDLER
+
 NoErrorHandlerBuilder.createErrorHandler()
   delegateAsyncProcessor.process(exchange, ...)
   CREATED_TIMESTAMP = ...

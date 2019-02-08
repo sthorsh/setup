@@ -1,3 +1,5 @@
+DEFAULTERRORHANDLER
+
 RedeliveryErrorHandler.process()
 
   data.original = defensiveCopyExchangeIfNeeded(exchange)

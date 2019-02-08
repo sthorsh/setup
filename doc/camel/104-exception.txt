@@ -1,3 +1,5 @@
+EXCEPTION
+
 onException()
     .maximumRedeliveries(n) resende før utmattelse
     .continued(true) ignorere v/utmattelse

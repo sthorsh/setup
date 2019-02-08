@@ -1,3 +1,5 @@
+DEADLETTERCHANNEL
+
 RedeliveryErrorHandler.process()
   target = FatalFallbackErrorHandler
   deliverToFailureProcessor()

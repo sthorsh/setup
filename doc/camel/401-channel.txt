@@ -1,3 +1,5 @@
+CHANNEL 
+
 CamelInternalProcessor.process():122
   processor.process(exchange, ...)
 

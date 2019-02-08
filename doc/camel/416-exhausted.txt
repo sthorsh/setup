@@ -1,3 +1,5 @@
+EXHAUSTED
+
 RedeliveryErrorHandler.deliverToFailureProcessor()
   exchange.setException(null)
   prepareExchangeAfterFailure()

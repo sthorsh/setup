@@ -1,3 +1,5 @@
+ERRORHANDLERBUILDER
+
 DefaultErrorHandlerBuilder
   maximumRedeliveries(int)
   retryAttemptedLogLevel(LoggingLevel)
