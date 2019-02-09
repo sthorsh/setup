@@ -17,6 +17,19 @@ BuilderSupport
   systemProperty(): ValueBuilder
   xpath(): XPathBuilder
 
+DefaultErrorHandlerBuilder
+  maximumRedeliveries(int)
+  retryAttemptedLogLevel(LoggingLevel)
+  ...
+
+DeadLetterChannelBuilder
+  onPrepareFailure(Processor)
+  useOriginalMessage()
+  ...
+
+NoErrorHandlerBuilder
+  ...
+
 ExpressionBuilder
   dateExpression(): Expression
   randomExpression(): Expression
@@ -31,8 +44,8 @@ PredicateBuilder
 ValueBuilder
   append(): ValueBuilder
   convertTo(): ValueBuilder
-  convertToString(): ValueBuilder 
-  method(): ValueBuilder        
+  convertToString(): ValueBuilder
+  method(): ValueBuilder
   not(): ValueBuilder
   prepend(): ValueBuilder
   regexReplaceAll(): ValueBuilder
@@ -58,6 +71,6 @@ ValueBuilder
 
 XPathBuilder
   namespace(): XPathBuilder
-  stringResult(): XPathBuilder 
+  stringResult(): XPathBuilder
   ...
 

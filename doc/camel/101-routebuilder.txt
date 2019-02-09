@@ -1,12 +1,12 @@
 ROUTEBUILDER
 
 RouteBuilder
-    configure(): void
-    errorHandler(): void
-    onException(): OnExceptionDefinition 
-    from(): RouteDefinition           
-    getContext(): ModelCamelContext 
-    ...
+  configure(): void
+  errorHandler(): void (context scope)
+  onException(): OnExceptionDefinition  (context scope)
+  from(): RouteDefinition           
+  getContext(): ModelCamelContext 
+  ...
 
 AdviceWithRouteBuilder
   replaceFromWith(): void
@@ -18,4 +18,6 @@ AdviceWithRouteBuilder
   weaveByType(): AdviceWithBuilder<T>
   weaveByToUri(): AdviceWithBuilder<T>
   ...
+
+
 

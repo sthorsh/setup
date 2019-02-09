@@ -3,7 +3,7 @@ ROUTEDEFINITION
 RouteDefinition
   routeId(): RouteDefinition 
   startupOrder(): RouteDefinition
-  errorHandler(): RouteDefinition
+  errorHandler(): RouteDefinition (route scope)
   delayer(): RouteDefinition 
   streamCaching(): RouteDefinition
   tracing(): RouteDefinition
@@ -27,7 +27,7 @@ ProcessorDefinition
   log(): T
   marshal(): DataFormatClause<ProcessorDefinition<T>>
   multicast(): MulticastDefinition
-  onException(): OnExceptionDefinition 
+  onException(): OnExceptionDefinition (route scope)
   pipeline(): PipelineDefinition
   process(): T
   recipientList(): RecipientListDefinition<T> 
