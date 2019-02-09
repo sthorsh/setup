@@ -1,16 +1,14 @@
 Catch
-    ingen treff: errorhandler
-    ett eksakt treff: entydig
-    flere eksakte treff: iht skop
-    ett subtypetreff: entydig
-    flere subtypetreff: iht subtypehierarki (gap detection)
-    wrappet exception:
-    Starter med innerst wrappete exception
-    Starter med først definerte onException
-    Matcher hver exception mot hver onException
+    Nedover: onException()
+    Bortover: innerste wrappete exception ... klassehierarkier
+    Match 1st kolonne, 2nd kolonne etc
     Hvis samme type: direkte treff → ferdig
     Hvis subtype: beregner gap → fortsetter
-    Resultat: direkte treff, subtypetreff el bom
+    Resultat: direkte treff
+    Resultat: entydig subtypetreff
+    Resultat: subtypetreff iht gap detection
+    Resultat: subtypetreff uavgjort → velger første
+    Resultat: ingen treff → faller tilbake på errorhandler
 
 Redelivery
 
