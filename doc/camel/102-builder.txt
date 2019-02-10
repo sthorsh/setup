@@ -3,7 +3,7 @@ BUILDER
 BuilderSupport
   body(): ValueBuilder
   constant(): ValueBuilder
-  deadLetterChannel(): DeadLetterChannelBuilder
+  deadLetterChannel(String uri): DeadLetterChannelBuilder
   defaultErrorHandler(): DefaultErrorHandlerBuilder
   exceptionMessage(): ValueBuilder
   exchangeProperty(): ValueBuilder

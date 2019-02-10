@@ -1,13 +1,16 @@
 EXCEPTION
 
 OnExceptionDefinition
+  .maximumRedeliveries(int)   resende før utmattelse
+  .retryAttemptedLogLevel()   resende før utmattelse
   ...
-onException()
-    .maximumRedeliveries(n) resende før utmattelse
-    .continued(true) ignorere v/utmattelse
-    .handled(true).bean(...) håndtere v/utmattelse
-    .handled(true).process(...) håndtere v/utmattelse
-    .handled(true).to(uri) rerouting v/utmattelse
+  .handled(boolean)           true: tell Camel to mimick Java try-catch
+  .process(Processor)         ref ProcessorDefinition
+  ...
+    .bean(...)                catch/handled v/utmattelse
+    .continued(true)          ignorere v/utmattelse
+    .to(uri)                  catch/handled rerouting v/utmattelse
+  ...
 
 onExceptionOccurred()
 

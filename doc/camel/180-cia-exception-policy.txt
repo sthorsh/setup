@@ -10,8 +10,6 @@ Catch
     Resultat: subtypetreff uavgjort → velger første
     Resultat: ingen treff → faller tilbake på errorhandler
 
-Redelivery
-
 Handle
 
 Custom

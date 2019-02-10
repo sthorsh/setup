@@ -1,7 +1,7 @@
 ROUTEBUILDER
 
 RouteBuilder
-  configure(): void
+  configure(): void (kalles kun 1 gang v/start Camel CIA 498)
   errorHandler(): void (context scope)
   onException(): OnExceptionDefinition  (context scope)
   from(): RouteDefinition           

@@ -20,6 +20,7 @@ ProcessorDefinition
   choice(): ChoiceDefinition
   convertBodyTo(): T (typekonvertering)
   delay(): DelayDefinition
+  doTry(): TryDefinition
   dynamicRouter(): DynamicRouterDefinition<T>
   enrich(): ExpressionClause<EnrichDefinition> 
   filter(): FilterDefinition 
