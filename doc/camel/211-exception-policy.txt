@@ -1,0 +1,34 @@
+ONEXCEPTIONDEFINITION
+
+onException(...)      
+  .onWhen()                      conditional trapping
+
+onException(...)
+  .onExceptionOccurred()         processor
+  
+onException(...)
+  .onRedelivery()                processor
+
+onException(...)
+  .maximumRedeliveries()         enkel retry
+  .retryAttemptedLogLevel()      logge retries
+         
+onException(...)
+  .retryWhile()                  custom retry
+  .retryAttemptedLogLevel()      logge retries
+
+onException(...)
+  .handled(true)                 catch
+  .bean()                        route til bean
+
+onException(...)
+  .handled(true)                 catch
+  .process()                     route til prosessor
+
+onException(...)
+  .handled(true)                 catch
+  .to(URI)                       route til endepunkt
+
+onException(...)
+  .continued(true)               ignorere 
+
