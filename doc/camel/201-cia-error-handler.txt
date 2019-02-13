@@ -9,7 +9,7 @@ DefaultErrorHandler
       Setter property for handled til false
       Setter exception på exchange (opphever undertrykking)
       Logger exception, routetrace, stacktrace
-      Returnerer til ruter (som bryter ut)
+      Returnerer (som bryter ut)
     Redelivery
       Setter exception til null
       onRedeliver()
@@ -23,7 +23,7 @@ DeadLetterChannel
     Sender [original] exchange til FatalFallbackErrorHandler
     Setter property for handled til true
     Ingen logging by default
-    Returnerer til ruter (som bryter ut)
+    Returnerer (som bryter ut)
   
 NoErrorHandler
   Et tomt skall uten logikk

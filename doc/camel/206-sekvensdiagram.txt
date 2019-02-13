@@ -1,0 +1,47 @@
+DEFAULTERRORHANDLER
+  RedeliveryErrorHandler.process()
+     
+  DelegateSyncProcessor.process()
+    exchange.setProperty(Exchange.TO_ENDPOINT, ...)
+    try { logProducer.process(exchange, ...) }
+    catch (Throwable t) { exchange.setException(t) }
+  ...
+  
+DEADLETTERCHANNEL
+
+  RedeliveryErrorHandler.process()
+    RedeliveryErrorHandler.deliverToFailureProcessor()
+    RedeliveryErrorHandler.prepareExchangeAfterFailure()
+
+  FatalFallbackErrorHandler.process()
+    sendProcessor.process(exchange, ...)
+
+  SendProcessor.process()
+    exchange.setProperty(Exchange.TO_ENDPOINT, ...)
+    try { logProducer.process(exchange, ...) }
+    catch (Throwable t) { exchange.setException(t) }
+
+  LogProducer.process()
+    camelLogProcessor.process(exchange, ...) 
+
+  CamelLogProcessor.process()
+    log.log(output)
+
+NOERRORHANDLER
+NoErrorHandlerBuilder.createErrorHandler()
+  delegateAsyncProcessor.process(exchange, ...)
+  CREATED_TIMESTAMP = ...
+  EXTERNAL_REDELIVERED = ...
+  MESSAGE_HISTORY = ...
+  TO_ENDPOINT = direct://in
+  exception = CamelExecutionException (routing breaks)
+  ...
+
+DelegateAsyncProcessor.process()
+  setBodyProcessor.process(exchange, ...)
+
+SetBodyProcessor.process()
+  try { expression.evaluate(exchange) }
+  catch (Throwable t) { exchange.setException(t) } 
+  
+

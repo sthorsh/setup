@@ -12,26 +12,24 @@ RedeliveryErrorHandler.process():422
       if (exceptionPolicy != null)
         data.continuedPredicate = exceptionPolicy.getContinuedPolicy() 
         data.handledPredicate = exceptionPolicy.getHandledPolicy()
-      log failed delivery
+      log failed delivery attempt 0,1,2,3...N
       data.redeliveryCounter++
 
     if (isExhausted) || ...)
-      exchange default:
-        ERRORHANDLER_HANDLED = false
+      default:
         EXCEPTION_CAUGHT = CamelExecutionException
+        ERRORHANDLER_HANDLED = false
         FAILURE_HANDLED = true
         exception = CamelExecutionException (breaks routing)
-      exchange continued:
+      handled:
         EXCEPTION_CAUGHT = CamelExecutionException
-        exception = null
-      exhange handled:
         ERRORHANDLER_HANDLED = true (breaks routing)
-        EXCEPTION_CAUGHT = CamelExecutionException
         FAILURE_HANDLED = true
         exception = null
-      exchange handled bean:
+      continued:
+        EXCEPTION_CAUGHT = CamelExecutionException
+        exception = null
         
-
     if (data.redeliveryCounter > 0)
       exchange.setException(null)
       exchange.getIn().copyFrom(data.original.getIn())
