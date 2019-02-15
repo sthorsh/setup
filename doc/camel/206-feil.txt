@@ -1,3 +1,5 @@
+FEIL
+
 Klassifisering av errors
   Recoverable feil
   Irrecoverable feil

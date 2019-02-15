@@ -1,3 +1,5 @@
+KANAL #2
+
 DEFAULTERRORHANDLER
   RedeliveryErrorHandler.process()
      

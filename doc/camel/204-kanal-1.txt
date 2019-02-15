@@ -1,4 +1,4 @@
-CHANNEL 
+KANAL #1
 
 CamelInternalProcessor.process():122
   processor.process(exchange, ...)
