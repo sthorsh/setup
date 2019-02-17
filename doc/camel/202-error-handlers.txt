@@ -1,0 +1,48 @@
+ERROR HANDLERS
+
+DefaultErrorHandler
+  Trigges av exchange.getException() != null
+  Setter Exchange.EXCEPTION_CAUGHT = exception
+  Setter Exchange.ERRORHANDLER_HANDLED = false
+  Logger exception, route trace og stack trace
+  Returnerer til Pipeline som avslutter ruting
+
+----------------
+  DefaultErrorHandler
+      Trigges 
+        Av exchange.getException() != null
+      Håndtering
+        Kopierer exception til property
+      Utmattelse
+        Setter property for handled til false
+        Logger exception, routetrace, stacktrace
+        Returnerer til CamelInternalProcessor.process:201
+      Redelivery
+        Setter exception til null
+        onRedeliver()
+      (Re)sender message til prosessor
+      Sjekker for feil...
+    
+  DeadLetterChannel
+    Håndtering
+      Kopierer exception til property
+    Utmattelse
+      Setter exception til null (undertrykke feil)
+      Sender [original] exchange til FatalFallbackErrorHandler
+      Setter property for handled til true
+      Ingen logging by default
+      Returnerer til Pipeline (som bryter ut)
+    
+  NoErrorHandler
+    Returnerer til Pipeline (som bryter ut)
+  
+----------
+
+Håndtering
+  Gi opp: send exchange/exception bakover (som Java exception)
+  Undertrykke feil: fjerne exception fra exchange, lagre den som property
+  Prøve igjen: redelivery fra point of error, iht redelivery policy
+  Exception policy
+  Error handling: handle|continue|...
+  Detour: rute til en annen rute vha exception policies
+

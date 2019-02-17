@@ -1,34 +1,21 @@
-BUILDER
+BUILDERSUPPORT
 
 BuilderSupport
+  deadLetterChannel(String): DeadLetterChannelBuilder
+  defaultErrorHandler(): DefaultErrorHandlerBuilder
+  noErrorHandler(): NoErrorHandlerBuilder
   body(): ValueBuilder
   constant(): ValueBuilder
-  deadLetterChannel(String uri): DeadLetterChannelBuilder
-  defaultErrorHandler(): DefaultErrorHandlerBuilder
   exceptionMessage(): ValueBuilder
   exchangeProperty(): ValueBuilder
   faultBody(): ValueBuilder
   header(): ValueBuilder
   language(): ValueBuilder
   method(): ValueBuilder
-  noErrorHandler(): NoErrorHandlerBuilder
   regexReplaceAll(): ValueBuilder
   simple(): SimpleBuilder
   systemProperty(): ValueBuilder
   xpath(): XPathBuilder
-
-DefaultErrorHandlerBuilder
-  maximumRedeliveries(int)
-  retryAttemptedLogLevel(LoggingLevel)
-  ...
-
-DeadLetterChannelBuilder
-  onPrepareFailure(Processor)
-  useOriginalMessage()
-  ...
-
-NoErrorHandlerBuilder
-  ...
 
 ExpressionBuilder
   dateExpression(): Expression
