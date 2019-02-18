@@ -1,0 +1,25 @@
+ErrorHandlerBuilder
+
+ErrorHandlerBuilderSupport
+
+deadLetterChannel(URI)
+  .maximumRedeliveries(int)
+  .redeliveryDelay(long)
+  .retryAttemptedLogLevel(LoggingLevel)
+     
+  .maximumRedeliveries(int)
+  .backOffMultiplier(double)
+  .retryAttemptedLogLevel(LoggingLevel)
+
+  .maximumRedeliveries(int)
+  .delayPattern("0:1000;5:5000")
+  .retryAttemptedLogLevel(LoggingLevel)
+
+  .retryWhile(Expression)
+  .retryAttemptedLogLevel(LoggingLevel)
+  
+  .onExceptionOccurred(Processor)
+  .onRedelivery(Processor)
+  .onPrepareFailure(Processor)
+
+  .useOriginalMessage()

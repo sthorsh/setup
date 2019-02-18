@@ -22,8 +22,3 @@ defaultErrorHandler()
   .onRedelivery(Processor)
   .onPrepareFailure(Processor)
 
-deadLetterChannel(URI)
-  .useOriginalMessage()
-
-noErrorHandler()
-
