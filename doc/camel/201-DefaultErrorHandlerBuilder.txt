@@ -22,3 +22,10 @@ defaultErrorHandler()
   .onRedelivery(Processor)
   .onPrepareFailure(Processor)
 
+Effekt
+  Logger exception, route trace, stack trace
+  Exchange.EXCEPTION_CAUGHT = exception
+  Exchange.ERRORHANDLER_HANDLED = false
+  Exchange.FAILURE_HANDLED = true
+  exchange.getException() = exception (pipeline break)
+

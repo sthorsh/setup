@@ -2,7 +2,7 @@ ErrorHandlerBuilder
 
 ErrorHandlerBuilderSupport
 
-deadLetterChannel(URI)
+deadLetterChannel(uri)
   .maximumRedeliveries(int)
   .redeliveryDelay(long)
   .retryAttemptedLogLevel(LoggingLevel)
@@ -23,3 +23,11 @@ deadLetterChannel(URI)
   .onPrepareFailure(Processor)
 
   .useOriginalMessage()
+
+Effekt
+  Sender exchange til FatalFallbackErrorHandler
+  Exchange.EXCEPTION_CAUGHT = exception
+  Exchange.ERRORHANDLER_HANDLED = true (pipeline break)
+  Exchange.FAILURE_HANDLED = true
+  exchange.getException() = null
+
