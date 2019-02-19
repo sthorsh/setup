@@ -1,7 +1,3 @@
-ErrorHandlerBuilder
-
-ErrorHandlerBuilderSupport
-
 defaultErrorHandler()
   .maximumRedeliveries(int)
   .redeliveryDelay(long)
@@ -22,10 +18,10 @@ defaultErrorHandler()
   .onRedelivery(Processor)
   .onPrepareFailure(Processor)
 
-Effekt
-  Logger exception, route trace, stack trace
+Ved utmattelse
   Exchange.EXCEPTION_CAUGHT = exception
-  Exchange.ERRORHANDLER_HANDLED = false
   Exchange.FAILURE_HANDLED = true
-  exchange.getException() = exception (pipeline break)
+  Exchange.ERRORHANDLER_HANDLED = false
+  exchange.setException(exception) (pipeline break)
+  Logger exception, route trace, stack trace
 

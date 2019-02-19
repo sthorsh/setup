@@ -1,7 +1,3 @@
-ErrorHandlerBuilder
-
-ErrorHandlerBuilderSupport
-
 deadLetterChannel(uri)
   .maximumRedeliveries(int)
   .redeliveryDelay(long)
@@ -24,10 +20,11 @@ deadLetterChannel(uri)
 
   .useOriginalMessage()
 
-Effekt
-  Sender exchange til FatalFallbackErrorHandler
+Ved utmattelse
   Exchange.EXCEPTION_CAUGHT = exception
-  Exchange.ERRORHANDLER_HANDLED = true (pipeline break)
   Exchange.FAILURE_HANDLED = true
-  exchange.getException() = null
+  Exchange.ERRORHANDLER_HANDLED = true (pipeline break)
+  exchange.setException(null)
+  exchange.setIn(originalMessage)
+  fatalFallbackErrorHandler.process(exchange) → ... → DLC
 
