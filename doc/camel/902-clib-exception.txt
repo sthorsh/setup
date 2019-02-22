@@ -1,26 +1,26 @@
-                                               Object
-                                                 |
-                                                 |
-                                             Throwable
-                                                 |
-                                                 |
-                                             Exception
-                                                 |
-                                                 |
-                                                 |--- checked ---
-                                                 |
-                                                 |
-                                          RuntimeException
-                                                 |
-                                                 |
-              ----------------------------------------------------------------------
-              |                       |                     |                      |
-              |                       |                     |                      |
-              |                 ClibContinue-        ClibRecoverable-         ClibWarning-
-              |                   Exception             Exception              Exception
-              |                       |                     |                      |
-              |                       |                     |                      |
-LsNavHqActivityErrorException        ...       LsNavHqRecoverableException        ...
-LsNavHqActivityFailedException                                     
+                                                                Object
+                                                                  |
+                                                                  |
+                                                              Throwable
+                                                                  |
+                                                                  |
+                                                              Exception
+                                                                  |
+                                                                  |
+                                                           RuntimeException
+                                                                  |
+                                                                  |
+            -------------------------------------------------------------------------------------------------------------
+            |                                |                                 |                      |                 |
+            |                                |                                 |                      |                 |
+            |                                |                          ClibRecoverable-        ClibContinue-      ClibWarning-
+            |                                |                             Exception              Exception         Exception
+            |                                |                                 |                                        |
+            |                                |                                 |                                        |
+LsNavHqActivityFailedException   LsNavHqActivityErrorException    LsNavHqRecoverableException                          ...
+→ /ns:*/ns:return_value¹         → /ns:*/ns:errorString¹          → java.net.SocketTimeoutException²
+                                 → org.apache.cxf...SoapFault²    → org.apache.cxf...HTTPException²
 
-CFX response mapper                            CXF fault mapper
+¹LsNavHqActivityWebServicesResponseMapper
+²LsNavHqActivityWebServicesFaultMapper
+
