@@ -22,9 +22,9 @@ deadLetterChannel(uri)
 
 Ved utmattelse
   Exchange.EXCEPTION_CAUGHT = exception
-  Exchange.FAILURE_HANDLED = true
   Exchange.ERRORHANDLER_HANDLED = true (pipeline break)
   exchange.setException(null)
   exchange.setIn(originalMessage)
-  fatalFallbackErrorHandler.process(exchange) → ... → DLC
+  fatalFallbackErrorHandler.process(exchange) → ... → DLC/URI
+  Returnerer: exchange uten exception
 

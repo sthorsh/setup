@@ -13,7 +13,7 @@
             -------------------------------------------------------------------------------------------------------------
             |                                |                                 |                      |                 |
             |                                |                                 |                      |                 |
-            |                                |                          ClibRecoverable-        ClibContinue-      ClibWarning-
+     [irrecoverable]                  [irrecoverable]                   ClibRecoverable-        ClibContinue-      ClibWarning-
             |                                |                             Exception              Exception         Exception
             |                                |                                 |                                        |
             |                                |                                 |                                        |

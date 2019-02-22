@@ -20,8 +20,7 @@ defaultErrorHandler()
 
 Ved utmattelse
   Exchange.EXCEPTION_CAUGHT = exception
-  Exchange.FAILURE_HANDLED = true
   Exchange.ERRORHANDLER_HANDLED = false
-  exchange.setException(exception) (pipeline break)
   Logger exception, route trace, stack trace
+  Returnerer: exchange med exception (pipeline break)
 
