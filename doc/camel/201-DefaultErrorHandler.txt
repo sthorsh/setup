@@ -1,26 +1,29 @@
 defaultErrorHandler()
-  .maximumRedeliveries(int)
-  .redeliveryDelay(long)
-  .retryAttemptedLogLevel(LoggingLevel)
-     
-  .maximumRedeliveries(int)
-  .backOffMultiplier(double)
-  .retryAttemptedLogLevel(LoggingLevel)
-
-  .maximumRedeliveries(int)
-  .delayPattern("0:1000;5:5000")
-  .retryAttemptedLogLevel(LoggingLevel)
-
-  .retryWhile(Expression)
-  .retryAttemptedLogLevel(LoggingLevel)
+    .maximumRedeliveries(int)
+    .redeliveryDelay(long)
+    .retryAttemptedLogLevel(LoggingLevel)
+       
+    .maximumRedeliveries(int)
+    .delayPattern("0:1000;5:5000")
+    .retryAttemptedLogLevel(LoggingLevel)
   
-  .onExceptionOccurred(Processor)
-  .onRedelivery(Processor)
-  .onPrepareFailure(Processor)
-
+    .maximumRedeliveries(int)
+    .backOffMultiplier(double)
+    .retryAttemptedLogLevel(LoggingLevel)
+  
+    .retryWhile(Expression)
+    .retryAttemptedLogLevel(LoggingLevel)
+    
+    .onExceptionOccurred(Processor)
+    .onRedelivery(Processor)
+    .onPrepareFailure(Processor)
+  
 Ved utmattelse
-  Exchange.EXCEPTION_CAUGHT = exception
-  Exchange.ERRORHANDLER_HANDLED = false
+  Exchange.EXCEPTION_CAUGHT → exception
+  target = null
+  exchange.exception = null
+  Exchange.ERRORHANDLER_HANDLED → false
+  exchange.exception = Exchange.EXCEPTION_CAUGHT
   Logger exception, route trace, stack trace
-  Returnerer: exchange med exception (pipeline break)
-
+  Returnerer: exchange.exception != null (pipeline break)
+  
