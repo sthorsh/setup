@@ -1,26 +1,35 @@
-                                                                Object
-                                                                  |
-                                                                  |
-                                                              Throwable
-                                                                  |
-                                                                  |
-                                                              Exception
-                                                                  |
-                                                                  |
-                                                           RuntimeException
-                                                                  |
-                                                                  |
-            -------------------------------------------------------------------------------------------------------------
-            |                                |                                 |                      |                 |
-            |                                |                                 |                      |                 |
-     [irrecoverable]                  [irrecoverable]                   ClibRecoverable-        ClibContinue-      ClibWarning-
-            |                                |                             Exception              Exception         Exception
-            |                                |                                 |                                        |
-            |                                |                                 |                                        |
-LsNavHqActivityFailedException   LsNavHqActivityErrorException    LsNavHqRecoverableException                          ...
-→ /ns:*/ns:return_value¹         → /ns:*/ns:errorString¹          → java.net.SocketTimeoutException²
-                                 → org.apache.cxf...SoapFault²    → org.apache.cxf...HTTPException²
+                                                  Object
+                                                     |
+                                                     |
+                                                 Throwable
+                                                     |
+                                                     |
+                                                 Exception
+                                                     |
+                                                     |
+                                         checked     |     unchecked  
+       -------------------------------------------------------------------------------------------------
+       |                       |                                                                       |
+       |                       |                                                                       |
+       |                 IOException                                                            RuntimeException
+[irrecoverable]         (recoverable)                                                                  |
+       |                       |                                                                       |
+       |                       |                                                                       |
+      ...         --------------------------                        ----------------------------------------------------------------------
+                  |                        |                        |                       |                    |                       |
+                  |                        |                        |                       |                    |                       |
+           SocketException         UnknownHostException      [irrecoverable]          ClibContinue-       ClibRecoverable-          ClibWarning-
+                  |                                                 |                   Exception            Exception               Exception
+                  |                                                 |                                      (recoverable)                 |
+                  |                                                 |                                            |                       |
+                  |                                                 |                                            |                       |
+           ConnectException                             LsNavHqActivityErrorException               LsNavHqRecoverableException         ...
+                  |                                     → /ns:*/ns:errorString¹                     → java.net.SocketTimeoutException²
+                  |                                     → org.apache.cxf...SoapFault²               → org.apache.cxf...HTTPException²
+                 ...
 
+                                                        LsNavHqActivityFailedException
+                                                        → /ns:*/ns:return_value¹
 ¹LsNavHqActivityWebServicesResponseMapper
 ²LsNavHqActivityWebServicesFaultMapper
 
