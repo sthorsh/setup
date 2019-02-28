@@ -1,8 +1,8 @@
 BUILDERSUPPORT
 
 BuilderSupport
-  deadLetterChannel(String): DeadLetterChannelBuilder
   defaultErrorHandler(): DefaultErrorHandlerBuilder
+  deadLetterChannel(String): DeadLetterChannelBuilder
   noErrorHandler(): NoErrorHandlerBuilder
   body(): ValueBuilder
   constant(): ValueBuilder
