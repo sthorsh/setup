@@ -1,21 +1,28 @@
 DefaultErrorHandlerBuilder
   // redelivery policy
-  .maximumRedeliveries()
-  .backOffMultiplier(double)
-  .collisionAvoidancePercent()
-  .delayPattern("0:1000;5:5000")
+  .maximumRedeliveries(int)
   .redeliveryDelay(long)
+  .backOffMultiplier(double)
+  .delayPattern("0:1000;5:5000")
+  .collisionAvoidancePercent(double)
+
+  // retry while expr
+  .retryWhile(Expression)
+
+  // custom processors
+  .onExceptionOccurred(Processor)
+  .onRedelivery(Processor)
+  .onPrepareFailure(Processor)
+
+  // logging
+  .loggingLevel(LoggingLevel)
   .retryAttemptedLogLevel(LoggingLevel)
+  .retriesExhaustedLogLevel(LoggingLevel)
   .logExhausted(true)
   .logExhaustedMessageHistory(true)
   .logStackTrace(true)
-  .loggingLevel(LoggingLevel.INFO)
+  ...
        
-    .retryWhile(Expression)
-    .onExceptionOccurred(Processor)
-    .onRedelivery(Processor)
-    .onPrepareFailure(Processor)
-  
 Ved utmattelse
   Exchange.EXCEPTION_CAUGHT → exception
   target = null
@@ -24,4 +31,4 @@ Ved utmattelse
   exchange.exception = Exchange.EXCEPTION_CAUGHT
   Logger exception, route trace, stack trace
   Returnerer: exchange.exception != null (pipeline break)
-  
+
