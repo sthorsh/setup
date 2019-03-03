@@ -1,10 +1,10 @@
 DefaultErrorHandlerBuilder
-  // custom processors
+  // processors
   .onExceptionOccurred(Processor)
   .onRedelivery(Processor)
   .onPrepareFailure(Processor)
 
-  // redelivery policy
+  // redelivery
   .allowRedeliveryWhileStopping(true)
   .asyncDelayedRedelivery() 
   .backOffMultiplier(2.0)
@@ -14,8 +14,11 @@ DefaultErrorHandlerBuilder
   .maximumRedeliveryDelay(60000)
   .redeliveryDelay(1000)
 
-  // retry while
+  // retry 
   .retryWhile(simple("${property.counter} > 0"))
+
+  // dlc
+  .useOriginalMessage()
 
   // logging
   .logHandled(false)
@@ -27,17 +30,9 @@ DefaultErrorHandlerBuilder
   .logExhaustedMessageBody(false)
   .logStackTrace(true)
 
-  // logging level
+  // logging 
   .loggingLevel(LoggingLevel.ERROR)
+  .retryAttemptedLogInterval(2)
   .retryAttemptedLogLevel(LoggingLevel.DEBUG)
   .retriesExhaustedLogLevel(LoggingLevel.ERROR)
-
-Ved utmattelse
-  Exchange.EXCEPTION_CAUGHT → exception
-  target = null
-  exchange.exception = null
-  Exchange.ERRORHANDLER_HANDLED → false
-  exchange.exception = Exchange.EXCEPTION_CAUGHT
-  Logger exception, message history, exchange, stacktrace
-  Returnerer: exchange.exception != null (pipeline break)
 

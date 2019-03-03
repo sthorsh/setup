@@ -1,0 +1,31 @@
+DefaultErrorHandler
+  Exchange.EXCEPTION_CAUGHT → exception
+  target = null
+  exchange.exception = null
+  Exchange.ERRORHANDLER_HANDLED → false
+  exchange.exception = Exchange.EXCEPTION_CAUGHT
+  Log: exception, message history, exchange, stacktrace
+  Return: exchange.exception != null (pipeline break)
+  → evt prøver igjen dvs redelivery fra point of error, iht redelivery policy
+  → utmattelse pr default: gir opp, sender exchange/exception bakover, som Java
+  → evt exception policy
+  → evt handle
+  → evt continue
+  → evt continue detour til en annen rute
+
+DeadLetterChannel
+  Exchange.EXCEPTION_CAUGHT → exception
+  target = FatalFallbackErrorHandler(DLC)
+  exchange.exception = null
+  remove headers/properties for redelivery/rollback
+  exchange.setIn(originalMessage)
+  fatalFallbackErrorHandler.process(exchange) → ...→ DLC
+  Exchange.ERRORHANDLER_HANDLED → true (pipeline break)
+  Returnerer: exchange.exception == null
+  → evt prøver igjen dvs redelivery fra point of error, iht redelivery policy
+  → utmattelse pr default: undertrykker feil, dvs cp exchange.exception til property, exchange.exception=null
+  → evt exception policy
+  → evt handle
+  → evt continue
+  → evt continue detour til en annen rute
+
