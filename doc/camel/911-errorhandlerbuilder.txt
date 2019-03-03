@@ -1,0 +1,29 @@
+
+
+
+                 ErrorHandlerBuilder            Object
+                          |                        |
+                          |                        |
+                          | -----------------------------------------------
+                          | |                                             |
+                          | |                                             |
+                          | |                                      ServiceSupport
+                          | |                                             |
+                          | |                                             |
+                          | |                                   ChildServiceSupport
+                          | |                                             |
+                          | |                                             |
+               ErrorHandlerBuilderSupport                       ErrorHandlerSupport
+                           |                                              |
+                           |                                              |
+                           |                                   RedeliveryErrorHandler
+                           |                                              |
+                           |                                              |
+             -----------------------------                      ---------------------
+             |                           |                      |                   |
+             |                           |                      |                   |
+DefaultErrorHandlerBuilder    NoErrorHandlerBuilder    DefaultErrorHandler  DeadLetterChannel
+             |
+             |
+ DeadLetterChannelBuilder
+
