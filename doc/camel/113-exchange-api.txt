@@ -1,0 +1,25 @@
+Exchange
+  CREATED_TIMESTAMP
+  EXTERNAL_REDELIVERED
+  MESSAGE_HISTORY
+  TO_ENDPOINT
+  getContext()
+  get-|setException() - representerer recoverable/irrecoverable error
+  get-|setExchangeId()
+  get-|setPattern()
+  get-|setProperty()
+  get-|setUnitOfWork()
+  get-|setIn(): Message
+  get-|setOut(): Message
+  ...
+
+Message
+  getExchange()
+  get-|setMessageId()
+  get-|setHeader()
+  get-|setHeaders()
+  get-|setBody()
+  get-|setAttachments()
+  is- |setFault() - representerer irrecoverable error (feilmelding feks soap ws)
+  ...
+
