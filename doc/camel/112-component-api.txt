@@ -20,28 +20,3 @@ ProducerTemplate
   requestBodyAndHeader(): Object
   ...
 
-Exchange
-  CREATED_TIMESTAMP
-  EXTERNAL_REDELIVERED
-  MESSAGE_HISTORY
-  TO_ENDPOINT
-  getContext()
-  get-|setException()
-  get-|setExchangeId()
-  get-|setPattern()
-  get-|setProperty()
-  get-|setUnitOfWork()
-  get-|setIn(): Message
-  get-|setOut(): Message
-  ...
-
-Message
-  getExchange()
-  get-|setMessageId()
-  get-|setHeader()
-  get-|setHeaders()
-  get-|setBody()
-  get-|setAttachments()
-  is- |setFault()
-  ...
-
