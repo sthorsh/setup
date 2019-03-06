@@ -4,7 +4,7 @@ Exchange
   MESSAGE_HISTORY
   TO_ENDPOINT
   getContext()
-  get-|setException() - representerer recoverable/irrecoverable error
+  get-|setException() - unntak: representerer recoverable/irrecoverable error
   get-|setExchangeId()
   get-|setPattern()
   get-|setProperty()
@@ -20,6 +20,6 @@ Message
   get-|setHeaders()
   get-|setBody()
   get-|setAttachments()
-  is- |setFault() - representerer irrecoverable error (feilmelding feks soap ws)
+  is- |setFault() - feilmelding: representerer irrecoverable error feks soap ws
   ...
 

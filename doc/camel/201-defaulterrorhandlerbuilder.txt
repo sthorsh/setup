@@ -1,5 +1,5 @@
 DefaultErrorHandlerBuilder
-  // processors
+  // prosessorer
   .onExceptionOccurred(Processor)
   .onRedelivery(Processor)
   .onPrepareFailure(Processor)
@@ -17,7 +17,7 @@ DefaultErrorHandlerBuilder
   // retry 
   .retryWhile(simple("${property.counter} > 0"))
 
-  // dlc
+  // DLC
   .useOriginalMessage()
 
   // logging
@@ -29,10 +29,10 @@ DefaultErrorHandlerBuilder
   .logExhaustedMessageHistory(true)
   .logExhaustedMessageBody(false)
   .logStackTrace(true)
-
-  // logging 
   .loggingLevel(LoggingLevel.ERROR)
   .retryAttemptedLogInterval(2)
   .retryAttemptedLogLevel(LoggingLevel.DEBUG)
   .retriesExhaustedLogLevel(LoggingLevel.ERROR)
 
+NoErrorHandlerBuilder
+  ...

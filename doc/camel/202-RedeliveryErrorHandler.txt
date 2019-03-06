@@ -1,31 +1,29 @@
-DefaultErrorHandler
-  Exchange.EXCEPTION_CAUGHT → exception
-  target = null
-  exchange.exception = null
-  Exchange.ERRORHANDLER_HANDLED → false
-  exchange.exception = Exchange.EXCEPTION_CAUGHT
-  Log: exception, message history, exchange, stacktrace
-  Return: exchange.exception != null (pipeline break)
-  → evt prøver igjen dvs redelivery fra point of error, iht redelivery policy
-  → utmattelse pr default: gir opp, sender exchange/exception bakover, som Java
-  → evt exception policy
-  → evt handle
-  → evt continue
-  → evt continue detour til en annen rute
+DefaultErrorHandler extends RedeliveryErrorHandler
+  Default: sender exchange m/exception bakover (dvs gir opp, som Java)
+  Default: logger
+  Evt: redelivery fra point of error (dvs prøver igjen)
+  Evt: exception policy handle, continue, bean, process, to etc
+  ✓ Exchange.EXCEPTION_CAUGHT → exception
+  ✓ target = null
+  ✓ exchange.exception = null
+  ✓ Exchange.ERRORHANDLER_HANDLED → false
+  ✓ exchange.exception = Exchange.EXCEPTION_CAUGHT
+  ✓ Log: exception, message history, evt exchange, stacktrace
+  ✓ Return: exchange.exception != null (pipeline break)
 
-DeadLetterChannel
-  Exchange.EXCEPTION_CAUGHT → exception
-  target = FatalFallbackErrorHandler(DLC)
-  exchange.exception = null
-  remove headers/properties for redelivery/rollback
-  exchange.setIn(originalMessage)
-  fatalFallbackErrorHandler.process(exchange) → ...→ DLC
-  Exchange.ERRORHANDLER_HANDLED → true (pipeline break)
-  Returnerer: exchange.exception == null
-  → evt prøver igjen dvs redelivery fra point of error, iht redelivery policy
-  → utmattelse pr default: undertrykker feil, dvs cp exchange.exception til property, exchange.exception=null
-  → evt exception policy
-  → evt handle
-  → evt continue
-  → evt continue detour til en annen rute
+DeadLetterChannel extends RedeliveryErrorHandler
+  Default: sender exchange u/exception til DLC (dvs undertrykker feilen)
+  Default: logger ikke
+  Evt: redelivery fra point of error (dvs prøver igjen)
+  Evt: exception policy handle, continue, bean, process, to etc
+  ✓ Exchange.EXCEPTION_CAUGHT → exception
+  ✓ target = FatalFallbackErrorHandler(DLC)
+  ✓ exchange.exception = null (undertrykker feil)
+  ✓ remove headers/properties for redelivery/rollback
+  ✓ exchange.setIn(originalMessage)
+  ✓ fatalFallbackErrorHandler.process(exchange) → ...→ DLC
+  ✓ Exchange.ERRORHANDLER_HANDLED → true (pipeline break)
+  ✓ Returnerer: exchange.exception == null
+
+Fig 5.4
 
