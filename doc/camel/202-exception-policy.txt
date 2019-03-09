@@ -1,46 +1,37 @@
 ONEXCEPTIONDEFINITION
 
 onException(...)      
-  .onWhen()                      conditional trapping
+  .onWhen()
+  .onExceptionOccurred(Processor)
+  .maximumRedeliveries(N)
+  .retryWhile(Predicate)
+  .onRedelivery(Processor)
+  .retryAttemptedLogLevel()
+  .continued(true)
+  .handled(true)
+  .bean(Object)       
+  .process(Processor)    
+  .to(String uri)      
 
-onException(...)
-  .onExceptionOccurred()         processor
-  
-onException(...)
-  .onRedelivery()                processor
 
-onException(...)
-  .maximumRedeliveries()         enkel retry
-  .retryAttemptedLogLevel()      logge retries
-         
-onException(...)
-  .retryWhile()                  custom retry
-  .retryAttemptedLogLevel()      logge retries
 
-onException(...)
-  .handled(true)                 catch
-  .bean()                        route til bean
 
-onException(...)
-  .handled(true)                 catch
-  .process()                     route til prosessor
 
-onException(...)
-  .handled(true)                 catch
-  .to(URI)                       route til endepunkt
 
-onException(...)
-  .continued(true)               ignorere 
 
-Catch
-  Nedover: onException()
-  Bortover: innerste wrappete exception ... klassehierarkier
-  Match 1st kolonne, 2nd kolonne etc
-  Hvis samme type: direkte treff → ferdig
-  Hvis subtype: beregner gap → fortsetter
-  Resultat: direkte treff
-  Resultat: entydig subtypetreff
-  Resultat: subtypetreff iht gap detection
-  Resultat: subtypetreff uavgjort → velger første
-  Resultat: ingen treff → faller tilbake på errorhandler
+
+Algoritme         
+                      E₄          E₅(E₄)      E₆(E₅))
+  onException(E₁)     E₄==E₁ ✓    E₅==E₁ ✓    E₆==E₁ ✓ 
+                      E₄<:E₁ N    E₅<:E₁ N    E₆<:E₁ N 
+  onException(E₂)     E₄==E₂ ✓    E₅==E₂ ✓    E₆==E₂ ✓    
+                      E₄<:E₂ N    E₅<:E₂ N    E₆<:E₂ N    
+  onException(E₃)     E₄==E₃ ✓    E₅==E₃ ✓    E₆==E₃ ✓   
+                      E₄<:E₃ N    E₅<:E₃ N    E₆<:E₃ N  
+
+Valg av definisjon
+  Alt1: ==
+  Alt2: entydig N
+  Alt3: flere like N → camel velger første
+  Alt4: camel faller tilbake til errorhandler
 

@@ -1,8 +1,8 @@
 DefaultErrorHandlerBuilder
-  // prosessorer
+
+  // exception
   .onExceptionOccurred(Processor)
   .onRedelivery(Processor)
-  .onPrepareFailure(Processor)
 
   // redelivery
   .allowRedeliveryWhileStopping(true)
@@ -17,14 +17,17 @@ DefaultErrorHandlerBuilder
   // retry 
   .retryWhile(simple("${property.counter} > 0"))
 
+  // utmattelse
+  .onPrepareFailure(Processor)
+
   // DLC
   .useOriginalMessage()
 
   // logging
-  .logHandled(false)
-  .logNewException(true)
   .logRetryAttempted(true)
   .logRetryStackTrace(false)
+  .logHandled(false)
+  .logNewException(true)
   .logExhausted(true)
   .logExhaustedMessageHistory(true)
   .logExhaustedMessageBody(false)

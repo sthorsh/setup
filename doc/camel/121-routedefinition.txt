@@ -14,38 +14,3 @@ RouteDefinition
 FromDefinition
   ...
 
-ProcessorDefinition
-  aggregate(): AggregateDefinition
-  bean(): T (syntaktisk sukker for bean-komponenten)
-  choice(): ChoiceDefinition
-  convertBodyTo(): T (typekonvertering)
-  delay(): DelayDefinition
-  doTry(): TryDefinition
-  dynamicRouter(): DynamicRouterDefinition<T>
-  enrich(): ExpressionClause<EnrichDefinition> 
-  filter(): FilterDefinition 
-  loadBalance(): LoadBalanceDefinition
-  log(): T
-  marshal(): DataFormatClause<ProcessorDefinition<T>>
-  multicast(): MulticastDefinition
-  onException(): OnExceptionDefinition (route scope)
-  pipeline(): PipelineDefinition
-  process(): T
-  recipientList(): RecipientListDefinition<T> 
-  routingSlip(): RoutingSlipDefinition<T>
-  removeHeader(): T
-  removeProperty(): T
-  setBody(): T
-  setExchangePattern(): T
-  setHeader(): T
-  setProperty(): T
-  sort(): T
-  split(): SplitDefinition
-  stop(): T
-  to(): T
-  transform(): T
-  unmarshal(): DataFormatClause<ProcessorDefinition<T>> 
-  validate(): ValidateDefinition
-  wireTap(): WireTapDefinition<T>
-  ...
-    
