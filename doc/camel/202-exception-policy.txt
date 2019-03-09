@@ -1,25 +1,42 @@
-ONEXCEPTIONDEFINITION
-
-onException(...)      
-  .onWhen()
+OnExceptionDefinition
+  .onWhen(Predicate)
   .onExceptionOccurred(Processor)
-  .maximumRedeliveries(N)
+
+  .maximumRedeliveries(5)
   .retryWhile(Predicate)
+  .redeliveryDelay(1000)
+  .delayPattern("1:1000;5:5000")
+  .backOffMultiplier(2.0)
+  .collisionAvoidancePercent(15.0)
+  .maximumRedeliveryDelay(60000)
+  .asyncDelayedRedelivery() 
   .onRedelivery(Processor)
-  .retryAttemptedLogLevel()
-  .continued(true)
+
+  .continued(true)      
   .handled(true)
-  .bean(Object)       
-  .process(Processor)    
-  .to(String uri)      
+    .bean(Object)       
+    .process(Processor)    
+    .to(String uri)      
+  .useOriginalMessage()
+
+    .logRetryAttempted(true)
+    .logRetryStackTrace(false)
+    .logHandled(false)
+    .logNewException(true)
+    .logExhausted(true)
+    .logExhaustedMessageHistory(true)
+    .logExhaustedMessageBody(false)
+    .logStackTrace(true)
+    .loggingLevel(LoggingLevel.ERROR)
+    .retryAttemptedLogInterval(2)
+    .retryAttemptedLogLevel(LoggingLevel.DEBUG)
+    .retriesExhaustedLogLevel(LoggingLevel.ERROR)
 
 
 
 
 
-
-
-
+-------------------------------------------------------
 Algoritme         
                       E₄          E₅(E₄)      E₆(E₅))
   onException(E₁)     E₄==E₁ ✓    E₅==E₁ ✓    E₆==E₁ ✓ 
@@ -28,10 +45,11 @@ Algoritme
                       E₄<:E₂ N    E₅<:E₂ N    E₆<:E₂ N    
   onException(E₃)     E₄==E₃ ✓    E₅==E₃ ✓    E₆==E₃ ✓   
                       E₄<:E₃ N    E₅<:E₃ N    E₆<:E₃ N  
-
-Valg av definisjon
   Alt1: ==
   Alt2: entydig N
   Alt3: flere like N → camel velger første
   Alt4: camel faller tilbake til errorhandler
+
+-------------------------------------------------------
+CIA1 fig 5.5
 
