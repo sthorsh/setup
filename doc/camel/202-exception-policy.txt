@@ -1,42 +1,42 @@
-OnExceptionDefinition
-  .onWhen(Predicate)
-  .onExceptionOccurred(Processor)
+OnExceptionDefinition extends ProcessorDefinition
+    .onWhen(Predicate)
+    .onExceptionOccurred(Processor)
 
-  .maximumRedeliveries(5)
-  .retryWhile(Predicate)
-  .redeliveryDelay(1000)
-  .delayPattern("1:1000;5:5000")
-  .backOffMultiplier(2.0)
-  .collisionAvoidancePercent(15.0)
-  .maximumRedeliveryDelay(60000)
-  .asyncDelayedRedelivery() 
-  .onRedelivery(Processor)
+    .maximumRedeliveries(5)
+    .retryWhile(Predicate)
+    .redeliveryDelay(1000)
+    .delayPattern("1:1000;5:5000")
+    .backOffMultiplier(2.0)
+    .collisionAvoidancePercent(15.0)
+    .maximumRedeliveryDelay(60000)
+    .asyncDelayedRedelivery() 
+    .onRedelivery(Processor)
 
-  .continued(true)      
-  .handled(true)
+    .continued(true)      
+
+    .handled(true)
     .bean(Object)       
     .process(Processor)    
     .to(String uri)      
-  .useOriginalMessage()
+    ... ref ProcessorDefinition
+
+    .useOriginalMessage()
 
     .logRetryAttempted(true)
     .logRetryStackTrace(false)
-    .logHandled(false)
-    .logNewException(true)
     .logExhausted(true)
     .logExhaustedMessageHistory(true)
     .logExhaustedMessageBody(false)
     .logStackTrace(true)
-    .loggingLevel(LoggingLevel.ERROR)
-    .retryAttemptedLogInterval(2)
+    .logHandled(false)
+    .logNewException(true)
     .retryAttemptedLogLevel(LoggingLevel.DEBUG)
     .retriesExhaustedLogLevel(LoggingLevel.ERROR)
 
+------------
+CIA1 fig 5.5
 
-
-
-
--------------------------------------------------------
+------------
 Algoritme         
                       E₄          E₅(E₄)      E₆(E₅))
   onException(E₁)     E₄==E₁ ✓    E₅==E₁ ✓    E₆==E₁ ✓ 
@@ -50,6 +50,4 @@ Algoritme
   Alt3: flere like N → camel velger første
   Alt4: camel faller tilbake til errorhandler
 
--------------------------------------------------------
-CIA1 fig 5.5
 
