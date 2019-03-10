@@ -1,5 +1,7 @@
 DefaultErrorHandlerBuilder
   .onExceptionOccurred(Processor)
+  .onRedelivery(Processor)
+  .onPrepareFailure(Processor)
 
   .maximumRedeliveries(5)
   .retryWhile(Predicate)
@@ -10,10 +12,8 @@ DefaultErrorHandlerBuilder
   .maximumRedeliveryDelay(60000)
   .allowRedeliveryWhileStopping(true)
   .asyncDelayedRedelivery() 
-  .onRedelivery(Processor)
 
-  .useOriginalMessage()
-  .onPrepareFailure(Processor)
+  .useOriginalMessage() // DLC only
 
   .logRetryAttempted(true)
   .logRetryStackTrace(false)

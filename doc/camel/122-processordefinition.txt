@@ -20,7 +20,9 @@ ProcessorDefinition
   recipientList(): RecipientListDefinition<T> 
   routingSlip(): RoutingSlipDefinition<T>
   removeHeader(): T
+  removeHeaders(): T
   removeProperty(): T
+  removeProperties(): T
   setBody(): T
   setExchangePattern(): T
   setHeader(): T

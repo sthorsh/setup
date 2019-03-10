@@ -1,0 +1,19 @@
+Continued
+  Fig 5.6
+
+Handled
+  Fig 5.5
+
+Algoritme         
+                      E₄          E₅(E₄)      E₆(E₅))
+  onException(E₁)     E₄==E₁ ✓    E₅==E₁ ✓    E₆==E₁ ✓ 
+                      E₄<:E₁ N    E₅<:E₁ N    E₆<:E₁ N 
+  onException(E₂)     E₄==E₂ ✓    E₅==E₂ ✓    E₆==E₂ ✓    
+                      E₄<:E₂ N    E₅<:E₂ N    E₆<:E₂ N    
+  onException(E₃)     E₄==E₃ ✓    E₅==E₃ ✓    E₆==E₃ ✓   
+                      E₄<:E₃ N    E₅<:E₃ N    E₆<:E₃ N  
+  Alt1: ==
+  Alt2: entydig N
+  Alt3: flere like N → camel velger første
+  Alt4: camel faller tilbake til errorhandler
+
