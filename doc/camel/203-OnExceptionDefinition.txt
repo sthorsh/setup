@@ -14,19 +14,19 @@ OnExceptionDefinition extends ProcessorDefinition
 
     .continued(true)      
 
-    .handled(true) // eq doTry ... doCatch
+    .handled(true) // tenk: doTry ... doCatch
     .useOriginalMessage()
-    → ref ProcessorDefinition // eq catch block content
+    → ref ProcessorDefinition // tenk: catch block content
 
-    .logRetryAttempted(true)
-    .logRetryStackTrace(false)
-    .logHandled(false)
-    .logContinued(false)
-    .logExhausted(true)
-    .logExhaustedMessageHistory(true)
-    .logExhaustedMessageBody(false)
-    .logStackTrace(true)
-    .logNewException(true)
-    .retryAttemptedLogLevel(LoggingLevel.DEBUG)
-    .retriesExhaustedLogLevel(LoggingLevel.ERROR)
+  .logRetryAttempted(true)
+  .logRetryStackTrace(false)
+  .logExhausted(true)
+  .logExhaustedMessageHistory(true)
+  .logExhaustedMessageBody(false)
+  .logStackTrace(true)
+  .logContinued(false)
+  .logHandled(false)
+  .logNewException(true)
+  .retryAttemptedLogLevel(LoggingLevel.DEBUG)
+  .retriesExhaustedLogLevel(LoggingLevel.ERROR)
 

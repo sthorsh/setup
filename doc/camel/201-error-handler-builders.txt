@@ -13,16 +13,16 @@ DefaultErrorHandlerBuilder
   .allowRedeliveryWhileStopping(true)
   .asyncDelayedRedelivery() 
 
-  .useOriginalMessage() // DLC only
+  .useOriginalMessage() // for DLC
 
   .logRetryAttempted(true)
   .logRetryStackTrace(false)
-  .logHandled(false)
-  .logNewException(true)
   .logExhausted(true)
   .logExhaustedMessageHistory(true)
   .logExhaustedMessageBody(false)
   .logStackTrace(true)
+  .logHandled(false)
+  .logNewException(true)
   .loggingLevel(LoggingLevel.ERROR)
   .retryAttemptedLogInterval(2)
   .retryAttemptedLogLevel(LoggingLevel.DEBUG)
