@@ -1,29 +1,39 @@
-DefaultErrorHandler extends RedeliveryErrorHandler
-  Default: sender exchange m/exception bakover (dvs gir opp, som Java)
-  Default: logger
-  Evt: redelivery fra point of error (dvs prøver igjen)
-  Evt: exception policy handle, continue, bean, process, to etc
-  ✓ Exchange.EXCEPTION_CAUGHT → exception
-  ✓ target = null
-  ✓ exchange.exception = null
-  ✓ Exchange.ERRORHANDLER_HANDLED → false
-  ✓ exchange.exception = Exchange.EXCEPTION_CAUGHT
-  ✓ Log: exception, message history, evt exchange, stacktrace
-  ✓ Return: exchange.exception != null (pipeline break)
+DefaultErrorHandler
+  Evt: exception policy
+  Evt: redelivery policy
+  Logger
+  Returnerer til pipeline: exchange m/exception
 
-DeadLetterChannel extends RedeliveryErrorHandler
-  Default: sender exchange u/exception til DLC (dvs undertrykker feilen)
-  Default: logger ikke
-  Evt: redelivery fra point of error (dvs prøver igjen)
-  Evt: exception policy handle, continue, bean, process, to etc
-  ✓ Exchange.EXCEPTION_CAUGHT → exception
-  ✓ target = FatalFallbackErrorHandler(DLC)
-  ✓ exchange.exception = null (undertrykker feil)
-  ✓ remove headers/properties for redelivery/rollback
-  ✓ exchange.setIn(originalMessage)
-  ✓ fatalFallbackErrorHandler.process(exchange) → ...→ DLC
-  ✓ Exchange.ERRORHANDLER_HANDLED → true (pipeline break)
-  ✓ Returnerer: exchange.exception == null
+DefaultErrorHandler: detalj
+  Trigger: exchange.getException() != null
+  exchange.setProperty(Exchange.EXCEPTION_CAUGHT, e)
+  Evt redelivery
+  Ved utmattelse:
+  ∙ target = null 
+  ∙ exchange.setException(null)
+  ∙ exchange.setProperty(Exchange.ERRORHANDLER_HANDLED, false)
+  ∙ exchange.setException(exchange.getProperty(Exchange.EXCEPTION_CAUGHT))
+  ∙ Log: exception, message history, message body, stacktrace
+  ∙ Return: exchange.getException() != null → break out
+
+DeadLetterChannel 
+  Evt: exception policy
+  Evt: redelivery policy
+  Sender exchange til DLC
+  Returnerer til pipeline: exchange u/exception
+
+DeadLetterChannel: detalj
+  Trigger: exchange.getException() != null
+  exchange.setProperty(Exchange.EXCEPTION_CAUGHT, e)
+  Evt redelivery
+  Ved utmattelse:
+  ∙ target = FatalFallbackErrorHandler[sendTo(DLC)]
+  ∙ exchange.setException(null)
+  ∙ remove headers/properties for redelivery
+  ∙ Evt exchange.setIn(originalMessage)
+  ∙ fatalFallbackErrorHandler.process(exchange) → ...→ DLC
+  ∙ exchange.setProperty(Exchange.ERRORHANDLER_HANDLED, true) →  break out
+  ∙ Return: exchange.getException() == null
 
 Fig 5.4
 
