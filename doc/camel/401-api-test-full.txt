@@ -1,3 +1,27 @@
+camel-core
+
+org.junit.Assert
+  assertEquals(T expected, T actual)
+  assertNotEquals(T expected, T actual)
+  assertArrayEquals(T[] expecteds, T[] actuals) 
+  assertSame(Object, Object)
+  assertNotSame(Object, Object)
+  assertNull(Object)
+  assertNotNull(Object)
+  assertTrue(boolean)
+  assertFalse(boolean)
+  assertThat(T actual, Matcher<? super T> matcher) 
+  
+  
+
+
+
+
+
+
+
+
+
 @Produce
 - uri(): String
 
