@@ -1,6 +1,9 @@
-camel-core
+ProducerTemplate
+    send|(): void|Object|Exchange 
+    request|(): T|Object|Exchange
+    async|(): Future<T|Object|Exchange> 
 
-org.junit.Assert
+Assert
   assertEquals(T expected, T actual)
   assertNotEquals(T expected, T actual)
   assertArrayEquals(T[] expecteds, T[] actuals) 
@@ -24,11 +27,6 @@ org.junit.Assert
 
 @Produce
 - uri(): String
-
-ProducerTemplate
-- send|(): void|Object|Exchange 
-- request|(): T|Object|Exchange
-- async|(): Future<T|Object|Exchange> 
 
 @EndpointInject
 - uri(): String
