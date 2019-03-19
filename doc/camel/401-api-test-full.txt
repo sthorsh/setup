@@ -1,7 +1,23 @@
 ProducerTemplate
-    send|(): void|Object|Exchange 
-    request|(): T|Object|Exchange
-    async|(): Future<T|Object|Exchange> 
+  send(): Exchange 
+  sendBody(): void|Object
+  sendBodyAndHeader(): void|Object
+  sendBodyAndHeaders(): void|Object
+  sendBodyAndProperty(): void|Object
+  request(): Exchange
+  requestBody(): Object|T
+  requestBodyAndHeader(): Object|T
+  requestBodyAndHeaders(): Object|T
+  ...
+
+  MockEndpoint
+  - when|(): void
+  - getExchanges(): List<Exchange>
+  - expected|(): void|AssertionClause
+  - expects|(): void|AssertionClause
+  - message(int): AssertionClause
+  - allMessages(): AssertionClause 
+  - assert|(): void|Exchange
 
 Assert
   assertEquals(T expected, T actual)
@@ -30,15 +46,6 @@ Assert
 
 @EndpointInject
 - uri(): String
-
-MockEndpoint
-- when|(): void
-- getExchanges(): List<Exchange>
-- expected|(): void|AssertionClause
-- expects|(): void|AssertionClause
-- message(int): AssertionClause
-- allMessages(): AssertionClause 
-- assert|(): void|Exchange
 
 TestSupport 
 · log.trace|debug|info|warn|error(String): void
