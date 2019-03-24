@@ -1,14 +1,71 @@
-ProducerTemplate
-  send(): Exchange 
-  sendBody(): void|Object
-  sendBodyAndHeader(): void|Object
-  sendBodyAndHeaders(): void|Object
-  sendBodyAndProperty(): void|Object
-  request(): Exchange
-  requestBody(): Object|T
-  requestBodyAndHeader(): Object|T
-  requestBodyAndHeaders(): Object|T
-  ...
+  Assert
+    assertEquals()
+    assertNotEquals()
+    assertArrayEquals()
+    assertSame()
+    assertNotSame()
+    assertNull()
+    assertNotNull()
+    assertTrue()
+    assertFalse()
+    assertThat()
+
+  TestSupport
+    log.error|warn|info|debug|trace(String): void
+    assertCollectionSize()
+    assertDirectoryEquals()
+    assertEndpointUri()
+    assertExpression()
+    assertFileExists()
+    assertFileNotExists()
+    assertInMessageBodyEquals()
+    assertInMessageHeader()
+    assertIsInstanceOf()
+    assertListSize()
+    assertMessageHeader()
+    assertOneElement()
+    assertOutMessageBodyEquals()
+    assertOutMessageHeader()
+    assertPredicate()
+    assertPredicateMatches()
+    assertPredicateDoesNotMatch()
+    assertStringContains()
+    body()
+    bodyAs()
+    createDirectory()
+    createExchangeWithBody()
+    deleteDirectory()
+    exchangeProperty()
+    faultBody()
+    getJavaMajorVersion()
+    getRouteList()
+    getTestName()
+    getTestMethodName()
+    header()
+    isJava18()
+    isJavaVendor()
+    isPlatform()
+    resolveMandatoryEndpoint ()
+    systemProperty()
+
+  CamelTestSupport
+  · context: CamelContext
+  · template: ProducerTemplate
+  - setUp(): void
+  - postProcessTest(): void
+  - createRouteBuilder(): RouteBuilder
+  - isUseAdviceWith(): boolean
+  - sendBody(String, Object): void
+  - assertMockEndpointsSatisfied(): void
+
+  AvailablePortFinder
+
+  CamelBlueprintTestSupport
+  - setConfigAdminInitialConfiguration(Properties): String
+  - getBlueprintDescriptor(): String
+  - getBundleFilter(): String
+  - useOverridePropertiesWithConfigAdmin(): String
+  - addServicesOnStartup(Map<String, KeyValueHolder<Object, Dictionary>>): void
 
   MockEndpoint
   - when|(): void
@@ -16,57 +73,24 @@ ProducerTemplate
   - expected|(): void|AssertionClause
   - expects|(): void|AssertionClause
   - message(int): AssertionClause
-  - allMessages(): AssertionClause 
+  - allMessages(): AssertionClause
   - assert|(): void|Exchange
 
-Assert
-  assertEquals(T expected, T actual)
-  assertNotEquals(T expected, T actual)
-  assertArrayEquals(T[] expecteds, T[] actuals) 
-  assertSame(Object, Object)
-  assertNotSame(Object, Object)
-  assertNull(Object)
-  assertNotNull(Object)
-  assertTrue(boolean)
-  assertFalse(boolean)
-  assertThat(T actual, Matcher<? super T> matcher) 
-  
-  
+  @EndpointInject
+  - uri(): String
 
+  ProducerTemplate
+    send(): Exchange
+    sendBody(): void|Object
+    sendBodyAndHeader(): void|Object
+    sendBodyAndHeaders(): void|Object
+    sendBodyAndProperty(): void|Object
+    request(): Exchange
+    requestBody(): Object|T
+    requestBodyAndHeader(): Object|T
+    requestBodyAndHeaders(): Object|T
+    ...
 
-
-
-
-
-
-
-
-@Produce
-- uri(): String
-
-@EndpointInject
-- uri(): String
-
-TestSupport 
-· log.trace|debug|info|warn|error(String): void
-- createDirectory(String): void
-- deleteDirectory(String): void
-- assert|()): void|Collection<T> 
-
-CamelTestSupport
-· context: CamelContext
-· template: ProducerTemplate
-- setUp(): void
-- postProcessTest(): void
-- createRouteBuilder(): RouteBuilder
-- isUseAdviceWith(): boolean
-- sendBody(String, Object): void
-- assertMockEndpointsSatisfied(): void
-
-CamelBlueprintTestSupport
-- setConfigAdminInitialConfiguration(Properties): String
-- getBlueprintDescriptor(): String
-- getBundleFilter(): String
-- useOverridePropertiesWithConfigAdmin(): String
-- addServicesOnStartup(Map<String, KeyValueHolder<Object, Dictionary>>): void
+  @Produce
+  - uri(): String
 

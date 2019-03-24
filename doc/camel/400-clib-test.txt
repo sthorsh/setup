@@ -1,32 +1,33 @@
-                       Object                                                             
+                       Object
                           |
                           |
          -----------------------------------------------------
-         |                |                 |                |            
-         |                |                 |                |            
-         |             Assert               |                |                                                     
-         |                |                 |                |                                                     
-         |                |                 |                |                                                     
-AvailablePortFinder  TestSupport    DefaultEndpoint  ProducerTemplate                                                
-                          |                 |                |                                                     
-                          |                 |                |                                                     
-                        Camel-        MockEndpoint       Default-                                                  
-                     TestSupport                     ProducerTemplate                                             
-                          |                                                                  
+         |                |                 |                |
+         |                |                 |                |
+         |             Assert               |                |
+         |                |                 |                |
+         |                |                 |                |
+AvailablePortFinder  TestSupport    DefaultEndpoint  ProducerTemplate
+                          |                 |                |
+                          |                 |                |
+                        Camel-        MockEndpoint       Default-
+                     TestSupport                     ProducerTemplate
                           |
-                          |------------------                               
-                          |                 |                               
-                          |                 |                                
-                          |          CamelBlueprint-         
-                          |            TestSupport          
-                          |                 |               
-                          |                 |               
-                          |---------        |--------- 
+                          |
+                          |------------------
+                          |                 |
+                          |                 |
+                          |          CamelBlueprint-
+                          |            TestSupport
+                          |                 |
+                          |                 |
+                          |---------        |---------
                           |        |        |        |
                           |        |        |        |
-                          |      Clib-      | ClibIntegration- 
-                          |   TestSupport   |   TestSupport   
-                          |        |        |        |         
-                          |        |        |        |         
-                         ...      ...      ...      ...        
-                         (1)      (2)      (3)      (4)
+                          |      Clib-      | ClibIntegration-
+                          |   TestSupport   |   TestSupport
+                          |        |        |        |
+                          |        |        |        |
+                         ...      ...      ...      ...
+                          1        2        3        4
+
