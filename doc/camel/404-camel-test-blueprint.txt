@@ -1,0 +1,7 @@
+  CamelBlueprintTestSupport
+  - setConfigAdminInitialConfiguration(Properties): String
+  - getBlueprintDescriptor(): String
+  - getBundleFilter(): String
+  - useOverridePropertiesWithConfigAdmin(): String
+  - addServicesOnStartup(Map<String, KeyValueHolder<Object, Dictionary>>): void
+

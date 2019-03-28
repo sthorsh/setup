@@ -1,0 +1,27 @@
+  MockEndpoint
+  - when|(): void
+  - getExchanges(): List<Exchange>
+  - expected|(): void|AssertionClause
+  - expects|(): void|AssertionClause
+  - message(int): AssertionClause
+  - allMessages(): AssertionClause
+  - assert|(): void|Exchange
+
+  @EndpointInject
+  - uri(): String
+
+  ProducerTemplate
+    send(): Exchange
+    sendBody(): void|Object
+    sendBodyAndHeader(): void|Object
+    sendBodyAndHeaders(): void|Object
+    sendBodyAndProperty(): void|Object
+    request(): Exchange
+    requestBody(): Object|T
+    requestBodyAndHeader(): Object|T
+    requestBodyAndHeaders(): Object|T
+    ...
+
+  @Produce
+  - uri(): String
+

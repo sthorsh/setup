@@ -1,0 +1,50 @@
+  TestSupport
+    log.error|warn|info|debug|trace(String): void
+    assertCollectionSize()
+    assertDirectoryEquals()
+    assertEndpointUri()
+    assertExpression()
+    assertFileExists()
+    assertFileNotExists()
+    assertInMessageBodyEquals()
+    assertInMessageHeader()
+    assertIsInstanceOf()
+    assertListSize()
+    assertMessageHeader()
+    assertOneElement()
+    assertOutMessageBodyEquals()
+    assertOutMessageHeader()
+    assertPredicate()
+    assertPredicateMatches()
+    assertPredicateDoesNotMatch()
+    assertStringContains()
+    body()
+    bodyAs()
+    createDirectory()
+    createExchangeWithBody()
+    deleteDirectory()
+    exchangeProperty()
+    faultBody()
+    getJavaMajorVersion()
+    getRouteList()
+    getTestName()
+    getTestMethodName()
+    header()
+    isJava18()
+    isJavaVendor()
+    isPlatform()
+    resolveMandatoryEndpoint ()
+    systemProperty()
+
+  CamelTestSupport
+  · context: CamelContext
+  · template: ProducerTemplate
+  - assertMockEndpointsSatisfied(): void
+  - createRouteBuilder(): RouteBuilder
+  - isUseAdviceWith(): boolean
+  - postProcessTest(): void
+  - sendBody(String, Object): void
+  - setUp(): void
+
+  AvailablePortFinder
+
