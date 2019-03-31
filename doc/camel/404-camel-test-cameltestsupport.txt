@@ -1,0 +1,45 @@
+CamelTestSupport
+  context: CamelContext
+  template: ProducerTemplate
+  consumer: ConsumerTemplate
+
+  setUp() 
+   isCreateCamelContextPerClass()
+   setupResources()
+   doPreSetup()
+   doSetUp()
+      createCamelContext()
+        createRegistry()
+          createJndiContext()
+      isUseDebugger()
+      isMockEndpoints() 
+      isMockEndpointsAndSkip()
+      useOverridePropertiesWithPropertiesComponent()
+      ignoreMissingLocationWithPropertiesComponent()
+      postProcessTest()
+        applyCamelPostProcessor()
+      resetMocks()
+      isUseRouteBuilder()
+        createRouteBuilders()
+          createRouteBuilder()
+        isUseAdviceWith()
+        startCamelContext()
+      assertValidContext()
+    doPostSetup()
+
+  createExchangeWithBody()
+  getMockEndpoint()
+  replaceRouteFromWith()
+  sendBody()
+  sendBodies()
+
+  assertExpression()
+  assertMockEndpointsSatisfied()
+  assertPredicate()
+  assertResolveLanguage()
+
+  tearDown()
+  · stopCamelContext()
+  · doPostTearDown()
+  · cleanupResources()
+

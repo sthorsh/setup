@@ -36,17 +36,3 @@ TestSupport
   resolveMandatoryEndpoint ()
   systemProperty()
 
-CamelTestSupport
-  camelContextService() 
-  - applyCamelPostProcessor()
-  - assertMockEndpointsSatisfied(): void
-  - createRouteBuilder(): RouteBuilder
-  - isUseAdviceWith(): boolean
-  - postProcessTest(): void
-  - sendBody(String, Object): void
-  - setUp(): void
-  · context: CamelContext
-  · template: ProducerTemplate
-
-  AvailablePortFinder
-
