@@ -1,5 +1,6 @@
 TestSupport
   log.error|warn|info|debug|trace(String): void
+
   assertCollectionSize()
   assertDirectoryEquals()
   assertEndpointUri()
@@ -18,6 +19,7 @@ TestSupport
   assertPredicateMatches()
   assertPredicateDoesNotMatch()
   assertStringContains()
+
   body()
   bodyAs()
   createDirectory()
