@@ -1,4 +1,5 @@
 CamelTestSupport
+
   context: CamelContext
   template: ProducerTemplate
   consumer: ConsumerTemplate
@@ -34,13 +35,13 @@ CamelTestSupport
     doPostTearDown()
     cleanupResources()
 
-  assertExpression()
-  assertMockEndpointsSatisfied()
-  assertPredicate()
-  assertResolveLanguage()
   createExchangeWithBody()
   getMockEndpoint()
-  replaceRouteFromWith()
-  sendBody()
-  sendBodies()
+    replaceRouteFromWith()
+    sendBody()
+    sendBodies()
+    assertExpression()
+    assertMockEndpointsSatisfied()
+    assertPredicate()
+    assertResolveLanguage()
 
