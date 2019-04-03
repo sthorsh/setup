@@ -1,39 +1,42 @@
-﻿                                                       Object                                                              
-                                                          |
-                                                          |
-                                                   BuilderSupport
-                                                          |
-                                                          |
-                                                     RouteBuilder
-                                                          |
-                                                          |
-            ---------------------------------------------------------------------------------------------------------
-            |                                             |                                          |              |
-            |                                             |                                          |              |
-            |                                           Cache-                                     Cache-           |
-            |                                        RouteBuilder                               RouteBuilder        |
-            |                                             |                                          |              |
-            |                                             |                                          |              |
-            |                                       ErrorHandling-                            NoErrorHandling-      |
-            |                                        RouteBuilder                               RouteBuilder        |
-            |                                           (DLC)                                        |              |    
-            |                                             |                                          |              |
-            |                                             |                                          |              |
-     --------------                 --------------------------------------------------               |              |
-     |            |                 |                     |                          |               |              |
-     |            |                 |                     |                          |               |              |
-   Event-         |               Audit-              Singleton-                     |               |         AdviceWith-
-RouteBuilder      |            RouteBuilder          RouteBuilder                    |               |         RouteBuilder
-     |            |                 |                     |                          |               |              |
-     |            |                 |                     |---------------           |               |              |
-     |            |                 |                     |              |           |               |              |
-     |            |                 |                     |              |           |               |              |
-     |            |                 |                     |         FileTransfer     |               |              |
-     |            |                 |                     |         RouteBuilder     |               |              |
-     |            |                 |                     |              |           |               |              |
-     |            |                 |                     |              |           |               |              |
-    ...          ...               ...                   ...            ...         ...              ...           ...
- eventFrom()   from()         auditedFrom()       singleAuditedFrom()             from()           from()
- cxf:          direct:        activemq:           activemq:                       direct:          direct:
- jetty:        ErrorRoute     seda:               ftp:                            direct-vm:         
-                              quartz:                                                         
+﻿                           Object
+                              |
+                              |
+                       BuilderSupport
+                              |
+                              |
+                         RouteBuilder
+                              |
+                              |
+     ----------------------------------------------------------
+     |          |             |                               |
+     |          |             |                               |
+     |          |             |                             Cache-
+     |          |             |                           RouteBuilder
+     |          |             |                               |
+     |          |             |                               |
+     |          |             |                --------------------------------
+     |          |             |                |                              |
+     |          |             |                |                              |
+AdviceWith-     |          Event-       NoErrorHandling-                ErrorHandling-
+RouteBuilder    |       RouteBuilder      RouteBuilder                   RouteBuilder
+     |          |             |                |                            (DLC)
+     |          |             |                |                              |
+     |          |             |                |                              |
+     |          |             |                |            --------------------------------------
+     |          |             |                |            |                 |                  |
+     |          |             |                |            |                 |                  |
+     |          |             |                |            |               Audit-           Singleton-
+     |          |             |                |            |            RouteBuilder       RouteBuilder
+     |          |             |                |            |                 |                  |
+     |          |             |                |            |                 |                  |---------------------
+     |          |             |                |            |                 |                  |                    |
+     |          |             |                |            |                 |                  |                    |
+     |          |             |                |            |                 |                  |               FileTransfer
+     |          |             |                |            |                 |                  |               RouteBuilder
+     |          |             |                |            |                 |                  |                    |
+     |          |             |                |            |                 |                  |                    |
+    ...        ...           ...              ...          ...               ...                ...                   .
+             from()        eventFrom()      from()        from()         auditedFrom()    singleAuditedFrom()  singleAuditedFrom()
+             direct:       cxf:             direct:       direct:        activemq:        activemq:
+             ErrorRoute    jetty:                         direct-vm:     seda:            ftp:
+                                                                         quartz:
