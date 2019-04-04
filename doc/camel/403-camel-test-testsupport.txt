@@ -1,5 +1,29 @@
 TestSupport
-  log.error|warn|info|debug|trace(String): void
+
+  log: Logger
+
+  getTestName()
+  getTestMethodName()
+
+  body()
+  bodyAs()
+  exchangeProperty()
+  faultBody()
+  header()
+  systemProperty()
+
+  createDirectory()
+  deleteDirectory()
+  createExchangeWithBody()
+
+  getRouteList()
+  getJavaMajorVersion()
+
+  isJava18()
+  isJavaVendor()
+  isPlatform()
+
+  resolveMandatoryEndpoint()
 
   assertCollectionSize()
   assertDirectoryEquals()
@@ -19,22 +43,4 @@ TestSupport
   assertPredicateMatches()
   assertPredicateDoesNotMatch()
   assertStringContains()
-
-  body()
-  bodyAs()
-  createDirectory()
-  createExchangeWithBody()
-  deleteDirectory()
-  exchangeProperty()
-  faultBody()
-  getJavaMajorVersion()
-  getRouteList()
-  getTestName()
-  getTestMethodName()
-  header()
-  isJava18()
-  isJavaVendor()
-  isPlatform()
-  resolveMandatoryEndpoint ()
-  systemProperty()
 
