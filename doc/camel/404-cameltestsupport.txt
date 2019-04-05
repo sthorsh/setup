@@ -1,10 +1,8 @@
 CamelTestSupport
+• context: CamelContext
+• template: ProducerTemplate
 
-  context: CamelContext
-  template: ProducerTemplate
-  consumer: ConsumerTemplate
-
-  setUp() 
+• setUp() 
     isCreateCamelContextPerClass()
     setupResources()
     doPreSetup() 
@@ -13,35 +11,35 @@ CamelTestSupport
       createRegistry()
       createCamelContext()
       //template.start() 
-      //consumer.start()
       isMockEndpoints() 
-      isMockEndpointsAndSkip()
-      useOverridePropertiesWithPropertiesComponent()
+•     isMockEndpointsAndSkip()
+•     useOverridePropertiesWithPropertiesComponent()
       ignoreMissingLocationWithPropertiesComponent()
-      postProcessTest()
+•     postProcessTest()
       applyCamelPostProcessor()
       isUseRouteBuilder()
-      createRouteBuilders()
-      createRouteBuilder()
+•     createRouteBuilders()
+•     createRouteBuilder()
       //context.addRoutes()
       replaceFromEndpoints()
-      isUseAdviceWith()
-      startCamelContext()
+•     isUseAdviceWith()
+•     startCamelContext()
       assertValidContext()
-    doPostSetup() 
-  ...
-  tearDown()
+•   doPostSetup() 
+  
+• tearDown()
     stopCamelContext()
     doPostTearDown()
     cleanupResources()
 
-  getMockEndpoint()
+• createExchangeWithBody()
+• getMockEndpoint()
   replaceRouteFromWith()
 
-  sendBody()
+• sendBody()
   sendBodies()
 
-  assertMockEndpointsSatisfied()
+• assertMockEndpointsSatisfied()
   assertExpression()
   assertPredicate()
   assertResolveLanguage()
