@@ -4,6 +4,18 @@ TestSupport
 
   getTestName()
   getTestMethodName()
+  getJavaMajorVersion()
+
+  isJava18()
+  isJavaVendor()
+  isPlatform()
+
+  getRouteList()
+  resolveMandatoryEndpoint()
+
+  createDirectory()
+  deleteDirectory()
+  createExchangeWithBody()
 
   body()
   bodyAs()
@@ -11,19 +23,6 @@ TestSupport
   faultBody()
   header()
   systemProperty()
-
-  createDirectory()
-  deleteDirectory()
-  createExchangeWithBody()
-
-  getRouteList()
-  getJavaMajorVersion()
-
-  isJava18()
-  isJavaVendor()
-  isPlatform()
-
-  resolveMandatoryEndpoint()
 
   assertCollectionSize()
   assertDirectoryEquals()
