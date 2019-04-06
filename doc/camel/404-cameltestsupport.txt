@@ -1,45 +1,46 @@
 CamelTestSupport
-• context: CamelContext
-• template: ProducerTemplate
 
-• setUp() 
+  context: CamelContext •
+  template: ProducerTemplate •
+
+  setUp() •
     isCreateCamelContextPerClass()
     setupResources()
-    doPreSetup() 
+    doPreSetup()
     doSetUp()
       createJndiContext()
       createRegistry()
       createCamelContext()
-      //template.start() 
-      isMockEndpoints() 
-•     isMockEndpointsAndSkip()
-•     useOverridePropertiesWithPropertiesComponent()
+      //template.start()
+      isMockEndpoints()
+      isMockEndpointsAndSkip() •
+      useOverridePropertiesWithPropertiesComponent() •
       ignoreMissingLocationWithPropertiesComponent()
-•     postProcessTest()
+      postProcessTest() •
       applyCamelPostProcessor()
       isUseRouteBuilder()
-•     createRouteBuilders()
-•     createRouteBuilder()
+      createRouteBuilders() •
+      createRouteBuilder() •
       //context.addRoutes()
       replaceFromEndpoints()
-•     isUseAdviceWith()
-•     startCamelContext()
+      isUseAdviceWith() •
+      startCamelContext() •
       assertValidContext()
-•   doPostSetup() 
-  
-• tearDown()
+    doPostSetup() •
+
+  tearDown() •
     stopCamelContext()
     doPostTearDown()
     cleanupResources()
 
-• createExchangeWithBody()
-• getMockEndpoint()
+  createExchangeWithBody() •
+  getMockEndpoint() •
   replaceRouteFromWith()
 
-• sendBody()
+  sendBody() •
   sendBodies()
 
-• assertMockEndpointsSatisfied()
+  assertMockEndpointsSatisfied() •
   assertExpression()
   assertPredicate()
   assertResolveLanguage()

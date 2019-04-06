@@ -1,12 +1,12 @@
 Assert
-• assertEquals()
-• assertNotEquals()
-• assertArrayEquals()
+  assertEquals() • 
+  assertNotEquals() • 
+  assertArrayEquals() • 
   assertSame()
   assertNotSame()
-• assertNull()
-• assertNotNull()
-• assertTrue()
-• assertFalse()
-• assertThat()
+  assertNull() • 
+  assertNotNull() • 
+  assertTrue() • 
+  assertFalse() • 
+  assertThat() • 
 

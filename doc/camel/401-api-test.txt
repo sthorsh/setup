@@ -1,17 +1,17 @@
-  Object
+  Object                                        
      |
      |
-     |-------------------------------------------------
-     |             |                 |                |
-     |             |                 |                |
-  Assert           |                 |                |
-     |             |                 |                |
-     |             |                 |                |
- TestSupport   Available-     DefaultEndpoint  ProducerTemplate
-     |         PortFinder            |                |
-     |                               |                |
-   Camel-                      MockEndpoint       Default-
-TestSupport                                   ProducerTemplate
+     |----------------------------------------------------
+     |             |                 |                   |
+     |             |                 |                   |
+  Assert           |                 |                   |
+     |             |                 |                   |
+     |             |                 |                   |
+ TestSupport   Available-    [DefaultEndpoint]   ProducerTemplate
+     |         PortFinder            |                   |
+     |                               |                   |
+   Camel-                      MockEndpoint          [Default-
+TestSupport                                      ProducerTemplate]
      |
      |
      |------------------

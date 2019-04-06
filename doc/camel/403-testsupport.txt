@@ -1,4 +1,5 @@
 TestSupport
+
   log: Logger
 
   getTestName()
@@ -20,8 +21,8 @@ TestSupport
   systemProperty()
 
   createDirectory()
-• deleteDirectory()
-• createExchangeWithBody()
+  deleteDirectory() • 
+  createExchangeWithBody() • 
 
   assertCollectionSize()
   assertDirectoryEquals()
@@ -30,15 +31,15 @@ TestSupport
   assertFileExists()
   assertFileNotExists()
   assertInMessageBodyEquals()
-• assertInMessageHeader()
-• assertIsInstanceOf()
-• assertListSize()
+  assertInMessageHeader() • 
+  assertIsInstanceOf() •       
+  assertListSize() • 
   assertMessageHeader()
   assertOneElement()
   assertOutMessageBodyEquals()
   assertOutMessageHeader()
   assertPredicate()
   assertPredicateMatches()
-• assertPredicateDoesNotMatch()
-• assertStringContains()
+  assertPredicateDoesNotMatch() • 
+  assertStringContains() • 
 
