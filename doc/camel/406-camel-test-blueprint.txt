@@ -1,7 +1,25 @@
-  CamelBlueprintTestSupport
-  - setConfigAdminInitialConfiguration(Properties): String
-  - getBlueprintDescriptor(): String
-  - getBundleFilter(): String
-  - useOverridePropertiesWithConfigAdmin(): String
-  - addServicesOnStartup(Map<String, KeyValueHolder<Object, Dictionary>>): void
+CamelBlueprintTestSupport
+
+  bundleContext: BundleContext/PojoSRBundleContext
+
+  setUp()
+    createBundleContext()
+      loadConfigAdminConfigurationFile() (using .cfg file)
+      setConfigAdminInitialConfiguration() (programmatically)
+      //CamelBlueprintHelper.createBundleContext()
+        getBlueprintDescriptor()
+        getBundleFilter()
+        getBundleVersion()
+        getBundleDirectives()
+        //foreach PojoSRBundle bundle: bundle.start()
+          //if ...: create, schedule, run BP container
+      expectBlueprintContainerReloadOnConfigAdminUpdate()
+      useOverridePropertiesWithPropertiesComponent()
+      addServicesOnStartup()
+      //CamelBlueprintHelper.waitForBlueprintContainer()
+        //wait for the test bundle's BP container to be CREATED
+      useOverridePropertiesWithConfigAdmin()
+    super.setUp()
+    //this.context().start() (BlueprintCamelContext)
+
 

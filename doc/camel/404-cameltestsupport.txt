@@ -1,6 +1,6 @@
 CamelTestSupport
 
-  context: CamelContext •
+  context: CamelContext/DefaultCamelContext •
   template: ProducerTemplate •
 
   setUp() •
