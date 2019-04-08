@@ -11,13 +11,17 @@ CamelBlueprintTestSupport
         getBundleFilter()
         getBundleVersion()
         getBundleDirectives()
-        //foreach PojoSRBundle bundle: bundle.start()
-          //if ...: create, schedule, run BP container
+        //ctor PojoSRBundle 0
+        //ctor PojoSRBundleContext 0
+        //ctor PojoSRBundle 1..32
+        //foreach Bundle: bundle.start()
+          //ctor PojoSRBundleContext 1..32
+          //ctor BlueprintContainerImpl 2, 12, 18, 21
       expectBlueprintContainerReloadOnConfigAdminUpdate()
       useOverridePropertiesWithPropertiesComponent()
       addServicesOnStartup()
-      //CamelBlueprintHelper.waitForBlueprintContainer()
-        //wait for the test bundle's BP container to be CREATED
+      //CamelBlueprintHelper.waitForBlueprintContainer() (for test bundle)
+      //ctor BlueprintCamelContext 
       useOverridePropertiesWithConfigAdmin()
     super.setUp()
     //this.context().start() (BlueprintCamelContext)
