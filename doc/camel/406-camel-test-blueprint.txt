@@ -7,17 +7,17 @@ CamelBlueprintTestSupport
     createBundleContext()
       useAsynchronousBlueprintStartup()
       loadConfigAdminConfigurationFile()
-      setConfigAdminInitialConfiguration()
-      getBlueprintDescriptor()
+      setConfigAdminInitialConfiguration() • 
+      getBlueprintDescriptor() • 
       includeTestBundle()
-      getBundleFilter()
+      getBundleFilter() •
       getBundleVersion()
       getBundleDirectives()
       //ctor PojoSRBundle 0..32
       //ctor PojoSRBundleContext 0..32
-      //ctor BlueprintContainerImpl 2, 12, 18, 21
+      //ctor BlueprintContainerImpl 2,12,18,21
       expectBlueprintContainerReloadOnConfigAdminUpdate()
-      addServicesOnStartup()
+      addServicesOnStartup() • 
       //ctor BlueprintCamelContext 
       useOverridePropertiesWithConfigAdmin()
     super.setUp()
