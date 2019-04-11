@@ -1,6 +1,6 @@
 CamelTestSupport
 
-  context: CamelContext/DefaultCamelContext •
+  context: CamelContext •
   template: ProducerTemplate •
 
   setUp() •
@@ -25,6 +25,7 @@ CamelTestSupport
       replaceFromEndpoints()
       isUseAdviceWith() •
       startCamelContext() •
+      //context.start()
       assertValidContext()
     doPostSetup() •
 

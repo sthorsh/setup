@@ -1,36 +1,29 @@
 CamelBlueprintTestSupport
 
-  bundleContext: BundleContext/PojoSRBundleContext
+  bundleContext: BundleContext
   services: Set<ServiceRegistration<?>>
   
   setUp()
     createBundleContext()
       useAsynchronousBlueprintStartup()
-      loadConfigAdminConfigurationFile() (using .cfg file)
-      setConfigAdminInitialConfiguration() (programmatically)
-      //CamelBlueprintHelper.createBundleContext()
-        getBlueprintDescriptor()
-        includeTestBundle()
-        getBundleFilter()
-        getBundleVersion()
-        getBundleDirectives()
-        //ctor PojoSRBundle 0
-        //ctor PojoSRBundleContext 0
-        //ctor PojoSRBundle 1..32
-        //foreach Bundle: bundle.start()
-          //ctor PojoSRBundleContext 1..32
-          //ctor BlueprintContainerImpl 2, 12, 18, 21
+      loadConfigAdminConfigurationFile()
+      setConfigAdminInitialConfiguration()
+      getBlueprintDescriptor()
+      includeTestBundle()
+      getBundleFilter()
+      getBundleVersion()
+      getBundleDirectives()
+      //ctor PojoSRBundle 0..32
+      //ctor PojoSRBundleContext 0..32
+      //ctor BlueprintContainerImpl 2, 12, 18, 21
       expectBlueprintContainerReloadOnConfigAdminUpdate()
       addServicesOnStartup()
-        asService()
-      //CamelBlueprintHelper.waitForBlueprintContainer() (test bundle)
       //ctor BlueprintCamelContext 
       useOverridePropertiesWithConfigAdmin()
     super.setUp()
-    createCamelContext()
-      getCamelContextCreationTimeout()
-    //context.start() (BlueprintCamelContext)
-  ...
+      createCamelContext()
+    context.start()
+
   tearDown()
     cleanupResources()
 
