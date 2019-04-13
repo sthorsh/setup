@@ -1,0 +1,13 @@
+ADVICEWITHROUTEBUILDER
+
+AdviceWithRouteBuilder
+  replaceFromWith(): void
+  mockEndpoints(): void
+  mockEndpointsAndSkip(): void
+  weaveAddFirst(): ProcessorDefinition<?>
+  weaveAddLast(): ProcessorDefinition<?>
+  weaveById(): AdviceWithBuilder<T>
+  weaveByType(): AdviceWithBuilder<T>
+  weaveByToUri(): AdviceWithBuilder<T>
+  ...
+

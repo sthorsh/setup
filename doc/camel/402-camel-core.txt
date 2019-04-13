@@ -1,27 +1,44 @@
-  @EndpointInject - add to figure 401
-  - uri(): String
+@EndpointInject
+  uri()
 
-  MockEndpoint
-  - when|(): void
-  - getExchanges(): List<Exchange>
-  - expected|(): void|AssertionClause
-  - expects|(): void|AssertionClause
-  - message(int): AssertionClause
-  - allMessages(): AssertionClause
-  - assert|(): void|Exchange
+MockEndpoint
+  allMessages()
+  assertExchangeReceived()
+  assertIsSatisfied()
+  assertIsNotSatisfied()
+  assertMessagesAscending()
+  assertMessagesDescending()
+  assertNoDuplicates()
+  expectedBodyReceived()
+  expectedBodiesReceived()
+  expectedBodiesReceivedInAnyOrder()
+  expectedExchangePattern()
+  expectedFileExists()
+  expectedHeaderReceived()
+  expectedHeaderValuesReceivedInAnyOrder()
+  expectedMessageCount()
+  expectedMessagesMatches()
+  expectedMinimumMessageCount()
+  expectedPropertyReceived()
+  expectedPropertyValuesReceivedInAnyOrder()
+  expectsAscending()
+  expectsDescending()
+  expectsNoDuplicates()
+  getExchanges()
+  message()
+  whenAnyExchangeReceived()
+  whenExchangeReceived()
+  ...
 
-  @Produce - add to figure 401
-  - uri(): String
-
-  ProducerTemplate
-    send(): Exchange
-    sendBody(): void|Object
-    sendBodyAndHeader(): void|Object
-    sendBodyAndHeaders(): void|Object
-    sendBodyAndProperty(): void|Object
-    request(): Exchange
-    requestBody(): Object|T
-    requestBodyAndHeader(): Object|T
-    requestBodyAndHeaders(): Object|T
-    ...
+ProducerTemplate
+  send()
+  sendBody()
+  sendBodyAndHeader()
+  sendBodyAndHeaders()
+  sendBodyAndProperty()
+  request()
+  requestBody()
+  requestBodyAndHeader()
+  requestBodyAndHeaders()
+  ...
 
