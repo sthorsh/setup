@@ -1,0 +1,36 @@
+ADVICEWITHROUTEBUILDER
+
+AdviceWithRouteBuilder
+  replaceFromWith(uri)
+ 
+  mockEndpoints(pattern)
+  mockEndpointsAndSkip(pattern)
+ 
+  intercept()
+    ...
+  interceptFrom(pattern)
+    ...
+  interceptSendToEndpoint(pattern)
+    ...
+ 
+  weaveAddFirst()
+    ...
+  weaveAddLast()
+    ...
+  weaveById(pattern)
+    .selectFirst()|selectLast()|selectIndex()|selectRange()
+    .before()|after()|replace()|remove()
+    ...
+  weaveByToUri(pattern)
+    .selectFirst()|selectLast()|selectIndex()|selectRange()
+    .before()|after()|replace()|remove()
+    ...
+  weaveByString(pattern)
+    .selectFirst()|selectLast()|selectIndex()|selectRange()
+    .before()|after()|replace()|remove()
+    ...
+  weaveByType(pattern)
+    .selectFirst()|selectLast()|selectIndex()|selectRange()
+    .before()|after()|replace()|remove()
+    ...
+
