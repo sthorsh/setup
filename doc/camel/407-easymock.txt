@@ -8,37 +8,48 @@ EasyMock
     niceMock()
     strictMock()
   Reset
-      reset(mock) 
+    reset(mock) 
   Record
-      anyObject()       arg skal være Object
-      anyString()       arg skal være String
-      anyDouble()       arg skal være Double
-      anyLong()         arg skal være Long
-      anyBoolean()      arg skal være Boolean
-    contains()        arg skal inneholde substring ...
-    eq()              arg skal være lik ...
-    isA()             arg skal være instans av ...
-    same()            arg skal være samme instans som ...
-    isNull()          arg skal være null
-    notNull()         arg skal ikke være null
-      and(m₁, m₂)       arg skal matche m₁ og m₂
-      expect(k)         ved kall k,...
-      expectLastCall()  ved foregående kall,...
-      andReturn(v)      returner v...
-      andThrow(e)       kast e...
-      times(n)          n ganger
-      anyTimes()        vilkårlig antall ganger
+    expect(...)               forvent ...
+    anyBoolean()              boolean arg
+    anyByte()                 byte arg
+    anyChar()                 char arg
+    anyDouble()               double arg
+    anyFloat()                float arg
+    anyInt()                  int arg
+    anyLong()                 long arg
+    anyObject()               Object arg
+    anyShort()                Short arg
+    anyString()               String arg
+    contains()                arg inneholder substring ...
+    eq()                      arg er lik ...
+    isA()                     arg er instans av ...
+    same()                    arg er samme instans som ...
+    isNull()                  arg er null
+    notNull()                 arg er ikke null
+    and(m₁, m₂)               arg matcher m₁ og m₂
+    expectLastCall()          for void metoder
+    andReturn(v)              returner v
+    andThrow(e)               kast e
+    times(n)                  n ganger
+    anyTimes()                vilkårlig antall ganger
   Replay
-      replay(mock)
-  Test
+    replay(mock)
   Verify
-      verify(mock)
+    verify(mock)
 
 EasyMockSupport
-  replayAll()
-  verifyAll()
+  Create
+    mock()
+    niceMock()
+    strictMock()
+  Reset
+    resetAll()
+  Replay
+    replayAll()
+  Verify
+    verifyAll()
   
-.--------------------------
-  URL
-  - http://easymock.org/user-guide.html
+URL
+  http://easymock.org/user-guide.html
 
