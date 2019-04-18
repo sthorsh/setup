@@ -4,27 +4,21 @@ CamelTestSupport
   template: ProducerTemplate •
 
   setUp() •
-    isCreateCamelContextPerClass()
     setupResources()
     doPreSetup()
     doSetUp()
-      createJndiContext()
-      createRegistry()
       createCamelContext()
-      isMockEndpoints()
+        createRegistry()
+        createJndiContext()
       isMockEndpointsAndSkip() •
       useOverridePropertiesWithPropertiesComponent() •
-      ignoreMissingLocationWithPropertiesComponent()
       postProcessTest() •
-      applyCamelPostProcessor()
-      isUseRouteBuilder()
+        applyCamelPostProcessor()
       createRouteBuilders() •
-      createRouteBuilder() •
-      //context.addRoutes()
-      replaceFromEndpoints()
-      isUseAdviceWith() •
-      startCamelContext() •
-      //context.start()
+        createRouteBuilder() •
+      if isUseAdviceWith() •
+      else
+        startCamelContext() • 
       assertValidContext()
     doPostSetup() •
 
@@ -36,10 +30,8 @@ CamelTestSupport
   createExchangeWithBody() •
   getMockEndpoint() •
   replaceRouteFromWith()
-
   sendBody() •
   sendBodies()
-
   assertMockEndpointsSatisfied() •
   assertExpression()
   assertPredicate()

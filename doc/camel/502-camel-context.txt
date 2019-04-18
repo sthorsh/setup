@@ -1,15 +1,15 @@
-Camel start
-- Logger: Apache Camel 2.20.0 CamelContext:camel-1 is starting
-- Starter interne tjenester
-- Beregner startrekkefølgen
-- Bereder rutene
-- Starter rutene
-- Logger: Apache Camel 2.20.0 CamelContext:camel-1 started in 0.328 secs
+Start
+  Logger: Apache Camel 2.20.0 CamelContext:camel-1 is starting
+  Starter interne tjenester
+  Beregner startrekkefølgen
+  Bereder rutene
+  Starter rutene
+  Logger: Apache Camel 2.20.0 CamelContext:camel-1 started in 0.328 secs
 
-Camel shutdown
-- Logger: Apache Camel 2.20.0 CamelContext:camel-1 is shutting down
-- Logger: Starting to graceful shutdown 1 routes (timeout 300 secs)
-- Stenger rutene  i motsatt rekkefølge av oppstart
-- Logger: Graceful shutdown of 1 routes completed in 4 secs
-- Logger: Apache Camel 2.20.0 CamelContext:camel-1 is shutdown in 0.033 secs
-
+Shutdown
+  Logger: Apache Camel 2.20.0 CamelContext:camel-1 is shutting down
+  Logger: Starting to graceful shutdown 1 routes (timeout 300 secs)
+  Stenger rutene  i motsatt rekkefølge av oppstart
+  Logger: Graceful shutdown of 1 routes completed in 4 secs
+  Logger: Apache Camel 2.20.0 CamelContext:camel-1 is shutdown in 0.033 secs
+ 

@@ -4,29 +4,63 @@ RuntimeConfiguration
   setTracing(): void
   ...
 
+-----------------------------------------------------
+SuspendableService
+  ...
+
+-----------------------------------------------------
 CamelContext
-  addComponent(): void
-  addEndpoint(): 
-  addRoutes(): void
-  addService(): void
-  createDataFormat(): void
-  createProducerTemplate(): ProducerTemplate
-  getComponentNames(): List<String>
-  getDataFormats(): Map<String, DataFormatDefinition>
-  getEndpointMap(): Map<String, Endpoint>
-  getLanguageNames(): List<String>
-  getRegistry(): Registry
-  getRoutes(): List<Route>
-  getRouteDefinitions(): List<RouteDefinition>
-  getTypeConverterRegistry(): TypeConverterRegistry 
-  startRoute(): void
-  stopRoute(): void
+  addComponent()
+  addEndpoint()
+  addRoutes()
+  addRouteDefinitions()
+  addService()
   ...
+  createDataFormat()
+  createConsumerTemplate()
+  createProducerTemplate()
+  ...
+  findComponents()
+  findEips()
+  ...
+    getComponent()
+    getComponentNames(): List<String>
+    getDataFormats(): Map<String, DataFormatDefinition>
+    getEndpointMap(): Map<String, Endpoint>
+    getLanguageNames(): List<String>
+  getRegistry()
+    getRoutes(): List<Route>
+    getRouteDefinitions(): List<RouteDefinition>
+    getTypeConverterRegistry(): TypeConverterRegistry 
+  ...
+  hasComponent()
+  hasEndpoint()
+  hasService()
+  ...
+    isStarted()
+    isStopped()
+    ...
+  resolveDataFormat()
+  resolveLanguage()
+  resolvePropertyPlaceholders("{{p1}}")
+  ...
+  ↑ setDelayer(): void
+  ↑ setStreamCaching(): void
+  ↑ setTracing(): void
+    ...
+    start(): void
+    startRoute(): void
+    ...
+    stop(): void
+    stopRoute(): void
+    ...
 
+-----------------------------------------------------
 ModelCamelContext
-  ...
-
+  ...            
+                 
 DefaultCamelContext
+  getPropertiesComponent()
   ...
 
 BlueprintCamelContext
