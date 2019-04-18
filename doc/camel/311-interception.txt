@@ -1,0 +1,13 @@
+InterceptDefinition
+  when()
+  ...
+
+InterceptFromDefinition
+  when()
+  ...
+
+InterceptSendToEndpointDefinition
+  when()
+  skipSendToOriginalEndpoint()
+  ...
+

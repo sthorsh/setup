@@ -1,9 +1,3 @@
-RUN
-- psvm
-- org.apache.camel.main.Main
-- unit test
-- deployert til container
-
 Camel start
 - Logger: Apache Camel 2.20.0 CamelContext:camel-1 is starting
 - Starter interne tjenester
