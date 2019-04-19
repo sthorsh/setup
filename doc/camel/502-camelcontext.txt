@@ -1,0 +1,57 @@
+CamelContext
+  addRoutes(routesBuilder)
+  addRouteDefinitions(routeDefinitions)
+  addComponent()
+  addEndpoint()
+  addService(object)
+  createConsumerTemplate()
+  createProducerTemplate()
+  createDataFormat()
+  findComponents()
+  findEips()
+  getRouteDefinitions()
+  getRouteDefinition()
+  getRoutes()
+  getRoute()
+  getRouteStartupOrder()
+  getComponentNames()
+  getComponent()
+  getEndpoints()
+  getEndpoint()    
+  getDataFormats()
+  getLanguageNames()
+  getRegistry()
+  getTypeConverterRegistry()
+  getTypeConverter()
+  getSSLContextParameters()
+  getUuidGenerator()
+  resolveDataFormat()
+  resolvePropertyPlaceholders("{{p1}}")
+↑ setDelayer(millis)
+↑ setStreamCaching()
+↑ setTracing()
+↑ start()
+  startRoute()
+↑ stop()
+  stopRoute()
+  ...
+
+DefaultCamelContext
+  servicesToStop: List<Service> 
+  addRouteCollection(routes)
+  createEndpoint()
+  createRegistry()
+  getPropertiesComponent()
+  ...
+
+BlueprintCamelContext
+  bundleContext: BundleContext
+  blueprintContainer: BlueprintContainer
+  getBundleContext()
+  getBlueprintContainer() 
+  ...
+
+OsgiDefaultCamelContext
+  bundleContext: BundleContext
+  ...
+
