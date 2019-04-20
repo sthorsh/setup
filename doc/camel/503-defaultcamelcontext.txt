@@ -1,0 +1,22 @@
+DefaultCamelContext
+  components → Map<String, Component>
+  endpoints → EndpointRegistry<EndpointKey>
+  languages → Map<String, Language>
+  registry →  Registry
+  routeDefinitions → List<RouteDefinition>
+  routes → Set<Route>
+  routeStartupOrder → List<RouteStartupOrder>
+  servicesToStop → List<Service>
+  sslContextParameters → SSLContextParameters
+  typeConverter → TypeConverter
+  typeConverterRegistry → TypeConverterRegistry
+  uuidGenerator → UuidGenerator
+  ...
+  addRouteCollection(routes)
+  ...
+  createEndpoint()
+  createRegistry()
+  ...
+  getPropertiesComponent()
+  ...
+

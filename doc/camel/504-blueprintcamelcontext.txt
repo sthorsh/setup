@@ -1,0 +1,8 @@
+BlueprintCamelContext
+  bundleContext → BundleContext [2]
+  blueprintContainer → BlueprintContainer [2]
+  ...
+  getBundleContext()
+  getBlueprintContainer()
+  ...
+

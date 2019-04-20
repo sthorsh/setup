@@ -1,0 +1,4 @@
+OsgiDefaultCamelContext
+  bundleContext → BundleContext
+  ...
+
