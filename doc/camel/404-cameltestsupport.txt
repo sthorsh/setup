@@ -1,7 +1,7 @@
 CamelTestSupport
 
-  context: CamelContext •
-  template: ProducerTemplate •
+  context → CamelContext •
+  template → ProducerTemplate •
 
   setUp() •
     setupResources()

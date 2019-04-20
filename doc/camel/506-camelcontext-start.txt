@@ -1,0 +1,14 @@
+TRACE Adding ContextClassLoader from current thread...
+
+DEBUG Adding routes from builder: Routes: []
+DEBUG Warming up LRUCache ...
+DEBUG Warming up LRUCache complete in 15 millis
+
+INFO  Apache Camel 2.23.1 (CamelContext: camel-1) is starting
+INFO  JMX is enabled
+INFO  Type converters loaded (core: 195, classpath: 0)
+INFO  StreamCaching is not in use...
+INFO  Route: route1 started and consuming from: direct://in
+INFO  Total 1 routes, of which 1 are started
+INFO  Apache Camel 2.23.1 (CamelContext: camel-1) started in 0.186 seconds
+

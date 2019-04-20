@@ -1,31 +1,34 @@
 CamelBlueprintTestSupport
 
-  bundleContext: BundleContext
-  services: Set<ServiceRegistration<?>>
-  
+  bundleContext → PojoSRBundleContext [0]
+  services → Set<ServiceRegistrationImpl>
+    
   setUp()
     createBundleContext()
       useAsynchronousBlueprintStartup()
-      loadConfigAdminConfigurationFile()
-      setConfigAdminInitialConfiguration() • 
+      loadConfigAdminConfigurationFile() (file)
+      setConfigAdminInitialConfiguration() (props) • 
       getBlueprintDescriptor() • 
       includeTestBundle()
       getBundleFilter() •
       getBundleVersion()
       getBundleDirectives()
-      //ctor PojoSRBundle 0..32
-      //ctor PojoSRBundleContext 0..32
-      //ctor BlueprintContainerImpl 2,12,18,21
+      // PojoSRBundle() 0..32
+      // PojoSRBundleContext() 0..32
+      // BlueprintContainerImpl() 2,12,18,21
       expectBlueprintContainerReloadOnConfigAdminUpdate()
-      addServicesOnStartup() • 
-      //ctor BlueprintCamelContext 
+      useOverridePropertiesWithPropertiesComponent()
+!     addServicesOnStartup() • 
+      // BlueprintCamelContext@3690()
       useOverridePropertiesWithConfigAdmin()
     super.setUp()
-      createCamelContext()
+      ...
+      createCamelContext(): context → BlueprintCamelContext@3690
+      ...
     context.start()
 
   tearDown()
-    cleanupResources()
+    super.tearDown()
 
   getBundleContext()
   getOsgiService()

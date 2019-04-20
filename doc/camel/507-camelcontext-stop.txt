@@ -1,11 +1,3 @@
-Start
-  Apache Camel 2.20.0 CamelContext:camel-1 is starting
-  Starter interne tjenester
-  Beregner startrekkefølgen
-  Bereder rutene
-  Starter rutene
-  Apache Camel 2.20.0 CamelContext:camel-1 started in 0.328 secs
-
 Shutdown
   Apache Camel 2.20.0 CamelContext:camel-1 is shutting down
   Starting to graceful shutdown 1 routes (timeout 300 secs)
