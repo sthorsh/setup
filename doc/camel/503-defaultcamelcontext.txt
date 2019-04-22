@@ -1,109 +1,109 @@
 DefaultCamelContext
-  allowUseOriginalMessage             false
-  applicationContextClassLoader       ClassLoader 
-  asyncProcessorAwaitManager          AsyncProcessorAwaitManager 
+↑ allowUseOriginalMessage             false
+↑ applicationContextClassLoader       ClassLoader 
+↑ asyncProcessorAwaitManager          AsyncProcessorAwaitManager 
   autoCreateComponents                boolean 
-  autoStartup                         Boolean 
-  classResolver                       ClassResolver 
-  componentResolver                   ComponentResolver 
-  components                          Map<String, Component>
-  componentsInCreation                ThreadLocal<Set<String>> 
-  dataFormatResolver                  DataFormatResolver 
-  dataFormats                         Map<String, DataFormatDefinition> 
-  debugger                            Debugger 
-  defaultBacklogDebugger              InterceptStrategy 
-  defaultBacklogTracer                InterceptStrategy 
-  defaultFactoryFinder                FactoryFinder 
-  defaultRouteStartupOrder            int 
-  defaultTracer                       InterceptStrategy 
-  deferStartupListener                DeferServiceStartupListener 
-  delay                               Long 
-  disableJMX                          Boolean 
-  doNotStartRoutesOnFirstStart        boolean 
-  endpointKeyCounter                  AtomicInteger 
-  endpointStrategies                  List<EndpointStrategy> 
-  endpoints                           EndpointRegistry<EndpointKey>
-  errorHandlerBuilder                 ErrorHandlerFactory 
-  errorHandlerExecutorService         ScheduledExecutorService 
-  errorHandlerExecutorServiceLock     Object 
-  executorServiceManager              ExecutorServiceManager 
-  factories                           Map<String, FactoryFinder> 
-  factoryFinderResolver               FactoryFinderResolver 
-  firstStartDone                      boolean 
-  globalOptions                       Map<String, String> 
-  handleFault                         Boolean 
-  headersMapFactory                   HeadersMapFactory 
-  healthCheckRegistry                 HealthCheckRegistry 
-  hystrixConfigurations               Map<String, HystrixConfigurationDefinition> 
-  inflightRepository                  InflightRepository 
-  injector                            Injector 
-  interceptStrategies                 List<InterceptStrategy> 
-  isSetupRoutes                       ThreadLocal<Boolean> 
-  isStartingRoutes                    ThreadLocal<Boolean> 
-  jaxbContext                         JAXBContext 
-  languageResolver                    LanguageResolver 
-  languages                           Map<String, Language>
-  lazyLoadTypeConverters              Boolean 
-  lifecycleStrategies                 List<LifecycleStrategy> 
-  loadTypeConverters                  Boolean 
-  log                                 Logger 
-  logExhaustedMessageBody             Boolean 
-  logListeners                        Set<LogListener> 
-  logMask                             Boolean 
-  managementMBeanAssembler            ManagementMBeanAssembler 
-  managementName                      String 
-  managementNameStrategy              ManagementNameStrategy 
-  managementStrategy                  ManagementStrategy 
-  messageHistory                      Boolean 
-  messageHistoryFactory               MessageHistoryFactory 
-  modelJAXBContextFactory             ModelJAXBContextFactory 
-  nameStrategy                        CamelContextNameStrategy 
-  nodeIdFactory                       NodeIdFactory 
-  packageScanClassResolver            PackageScanClassResolver 
-  pollingConsumerServicePool          ServicePool<Endpoint, PollingConsumer> 
-  processorFactory                    ProcessorFactory 
-  producerServicePool                 ServicePool<Endpoint, Producer> 
-  propertiesComponent                 PropertiesComponent 
-  registry                            Registry
-  reloadStrategy                      ReloadStrategy 
-  restConfigurations                  Map<String, RestConfiguration> 
-  restDefinitions                     List<RestDefinition> 
-  restRegistry                        RestRegistry 
-  routeController                     RouteController 
-  routeDefinitions                    List<RouteDefinition>
-  routePolicyFactories                List<RoutePolicyFactory> 
-  routeServices                       Map<String, RouteService> 
-  routeStartupOrder                   List<RouteStartupOrder>
-  routes                              Set<Route>
-  runtimeCamelCatalog                 RuntimeCamelCatalog 
-  runtimeEndpointRegistry             RuntimeEndpointRegistry 
-  serviceCallConfigurations           Map<String, ServiceCallConfigurationDefinition> 
-  servicesToStop                      List<Service> 
-  shutdownRoute                       ShutdownRoute 
-  shutdownRunningTask                 ShutdownRunningTask 
-  shutdownStrategy                    ShutdownStrategy 
-  sslContextParameters                SSLContextParameters 
-  startDate                           Date 
-  startupListeners                    List<StartupListener> 
-  stopWatch                           StopWatch 
-  streamCache                         Boolean 
-  streamCachingStrategy               StreamCachingStrategy 
-  suspendedRouteServices              Map<String, RouteService> 
-  trace                               Boolean 
-  transformerRegistry                 TransformerRegistry<TransformerKey> 
-  transformers                        List<TransformerDefinition> 
-  typeConverter                       TypeConverter 
-  typeConverterRegistry               TypeConverterRegistry 
-  typeConverterStatisticsEnabled      Boolean 
-  unitOfWorkFactory                   UnitOfWorkFactory
-  useBreadcrumb                       Boolean 
-  useDataType                         Boolean 
-  useMDCLogging                       Boolean 
-  uuidGenerator                       UuidGenerator 
-  validatorRegistry                   ValidatorRegistry<ValidatorKey> 
-  validators                          List<ValidatorDefinition> 
-  vetoStated                          AtomicBoolean 
-  ...
+↑ autoStartup                         Boolean 
+classResolver                       ClassResolver 
+componentResolver                   ComponentResolver 
+components                          Map<String, Component>
+componentsInCreation                ThreadLocal<Set<String>> 
+dataFormatResolver                  DataFormatResolver 
+dataFormats                         Map<String, DataFormatDefinition> 
+debugger                            Debugger 
+defaultBacklogDebugger              InterceptStrategy 
+defaultBacklogTracer                InterceptStrategy 
+defaultFactoryFinder                FactoryFinder 
+defaultRouteStartupOrder            int 
+defaultTracer                       InterceptStrategy 
+deferStartupListener                DeferServiceStartupListener 
+delay                               Long 
+disableJMX                          Boolean 
+doNotStartRoutesOnFirstStart        boolean 
+endpointKeyCounter                  AtomicInteger 
+endpointStrategies                  List<EndpointStrategy> 
+endpoints                           EndpointRegistry<EndpointKey>
+errorHandlerBuilder                 ErrorHandlerFactory 
+errorHandlerExecutorService         ScheduledExecutorService 
+errorHandlerExecutorServiceLock     Object 
+executorServiceManager              ExecutorServiceManager 
+factories                           Map<String, FactoryFinder> 
+factoryFinderResolver               FactoryFinderResolver 
+firstStartDone                      boolean 
+globalOptions                       Map<String, String> 
+handleFault                         Boolean 
+headersMapFactory                   HeadersMapFactory 
+healthCheckRegistry                 HealthCheckRegistry 
+hystrixConfigurations               Map<String, HystrixConfigurationDefinition> 
+inflightRepository                  InflightRepository 
+injector                            Injector 
+interceptStrategies                 List<InterceptStrategy> 
+isSetupRoutes                       ThreadLocal<Boolean> 
+isStartingRoutes                    ThreadLocal<Boolean> 
+jaxbContext                         JAXBContext 
+languageResolver                    LanguageResolver 
+languages                           Map<String, Language>
+lazyLoadTypeConverters              Boolean 
+lifecycleStrategies                 List<LifecycleStrategy> 
+loadTypeConverters                  Boolean 
+log                                 Logger 
+logExhaustedMessageBody             Boolean 
+logListeners                        Set<LogListener> 
+logMask                             Boolean 
+managementMBeanAssembler            ManagementMBeanAssembler 
+managementName                      String 
+managementNameStrategy              ManagementNameStrategy 
+managementStrategy                  ManagementStrategy 
+messageHistory                      Boolean 
+messageHistoryFactory               MessageHistoryFactory 
+modelJAXBContextFactory             ModelJAXBContextFactory 
+nameStrategy                        CamelContextNameStrategy 
+nodeIdFactory                       NodeIdFactory 
+packageScanClassResolver            PackageScanClassResolver 
+pollingConsumerServicePool          ServicePool<Endpoint, PollingConsumer> 
+processorFactory                    ProcessorFactory 
+producerServicePool                 ServicePool<Endpoint, Producer> 
+propertiesComponent                 PropertiesComponent 
+registry                            Registry
+reloadStrategy                      ReloadStrategy 
+restConfigurations                  Map<String, RestConfiguration> 
+restDefinitions                     List<RestDefinition> 
+restRegistry                        RestRegistry 
+routeController                     RouteController 
+routeDefinitions                    List<RouteDefinition>
+routePolicyFactories                List<RoutePolicyFactory> 
+routeServices                       Map<String, RouteService> 
+routeStartupOrder                   List<RouteStartupOrder>
+routes                              Set<Route>
+runtimeCamelCatalog                 RuntimeCamelCatalog 
+runtimeEndpointRegistry             RuntimeEndpointRegistry 
+serviceCallConfigurations           Map<String, ServiceCallConfigurationDefinition> 
+servicesToStop                      List<Service> 
+shutdownRoute                       ShutdownRoute 
+shutdownRunningTask                 ShutdownRunningTask 
+shutdownStrategy                    ShutdownStrategy 
+sslContextParameters                SSLContextParameters 
+startDate                           Date 
+startupListeners                    List<StartupListener> 
+stopWatch                           StopWatch 
+streamCache                         Boolean 
+streamCachingStrategy               StreamCachingStrategy 
+suspendedRouteServices              Map<String, RouteService> 
+trace                               Boolean 
+transformerRegistry                 TransformerRegistry<TransformerKey> 
+transformers                        List<TransformerDefinition> 
+typeConverter                       TypeConverter 
+typeConverterRegistry               TypeConverterRegistry 
+typeConverterStatisticsEnabled      Boolean 
+unitOfWorkFactory                   UnitOfWorkFactory
+useBreadcrumb                       Boolean 
+useDataType                         Boolean 
+useMDCLogging                       Boolean 
+uuidGenerator                       UuidGenerator 
+validatorRegistry                   ValidatorRegistry<ValidatorKey> 
+validators                          List<ValidatorDefinition> 
+vetoStated                          AtomicBoolean 
+...
 
   addRouteCollection(routes)
   createEndpoint()

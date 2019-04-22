@@ -1,6 +1,0 @@
-RUN
-- psvm
-- org.apache.camel.main.Main
-- unit test
-- deployert til container
-
