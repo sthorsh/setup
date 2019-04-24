@@ -1,20 +1,23 @@
 DefaultCamelContext
-• allowUseOriginalMessage             boolean
-• autoStartup                         boolean
-• delay                               long
-• handleFault                         boolean 
-• logExhaustedMessageBody             boolean
-• logMask                             boolean 
-• messageHistory                      boolean 
+• allowUseOriginalMessage             false
+• applicationContextClassLoader       ClassLoader [for running camel in other containers]
+• asyncProcessorAwaitManager          AsyncProcessorAwaitManager 
+• autoCreateComponents                true
+• autoStartup                         true
+• delay                               null
+• handleFault                         false
+• logExhaustedMessageBody             false
+• logMask                             false
+• messageHistory                      true
 • routeDefinitions                    List<RouteDefinition>
 • routeStartupOrder                   List<RouteStartupOrder>
-• streamCache                         boolean 
-• trace                               boolean
-• useBreadcrumb                       boolean 
+• streamCache                         false
+• trace                               false
+• useBreadcrumb                       true
 • uuidGenerator                       UuidGenerator 
-  applicationContextClassLoader       ClassLoader [blueprint]
-  asyncProcessorAwaitManager          AsyncProcessorAwaitManager 
-  autoCreateComponents                boolean 
+  disableJMX                          boolean
+  doNotStartRoutesOnFirstStart        boolean 
+  firstStartDone                      boolean 
   classResolver                       ClassResolver 
   componentResolver                   ComponentResolver 
   components                          Map<String, Component>
@@ -28,8 +31,6 @@ DefaultCamelContext
   defaultRouteStartupOrder            int (erstatt denne med faktisk verdi 1000)
   defaultTracer                       InterceptStrategy 
   deferStartupListener                DeferServiceStartupListener 
-  disableJMX                          boolean
-  doNotStartRoutesOnFirstStart        boolean 
   endpointKeyCounter                  AtomicInteger 
   endpointStrategies                  List<EndpointStrategy> 
   endpoints                           EndpointRegistry<EndpointKey>
@@ -39,7 +40,6 @@ DefaultCamelContext
   executorServiceManager              ExecutorServiceManager 
   factories                           Map<String, FactoryFinder>  (KEEP)
   factoryFinderResolver               FactoryFinderResolver 
-  firstStartDone                      boolean 
   globalOptions                       Map<String, String>  (KEEP)
   headersMapFactory                   HeadersMapFactory 
   healthCheckRegistry                 HealthCheckRegistry 
