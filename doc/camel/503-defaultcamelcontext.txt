@@ -1,10 +1,14 @@
 DefaultCamelContext
 • allowUseOriginalMessage             false
-• applicationContextClassLoader       ClassLoader [for running camel in other containers]
+• applicationContextClassLoader       ClassLoader (for running in containers)
 • asyncProcessorAwaitManager          AsyncProcessorAwaitManager 
 • autoCreateComponents                true
 • autoStartup                         true
+• classResolver                       ClassResolver (default or osgi)
 • delay                               null
+• disableJMX                          false 
+• doNotStartRoutesOnFirstStart        false (to control the first startup)
+• firstStartDone                      false (to control the first startup)
 • handleFault                         false
 • logExhaustedMessageBody             false
 • logMask                             false
@@ -15,10 +19,6 @@ DefaultCamelContext
 • trace                               false
 • useBreadcrumb                       true
 • uuidGenerator                       UuidGenerator 
-  disableJMX                          boolean
-  doNotStartRoutesOnFirstStart        boolean 
-  firstStartDone                      boolean 
-  classResolver                       ClassResolver 
   componentResolver                   ComponentResolver 
   components                          Map<String, Component>
   componentsInCreation                ThreadLocal<Set<String>> 
