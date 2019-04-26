@@ -4,7 +4,13 @@ DefaultCamelContext
 • asyncProcessorAwaitManager          AsyncProcessorAwaitManager 
 • autoCreateComponents                true
 • autoStartup                         true
-• classResolver                       ClassResolver (default or osgi)
+• classResolver                       ClassResolver (default, osgi)
+• componentResolver                   ComponentResolver (default, blueprint)
+• components                          Map<String, Component>
+• componentsInCreation                ThreadLocal<Set<String>> 
+• dataFormatResolver                  DataFormatResolver 
+• dataFormats                         Map<String, DataFormatDefinition> 
+• debugger                            Debugger 
 • delay                               null
 • disableJMX                          false 
 • doNotStartRoutesOnFirstStart        false (to control the first startup)
@@ -19,12 +25,6 @@ DefaultCamelContext
 • trace                               false
 • useBreadcrumb                       true
 • uuidGenerator                       UuidGenerator 
-  componentResolver                   ComponentResolver 
-  components                          Map<String, Component>
-  componentsInCreation                ThreadLocal<Set<String>> 
-  dataFormatResolver                  DataFormatResolver 
-  dataFormats                         Map<String, DataFormatDefinition> 
-  debugger                            Debugger 
   defaultBacklogDebugger              InterceptStrategy 
   defaultBacklogTracer                InterceptStrategy 
   defaultFactoryFinder                FactoryFinder 
