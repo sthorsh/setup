@@ -1,108 +1,108 @@
 DefaultCamelContext
-• allowUseOriginalMessage             false
-• applicationContextClassLoader       ClassLoader (for running in containers)
-• asyncProcessorAwaitManager          AsyncProcessorAwaitManager 
-• autoCreateComponents                true
-• autoStartup                         true
-• classResolver                       ClassResolver (default, osgi)
-• componentResolver                   ComponentResolver (default, blueprint)
-• components                          Map<String, Component>
-• componentsInCreation                ThreadLocal<Set<String>> 
-• dataFormatResolver                  DataFormatResolver 
-• dataFormats                         Map<String, DataFormatDefinition> 
-• debugger                            Debugger 
-• delay                               null
-• disableJMX                          false 
-• doNotStartRoutesOnFirstStart        false (to control the first startup)
-• firstStartDone                      false (to control the first startup)
-• handleFault                         false
-• logExhaustedMessageBody             false
-• logMask                             false
-• messageHistory                      true
-• routeDefinitions                    List<RouteDefinition>
-• routeStartupOrder                   List<RouteStartupOrder>
-• streamCache                         false
-• trace                               false
-• useBreadcrumb                       true
-• uuidGenerator                       UuidGenerator 
-  defaultBacklogDebugger              InterceptStrategy 
-  defaultBacklogTracer                InterceptStrategy 
-  defaultFactoryFinder                FactoryFinder 
-  defaultRouteStartupOrder            int (erstatt denne med faktisk verdi 1000)
-  defaultTracer                       InterceptStrategy 
-  deferStartupListener                DeferServiceStartupListener 
-  endpointKeyCounter                  AtomicInteger 
-  endpointStrategies                  List<EndpointStrategy> 
-  endpoints                           EndpointRegistry<EndpointKey>
-  errorHandlerBuilder                 ErrorHandlerFactory 
-  errorHandlerExecutorService         ScheduledExecutorService 
-  errorHandlerExecutorServiceLock     Object 
-  executorServiceManager              ExecutorServiceManager 
-  factories                           Map<String, FactoryFinder>  (KEEP)
-  factoryFinderResolver               FactoryFinderResolver 
-  globalOptions                       Map<String, String>  (KEEP)
-  headersMapFactory                   HeadersMapFactory 
-  healthCheckRegistry                 HealthCheckRegistry 
-  hystrixConfigurations               Map<String, HystrixConfigurationDefinition> 
-  inflightRepository                  InflightRepository 
-  injector                            Injector 
-  interceptStrategies                 List<InterceptStrategy> 
-  isSetupRoutes                       ThreadLocal<Boolean> 
-  isStartingRoutes                    ThreadLocal<Boolean> 
-  jaxbContext                         JAXBContext (rest, deprecated i java)
-  languageResolver                    LanguageResolver (pattern: resolver)
-  languages                           Map<String, Language> (pattern: subjekt)
-  lazyLoadTypeConverters              Boolean [deprecated]
-  lifecycleStrategies                 List<LifecycleStrategy> 
-  loadTypeConverters                  Boolean [optimalisering]
-  log                                 Logger [intern logger]
-  logListeners                        Set<LogListener> 
-  managementMBeanAssembler            ManagementMBeanAssembler [jmx]
-  managementName                      String [jmx]
-  managementNameStrategy              ManagementNameStrategy [jmx]
-  managementStrategy                  ManagementStrategy [jmx]
-  messageHistoryFactory               MessageHistoryFactory 
-  modelJAXBContextFactory             ModelJAXBContextFactory 
-  nameStrategy                        CamelContextNameStrategy [educational]
-  nodeIdFactory                       NodeIdFactory [educational]
-  packageScanClassResolver            PackageScanClassResolver [pakkescanning]
-  pollingConsumerServicePool          ServicePool<Endpoint, PollingConsumer> [deprecated]
-  processorFactory                    ProcessorFactory 
-  producerServicePool                 ServicePool<Endpoint, Producer> [deprecated]
-  propertiesComponent                 PropertiesComponent 
-  registry                            Registry
-  reloadStrategy                      ReloadStrategy [keep ref onReload]
-  restConfigurations                  Map<String, RestConfiguration> 
-  restDefinitions                     List<RestDefinition> 
-  restRegistry                        RestRegistry 
-  routeController                     RouteController [experimental api]
-  routePolicyFactories                List<RoutePolicyFactory> 
-  routes                              Set<Route>
-  routeServices                       Map<String, RouteService> 
-  runtimeCamelCatalog                 RuntimeCamelCatalog 
-  runtimeEndpointRegistry             RuntimeEndpointRegistry 
-  serviceCallConfigurations           Map<String, ServiceCallConfigurationDefinition> 
-  servicesToStop                      List<Service> 
-shutdownRoute                       ShutdownRoute 
-shutdownRunningTask                 ShutdownRunningTask 
-  shutdownStrategy                    ShutdownStrategy 
-  sslContextParameters                SSLContextParameters 
-  startDate                           Date 
-  startupListeners                    List<StartupListener> 
-  stopWatch                           StopWatch 
-  streamCachingStrategy               StreamCachingStrategy 
-  suspendedRouteServices              Map<String, RouteService> 
-  transformerRegistry                 TransformerRegistry<TransformerKey> 
-  transformers                        List<TransformerDefinition> 
-  typeConverter                       TypeConverter 
-  typeConverterRegistry               TypeConverterRegistry 
-  typeConverterStatisticsEnabled      Boolean 
-  unitOfWorkFactory                   UnitOfWorkFactory
-  useDataType                         Boolean 
-  useMDCLogging                       Boolean 
-  validatorRegistry                   ValidatorRegistry<ValidatorKey> 
-  validators                          List<ValidatorDefinition> 
-  vetoStated                          AtomicBoolean 
+• allowUseOriginalMessage           false
+• applicationContextClassLoader     null/BundleDelegatingClassLoader
+• asyncProcessorAwaitManager        DefaultAsyncProcessorAwaitManager
+• autoCreateComponents              true
+• autoStartup                       true
+• classResolver                     Default/OsgiClassResolver
+• componentResolver                 Default/Osgi/BlueprintComponentResolver
+• components                        Map<String, Component>
+• componentsInCreation              Set<String>
+• dataFormatResolver                Default/Osgi/BlueprintDataFormatResolver
+• dataFormats                       Map<String, DataFormatDefinition>
+• debugger                          null
+• defaultBacklogDebugger            InterceptStrategy
+• defaultBacklogTracer              InterceptStrategy
+• defaultFactoryFinder              Default/OsgiFactoryFinder
+• defaultRouteStartupOrder          1000
+• defaultTracer                     null
+• deferStartupListener              DeferServiceStartupListener
+• delay                             null
+• disableJMX                        false
+• doNotStartRoutesOnFirstStart      false
+• endpoints                         DefaultEndpointRegistry
+• endpointKeyCounter                0
+• endpointStrategies                List<EndpointStrategy>
+• errorHandlerBuilder               null
+• errorHandlerExecutorService       null
+• errorHandlerExecutorServiceLock   Object
+• executorServiceManager            DefaultExecutorServiceManager
+• factories                         Map<String, Default/OsgiFactoryFinder>
+• factoryFinderResolver             Default/OsgiFactoryFinderResolver
+• firstStartDone                    false → true
+• globalOptions                     Map<String, String>
+• handleFault                       false
+• headersMapFactory                 DefaultHeadersMapFactory
+• healthCheckRegistry               DefaultHealthCheckRegistry
+• hystrixConfigurations             Map<String, HystrixConfigurationDefinition>
+• inflightRepository                DefaultInflightRepository
+• injector                          DefaultInjector → ReflectionInjector
+• interceptStrategies               List<InterceptStrategy>
+• isSetupRoutes                     null
+• isStartingRoutes                  null → true → null
+• logExhaustedMessageBody           false
+• logMask                           false
+• messageHistory                    true
+• routeDefinitions                  List<RouteDefinition>
+• routeStartupOrder                 List<RouteStartupOrder>
+• streamCache                       false
+• trace                             false
+• useBreadcrumb                     true
+• uuidGenerator                     DefaultUuidGenerator
+• jaxbContext                       null
+• languageResolver                  Default/Osgi/BlueprintLanguageResolver
+• languages                         Map<String, Language>
+• lazyLoadTypeConverters            false
+• lifecycleStrategies               List<LifecycleStrategy>
+• loadTypeConverters                true
+• log                               Log4jLogger
+• logListeners                      Set<LogListener>
+• managementMBeanAssembler          DefaultManagementMBeanAssembler
+• managementName                    String
+• managementNameStrategy            Default/OsgiManagementNameStrategy
+• managementStrategy                ManagedManagementStrategy
+• messageHistoryFactory             DefaultMessageHistoryFactory
+• modelJAXBContextFactory           null
+• nameStrategy                      Default/OsgiCamelContextNameStrategy
+• nodeIdFactory                     DefaultNodeIdFactory
+  packageScanClassResolver          PackageScanClassResolver
+  pollingConsumerServicePool        ServicePool<Endpoint, PollingConsumer> [deprecated]
+  processorFactory                  ProcessorFactory
+  producerServicePool               ServicePool<Endpoint, Producer> [deprecated]
+  propertiesComponent               PropertiesComponent
+  registry                          Registry
+  reloadStrategy                    ReloadStrategy [keep ref onReload]
+  restConfigurations                Map<String, RestConfiguration>
+  restDefinitions                   List<RestDefinition>
+  restRegistry                      RestRegistry
+  routeController                   RouteController [experimental api]
+  routePolicyFactories              List<RoutePolicyFactory>
+  routes                            Set<Route>
+  routeServices                     Map<String, RouteService>
+  runtimeCamelCatalog               RuntimeCamelCatalog
+  runtimeEndpointRegistry           RuntimeEndpointRegistry
+  serviceCallConfigurations         Map<String, ServiceCallConfigurationDefinition>
+  servicesToStop                    List<Service>
+shutdownRoute                     ShutdownRoute
+shutdownRunningTask               ShutdownRunningTask
+  shutdownStrategy                  ShutdownStrategy
+  sslContextParameters              SSLContextParameters
+  startDate                         Date
+  startupListeners                  List<StartupListener>
+  stopWatch                         StopWatch
+  streamCachingStrategy             StreamCachingStrategy
+  suspendedRouteServices            Map<String, RouteService>
+  transformerRegistry               TransformerRegistry<TransformerKey>
+  transformers                      List<TransformerDefinition>
+  typeConverter                     TypeConverter
+  typeConverterRegistry             TypeConverterRegistry
+  typeConverterStatisticsEnabled    Boolean
+  unitOfWorkFactory                 UnitOfWorkFactory
+  useDataType                       Boolean
+  useMDCLogging                     Boolean
+  validatorRegistry                 ValidatorRegistry<ValidatorKey>
+  validators                        List<ValidatorDefinition>
+  vetoStated                        AtomicBoolean
   ...
 
   addRouteCollection(routes)
