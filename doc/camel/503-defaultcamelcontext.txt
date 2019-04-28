@@ -1,9 +1,38 @@
 DefaultCamelContext
-• allowUseOriginalMessage          false
+  allowUseOriginalMessage          false
+  autoCreateComponents             true
+  autoStartup                      true
+  delay                            0
+  defaultRouteStartupOrder         1000
+  disableJMX                       false
+  doNotStartRoutesOnFirstStart     false
+  firstStartDone                   false
+  handleFault                      false
+  isSetupRoutes                    null → true → null
+  isStartingRoutes                 null → true → null
+  lazyLoadTypeConverters           false
+  loadTypeConverters               true
+  logExhaustedMessageBody          false
+  logMask                          false
+  messageHistory                   true
+  streamCache                      false
+  trace                            false
+  typeConverterStatisticsEnabled   false
+  useBreadcrumb                    true
+  useDataType                      false
+  useMDCLogging                    false
+  vetoStated                       false
+  startDate                        Date
+  stopWatch                        StopWatch
+  • routeDefinitions                 List<RouteDefinition>
+  • routePolicyFactories             List<RoutePolicyFactory>
+  • routeStartupOrder                List<RouteStartupOrder>
+  • routes                           Set<Route>
+  • routeServices                    Map<String, RouteService>
+  • suspendedRouteServices           Map<String, RouteService>
+  x routeController                  DefaultRouteController [experimental]
 • applicationContextClassLoader    BundleDelegatingClassLoader
 • asyncProcessorAwaitManager       DefaultAsyncProcessorAwaitManager
-• autoCreateComponents             true
-• autoStartup                      true
 • classResolver                    Default/OsgiClassResolver
 • componentResolver                Default/Osgi/BlueprintComponentResolver
 • components                       Map<String, Component>
@@ -14,13 +43,9 @@ DefaultCamelContext
 • defaultBacklogDebugger           InterceptStrategy
 • defaultBacklogTracer             InterceptStrategy
 • defaultFactoryFinder             Default/OsgiFactoryFinder
-• defaultRouteStartupOrder         1000
 • defaultTracer                    null
 • deferStartupListener             DeferServiceStartupListener
-• delay                            null
-• disableJMX                       false
-• doNotStartRoutesOnFirstStart     false
-• endpointKeyCounter               0
+  endpointKeyCounter               0
 • endpointStrategies               List<EndpointStrategy>
 • endpoints                        DefaultEndpointRegistry
 • errorHandlerBuilder              null
@@ -29,32 +54,23 @@ DefaultCamelContext
 • executorServiceManager           DefaultExecutorServiceManager
 • factories                        Map<String, Default/OsgiFactoryFinder>
 • factoryFinderResolver            Default/OsgiFactoryFinderResolver
-• firstStartDone                   false → true
 • globalOptions                    Map<String, String>
-• handleFault                      false
 • headersMapFactory                DefaultHeadersMapFactory
 • healthCheckRegistry              DefaultHealthCheckRegistry
 • hystrixConfigurations            Map<String, HystrixConfigurationDefinition>
 • inflightRepository               DefaultInflightRepository
 • injector                         DefaultInjector → ReflectionInjector
 • interceptStrategies              List<InterceptStrategy>
-• isSetupRoutes                    null
-• isStartingRoutes                 null → true → null
 • jaxbContext                      null
 • languageResolver                 Default/Osgi/BlueprintLanguageResolver
 • languages                        Map<String, Language>
-• lazyLoadTypeConverters           false
 • lifecycleStrategies              List<LifecycleStrategy>
-• loadTypeConverters               true
 • log                              Log4jLogger
-• logExhaustedMessageBody          false
 • logListeners                     Set<LogListener>
-• logMask                          false
 • managementMBeanAssembler         DefaultManagementMBeanAssembler
 • managementName                   String
 • managementNameStrategy           Default/OsgiManagementNameStrategy
 • managementStrategy               ManagedManagementStrategy
-• messageHistory                   true
 • messageHistoryFactory            DefaultMessageHistoryFactory
 • modelJAXBContextFactory          null
 • nameStrategy                     Default/OsgiCamelContextNameStrategy
@@ -69,12 +85,6 @@ DefaultCamelContext
 • restConfigurations               Map<String, RestConfiguration>
 • restDefinitions                  List<RestDefinition>
 • restRegistry                     RestRegistry
-• routeController                  DefaultRouteController
-• routeDefinitions                 List<RouteDefinition>
-• routePolicyFactories             List<RoutePolicyFactory>
-• routeServices                    Map<String, RouteService>
-• routeStartupOrder                List<RouteStartupOrder>
-• routes                           Set<Route>
 • runtimeCamelCatalog              RuntimeCamelCatalog
 • runtimeEndpointRegistry          RuntimeEndpointRegistry
 • serviceCallConfigurations        Map<String, ServiceCallConfigurationDefinition>
@@ -83,26 +93,16 @@ DefaultCamelContext
 • shutdownRunningTask              ShutdownRunningTask
 • shutdownStrategy                 DefaultShutdownStrategy
 • sslContextParameters             SSLContextParameters
-• startDate                        Date
 • startupListeners                 List<StartupListener>
-• stopWatch                        StopWatch
-• streamCache                      false
 • streamCachingStrategy            StreamCachingStrategy
-• suspendedRouteServices           Map<String, RouteService>
-• trace                            false
 • transformerRegistry              DefaultTransformerRegistry<TransformerKey>
 • transformers                     List<TransformerDefinition>
 • typeConverter                    Default/OsgiTypeConverter@1234
 • typeConverterRegistry            Default/OsgiTypeConverter@1234
-• typeConverterStatisticsEnabled   false
 • unitOfWorkFactory                DefaultUnitOfWorkFactory
-• useBreadcrumb                    true
-• useDataType                      false
-• useMDCLogging                    false
 • uuidGenerator                    DefaultUuidGenerator
 • validatorRegistry                DefaultValidatorRegistry<ValidatorKey>
 • validators                       List<ValidatorDefinition>
-• vetoStated                       false
   ...
 
   addRouteCollection(routes)
