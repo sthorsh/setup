@@ -15,3 +15,6 @@ AbstractMap              |                 |                   |
   Simple-              Jndi-         OsgiService-     BlueprintContainer-
  Registry            Registry          Registry            Registry
 
+
+PropertyPlaceholderDelegateRegistry
+CompositeRegistry

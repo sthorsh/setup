@@ -6,6 +6,9 @@ PropertyPlaceholderDelegateRegistry
   getRegistry(): Registry
   lookupByNameAndType(String, Class<T>): T
   ...
+
+CompositeRegistry
+  ...
  
 JndiRegistry
   bind(String, Object): void
