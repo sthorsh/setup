@@ -22,28 +22,40 @@ DefaultCamelContext
   useDataType                      false
   useMDCLogging                    false
   vetoStated                       false
-  • routeDefinitions                 List<RouteDefinition>
-  • routePolicyFactories             List<RoutePolicyFactory>
-  • routeStartupOrder                List<RouteStartupOrder>
-  • routes                           Set<Route>
-  • routeServices                    Map<String, RouteService>
-  • suspendedRouteServices           Map<String, RouteService>
-  x routeController                  DefaultRouteController [experimental]
-  • components                       Map<String, Component>
-  • componentsInCreation             Set<String>
-  • componentResolver                Default/Osgi/BlueprintComponentResolver
-  • propertiesComponent              PropertiesComponent
-  • endpoints                        DefaultEndpointRegistry
-  • endpointKeyCounter               0
-  • endpointStrategies               List<EndpointStrategy>
-  • runtimeEndpointRegistry          RuntimeEndpointRegistry
-  • pollingConsumerServicePool       ServicePool<Endpoint, PollingConsumer> (size=0)
-  • producerServicePool              ServicePool<Endpoint, Producer> (size=0)
+• routeDefinitions                 List<RouteDefinition>
+  routePolicyFactories             List<RoutePolicyFactory>
+  routeStartupOrder                List<RouteStartupOrder>
+  routes                           Set<Route>
+  routeServices                    Map<String, RouteService>
+  suspendedRouteServices           Map<String, RouteService>
+  routeController                  RouteController (Camel 2.20)
+  restConfigurations               Map<String, RestConfiguration>
+  restDefinitions                  List<RestDefinition>
+  restRegistry                     RestRegistry
+  components                       Map<String, Component>
+  componentsInCreation             Set<String>
+  componentResolver                ComponentResolver
+  propertiesComponent              PropertiesComponent
+  endpoints                        EndpointRegistry
+  endpointKeyCounter               0
+  endpointStrategies               List<EndpointStrategy>
+  runtimeEndpointRegistry          RuntimeEndpointRegistry
+  pollingConsumerServicePool       ServicePool<Endpoint, PollingConsumer> (size=0)
+  producerServicePool              ServicePool<Endpoint, Producer> (size=0)
+  dataFormats                      Map<String, DataFormatDefinition>
+  dataFormatResolver               DataFormatResolver
+  languages                        Map<String, Language>
+  languageResolver                 LanguageResolver 
+  transformers                     List<TransformerDefinition> (Camel 2.19)
+  transformerRegistry              TransformerRegistry<TransformerKey>
+  typeConverter                    TypeConverter
+  typeConverterRegistry            TypeConverterRegistry
+  validators                       List<ValidatorDefinition> (Camel 2.19)
+  validatorRegistry                ValidatorRegistry<ValidatorKey>
+
 • applicationContextClassLoader    BundleDelegatingClassLoader
 • asyncProcessorAwaitManager       DefaultAsyncProcessorAwaitManager
 • classResolver                    Default/OsgiClassResolver
-• dataFormatResolver               Default/Osgi/BlueprintDataFormatResolver
-• dataFormats                      Map<String, DataFormatDefinition>
 • debugger                         null
 • defaultBacklogDebugger           InterceptStrategy
 • defaultBacklogTracer             InterceptStrategy
@@ -64,8 +76,6 @@ DefaultCamelContext
 • injector                         DefaultInjector → ReflectionInjector
 • interceptStrategies              List<InterceptStrategy>
 • jaxbContext                      null
-• languageResolver                 Default/Osgi/BlueprintLanguageResolver
-• languages                        Map<String, Language>
 • lifecycleStrategies              List<LifecycleStrategy>
 • log                              Log4jLogger
 • logListeners                     Set<LogListener>
@@ -81,9 +91,6 @@ DefaultCamelContext
 • processorFactory                 DefaultProcessorFactory
 • registry                         PropertyPlaceholderDelegateRegistry → ...
 • reloadStrategy                   ReloadStrategy
-• restConfigurations               Map<String, RestConfiguration>
-• restDefinitions                  List<RestDefinition>
-• restRegistry                     RestRegistry
 • runtimeCamelCatalog              RuntimeCamelCatalog
 • serviceCallConfigurations        Map<String, ServiceCallConfigurationDefinition>
 • servicesToStop                   List<Service>
@@ -95,14 +102,8 @@ DefaultCamelContext
 • startupListeners                 List<StartupListener>
 • stopWatch                        StopWatch
 • streamCachingStrategy            StreamCachingStrategy
-• transformerRegistry              DefaultTransformerRegistry<TransformerKey>
-• transformers                     List<TransformerDefinition>
-• typeConverter                    Default/OsgiTypeConverter@1234
-• typeConverterRegistry            Default/OsgiTypeConverter@1234
 • unitOfWorkFactory                DefaultUnitOfWorkFactory
 • uuidGenerator                    DefaultUuidGenerator
-• validatorRegistry                DefaultValidatorRegistry<ValidatorKey>
-• validators                       List<ValidatorDefinition>
   ...
 
   addRouteCollection(routes)
