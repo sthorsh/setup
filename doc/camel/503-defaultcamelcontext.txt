@@ -22,8 +22,6 @@ DefaultCamelContext
   useDataType                      false
   useMDCLogging                    false
   vetoStated                       false
-  startDate                        Date
-  stopWatch                        StopWatch
   • routeDefinitions                 List<RouteDefinition>
   • routePolicyFactories             List<RoutePolicyFactory>
   • routeStartupOrder                List<RouteStartupOrder>
@@ -31,12 +29,19 @@ DefaultCamelContext
   • routeServices                    Map<String, RouteService>
   • suspendedRouteServices           Map<String, RouteService>
   x routeController                  DefaultRouteController [experimental]
+  • components                       Map<String, Component>
+  • componentsInCreation             Set<String>
+  • componentResolver                Default/Osgi/BlueprintComponentResolver
+  • propertiesComponent              PropertiesComponent
+  • endpoints                        DefaultEndpointRegistry
+  • endpointKeyCounter               0
+  • endpointStrategies               List<EndpointStrategy>
+  • runtimeEndpointRegistry          RuntimeEndpointRegistry
+  • pollingConsumerServicePool       ServicePool<Endpoint, PollingConsumer> (size=0)
+  • producerServicePool              ServicePool<Endpoint, Producer> (size=0)
 • applicationContextClassLoader    BundleDelegatingClassLoader
 • asyncProcessorAwaitManager       DefaultAsyncProcessorAwaitManager
 • classResolver                    Default/OsgiClassResolver
-• componentResolver                Default/Osgi/BlueprintComponentResolver
-• components                       Map<String, Component>
-• componentsInCreation             Set<String>
 • dataFormatResolver               Default/Osgi/BlueprintDataFormatResolver
 • dataFormats                      Map<String, DataFormatDefinition>
 • debugger                         null
@@ -45,9 +50,6 @@ DefaultCamelContext
 • defaultFactoryFinder             Default/OsgiFactoryFinder
 • defaultTracer                    null
 • deferStartupListener             DeferServiceStartupListener
-  endpointKeyCounter               0
-• endpointStrategies               List<EndpointStrategy>
-• endpoints                        DefaultEndpointRegistry
 • errorHandlerBuilder              null
 • errorHandlerExecutorService      null
 • errorHandlerExecutorServiceLock  Object
@@ -76,24 +78,22 @@ DefaultCamelContext
 • nameStrategy                     Default/OsgiCamelContextNameStrategy
 • nodeIdFactory                    DefaultNodeIdFactory
 • packageScanClassResolver         Default/OsgiPackageScanClassResolver
-• pollingConsumerServicePool       ServicePool<Endpoint, PollingConsumer>
 • processorFactory                 DefaultProcessorFactory
-• producerServicePool              ServicePool<Endpoint, Producer>
-• propertiesComponent              PropertiesComponent
 • registry                         PropertyPlaceholderDelegateRegistry → ...
 • reloadStrategy                   ReloadStrategy
 • restConfigurations               Map<String, RestConfiguration>
 • restDefinitions                  List<RestDefinition>
 • restRegistry                     RestRegistry
 • runtimeCamelCatalog              RuntimeCamelCatalog
-• runtimeEndpointRegistry          RuntimeEndpointRegistry
 • serviceCallConfigurations        Map<String, ServiceCallConfigurationDefinition>
 • servicesToStop                   List<Service>
 • shutdownRoute                    ShutdownRoute
 • shutdownRunningTask              ShutdownRunningTask
 • shutdownStrategy                 DefaultShutdownStrategy
 • sslContextParameters             SSLContextParameters
+• startDate                        Date
 • startupListeners                 List<StartupListener>
+• stopWatch                        StopWatch
 • streamCachingStrategy            StreamCachingStrategy
 • transformerRegistry              DefaultTransformerRegistry<TransformerKey>
 • transformers                     List<TransformerDefinition>
