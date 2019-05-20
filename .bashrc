@@ -105,17 +105,39 @@ fi
 # Tmux completion
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
 
+# Start ssh
+if pgrep ssh-agent > /dev/null 2>&1
+then
+  echo "ssh-agent running..."
+else
+  echo "starting ssh-agent..."
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_rsa_git
+fi
+
 # Start activemq
-cd /usr/lib/apache-activemq/
-bin/activemq start
+if /usr/lib/apache-activemq/bin/activemq status > /dev/null 2>&1
+then
+  echo "activemq running..."
+else
+  /usr/lib/apache-activemq/bin/activemq start
+fi
 
 # Start clipit
-clipit &
+if pgrep clipit > /dev/null 2>&1
+then
+  echo "clipit running..."
+else
+  echo "starting clipit.."
+  clipit &
+fi
 
 # Start slack
-/usr/bin/slack &
-
-# Start ssh
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa_git
+if pgrep slack > /dev/null 2>&1
+then
+  echo "slack running..."
+else
+  echo "starting slack..."
+  /usr/bin/slack &
+fi
 
