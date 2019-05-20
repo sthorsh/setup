@@ -37,7 +37,7 @@ alias mvnl='mvn clean install -Dmaven.test.skip=true'
 alias path='echo -e ${PATH//:/"\n"}' 
 alias postman='/opt/Postman/Postman > /dev/null 2>&1 &'
 alias ps='ps -ef'
-alias soapui="/opt/SoapUI-5.4.0/bin/soapui.sh > /dev/null 2>&1 &"
+alias soapui="/opt/SoapUI-5.5.0/bin/soapui.sh > /dev/null 2>&1 &"
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
 alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
 alias x='exit'
@@ -104,3 +104,18 @@ fi
 
 # Tmux completion
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
+
+# Start activemq
+cd /usr/lib/apache-activemq/
+bin/activemq start
+
+# Start clipit
+clipit &
+
+# Start slack
+/usr/bin/slack &
+
+# Start ssh
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa_git
+
