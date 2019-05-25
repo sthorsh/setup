@@ -1,10 +1,12 @@
 ROUTEBUILDER
 
 RouteBuilder
-  configure(): void (kalles kun 1 gang v/start Camel CIA2 498)
-  errorHandler(ErrorHandlerBuilder): void (context scope)
-  onException(): OnExceptionDefinition  (context scope)
-  from(): RouteDefinition           
-  getContext(): ModelCamelContext 
-  ...
+    configure(): abstract void 
+    ...
+    from(): RouteDefinition           
+    ...    
+    errorHandler(ErrorHandlerBuilder): void 
+    onException(): OnExceptionDefinition 
+    getContext(): ModelCamelContext 
+    ...
 
