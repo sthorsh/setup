@@ -1,12 +1,30 @@
 ROUTEBUILDER
 
 RouteBuilder
-    configure(): abstract void 
-    ...
-    from(): RouteDefinition           
-    ...    
-    errorHandler(ErrorHandlerBuilder): void 
+    addRoutesToCamelContext(): void
+    configureRoutes(): RoutesDefinition
+    populateRoutes(): void
+
+    configure(): void
+    errorHandler(): void 
     onException(): OnExceptionDefinition 
-    getContext(): ModelCamelContext 
-    ...
+    onCompletion(): OnCompletionDefinition 
+    intercept(): InterceptDefinition 
+    interceptFrom(): InterceptFromDefinition  
+    interceptSendToEndpoint(): InterceptSendToEndpointDefinition 
+    from(): RouteDefinition           
+    configureRoute(): void
+
+    getContext(): ModelCamelContext  
+    setContext(): void → BuilderSupport
+
+    getErrorHandlerBuilder(): ErrorHandlerBuilder → BuilderSupport
+    setErrorHandlerBuilder(): void
+
+    getRouteCollection(): RoutesDefinition 
+    setRouteCollection(): void 
+
+NB
+  RouteBuilder er en abstrakt klasse 
+  RouteBuilder har _en_ abstrakt metode configure()
 
