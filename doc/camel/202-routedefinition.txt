@@ -14,4 +14,3 @@ RouteDefinition
   getOutputs(): List<ProcessorDefinition<?>>
   ...
 
-
