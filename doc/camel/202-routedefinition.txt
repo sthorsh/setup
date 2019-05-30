@@ -1,15 +1,17 @@
 ROUTEDEFINITION
 
 RouteDefinition
-  adviceWith(): RouteDefinition
   autoStartup(): RouteDefinition
     delayer(): RouteDefinition 
-    errorHandler(): RouteDefinition (route scope)
-    getInputs(): List<FromDefinition> 
-    getOutputs(): List<ProcessorDefinition<?>>
+    errorHandler(): RouteDefinition
     routeId(): RouteDefinition 
     startupOrder(): RouteDefinition
     streamCaching(): RouteDefinition
     tracing(): RouteDefinition
+
+    getInputs(): List<FromDefinition> 
+    getOutputs(): List<ProcessorDefinition<?>>
     ...
+ 
+    adviceWith(): RouteDefinition
 
