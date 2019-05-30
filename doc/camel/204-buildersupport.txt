@@ -17,47 +17,49 @@ BuilderSupport
   systemProperty(): ValueBuilder
   xpath(): XPathBuilder
 
-ExpressionBuilder
-  dateExpression(): Expression
-  randomExpression(): Expression
-  ...
+----------------------------------
 
-PredicateBuilder
-  and(): Predicate
-  not(): Predicate
-  or(): Predicate
-  ...
+  ExpressionBuilder
+    dateExpression(): Expression
+    randomExpression(): Expression
+    ...
 
-ValueBuilder
-  append(): ValueBuilder
-  convertTo(): ValueBuilder
-  convertToString(): ValueBuilder
-  method(): ValueBuilder
-  not(): ValueBuilder
-  prepend(): ValueBuilder
-  regexReplaceAll(): ValueBuilder
-  regexTokenize(): ValueBuilder
-  sort(): ValueBuilder
-  tokenize(): ValueBuilder
-  tokenizePair(): ValueBuilder
-  tokenizeXML(): ValueBuilder
-  xtokenize(): ValueBuilder
-  contains(): Predicate
-  endsWith(): Predicate
-  in(): Predicate
-  isEqualTo(): Predicate
-  isGreaterThan(): Predicate
-  isInstanceOf(): Predicate
-  isLessThan(): Predicate
-  isNotEqualTo(): Predicate
-  isNotNull(): Predicate
-  isNull(): Predicate
-  matches(): Predicate
-  regex(): Predicate
-  startsWith(): Predicate
+  PredicateBuilder
+    and(): Predicate
+    not(): Predicate
+    or(): Predicate
+    ...
 
-XPathBuilder
-  namespace(): XPathBuilder
-  stringResult(): XPathBuilder
-  ...
+  ValueBuilder
+    append(): ValueBuilder
+    convertTo(): ValueBuilder
+    convertToString(): ValueBuilder
+    method(): ValueBuilder
+    not(): ValueBuilder
+    prepend(): ValueBuilder
+    regexReplaceAll(): ValueBuilder
+    regexTokenize(): ValueBuilder
+    sort(): ValueBuilder
+    tokenize(): ValueBuilder
+    tokenizePair(): ValueBuilder
+    tokenizeXML(): ValueBuilder
+    xtokenize(): ValueBuilder
+    contains(): Predicate
+    endsWith(): Predicate
+    in(): Predicate
+    isEqualTo(): Predicate
+    isGreaterThan(): Predicate
+    isInstanceOf(): Predicate
+    isLessThan(): Predicate
+    isNotEqualTo(): Predicate
+    isNotNull(): Predicate
+    isNull(): Predicate
+    matches(): Predicate
+    regex(): Predicate
+    startsWith(): Predicate
+
+  XPathBuilder
+    namespace(): XPathBuilder
+    stringResult(): XPathBuilder
+    ...
 

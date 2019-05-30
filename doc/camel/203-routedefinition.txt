@@ -2,16 +2,12 @@ ROUTEDEFINITION
 
 RouteDefinition
   autoStartup(): RouteDefinition
-    delayer(): RouteDefinition 
-    errorHandler(): RouteDefinition
-    routeId(): RouteDefinition 
-    startupOrder(): RouteDefinition
-    streamCaching(): RouteDefinition
-    tracing(): RouteDefinition
+  delayer(): RouteDefinition 
+  errorHandler(): RouteDefinition
+  routeId(): RouteDefinition 
+  startupOrder(): RouteDefinition
+  streamCaching(): RouteDefinition
+  tracing(): RouteDefinition
 
-    getInputs(): List<FromDefinition> 
-    getOutputs(): List<ProcessorDefinition<?>>
-    ...
- 
-    adviceWith(): RouteDefinition
-
+  adviceWith(): RouteDefinition
+  ...
