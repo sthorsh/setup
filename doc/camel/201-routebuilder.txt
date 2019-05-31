@@ -7,8 +7,8 @@ RouteBuilder
   configure(): void
     errorHandler(): void 
     onException(): OnExceptionDefinition 
+    intercept*(): Intercept*Definition 
     onCompletion(): OnCompletionDefinition 
-    intercept(): InterceptDefinition 
     from(): RouteDefinition           
   configureRoute(): void
   populateRoutes(): void
