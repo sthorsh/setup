@@ -1,0 +1,32 @@
+Binde metode
+  Bean med 1 metode: entydig
+  Bean med 2 metoder: bruk argument
+  Bean med overloading: bruk @Handler
+
+Binde params
+  Param 1 til @Body
+  Param N til CamelContext (built-in types)
+  Param N til Exchange
+  Param N til Message
+  Param N til Exception
+  Param N til Registry
+  Param N til TypeConverter
+  Param N til @ExchangeProperty (annotations)
+  Param N til @ExchangeProperties
+  Param N til @ExchangeException
+  Param N til @Header 
+  Param N til @Headers
+  Param N til @Attachments
+  Param N til @Bean (language annotations)
+  Param N til @Constant
+  Param N til @JsonPath
+  Param N til @Simple
+  Param N til @XPath
+  Overflødige params bindes til null
+
+Binde returverdi
+  Camel binder returverdi til exchange.in.body
+
+Feilhåndtering
+  Camel setter CamelExceptionCaught
+  

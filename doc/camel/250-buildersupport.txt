@@ -1,23 +1,27 @@
 BUILDERSUPPORT
 
 BuilderSupport
-  body(): ValueBuilder
-  constant(): ValueBuilder
-  deadLetterChannel(String): DeadLetterChannelBuilder
-  defaultErrorHandler(): DefaultErrorHandlerBuilder
-  exceptionMessage(): ValueBuilder
-  exchangeProperty(): ValueBuilder
-  faultBody(): ValueBuilder
-  header(): ValueBuilder
-  language(): ValueBuilder
-  method(): ValueBuilder
-  noErrorHandler(): NoErrorHandlerBuilder
-  regexReplaceAll(): ValueBuilder
-  simple(): SimpleBuilder
-  systemProperty(): ValueBuilder
-  xpath(): XPathBuilder
+    defaultErrorHandler(): DefaultErrorHandlerBuilder
+    deadLetterChannel(): DeadLetterChannelBuilder
+    noErrorHandler(): NoErrorHandlerBuilder
+    ...
+    body(): ValueBuilder
+    constant(): ValueBuilder
+    exchangeProperty(): ValueBuilder
+    exceptionMessage(): ValueBuilder
+    faultBody(): ValueBuilder
+    header(): ValueBuilder
+    language(): ValueBuilder
+    method(): ValueBuilder e.g method(new MyBean(), "method")
+    regexReplaceAll(): ValueBuilder
+    simple(): SimpleBuilder
+    systemProperty(): ValueBuilder
+    xpath(): XPathBuilder
 
 ----------------------------------
+
+  ErrorHandlerBuilder
+  ErrorHandlerBuilderSupport
 
   ExpressionBuilder
     dateExpression(): Expression

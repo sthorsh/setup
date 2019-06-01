@@ -6,7 +6,7 @@ DSL
   .unmarshal(reference)
   .unmarshal("name")
 
-Data formats
+Dataformat
   camel-core        GzipDataFormat        
   camel-core        SerializationDataFormat (pojo/blob)
   camel-core        StringDataFormat

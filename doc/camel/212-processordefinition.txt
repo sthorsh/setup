@@ -1,10 +1,10 @@
 PROCESSORDEFINITION
 
-ProcessorDefinition
+ProcessorDefinition<T extends ProcessorDefinition<T>>
   aggregate(): AggregateDefinition
-  bean(): T (syntaktisk sukker for bean-komponenten)
+  bean(): T
   choice(): ChoiceDefinition
-  convertBodyTo(): T (typekonvertering)
+  convertBodyTo(): T
   delay(): DelayDefinition
   doTry(): TryDefinition
   dynamicRouter(): DynamicRouterDefinition<T>
@@ -14,7 +14,7 @@ ProcessorDefinition
   log(): T
   marshal(): DataFormatClause<ProcessorDefinition<T>>
   multicast(): MulticastDefinition
-  onException(): OnExceptionDefinition (route scope)
+  onException(): OnExceptionDefinition
   pipeline(): PipelineDefinition
   process(): T
   recipientList(): RecipientListDefinition<T> 

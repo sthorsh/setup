@@ -1,7 +1,0 @@
-DSL
-  .process(reference)
-  .process("name")
-
-API
-  process(Exchange): void
-
