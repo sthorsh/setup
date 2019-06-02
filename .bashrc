@@ -115,14 +115,6 @@ else
   ssh-add ~/.ssh/id_rsa_git
 fi
 
-# Start activemq
-if /usr/lib/apache-activemq/bin/activemq status > /dev/null 2>&1
-then
-  echo "activemq running..."
-else
-  /usr/lib/apache-activemq/bin/activemq start
-fi
-
 # Start clipit
 if pgrep clipit > /dev/null 2>&1
 then
@@ -132,12 +124,11 @@ else
   clipit &
 fi
 
-# Start slack
-if pgrep slack > /dev/null 2>&1
+# Start activemq
+if /usr/lib/apache-activemq/bin/activemq status > /dev/null 2>&1
 then
-  echo "slack running..."
+  echo "activemq running..."
 else
-  echo "starting slack..."
-  /usr/bin/slack &
+  /usr/lib/apache-activemq/bin/activemq start
 fi
 
