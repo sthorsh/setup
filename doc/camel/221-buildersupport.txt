@@ -1,0 +1,22 @@
+BUILDERSUPPORT
+
+BuilderSupport
+  defaultErrorHandler(): DefaultErrorHandlerBuilder
+  deadLetterChannel(): DeadLetterChannelBuilder
+  noErrorHandler(): NoErrorHandlerBuilder
+
+  body(): ValueBuilder
+  constant(): ValueBuilder
+  exceptionMessage(): ValueBuilder
+  exchangeProperty(): ValueBuilder
+  faultBody(): ValueBuilder
+  header(): ValueBuilder
+  language(): ValueBuilder
+  method(): ValueBuilder
+  regexReplaceAll(): ValueBuilder
+  systemProperty(): ValueBuilder
+
+  simple(): SimpleBuilder
+
+  xpath(): XPathBuilder
+  ...

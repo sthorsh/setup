@@ -1,27 +1,5 @@
-BUILDERSUPPORT
-
-BuilderSupport
-    defaultErrorHandler(): DefaultErrorHandlerBuilder
-    deadLetterChannel(): DeadLetterChannelBuilder
-    noErrorHandler(): NoErrorHandlerBuilder
-    ...
-    body(): ValueBuilder
-    constant(): ValueBuilder
-    exchangeProperty(): ValueBuilder
-    exceptionMessage(): ValueBuilder
-    faultBody(): ValueBuilder
-    header(): ValueBuilder
-    language(): ValueBuilder
-    method(): ValueBuilder e.g method(new MyBean(), "method")
-    regexReplaceAll(): ValueBuilder
-    simple(): SimpleBuilder
-    systemProperty(): ValueBuilder
-    xpath(): XPathBuilder
-
-----------------------------------
-
-  ErrorHandlerBuilder
-  ErrorHandlerBuilderSupport
+  ErrorHandlerBuilder → RouteBuilder
+  ErrorHandlerBuilderSupport → BuilderSupport
 
   ExpressionBuilder
     dateExpression(): Expression
@@ -33,6 +11,8 @@ BuilderSupport
     not(): Predicate
     or(): Predicate
     ...
+
+SimpleBuilder
 
   ValueBuilder
     append(): ValueBuilder
