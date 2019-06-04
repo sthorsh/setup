@@ -28,5 +28,3 @@ DefaultErrorHandlerBuilder
   .retryAttemptedLogLevel(LoggingLevel.DEBUG)
   .retriesExhaustedLogLevel(LoggingLevel.ERROR)
 
-NoErrorHandlerBuilder
-  ...

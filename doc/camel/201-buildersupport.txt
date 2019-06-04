@@ -15,8 +15,7 @@ BuilderSupport
   method(): ValueBuilder
   regexReplaceAll(): ValueBuilder
   systemProperty(): ValueBuilder
-
   simple(): SimpleBuilder
-
   xpath(): XPathBuilder
   ...
+

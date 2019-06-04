@@ -4,6 +4,7 @@ RouteBuilder
   addRoutesToCamelContext(): void
   configureRoutes(): RoutesDefinition
   checkInitialized(): void
+
   configure(): void
     errorHandler(): void 
     onException(): OnExceptionDefinition 

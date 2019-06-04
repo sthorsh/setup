@@ -1,6 +1,3 @@
-
-
-
                  ErrorHandlerBuilder            Object
                           |                        |
                           |                        |
@@ -22,8 +19,7 @@
              -----------------------------                      ---------------------
              |                           |                      |                   |
              |                           |                      |                   |
-DefaultErrorHandlerBuilder    NoErrorHandlerBuilder    DefaultErrorHandler  DeadLetterChannel
-             |
-             |
- DeadLetterChannelBuilder
-
+DefaultErrorHandlerBuilder               |                      |                   |          
+             |                           |                      |                   |    
+             |                           |                      |                   |    
+ DeadLetterChannelBuilder     NoErrorHandlerBuilder    DefaultErrorHandler  DeadLetterChannel
