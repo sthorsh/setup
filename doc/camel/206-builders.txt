@@ -1,0 +1,51 @@
+ExpressionBuilder
+  dateExpression(): Expression
+  randomExpression(): Expression
+  ...
+
+PredicateBuilder
+  and(): Predicate
+  not(): Predicate
+  or(): Predicate
+  ...
+
+SimpleBuilder
+  evaluate(): T
+  matches(): matches
+  ...
+
+ValueBuilder
+  append(): ValueBuilder
+  convertTo(): ValueBuilder
+  convertToString(): ValueBuilder
+  method(): ValueBuilder
+  not(): ValueBuilder
+  prepend(): ValueBuilder
+  regexReplaceAll(): ValueBuilder
+  regexTokenize(): ValueBuilder
+  sort(): ValueBuilder
+  tokenize(): ValueBuilder
+  tokenizePair(): ValueBuilder
+  tokenizeXML(): ValueBuilder
+  xtokenize(): ValueBuilder
+  contains(): Predicate
+  endsWith(): Predicate
+  in(): Predicate
+  isEqualTo(): Predicate
+  isGreaterThan(): Predicate
+  isInstanceOf(): Predicate
+  isLessThan(): Predicate
+  isNotEqualTo(): Predicate
+  isNotNull(): Predicate
+  isNull(): Predicate
+  matches(): Predicate
+  regex(): Predicate
+  startsWith(): Predicate
+
+XPathBuilder
+  evaluate(): T
+  matches(): matches
+  namespace(): XPathBuilder
+  stringResult(): XPathBuilder
+  ...
+
