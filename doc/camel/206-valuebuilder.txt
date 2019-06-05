@@ -1,20 +1,4 @@
-  ErrorHandlerBuilder → RouteBuilder
-  ErrorHandlerBuilderSupport → BuilderSupport
-
-  ExpressionBuilder
-    dateExpression(): Expression
-    randomExpression(): Expression
-    ...
-
-  PredicateBuilder
-    and(): Predicate
-    not(): Predicate
-    or(): Predicate
-    ...
-
-SimpleBuilder
-
-  ValueBuilder
+ValueBuilder
     append(): ValueBuilder
     convertTo(): ValueBuilder
     convertToString(): ValueBuilder
@@ -28,6 +12,7 @@ SimpleBuilder
     tokenizePair(): ValueBuilder
     tokenizeXML(): ValueBuilder
     xtokenize(): ValueBuilder
+
     contains(): Predicate
     endsWith(): Predicate
     in(): Predicate
@@ -41,9 +26,4 @@ SimpleBuilder
     matches(): Predicate
     regex(): Predicate
     startsWith(): Predicate
-
-  XPathBuilder
-    namespace(): XPathBuilder
-    stringResult(): XPathBuilder
-    ...
 

@@ -5,17 +5,19 @@ BuilderSupport
   deadLetterChannel(): DeadLetterChannelBuilder
   noErrorHandler(): NoErrorHandlerBuilder
 
-  body(): ValueBuilder
   constant(): ValueBuilder
-  exceptionMessage(): ValueBuilder
-  exchangeProperty(): ValueBuilder
-  faultBody(): ValueBuilder
+  body(): ValueBuilder
   header(): ValueBuilder
-  language(): ValueBuilder
+  exchangeProperty(): ValueBuilder
   method(): ValueBuilder
+  exceptionMessage(): ValueBuilder
+  faultBody(): ValueBuilder
+  language(): ValueBuilder
   regexReplaceAll(): ValueBuilder
   systemProperty(): ValueBuilder
+
   simple(): SimpleBuilder
+
   xpath(): XPathBuilder
   ...
 
