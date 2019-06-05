@@ -1,0 +1,23 @@
+ExpressionBuilder
+  dateExpression(): Expression
+  randomExpression(): Expression
+  ...
+
+PredicateBuilder
+  and(): Predicate
+  not(): Predicate
+  or(): Predicate
+  ...
+
+SimpleBuilder
+  evaluate(): T
+  matches(): matches
+  ...
+
+XPathBuilder
+  evaluate(): T
+  matches(): matches
+  namespace(): XPathBuilder
+  stringResult(): XPathBuilder
+  ...
+
