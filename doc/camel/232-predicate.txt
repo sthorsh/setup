@@ -1,0 +1,9 @@
+Predicate
+  matches(Exchange): boolean
+
+PredicateBuilder
+  and(): Predicate
+  not(): Predicate
+  or(): Predicate
+  ...
+

@@ -1,14 +1,3 @@
-ExpressionBuilder
-  dateExpression(): Expression
-  randomExpression(): Expression
-  ...
-
-PredicateBuilder
-  and(): Predicate
-  not(): Predicate
-  or(): Predicate
-  ...
-
 ValueBuilder
   append(): ValueBuilder
   convertTo(): ValueBuilder
@@ -36,15 +25,16 @@ ValueBuilder
   matches(): Predicate
   regex(): Predicate
   startsWith(): Predicate
+  ...
 
 SimpleBuilder
   evaluate(): T
-  matches(): matches
+  matches(): boolean
   ...
 
 XPathBuilder
   evaluate(): T
-  matches(): matches
+  matches(): boolean
   namespace(): XPathBuilder
   stringResult(): XPathBuilder
   ...

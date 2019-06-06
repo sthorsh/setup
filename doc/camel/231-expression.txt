@@ -1,9 +1,6 @@
 Expression
   evaluate(Exchange, Class<T>): T
 
-ExpressionDefinition
-  ...
-
 ExpressionClause       
   attachments(): T
   body(): T
@@ -29,8 +26,9 @@ ExpressionClause
   tokenizeXML(): T
   xpath(): T
   xtokenize(): T
-  ...
 
-Predicate
-  matches(Exchange): boolean
+ExpressionBuilder
+  dateExpression(): Expression
+  randomExpression(): Expression
+  ...
 
