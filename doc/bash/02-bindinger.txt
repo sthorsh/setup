@@ -1,5 +1,5 @@
 Bindinger
-  A-N                    antall/posisjon
+  A-N                    arg N
 
   C-b                    tilbake
   C-f                    fram
@@ -27,7 +27,11 @@ Bindinger
   C-k                    kill til eol
 
   C-y                    yank kill-ring
-  C-y A-y...             yank-pop kill-ring
+  C-y A-y                yank-pop kill-ring (R)
+  A-.                    siste arg forrige cmdline (R)
+  A-N-.                  arg N forrige cmdline (R)
+  C-A-y                  arg 1 forrige cmdline
+  A-N C-A-y              arg N forrige cmdline
 
   Tab...                 fullfør $ ~ @ cmd /
   A-*                    fullfør alle $ ~ @ cmd / 
@@ -47,9 +51,6 @@ Bindinger
   C-n                    neste cmdline
   C-r... * C-[gjm]       reverse-search
   C-o                    operate-and-get-next
-
-  C-A-y                  forrige cmdline: yank
-  A-...                  forrige cmdlines: yank
 
   C-A-i                  fullfør fra history 
 
