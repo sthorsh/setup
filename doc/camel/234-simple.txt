@@ -1,3 +1,19 @@
+Literaler
+  N
+  '...'
+  null
+
+Operatorer
+  ++ --
+  == =~ <  <= >  >= !=
+  contains
+  in
+  is 'String'
+  range '1..100'
+  regex '\\d{4}'
+  starts|ends with '...'
+  not && ||
+
 Variabler
   ${camelId}
   ${camelContext.ognl}
@@ -39,20 +55,4 @@ Funksjoner
   ${ref:beanId}
   ${skip(N)}
   ${type:name.field}
-
-Operatorer
-  ++ --
-  == =~ <  <= >  >= !=
-  contains
-  in
-  is 'String'
-  range '1..100'
-  regex '\\d{4}'
-  starts|ends with '...'
-  not && ||
-
-Literaler
-  N
-  '...'
-  null
 

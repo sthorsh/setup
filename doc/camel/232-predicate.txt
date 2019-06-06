@@ -1,9 +1,0 @@
-DSL
-  .filter(Predicate): FilterDefinition
-  .validate(Predicate): ValidateDefinition 
-  .when(Predicate): ChoiceDefinition 
-  ...
-
-Predicate
-  matches(Exchange): boolean
-

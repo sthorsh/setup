@@ -9,11 +9,6 @@ PredicateBuilder
   or(): Predicate
   ...
 
-SimpleBuilder
-  evaluate(): T
-  matches(): matches
-  ...
-
 ValueBuilder
   append(): ValueBuilder
   convertTo(): ValueBuilder
@@ -41,6 +36,11 @@ ValueBuilder
   matches(): Predicate
   regex(): Predicate
   startsWith(): Predicate
+
+SimpleBuilder
+  evaluate(): T
+  matches(): matches
+  ...
 
 XPathBuilder
   evaluate(): T
