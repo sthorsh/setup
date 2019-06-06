@@ -33,33 +33,34 @@ Bindinger
   C-A-y                  arg 1 forrige cmdline
   A-N C-A-y              arg N forrige cmdline
 
-  Tab...                 fullfør $ ~ @ cmd /
-  A-*                    fullfør alle $ ~ @ cmd / 
-  A-{                    fullfør {}
-  A-g                    fullfør wildcard * ?
-
-  C-A-e                  ekspander ! alias ~ $
-  C-A-w                  ekspander wildcard * ? 
-
-  C-l                    clear-screen
-  C-x C-u                undo
-  A-r                    revert-line
-  C-j                    lf (eol nix)
-  C-m                    cr (eol mac)
-
   C-p                    forrige cmdline
   C-n                    neste cmdline
   C-r... * C-[gjm]       reverse-search
   C-o                    operate-and-get-next
-
-  C-A-i                  fullfør fra history 
 
   !![:^N$][:gs/x/y]      forrige cmdline [yank][erstatt]
   !N[:^N$][:gs/x/y]      cmdline N [yank][erstatt]
   !x[:^N$][:gs/x/y]      cmdline ^x [yank][erstatt]
   !*                     forrige cmdline: yank opts/args
   ^x^y                   forrige cmdline: erstatt første x
-                                  
+
+  Tab...                 fullfør $ ~ @ cmd /
+  A-*                    fullfør alle $ ~ @ cmd / 
+  A-{                    fullfør {}
+  A-g                    fullfør wildcard * ?
+
+  C-A-i                  fullfør fra history 
+
+  C-A-e                  ekspander ! alias ~ $
+  C-A-w                  ekspander wildcard * ? 
+
+  C-x C-u                undo
+  A-r                    revert-line
+
+  C-j                    lf (eol nix)
+  C-m                    cr (eol mac)
+  C-l                    clear-screen
+
   C-x (                  ta opp makro
   C-x )                  avslutt opptak
   C-x e                  kall makro
