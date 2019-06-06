@@ -1,4 +1,11 @@
 Bindinger
+  C-p                    prev cmdline
+  C-n                    next cmdline
+  C-r* C-[gjm]           reverse-search
+  C-o                    operate-and-get-next
+
+  ---------------------------------------------
+
   A-N                    arg N
 
   C-b                    tilbake
@@ -32,11 +39,6 @@ Bindinger
   A-N-.                  arg N forrige cmdline (R)
   C-A-y                  arg 1 forrige cmdline
   A-N C-A-y              arg N forrige cmdline
-
-  C-p                    forrige cmdline
-  C-n                    neste cmdline
-  C-r... * C-[gjm]       reverse-search
-  C-o                    operate-and-get-next
 
   !![:^N$][:gs/x/y]      forrige cmdline [yank][erstatt]
   !N[:^N$][:gs/x/y]      cmdline N [yank][erstatt]
