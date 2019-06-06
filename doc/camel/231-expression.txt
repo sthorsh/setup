@@ -27,8 +27,3 @@ ExpressionClause
   xpath(): T
   xtokenize(): T
 
-ExpressionBuilder
-  dateExpression(): Expression
-  randomExpression(): Expression
-  ...
-

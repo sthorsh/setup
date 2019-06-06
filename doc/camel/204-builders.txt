@@ -39,3 +39,14 @@ XPathBuilder
   stringResult(): XPathBuilder
   ...
 
+ExpressionBuilder
+  dateExpression(): Expression
+  randomExpression(): Expression
+  ...
+
+PredicateBuilder
+  and(): Predicate
+  not(): Predicate
+  or(): Predicate
+  ...
+
