@@ -23,3 +23,10 @@ ulimit
   -S     unlimited     use the `soft' resource limit
   -T     invalid       maximum number of threads
 
+Filer
+  /etc/pam.d/common-session
+  /etc/pam.d/common-session-noninteractive
+  /etc/security/limits.conf
+  /etc/systemd/system.conf
+  /etc/systemd/user.conf
+
