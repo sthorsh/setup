@@ -27,26 +27,3 @@ ValueBuilder
   startsWith(): Predicate
   ...
 
-SimpleBuilder
-  evaluate(): T
-  matches(): boolean
-  ...
-
-XPathBuilder
-  evaluate(): T
-  matches(): boolean
-  namespace(): XPathBuilder
-  stringResult(): XPathBuilder
-  ...
-
-ExpressionBuilder
-  dateExpression(): Expression
-  randomExpression(): Expression
-  ...
-
-PredicateBuilder
-  and(): Predicate
-  not(): Predicate
-  or(): Predicate
-  ...
-

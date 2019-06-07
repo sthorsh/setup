@@ -1,5 +1,3 @@
-BUILDERSUPPORT
-
 BuilderSupport
   defaultErrorHandler(): DefaultErrorHandlerBuilder
   deadLetterChannel(): DeadLetterChannelBuilder
@@ -14,8 +12,9 @@ BuilderSupport
   faultBody(): ValueBuilder
   language(): ValueBuilder
   regexReplaceAll(): ValueBuilder
-  simple(): SimpleBuilder
   systemProperty(): ValueBuilder
+
+  simple(): SimpleBuilder
+
   xpath(): XPathBuilder
-  ...
 

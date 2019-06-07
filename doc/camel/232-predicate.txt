@@ -1,3 +1,3 @@
 Predicate
-  matches(Exchange): boolean
+  matches(Exchange exchange): boolean
 
