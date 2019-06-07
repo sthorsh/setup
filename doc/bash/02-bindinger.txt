@@ -1,8 +1,13 @@
 Bindinger
-  C-p                    prev cmdline
-  C-n                    next cmdline
   C-r* C-[gjm]           reverse-search
+  C-p                    previous cmdline
+  C-n                    next cmdline
   C-o                    operate-and-get-next
+
+  !a[:gs/x/y][^:N$]      cmdline a [erstatt][yank]
+  !N[:gs/x/y][^:N$]      cmdline N [erstatt][yank]
+  !*                     previous cmdline opts/args
+  ^x^y                   previous cmdline erstatt første x
 
   ---------------------------------------------
 
@@ -39,12 +44,6 @@ Bindinger
   A-N-.                  arg N forrige cmdline (R)
   C-A-y                  arg 1 forrige cmdline
   A-N C-A-y              arg N forrige cmdline
-
-  !![:^N$][:gs/x/y]      forrige cmdline [yank][erstatt]
-  !N[:^N$][:gs/x/y]      cmdline N [yank][erstatt]
-  !x[:^N$][:gs/x/y]      cmdline ^x [yank][erstatt]
-  !*                     forrige cmdline: yank opts/args
-  ^x^y                   forrige cmdline: erstatt første x
 
   Tab...                 fullfør $ ~ @ cmd /
   A-*                    fullfør alle $ ~ @ cmd / 

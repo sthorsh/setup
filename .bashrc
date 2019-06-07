@@ -12,6 +12,7 @@ bind '"\e\C-w":glob-expand-word'
 bind 'tab:menu-complete'
 bind 'set menu-complete-display-prefix on'
 bind 'set show-all-if-ambiguous on'
+bind Space:magic-space
 
 # Bindings tty
 stty -ixon -ixoff
