@@ -1,14 +1,22 @@
 Bindinger
   C-r* C-[gjm]           reverse-search
-  C-p                    previous cmdline
+  C-p                    prev cmdline
   C-n                    next cmdline
   C-o                    operate-and-get-next
 
   !a[:gs/x/y][^:N$]      cmdline a [erstatt][yank]
   !N[:gs/x/y][^:N$]      cmdline N [erstatt][yank]
-  !*                     previous cmdline opts/args
-  ^x^y                   previous cmdline erstatt første x
+  !*                     prev cmdline opts/args
+  ^x^y                   prev cmdline erstatt første x
 
+  C-A-y                  prev cmdline arg 1
+  A-N C-A-y              prev cmdline arg N
+  A-N-.                  prev cmdline arg N (rep)
+  A-.                    prev cmdline siste arg (rep)
+
+  ---------------------------------------------
+
+  C-A-i                  fullfør fra history 
   ---------------------------------------------
 
   A-N                    arg N
@@ -40,17 +48,12 @@ Bindinger
 
   C-y                    yank kill-ring
   C-y A-y                yank-pop kill-ring (R)
-  A-.                    siste arg forrige cmdline (R)
-  A-N-.                  arg N forrige cmdline (R)
-  C-A-y                  arg 1 forrige cmdline
-  A-N C-A-y              arg N forrige cmdline
 
   Tab...                 fullfør $ ~ @ cmd /
   A-*                    fullfør alle $ ~ @ cmd / 
   A-{                    fullfør {}
   A-g                    fullfør wildcard * ?
 
-  C-A-i                  fullfør fra history 
 
   C-A-e                  ekspander ! alias ~ $
   C-A-w                  ekspander wildcard * ? 
