@@ -3,6 +3,8 @@ BuilderSupport
   deadLetterChannel(): DeadLetterChannelBuilder
   noErrorHandler(): NoErrorHandlerBuilder
 
+  simple(): SimpleBuilder
+
   constant(): ValueBuilder
   body(): ValueBuilder
   header(): ValueBuilder
@@ -13,8 +15,6 @@ BuilderSupport
   faultBody(): ValueBuilder
   systemProperty(): ValueBuilder
   regexReplaceAll(): ValueBuilder
-
-  simple(): SimpleBuilder
 
   xpath(): XPathBuilder
 
