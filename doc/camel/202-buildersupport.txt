@@ -7,12 +7,12 @@ BuilderSupport
   body(): ValueBuilder
   header(): ValueBuilder
   exchangeProperty(): ValueBuilder
-  method(): ValueBuilder
   exceptionMessage(): ValueBuilder
-  faultBody(): ValueBuilder
+  method(): ValueBuilder
   language(): ValueBuilder
-  regexReplaceAll(): ValueBuilder
+  faultBody(): ValueBuilder
   systemProperty(): ValueBuilder
+  regexReplaceAll(): ValueBuilder
 
   simple(): SimpleBuilder
 

@@ -1,0 +1,15 @@
+ExpressionBuilder
+  append(): Expression 
+  beanExpression(): Expression  
+  bodyExpression(): Expression 
+  concatExpression(): Expression
+  constantExpression(): Expression
+  dateExpression(): Expression
+  file*Expression(): Expression
+  headerExpression(): Expression
+  messageExpression(): Expression
+  prepend(): Expression
+    randomExpression(): Expression
+    ...
+
+

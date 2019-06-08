@@ -1,5 +1,0 @@
-ExpressionBuilder
-  dateExpression(): Expression
-  randomExpression(): Expression
-  ...
-
