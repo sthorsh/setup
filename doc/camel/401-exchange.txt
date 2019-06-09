@@ -1,25 +1,18 @@
 Exchange
-  CREATED_TIMESTAMP
-  EXTERNAL_REDELIVERED
-  MESSAGE_HISTORY
-  TO_ENDPOINT
-  getContext()
-  get-|setException() - unntak: representerer recoverable/irrecoverable error
-  get-|setExchangeId()
-  get-|setPattern()
-  get-|setProperty()
-  get-|setUnitOfWork()
-  get-|setIn(): Message
-  get-|setOut(): Message
-  ...
+  exchangeId: String
+  context: CamelContext
+  in: Message
+  out: Message
+  pattern: ExchangePattern (enum)
+  properties: Map<String, Object>
+  exception: Exception (recoverable/irrecoverable error)
+  unitOfWork: UnitOfWork
 
 Message
-  getExchange()
-  get-|setMessageId()
-  get-|setHeader()
-  get-|setHeaders()
-  get-|setBody()
-  get-|setAttachments()
-  is- |setFault() - feilmelding: representerer irrecoverable error feks soap ws
-  ...
+  messageId: String
+  exchange: Exchange
+  body: Object
+  headers: Map<String, Object>
+  attachments: Map<String, DataHandler>
+  fault: boolean (flagg for irrecoverable error feks soap ws)
 
