@@ -3,18 +3,18 @@ BuilderSupport
   deadLetterChannel(): DeadLetterChannelBuilder
   noErrorHandler(): NoErrorHandlerBuilder
 
-  simple(): SimpleBuilder
-
-  constant(): ValueBuilder
   body(): ValueBuilder
-  header(): ValueBuilder
-  exchangeProperty(): ValueBuilder
+  constant(): ValueBuilder
   exceptionMessage(): ValueBuilder
-  method(): ValueBuilder
-  language(): ValueBuilder
+  exchangeProperty(): ValueBuilder
   faultBody(): ValueBuilder
-  systemProperty(): ValueBuilder
+  header(): ValueBuilder
+  language(): ValueBuilder
+  method(): ValueBuilder
   regexReplaceAll(): ValueBuilder
+  systemProperty(): ValueBuilder
+
+  simple(): SimpleBuilder
 
   xpath(): XPathBuilder
 

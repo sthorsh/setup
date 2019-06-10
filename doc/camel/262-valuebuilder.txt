@@ -2,7 +2,7 @@ ValueBuilder
   append(): ValueBuilder
   convertTo(): ValueBuilder
   convertToString(): ValueBuilder
-  method(): ValueBuilder
+  method(name): ValueBuilder
   not(): ValueBuilder
   prepend(): ValueBuilder
   regexReplaceAll(): ValueBuilder
@@ -12,6 +12,7 @@ ValueBuilder
   tokenizePair(): ValueBuilder
   tokenizeXML(): ValueBuilder
   xtokenize(): ValueBuilder
+
   contains(): Predicate
   endsWith(): Predicate
   in(): Predicate

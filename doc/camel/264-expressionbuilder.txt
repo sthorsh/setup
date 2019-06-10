@@ -1,6 +1,4 @@
 ExpressionBuilder
-  append(): Expression 
-  beanExpression(): Expression  
   bodyExpression(): Expression 
   concatExpression(): Expression
   constantExpression(): Expression
@@ -9,7 +7,7 @@ ExpressionBuilder
   headerExpression(): Expression
   messageExpression(): Expression
   prepend(): Expression
-    randomExpression(): Expression
-    ...
+  randomExpression(): Expression
+  ...
 
 
