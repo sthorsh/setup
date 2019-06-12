@@ -1,7 +1,0 @@
-ExpressionBuilder
-  dateExpression(): Expression
-  randomExpression(): Expression
-  ...
-  
-  replace med and, or, not
-

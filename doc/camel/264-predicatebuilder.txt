@@ -1,0 +1,7 @@
+PredicateBuilder
+  and()
+  constant()
+  isNull()
+  not()
+  or()
+  ...
