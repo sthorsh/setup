@@ -10,7 +10,7 @@ RouteBuilder
     onException(): OnExceptionDefinition 
     intercept*(): Intercept*Definition 
     onCompletion(): OnCompletionDefinition 
-    from(): RouteDefinition           
+    from(endpointUri): RouteDefinition           
   configureRoute(): void
   populateRoutes(): void
 

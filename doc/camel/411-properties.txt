@@ -1,11 +1,3 @@
-PropertiesComponent
-  setLocation("classpath:acme/my.props,...")
-  setLocation("file:src/test/resources/my.props,...")
-  setLocation("file:${fuse.home}/my.props")
-  setLocation("file:${env:FUSE_HOME}/my.props")
-  setLocation("ref:beanID")
-  setLocation("blueprint:beanID")
-
 from|to
   .from|to("{{uri}}")
   .from|to("direct:{{name}}")
@@ -26,10 +18,18 @@ simple
   .simple("${properties:key}")
   .simple("${properties-location:my.props:key}")
 
+ProducerTemplate
+  .template.sendBody("{{uri}}", body) 
+
 Blueprint
   ${key} - blueprint syntax, inni camelContext element
   {{key}} - camel syntax, utenfor camelContext element
   
-ProducerTemplate
-  .template.sendBody("{{uri}}", body) 
+PropertiesComponent
+  setLocation("classpath:acme/my.props,...")
+  setLocation("file:src/test/resources/my.props,...")
+  setLocation("file:${fuse.home}/my.props")
+  setLocation("file:${env:FUSE_HOME}/my.props")
+  setLocation("ref:beanID")
+  setLocation("blueprint:beanID")
 

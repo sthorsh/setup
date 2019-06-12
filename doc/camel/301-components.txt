@@ -1,36 +1,32 @@
-DSL
-  .from(endpointUri)
-  .to(endpointUri)
-
 from
-  camel-core        timer         
-  camel-core        scheduler
-  camel-quartz2     quartz2       
+  timer           camel-core        
+  scheduler       camel-core        
+  quartz2         camel-quartz2     
   ...
 
 from|to
-  camel-core        direct      
-  camel-core        direct-vm   
-  camel-core        file        
-  camel-core        properties  
-  camel-core        rest        
-  camel-core        seda        
-  camel-core        stub        
-  camel-core        vm          
-  camel-ftp         ftp         
-  camel-jms         jms         
-  activemq-camel    activemq    
+  direct          camel-core        
+  direct-vm       camel-core        
+  file            camel-core        
+  properties      camel-core        
+  rest            camel-core        
+  seda            camel-core        
+  stub            camel-core        
+  vm              camel-core        
+  ftp             camel-ftp         
+  jms             camel-jms         
+  activemq        activemq-camel    
   ...
 
 to
-  camel-core        bean
-  camel-core        class
-  camel-core        dataformat        
-  camel-core        log         
-  camel-core        mock        
-  camel-core        validation  
-  camel-core        xslt        
-  camel-freemarker  freemarker  
+  bean            camel-core        
+  class           camel-core        
+  dataformat      camel-core        
+  log             camel-core        
+  mock            camel-core        
+  validation      camel-core        
+  xslt            camel-core        
+  freemarker      camel-freemarker  
   ...
 
 
