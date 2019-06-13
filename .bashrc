@@ -7,12 +7,14 @@ shopt -q login_shell && echo -n 'login ' || echo -n 'non-login '
 echo "→  ~/.bashrc"
 
 # Bindings bash
-bind '"\C-q":unix-filename-rubout'
-bind '"\e\C-w":glob-expand-word'
+bind Space:magic-space
 bind 'tab:menu-complete'
 bind 'set menu-complete-display-prefix on'
 bind 'set show-all-if-ambiguous on'
-bind Space:magic-space
+bind '"\e\C-b":complete-into-braces'
+bind '"\e\C-g":glob-complete-word'
+bind '"\e\C-w":glob-expand-word'
+bind '"\C-q":unix-filename-rubout'
 
 # Bindings tty
 stty -ixon -ixoff
@@ -35,6 +37,7 @@ alias l='ls -lF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
 alias mvnf='mvn clean install -Pfindbugs,checkstyle'
 alias mvnl='mvn clean install -Dmaven.test.skip=true'
+alias mount='mount | column -t'
 alias path='echo -e ${PATH//:/"\n"}' 
 alias postman='/opt/Postman/Postman > /dev/null 2>&1 &'
 alias ps='ps -ef'

@@ -1,7 +1,4 @@
 Bindinger
-  C-A-e                  ekspander ! alias ~ $
-  C-A-w                  ekspander wildcard * ? 
-
   C-r* C-[gjm]           reverse-search
   C-p                    prev cmdline
   C-n                    next cmdline
@@ -12,17 +9,19 @@ Bindinger
   !*                     prev cmdline opts/args
   ^x^y                   prev cmdline erstatt første x
 
-  C-A-y                  prev cmdline arg 1
-  A-N C-A-y              prev cmdline arg N
+  C-A-y                  prev cmdline arg 1 (yank)
+  A-N C-A-y              prev cmdline arg N (yank)
   A-N-.                  prev cmdline arg N (rep)
   A-.                    prev cmdline siste arg (rep)
 
-  C-A-i                  complete history 
-  ---------------------------------------------
-  Tab...                 complete $ ~ @ cmd /
+  Tab                    complete $ ~ @ cmd / (rep)
   A-*                    complete alle $ ~ @ cmd / 
-  A-{                    complete {}
-  A-g                    complete wildcard * ?
+  C-A-b                  complete-into-braces
+  C-A-g                  glob-complete-word * ?
+  C-A-i                  dynamic-complete-history
+
+  C-A-e                  expand ! alias ~ $
+  C-A-w                  glob-expand-word * ? 
 
   ---------------------------------------------
 
