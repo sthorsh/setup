@@ -23,9 +23,24 @@ Bindinger
   C-A-e                  expand ! alias ~ $
   C-A-w                  glob-expand-word * ? 
 
+  C-d                    del tegn
+  A-d                    kill ord
+  C-k                    kill eol
+  C-h                    del tegn
+  C-q                    kill sti
+  C-w                    kill ord (tty werase)
+  C-u                    kill bol (tty kill)
   ---------------------------------------------
-
+  C-y                    yank kill-ring
+  C-y A-y                yank-pop kill-ring (R)
+  ---------------------------------------------
   A-N                    arg N
+
+  A-c                    capital
+  A-l                    lowercase
+  A-u                    uppercase
+  C-t                    transponere
+  A-t                    transponere ord
 
   C-b                    tilbake
   C-f                    fram
@@ -37,23 +52,6 @@ Bindinger
   C-A-]                  søk ←
 
   C-v                    quoted-insert (tty lnext)
-
-  A-c                    capital
-  A-l                    lowercase
-  A-u                    uppercase
-  C-t                    transponere
-  A-t                    transponere ord
-                                                        
-  C-h | bs               del ←
-  C-d                    del →
-  C-q                    kill filnavn
-  C-w                    kill ord (tty werase)
-  A-d                    kill ord
-  C-u                    kill til bol (tty kill)
-  C-k                    kill til eol
-
-  C-y                    yank kill-ring
-  C-y A-y                yank-pop kill-ring (R)
 
   C-x C-u                undo
   A-r                    revert-line
