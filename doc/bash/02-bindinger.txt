@@ -7,7 +7,7 @@ Bindinger
   !a[:gs/x/y][^:N$]      cmdline a [erstatt][yank]
   !N[:gs/x/y][^:N$]      cmdline N [erstatt][yank]
   !*                     prev cmdline opts/args
-  ^x^y                   prev cmdline erstatt første x
+  ^x^y                   prev cmdline erstatt 1st x
 
   C-A-y                  prev cmdline arg 1 (yank)
   A-N C-A-y              prev cmdline arg N (yank)
@@ -30,10 +30,11 @@ Bindinger
   C-q                    kill sti
   C-w                    kill ord (tty werase)
   C-u                    kill bol (tty kill)
-  ---------------------------------------------
+
   C-y                    yank kill-ring
-  C-y A-y                yank-pop kill-ring (R)
-  ---------------------------------------------
+  A-y                    yank-pop kill-ring (rep)
+  -----------------------------------------------
+
   A-N                    arg N
 
   A-c                    capital
