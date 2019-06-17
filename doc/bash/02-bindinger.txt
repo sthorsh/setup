@@ -45,21 +45,19 @@ Bindinger
   C-n                    next cmdline
   C-o                    operate-and-get-next
 
+  !*                     prev cmdline opts/args
   !N[:gs/x/y][^:N$]      prev cmdline [erstatt][yank]
   !a[:gs/x/y][^:N$]      prev cmdline [erstatt][yank]
-  !*                     prev cmdline opts/args
   ^x^y                   prev cmdline erstatt første x
 
   C-y                    yank kill-ring
   A-y                    yank-pop kill-ring (rep)
 
-  C-A-y                  yank prev cmdline arg 1 
-  A-N C-A-y              yank prev cmdline arg N 
-  A-N-.                  yank prev cmdline arg N (rep)
-  A-.                    yank prev cmdline siste arg (rep)
+  C-A-y                  yank prev cmdline arg 0..N
+  A-.                    yank prev cmdline arg 0..N (rep)
 
-  A-r                    revert-line
   C-x C-u                undo
+  A-r                    revert-line
 
   C-x (                  ta opp makro
   C-x )                  avslutt opptak
