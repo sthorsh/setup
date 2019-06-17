@@ -1,19 +1,4 @@
 Bindinger
-  C-r* C-[gjm]           reverse-search
-  C-p                    prev cmdline
-  C-n                    next cmdline
-  C-o                    operate-and-get-next
-
-  !a[:gs/x/y][^:N$]      cmdline a [erstatt][yank]
-  !N[:gs/x/y][^:N$]      cmdline N [erstatt][yank]
-  !*                     prev cmdline opts/args
-  ^x^y                   prev cmdline erstatt 1st x
-
-  C-A-y                  prev cmdline arg 1 (yank)
-  A-N C-A-y              prev cmdline arg N (yank)
-  A-N-.                  prev cmdline arg N (rep)
-  A-.                    prev cmdline siste arg (rep)
-
   Tab                    complete $ ~ @ cmd / (rep)
   A-*                    complete alle $ ~ @ cmd / 
   C-A-b                  complete-into-braces
@@ -23,6 +8,12 @@ Bindinger
   C-A-e                  expand ! alias ~ $
   C-A-w                  glob-expand-word * ? 
 
+  A-c                    capital
+  A-l                    lowercase
+  A-u                    uppercase
+  C-t                    transponer tegn
+  A-t                    transponer ord
+
   C-d                    del tegn
   A-d                    kill ord
   C-k                    kill eol
@@ -31,17 +22,34 @@ Bindinger
   C-w                    kill ord (tty werase)
   C-u                    kill bol (tty kill)
 
+  C-l                    clear-screen
+  C-j                    lf (eol nix)
+  C-m                    cr (eol mac)
+
+  C-r* C-[gjm]           reverse-search
+  C-p                    prev cmdline
+  C-n                    next cmdline
+  C-o                    operate-and-get-next
+
+  !N[:gs/x/y][^:N$]      prev cmdline [erstatt][yank]
+  !a[:gs/x/y][^:N$]      prev cmdline [erstatt][yank]
+  !*                     prev cmdline opts/args
+  ^x^y                   prev cmdline erstatt første x
+
   C-y                    yank kill-ring
   A-y                    yank-pop kill-ring (rep)
+
+  C-A-y                  yank prev cmdline arg 1 
+  A-N C-A-y              yank prev cmdline arg N 
+  A-N-.                  yank prev cmdline arg N (rep)
+  A-.                    yank prev cmdline siste arg (rep)
+
+  -----------------------------------------------
+  C-v                    quoted-insert (tty lnext)
+
   -----------------------------------------------
 
   A-N                    arg N
-
-  A-c                    capital
-  A-l                    lowercase
-  A-u                    uppercase
-  C-t                    transponere
-  A-t                    transponere ord
 
   C-b                    tilbake
   C-f                    fram
@@ -52,14 +60,8 @@ Bindinger
   C-]                    søk →
   C-A-]                  søk ←
 
-  C-v                    quoted-insert (tty lnext)
-
   C-x C-u                undo
   A-r                    revert-line
-
-  C-j                    lf (eol nix)
-  C-m                    cr (eol mac)
-  C-l                    clear-screen
 
   C-x (                  ta opp makro
   C-x )                  avslutt opptak
