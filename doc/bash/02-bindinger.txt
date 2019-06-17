@@ -1,4 +1,18 @@
 Bindinger
+  A-N                    arg N
+
+  C-f                    frem
+  A-f                    frem ord
+  C-e                    frem eol
+  C-b                    tilbake
+  A-b                    tilbake ord
+  C-a                    tilbake bol
+
+  C-]                    søk →
+  C-A-]                  søk ←
+
+  C-v                    quoted-insert (tty lnext)
+
   Tab                    complete $ ~ @ cmd / (rep)
   A-*                    complete alle $ ~ @ cmd / 
   C-A-b                  complete-into-braces
@@ -44,24 +58,8 @@ Bindinger
   A-N-.                  yank prev cmdline arg N (rep)
   A-.                    yank prev cmdline siste arg (rep)
 
-  -----------------------------------------------
-  C-v                    quoted-insert (tty lnext)
-
-  -----------------------------------------------
-
-  A-N                    arg N
-
-  C-b                    tilbake
-  C-f                    fram
-  A-b                    tilbake ord
-  A-f                    fram ord
-  C-a                    til bol
-  C-e                    til eol
-  C-]                    søk →
-  C-A-]                  søk ←
-
-  C-x C-u                undo
   A-r                    revert-line
+  C-x C-u                undo
 
   C-x (                  ta opp makro
   C-x )                  avslutt opptak
