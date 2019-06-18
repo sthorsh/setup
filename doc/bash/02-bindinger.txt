@@ -4,28 +4,28 @@ Bindinger
   C-f                    frem
   A-f                    frem ord
   C-e                    EOL
-  C-b                    bakover
-  A-b                    bakover ord
+  C-b                    back
+  A-b                    back ord
   C-a                    BOL
 
   C-]                    søk →
   C-A-]                  søk ←
 
   Tab                    complete $ ~ @ cmd / (rep)
-  A-*                    insert-completions $ ~ @ cmd / 
+  A-*                    insert-completions $ ~ @ cmd /
   C-A-b                  complete-into-braces
   C-A-g                  glob-complete-word * ?
   C-A-i                  dynamic-complete-history
 
   C-A-e                  expand ! alias ~ $
-  C-A-w                  glob-expand-word * ? 
+  C-A-w                  glob-expand-word * ?
 
   C-v                    quoted-insert (tty lnext)
 
   A-c                    capital
   A-l                    lowercase
   A-u                    uppercase
-  C-t                    transponer tegn
+  C-t                    transponer
   A-t                    transponer ord
 
   C-d                    delete
