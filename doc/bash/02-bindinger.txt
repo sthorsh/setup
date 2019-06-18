@@ -1,20 +1,18 @@
 Bindinger
-  A-N                    arg N
+  A-N                    arg: N
 
   C-f                    frem
   A-f                    frem ord
-  C-e                    frem eol
-  C-b                    tilbake
-  A-b                    tilbake ord
-  C-a                    tilbake bol
+  C-e                    EOL
+  C-b                    bakover
+  A-b                    bakover ord
+  C-a                    BOL
 
   C-]                    søk →
   C-A-]                  søk ←
 
-  C-v                    quoted-insert (tty lnext)
-
   Tab                    complete $ ~ @ cmd / (rep)
-  A-*                    complete alle $ ~ @ cmd / 
+  A-*                    insert-completions $ ~ @ cmd / 
   C-A-b                  complete-into-braces
   C-A-g                  glob-complete-word * ?
   C-A-i                  dynamic-complete-history
@@ -22,36 +20,37 @@ Bindinger
   C-A-e                  expand ! alias ~ $
   C-A-w                  glob-expand-word * ? 
 
+  C-v                    quoted-insert (tty lnext)
+
   A-c                    capital
   A-l                    lowercase
   A-u                    uppercase
   C-t                    transponer tegn
   A-t                    transponer ord
 
-  C-d                    del tegn
+  C-d                    delete
   A-d                    kill ord
-  C-k                    kill eol
-  C-h                    del tegn
-  C-q                    kill sti
+  C-k                    kill EOL
+  C-h                    delete
+  C-q                    kill filnavn
   C-w                    kill ord (tty werase)
-  C-u                    kill bol (tty kill)
+  C-u                    kill BOL (tty kill)
+
+  C-y                    yank kill-ring
+  A-y                    yank-pop kill-ring (rep)
 
   C-l                    clear-screen
   C-j                    lf (eol nix)
   C-m                    cr (eol mac)
 
-  C-r* C-[gjm]           reverse-search
+  C-r C-[gjm]            reverse-i-search (rep)
   C-p                    prev cmdline
   C-n                    next cmdline
   C-o                    operate-and-get-next
 
   !*                     prev cmdline opts/args
-  !N[:gs/x/y][^:N$]      prev cmdline [erstatt][yank]
-  !a[:gs/x/y][^:N$]      prev cmdline [erstatt][yank]
-  ^x^y                   prev cmdline erstatt første x
-
-  C-y                    yank kill-ring
-  A-y                    yank-pop kill-ring (rep)
+  !a[:gs/x/y][^:N$]      prev cmdline [sub][yank]
+  ^x^y                   prev cmdline sub første x
 
   C-A-y                  yank prev cmdline arg 0..N
   A-.                    yank prev cmdline arg 0..N (rep)
@@ -59,8 +58,8 @@ Bindinger
   C-x C-u                undo
   A-r                    revert-line
 
-  C-x (                  ta opp makro
-  C-x )                  avslutt opptak
-  C-x e                  kall makro
-  C-x C-e                edit-og-kall makro
+  C-x (                  makro start opptak
+  C-x )                  makro stopp opptak
+  C-x e                  makro exec
+  C-x C-e                makro edit-exec
 
