@@ -2,9 +2,9 @@ Bindinger
 
   C-a           prefix
 
+  |             split-window
+  -             split-window
   !             break-pane
-  ␣             next-layout
-  |-            split-window
   {}            swap-pane up|down
   hjkl          select-pane
   q             display-panes
@@ -13,27 +13,17 @@ Bindinger
   C-A-a         kill-pane -a
   C-A-s         setw synchronize-panes
   C-A-←↑↓→      resize-pane
-----------------------------------------------------
+
+  ,             rename-window
+  c             new-window
+  f             find-window name|title|content
+  1-9           select-window
+  C-h           select-window
+  C-l           select-window
+  C-w           kill window
+  C-S-←→        swap-window
 
 ----------------------------------------------------
-client
-  C-a d         detach-client
-
-session
-
-windows
-  C-a c         create new-window
-  C-a ,         rename-window
-  C-a C-h       prev window (n)
-  C-a C-l       next window (p)
-  C-a 1-9       select-window 1-9
-  C-a f         find-window name|title|content
-  C-S-←→        swap-window (•)
-  C-a C-w       kill window (&)
-
-config
-  C-a r         reload tmux.conf (•)
-
 log
   C-a L         toggle <window>.log on|off (•)
 
@@ -45,24 +35,12 @@ paste
   C-a p         paste-buffer (])
   C-a =         choose-buffer
   C-a C-v       paste from clipboard (•)
-----------------------------------------------------
-TODO
-  rearrange tmux.conf according to this file
-----------------------------------------------------
-Variables: panes
-  {last} !       The last (previously active) pane
-  {next} +       The next pane by number
-  {previous} -   The previous pane by number
-  {top}          The top pane
-  {bottom}       The bottom pane
-  {left}         The leftmost pane
-  {right}        The rightmost pane
-  {top-left}     The top-left pane
-  {top-right}    The top-right pane
-  {bottom-left}  The bottom-left pane
-  {bottom-right} The bottom-right pane
-  {up-of}        The pane above the active pane
-  {down-of}      The pane below the active pane
-  {left-of}      The pane to the left of the active pane
-  {right-of}     The pane to the right of the active pane
-               
+
+client
+  C-a d         detach-client
+
+session
+
+config
+  C-a r         reload tmux.conf (•)
+
