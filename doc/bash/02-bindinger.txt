@@ -1,15 +1,15 @@
 Bindinger
   A-N                    arg: N
 
-  C-f                    frem
-  A-f                    frem ord
+  C-f                    forward
+  A-f                    frem word
   C-e                    EOL
   C-b                    back
-  A-b                    back ord
+  A-b                    back word
   C-a                    BOL
 
-  C-]                    søk →
-  C-A-]                  søk ←
+  C-]                    search →
+  C-A-]                  search ←
 
   Tab                    complete $ ~ @ cmd / (rep)
   A-*                    insert-completions $ ~ @ cmd /
@@ -25,15 +25,15 @@ Bindinger
   A-c                    capital
   A-l                    lowercase
   A-u                    uppercase
-  C-t                    transponer
-  A-t                    transponer ord
+  C-t                    transpose
+  A-t                    transpose word 
 
   C-d                    delete
-  A-d                    kill ord
+  A-d                    kill word
   C-k                    kill EOL
   C-h                    delete
-  C-q                    kill filnavn
-  C-w                    kill ord (tty werase)
+  C-q                    kill filename
+  C-w                    kill word (tty werase)
   C-u                    kill BOL (tty kill)
 
   C-y                    yank kill-ring
@@ -50,7 +50,7 @@ Bindinger
 
   !*                     prev cmdline opts/args
   !a[:gs/x/y][^:N$]      prev cmdline [sub][yank]
-  ^x^y                   prev cmdline sub første x
+  ^x^y                   prev cmdline sub first x
 
   C-A-y                  yank prev cmdline arg 0..N
   A-.                    yank prev cmdline arg 0..N (rep)
@@ -58,8 +58,8 @@ Bindinger
   C-x C-u                undo
   A-r                    revert-line
 
-  C-x (                  makro start opptak
-  C-x )                  makro stopp opptak
-  C-x e                  makro exec
-  C-x C-e                makro edit-exec
+  C-x (                  macro record
+  C-x )                  macro record stop
+  C-x e                  macro exec
+  C-x C-e                macro edit-exec
 

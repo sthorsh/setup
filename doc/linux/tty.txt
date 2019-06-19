@@ -7,14 +7,14 @@ Line discipline
   C-v        lnext  
   C-w        werase
   
-Flow bytes
-  C-s        stop
-  C-q        start
- 
 Signals
   C-\        sigquit
   C-c        sigint
   C-z        sigtstp
+
+Flow control
+  C-s        stop byte
+  C-q        start byte
 
 Input settings
   [-]ixon
@@ -24,4 +24,7 @@ Input settings
 Ref
   $ stty -a                             
   $ man stty                       
+
+URL
+  https://www.linusakesson.net/programming/tty/
   
