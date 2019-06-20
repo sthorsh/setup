@@ -23,24 +23,32 @@ Bindinger
   C-w           kill window
   C-S-←→        swap-window
 
+  C-c           copy-mode
+  =             tmux buffer
+  p             paste from tmux buffer
+  C-v           paste from clipit buffer
 ----------------------------------------------------
-log
-  C-a L         toggle <window>.log on|off (•)
 
-modes
-  C-a C-c       copy-mode-vi ([)
-  C-a :         command-mode
-
-paste
-  C-a p         paste-buffer (])
-  C-a =         choose-buffer
-  C-a C-v       paste from clipboard (•)
-
+----------------------------------------------------
 client
   C-a d         detach-client
 
 session
 
+command-mode
+  C-a :         command-mode
+
+log
+  C-a L         toggle <window>.log on|off (•)
+
 config
   C-a r         reload tmux.conf (•)
+
+tpm
+  C-a C-I       install plugins
+  C-a C-U       update plugins
+
+tmux-resurrect
+  C-a C-s       save environment
+  C-a C-r       restore environment
 

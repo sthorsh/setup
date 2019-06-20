@@ -1,8 +1,0 @@
-tpm
-  C-a C-I       install plugins
-  C-a C-U       update plugins
-
-tmux-resurrect
-  C-a C-s       save environment
-  C-a C-r       restore environment
-
