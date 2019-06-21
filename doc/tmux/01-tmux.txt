@@ -1,0 +1,49 @@
+Bindinger
+
+  C-a           prefix
+
+  d             detach-client
+
+  $             rename-session
+
+  c             new-window
+  ,             rename-window
+  C-hl          select-window
+  1-9           select-window
+  f             find-window content|name|title
+  C-S-←→        swap-window
+  |             split-window
+  -             split-window
+  C-w           kill-window
+
+  hjkl          select-pane
+  L             pipe-pane
+  C-A-s         setw synchronize-panes
+  q             display-panes
+  !             break-pane
+  {}            swap-pane
+  C-A-←↑↓→      resize-pane
+  z             resize-pane -Z
+  x             kill-pane
+  C-A-a         kill-pane -a
+
+  C-c           copy-mode: vim
+  y             selection → tmux, clipit
+  C-j           selection → tmux
+  A             selection → tmux append
+  Y             EOL → tmux
+
+  =             tmux buffer
+  p             paste from tmux buffer
+  C-v           paste from clipit buffer
+
+  :             command-mode
+
+  r             reload tmux.conf
+
+  C-I           tpm: install
+  C-U           tpm: update
+
+  C-s           tmux-resurrect: save
+  C-r           tmux-resurrect: restore
+

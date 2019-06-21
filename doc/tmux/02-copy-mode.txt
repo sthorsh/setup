@@ -1,3 +1,25 @@
+search
+  /         search-forward-inc
+  ?         search-backward-inc
+  n         search-again
+  N         search-reverse
+
+scroll
+  C-e       scroll-down
+  C-d       halfpage-down
+  C-f       page-down
+  C-y       scroll-up
+  C-b       page-up
+  C-u       halfpage-up
+
+jump
+  f         jump-forward
+  F         jump-backward
+  t         jump-to-forward <to>
+  T         jump-to-backward <to>
+  ;         jump-again
+  ,         jump-reverse
+
 move
   b         previous-word
   B         previous-space
@@ -21,41 +43,16 @@ move
   }         next-paragraph
   :         goto-line <line>
 
-jump
-  f         jump-forward
-  F         jump-backward
-  t         jump-to-forward <to>
-  T         jump-to-backward <to>
-  ;         jump-again
-  ,         jump-reverse
-
-scroll
-  C-e       scroll-down
-  C-d       halfpage-down
-  C-f       page-down
-  C-y       scroll-up
-  C-b       page-up
-  C-u       halfpage-up
-
-search
-  /         search-forward-inc
-  ?         search-backward-inc
-  n         search-again
-  N         search-reverse
-
 select
-  v         visual (Space)
+  v         visual
   V         visual line
   C-v       visual block
   o         other-end
-  Space     clear-selection (Escape)
+  Space     clear-selection (vim: escape)
 
 copy
-  A         append
-  Y         copy to EOL (D)
-  C-j       copy to buffer
-  y         copy to buffer and clipboard (•)
-
-quit
-  q         quit copy-mode-vi
+  y         selection → tmux, clipit
+  C-j       selection → tmux
+  A         selection → tmux append
+  Y         EOL → tmux
 
