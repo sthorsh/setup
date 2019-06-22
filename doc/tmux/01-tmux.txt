@@ -1,12 +1,13 @@
-tmux: terminal multiplexer
+tmux
+  ?             list-keys
+ 
+  C-a           send-prefix
 
-  C-a           tmux command prefix
+  d             detach-client
 
-  d             detach-client (tmux client, tmux server)
+  $             rename-session
 
-  $             rename-session (terminal session)
-
-  c             new-window (terminal window)
+  c             new-window
   ,             rename-window
   C-hl          select-window
   1-9           select-window
@@ -27,7 +28,7 @@ tmux: terminal multiplexer
   x             kill-pane
   C-A-a         kill-pane -a
 
-  C-c           copy-mode (vim-mode)
+  C-c           copy-/vim-mode
   y             selection → tmux buffer, clipit buffer
   C-j           selection → tmux buffer
   A             selection → tmux buffer append
@@ -48,11 +49,15 @@ tmux: terminal multiplexer
   C-r           tmux-resurrect: restore
 
 --------------------------------------------
-1. Gul lapp: tmux → tmux new-session -s base
+1. tmux: _terminal_ multiplexer
+   session: _terminal_ sesjon
+   window: _terminal_vindu
 
-2. gnome-terminal-─┬─3*[bash───tmux: client] ($ tmux i.e per terminal session)
+2. Gul lapp: tmux → tmux new-session -s base
 
-3. tmux: server─┬─bash───vi
+3. gnome-terminal-─┬─3*[bash───tmux: client] ($ tmux i.e per terminalsesjon)
+
+4. tmux: server─┬─bash───vi
                 ├─bash───sleep
-                ├─bash───... (e.g $ tmux new-window e.g per terminal vindu)
+                ├─bash───... (e.g $ tmux new-window e.g per terminalvindu)
 

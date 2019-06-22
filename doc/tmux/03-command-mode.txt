@@ -1,51 +1,52 @@
-tmux-cmds
-      :attach -t s:w.p
-      :bind
-      :break
-      :capture-pane
-      :choose-client|session|window|buffer → j k d...
-      :clear
-      :clock
-      :command
-      :confirm
-      :copy
-      :delete
-      :detach
-      :display
-      :find
-      :has
-      :if-shell -t s:w.p shell-command command [command]
-      :join
-      :kill-session|window|pane|server -t s:w.p
-      :last
-      :link
-  :list-clients|sessions|windows|panes|buffers|keys -t s:w.p 
-      :load
-      :lock
-      :move
-      :new-session -s base | ...
-      :next
-      :paste
-      :pipe
-      :previous
-      :refresh
-      :rename
-      :resize
-      :respawn
-      :rotate
-      :run
-      :save-buffer <file>
-      :select-window|pane -t s:w.p
-      :send-keys -t s:w.p 'echo foo' C-m
-      :set
-      :show
-      :source
-      :split-window -h -t s:w.p
-      :start
-      :suspend
-      :swap
-      :switch
-      :unbind
-      :unlink
-      :wait
+tmux cmds
+  attach -t s:w.p
+      bind
+      break
+      capture-pane
+      choose-client|session|window|buffer → j k d...
+      clear
+      clock
+      command
+      confirm
+      copy
+      delete
+      detach
+      display
+      find
+      has
+      if-shell -t s:w.p shell-command command [command]
+      join
+      kill-session|window|pane|server -t s:w.p
+      last
+      link
+  list-clients|sessions|windows|panes|buffers|keys -t s:w.p 
+      load
+      lock
+      move
+  new-session -s <name>
+    new-window
+      next
+      paste
+      pipe
+      previous
+      refresh
+      rename
+      resize
+      respawn
+      rotate
+      run
+      save-buffer <file>
+      select-window|pane -t s:w.p
+      send-keys -t s:w.p 'echo foo' C-m
+      set
+      show
+      source
+      split-window -h -t s:w.p
+      start
+      suspend
+      swap
+      switch
+      unbind
+      unlink
+      wait
 
