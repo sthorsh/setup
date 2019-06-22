@@ -1,12 +1,12 @@
-Bindinger
+tmux: terminal multiplexer
 
-  C-a           prefix
+  C-a           tmux command prefix
 
-  d             detach-client
+  d             detach-client (tmux client, tmux server)
 
-  $             rename-session
+  $             rename-session (terminal session)
 
-  c             new-window
+  c             new-window (terminal window)
   ,             rename-window
   C-hl          select-window
   1-9           select-window
@@ -27,11 +27,11 @@ Bindinger
   x             kill-pane
   C-A-a         kill-pane -a
 
-  C-c           copy-mode: vim
-  y             selection → tmux, clipit
-  C-j           selection → tmux
-  A             selection → tmux append
-  Y             EOL → tmux
+  C-c           copy-mode (vim-mode)
+  y             selection → tmux buffer, clipit buffer
+  C-j           selection → tmux buffer
+  A             selection → tmux buffer append
+  Y             EOL → tmux buffer
 
   =             tmux buffer
   p             paste from tmux buffer
@@ -46,4 +46,13 @@ Bindinger
 
   C-s           tmux-resurrect: save
   C-r           tmux-resurrect: restore
+
+--------------------------------------------
+1. Gul lapp: tmux → tmux new-session -s base
+
+2. gnome-terminal-─┬─3*[bash───tmux: client] ($ tmux i.e per terminal session)
+
+3. tmux: server─┬─bash───vi
+                ├─bash───sleep
+                ├─bash───... (e.g $ tmux new-window e.g per terminal vindu)
 

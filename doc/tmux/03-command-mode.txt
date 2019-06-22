@@ -23,7 +23,7 @@ tmux-cmds
       :load
       :lock
       :move
-      :new-session|window ...
+      :new-session -s base | ...
       :next
       :paste
       :pipe
