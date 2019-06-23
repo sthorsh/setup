@@ -1,7 +1,6 @@
 tmux
+  C-a           prefix
   ?             list-keys
- 
-  C-a           send-prefix
 
   d             detach-client
 
@@ -13,6 +12,7 @@ tmux
   1-9           select-window
   f             find-window content|name|title
   C-S-←→        swap-window
+  C-o           rotate-window
   |             split-window
   -             split-window
   C-w           kill-window
@@ -28,7 +28,7 @@ tmux
   x             kill-pane
   C-A-a         kill-pane -a
 
-  C-c           copy-/vim-mode
+  C-c           copy-mode-vi
   y             selection → tmux buffer, clipit buffer
   C-j           selection → tmux buffer
   A             selection → tmux buffer append

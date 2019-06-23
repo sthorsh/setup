@@ -39,7 +39,8 @@ tmux cmds
       select-window|pane -t s:w.p
       send-keys -t s:w.p 'echo foo' C-m
       set
-      show
+      show-options -g|-s|-w
+      show-...
       source
       split-window -h -t s:w.p
       start
