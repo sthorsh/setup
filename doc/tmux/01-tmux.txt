@@ -1,32 +1,34 @@
 tmux
-  C-a           prefix
-  ?             list-keys
 
+  ?             list-keys
+  C-a           prefix
+
+  D             choose-client
   d             detach-client
 
+  s             choose-tree
   $             rename-session
 
   c             new-window
+  C-w           kill-window
   ,             rename-window
   C-hl          select-window
-  1-9           select-window
-  f             find-window content|name|title
-  C-S-←→        swap-window
+  1..9          select-window
+  f             find-window content|...
   C-o           rotate-window
-  |             split-window
-  -             split-window
-  C-w           kill-window
+  C-S-←→        swap-window
+  |-            split-window
 
-  hjkl          select-pane
-  L             pipe-pane
-  C-A-s         setw synchronize-panes
-  q             display-panes
-  !             break-pane
-  {}            swap-pane
-  C-A-←↑↓→      resize-pane
-  z             resize-pane -Z
   x             kill-pane
   C-A-a         kill-pane -a
+  q             display-panes
+  hjkl          select-pane
+  !             break-pane
+  z             resize-pane
+  C-A-←↑↓→      resize-pane
+  {}            swap-pane
+  L             pipe-pane
+  C-A-s         setw synchronize-panes
 
   C-c           copy-mode-vi
   y             selection → tmux buffer, clipit buffer
@@ -53,11 +55,14 @@ tmux
    session: _terminal_ sesjon
    window: _terminal_vindu
 
-2. Gul lapp: tmux → tmux new-session -s base
 
-3. gnome-terminal-─┬─3*[bash───tmux: client] ($ tmux i.e per terminalsesjon)
+2. gnome-terminal-─┬─3*[bash───tmux: client] ($ tmux i.e per terminalsesjon)
 
-4. tmux: server─┬─bash───vi
+3. tmux: server─┬─bash───vi
                 ├─bash───sleep
                 ├─bash───... (e.g $ tmux new-window e.g per terminalvindu)
+
+4. Gul lapp: tmux → tmux new-session -s base
+
+5. tmux new-session -s prod
 
