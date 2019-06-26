@@ -5,9 +5,10 @@ tmux
 
   D             choose-client
   d             detach-client
+  C-i           switch-client -p
+  C-o           switch-client -n
 
   s             choose-tree
-  $             rename-session
 
   c             new-window
   C-w           kill-window
@@ -15,8 +16,8 @@ tmux
   C-hl          select-window
   1..9          select-window
   f             find-window content|...
-  C-o           rotate-window
   C-S-←→        swap-window
+  .             command-prompt "move-window -t '%%'"
   |-            split-window
 
   x             kill-pane
@@ -49,20 +50,3 @@ tmux
 
   C-s           tmux-resurrect: save
   C-r           tmux-resurrect: restore
-
---------------------------------------------
-1. tmux: _terminal_ multiplexer
-   session: _terminal_ sesjon
-   window: _terminal_vindu
-
-
-2. gnome-terminal-─┬─3*[bash───tmux: client] ($ tmux i.e per terminalsesjon)
-
-3. tmux: server─┬─bash───vi
-                ├─bash───sleep
-                ├─bash───... (e.g $ tmux new-window e.g per terminalvindu)
-
-4. Gul lapp: tmux → tmux new-session -s base
-
-5. tmux new-session -s prod
-
