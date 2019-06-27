@@ -1,6 +1,7 @@
 tmux
 
   ?             list-keys
+
   C-a           prefix
 
   D             choose-client
@@ -11,7 +12,6 @@ tmux
   s             choose-tree
 
   c             new-window
-  C-w           kill-window
   ,             rename-window
   C-hl          select-window
   1..9          select-window
@@ -19,25 +19,30 @@ tmux
   C-S-←→        swap-window
   .             command-prompt "move-window -t '%%'"
   |-            split-window
+  C-w           kill-window
 
+  hjkl          select-pane
+  q             display-panes
+  C-A-←↑↓→      resize-pane
+  z             resize-pane -Z
+  {}            swap-pane
+  !             break-pane
   x             kill-pane
   C-A-a         kill-pane -a
-  q             display-panes
-  hjkl          select-pane
-  !             break-pane
-  z             resize-pane
-  C-A-←↑↓→      resize-pane
-  {}            swap-pane
   L             pipe-pane
   C-A-s         setw synchronize-panes
 
-  C-c           copy-mode-vi
-  y             selection → tmux buffer, clipit buffer
-  C-j           selection → tmux buffer
-  A             selection → tmux buffer append
-  Y             EOL → tmux buffer
+  C-c           toggle copy-mode-vi (•)
+  • /           search ↓ (vi)
+  • ?           search ↑ (vi)
+  • v|V|C-v     select
+  • ␣           clear selection
+  • y           yank selection → tmux buffer, clipit buffer
+  • C-j         yank selection → tmux buffer
+  • A           yank selection → tmux buffer append
+  • Y           yank to EOL → tmux buffer
 
-  =             tmux buffer
+  =             choose tmux buffer
   p             paste from tmux buffer
   C-v           paste from clipit buffer
 

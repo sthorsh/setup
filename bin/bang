@@ -1,5 +1,9 @@
 #! /bin/bash
 
+# TODOs
+# 1. Update dpkg-get-selections.log
+# 2. Automate tmux installation
+
 # To run this script, do:
 # wget --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/bin/bang
 # chmod +x bang
