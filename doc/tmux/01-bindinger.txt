@@ -13,24 +13,23 @@ tmux
 
   c             new-window
   ,             rename-window
-  C-hl          select-window
-  1..9          select-window
-  f             find-window content|...
+  C-hl          select-window (alt 1..9)
+  f             find-window
   C-S-←→        swap-window
-  .             command-prompt "move-window -t '%%'"
+  .             move-window
   |-            split-window
   C-w           kill-window
 
   hjkl          select-pane
-  q             display-panes
+  q             display-panes (evt 1..9)
+  z             resize-pane
   C-A-←↑↓→      resize-pane
-  z             resize-pane -Z
   {}            swap-pane
   !             break-pane
-  x             kill-pane
-  C-A-a         kill-pane -a
   L             pipe-pane
-  C-A-s         setw synchronize-panes
+  C-A-s         synchronize-panes
+  x             kill-pane
+  Ctrl-A-a      kill-pane(s)
 
   C-k           clear-history
 
@@ -39,10 +38,10 @@ tmux
     ?           search ↑
     v|V|C-v     select text
     ␣           clear selection
-    y           yank text → clipit buffer, tmux buffer
-    C-j         yank text → tmux buffer
-    A           yank text → tmux buffer append
-    Y           yank to EOL → tmux buffer
+    y           yank text → clipit, tmux
+    C-j         yank text → tmux
+    A           yank text → tmux append
+    Y           yank to EOL → tmux
 
   =             choose tmux buffer
   p             paste from tmux buffer
@@ -57,3 +56,4 @@ tmux
 
   C-s           tmux-resurrect: save
   C-r           tmux-resurrect: restore
+
