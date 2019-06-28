@@ -32,15 +32,17 @@ tmux
   L             pipe-pane
   C-A-s         setw synchronize-panes
 
-  C-c           toggle copy-mode-vi (•)
-  • /           search ↓ (vi)
-  • ?           search ↑ (vi)
-  • v|V|C-v     select
-  • ␣           clear selection
-  • y           yank selection → tmux buffer, clipit buffer
-  • C-j         yank selection → tmux buffer
-  • A           yank selection → tmux buffer append
-  • Y           yank to EOL → tmux buffer
+  C-k           clear-history
+
+  C-c           copy-mode-vi
+    /           search ↓
+    ?           search ↑
+    v|V|C-v     select text
+    ␣           clear selection
+    y           yank text → clipit buffer, tmux buffer
+    C-j         yank text → tmux buffer
+    A           yank text → tmux buffer append
+    Y           yank to EOL → tmux buffer
 
   =             choose tmux buffer
   p             paste from tmux buffer
