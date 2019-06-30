@@ -1,8 +1,14 @@
 #! /bin/bash
 
 # TODOs
-# 1. Update dpkg-get-selections.log
-# 2. Automate tmux installation
+# Automate installation: autojump
+# Automate installation: peco
+# Automate installation: tldr
+#   sudo npm install -g tldr
+#   tldr --update
+# Automate installation: tmux 2.9
+# Automate installation: xclip
+# Update dpkg-get-selections.log
 
 # To run this script, do:
 # wget --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/bin/bang
