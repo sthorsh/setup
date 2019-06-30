@@ -1,0 +1,34 @@
+Plassholder
+  {{name}}
+  {{env:NAME}} (OS)
+  {{sys:name}} (JVM)
+  {{env|sys:name:default}}       
+
+  Properties.setLocation()
+    classpath:acme/clib.properties,...
+    file:src/test/resources/acme/clib.properties,...
+    ref:beanID
+    blueprint:beanID
+  
+  CLIB
+    Camel plassholder for Camel property: n/a
+    Konstanttilordning
+    Variabeltilordning
+    Statisk
+
+  RouteBuilder
+    from|.to("{{uri}}")
+    from|.to("ftp://{{env.cms.host}}:{{env.cms.port}}")
+    ...
+
+  BuilderSupport
+    constant("{{name}}")
+    simple("{{name}}") 
+    ...
+
+  DSL
+    .bean(T.class, "{{name}}")
+    .log("{{name}}") 
+    .setHeader("{{name}},...)
+    ...
+
