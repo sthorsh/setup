@@ -2,8 +2,7 @@
     ${}
 
   Lokasjon
-    flow-xxx.ctx.xml
-    clip.properties.cfg
+    src/main/resources/OSGI-INF/blueprint/flow-xxx-ctx.xml
 
   CLIB
     Variabel DI Camel plassholder for BP property: {{env.cms.uri}}
