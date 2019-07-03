@@ -1,12 +1,12 @@
-  Plassholder
-    ${}
-
-  Lokasjon
-    src/main/resources/OSGI-INF/blueprint/flow-xxx-ctx.xml
-
-  CLIB
-    Variabel DI Camel plassholder for BP property: {{env.cms.uri}}
-    Variabel DI Camel plassholder for BP property: {{cms.uri}}
-    Variabel DI BP plassholder for BP property: ${cms.uri}
-    Variabel DI bean property value
+CLIB: DI av bean property verdi
+  Literal verdi
+  Camel plassholder for blueprint property: {{cms.uri}}
+  Blueprint plassholder for blueprint property: ${cms.uri}
+  Camel plassholder for blueprint property: {{env.cms.uri}}
           
+Plassholder
+  ${}
+
+Lokasjon
+  src/main/resources/OSGI-INF/blueprint/flow-xxx-ctx.xml
+

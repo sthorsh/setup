@@ -1,34 +1,34 @@
+CLIB
+  Verdi
+  Plassholder for verdi
+  Konstant tilordnet plassholder (eller verdi)   
+  Variabel tilordnet plassholder (eller verdi)
+
 Plassholder
   {{name}}
   {{env:NAME}} (OS)
   {{sys:name}} (JVM)
   {{env|sys:name:default}}       
 
-  Properties.setLocation()
-    classpath:acme/clib.properties,...
-    file:src/main/resources/acme/clib.properties,...
-    ref:beanID
-    blueprint:beanID
-  
-  CLIB
-    Camel plassholder for Camel property: n/a
-    Konstanttilordning
-    Variabeltilordning
-    Statisk
+Lokasjon: Properties.setLocation()
+  classpath:clib.properties
+  file:src/main/resources/clib.properties
+  ref:beanID
+  blueprint:beanID
+    
+RouteBuilder
+  from|.to("{{uri}}")
+  from|.to("ftp://{{env.cms.host}}:{{env.cms.port}}")
+  ...
 
-  RouteBuilder
-    from|.to("{{uri}}")
-    from|.to("ftp://{{env.cms.host}}:{{env.cms.port}}")
-    ...
+BuilderSupport
+  constant("{{name}}")
+  simple("{{name}}") 
+  ...
 
-  BuilderSupport
-    constant("{{name}}")
-    simple("{{name}}") 
-    ...
-
-  DSL
-    .bean(T.class, "{{name}}")
-    .log("{{name}}") 
-    .setHeader("{{name}},...)
-    ...
+DSL
+  .bean(T.class, "{{name}}")
+  .log("{{name}}") 
+  .setHeader("{{name}},...)
+  ...
 
