@@ -1,0 +1,109 @@
+DefaultCamelContext()
+  Adding ContextClassLoader from current thread
+  ...
+
+getComponent()
+  Found component: properties ...
+
+addRoutes()
+  Adding routes from builder: Routes: []
+       
+  Parsed location: clib.properties
+  Found property: uri with value: direct:foo to be used.
+  Resolved text: {{uri}} -> direct:foo
+        
+  Found 3 packages with 19 @Converter classes to load
+  Type converters loaded (core: 195, classpath: 0)
+       
+  Changed property [uri] from: {{uri}} to: direct:foo
+  
+start()
+  Apache Camel 2.23.1 (CamelContext: camel-1) is starting
+  
+doStartCamel()
+  StreamCaching is enabled on CamelContext: camel-1
+  Tracing is enabled on CamelContext: camel-1
+  MDC logging is enabled on CamelContext: camel-1
+  Delayer is enabled with: 1000 ms on CamelContext: camel-1
+      
+  JMX is enabled
+  Starting JMX agent on server
+  Registered MBean with ObjectName: ...
+
+  // Some lazy initialization
+  Loading class: org.apache.camel.language.simple.SimpleLanguage
+  
+  // Add and start services                    
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultEndpointRegistry
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultExecutorServiceManager
+  Starting service pool: org.apache.camel.impl.SharedProducerServicePool@665df3c6
+  Starting service pool: org.apache.camel.impl.SharedPollingConsumerServicePool@68b6f0d6
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultInflightRepository
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultAsyncProcessorAwaitManager
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultShutdownStrategy
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultRestRegistry
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultRuntimeCamelCatalog
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultTransformerRegistry
+  Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultValidatorRegistry
+
+
+  // Start components
+
+  // Start route definitions
+
+  // Start routes
+
+  Total 1 routes, of which 1 are started
+  Apache Camel 2.23.1 (CamelContext: camel-1) started in 10 minutes
+
+
+                            startRouteDefinitions()
+                              DefaultCamelContext                 DEBUG Using ComponentResolver: org.apache.camel.impl.DefaultComponentResolver@354fc8f0 to resolve component with name: timer
+                              ResolverHelper                      DEBUG Lookup Component with name timer in registry. Found: null
+                              ResolverHelper                      DEBUG Lookup Component with name timer-component in registry. Found: null
+                              DefaultComponentResolver            DEBUG Found component: timer via type: org.apache.camel.component.timer.TimerComponent via: META-INF/services/org/apache/camel/component/timer
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=components,name="timer"
+                              DefaultComponent                    DEBUG Resolving property placeholders on component: org.apache.camel.component.timer.TimerComponent@435871cb
+                              DefaultComponent                    DEBUG Creating endpoint uri=[timer://runOnce?delay=1000&repeatCount=1], path=[runOnce]
+                              DefaultCamelContext                 DEBUG timer://runOnce?delay=1000&repeatCount=1 converted to endpoint: timer://runOnce?delay=1000&repeatCount=1 by component:
+                                                                        org.apache.camel.component.timer.TimerComponent@435871cb
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=endpoints,name="timer://runOnce\?delay=1000&repeatCount=1"
+                              DefaultChannel                      DEBUG Initialize channel for target: 'process[Processor@0x4f2c9ba6]'
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=tracer,name=BacklogTracer
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=tracer,name=BacklogDebugger
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=tracer,name=Tracer
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=errorhandlers,name="DefaultErrorHandlerBuilder(ref:CamelDefaultErrorHandlerBuilder)"
+                              LogDefinition                       DEBUG LogName is not configured, using route id as logName: route1
+                              DefaultChannel                      DEBUG Initialize channel for target: 'Log[done]'
+
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=services,name=DefaultStreamCachingStrategy
+                              DefaultStreamCachingStrategy        DEBUG Created spool directory: /tmp/camel/camel-tmp-51912000-d6d9-42ef-a087-c1ab57fd2ee2
+                              DefaultStreamCachingStrategy        DEBUG StreamCaching configuration DefaultStreamCachingStrategy[spoolDirectory=/...
+                              DefaultStreamCachingStrategy        INFO  StreamCaching in use with spool directory: ...
+
+                              HeadersMapFactoryResolver           DEBUG Creating default HeadersMapFactory
+                              DefaultCamelContext                 DEBUG Using HeadersMapFactory: org.apache.camel.impl.DefaultHeadersMapFactory@1a1da881
+
+                            safelyStartRouteServices()
+                              DefaultCamelContext                 DEBUG Warming up route id: route1 having autoStartup=true
+                              RouteService                        DEBUG Starting services on route: route1
+                              RouteService                        DEBUG Starting child service on route: route1 -> Pipeline[[Channel[DelegateSync[org.acme.MyMainRouteBuilder$1$$Lambda$5/596706728@4f2c9ba6]], Channel[Log(route1)[done]]]]
+                              RouteService                        DEBUG Starting child service on route: route1 -> Pipeline[[Channel[DelegateSync[org.acme.MyMainRouteBuilder$1$$Lambda$5/596706728@4f2c9ba6]], Channel[Log(route1)[done]]]]
+                              RouteService                        DEBUG Starting child service on route: route1 -> DelegateSync[org.acme.MyMainRouteBuilder$1$$Lambda$5/596706728@4f2c9ba6]
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=processors,name="process1"   
+                              RouteService                        DEBUG Starting child service on route: route1 -> Channel[DelegateSync[org.acme.MyMainRouteBuilder$1$$Lambda$5/596706728@4f2c9ba6]]
+                              RouteService                        DEBUG Starting child service on route: route1 -> Log(route1)[done]
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=processors,name="log1"
+                              RouteService                        DEBUG Starting child service on route: route1 -> Channel[Log(route1)[done]]
+                              DefaultManagementAgent              DEBUG Registered MBean with ObjectName: org.apache.camel:context=camel-1,type=routes,name="route1"
+                              TimerListenerManager                DEBUG Added TimerListener: org.apache.camel.management.mbean.ManagedSuspendableRoute@52500920
+
+                            doStartRouteConsumers()
+                              DefaultCamelContext                 DEBUG Starting consumer (order: 1000) on route: route1
+                              TimerConsumer                       DEBUG Starting consumer: Consumer[timer://runOnce?delay=1000&repeatCount=1]
+                              DefaultCamelContext                 INFO  Route: route1 started and consuming from: timer://runOnce?delay=1000&repeatCount=1
+
+                            start()
+                              DefaultCamelContext                 INFO  Total 1 routes, of which 1 are started
+                              DefaultCamelContext                 INFO  Apache Camel 2.23.1 (CamelContext: camel-1) started in 1 hour 37 minutes
+
