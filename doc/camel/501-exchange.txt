@@ -1,18 +1,18 @@
 Exchange
-  exchangeId: String
   context: CamelContext
-  in: Message
-  out: Message
-  pattern: ExchangePattern (enum)
+  exchangeId: String
   properties: Map<String, Object>
+  pattern: ExchangePattern (enum)
   exception: Exception (recoverable/irrecoverable error)
   unitOfWork: UnitOfWork
+  in: Message
+  out: Message
 
 Message
-  messageId: String
   exchange: Exchange
-  body: Object
+  messageId: String
   headers: Map<String, Object>
   attachments: Map<String, DataHandler>
   fault: boolean (flagg for irrecoverable error feks soap ws)
+  body: Object
 
