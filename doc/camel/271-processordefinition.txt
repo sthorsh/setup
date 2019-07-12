@@ -30,7 +30,7 @@ ProcessorDefinition<T extends ProcessorDefinition<T>>
   sort(): T
   split(): SplitDefinition
   stop(): T
-  to(endpointUri): T
+  to(uri): T
   transform(): T
   unmarshal(): DataFormatClause<ProcessorDefinition<T>> 
   validate(): ValidateDefinition

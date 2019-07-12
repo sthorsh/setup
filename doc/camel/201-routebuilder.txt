@@ -1,5 +1,3 @@
-ROUTEBUILDER
-
 RouteBuilder
   addRoutesToCamelContext(): void
   configureRoutes(): RoutesDefinition
@@ -10,7 +8,7 @@ RouteBuilder
     onException(): OnExceptionDefinition 
     intercept*(): Intercept*Definition 
     onCompletion(): OnCompletionDefinition 
-    from(endpointUri): RouteDefinition           
+    from(uri): RouteDefinition           
   configureRoute(): void
   populateRoutes(): void
 
