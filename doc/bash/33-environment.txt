@@ -1,0 +1,66 @@
+Scanning
+  Les input
+  Fjern kommentarer #
+
+Prosessering
+  Ekspander history event ! ^
+  Tokeniser vha space, tab mfl
+  Klassifiser tokens
+  Ekspander alias
+  Parse tokens i enkle og sammensatte cmds
+  Ekspander brace {n|char..n|char..n}...
+  Ekspander tilde ~ ~+ ~- ~user
+  Ekspander param ${}
+  Kommandosubstitusjon $()
+  Ekspander aritmetikk $(())
+  Prosesssubstitusjon ()
+  Splitt ord vha $IFS
+  Ekspander wildcards
+  Fjern beskyttelse (quotes) \ "" ''
+  Rediriger stdin, stdout, stderr
+  Ekspander og tilordne rhs i var=rhs [cmd] ...
+
+Søk-utfør kommando (cmd)
+  Funksjon
+  Builtin
+  I hash: script|binary (xfile)
+  I PATH: script|binary (xfile)
+  Script|binary med /
+  
+Environment
+  Et array av strenger navn=verdi
+  $ export -p | env : viser environment
+  $ export navn : environment+=navn
+  $ declare +x navn : environment-=navn
+  En kommando arver bash' environment
+  $ navn=verdi cmd : environment+=navn
+  $ set -o allexport: environment+=navn
+  Bash invokeres som ekstern kommando: environment+=$_
+  
+Excecution environment
+  Et skall har et execution environment
+  En kommando har en execution context (arver en delmengde av skallets)
+  Alias: alias
+  Filer: lsof (arv)
+  Funksjoner: env (arv)
+  Katalog: pwd (arv)
+  Maske: umask (arv)
+  Params: env (arv)
+  PID, PPID: ps
+  Opsjoner: set -o | shopt
+  Traps: trap -p
+
+Signaler
+    sighup: exit
+    sigint: fanges
+    sigquit: ignoreres
+    sigabrt: exit
+    sigkill: exit 
+    sigterm: ignoreres
+    sigtstp: ignoreres 
+    ...
+
+Exit status
+  0 success
+  1..255 failure
+

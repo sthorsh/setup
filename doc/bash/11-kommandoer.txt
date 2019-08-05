@@ -1,29 +1,29 @@
-Kommandoer
-  Sekvens: ord
-  Skilletegn: space tab
-  Terminator: newline
+  Kommandoer
+    Sekvens: ord
+    Skilletegn: space tab
+    Terminator: newline
 
-Pipelines
-  Sekvens: kommandoer
-  Skilletegn: | |&
-  Terminator: newline
+  Pipelines
+    Sekvens: kommandoer
+    Skilletegn: | |&
+    Terminator: newline
 
-Lister
-  Sekvens: pipelines
-  Skilletegn: ; && || &
-  Terminator: ; & newline
+  Lister
+    Sekvens: pipelines
+    Skilletegn: ; && || &
+    Terminator: ; & newline
 
-Sammensatte kommandoer
-  if
-  case
-  select
-    (( expr ))
-    [[ expr ]]
-  for
-  while
-  until
-    ( list 
-    { list; }
+  Sammensatte kommandoer
+    if
+    case
+    select
+      (( expr ))
+      [[ expr ]]
+    for
+    while
+    until
+      ( list 
+      { list; }
 
   Coprosesses
     coproc [NAME] command [redir]
