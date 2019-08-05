@@ -1,29 +1,37 @@
-Scanning
-  Les input
-  Fjern kommentarer #
+Leser input
+  Fra terminal, string el script
+  Ignorerer kommentarer #
 
-Prosessering
-  Ekspander history event ! ^
-  Tokeniser vha space, tab mfl
-  Klassifiser tokens
-  Ekspander alias
-  Parse tokens i enkle og sammensatte cmds
-  Ekspander brace {n|char..n|char..n}...
-  Ekspander tilde ~ ~+ ~- ~user
-  Ekspander param ${}
-  Kommandosubstitusjon $()
-  Ekspander aritmetikk $(())
-  Prosesssubstitusjon ()
-  Splitt ord vha $IFS
-  Ekspander wildcards
-  Fjern beskyttelse (quotes) \ "" ''
-  Rediriger stdin, stdout, stderr
-  Ekspander og tilordne rhs i var=rhs [cmd] ...
+  Tokenisering
+    Ekspander history event ! ^
+    Tokeniser vha space, tab mfl
+    Klassifiser tokens
+    Ekspander alias
 
-Søk-utfør kommando (cmd)
-  Funksjon
-  Builtin
-  I hash: script|binary (xfile)
-  I PATH: script|binary (xfile)
-  Script|binary med /
-  
+  Parsing
+    Parse tokens i enkle og sammensatte cmds
+
+    Ekspander brace {n|char..n|char..n}...
+    Ekspander tilde ~ ~+ ~- ~user
+    Ekspander param ${}
+    Kommandosubstitusjon $()
+    Ekspander aritmetikk $(())
+    Prosesssubstitusjon ()
+    Splitt ord vha $IFS
+    Ekspander wildcards
+    Fjern beskyttelse (quotes) \ "" ''
+
+    Rediriger stdin, stdout, stderr
+    Ekspander og tilordne rhs i var=rhs [cmd] ...
+
+   Execution
+    Funksjon
+    Builtin
+    I hash: script|binary (xfile)
+    I PATH: script|binary (xfile)
+    Script|binary med /
+
+  Completion
+    Waits for cmd to complete
+    Collects exit status
+    
