@@ -1,8 +1,10 @@
-Leser input
+Input
   Fra terminal, string el script
-  Ignorerer kommentarer #
 
-  Tokenisering
+Kommentarer
+  Ignorerer # ...
+
+Tokenisering
     Ekspander history event ! ^
     Tokeniser vha space, tab mfl
     Klassifiser tokens
