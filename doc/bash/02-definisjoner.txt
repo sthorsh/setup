@@ -1,2 +1,29 @@
-input
-...
+                                                  kommandolinje
+                                                        |
+                                                        |
+                                                        |
+                          --------------------------------------------------------------------------
+                          |                                                        |               |
+                        token                                                   metategn        quoting
+                          |                                                        |               |
+      -----------------------------------------                                    |               |
+      |                                       |                                    |               |
+     ord                                operatorer                                 |               |
+      |                                       |                                    |               |
+  -----------                     ------------------------                         |               |
+  |         |                     |                      |                         |               |
+navn  reserverte ord     kontrolloperatorer    redirigeringsoperatorer             |               |
+  |         |                     |                      |                         |               |
+  |         |                     |                      |                         |               |
+  |         |                     |                      |                         |               |
+funksjon    if                 newline               [n]<word                   space           escape
+variabel    for                |                     ...                        tab             '...'
+...         ...                ;                     [n]>word                   newline         "..."
+                               &                     [n]>|word                  |
+                               (                     [n]>>word                  ;
+                               )                     ...                        &
+                               ||                    &>word                     (
+                               ;;                    &>>word                    )
+                               |&                                               <
+                               ;&                                               >
+                               ;;&
