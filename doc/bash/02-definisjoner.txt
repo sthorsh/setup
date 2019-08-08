@@ -1,29 +1,21 @@
-                                                  Kommandolinje
-                                                        |
-                                                        |
-                                                        |
-                          --------------------------------------------------------------------------
-                          |                                                        |               |
-                        Token                                                   Metategn        Quoting
-                          |                                                        |               |
-      -----------------------------------------                                    |               |
-      |                                       |                                    |               |
-     Ord                                 Operatorer                                |               |
-      |                                       |                                    |               |
-  -----------                     ------------------------                         |               |
-  |         |                     |                      |                         |               |
-Navn    Reserverte       Kontrolloperatorer    Redirigeringsoperatorer             |               |
-  |        ord                    |                      |                         |               |
-  |         |                     |                      |                         |               |
-  |         |                     |                      |                         |               |
-Funksjon    if                 Newline               [n]<word                    Space           Escape
-Variabel    for                   |                  ...                          Tab            '...'
-...         ...                   ;                  [n]>word                   Newline          "..."
-                                  &                  [n]>|word                     |
-                                  (                  [n]>>word                     ;
-                                  )                  ...                           &
-                                  ||                 &>word                        (
-                                  ;;                 &>>word                       )
-                                  |&                                               <
-                                  ;&                                               >
-                                  ;&
+                                         Kommandolinje
+                             
+                                        
+Kommentarer    Escapetegn       Quotes                         Tokens                                 Metategn  
+                              (sitattegn)                   (tegnsekvens)                           (skilletegn)
+
+     #              \             '          Navn    Reserverte    Kontroll-    Redirigerings-         Space 
+                                  "                     ord       operatorer      operatorer            Tab  
+                                                                                                      Newline
+                                                                                                         |   
+                                             Funksjon    if         Newline       [n]<word               ;   
+                                             Variabel    for           |          ...                    &   
+                                             ...         ...           ;          [n]>word               (   
+                                                                       &          [n]>|word              )   
+                                                                       (          [n]>>word              <    
+                                                                       )          ...                    >    
+                                                                       ||         &>word
+                                                                       ;;         &>>word
+                                                                       |&
+                                                                       ;&
+                                                                       ;&
