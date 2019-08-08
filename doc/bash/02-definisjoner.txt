@@ -1,29 +1,29 @@
-                                                  kommandolinje
+                                                  Kommandolinje
                                                         |
                                                         |
                                                         |
                           --------------------------------------------------------------------------
                           |                                                        |               |
-                        token                                                   metategn        quoting
+                        Token                                                   Metategn        Quoting
                           |                                                        |               |
       -----------------------------------------                                    |               |
       |                                       |                                    |               |
-     ord                                operatorer                                 |               |
+     Ord                                 Operatorer                                |               |
       |                                       |                                    |               |
   -----------                     ------------------------                         |               |
   |         |                     |                      |                         |               |
-navn  reserverte ord     kontrolloperatorer    redirigeringsoperatorer             |               |
+Navn    Reserverte       Kontrolloperatorer    Redirigeringsoperatorer             |               |
+  |        ord                    |                      |                         |               |
   |         |                     |                      |                         |               |
   |         |                     |                      |                         |               |
-  |         |                     |                      |                         |               |
-funksjon    if                 newline               [n]<word                   space           escape
-variabel    for                |                     ...                        tab             '...'
-...         ...                ;                     [n]>word                   newline         "..."
-                               &                     [n]>|word                  |
-                               (                     [n]>>word                  ;
-                               )                     ...                        &
-                               ||                    &>word                     (
-                               ;;                    &>>word                    )
-                               |&                                               <
-                               ;&                                               >
-                               ;;&
+Funksjon    if                 Newline               [n]<word                    Space           Escape
+Variabel    for                   |                  ...                          Tab            '...'
+...         ...                   ;                  [n]>word                   Newline          "..."
+                                  &                  [n]>|word                     |
+                                  (                  [n]>>word                     ;
+                                  )                  ...                           &
+                                  ||                 &>word                        (
+                                  ;;                 &>>word                       )
+                                  |&                                               <
+                                  ;&                                               >
+                                  ;&
