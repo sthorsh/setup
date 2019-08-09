@@ -1,0 +1,21 @@
+                                         Kommandolinje
+                             
+                                        
+Kommentarer    Escapetegn       Quotes                         Tokens                                  Metategn  
+                              (sitattegn)                   (tegnsekvens)                            (skilletegn)
+
+     #              \             '            Navn    Nøkkelord     KontrollOp   RedirigeringsOp          ␣   
+                                  "                                                                        ␉   
+                                             Funksjon    if              ␤               <                 ␤
+                                             Variabel    for             ;               >                 ;
+                                                                         |               >|                |   
+                                                                         &               >>                &
+                                                                         (               &>                (
+                                                                         )               &>>               )   
+                                                                         ;;                                <    
+                                                                         ||                                >    
+                                                                         &&                   
+                                                                         ;&                   
+                                                                         |&
+                                                                         ;;&
+
