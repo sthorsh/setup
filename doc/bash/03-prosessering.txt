@@ -1,17 +1,15 @@
 Input
-  Fra terminal, string el script
+  Leser input fra terminal, string el script
+  Fjerner kommentarer #...
 
-Kommentarer
-  Ignorerer # ...
+  Parser kommandolinje 
 
-Tokenisering
-    Ekspander history event ! ^
-    Tokeniser vha space, tab mfl
-    Klassifiser tokens
-    Ekspander alias
+  Tokeniserer enkeltkommando
+  Prosesserer if, for etc
+  Ekspanderer history event !
+  Ekspanderer alias (som 1st token)
 
-  Parsing
-    Parse tokens i enkle og sammensatte cmds
+  Parser tokens                  
 
     Ekspander brace {n|char..n|char..n}...
     Ekspander tilde ~ ~+ ~- ~user
@@ -21,9 +19,11 @@ Tokenisering
     Prosesssubstitusjon ()
     Splitt ord vha $IFS
     Ekspander wildcards
+
     Fjern beskyttelse (quotes) \ "" ''
 
     Rediriger stdin, stdout, stderr
+
     Ekspander og tilordne rhs i var=rhs [cmd] ...
 
    Execution

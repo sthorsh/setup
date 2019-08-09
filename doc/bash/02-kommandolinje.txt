@@ -19,3 +19,14 @@ Kommentarer    Escapetegn       Quotes                         Tokens           
                                                                          |&
                                                                          ;;&
 
+Alias
+Kommandoer
+Funksjoner
+Opsjoner
+Params
+Script
+Binærfiler
+
+Variable
+Wildcards
+
