@@ -1,0 +1,55 @@
+OPERASJONER
+
+Leser input
+  Fra term, string, script
+  Hensyntar quotes (av/på)
+  Fjerner kommentarer #...
+
+Tokeniserer input
+  Vha metategn
+  Ekspanderer event !
+  Ekspanderer alias (1st token)
+
+Parser tokens: el/og
+  Kommando(er)
+  Variabeltilordning(er)
+  Redireksjon(er) av I/O
+
+Prosesserer kommando
+  Ekspanderer brace {n|char..n|char..n}...
+  Ekspanderer tilde ~ ~+ ~- ~user
+  Ekspanderer param ${}
+  Ekspanderer aritmetikk $(())
+  Substituerer kommando $()
+  Substituerer prosess ()
+  Splitter ord vha $IFS
+  Ekspanderer filnavn/wildcard
+  Fjerner forekomster av \ ' "
+
+-------------------------------------------
+
+  Redirigerer I/O
+    ...
+
+  Tilordner variabler
+    Ekspanderer rhs
+    Fjerner \ ' "
+    Tilordner verdi
+
+  Søker kommando (evt)
+    Funksjon
+    Builtin
+    I hash: script|binary (xfile)
+    I PATH: script|binary (xfile)
+    Script|binary med /
+    
+  Utfører kommando
+    Environment
+    Execution environment
+
+  Mottar signaler
+
+  Fullfører kommando
+    Avventer exit status 0..255
+    Eksponerer exit status som $?
+    
