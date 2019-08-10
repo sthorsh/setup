@@ -1,7 +1,0 @@
-  Søk-utfør kommando (cmd)
-    Funksjon
-    Builtin
-    I hash: script|binary (xfile)
-    I PATH: script|binary (xfile)
-    Script|binary med /
-    

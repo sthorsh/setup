@@ -1,32 +1,25 @@
-                                         Kommandolinje
-                             
-                                        
-Kommentarer    Escapetegn       Quotes                         Tokens                                  Metategn  
-                              (sitattegn)                   (tegnsekvens)                            (skilletegn)
-
-     #              \             '            Navn    Nøkkelord     KontrollOp   RedirigeringsOp          ␣   
-                                  "                                                                        ␉   
-                                             Funksjon    if              ␤               <                 ␤
-                                             Variabel    for             ;               >                 ;
-                                                                         |               >|                |   
-                                                                         &               >>                &
-                                                                         (               &>                (
-                                                                         )               &>>               )   
-                                                                         ;;                                <    
-                                                                         ||                                >    
-                                                                         &&                   
-                                                                         ;&                   
-                                                                         |&
-                                                                         ;;&
-
-Alias
-Kommandoer
-Funksjoner
-Opsjoner
-Params
-Script
-Binærfiler
-
-Variable
-Wildcards
-
+                                   Token                          
+                               (tegnsekvens)
+                                     |
+                         --------------------------
+                         |                        |
+                        Ord                   Operator
+                         |                        |
+                   -------------            -------------
+                   |           |            |           |
+   Kommentar   Nøkkelord     Navn       Kontroll   Redirigering     Metategn      Escape     Quotes    
+                                                                  (skilletegn)             (sitattegn) 
+                                                                                                      
+       #          if       Alias           |            <              ␣             \         '       
+                  ...      Binary          |&           >              ␉                       "
+                           Builtin         ;            >|             |            
+                           Funksjon        ␤            >>             ;          
+                           Opsjon          &            &>             ␤          
+                           Param           ||           &>>            &          
+                           Script          &&                          (          
+                           Variabel        ;;                          )          
+                           Wildcard?       ;&                          <          
+                           ...             ;;&                         >          
+                                           (   
+                                           )   
+                    
