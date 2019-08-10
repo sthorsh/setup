@@ -9,11 +9,11 @@
                       |           |                  |           |
 Quote   Kommentar   Navn      Nøkkelord          Kontroll   Redirigering     Metategn      
 
-  \         #       Alias         if                 |           <              ␣          
-  '                 Binary        ...                |&          >              ␉          
-  "                 Builtin                          ;           >|             |          
-                    Funksjon                         ␤           >>             ;          
-                    Opsjon                           &           &>             ␤          
+  \         #       Alias         if                 ␤           <              ␣          
+  '                 Binary        ...                |           >              ␉          
+  "                 Builtin                          |&          >|             |          
+                    Funksjon                         ;           >>             ;          
+                    Opsjon                           &           &>             ␤
                     Param                            ||          &>>            &          
                     Script                           &&                         (          
                     Variabel                         ;;                         )          

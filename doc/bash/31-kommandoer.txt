@@ -1,19 +1,20 @@
-  Kommandoer
-    Sekvens: ord
-    Skilletegn: space tab
-    Terminator: newline
+  Kommando
+    name [opts] [args]
+    Terminator: kontrolloperator
+    Exit status: iht waitpid el signal
 
-  Pipelines
-    Sekvens: kommandoer
-    Skilletegn: | |&
+----------------------------------------------
+  Pipeline
+    [time [-p]] [!] command₁ [ | or |& command₂ ] ...
     Terminator: newline
+    Exit status: 
 
-  Lister
-    Sekvens: pipelines
-    Skilletegn: ; && || &
+  Liste
+    pipeline₁ [ ; or & or && or || pipeline₂ ] ...
     Terminator: ; & newline
+    Exit status: 
 
-  Sammensatte kommandoer
+  Sammensatt kommando
     if
     case
     select
@@ -25,12 +26,12 @@
       ( list 
       { list; }
 
-  Coprosesses
+  Coprosess
     coproc [NAME] command [redir]
     Utføres i et eget subskall (som &)
     Exit status: commands' exit status
 
-  Funksjoner
+  Funksjon
     name () compound-command [ redirections ]
     function name [()] compound-command [ redirections ]
     Utføres i current shell context (ikke i en ny prosess)
