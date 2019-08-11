@@ -1,62 +1,55 @@
-  Kommando
-    name [opts] [args]
-    Terminator: kontrolloperator
-    Exit status: iht waitpid el signal
-
-----------------------------------------------
-  Pipeline
-    [time [-p]] [!] command₁ [ | or |& command₂ ] ...
-    Terminator: newline
-    Exit status: 
-
-  Liste
-    pipeline₁ [ ; or & or && or || pipeline₂ ] ...
-    Terminator: ; & newline
-    Exit status: 
-
-  Sammensatt kommando
-    if
-    case
-    select
-      (( expr ))
-      [[ expr ]]
-    for
-    while
-    until
-      ( list 
-      { list; }
-
-  Coprosess
-    coproc [NAME] command [redir]
-    Utføres i et eget subskall (som &)
-    Exit status: commands' exit status
-
-  Funksjon
-    name () compound-command [ redirections ]
-    function name [()] compound-command [ redirections ]
-    Utføres i current shell context (ikke i en ny prosess)
-    Exit status: siste kommandos exit status eller return n
-
---------------------------------------------------
-Script
-  $ source script
-  $ ./script               
-  $ bash script (ekvivalent m/forrige)
-  $ ./script &
-
---------------------------------------------------
-Kontrolloperator
-  nl    newline
-  |     pipeline
-  |&    pipeline
-  ;     liste sekvensielt
-  &     liste i parallell i eget subskall
-  &&    liste OG
-  ||    liste ELLER
-  ()    compound command (subskall/-prosess)
-  ;;    case break
-  ;&    case fall-through
-  ;;&   case if-match fall-through
+Command
+  name [opts] [args]
+  Exit status: 0..255
 
 Pipeline
-  !     pipeline not
+  [time [-p]] [!] cmd₁ [| or |& cmd₂] ...
+  Exit status: same as last cmd
+
+Liste
+  pipeline₁ [&& or || or ; or & pipeline₂] ... [; or & or ␤]
+  Exit status: same as last cmd, except for & which returns 0
+
+()
+  ( list )
+  Exit status: exit status of the list
+
+{}
+  { list; }
+  Exit status: exit status of the list
+
+(())
+  (( expr ))
+  Exit status: 0 or 1 depending on evaluation of arithmetic expr
+
+[[]]
+  [[ expr ]]
+  Exit status: 0 or 1 depending on evaluation of conditional expr
+
+if
+  if cmd₁; then cmd₂; [elif cmd₃; then cmd₄;] ... [else cmd₅;] fi
+  Exit status: same as last cmd, or 0 if no test is true
+
+case, select
+  Reference Manual 3.2.4.2
+
+for
+  for name [ [in [words ...] ] ;  ] do cmds; done   
+  Exit status: same as last cmd, or 0 if no cmds are executed
+  for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
+  Exit status: same as last cmd, or false if any expr is invalid
+ 
+until
+  until cmds₁; do cmds₂; done
+  Exit status: same as last cmd, or 0 if no cmds are executed
+
+while
+  while cmds₁; do cmds₁; done
+  Exit status: same as last cmd, or 0 if no cmds are executed
+
+Coprosess
+  coproc [name] cmd [redir]
+  Exit status: same as cmd
+
+GNU Parallell
+  Reference Manual 3.2.6
