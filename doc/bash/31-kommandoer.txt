@@ -10,43 +10,44 @@ Liste
   pipeline₁ [&& or || or ; or & pipeline₂] ... [; or & or ␤]
   Exit status: same as last cmd, except for & which returns 0
 
-()
-  ( list )
-  Exit status: exit status of the list
-
-{}
-  { list; }
-  Exit status: exit status of the list
-
-(())
-  (( expr ))
-  Exit status: 0 or 1 depending on evaluation of arithmetic expr
-
-[[]]
-  [[ expr ]]
-  Exit status: 0 or 1 depending on evaluation of conditional expr
-
-if
-  if cmd₁; then cmd₂; [elif cmd₃; then cmd₄;] ... [else cmd₅;] fi
-  Exit status: same as last cmd, or 0 if no test is true
-
-case, select
-  Reference Manual 3.2.4.2
-
-for
-  for name [ [in [words ...] ] ;  ] do cmds; done   
-  Exit status: same as last cmd, or 0 if no cmds are executed
-  for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
-  Exit status: same as last cmd, or false if any expr is invalid
- 
-until
-  until cmds₁; do cmds₂; done
-  Exit status: same as last cmd, or 0 if no cmds are executed
-
-while
-  while cmds₁; do cmds₁; done
-  Exit status: same as last cmd, or 0 if no cmds are executed
-
+Compound command
+  ()
+    ( list )
+    Exit status: exit status of the list
+  
+  {}
+    { list; }
+    Exit status: exit status of the list
+  
+  (())
+    (( expr ))
+    Exit status: 0 or 1 depending on evaluation of arithmetic expr
+  
+  [[]]
+    [[ expr ]]
+    Exit status: 0 or 1 depending on evaluation of conditional expr
+  
+  if
+    if cmd₁; then cmd₂; [elif cmd₃; then cmd₄;] ... [else cmd₅;] fi
+    Exit status: same as last cmd, or 0 if no test is true
+  
+  case, select
+    Reference Manual 3.2.4.2
+  
+  for
+    for name [ [in [words ...] ] ;  ] do cmds; done   
+    Exit status: same as last cmd, or 0 if no cmds are executed
+    for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
+    Exit status: same as last cmd, or false if any expr is invalid
+   
+  until
+    until cmds₁; do cmds₂; done
+    Exit status: same as last cmd, or 0 if no cmds are executed
+  
+  while
+    while cmds₁; do cmds₁; done
+    Exit status: same as last cmd, or 0 if no cmds are executed
+  
 Coprosess
   coproc [name] cmd [redir]
   Exit status: same as cmd
