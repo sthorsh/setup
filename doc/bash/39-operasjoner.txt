@@ -10,21 +10,23 @@ Tokeniserer input
   Ekspanderer event !
   Ekspanderer alias (1st token)
 
-Parser tokens: el/og
-  Kommando(er)
-  Variabeltilordning(er)
-  Redireksjon(er) av I/O
+Parser tokens: og/el
+  Variabeltilordninger
+  Kommandoer
+  Redireksjoner
 
-Prosesserer kommando
-  Ekspanderer brace {n|char..n|char..n}...
-  Ekspanderer tilde ~ ~+ ~- ~user
-  Ekspanderer param ${}
-  Ekspanderer aritmetikk $(())
-  Substituerer kommando $()
-  Substituerer prosess ()
-  Splitter ord vha $IFS
-  Ekspanderer filnavn/wildcard
-  Fjerner forekomster av \ ' "
+  Ekspansjoner
+    str{str,... or x..y[..N]}str        
+    ~ ~user ~+ ~-                       
+    $param or ${param[operator][operand]}     
+    $(())                               
+    $()                                 
+    ?Substituerer prosess ()
+    Splitter ord vha $IFS
+    Ekspanderer filnavn/wildcard
+
+  Quote removal
+    ?Fjerner forekomster av \ ' "
 
 -------------------------------------------
 

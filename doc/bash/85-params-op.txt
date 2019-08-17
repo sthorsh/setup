@@ -1,0 +1,16 @@
+Params p
+    p=                      assign 
+    p+=                     append 
+    ${#p}                   length
+    ${p:N₁:N₂}              substring
+    ${p:-word}              $p or word
+    ${p:+word}              word or null
+    ${p:=word}              $p or word-assign 
+    ${p:?word}              $p or word-stderr-exit
+    ${p#pattern}            rm pattern
+    ${p##pattern}           rm pattern (greedy)
+    ${p%pattern}            rm pattern
+    ${p%%pattern}           rm pattern (greedy)
+    ${p/pattern/string      replace pattern
+    ${p//pattern/string     replace all occurrences of pattern
+

@@ -24,19 +24,3 @@ Boolske
   e₁ -a e₂                e₁ og e₂ er true (kun [])
   e₁ -o e₂                e₁ el e₂ er true (kun [])
 
-Params p
-  p=                      assign 
-  p+=                     append 
-  ${#p}                   lengden
-  ${p:-word}              word el $p
-  ${p:=word}              word-assign el $p
-  ${p:?word}              word-stderr-exit el $p
-  ${p:+word}              null el word
-  ${p:offset:lengde}      substreng
-  ${p#pattern}            rm pattern
-  ${p##pattern}           rm pattern (greedy)
-  ${p%pattern}            rm pattern
-  ${p%%pattern}           rm pattern (greedy)
-  ${p/pattern/string      erstatt pattern
-  ${p//pattern/string     erstatt pattern (alle forekomster)
-
