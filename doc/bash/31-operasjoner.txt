@@ -15,22 +15,20 @@ Parser tokens: og/el
   Kommandoer
   Redireksjoner
 
-  Ekspansjoner
-    str{str,... or x..y[..N]}str        
-    ~ ~user ~+ ~-                       
-    $param or ${param[operator][operand]}     
-    $(())                               
-    $()                                 
-    ?Substituerer prosess ()
-    Splitter ord vha $IFS
-    Ekspanderer filnavn/wildcard
-
-  Quote removal
-    ?Fjerner forekomster av \ ' "
+Command processing
+  Brace expansion: str{str,...}str or str{x..y..N}str
+  Tilde expansion: ~ or ~user or ~+ or ~-
+  Param expansion: $param or ${[op]param[op][operand]}
+  Command substitution: $(cmd)
+  Arithmetic expansion: $((expr))
+  Process substitution: <(list) or >(list)
+  Word splitting: $IFS
+  Filename expansion: TODO
+  Quote removal: \ ' "
 
 -------------------------------------------
 
-  Redirigerer I/O
+  Redirections
     ...
 
   Tilordner variabler
@@ -44,7 +42,7 @@ Parser tokens: og/el
     I hash: script|binary (xfile)
     I PATH: script|binary (xfile)
     Script|binary med /
-    
+
   Utfører kommando
     Environment
     Execution environment
@@ -54,4 +52,4 @@ Parser tokens: og/el
   Fullfører kommando
     Avventer exit status 0..255
     Eksponerer exit status som $?
-    
+

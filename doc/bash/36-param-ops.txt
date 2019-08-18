@@ -1,0 +1,37 @@
+Param operators
+  p=                        assign 
+  p+=                       append 
+
+  $p                        value
+
+  ${#p}                     length
+
+  ${!p}                     indirect expansion
+  ${!p[*]}                  array indices or keys
+  ${!p[@]}                  array indices or keys
+  ${!prefix*}               param names starting with prefix
+  ${!prefix@}               param names starting with prefix
+
+  ${p@aAEPQ}                attrs, assign, escape, prompt, quoted
+
+  ${p:N₁:N₂}                substring
+  ${p:-word}                $p or word
+  ${p:=word}                $p or word (p=word)
+  ${p:?word}                $p or word (word>2)
+  ${p:+word}                word or null
+
+  ${p^pattern}              convert case
+  ${p^^pattern}             convert case (all)
+
+  ${p,pattern}              convert case
+  ${p,,pattern}             convert case (all)
+
+  ${p#pattern}              rm pattern
+  ${p##pattern}             rm pattern (greedy)
+
+  ${p%pattern}              rm pattern
+  ${p%%pattern}             rm pattern (greedy)
+
+  ${p/pattern/string        replace pattern 
+  ${p//pattern/string       replace pattern (all)
+
