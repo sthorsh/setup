@@ -17,8 +17,7 @@ Bindinger
   C-A-g                  glob-complete-word * ?
   C-A-i                  dynamic-complete-history
 
-  C-A-e                  expand ! alias ~ $
-  C-A-w                  glob-expand-word * ?
+  C-A-e                  expand ...
 
   C-v                    quoted-insert
 
