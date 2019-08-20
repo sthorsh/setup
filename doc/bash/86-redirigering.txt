@@ -1,15 +1,41 @@
-Input
-  [n]<word          input
+Command/process I/O
+  • stdin 0 kbd (I)
+  • stdout 1 screen (O)
+  • stderr 2 screen
+
+Redirection
+  • allows commands’ file handles to be opened, closed, duplicated, made to refer to different files
+  • can change the files the command reads from and writes to
+  • may also be used to modify file handles in the current shell execution environment
+
+Redirection operators
+  • may precede a simple command
+  • may appear anywhere within a simple command
+  • may follow a simple command
+
+Redirections
+  • the rhs i.e <word> undergo expansions and quote removal
+  • are processed in the order they appear, from left to right
+  • the order of redirections is significant e.g > 2>&1 not 2>&1 >
+
+
+Notation
+  redirection-operator<word>
+  <file-descriptor-number>redirection-operator<word>
+  <varname>redirection-operator<word>
+
+Stdin
+  <word          input
   ...
 
-Output
-  [n]>word          output
-  [n]>|word         force output
-  in]>>word         append output
+Stdout
+  >word          output
+  >|word         force output
+  >>word         append output
   ...
 
 Stdout/stderr
-  &>word            som >word 6>&1
-  &>>word           som >>word 2>&1
+  &>word         som >word 6>&1
+  &>>word        som >>word 2>&1
   ...
 
