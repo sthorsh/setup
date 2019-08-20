@@ -1,0 +1,15 @@
+Filename expansion
+  ?
+  * 
+  ** 
+  **/
+  [abc] 
+  [!abc] 
+  [a-cx-z] 
+  [[:character-class:]]
+  ?(pattern-list)
+  *(pattern-list)
+  +(pattern-list)
+  @(pattern-list)
+  !(pattern-list)
+
