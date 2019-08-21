@@ -1,6 +1,13 @@
 Bindinger
   A-N                    arg: N
 
+  C-l                    clear-screen
+
+  C-x (                  macro record
+  C-x )                  macro record stop
+  C-x e                  macro exec
+  C-x C-e                macro edit-exec
+
   C-f                    forward
   A-f                    frem word
   C-e                    EOL
@@ -10,14 +17,6 @@ Bindinger
 
   C-]                    search →
   C-A-]                  search ←
-
-  Tab                    complete $ ~ @ cmd / (rep)
-  A-*                    insert-completions $ ~ @ cmd /
-  C-A-b                  complete-into-braces
-  C-A-g                  glob-complete-word * ?
-  C-A-i                  dynamic-complete-history
-
-  C-A-e                  expand ...
 
   C-v                    quoted-insert
 
@@ -38,7 +37,15 @@ Bindinger
   C-y                    yank kill-ring
   A-y                    yank-pop kill-ring (rep)
 
-  C-l                    clear-screen
+  Tab                    complete $ ~ @ cmd / (rep)
+  A-*                    insert-completions $ ~ @ cmd /
+  C-A-b                  complete-into-braces
+  C-A-g                  glob-complete-word * ?
+  C-A-i                  dynamic-complete-history
+
+  C-A-e                  expansion
+  C-A-f                  filename expansion
+
   C-j                    lf (nix eol)
   C-m                    cr (mac eol)
 
@@ -54,11 +61,6 @@ Bindinger
   C-A-y                  yank prev cmdline arg 0..N
   A-.                    yank prev cmdline arg 0..N (rep)
 
-  C-x C-u                undo
   A-r                    revert-line
-
-  C-x (                  macro record
-  C-x )                  macro record stop
-  C-x e                  macro exec
-  C-x C-e                macro edit-exec
+  C-x C-u                undo
 
