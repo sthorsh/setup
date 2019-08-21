@@ -37,18 +37,6 @@ Bindinger
   C-y                    yank kill-ring
   A-y                    yank-pop kill-ring (rep)
 
-  Tab                    complete $ ~ @ cmd / (rep)
-  A-*                    insert-completions $ ~ @ cmd /
-  C-A-b                  complete-into-braces
-  C-A-g                  glob-complete-word * ?
-  C-A-i                  dynamic-complete-history
-
-  C-A-e                  expansion
-  C-A-f                  filename expansion
-
-  C-j                    lf (nix eol)
-  C-m                    cr (mac eol)
-
   C-r C-[gjm]            reverse-i-search (rep)
   C-p                    prev cmdline
   C-n                    next cmdline
@@ -61,6 +49,18 @@ Bindinger
   C-A-y                  yank prev cmdline arg 0..N
   A-.                    yank prev cmdline arg 0..N (rep)
 
+  Tab                    complete $ ~ @ cmd / (rep)
+  A-*                    insert-completions $ ~ @ cmd /
+  C-A-b                  complete-into-braces
+  C-A-g                  glob-complete-word * ?
+  C-A-i                  dynamic-complete-history
+
+  C-A-e                  expansion
+  C-A-f                  filename expansion
+
   A-r                    revert-line
   C-x C-u                undo
+
+  C-j                    lf (nix eol)
+  C-m                    cr (mac eol)
 
