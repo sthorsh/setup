@@ -13,7 +13,7 @@ bind 'set menu-complete-display-prefix on'
 bind 'set show-all-if-ambiguous on'
 bind '"\e\C-b":complete-into-braces'
 bind '"\e\C-g":glob-complete-word'
-bind '"\e\C-e":glob-expand-word'
+bind '"\e\C-f":glob-expand-word'
 bind '"\C-q":unix-filename-rubout'
 
 # Bindings tty
