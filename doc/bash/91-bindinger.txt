@@ -1,66 +1,68 @@
 Bindinger
-  A-N                    arg: N
 
   C-l                    clear-screen
 
-  C-x (                  macro record
-  C-x )                  macro record stop
-  C-x e                  macro exec
-  C-x C-e                macro edit-exec
+  C-x (                  start macro
+  C-x )                  end macro
+  C-x e                  exec macro
+  C-x C-e                edit macro
+
+  A-N                    arg: N
+
+  C-r C-[gjm]            reverse-i-search (rep)
+  C-s                    i-search (rep)
+  C-p                    prev cmdline
+  C-n                    next cmdline
+  C-o                    operate-and-get-next
 
   C-f                    forward
-  A-f                    frem word
+  A-f                    forward word
   C-e                    EOL
   C-b                    back
   A-b                    back word
   C-a                    BOL
 
-  C-]                    search →
-  C-A-]                  search ←
+  C-]                    char-search →
+  C-[                    char-search ←
 
-  C-v                    quoted-insert
-
-  A-c                    capital
+  A-c                    caps
   A-l                    lowercase
   A-u                    uppercase
   C-t                    transpose
   A-t                    transpose word 
 
-  C-d                    delete
-  A-d                    kill word
-  C-k                    kill eol
-  C-h                    delete
-  C-q                    kill filename
-  C-w                    kill word
-  C-u                    kill bol
+    !*                     prev cmdline opts/args
+    !a[:gs/x/y][^:N$]      prev cmdline [sub][yank]
+    ^x^y                   prev cmdline sub first x
 
-  C-y                    yank kill-ring
-  A-y                    yank-pop kill-ring (rep)
+    C-A-y                  yank prev cmdline arg 0..N
+    A-.                    yank prev cmdline arg 0..N (rep)
 
-  C-r C-[gjm]            reverse-i-search (rep)
-  C-p                    prev cmdline
-  C-n                    next cmdline
-  C-o                    operate-and-get-next
+    C-v                    quoted-insert
 
-  !*                     prev cmdline opts/args
-  !a[:gs/x/y][^:N$]      prev cmdline [sub][yank]
-  ^x^y                   prev cmdline sub first x
+    C-y                    yank kill-ring
+    A-y                    yank-pop kill-ring (rep)
 
-  C-A-y                  yank prev cmdline arg 0..N
-  A-.                    yank prev cmdline arg 0..N (rep)
+    C-i (or Tab)           complete $ ~ @ cmd / (rep)
+    A-*                    insert-completions $ ~ @ cmd /
+    C-A-b                  complete-into-braces
+    C-A-g                  glob-complete-word * ?
+    C-A-i                  dynamic-complete-history
 
-  Tab                    complete $ ~ @ cmd / (rep)
-  A-*                    insert-completions $ ~ @ cmd /
-  C-A-b                  complete-into-braces
-  C-A-g                  glob-complete-word * ?
-  C-A-i                  dynamic-complete-history
+    C-A-e                  expansion
+    C-A-f                  filename expansion
 
-  C-A-e                  expansion
-  C-A-f                  filename expansion
+    C-d                    delete
+    A-d                    kill word
+    C-k                    kill eol
+    C-h                    delete
+    C-q                    kill filename
+    C-w                    kill word
+    C-u                    kill bol
 
-  A-r                    revert-line
-  C-x C-u                undo
+    A-r                    revert-line
+    C-x C-u                undo
 
-  C-j                    lf (nix eol)
-  C-m                    cr (mac eol)
+    C-j                    lf (nix eol)
+    C-m                    cr (mac eol)
 
