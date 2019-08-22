@@ -7,13 +7,22 @@ Bindinger
   C-x e                  exec macro
   C-x C-e                edit macro
 
-  A-N                    arg: N
+  A-N                    arg:N
 
   C-r C-[gjm]            reverse-i-search (rep)
   C-s                    i-search (rep)
   C-p                    prev cmdline
   C-n                    next cmdline
   C-o                    operate-and-get-next
+
+  !cmd                   yank prev cmdline
+  !cmd:[g]s/x/y          yank prev cmdline, sub [all] x with y
+  ^x^y                   yank prev cmdline, sub first x with y
+  !*                     yank prev cmdline opts & args
+  !cmd[:N or ^ or $]     yank prev cmdline words
+
+  C-A-y                   yank prev cmdline word 0..N
+  A-.                     yank prev cmdline arg 0..N (rep)
 
   C-f                    forward
   A-f                    forward word
@@ -31,14 +40,15 @@ Bindinger
   C-t                    transpose
   A-t                    transpose word 
 
-    !*                     prev cmdline opts/args
-    !a[:gs/x/y][^:N$]      prev cmdline [sub][yank]
-    ^x^y                   prev cmdline sub first x
-
-    C-A-y                  yank prev cmdline arg 0..N
-    A-.                    yank prev cmdline arg 0..N (rep)
-
     C-v                    quoted-insert
+
+    C-d                    delete
+    A-d                    kill word
+    C-k                    kill eol
+    C-h                    delete
+    C-q                    kill filename
+    C-w                    kill word
+    C-u                    kill bol
 
     C-y                    yank kill-ring
     A-y                    yank-pop kill-ring (rep)
@@ -51,14 +61,6 @@ Bindinger
 
     C-A-e                  expansion
     C-A-f                  filename expansion
-
-    C-d                    delete
-    A-d                    kill word
-    C-k                    kill eol
-    C-h                    delete
-    C-q                    kill filename
-    C-w                    kill word
-    C-u                    kill bol
 
     A-r                    revert-line
     C-x C-u                undo
