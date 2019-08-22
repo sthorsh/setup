@@ -2,12 +2,12 @@ Bindinger
 
   C-l                    clear-screen
 
+  A-N                    arg:N
+
   C-x (                  start macro
   C-x )                  end macro
   C-x e                  exec macro
   C-x C-e                edit macro
-
-  A-N                    arg:N
 
   C-r C-[gjm]            reverse-i-search (rep)
   C-s                    i-search (rep)
@@ -17,12 +17,13 @@ Bindinger
 
   !cmd                   yank prev cmdline
   !cmd:[g]s/x/y          yank prev cmdline, sub [all] x with y
-  ^x^y                   yank prev cmdline, sub first x with y
   !*                     yank prev cmdline opts & args
   !cmd[:N or ^ or $]     yank prev cmdline words
 
-  C-A-y                   yank prev cmdline word 0..N
-  A-.                     yank prev cmdline arg 0..N (rep)
+  ^x^y                   yank prev cmdline, sub first x with y
+
+  A-.                    yank prev cmdline word 0..N (rep)
+  C-A-y                  yank prev cmdline word 0..N
 
   C-f                    forward
   A-f                    forward word
@@ -40,7 +41,7 @@ Bindinger
   C-t                    transpose
   A-t                    transpose word 
 
-    C-v                    quoted-insert
+  C-v                    quoted-insert
 
     C-d                    delete
     A-d                    kill word
