@@ -1,29 +1,8 @@
 Bindinger
 
-  C-l                    clear-screen
-
   A-N                    arg:N
 
-  C-x (                  start macro
-  C-x )                  end macro
-  C-x e                  exec macro
-  C-x C-e                edit macro
-
-  C-r C-[gjm]            reverse-i-search (rep)
-  C-s                    i-search (rep)
-  C-p                    prev cmdline
-  C-n                    next cmdline
-  C-o                    operate-and-get-next
-
-  !cmd                   yank prev cmdline
-  !cmd:[g]s/x/y          yank prev cmdline, sub [all] x with y
-  !*                     yank prev cmdline opts & args
-  !cmd[:N or ^ or $]     yank prev cmdline words
-
-  ^x^y                   yank prev cmdline, sub first x with y
-
-  A-.                    yank prev cmdline word 0..N (rep)
-  C-A-y                  yank prev cmdline word 0..N
+  C-v                    quoted-insert
 
   C-f                    forward
   A-f                    forward word
@@ -41,31 +20,51 @@ Bindinger
   C-t                    transpose
   A-t                    transpose word 
 
-  C-v                    quoted-insert
+  C-d                    delete
+  A-d                    kill word
+  C-k                    kill eol
+  C-h                    delete
+  C-q                    kill filename
+  C-w                    kill word
+  C-u                    kill bol
 
-    C-d                    delete
-    A-d                    kill word
-    C-k                    kill eol
-    C-h                    delete
-    C-q                    kill filename
-    C-w                    kill word
-    C-u                    kill bol
+  C-y                    yank kill-ring
+  A-y                    yank-pop kill-ring (rep)
 
-    C-y                    yank kill-ring
-    A-y                    yank-pop kill-ring (rep)
+  C-x (                  start macro
+  C-x )                  end macro
+  C-x e                  exec macro
+  C-x C-e                edit macro
 
-    C-i (or Tab)           complete $ ~ @ cmd / (rep)
-    A-*                    insert-completions $ ~ @ cmd /
-    C-A-b                  complete-into-braces
-    C-A-g                  glob-complete-word * ?
-    C-A-i                  dynamic-complete-history
+  C-p                    prev cmdline
+  C-n                    next cmdline
+  C-o                    operate-and-get-next
+  C-r C-[gjm]            reverse-i-search (rep)
+  C-s                    i-search (rep)
 
-    C-A-e                  expansion
-    C-A-f                  filename expansion
+  !cmd                   prev cmdline
+  !cmd:[g]s/x/y          prev cmdline, sub [all] x with y
+  !*                     prev cmdline opts & args
+  !cmd[:N or ^ or $]     prev cmdline words
 
-    A-r                    revert-line
-    C-x C-u                undo
+  ^x^y                   prev cmdline, sub first x with y
 
-    C-j                    lf (nix eol)
-    C-m                    cr (mac eol)
+  A-.                    prev cmdline word 0..N (rep)
+  C-A-y                  yank prev cmdline word 0..N
 
+  C-i or Tab             complete $ ~ @ cmd / (rep)
+  A-*                    insert-completions $ ~ @ cmd /
+  C-A-b                  complete-into-braces
+  C-A-g                  glob-complete-word * ?
+  C-A-i                  dynamic-complete-history
+
+  C-A-e                  expansion
+  C-A-f                  filename expansion
+
+  A-r                    revert-line
+  C-x C-u                undo
+
+  C-j                    accept-line (nix eol lf)
+  C-m                    accept-line (mac eol cr)
+
+  C-l                    clear-screen
