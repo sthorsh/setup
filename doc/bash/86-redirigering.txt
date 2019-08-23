@@ -1,3 +1,9 @@
+Input
+   <word      (for cmd) open file word for reading on stdin
+  N<word      (for cmd) open file word for reading on file descriptor 3..9
+
+ --------------------------------------------------
+
 Redirection
   • allows commands’ file handles to be opened, closed, duplicated, made to refer to different files
   • can change the files the command reads from and writes to
