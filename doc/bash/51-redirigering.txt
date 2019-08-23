@@ -1,21 +1,7 @@
-File descriptor
-  Stdin: fd0 (bash)
-  Stdout: fd1 (bash)
-  Stderr: fd2 (bash)
-  Others: fd3..fd255
-
-File descriptor table
-  fd0 ---> /dev/pts1
-  fd1 ---> /dev/pts1
-  fd2 ---> /dev/pts1
-  fdN ---> ...
-
-Operations
-  Open
-  Close
-  Read
-  Write
-  Copy/duplicate
+Background
+  Bash opens stdin (fd 0), stdout (fd 1) and stderr (fd 2)
+  ...
+  Redirections in bash are all about manipulating file descriptors
 
 Redirections
   <file         redirect file to stdin (fd 0)
