@@ -1,6 +1,38 @@
-Input
-   <word      (for cmd) open file word for reading on stdin
-  N<word      (for cmd) open file word for reading on file descriptor 3..9
+File descriptor
+  Stdin: fd0 (bash)
+  Stdout: fd1 (bash)
+  Stderr: fd2 (bash)
+  Others: fd3..fd255
+
+File descriptor table
+  fd0 ---> /dev/pts1
+  fd1 ---> /dev/pts1
+  fd2 ---> /dev/pts1
+  fdN ---> ...
+
+Operations
+  Open
+  Close
+  Read
+  Write
+  Copy/duplicate
+
+Redirections
+  <file         redirect file to stdin (fd 0)
+  <<EOL         redirect a bunch of text to stdin (fd 0) (HERE)
+  <<<"a b c"    redirect a single line of text to stdin
+
+  >file         redirect stdout (fd 1) to file
+  >/dev/null    redirect stdout (fd 1) to be discarded
+
+  2>file        redirect stderr (fd 2) to file
+
+  >file 2>&1    redirect stdout and duplicate stderr (left-to-right)
+  
+
+
+
+
 
  --------------------------------------------------
 
