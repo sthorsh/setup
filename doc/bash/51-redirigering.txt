@@ -1,73 +1,39 @@
-Background
-  Bash opens stdin (fd 0), stdout (fd 1) and stderr (fd 2)
-  ...
-  Redirections in bash are all about manipulating file descriptors
+Fildeskriptorer
+  Fildeskriptor: 0/stdin, 1/stdout, 2/stderr,...255
+  Per-prosess fildeskriptortabell: fd0 -> fil,...255
+  Operasjoner: open, close, read (r), write (w), dup
+  Bash åpner fd0, fd1, fd2 ved start, program åpner fd3...
+  En kommando arver fildeskriptorer fra sin foreldreprosess
+  Redirigering handler om å manipulere fildeskriptortabeller
 
-Redirections
-  <file         redirect file to stdin (fd 0)
-  <<EOL         redirect a bunch of text to stdin (fd 0) (HERE)
-  <<<"a b c"    redirect a single line of text to stdin
+Operatorer
+  Kan forekomme hvorsomhelst i cmd
+  RHS utsettes for ekspansjon og quote removal
+  Prosesseres fra venstre mot høyre dvs rekkefølge teller
 
-  >file         redirect stdout (fd 1) to file
-  >/dev/null    redirect stdout (fd 1) to be discarded
+Redirigeringer
+  cmd < fil           fil til stdin
+  cmd << EOL          tekst til stdin
+  cmd <<< "..."       string til stdin
 
-  2>file        redirect stderr (fd 2) to file
+  cmd > fil           stdout til fil
+  cmd > /dev/null     stdout til forkast
+  cmd >> fil          stdout til fil (append)
+  cmd >| fil          stdout til fil (overwrite)
 
-  >file 2>&1    redirect stdout and duplicate stderr (left-to-right)
-  
+  cmd 2> fil          stderr til fil
 
+  cmd > fil 2>&1      stdout til fil; stderr dup stdout
 
+  exec 3< fil         tilordne fd3 for r fra fil (open)
+  exec 3>&-           dup fd3 til - (close)
 
+  exec 3> fil         tilordne fd3 for w til fil (open)
+  echo >&3 ...        dup fd1 til fd3 (write)
 
+  exec 3<>fil         tilordne fd3 for rw av fil (open)
 
- --------------------------------------------------
-
-Redirection
-  • allows commands’ file handles to be opened, closed, duplicated, made to refer to different files
-  • can change the files the command reads from and writes to
-  • may also be used to modify file handles in the current shell execution environment
-
-Redirection operators
-  • may precede a simple command
-  • may appear anywhere within a simple command
-  • may follow a simple command
-
-Redirections
-  • the rhs i.e <word> undergo expansions and quote removal
-  • are processed in the order they appear, from left to right
-  • the order of redirections is significant e.g > 2>&1 not 2>&1 >
-
-Command/process I/O
-  • Input: stdin kbd, ...
-  • Output: stdout screen, ...
-  • Error: stderr screen, ...
-
-Filer
-  • /dev/fd/N 
-  • /dev/null
-  • /dev/stdin
-  • /dev/stdout
-  • /dev/stderr
-  • Redirections using file descriptors greater than 9 should be used with care, as they may
-conflict with file descriptors the shell uses internally.
-
-Notation
-  redirection-operator<word>
-  <file-descriptor-number>redirection-operator<word>
-  <varname>redirection-operator<word>
-
-Stdin
-  <word          input
-  ...
-
-Stdout
-  >word          output
-  >|word         force output
-  >>word         append output
-  ...
-
-Stdout/stderr
-  &>word         som >word 6>&1
-  &>>word        som >>word 2>&1
+  cmd₁ | cmd₂         cmd₁ stdout til cmd₂ stdin
+  cmd₁ 2>&1 | cmd₂    cmd₁ stdout og stderr til cmd₂ stdin
   ...
 

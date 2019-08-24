@@ -43,6 +43,12 @@ Command processing
     I PATH: script|binary (xfile)
     Script|binary med /
 
+  When bash executes a command (big picture)
+    • Bash forks a child process
+    • The command inherits file descriptors from the parent process
+    • Bash sets up the command redirections
+    • Bash executes the command
+
   Utfører kommando
     Environment
     Execution environment

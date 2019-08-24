@@ -1,0 +1,7 @@
+  When bash executes a command:
+    • Bash forks a child process
+    • The command inherits file descriptors from the parent process
+    • Bash sets up the command redirections
+    • Bash executes the command
+
+
