@@ -1,37 +1,39 @@
 Fildeskriptorer
-  Fildeskriptor: 0/stdin, 1/stdout, 2/stderr,...255
-  Per-prosess fildeskriptortabell: fd0 -> fil,...255
-  Operasjoner: open, close, read (r), write (w), dup
-  Bash åpner fd0, fd1, fd2 ved start, program åpner fd3...
+  Fildeskriptor: 0, 1, 2...255
+  Per-prosess fildeskriptortabell: lsof -p $$
+  Fildeskriptortabell --> filtabell --> inodetabell
+  Operasjoner: open, close, read, write, copy/dup(licate)
+  Bash åpner fd0, fd1, og fd2; fd3... åpnes programmatisk
   En kommando arver fildeskriptorer fra sin foreldreprosess
   Redirigering handler om å manipulere fildeskriptortabeller
 
 Operatorer
-  Kan forekomme hvorsomhelst i cmd
+  Kan stå foran, i, eller etter cmd
   RHS utsettes for ekspansjon og quote removal
   Prosesseres fra venstre mot høyre dvs rekkefølge teller
 
 Redirigeringer
-  cmd < fil           fil til stdin
-  cmd << EOL          tekst til stdin
-  cmd <<< "..."       string til stdin
+  cmd < fil           stdin read fra fil
+  cmd << EOL          stdin read fra here-doc
+  cmd <<< "..."       stdin read fra here-string
 
-  cmd > fil           stdout til fil
-  cmd > /dev/null     stdout til forkast
-  cmd >> fil          stdout til fil (append)
-  cmd >| fil          stdout til fil (overwrite)
+  cmd > fil           stdout write til fil
+  cmd >| fil          stdout overwrite fil
+  cmd >> fil          stdout append til fil
+  cmd > /dev/null     stdout write til null device
 
-  cmd 2> fil          stderr til fil
+  cmd 2> fil          stderr write til fil
+  cmd > fil 2>&1      stderr dup stdout
 
-  cmd > fil 2>&1      stdout til fil; stderr dup stdout
+  exec 3< fil         open fd3 for read fra fil
+  read -n 5 var <&3   read dvs stdin dup fd3
+  exec 3<&-           close fd3 dvs fd3 dup -
 
-  exec 3< fil         tilordne fd3 for r fra fil (open)
-  exec 3>&-           dup fd3 til - (close)
+  exec 3> fil         open fd3 for write til fil
+  echo foo >&3        write dvs stdout dup fd3
+  exec 3>&-           close fd3 dvs fd3 dup -
 
-  exec 3> fil         tilordne fd3 for w til fil (open)
-  echo >&3 ...        dup fd1 til fd3 (write)
-
-  exec 3<>fil         tilordne fd3 for rw av fil (open)
+  exec 3<>fil         open fd3 for read-write fra-til fil
 
   cmd₁ | cmd₂         cmd₁ stdout til cmd₂ stdin
   cmd₁ 2>&1 | cmd₂    cmd₁ stdout og stderr til cmd₂ stdin
