@@ -1,8 +1,9 @@
 Kommandosøk
+  Kommando med / i navn
   Funksjon
   Shell builtin
-  Eksekverbar fil i $PATH (binary/script)
-  Eksekverbar fil med / i navn (binary/script)
+  Eksekverbar fil i $PATH
+  Shell script
 
 Execution environment
 
