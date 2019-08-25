@@ -12,10 +12,10 @@ Tokeniserer input
 
 Parser tokens: og/el
   Variabeltilordninger
-  Kommandoer
   Redireksjoner
+  Ord: cmd opts arg → ekspansjoner
 
-Command processing
+Prosesserer ord: ekspansjoner
   Brace expansion: str{str,...}str or str{x..y..N}str
   Tilde expansion: ~ or ~user or ~+ or ~-
   Param expansion: $param or ${[op]param[op][operand]}
@@ -26,15 +26,18 @@ Command processing
   Filename expansion: TODO
   Quote removal: \ ' "
 
--------------------------------------------
+  Redirigeringer
+    Ref 51-redirigering
+    → current env
+    → command env
 
-  Redirections
-    ...
-
-  Tilordner variabler
+  Variabeltilordning
     Ekspanderer rhs
     Fjerner \ ' "
     Tilordner verdi
+    → current env
+    → command env
+-------------------------------------------
 
   Søker kommando (evt)
     Funksjon

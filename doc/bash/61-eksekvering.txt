@@ -1,3 +1,13 @@
+Kommandosøk
+  Funksjon
+  Shell builtin
+  Eksekverbar fil i $PATH (binary/script)
+  Eksekverbar fil med / i navn (binary/script)
+
+Execution environment
+
+-------------------------------
+              
   When bash executes a command:
     • Bash forks a child process
     • The command inherits file descriptors from the parent process
