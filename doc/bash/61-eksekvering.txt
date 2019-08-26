@@ -1,11 +1,14 @@
 Kommandosøk
-  Kommando med / i navn
+  Navn med slash
   Funksjon
   Shell builtin
   Eksekverbar fil i $PATH
   Shell script
 
 Execution environment
+  Arbeidskatalog: pwd
+  Filer: lsof -p $$
+  Umaske: umask
 
 -------------------------------
               
