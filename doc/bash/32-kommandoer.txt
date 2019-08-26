@@ -8,6 +8,7 @@ Pipeline
 
 Liste
   pipeline₁ [&& or || or ; or & pipeline₂] ... [; or & or ␤]
+  Kjøremiljø for &: subshell environment
   Exit status: same as last cmd, except for & which returns 0
 
 Compound command

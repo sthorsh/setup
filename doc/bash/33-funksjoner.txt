@@ -1,7 +1,7 @@
 Definition
-    name() compound-command [redirections]
-    function name { list; } [redirections]
-    function name() compound-command [redirections]
+  name() compound-command [redirections]
+  function name { list; } [redirections]
+  function name() compound-command [redirections]
 
 Exit status
   Definition: 0 if name is not readonly and no syntax error

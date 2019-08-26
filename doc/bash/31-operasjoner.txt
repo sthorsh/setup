@@ -15,50 +15,39 @@ Parser tokens: og/el
   Redireksjoner
   Ord: cmd opts arg → ekspansjoner
 
-Prosesserer ord: ekspansjoner
-  Brace expansion: str{str,...}str or str{x..y..N}str
-  Tilde expansion: ~ or ~user or ~+ or ~-
-  Param expansion: $param or ${[op]param[op][operand]}
-  Command substitution: $(cmd)
-  Arithmetic expansion: $((expr))
-  Process substitution: <(list) or >(list)
-  Word splitting: $IFS
-  Filename expansion: TODO
+Prosesserer ord
+  Ekspansjoner
   Quote removal: \ ' "
 
-  Redirigeringer
-    Ref 51-redirigering
-    → current env
-    → command env
+Redirigeringer
+  Ref 51-redirigering
+  → current env
+  → command env
 
-  Variabeltilordning
-    Ekspanderer rhs
-    Fjerner \ ' "
-    Tilordner verdi
-    → current env
-    → command env
--------------------------------------------
+Variabeltilordning
+  Ekspanderer rhs
+  Fjerner \ ' "
+  Tilordner verdi
+  → current env
+  → command env
 
-  Søker kommando (evt)
-    Funksjon
-    Builtin
-    I hash: script|binary (xfile)
-    I PATH: script|binary (xfile)
-    Script|binary med /
-
-  When bash executes a command (big picture)
-    • Bash forks a child process
-    • The command inherits file descriptors from the parent process
-    • Bash sets up the command redirections
-    • Bash executes the command
+Kjøring
+  Kommandosøk
+  Execution environment
+  Environment
 
   Utfører kommando
-    Environment
-    Execution environment
 
   Mottar signaler
 
   Fullfører kommando
     Avventer exit status 0..255
     Eksponerer exit status som $?
+
+-----------------
+  When bash executes a command (big picture)
+    • Bash forks a child process
+    • The command inherits file descriptors from the parent process
+    • Bash sets up the command redirections
+    • Bash executes the command
 
