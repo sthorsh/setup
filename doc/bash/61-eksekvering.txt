@@ -8,6 +8,8 @@ Kommandosøk
 Execution environment
   Arbeidskatalog: pwd
   Filer: lsof -p $$
+  Funksjoner: 
+  Params: declare -p OR 
   Umaske: umask
 
 -------------------------------
