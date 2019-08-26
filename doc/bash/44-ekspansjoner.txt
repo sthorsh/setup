@@ -1,0 +1,54 @@
+History 
+  !cmd                   
+  !cmd:[g]s/x/y          
+  !*                     
+  !cmd[:N or ^ or $]     
+
+Alias 
+  alias ...
+
+Brace 
+  str{str,...}str
+  str{x..y..N}str
+
+Tilde
+  ~ 
+  ~user 
+  ~+ 
+  ~-
+
+Param
+  $param
+  ${param}
+  ...
+
+Command substitution
+  $(cmd)
+  Kjøremiljø: subshell environment
+
+Arithmetic
+  $((expr))
+
+Process substitution
+  <(list)
+  >(list)
+  Kjøremiljø: subshell environment
+
+Word splitting
+  $IFS
+
+Filename
+  ?
+  * 
+  ** 
+  **/
+  [abc] 
+  [!abc] 
+  [a-cx-z] 
+  [[:character-class:]]
+  ?(pattern-list)
+  *(pattern-list)
+  +(pattern-list)
+  @(pattern-list)
+  !(pattern-list)
+
