@@ -1,11 +1,11 @@
-Kommandosøko
+Kommandosøk
   .../...
   Funksjon
   Builtin cmd
   Fil i $PATH (separat kjøremiljø)
   Skallscript (separat kjøremiljø)
 
-Kjøremiljø
+Kjøremiljø  
   Aliaser           alias               alias='...'
   Arbeidskatalog    pwd                 parent OR cd ...
   Fildeskriptorer   lsof -p $$          parent OR exec N...
@@ -17,41 +17,34 @@ Kjøremiljø
   Traps             trap -p             trap ...
   Umaske            umask               parent | umask ...
 
-Programmiljø
-
--------------------------------
-
-
-Environment
-  Et array av strenger navn=verdi
-  $ export -p | env : viser environment
-  $ export navn : environment+=navn
-  $ declare +x navn : environment-=navn
-  En kommando arver bash' environment
-  $ navn=verdi cmd : environment+=navn
-  $ set -o allexport: environment+=navn
-  Bash invokeres som ekstern kommando: environment+=$_
+Miljøet
+  Et skall har et miljø (env)
+  Et miljø er en liste med name=value params/funksjoner
+  Et skall eksporterer sitt miljø til sine barn (export) 
+  Env-=navn: declare +x name
+  Env-=navn: export -n name
+  Env-=navn: unset name
+  Env+=navn: declare -x name[=value]
+  Env+=navn: export name
+  Env+=navn: name=value cmd
   
 Signaler
-    sighup: exit
-    sigint: fanges
-    sigquit: ignoreres
-    sigabrt: exit
-    sigkill: exit 
-    sigterm: ignoreres
-    sigtstp: ignoreres 
-    ...
-
+  1 sighup: exit
+  2 sigint: catch
+  3 sigquit: ignore
+  6 sigabrt: exit
+  9 sigkill: exit 
+  15 sigterm: ignore
+  20 sigtstp: ignore
+  ...
+  
 Exit status
   0 success
-  1..255 failure
-
--------------------------------
-              
-  When bash executes a command:
-    • Bash forks a child process
-    • The command inherits file descriptors from the parent process
-    • Bash sets up the command redirections
-    • Bash executes the command
-
-
+  1 no such file
+  2 syntax error
+  ...
+  126 permission denied
+  127 command not found
+  ...
+  255 failure
+  
