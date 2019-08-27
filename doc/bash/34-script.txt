@@ -1,4 +1,9 @@
-Script
+SCRIPT
+
+Fortolker
+  #! /bin/bash (hashbang)
+
+Kjøring
   $ source script
   $ ./script               
   $ bash script (ekvivalent m/forrige)
