@@ -1,0 +1,57 @@
+Kommandosøko
+  .../...
+  Funksjon
+  Builtin cmd
+  Fil i $PATH (separat kjøremiljø)
+  Skallscript (separat kjøremiljø)
+
+Kjøremiljø
+  Aliaser           alias               alias='...'
+  Arbeidskatalog    pwd                 parent OR cd ...
+  Fildeskriptorer   lsof -p $$          parent OR exec N...
+  Funksjoner        declare -F          parent env OR name(){...}
+  Opsjoner (set)    $-; or set -o       bash -... OR set -o ...
+  Opsjoner (shopt)  shopt -p            shopt -s ...
+  Params            declare -p          parent env OR set -- ... OR name=value
+  ProsessID'er      $$; $PPID; jobs -p  cmd &
+  Traps             trap -p             trap ...
+  Umaske            umask               parent | umask ...
+
+Programmiljø
+
+-------------------------------
+
+
+Environment
+  Et array av strenger navn=verdi
+  $ export -p | env : viser environment
+  $ export navn : environment+=navn
+  $ declare +x navn : environment-=navn
+  En kommando arver bash' environment
+  $ navn=verdi cmd : environment+=navn
+  $ set -o allexport: environment+=navn
+  Bash invokeres som ekstern kommando: environment+=$_
+  
+Signaler
+    sighup: exit
+    sigint: fanges
+    sigquit: ignoreres
+    sigabrt: exit
+    sigkill: exit 
+    sigterm: ignoreres
+    sigtstp: ignoreres 
+    ...
+
+Exit status
+  0 success
+  1..255 failure
+
+-------------------------------
+              
+  When bash executes a command:
+    • Bash forks a child process
+    • The command inherits file descriptors from the parent process
+    • Bash sets up the command redirections
+    • Bash executes the command
+
+
