@@ -1,11 +1,23 @@
-SCRIPT
+Kjøre script
+  $ bash filename arg  
+  Filename kan være rw-
 
-Fortolker
-  #! /bin/bash (hashbang)
+Kjøre script
+  $ ./filename arg
 
-Kjøring
-  $ source script
-  $ ./script               
-  $ bash script (ekvivalent m/forrige)
-  $ ./script &
+Kjøre script
+  $ filename arg
+  Filename i $PATH
+
+Kjøre script
+  $ . filename arg
+  Filename i current dir el $PATH
+
+Kjøre script
+  $ source filename arg
+  Filename i current dir el $PATH
+
+--------
+
+1. Subshell (execution) environment
 
