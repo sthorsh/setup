@@ -3,49 +3,50 @@ BUILTIN CMDs: help|tldr cmd
   :             the null command
   .             eq source; / → $PATH → $(pwd)
   [             eq test; use [[ instead
-  [[            bash syntax feature
-  alias
-  bg
-  bind
-  builtin
-  cd
-  command
-  declare
-  disown
-  echo
-  enable
-  eval
-  exec
-  exit
-  export
-  false
-  fg
-  getopts
-  hash
-  help
-  history
-  jobs
-  kill
-  let
-  local
-  logout
-  mapfile
-  printf
-  pwd
-  read
-  readonly
-  return
-  set
-  shift
-  shopt
-  source        eq .
-  test          eq [
-  trap
-  true
-  type
-  ulimit
-  umask
-  unalias
-  unset
-  wait
+  [[            syntax feature
+    alias
+    bg
+    bind
+  break         only in for, while or until
+    builtin
+    cd
+    command
+    declare
+    disown
+    echo
+    enable
+    eval
+    exec
+    exit
+    export
+    false
+    fg
+    getopts
+    hash
+    help
+    history
+    jobs
+    kill
+    let
+    local
+    logout
+    mapfile
+    printf
+    pwd
+    read
+    readonly
+    return
+    set
+    shift
+    shopt
+    source        eq .
+    test          eq [
+    trap
+    true
+    type
+    ulimit
+    umask
+    unalias
+    unset
+    wait
 
