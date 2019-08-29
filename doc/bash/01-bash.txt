@@ -30,3 +30,20 @@ Konfigurasjon → environment
   ~/.bashrc: the [default] environment
   ~/.inputrc: readline
 
+----------------------------
+Kommandolinjeinterface (CLI)
+
+Kommandolinjeredigering (CLE)
+  Readline init
+  Readline bindinger
+    → readline vars
+    → readline cmds/funksjoner 
+  Completion mechanisme
+    Readline completion
+    Bash completion
+    Programmable completion
+  History
+    ...
+ 
+Kommandolinjeprosessering (CLP)
+

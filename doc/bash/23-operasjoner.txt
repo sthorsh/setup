@@ -32,7 +32,7 @@ Variabeltilordning
   → command env
 
 Kjøring
-  Kommandosøk
+  Command lookup
   Execution environment
   Environment
 

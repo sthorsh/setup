@@ -1,4 +1,4 @@
-Kommandosøk
+Kommandooppslag
   .../...
   Funksjon
   Builtin cmd

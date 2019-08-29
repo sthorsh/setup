@@ -1,0 +1,12 @@
+Command line editing (CLE)
+  Init readline
+  Bind readline
+    Variables
+    Commands/functions
+  Completion mechanism
+    Readline completion
+    Bash completion
+    Programmable completion: complete etc
+
+History (→ ?)
+

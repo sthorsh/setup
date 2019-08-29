@@ -1,0 +1,30 @@
+Keywords
+  {
+  }
+  !
+  [[
+  ]]
+
+  if
+  then
+  else
+  elif
+  fi
+
+  case
+  esac
+
+  select
+
+  for
+  while
+  until
+  do
+  done
+  in
+
+  function
+
+  time
+
+  coproc
