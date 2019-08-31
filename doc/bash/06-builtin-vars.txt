@@ -1,0 +1,50 @@
+Builtin variables
+  BASH                bash        /bin/bash
+  BASHOPTS            bash        checkwinsize:...
+  BASHPID             bash        1234
+  BASH_SUBSHELL       bash        0
+  BASH_VERSION        bash        4.4.20(1)-release
+  COLORTERM           other       truecolor
+  COMP_WORDBREAKS     bash        "'><=;|&(:
+  DISPLAY             other       :0
+  EDITOR              other       /usr/bin/vim
+  EUID                bash        1000
+  GROUPS              bash        1000
+  HISTCONTROL         bash        ignoreboth
+  HISTFILE            bash        ~/.bash_history
+  HISTFILESIZE        bash        100000
+  HISTSIZE            bash        100000
+  HISTTIMEFORMAT      bash        %Y-%m-%d %H:%M
+  HOME                bourne      /home/svein
+  HOSTNAME            bash        blackbox
+  HOSTTYPE            bash        x86_64
+  IFS                 bourne      ' \t\n'
+  IGNOREEOF           bash        10
+  JAVA_HOME           other       /usr/lib/jvm/java/
+  LANG                bash        en_US.UTF-8
+  LC_NUMERIC          bash        nb_NO.UTF-8
+  LC_TIME             bash        nb_NO.UTF-8
+  LESS                other       --LINE-NUMBERS ...
+  MACHTYPE            bash        x86_64-pc-linux-gnu
+  OLDPWD              bash        /home/svein
+  OSTYPE              bash        linux-gnu
+  PATH                bourne      /home/svein/bin:...
+  PPID                bash        1233
+  PROMPT_COMMAND      bash        echo history -a; ...
+  PS1                 bourne      \[...\]
+  PS2                 bourne      >
+  PS4                 bash        +
+  PWD                 bash       /home/svein
+  RANDOM              bash       0..32767
+  REPLY               bash       foo
+  SECONDS             bash       123
+  SHELL               bash       /bin/bash
+  SHELLOPTS           bash       braceexpand:...
+  SHLVL               bash       1
+  SSH_AGENT_PID       other      1327
+  TERM                other      screen-256color
+  UID                 bash       1000
+  USER                other      svein
+  USERNAME            other      svein
+  VISUAL              other      /usr/bin/vim
+  ...

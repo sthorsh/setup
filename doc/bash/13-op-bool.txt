@@ -14,7 +14,7 @@ Boolske
   $p == pattern           er lik
   $p != pattern           er ulik
   $p =~ regex             er lik
-  n₁ -eq n₂               er eq      
+  n₁ -eq n₂               er eq
   n₁ -ne n₂               er ne
   n₁ -lt n₂               er lt
   n₁ -gt n₂               er gt

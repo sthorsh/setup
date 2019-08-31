@@ -49,15 +49,16 @@ alias x='exit'
 
 # Params/variables
 export EDITOR=/usr/bin/vim
-export HISTSIZE=5000
-export HISTFILESIZE=10000
-export HISTCONTROL=ignoreboth
-export LESS='--LINE-NUMBERS --LONG-PROMPT'
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-export VISUAL=/usr/bin/vim
-export JAVA_HOME=/usr/lib/jvm/java
-export MAVEN_HOME=/usr/lib/apache-maven
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE=100000
+export HISTSIZE=100000
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M "
+export JAVA_HOME=/usr/lib/jvm/java
+export LESS='--LINE-NUMBERS --LONG-PROMPT'
+export MAVEN_HOME=/usr/lib/apache-maven
+export PROMPT_COMMAND="${PROMPT_COMMAND:=history -a; history -c; history -r; $PROMPT_COMMAND}"
+export VISUAL=/usr/bin/vim
 
 # Functions
 add_to_path () {
