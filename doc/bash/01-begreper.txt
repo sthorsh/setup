@@ -5,31 +5,6 @@ Bash
   En makroprosessor [ref ekspansjon]
   Et programmeringsspråk [kombinasjon av cmds]
 
-/bin/bash
-  $ bash -l 
-  $ bash -i 
-  $ bash -r 
-  $ bash ±o opt (set)   
-  $ bash ±O opt (shopt)
-  ...           
-
-Tilstand
-  Login ($-)
-  Ikke-login
-  Interaktivt ($-)
-  Ikke-interaktivt
-
-Kombinasjoner
-  Login interaktivt: tmux, ssh
-  Login ikke-interaktivt: ...
-  Ikke-login interaktivt: gnome-terminal, guake
-  Ikke-login ikke-interaktivt: script u/hashbang
-
-Konfigurasjon → environment
-  ~/.bash_profile: a basic environment
-  ~/.bashrc: the [default] environment
-  ~/.inputrc: readline
-
 ----------------------------
 Kommandolinjeinterface (CLI)
 
@@ -46,4 +21,18 @@ Kommandolinjeredigering (CLE)
     ...
  
 Kommandolinjeprosessering (CLP)
+
+----------------------------
+
+Command line editing (CLE)
+  Init readline
+  Bind readline
+    Variables
+    Commands/functions
+  Completion mechanism
+    Readline completion
+    Bash completion
+    Programmable completion: complete etc
+
+History (→ ?)
 
