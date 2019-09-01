@@ -6,32 +6,13 @@ Start
 opt₁
   --help
   --login
-  --posix
   --restricted
   --version
   ...
 
 opt₂
-  -i (interactive)
   -l (login)
+  -i (interactive)
   -r (restricted)
   ...
-  
----------------
-  Tilstand
-    Login ($-)
-    Ikke-login
-    Interaktivt ($-)
-    Ikke-interaktivt
-  
-  Kombinasjoner
-    Login interaktivt: tmux, ssh
-    Login ikke-interaktivt: ...
-    Ikke-login interaktivt: gnome-terminal, guake
-    Ikke-login ikke-interaktivt: script u/hashbang
-  
-  Konfigurasjon → environment
-    ~/.bash_profile: a basic environment
-    ~/.bashrc: the [default] environment
-    ~/.inputrc: readline
   
