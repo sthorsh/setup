@@ -1,0 +1,56 @@
+Login interaktivt
+• /etc/profile
+  /etc/bash.bashrc
+  /etc/profile.d
+  /etc/profile.d/01-locale-fix.sh
+  /etc/profile.d/apps-bin-path.sh
+  /etc/profile.d/bash_completion.sh
+  /usr/share/bash-completion/bash_completion
+  /etc/bash_completion.d/
+  /etc/bash_completion.d/apport_completion
+  /etc/bash_completion.d/git-prompt
+  /etc/bash_completion.d/grub
+  /etc/profile.d/cedilla-portuguese.sh
+  /etc/profile.d/input-method-config.sh
+  /etc/profile.d/jdk.sh
+  /etc/profile.d/sysstat.sh
+  /etc/profile.d/vte-2.91.sh
+  /etc/profile.d/xdg_dirs_desktop_session.sh
+• ~/.bash_profile
+  ~/.bashrc
+  /etc/inputrc
+  ~/.bash_history
+  /usr/share/autojump/autojump.bash
+  ~/bin/bash_completion_mvn.sh
+  ~/bin/bash_completion_tmux.sh
+
+Login non-interaktivt
+• /etc/profile
+  /etc/profile.d/
+  /etc/profile.d/01-locale-fix.sh
+  /etc/profile.d/apps-bin-path.sh
+  /etc/profile.d/bash_completion.sh (returns)
+  /etc/profile.d/cedilla-portuguese.sh
+  /etc/profile.d/input-method-config.sh
+  /etc/profile.d/jdk.sh
+  /etc/profile.d/sysstat.sh
+  /etc/profile.d/vte-2.91.sh
+  /etc/profile.d/xdg_dirs_desktop_session.sh
+• ~/.bash_profile
+  ~/.bashrc (returns)
+
+Non-login interaktivt
+• /etc/bash.bashrc (non-compliant)
+• ~/.bashrc
+  /etc/inputrc
+  ~/.bash_history
+  /usr/share/autojump/autojump.bash
+  ~/bin/bash_completion_mvn.sh
+  ~/bin/bash_completion_tmux.sh
+  
+Non-login non-interaktivt
+  -
+
+Remote shell daemon (sshd)
+• ~/.bashrc
+
