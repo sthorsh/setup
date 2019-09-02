@@ -1,36 +1,57 @@
-KEYWORDS/BUILTINS
+BUILTIN CMDs
 
-:                                                               help [-dms] [pattern ...]
-. filename [args]                                               history [n]                                                       
-[ expr ]                                                        if CMDS; then CMDS; [ elif CMDS; then CMDS; ]... [ else CMDS; ] fi
-[[ expr ]]                                                      jobs [-l] [jobspec ...]                                           
-alias [-p] [name[=value] ... ]                                  kill -l OR kill [-sigspec] pid | jobspec                          
-bg [job_spec ...]                                               let arg [arg ...]                                                 
-bind [-pv] [-r keyseq] [-u name] ...                            local [option] name[=value] ...                                   
-break [n]                                                       logout [n]                                                        
-builtin [shell-builtin [arg ...]]                               printf [-v var] format [arguments]                                
-caller [expr]                                                   pwd [-LP]                                                         
-case WORD in [PATTERN [| PATTERN]...) CMDS ;;]... esac          read [-n nchars] [-u fd] [name ...]                               
-cd [-] [dir]                                                    readarray ... [array]                                             
-command command [arg ...]                                       readonly [-pf] [-aA] [name[=value] ...]                           
-compgen [-o option] [-A action] [-F function] [name]            return [n]                                                        
-complete [-o option] [-A action] [-F function] [name ...]       select NAME [in WORDS ... ;] do CMDS; done                        
-compopt [-o|+o option] [name ...]                               set [-abefhkmnptuvxBCHP] [-o opt] [--] [arg ...]        
-continue [n]                                                    shift [n]                                                         
-coproc [NAME] command [redirections]                            shopt [-pqsu] [-o] [opt ...]                                
-declare [-pfF] [-aAinrx] [name[=value] ...]                     source filename [args]                                            
-disown [-h] [-ar] [jobspec ... | pid ...]                       suspend [-f]                                                      
-echo [-n] [arg ...]                                             test [expr]                                                       
-enable [-a] [-dnps] [-f filename] [name ...]                    time [-p] pipeline                                                
-eval [arg ...]                                                  times                                                             
-exec [command [args ...]] [redirection ...]                     trap [-lp] [[arg] signal_spec ...]                                
-exit [n]                                                        true                                                              
-export [-p] OR export [-fn] [name[=value] ...]                  type [-at] name [name ...]                                        
-false                                                           ulimit [-SHabcdefiklmnpqrstuvxPT] [limit]                       
-fg [job_spec]                                                   umask [-p] [-S] [mode]                                          
-for NAME [in WORDS ... ] ; do CMDS; done                        unalias [-a] name [name ...]                                      
-for (( exp1; exp2; exp3 )); do CMDS; done                       unset [-f] [-v] [-n] [name ...]                                 
-function name { CMDS ; } OR name () { CMDS ; }                  until CMDS; do CMDS; done                                         
-getopts optstring name [arg]                                    wait [-n] [id ...]                                                
-hash [-lr] [-p pathname] [-dt] [name ...]                       while CMDS; do CMDS; done                                         
+  . file.sh [arg ...] (synonym: source)
+  :
+  alias [name[=value] ...]
+  bg [job_spec ...]
+  bind [-pv] [-r keyseq] [-u name]
+  builtin builtin [arg ...]
+  caller [expr]
+  cd [-] [dir]
+  command command [arg ...]
+compgen [-o option] [-A action] [-F function] [name]
+complete [-o option] [-A action] [-F function] [name ...]
+compopt [-o|+o option] [name ...]
+coproc [NAME] command [redirections]
+declare [-pfF] [-aAinrx] [name[=value] ...]
+disown [-h] [-ar] [jobspec ... | pid ...]
+echo [-n] [arg ...]
+enable [-a] [-dnps] [-f filename] [name ...]
+eval [arg ...]
+exec [command [args ...]] [redirection ...]
+exit [n]
+export [-p] OR export [-fn] [name[=value] ...]
+false
+fg [job_spec]
+function name { CMDS ; } OR name () { CMDS ; }
+getopts optstring name [arg]
+hash [-lr] [-p pathname] [-dt] [name ...]
+help [-dms] [pattern ...]
+history [n]
+jobs [-l] [jobspec ...]
+kill -l OR kill [-sigspec] pid | jobspec
+let arg [arg ...]
+local [option] name[=value] ...
+logout [n]
+printf [-v var] format [arguments]
+pwd [-LP]
+read [-n nchars] [-u fd] [name ...]
+readarray ... [array]
+readonly [-pf] [-aA] [name[=value] ...]
+return [n]
+set [-abefhkmnptuvxBCHP] [-o opt] [--] [arg ...]
+shift [n]
+shopt [-pqsu] [-o] [opt ...]
+suspend [-f]
+test [expr] (synonym: [expr])
+time [-p] pipeline
+times
+trap [-lp] [[arg] signal_spec ...]
+true
+type [-at] name [name ...]
+ulimit [-SHabcdefiklmnpqrstuvxPT] [limit]
+umask [-p] [-S] [mode]
+unalias [-a] name [name ...]
+unset [-f] [-v] [-n] [name ...]
+wait [-n] [id ...]
 

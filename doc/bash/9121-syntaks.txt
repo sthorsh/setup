@@ -30,24 +30,33 @@ Compound command
     Exit status: 0 or 1 depending on evaluation of conditional expr
   
   if
-    if cmd₁; then cmd₂; [elif cmd₃; then cmd₄;] ... [else cmd₅;] fi
+    if cmds; then cmds; [elif cmds; then cmds;] ... [else cmd;] fi
     Exit status: same as last cmd, or 0 if no test is true
   
-  case, select
-    Reference Manual 3.2.4.2
+  case
+    case WORD in [PATTERN [| PATTERN]...) CMDS ;;]... esac
+
+  select
+    select NAME [in WORDS ... ;] do CMDS; done
   
   for
-    for name [ [in [words ...] ] ;  ] do cmds; done   
+    for NAME [in WORDS ... ] ; do CMDS; done
+    May use builtins break [n] or continue [n]
     Exit status: same as last cmd, or 0 if no cmds are executed
+
+  for
     for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
+    May use builtins break [n] or continue [n]
     Exit status: same as last cmd, or false if any expr is invalid
    
   until
     until cmds₁; do cmds₂; done
+    May use builtins break [n] or continue [n]
     Exit status: same as last cmd, or 0 if no cmds are executed
   
   while
     while cmds₁; do cmds₁; done
+    May use builtins break [n] or continue [n]
     Exit status: same as last cmd, or 0 if no cmds are executed
   
 Coprosess
