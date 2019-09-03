@@ -22,7 +22,10 @@ ctrl-shift-t         klasse → test, test → klasse
 
 ctrl-u               klasse|metode → base/super
 
-ctrl-shift-bs        til forrige endring
+ctrl-shift-bs        til forrige edit
+
+ctrl-alt-shift-↑     til forrige svn change
+ctrl-alt-shift-↓     til neste svn change
 
 shift-alt-←→         tilbake|frem
                            
