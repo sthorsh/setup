@@ -1,26 +1,32 @@
-BUILTIN CMDs
+BUILTINS
 
   . file.sh [arg ...] (synonym: source)
   :
+
   alias [name[=value] ...]
+
   bg [jobspec ...]
   bind [-pv] [-r keyseq] [-u name]
   builtin builtin [arg ...]
+
   caller [expr]
   cd [-] [dir]
-  command command [arg ...]
-compgen [-o option] [-A action] [-F function] [name]
-complete [-o option] [-A action] [-F function] [name ...]
-compopt [-o|+o option] [name ...]
+  command program [arg ...]
+  complete [-p] [-A action] ... [name ...]
+    compgen [-A action] ... [word]
+    compopt [±o option] [name ...]
   coproc [name] command [redirections]
+
   declare [-pFf] [-aAinrx] [name[=value] ...]
   disown [-ar] [-h] [jobspec|pid ...]
+
   echo [-n] [arg ...]
-enable [-a] [-dnps] [-f filename] [name ...]
-eval [arg ...]
-exec [command [args ...]] [redirection ...]
-exit [n]
-export [-p] OR export [-fn] [name[=value] ...]
+  enable [-a] [-n] [builtin ...]
+  eval [arg ...]
+  exec [program [args ...]] [redirection ...]
+  exit [n]
+  export [name[=value] ...]
+
 false
 fg [jobspec]
 function name { CMDS ; } OR name () { CMDS ; }
@@ -43,7 +49,7 @@ set [-abefhkmnptuvxBCHP] [-o opt] [--] [arg ...]
 shift [n]
 shopt [-pqsu] [-o] [opt ...]
 suspend [-f]
-test [expr] (synonym: [expr])
+test expr (synonym: [])
 time [-p] pipeline
 times
 trap [-lp] [[arg] signal_spec ...]
