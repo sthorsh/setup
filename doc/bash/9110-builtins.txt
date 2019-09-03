@@ -1,40 +1,41 @@
 BUILTINS
 
-  . file.sh [arg ...] (synonym: source)
   :
 
-  alias [name[=value] ...]
+  alias OR alias name=value
 
-  bg [jobspec ...]
-  bind [-pv] [-r keyseq] [-u name]
-  builtin builtin [arg ...]
+  bg OR bg jobspec
+  bind -pv OR bind keyseq:function OR bind -r keyseq OR bind -u function
+  builtin builtin
 
-  caller [expr]
-  cd [-] [dir]
-  command program [arg ...]
-  complete [-p] [-A action] ... [name ...]
-    compgen [-A action] ... [word]
-    compopt [±o option] [name ...]
-  coproc [name] command [redirections]
+caller [expr]
+cd [-] [dir]
+command program
+complete [-A action name]
+  compgen -A action [word]
+  compopt ±o option name 
+coproc [name] command [redirections]
 
-  declare [-pFf] [-aAinrx] [name[=value] ...]
-  disown [-ar] [-h] [jobspec|pid ...]
+declare -p [name] or -f [name] or -aAinrx [name[=value]]
+disown [-a] [jobspec|pid]
 
-  echo [-n] [arg ...]
-  enable [-a] [-n] [builtin ...]
-  eval [arg ...]
-  exec [program [args ...]] [redirection ...]
-  exit [n]
-  export [name[=value] ...]
+echo [-n] [args]
+enable [-n] [builtin]
+eval arg ...
+exec program or redirection
+exit [n]
+export [name[=value]]
 
-  false
-  fg [jobspec]
-function name { CMDS ; } OR name () { CMDS ; }
+false
+fg [jobspec]
+function name { commands; } 
 
 getopts optstring name [arg]
+
 hash [-lr] [-p pathname] [-dt] [name ...]
 help [-dms] [pattern ...]
 history [n]
+
 jobs [-l] [jobspec ...]
 kill -l OR kill [-sigspec] pid | jobspec
 let arg [arg ...]
@@ -44,11 +45,12 @@ printf [-v var] format [arguments]
 pwd [-LP]
 read [-n nchars] [-u fd] [name ...]
 readarray ... [array]
-readonly [-pf] [-aA] [name[=value] ...]
+readonly [-pf] [-aA] [name[=value] ...] (synonym: mapfile)
 return [n]
 set [-abefhkmnptuvxBCHP] [-o opt] [--] [arg ...]
 shift [n]
 shopt [-pqsu] [-o] [opt ...]
+source file.sh args (synonym: .)
 suspend [-f]
 test expr (synonym: [])
 time [-p] pipeline
