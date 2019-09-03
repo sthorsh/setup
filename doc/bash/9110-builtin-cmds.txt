@@ -3,7 +3,7 @@ BUILTIN CMDs
   . file.sh [arg ...] (synonym: source)
   :
   alias [name[=value] ...]
-  bg [job_spec ...]
+  bg [jobspec ...]
   bind [-pv] [-r keyseq] [-u name]
   builtin builtin [arg ...]
   caller [expr]
@@ -12,17 +12,17 @@ BUILTIN CMDs
 compgen [-o option] [-A action] [-F function] [name]
 complete [-o option] [-A action] [-F function] [name ...]
 compopt [-o|+o option] [name ...]
-coproc [NAME] command [redirections]
-declare [-pfF] [-aAinrx] [name[=value] ...]
-disown [-h] [-ar] [jobspec ... | pid ...]
-echo [-n] [arg ...]
+  coproc [name] command [redirections]
+  declare [-pFf] [-aAinrx] [name[=value] ...]
+  disown [-ar] [-h] [jobspec|pid ...]
+  echo [-n] [arg ...]
 enable [-a] [-dnps] [-f filename] [name ...]
 eval [arg ...]
 exec [command [args ...]] [redirection ...]
 exit [n]
 export [-p] OR export [-fn] [name[=value] ...]
 false
-fg [job_spec]
+fg [jobspec]
 function name { CMDS ; } OR name () { CMDS ; }
 getopts optstring name [arg]
 hash [-lr] [-p pathname] [-dt] [name ...]
