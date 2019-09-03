@@ -27,9 +27,10 @@ BUILTINS
   exit [n]
   export [name[=value] ...]
 
-false
-fg [jobspec]
+  false
+  fg [jobspec]
 function name { CMDS ; } OR name () { CMDS ; }
+
 getopts optstring name [arg]
 hash [-lr] [-p pathname] [-dt] [name ...]
 help [-dms] [pattern ...]
