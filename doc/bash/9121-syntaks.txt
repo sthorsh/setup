@@ -1,67 +1,68 @@
-Command
-  name [opts] [args]
+Simpel kommando
+  cmd [opts] [args]
   Exit status: 0..255
 
 Pipeline
-  [time [-p]] [!] cmd₁ [| or |& cmd₂] ...
-  Exit status: same as last cmd
+  [!] cmd₁ [| or |& cmd₂] ...
+  
+    Exit status: same as last cmd
 
-Liste
-  pipeline₁ [&& or || or ; or & pipeline₂] ... [; or & or ␤]
-  Kjøremiljø for &: subshell environment
-  Exit status: same as last cmd, except for & which returns 0
+  Liste
+    pipeline₁ [&& or || or ; or & pipeline₂] ... [; or & or ␤]
+    Kjøremiljø for &: subshell environment
+    Exit status: same as last cmd, except for & which returns 0
 
-Compound command
-  ()
-    ( list )
-    Kjøremiljø: subshell environment
-    Exit status: exit status of the list
-  
-  {}
-    { list; }
-    Exit status: exit status of the list
-  
-  (())
-    (( expr ))
-    Exit status: 0 or 1 depending on evaluation of arithmetic expr
-  
-  [[]]
-    [[ expr ]]
-    Exit status: 0 or 1 depending on evaluation of conditional expr
-  
-  if
-    if cmds; then cmds; [elif cmds; then cmds;] ... [else cmd;] fi
-    Exit status: same as last cmd, or 0 if no test is true
-  
-  case
-    case WORD in [PATTERN [| PATTERN]...) CMDS ;;]... esac
+  Compound command
+    ()
+      ( list )
+      Kjøremiljø: subshell environment
+      Exit status: exit status of the list
+    
+    {}
+      { list; }
+      Exit status: exit status of the list
+    
+    (())
+      (( expr ))
+      Exit status: 0 or 1 depending on evaluation of arithmetic expr
+    
+    [[]]
+      [[ expr ]]
+      Exit status: 0 or 1 depending on evaluation of conditional expr
+    
+    if
+      if cmds; then cmds; [elif cmds; then cmds;] ... [else cmd;] fi
+      Exit status: same as last cmd, or 0 if no test is true
+    
+    case
+      case WORD in [PATTERN [| PATTERN]...) CMDS ;;]... esac
 
-  select
-    select NAME [in WORDS ... ;] do CMDS; done
-  
-  for
-    for NAME [in WORDS ... ] ; do CMDS; done
-    May use builtins break [n] or continue [n]
-    Exit status: same as last cmd, or 0 if no cmds are executed
+    select
+      select NAME [in WORDS ... ;] do CMDS; done
+    
+    for
+      for NAME [in WORDS ... ] ; do CMDS; done
+      May use builtins break [n] or continue [n]
+      Exit status: same as last cmd, or 0 if no cmds are executed
 
-  for
-    for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
-    May use builtins break [n] or continue [n]
-    Exit status: same as last cmd, or false if any expr is invalid
-   
-  until
-    until cmds₁; do cmds₂; done
-    May use builtins break [n] or continue [n]
-    Exit status: same as last cmd, or 0 if no cmds are executed
-  
-  while
-    while cmds₁; do cmds₁; done
-    May use builtins break [n] or continue [n]
-    Exit status: same as last cmd, or 0 if no cmds are executed
-  
-Coprosess
-  coproc [name] cmd [redir]
-  Exit status: same as cmd
+    for
+      for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
+      May use builtins break [n] or continue [n]
+      Exit status: same as last cmd, or false if any expr is invalid
+     
+    until
+      until cmds₁; do cmds₂; done
+      May use builtins break [n] or continue [n]
+      Exit status: same as last cmd, or 0 if no cmds are executed
+    
+    while
+      while cmds₁; do cmds₁; done
+      May use builtins break [n] or continue [n]
+      Exit status: same as last cmd, or 0 if no cmds are executed
+    
+  Coprosess
+    coproc [name] cmd [redir]
+    Exit status: same as cmd
 
-GNU Parallell
-  Reference Manual 3.2.6
+  GNU Parallell
+    Reference Manual 3.2.6
