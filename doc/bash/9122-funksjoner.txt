@@ -1,9 +1,19 @@
-Definition
-  name() compound-command [redirections]
-  function name { list; } [redirections]
-  function name() compound-command [redirections]
+Declaration
+  f () compound-command [redirections]
+  Compound-command { ... } must be terminated with ; & or \n
+  Exit status: 0 unless syntax error or a readonly function f exists
+  
+Declaration
+  function f compound-command [redirections]
+  Requires compound-command w/braces { ... }
+  Compound-command { ... } must be terminated with ; & or \n
+  Exit status: 0 unless syntax error or a readonly function f exists
 
-Exit status
-  Definition: 0 if name is not readonly and no syntax error
-  Execution: same as last cmd if no return, otherwise return ...
+Declaration
+  function f () compound-command [redirections]
+  Compound-command { ... } must be terminated with ; & or \n
+  Exit status: 0 unless syntax error or a readonly function f exists
+
+Execution
+  Exit status: the exit status of the last cmd executed in the body
 

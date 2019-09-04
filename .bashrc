@@ -75,6 +75,7 @@ alias ps='ps -ef'
 alias soapui="/opt/SoapUI-5.5.0/bin/soapui.sh > /dev/null 2>&1 &"
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
 alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
+alias type='type -a'
 alias x='exit'
 
 # Startup files
