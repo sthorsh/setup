@@ -1,11 +1,18 @@
-Kommandooppslag
-  .../...
-  Funksjon
-  Builtin cmd
-  Fil i $PATH (separat kjøremiljø)
-  Skallscript (separat kjøremiljø)
+Prosess
+  ...
 
-Kjøremiljø  
+Subprosess
+  pstree 
+
+Skall
+  bash
+  ...
+
+Subskall
+  ...
+
+----------------------------------
+Kjøremiljø (alle prosesser ?)
   Aliaser           alias               alias='...'
   Arbeidskatalog    pwd                 parent OR cd ...
   Fildeskriptorer   lsof -p $$          parent OR exec N...
@@ -17,7 +24,7 @@ Kjøremiljø
   Traps             trap -p             trap ...
   Umaske            umask               parent | umask ...
 
-Miljøet
+Miljøet (kun bash ?)
   Et skall har et miljø (env)
   Et miljø er en liste med name=value params/funksjoner
   Et skall eksporterer sitt miljø til sine barn (export) 
@@ -28,6 +35,14 @@ Miljøet
   Env+=navn: export name
   Env+=navn: name=value cmd
   
+----------------------------------
+Kommandooppslag
+  .../...
+  Funksjon
+  Builtin cmd
+  Fil i $PATH (separat kjøremiljø)
+  Skallscript (separat kjøremiljø)
+
 Signaler
   1 sighup: exit
   2 sigint: catch

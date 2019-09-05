@@ -1,4 +1,4 @@
-BUILTINS
+aUILTINS
 
   :
 
@@ -10,7 +10,7 @@ BUILTINS
 
   caller
   cd OR cd - OR cd dir
-  command program
+  command extcmd
   complete OR complete -A action name
   compgen -A action [word]
   compopt name OR compopt ±o option name 
@@ -22,7 +22,7 @@ BUILTINS
   echo arg ...
   enable | enable -n | enable builtin | enable -n builtin
   eval arg ...
-  exec program OR exec redirection
+  exec extcmd OR exec redirection
   exit OR exit N
   export OR export name[=value]
 

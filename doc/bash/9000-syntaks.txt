@@ -1,18 +1,20 @@
-Simple command
+Enkeltkommando
   cmd [opts] [args]
-  For program: ny prosess, nytt kjøremiljø (fork, bash, exec)
+  Funksjon, builtin, extcmd (el script)
+  For extcmd: ny (sub)prosess, nytt kjøremiljø (fork, bash, exec)
   Exit status: 0..255
 
 Pipeline
   [!] cmd₁ [| or |& cmd₂] ...
-  cmd₁ stdout redirigeres til cmd₂ stdin
-  For program: ny prosess, nytt kjøremiljø (fork, bash, exec)
-  Exit status: samme som siste cmd (så lenge pipefail er off)
+  Pipe: rediriger cmd₁ stdout til cmd₂ stdin
+  For ext-md: ny prosess, nytt kjøremiljø (fork, bash, exec)
+  Exit status: samme som siste cmd
 
-  Liste
-    pipeline₁ [&& or || or ; or & pipeline₂] ... [; or & or ␤]
-    Kjøremiljø for &: subshell environment
-    Exit status: same as last cmd, except for & which returns 0
+Liste
+  pipeline₁ [; or & or && or || pipeline₂] ... [; or & or \n]
+  Semikolon: kjør sekvensielt
+  Ampersand: kjør pipeline i subskall
+    Exit status: 0 for &; ellers samme som siste cmd
 
   Compound command
     ()
