@@ -1,11 +1,13 @@
-Simpel kommando
+Simple command
   cmd [opts] [args]
+  For program: ny prosess, nytt kjøremiljø (fork, bash, exec)
   Exit status: 0..255
 
 Pipeline
   [!] cmd₁ [| or |& cmd₂] ...
-  
-    Exit status: same as last cmd
+  cmd₁ stdout redirigeres til cmd₂ stdin
+  For program: ny prosess, nytt kjøremiljø (fork, bash, exec)
+  Exit status: samme som siste cmd (så lenge pipefail er off)
 
   Liste
     pipeline₁ [&& or || or ; or & pipeline₂] ... [; or & or ␤]
