@@ -1,72 +1,56 @@
-Enkeltkommando
-  cmd [opts] [args]
-  Funksjon, builtin, extcmd (el script)
-  For extcmd: ny (sub)prosess, nytt kjøremiljø (fork, bash, exec)
-  Exit status: 0..255
+  Enkel kommando
+    cmd [opts] [args]
+    Funksjon, builtin, extcmd, script
 
-Pipeline
-  [!] cmd₁ [| or |& cmd₂] ...
-  Pipe: rediriger cmd₁ stdout til cmd₂ stdin
-  For ext-md: ny prosess, nytt kjøremiljø (fork, bash, exec)
-  Exit status: samme som siste cmd
+  Pipeline
+    [!] cmd₁ [| or |& cmd₂] ...
 
-Liste
-  pipeline₁ [; or & or && or || pipeline₂] ... [; or & or \n]
-  Semikolon: kjør sekvensielt
-  Ampersand: kjør pipeline i subskall
-    Exit status: 0 for &; ellers samme som siste cmd
+  Liste
+    pipeline₁ [; or & or && or || pipeline₂] ... [; or & or \n]
 
-  Compound command
-    ()
-      ( list )
-      Kjøremiljø: subshell environment
-      Exit status: exit status of the list
-    
+  Sammensatte kommandoer
     {}
       { list; }
-      Exit status: exit status of the list
+      Bash bruker {} for gruppering
+      Bash kjører list i the current shell context
     
-    (())
-      (( expr ))
-      Exit status: 0 or 1 depending on evaluation of arithmetic expr
+    ()
+      ( list )
+      Bash bruker () for gruppering
+      Bash oppretter et subshell [execution environment]
+      Bash kjører list i subskallet
     
-    [[]]
+    Boolsk expr
       [[ expr ]]
-      Exit status: 0 or 1 depending on evaluation of conditional expr
+
+    Aritmetisk expr
+      (( expr ))
     
     if
       if cmds; then cmds; [elif cmds; then cmds;] ... [else cmd;] fi
-      Exit status: same as last cmd, or 0 if no test is true
     
     case
-      case WORD in [PATTERN [| PATTERN]...) CMDS ;;]... esac
+      case word in [pattern [| pattern]...) cmds ;;]... esac
 
     select
-      select NAME [in WORDS ... ;] do CMDS; done
+      select name [in words ... ;] do cmds; done
     
     for
-      for NAME [in WORDS ... ] ; do CMDS; done
-      May use builtins break [n] or continue [n]
-      Exit status: same as last cmd, or 0 if no cmds are executed
+      for name [in words ... ] ; do cmds; done
+      May use break or continue 
 
     for
       for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
-      May use builtins break [n] or continue [n]
-      Exit status: same as last cmd, or false if any expr is invalid
+      May use break or continue 
      
     until
       until cmds₁; do cmds₂; done
-      May use builtins break [n] or continue [n]
-      Exit status: same as last cmd, or 0 if no cmds are executed
+      May use break or continue 
     
     while
       while cmds₁; do cmds₁; done
-      May use builtins break [n] or continue [n]
-      Exit status: same as last cmd, or 0 if no cmds are executed
+      May use break or continue 
     
   Coprosess
     coproc [name] cmd [redir]
-    Exit status: same as cmd
 
-  GNU Parallell
-    Reference Manual 3.2.6
