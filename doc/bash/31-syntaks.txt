@@ -25,6 +25,8 @@ if
   
 for
   for name [in words ... ] ; do commands; done
+  Name binder seg til positional params hvis words mangler
+  Words støtter filename expansion
 
 for
   for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
