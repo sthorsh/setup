@@ -10,21 +10,22 @@
 
   Sammensatte kommandoer
     {}
-      { list; }
-      Bash bruker {} for gruppering
-      Bash kjører list i the current shell context
+      { list }
+      Brukes for gruppering
+      Liste må ha terminator ; or & or \n
+      Kjører i current shell context
     
     ()
       ( list )
-      Bash bruker () for gruppering
-      Bash oppretter et subshell [execution environment]
-      Bash kjører list i subskallet
+      Brukes for gruppering
+      Oppretter subshell execution environment
+      Kjører i subskallet
     
-    Boolsk expr
-      [[ expr ]]
+    [[]]
+      [[ boolean-expr ]]
 
-    Aritmetisk expr
-      (( expr ))
+    (())
+      (( arithmetic-expr ))
     
     if
       if cmds; then cmds; [elif cmds; then cmds;] ... [else cmd;] fi
