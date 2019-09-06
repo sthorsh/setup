@@ -8,6 +8,33 @@
   Liste
     pipeline₁ [; or & or && or || pipeline₂] ... [; or & or \n]
 
+  (())
+    (( arithmetic-expr ))
+  
+  [[]]
+    [[ bool-expr ]]
+
+if
+  if commands; then commands; [elif commands; then commands;] ... [else commands;] fi
+  
+  case
+    case word in [pattern [| pattern]...) cmds ;;]... esac
+
+  select
+    select name [in words ... ;] do cmds; done
+  
+for
+  for name [in words ... ] ; do commands; done
+
+for
+  for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
+   
+  while
+    while cmds₁; do cmds₁; done
+  
+  until
+    until cmds₁; do cmds₂; done
+  
   {}
     { list }
     Brukes for gruppering
@@ -20,37 +47,11 @@
     Oppretter subshell execution environment
     Kjører i subskallet
   
-  [[]]
-    [[ bool-expr ]]
-
-  (())
-    (( arithmetic-expr ))
-  
-  if
-    if commands; then commands; [elif commands; then commands;] ... [else commands;] fi
-  
-  case
-    case word in [pattern [| pattern]...) cmds ;;]... esac
-
-  select
-    select name [in words ... ;] do cmds; done
-  
-  for
-    for name [in words ... ] ; do cmds; done
-    May use break or continue 
-
-  for
-    for (( expr₁ ; expr₂ ; expr₃  )) ; do cmds ; done
-    May use break or continue 
-   
-  until
-    until cmds₁; do cmds₂; done
-    May use break or continue 
-  
-  while
-    while cmds₁; do cmds₁; done
-    May use break or continue 
-  
   Coprosess
     coproc [name] command [redir]
+
+----------------------
+In general
+  A semicolon may be replaced with a newline
+  All loops may use break [N] or continue [N]
 
