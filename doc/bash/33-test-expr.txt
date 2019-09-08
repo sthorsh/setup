@@ -1,0 +1,30 @@
+  Kontekst
+    test expr OR [ expr ]
+    [[ expr ]]
+  
+  Operatorer
+    -e fil                  eksisterer
+    -f fil                  er fil
+    ...                     ...
+    -o option               er on (kun set, ikke shopt)
+    -v var                  er deklarert
+    -n $p                   er not null
+    -z $p                   er zero
+    fil₁ -nt fil₂           er newer than
+    fil₁ -ot fil₂           er older than
+    $p = word               er lik
+    $p < word               er før
+    $p > word               er etter
+    $p == pattern           er lik
+    $p != pattern           er ulik
+    $p =~ regex             er lik
+    n₁ -eq n₂               er eq
+    n₁ -ne n₂               er ne
+    n₁ -lt n₂               er lt
+    n₁ -gt n₂               er gt
+    n₁ -le n₂               er le
+    n₁ -ge n₂               er ge
+    ! e                     er false (kun [])
+    e₁ -a e₂                e₁ og e₂ er true (kun [])
+    e₁ -o e₂                e₁ el e₂ er true (kun [])
+  
