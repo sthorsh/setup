@@ -1,15 +1,15 @@
 History-ekspansjon
-  !N                        cmdline N
-  !!                        forrige cmdline
-  !*                        forrige cmdline opts & args
-  !!:s/x/y                  forrige cmdline, sub 1st x med y (evt: ^x^y)
-  !!:gs/x/y                 forrige cmdline, sub alle x med y
-  !cmd                      cmdline
-  !cmd^                     cmdline 1st arg
-  !cmd$                     cmdline siste arg
-  !cmd:N                    cmdline arg N
-  !cmd:s/x/y                cmdline, sub 1st x med y
-  !cmd:gs/x/y               cmdline, sub alle x med y
+  !N                            cmdline N
+  !!                            forrige cmdline
+  !*                            forrige cmdline opts & args
+  !!:s/x/y                      forrige cmdline, sub 1st x med y (evt: ^x^y)
+  !!:gs/x/y                     forrige cmdline, sub alle x med y
+  !cmd                          cmdline
+  !cmd^                         cmdline 1st arg
+  !cmd$                         cmdline siste arg
+  !cmd:N                        cmdline arg N
+  !cmd:s/x/y                    cmdline, sub 1st x med y
+  !cmd:gs/x/y                   cmdline, sub alle x med y
   ...
 
 Alias-ekspansjon 
@@ -21,10 +21,10 @@ Krøllparentes-ekspansjon
   pre{char..char..N}post
 
 Tilde-ekspansjon
-  ~                         $HOME
-  ~+                        $PWD
-  ~-                        $OLDPWD
-  ~user                     $HOME of user
+  ~                             $HOME
+  ~+                            $PWD
+  ~-                            $OLDPWD
+  ~user                         $HOME of user
 
 Parameterekspansjon
   $param
@@ -40,15 +40,16 @@ Prosess-substitusjon
   <(list)
   >(list)
 
-Filnavnekspansjon
-    ?
-    *
-    **
-    **/
-    [abc]
-    [!abc]
-    [a-cx-z]
-    [[:character-class:]]
+Filnavnekspansjon (globbing)
+    *                           filer, dirs e.g ls *
+    **                          filer, dirs, subdirs e.g ls **
+    **/                         kataloger, subdirs e.g ls **/
+    **/file                     rekursivt e.g ls **/file
+    ?                           enhver char
+    [abc]                       a or b or c
+    [!abc]                      not a or b or c
+    [a-cx-z]                    a,b,c or x,y,z
+    [[:character-class:]]       
     ?(pattern-list)
     *(pattern-list)
     +(pattern-list)

@@ -21,3 +21,10 @@ Quote   Kommentar   Navn      Nøkkelord          Kontroll   Redirigering     Me
                     ...                              ;;                         >          
                                                      ;&  
                                                      ;;& 
+
+Pattern: man bash Pattern Matching
+  * ? [ 
+
+Regex
+  ...
+
