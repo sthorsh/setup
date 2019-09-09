@@ -42,13 +42,6 @@ Bash/Readline
   C-r C-[gjm]            reverse-i-search (rep)
   C-s                    i-search (rep)
 
-  !cmd                   prev cmdline
-  !cmd:[g]s/x/y          prev cmdline, sub [all] x with y
-  !*                     prev cmdline opts & args
-  !cmd[:N or ^ or $]     prev cmdline words
-
-  ^x^y                   prev cmdline, sub first x with y
-
   A-.                    prev cmdline word 0..N (rep)
   C-A-y                  yank prev cmdline word 0..N
 
@@ -58,8 +51,8 @@ Bash/Readline
   C-A-g                  glob-complete-word * ?
   C-A-i                  dynamic-complete-history
 
-  C-A-e                  expansion
-  C-A-f                  filename expansion
+  C-A-e                  expand
+  C-A-f                  expand filename
 
   A-r                    revert-line
   C-x C-u                undo

@@ -1,0 +1,57 @@
+History-ekspansjon
+  !N                        cmdline N
+  !!                        forrige cmdline
+  !*                        forrige cmdline opts & args
+  !!:s/x/y                  forrige cmdline, sub 1st x med y (evt: ^x^y)
+  !!:gs/x/y                 forrige cmdline, sub alle x med y
+  !cmd                      cmdline
+  !cmd^                     cmdline 1st arg
+  !cmd$                     cmdline siste arg
+  !cmd:N                    cmdline arg N
+  !cmd:s/x/y                cmdline, sub 1st x med y
+  !cmd:gs/x/y               cmdline, sub alle x med y
+  ...
+
+Alias-ekspansjon 
+  ...
+
+Krøllparentes-ekspansjon
+  pre{str₁,...}post        
+  pre{N₁..N₂..N₃}post
+  pre{char..char..N}post
+
+Tilde-ekspansjon
+  ~                         $HOME
+  ~+                        $PWD
+  ~-                        $OLDPWD
+  ~user                     $HOME of user
+
+Parameterekspansjon
+  $param
+  ${param}
+
+Kommandosubstitusjon
+  $(cmd)                    
+
+Aritmetikkekspansjon
+  $((expr))                 
+
+Prosess-substitusjon
+  <(list)
+  >(list)
+
+Filnavnekspansjon
+    ?
+    *
+    **
+    **/
+    [abc]
+    [!abc]
+    [a-cx-z]
+    [[:character-class:]]
+    ?(pattern-list)
+    *(pattern-list)
+    +(pattern-list)
+    @(pattern-list)
+    !(pattern-list)
+

@@ -16,7 +16,9 @@ Parser tokens: og/el
   Ord: cmd opts arg → ekspansjoner
 
 Prosesserer ord
-  Ekspansjoner
+  Ekspanderer krøllparantes etc
+  Orddeling iht IFS (word splitting)
+  Ekspanderer filnavn
   Quote removal: \ ' "
 
 Redirigeringer
