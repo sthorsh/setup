@@ -1,3 +1,5 @@
+REDIRIGERING
+
 Fildeskriptorer
   Fildeskriptor: 0, 1, 2...255
   Per-prosess fildeskriptortabell: lsof -p $$

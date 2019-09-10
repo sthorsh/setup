@@ -1,4 +1,5 @@
-Builtin variables
+BUILTIN VARS
+
   BASH                bash        /bin/bash
   BASHOPTS            bash        checkwinsize:...
   BASHPID             bash        1234

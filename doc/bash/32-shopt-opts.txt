@@ -1,6 +1,6 @@
-OPSJONER
+SHOPT OPTS
 
-shopt: shopt
+Option: $ shopt
   autocd                        off
   cdable_vars                   off
   cdspell                       off
@@ -49,33 +49,4 @@ shopt: shopt
   shift_verbose                 off
   sourcepath                    on
   xpg_echo                      off
-
-set: shopt -o
-  allexport                    off
-  braceexpand                  on
-  emacs                        on
-  errexit                      off
-  errtrace                     off
-  functrace                    off
-  hashall                      on
-  histexpand                   on
-  history                      on
-  ignoreeof                    on
-  interactive-comments         on
-  keyword                      off
-  monitor                      on
-  noclobber                    on
-  noexec                       off
-  noglob                       off
-  nolog                        off
-  notify                       on
-  nounset                      off
-  onecmd                       off
-  physical                     off
-  pipefail                     off
-  posix                        off
-  privileged                   off
-  verbose                      off
-  vi                           off
-  xtrace                       off
 

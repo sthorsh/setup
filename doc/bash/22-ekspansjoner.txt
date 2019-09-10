@@ -1,3 +1,5 @@
+EKSPANSJONER
+
 History
   !N                        cmdline N
   !!                        forrige cmdline

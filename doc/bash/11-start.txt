@@ -1,3 +1,5 @@
+START
+
 Start
   $ bash [opt₁] [opt₂] [set_opt] [shopt_opt]
   $ bash [opt₁] [opt₂] [set_opt] [shopt_opt] -c str

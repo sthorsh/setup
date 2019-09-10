@@ -1,13 +1,15 @@
+SYNTAKS COMMAND
+
 Enkel kommando (cmd)
   [env] name [opts] [args] [redir]
-  Funksjon, builtin, script, os-cmd 
+  Funksjon, builtin, script, os-cmd
   Terminator er generelt \n eller ;
   Script/os-cmd kjører i subprosess
-  Return status er cmds exit status 
-  
+  Return status er cmds exit status
+
 Pipeline
     [!] command₁ [| or |& command₂] ...
-    Rediriger command₁ stdout til command₂ stdin    
+    Rediriger command₁ stdout til command₂ stdin
 
   Liste
     pipeline₁ [; or & or && or || pipeline₂] ... [\n or ; or &]
@@ -31,7 +33,7 @@ Pipeline
   for
     for (( expr₁ ; expr₂ ; expr₃ )) ; do commands; done
     Evt med break el continue
-   
+
   while
     while commands; do commands; done
     Evt med break el continue

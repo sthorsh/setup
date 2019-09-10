@@ -1,3 +1,5 @@
+OPPSTARTSFILER
+
 Login interaktivt
 • /etc/profile
   /etc/bash.bashrc

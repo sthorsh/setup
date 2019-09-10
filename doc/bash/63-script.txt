@@ -1,3 +1,5 @@
+SCRIPT
+
 Kjøre script
   $ bash filename arg  
   Filename kan være rw-

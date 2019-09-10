@@ -1,4 +1,4 @@
-Bash/Readline
+READLINE
 
   A-N                    arg:N
 

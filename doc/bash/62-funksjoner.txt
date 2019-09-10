@@ -1,3 +1,5 @@
+FUNKSJONER
+
 Declaration 1
   f () compound-command [redirections]
   Compound-command { ... } must be terminated with ; & or \n

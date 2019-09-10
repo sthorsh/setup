@@ -1,3 +1,5 @@
+BASH
+
 Bash
   Et skall [for Unix]
   Et tekstbasert UI [for Unix]

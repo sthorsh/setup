@@ -1,3 +1,5 @@
+EXPR ARITMETIKK
+
 Kontekst
   declare -i expr
   let expr OR (( expr ))

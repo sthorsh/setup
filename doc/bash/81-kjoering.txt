@@ -1,3 +1,5 @@
+KJØRING
+
 Prosess
   ...
 
@@ -10,6 +12,14 @@ Skall
 
 Subskall
   ...
+
+----------------------------------
+Kommandooppslag
+  .../...
+  Funksjon
+  Builtin cmd
+  Fil i $PATH (separat kjøremiljø)
+  Skallscript (separat kjøremiljø)
 
 ----------------------------------
 Kjøremiljø (alle prosesser ?)
@@ -36,13 +46,6 @@ Miljøet (kun bash ?)
   Env+=navn: name=value cmd
   
 ----------------------------------
-Kommandooppslag
-  .../...
-  Funksjon
-  Builtin cmd
-  Fil i $PATH (separat kjøremiljø)
-  Skallscript (separat kjøremiljø)
-
 Signaler
   1 sighup: exit
   2 sigint: catch
