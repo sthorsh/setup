@@ -1,58 +1,58 @@
-History-ekspansjon
-  !N                            cmdline N
-  !!                            forrige cmdline
-  !*                            forrige cmdline opts & args
-  !!:s/x/y                      forrige cmdline, sub 1st x med y (evt: ^x^y)
-  !!:gs/x/y                     forrige cmdline, sub alle x med y
-  !cmd                          cmdline
-  !cmd^                         cmdline 1st arg
-  !cmd$                         cmdline siste arg
-  !cmd:N                        cmdline arg N
-  !cmd:s/x/y                    cmdline, sub 1st x med y
-  !cmd:gs/x/y                   cmdline, sub alle x med y
+History
+  !N                        cmdline N
+  !!                        forrige cmdline
+  !*                        forrige cmdline opts & args
+  !!:s/x/y                  forrige cmdline, sub 1st x med y (evt: ^x^y)
+  !!:gs/x/y                 forrige cmdline, sub alle x med y
+  !cmd                      cmdline
+  !cmd^                     cmdline 1st arg
+  !cmd$                     cmdline siste arg
+  !cmd:N                    cmdline arg N
+  !cmd:s/x/y                cmdline, sub 1st x med y
+  !cmd:gs/x/y               cmdline, sub alle x med y
+
+Alias
   ...
 
-Alias-ekspansjon 
-  ...
-
-Krøllparentes-ekspansjon
+Krøllparentes
   pre{str₁,...}post        
   pre{N₁..N₂..N₃}post
   pre{char..char..N}post
 
-Tilde-ekspansjon
-  ~                             $HOME
-  ~+                            $PWD
-  ~-                            $OLDPWD
-  ~user                         $HOME of user
+Tilde
+  ~                         $HOME
+  ~+                        $PWD
+  ~-                        $OLDPWD
+  ~user                     $HOME of user
 
-Parameterekspansjon
+Parameter
   $param
   ${param}
 
 Kommandosubstitusjon
   $(cmd)                    
 
-Aritmetikkekspansjon
+Aritmetikk
   $((expr))                 
 
-Prosess-substitusjon
+Prosessubstitusjon
   <(list)
   >(list)
 
-Filnavnekspansjon (globbing)
-    *                           filer, dirs e.g ls *
-    **                          filer, dirs, subdirs e.g ls **
-    **/                         kataloger, subdirs e.g ls **/
-    **/file                     rekursivt e.g ls **/file
-    ?                           enhver char
-    [abc]                       a or b or c
-    [!abc]                      not a or b or c
-    [a-cx-z]                    a,b,c or x,y,z
-    [[:character-class:]]       
-    ?(pattern-list)
-    *(pattern-list)
-    +(pattern-list)
-    @(pattern-list)
-    !(pattern-list)
+Filnavn                     
+  *                         fil|dir
+  **                        rekursivt fil|dir
+  **/                       rekursivt dir
+  **/file                   rekursivt fil
+  ?                         anything
+  [abc]                     a or b or c
+  [!abc]                    anything except
+  [^abc]                    anything except
+  [a-cx-z]                  range
+  [[:class:]]               e.g [[:alnum:]] 
+  ?(pattern-list)           zero-or-one
+  *(pattern-list)           zero-or-more
+  +(pattern-list)           zero-or-one
+  @(pattern-list)           one-of 
+  !(pattern-list)           anything-except
 
