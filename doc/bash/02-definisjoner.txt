@@ -1,55 +1,47 @@
+DEFINISJONER
+
 Token      En sekvens med tegn som utgjør en enhet (single unit).
            Er: ord ELLER operator.
 
 Ord        Et token. Kan ikke inneholde unquoted metategn.
-           Er: ord ELLER nøkkelord (reserverte ord) ELLER navn (identifikatorer).
+           Er: ord ELLER nøkkelord (reserverte ord) ELLER navn (identifikator).
 
 Operator   Et token. Inneholder minst ett unquoted metategn.
            Er: kontrolloperator ELLER redirigeringsoperator.
 
-Quote      Et tegn som opphever spesiell betydning for et tegn eller ord.
-           Er: \ ' "
-
-Metategn   Et tegn som skiller ord.
-           Er: space tab newline | & ; ( ) < >
-
-IFS        Skilletegn som brukes for orddeling etter ekspansjon.
-           Er: space tab newline
-
-Blank      Er: space tab
-            
-Nøkkelord  Et ord. Har spesiell betydning.
+Nøkkelord  Et ord med spesiell betydning.
            Er: ! { } [[ ]] function time if then else elif fi case in esac for select while until do done coproc
 
 Navn       Et ord.
            Er: [_a-zA-Z][_a-zA-Z0-9]*
-           Bruk: variabel ELLER enkelkommando.
+           Bruk: variabel ELLER enkeltkommando.
 
-Filnavn   Et ord. En sekvens med tegn som identifiserer en fil.
-          Er: fullt kvalifisert ELLER relativt.
+Paramreferanse
+           Et ord.
+           Er: $name
+
+Filnavn    Et ord. 
+           Bruk: identifiserer en fil.
+
+Pattern    Et ord. 
+           Inneholder en av: * ? [
 
 Kontrolloperator
-          Et token. Utfører en kontrollfunksjon.
-          Er: newline | & ; ( ) || |& && ;; ;& ;;&        
+           Et token. Utfører en kontrollfunksjon.
+           Er: newline | & ; ( ) || |& && ;; ;& ;;&        
 
 Redirigeringsoperator
-          Et token. Redirigerer input og/eller output.
-          Er: kombinasjoner av | & < >
+           Et token. Redirigerer input og/eller output.
+           Er: kombinasjoner av | & < >
 
-field
+Metategn   Et tegn som skiller ord.
+           Er: space tab newline | & ; ( ) < >
 
-Pattern: man bash Pattern Matching
-  * ? [
+Quote      Et tegn som opphever spesiell betydning for tegn el ord.
+           Er: \ ' "
 
-regex
+Felt       Resultatet av en ekspansjon.
 
-                                        TOKEN
-                                          |
-                  -------------------------------------------
-                  |                       |                 |
-                  |                     QUOTE            METATEGN: space tab newline | ; & ( ) < >
-                  |                       |                |
-         -------------------------      | ' "        -------------
-         |      |        |       |                   |           |
-    NØKKELORD  NAVN  FILNAVN    ORD              KontrollOp RedirigeringOp
-                                                     ...         ...
+IFS        Skilletegn som brukes for orddeling etter ekspansjon.
+           Er: space tab newline
+
