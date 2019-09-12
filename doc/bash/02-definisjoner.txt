@@ -7,7 +7,7 @@ Ord        Et token. Kan ikke inneholde unquoted metategn.
            Er: ord ELLER nøkkelord (reserverte ord) ELLER navn (identifikator).
 
 Operator   Et token. Inneholder minst ett unquoted metategn.
-           Er: kontrolloperator ELLER redirigeringsoperator.
+           Er: [|&;()<>]+
 
 Nøkkelord  Et ord med spesiell betydning.
            Er: ! { } [[ ]] function time if then else elif fi case in esac for select while until do done coproc

@@ -1,73 +1,46 @@
 PIPELINE
 
-Input
+Prosessere input
   Input: tegn fra terminalen eller en fil (eller en streng)
   Terminalen: readline read/dispatch/execute/redisplay loop
   Fil: bash buffered input package (foretrukket) eller stdio
   Output: en linje med (strøm av, buffer med) tegn terminert med newline
 
-Scanner
-  Input: en linje med (strøm av, buffer med) tegn terminert med newline
-    Breaks them into tokens at metacharacters
-    Identifies the tokens based on context (apply meaning to the result)
-    Passes them on to the parser (to be assembled into statements and commands)
-      > categorizes words according to the token type: reserved word (in the appropriate context), word, assignment statement, and so on.
-      > interprets quoted characters and strings and prevents them from being recognized by the parser as reserved words or metacharacters
-    Output: klassifiserte/typete tokens
+Lexer
+  Input: en linje med tegn
+  Deler opp linje i tokens ved metategn (tokenisering)
+  Klassifiserer tokens iht grammatikken (klassifisering)
+  Beskytter tegn og ord med \, '' og "" (escaping, quoting)
+  > Ekspanderer event ! 
+  Ekspanderer alias 
+  Output: klassifisert token-for-token
 
 Parser
-  Assembles tokens into statements and commands
-  ...
-  Returns a single C structure representing a command
-  Passes the structure (command) to the next stage of the shell's operation: word expansion
-
-Ekspansjon
-
-Command execution
-  Input: the command structure built by the parser and a set of possibly-expanded words.
-  Redirection...
-
-
-
+  Input: klassifisert token-for-token
+  Setter sammen tokens til setninger og kommandoer (parsing)
+  Output: en C struct(ure) som representerer en kommando (command objects, word lists)
 
 --------------------------------------------------------------------
+Ekspandere ord
+  Input: command structure
+  Ekspanderer braces, ..., globbing
+  Output: 
+
 --------------------------------------------------------------------
-
-Scanner
-  Splitter input i ord og operatorer
-  Employing the quoting rules to select which meanings to assign various words and characters.
-
-Parser
-  Parses these tokens into commands and other constructs
-
-  Removes the special meaning of certain words or characters
-
-Ekspansjon
-  Expands other words or characters
-
-Redirigeringer
-  Redirects input and output as needed
 
 Execution
   Executes the specified command
 
-Exit status
-  Waits for the command’s exit status
-
-  Makes that exit status available for further inspection or processing.
+  Redirigeringer
+    Redirects input and output as needed
+  
+  Exit status
+    Waits for the command’s exit status
+  
+    Makes that exit status available for further inspection or processing.
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
-Cmdline input
-  Fra term, string, script
-  Hensyntar quotes (av/på)
-  Fjerner kommentarer #...
-
-Tokeniserer input
-  Vha metategn
-  Ekspanderer event !
-  Ekspanderer alias (1st token)
-
 Parser tokens
   Variabeltilordning
   Redireksjoner
