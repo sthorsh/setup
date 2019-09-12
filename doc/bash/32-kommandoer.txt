@@ -2,9 +2,8 @@ SYNTAKS COMMAND
 
 Enkel kommando (cmd)
   [env] name [opts] [args] [redir]
-  Funksjon, builtin, script, os-cmd
+  Funksjon, builtin, fil (script el os-cmd)
   Terminator er generelt \n eller ;
-  Script/os-cmd kjører i subprosess
   Return status er cmds exit status
 
 Pipeline

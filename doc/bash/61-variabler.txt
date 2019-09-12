@@ -1,9 +1,0 @@
-VARIABLER
-
-  Dekl
-    var=                        assign
-    var+=                       append
-
-  Resolve/value
-    $var                       value
-    ${var}                     value

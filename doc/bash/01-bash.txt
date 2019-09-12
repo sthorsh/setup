@@ -5,11 +5,5 @@ Bash
   Et tekstbasert UI [for Unix]
   En interpreter [cmdline → syskall]
   En makroprosessor [ref ekspansjon]
-  Et programmeringsspråk [kombinasjon av cmds]
-
-Klassifisering
-  Login interaktivt: tty, tmux, ssh
-  Login ikke-interaktivt: ...
-  Ikke-login interaktivt: gnome-terminal
-  Ikke-login ikke-interaktivt: $ script
+  Et programmeringsspråk [kombinasjon av commands]
 

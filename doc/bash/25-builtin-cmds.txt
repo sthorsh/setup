@@ -16,7 +16,7 @@ BUILTINS
   compopt name OR compopt ±o option name 
   coproc cmd
 
-  declare -pF OR declare -pf name OR declare -aAinrx OR declare [-aAinrx] name[=value]
+ ¹declare -pF OR declare -pf name OR declare -aAinrx OR declare [-aAinrx] name[=value]
   disown OR disown jobspec|pid
 
   echo arg ...
@@ -24,7 +24,7 @@ BUILTINS
   eval arg ...
   exec extcmd OR exec redirection
   exit OR exit N
-  export OR export name[=value]
+ ¹export OR export name[=value]
 
   false
   fg OR fg jobspec
@@ -71,4 +71,7 @@ BUILTINS
   unset var OR unset function
 
   wait OR wait jobspec|pid
+
+-----------------------------------------------
+¹ builtins som tar tilordningssetninger som arg
 

@@ -13,15 +13,29 @@ Skall
 Subskall
   ...
 
+Tommelfingerregel
+  Funksjon el builtin: i prosess $$ 
+  Fil dvs script el os-cmd: ny prosess 
+
 ----------------------------------
+Miljøet (kun bash ?)
+  Et skall har et miljø (env)
+  Et miljø er en liste med name=value params/funksjoner
+  Et skall eksporterer sitt miljø til sine barn (export) 
+  Env-=navn: declare +x name
+  Env-=navn: export -n name
+  Env-=navn: unset name
+  Env+=navn: declare -x name[=value]
+  Env+=navn: export name
+  Env+=navn: name=value cmd
+  
 Kommandooppslag
   .../...
   Funksjon
   Builtin cmd
-  Fil i $PATH (separat kjøremiljø)
-  Skallscript (separat kjøremiljø)
+  Fil i $PATH (fork + nytt kjøremiljø)
+  Skallscript (fork + nytt kjøremiljø)
 
-----------------------------------
 Kjøremiljø (alle prosesser ?)
   Aliaser           alias               alias='...'
   Arbeidskatalog    pwd                 parent OR cd ...
@@ -34,17 +48,6 @@ Kjøremiljø (alle prosesser ?)
   Traps             trap -p             trap ...
   Umaske            umask               parent | umask ...
 
-Miljøet (kun bash ?)
-  Et skall har et miljø (env)
-  Et miljø er en liste med name=value params/funksjoner
-  Et skall eksporterer sitt miljø til sine barn (export) 
-  Env-=navn: declare +x name
-  Env-=navn: export -n name
-  Env-=navn: unset name
-  Env+=navn: declare -x name[=value]
-  Env+=navn: export name
-  Env+=navn: name=value cmd
-  
 ----------------------------------
 Signaler
   1 sighup: exit

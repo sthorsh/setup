@@ -41,6 +41,9 @@ Prosessubstitusjon
   <(list)
   >(list)
 
+Orddeling
+  Iht $IFS
+
 Filnavn                     
   *                         fil|dir
   **                        rekursivt fil|dir

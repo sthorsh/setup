@@ -1,0 +1,33 @@
+PIPELINE #1
+
+Prosessere input
+  Input: tegn fra terminalen eller en fil (eller en streng)
+  Terminalen: readline read/dispatch/execute/redisplay loop
+  Fil: bash buffered input package (foretrukket) eller stdio
+  Output: en linje med (strøm av, buffer med) tegn terminert med newline
+
+Lexer
+  Input: en linje med tegn
+  Deler opp linje i tokens ved metategn (tokenisering)
+  Klassifiserer tokens iht grammatikken (klassifisering)
+  Beskytter tegn og ord med \, '' og "" (escaping, quoting)
+  > Ekspanderer event ! 
+  Ekspanderer alias 
+  Output: en strøm av tokens
+
+Parser
+  Input: en strøm av tokens
+  Setter sammen tokens til setninger og kommandoer
+  Rapporterer syntax error ved evt syntaktiske feil
+  ?: representerer assignments
+  Command objects: representerer kommandoer
+  Redirection objects: representerer redirigeringer
+  Command structure: datastruktur med command objects og redirection objectst
+  Output: command structure + en eller flere liste(r) med ord
+    
+Ekspandere ord
+  Input: liste(r) med ord
+  Ekspanderer braces, ..., globbing
+  Fjerner escapetegn og quotes i ord
+  Output: liste(r) med ekspanderte ord
+

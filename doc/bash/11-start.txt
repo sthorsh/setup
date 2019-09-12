@@ -8,13 +8,15 @@ Start
 opt₁
   --help
   --login
-  --restricted
-  --version
   ...
 
 opt₂
   -l (login)
-  -i (interactive)
-  -r (restricted)
   ...
   
+Klassifisering
+  Login interaktivt: tty, tmux, ssh
+  Login ikke-interaktivt: ...
+  Ikke-login interaktivt: gnome-terminal
+  Ikke-login ikke-interaktivt: $ script
+

@@ -14,7 +14,7 @@ Operatorer
   RHS utsettes for ekspansjon og quote removal
   Prosesseres fra venstre mot høyre dvs rekkefølge teller
 
-Redirigeringer
+Syntaks
   cmd < fil           stdin read fra fil
   cmd << EOL          stdin read fra here-doc
   cmd <<< "..."       stdin read fra here-string
