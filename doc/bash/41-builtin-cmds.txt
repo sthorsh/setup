@@ -1,5 +1,10 @@
 BUILTINS
 
+Kontekst
+  Hver builtin er implementert som en C-funksjon
+    
+
+Syntaks
   :
 
   alias OR alias name=value
@@ -9,14 +14,14 @@ BUILTINS
   builtin builtin
 
   caller
-  cd OR cd - OR cd dir
+ ¹cd OR cd - OR cd dir 
   command extcmd
-  complete OR complete -A action name
+  complete OR complete -A action name                           
   compgen -A action [word]
   compopt name OR compopt ±o option name 
   coproc cmd
 
- ¹declare -pF OR declare -pf name OR declare -aAinrx OR declare [-aAinrx] name[=value]
+ ²declare -pF OR declare -pf name OR declare -aAinrx OR declare [-aAinrx] name[=value]
   disown OR disown jobspec|pid
 
   echo arg ...
@@ -24,7 +29,7 @@ BUILTINS
   eval arg ...
   exec extcmd OR exec redirection
   exit OR exit N
- ¹export OR export name[=value]
+ ²export OR export name[=value]
 
   false
   fg OR fg jobspec
@@ -72,6 +77,6 @@ BUILTINS
 
   wait OR wait jobspec|pid
 
------------------------------------------------
-¹ builtins som tar tilordningssetninger som arg
+¹ Eksempel på builtin som modifiserer shell internal state i.e PWD
+² builtins som tar tilordningssetninger som arg og ekspanderer rhs
 

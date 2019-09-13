@@ -1,4 +1,4 @@
-SYNTAKS COMMAND
+KOMMANDOER: SYNTAKS
 
 Enkel kommando (cmd)
   [env] name [opts] [args] [redir]

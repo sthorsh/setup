@@ -1,23 +1,3 @@
-KJØRING
-
-Prosess
-  ...
-
-Subprosess
-  pstree 
-
-Skall
-  bash
-  ...
-
-Subskall
-  ...
-
-Tommelfingerregel
-  Funksjon el builtin: i prosess $$ 
-  Fil dvs script el os-cmd: ny prosess 
-
-----------------------------------
 Miljøet (kun bash ?)
   Et skall har et miljø (env)
   Et miljø er en liste med name=value params/funksjoner
@@ -28,13 +8,6 @@ Miljøet (kun bash ?)
   Env+=navn: declare -x name[=value]
   Env+=navn: export name
   Env+=navn: name=value cmd
-  
-Kommandooppslag
-  .../...
-  Funksjon
-  Builtin cmd
-  Fil i $PATH (fork + nytt kjøremiljø)
-  Skallscript (fork + nytt kjøremiljø)
 
 Kjøremiljø (alle prosesser ?)
   Aliaser           alias               alias='...'
@@ -48,24 +21,3 @@ Kjøremiljø (alle prosesser ?)
   Traps             trap -p             trap ...
   Umaske            umask               parent | umask ...
 
-----------------------------------
-Signaler
-  1 sighup: exit
-  2 sigint: catch
-  3 sigquit: ignore
-  6 sigabrt: exit
-  9 sigkill: exit 
-  15 sigterm: ignore
-  20 sigtstp: ignore
-  ...
-  
-Exit status
-  0 success
-  1 no such file
-  2 syntax error
-  ...
-  126 permission denied
-  127 command not found
-  ...
-  255 failure
-  

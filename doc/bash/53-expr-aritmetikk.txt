@@ -5,7 +5,7 @@ Kontekst
   let expr OR (( expr ))
   $((expr))
 
-Operatorer
+Syntaks
   id++ id--             post-inkrement, post-dekrement
   ++id --id             pre-inkrement, pre-dekrement
   -+                    unær minus, unær pluss

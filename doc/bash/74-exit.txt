@@ -1,0 +1,11 @@
+Exit status
+  0 success
+  1 no such file
+  2 syntax error
+  ...
+  126 permission denied
+  127 command not found
+  ...
+  255 failure
+  
+

@@ -1,0 +1,41 @@
+1. EXECUTE ENKELTKOMMANDO INKL TILORDNINGSSETNINGER
+  The set of expanded words is decomposed into a command name and set of arguments
+  The shell deliberately blurs the distinction for hvordan en cmd er implementert:
+
+  Name resolution
+    If cmd name contains slashes: execute file
+    If lookup(name) → shell function: bash kaller funksjon
+    If lookup(name) → shell builtin: bash kaller C-funksjon
+    Otherwise: search the filesystem for an executable file with that name (PATH search)
+      • If found: execute file
+      • Else: bash kaller funksjon e.g command_not_found
+  
+  Commands executed from the filesystem (cause the creation of a new process)
+    • the command name is passed to the OS as a file to be read and executed
+    • the remaining words is passed to the OS as the rest of the elements of argv
+    • it forks and
+    • creates a new execution environment
+      • almost an exact duplicate of the shell environment
+      • except: minor modifications to signal disposition
+      • except: minor modifications to files opened and closed by redirections
+    • executes the program in this new environment
+
+2. EXECUTE COMPOUND COMMANDS 
+    • consist of lists of one or more simple commands
+    • are introduced by a keyword such as if or while
+    • This is where the programming power of the shell is most visible and effective.
+    • The IMPLEMENTATION is fairly unsurprising. 
+      • The parser constructs objects corresponding to the various compound commands, and interprets them by traversing the object. 
+      • Each compound command is implemented by a corresponding C function that is responsible for
+        • performing the appropriate expansions
+        • executing commands as specified
+        • altering the execution flow based on the command's return status. 
+      • E.g the function that implements the for command is illustrative. It must 
+        • first expand the list of words following the in reserved word
+        • then iterate through the expanded words, assigning each word to the appropriate variable
+        • then executing the list of commands in the for command's body.
+        • The for command doesn't have to alter execution based on the return status of the command
+        • The for command does have to pay attention to the effects of the break and continue builtins
+        • Once all the words in the list have been used, the for command returns. 
+        • As this shows, for the most part, the implementation follows the description very closely.
+

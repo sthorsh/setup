@@ -1,22 +1,22 @@
 FUNKSJONER
 
-Declaration 1
+Syntaks
   f () compound-command [redirections]
   Compound-command { ... } must be terminated with ; & or \n
   Exit status: 0 unless syntax error or a readonly function f exists
   
-Declaration 2
+Syntaks
   function f compound-command [redirections]
   Requires compound-command w/braces { ... }
   Compound-command { ... } must be terminated with ; & or \n
   Exit status: 0 unless syntax error or a readonly function f exists
 
-Declaration 3
+Syntaks
   function f () compound-command [redirections]
   Compound-command { ... } must be terminated with ; & or \n
   Exit status: 0 unless syntax error or a readonly function f exists
 
-Execution
+Syntaks
   Functions are executed in the current shell context
   No new process is created to interpret a shell function
   Arguments become positional params during function execution

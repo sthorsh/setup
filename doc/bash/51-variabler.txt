@@ -1,0 +1,29 @@
+VARIABLER
+
+Kontekst
+  ...
+
+Definisjon
+    • Assignment statement appears as appear as args to builtins
+      • declare
+      • export
+
+Tilordning
+  En tilordningssetning er en form for enkeltkommando
+
+  > Shell variable assignments (i.e., words of the form var=value) are a kind of simple command themselves.
+  > Assignment statements can
+      • stand alone on a command line
+        • the assignment statements modify the shell's state.
+      • precede a command name.
+        • the variables are passed to the executed command in its environment 
+        • if they precede a shell function they persist, with a few exceptions, only as long as the function executes
+        • if they precede a built-in command they persist, with a few exceptions, only as long as the builtin executes
+  
+Syntaks
+  var=                        tilordning
+  var+=                       tilordning (append)
+  $var                        resolve value
+  ${var}                      resolve value
+  ...
+

@@ -1,9 +1,18 @@
 BASH
 
 Bash
-  Et skall [for Unix]
-  Et tekstbasert UI [for Unix]
-  En interpreter [cmdline → syskall]
-  En makroprosessor [ref ekspansjon]
-  Et programmeringsspråk [kombinasjon av commands]
+  Et skall
+  Et tekstbasert UI 
+  En interpreter [cmdline → N syskall]
+  En makroprosessor [ekspansjon]
+  Et grensesnitt mot OS'et [redirigeringer]
+  Et programmeringsspråk [PL-konstruksjoner if etc]
+
+Bash pipeline
+  Input
+  Lexer
+  Parser
+  Ekspansjoner
+  Kjøring
+  Exit status
 
