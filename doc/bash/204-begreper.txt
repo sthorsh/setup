@@ -1,0 +1,8 @@
+Enkeltkommando (cmd)  
+  Funksjon, builtin eller fil (script eller OS-cmd)
+
+Builtins
+  cd: modifiserer shell internal state i.e PWD
+  declare og export: tar tilordningssetninger som arg og ekspanderer rhs
+  Alle builtins er implementert som C-funksjoner
+

@@ -1,0 +1,46 @@
+KOMMANDOER
+
+ 1 Enkeltkommando 
+   [name=value ...] [words] [redirections]
+ 
+ 2 Pipeline
+   [!] command₁ [| or |& command₂ ...]
+ 
+ 3 Liste
+   pipeline₁ [; or & or && or || pipeline₂ ...] [\n or ; or &]
+   Sekvensiell liste, asynkron liste, and-liste, or-liste 
+ 
+ 4 Gruppe
+   { list ; }
+ 
+ 5 Gruppe i subskall
+   ( list )
+ 
+ 6 Evaluer aritmetisk uttrykk
+   (( expr ))
+ 
+ 7 Utføre betingelseskommando
+   [[ expr ]]
+ 
+ 8 if
+   if COMMANDS; then COMMANDS; [ elif COMMANDS; then COMMANDS;  ]... [ else COMMANDS;  ] fi
+ 
+ 9 case
+   case WORD in [PATTERN [| PATTERN]...) COMMANDS ;;]... esac
+ 
+10 select
+   select NAME [in WORDS ... ;] do COMMANDS; done
+
+11 for
+   for NAME [in WORDS ... ] ; do COMMANDS; done
+   for (( exp₁; exp₂; exp₃  )); do COMMANDS; done
+
+12 while
+   while COMMANDS; do COMMANDS; done
+
+13 until
+   until COMMANDS; do COMMANDS; done
+
+14 Coprosess
+   coproc [NAME] command [redirections]
+

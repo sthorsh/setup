@@ -14,9 +14,3 @@ opt₂
   -l (login)
   ...
   
-Klassifisering
-  Login interaktivt: tty, tmux, ssh
-  Login ikke-interaktivt: ...
-  Ikke-login interaktivt: gnome-terminal
-  Ikke-login ikke-interaktivt: $ script
-
