@@ -1,4 +1,4 @@
-EXPR TEST
+TEST EXPR
 
 Kontekst
   test expr OR [ expr ]
@@ -9,7 +9,7 @@ Opsjoner
 
 Params
   -n $param               not empty? (dvs definert)
-  -z $param               zero? (dvs ikke definert)
+  -z $param               zero? (dvs udefinert)
   $param = word           lik word?
   $param < word           leksografisk før?
   $param > word           leksografisk etter?

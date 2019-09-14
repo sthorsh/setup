@@ -30,8 +30,8 @@ Kontrolloperator
            Et token. Utfører en kontrollfunksjon.
            Er: newline | & ; ( ) || |& && ;; ;& ;;&        
 
-Redirigeringsoperator
-           Et token. Redirigerer input og/eller output.
+Omdirigeringsoperator
+           Et token. Omdirigerer input og/eller output.
            Er: kombinasjoner av | & < >
 
 Metategn   Et tegn som skiller ord.
@@ -44,4 +44,15 @@ Felt       Resultatet av en ekspansjon.
 
 IFS        Skilletegn som brukes for orddeling etter ekspansjon.
            Er: space tab newline
+
+Builtins   Alle builtins er implementert som C-funksjoner.
+
+Enkeltkommando
+           Funksjon, builtin, script, OS-kommando.
+
+Variabelskop
+           Prosess, kommando, globalt, funksjon.
+
+Variabeltilordning
+           Er en form for enkeltkommando.
 

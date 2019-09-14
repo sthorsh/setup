@@ -1,0 +1,21 @@
+VARDEKL
+
+Deklarere
+  name=value
+  name+=value               
+
+  name=value command        
+  name+=value command        
+    
+  declare opts name         
+  declare opts name=value   
+    
+  export name               
+  export name=value         
+    
+  local opts name           
+  local opts name=value     
+    
+Slette
+  unset name              
+    

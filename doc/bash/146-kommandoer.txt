@@ -16,7 +16,7 @@ KOMMANDOER
  5 Gruppe i subskall
    ( list )
  
- 6 Evaluer aritmetisk uttrykk
+ 6 Evaluer aritmetisk uttrykk (ekvivalent med let)
    (( expr ))
  
  7 Utføre betingelseskommando
