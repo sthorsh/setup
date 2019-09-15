@@ -1,4 +1,4 @@
-KOMMANDOER
+KOMMANDOSYNTAKS
 
  1 Enkeltkommando 
    [name=value ...] [words] [redirections]
@@ -8,7 +8,6 @@ KOMMANDOER
  
  3 Liste
    pipeline₁ [; or & or && or || pipeline₂ ...] [\n or ; or &]
-   Sekvensiell liste, asynkron liste, and-liste, or-liste 
  
  4 Gruppe
    { list ; }

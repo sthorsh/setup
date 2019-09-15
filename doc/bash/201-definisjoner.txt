@@ -1,58 +1,33 @@
-DEFINISJONER
+DEFINISJONER 
 
-Token      En sekvens med tegn som utgjør en enhet (single unit).
-           Er: ord ELLER operator.
+Token         En tegnsekvens.
+              Et ord ELLER en operator.
 
-Ord        Et token. Kan ikke inneholde unquoted metategn.
-           Er: ord ELLER nøkkelord (reserverte ord) ELLER navn (identifikator).
+Escape        \ skrur av spesialtegn, untatt \newline
 
-Operator   Et token. Inneholder minst ett unquoted metategn.
-           Er: [|&;()<>]+
+Sitattegn     ' skrur av spesialtegn og nøkkelord, untatt ' 
+              " skrur av spesialtegn og nøkkelord, untatt \ ' ! $ (BRM 3.1.2.3)
 
-Nøkkelord  Et ord med spesiell betydning.
-           Er: ! { } [[ ]] function time if then else elif fi case in esac for select while until do done coproc
+Metategn      Et skilletegn for ord.
+              space tab newline | ; & ( ) < >
 
-Navn       Et ord.
-           Er: [_a-zA-Z][_a-zA-Z0-9]*
-           Bruk: variabel ELLER enkeltkommando.
+Ord           Et token uten aktive metategn.
+              Et nøkkelord ELLER et ord.
 
-Paramreferanse
-           Et ord.
-           Er: $name
+Nøkkelord     ! { } [[ ]] if then else elif fi case in esac 
+              for select while until do done coproc function time
 
-Filnavn    Et ord. 
-           Bruk: identifiserer en fil.
+Pattern       Et ord, med en av * ? [
 
-Pattern    Et ord. 
-           Inneholder en av: * ? [
+Operator      Et token av ett eller flere aktive metategn.
+              Er kontrollOperator ELLER omdirigeringsOperator.
 
-Kontrolloperator
-           Et token. Utfører en kontrollfunksjon.
-           Er: newline | & ; ( ) || |& && ;; ;& ;;&        
+KontrOp       newline | |& ; & && || ( ) ;; ;& ;;&        
 
-Omdirigeringsoperator
-           Et token. Omdirigerer input og/eller output.
-           Er: kombinasjoner av | & < >
+OmdirOp       En eller flere av < > | &
 
-Metategn   Et tegn som skiller ord.
-           Er: space tab newline | & ; ( ) < >
+Felt          Tekst som resultat av (en av) ekspansjonene.
 
-Quote      Et tegn som opphever spesiell betydning for tegn el ord.
-           Er: \ ' "
-
-Felt       Resultatet av en ekspansjon.
-
-IFS        Skilletegn som brukes for orddeling etter ekspansjon.
-           Er: space tab newline
-
-Builtins   Alle builtins er implementert som C-funksjoner.
-
-Enkeltkommando
-           Funksjon, builtin, script, OS-kommando.
-
-Variabelskop
-           Prosess, kommando, globalt, funksjon.
-
-Variabeltilordning
-           Er en form for enkeltkommando.
+IFS           Tegn som skiller felt fra hverandre. Brukes ved orddeling.
+              space tab newline
 

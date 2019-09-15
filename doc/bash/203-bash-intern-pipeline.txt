@@ -1,0 +1,48 @@
+BASH INTERN PIPELINE
+
+Prosessor
+  Leser tegn fra terminalen, fil eller streng
+  Readline leser tegn-for-tegn fra terminalen 
+  Readline bufrer tegn til mottak av en newline
+  Output: strøm av tegn (for _en_ kommandolinje)
+
+Lexer
+  Input: linje
+  Tokeniserer linjen
+  Klassifiserer tokens
+  Prosesserer escape- og sitattegn
+  Ekspanderer history events 
+  Ekspanderer alias 
+  Output: strøm av tokens
+
+Parser
+  Input: strøm av ord og operatorer
+  Verifiserer input eller rapporterer syntaksfeil
+  Representerer variabeltilordninger som ...
+  Representerer kommandoer som command objects
+  Representerer omdirigeringer som redirection objects
+  Output: _en_ datastruktur med objekter og ord
+
+Makroprosessor
+  Input: ord
+  Ekspanderer braces
+  Ekspanderer tilde
+  Ekspanderer params
+  Kommandosubstitusjon
+  Ekspanderer aritmetiske expr
+  Prosessubstitusjon
+  Orddeling
+  Ekspanderer filnavn
+  Fjerner escape- og sitattegn
+  Output: ekspanderte ord
+
+Execution engine
+  Input: datastruktur med objekter og ekspanderte ord
+  Enabler omdirigeringer
+  Utfører (enkelt)kommando(er)
+  Utfører jobbkontroll (signaler)
+
+Prosessor
+  Ved completion: disable omdirigering
+  Ved completion: eksponere exit/return status 0..255
+
