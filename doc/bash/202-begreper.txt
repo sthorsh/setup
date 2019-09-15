@@ -1,0 +1,14 @@
+BEGREPER
+
+Builtins   
+  Alle er implementert som C-funksjoner.
+
+Variabeltilordning
+   Er en form for enkeltkommando.
+
+Variabelskop
+  Prosess, kommando, globalt, funksjon.
+
+Enkeltkommando
+  Funksjon, builtin, script, OS-kommando.
+
