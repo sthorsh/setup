@@ -33,7 +33,7 @@ Makroprosessor
   Fjerner escape- og sitattegn
   Output: command structure
 
-Kjøresystem (execution engine)
+Kjøresystem
   Input: command structure
   Utfører omdirigeringer
   Ekspanderer og tilordner rhs til variabler
