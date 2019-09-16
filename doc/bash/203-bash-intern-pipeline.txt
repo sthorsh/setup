@@ -35,18 +35,20 @@ Kjøresystem
   Ekspanderer og tilordner variabelverdier
   Antar første ord er navn, resten er args
   Hvis navn ikke inneholder /
-  • Hvis match, kjører funksjon
-  • Hvis match, kjører builtin
-  • Gjør path-søk på kjørbar fil
+    • Hvis match, kjører funksjon
+    • Hvis match, kjører builtin
+    • Søker i path etter _kjørbar_ fil
   Hvis navn inneholder /, eller path-søk OK
-  • Kjører fil i separat kjøremiljø
-  If this execution fails because the file is not in executable format, and the file is not
-a directory, it is assumed to be a shell script and the shell executes it as described in
-Section 3.8 [Shell Scripts], page 42.
-  -> fork
-  -> wait (hvis ikke asynkron)
-  -> execve
-  Utfører jobbkontroll (signaler)
+    • Kjører fil i separat kjøremiljø
+    • Bash gjør fork()
+    • Bash gjør wait()
+    • Barneprosess gjør exec()
+    • Barneprosess gjør exit()
+  Bash kan kjøre ikke-kjørbare script som $ bash name
+    • Søker i . etter script
+    • Søker i path etter script
+    • Hvis treff: kjører script
+  Feiler med "command not found"
 
 Outputprosessor
   Opphever omdirigeringer
