@@ -2,43 +2,50 @@ BASH INTERN PIPELINE
 
 Inputprosessor
   Leser tegn fra terminalen, fil eller streng
-  Readline leser tegn-for-tegn fra terminalen 
+  Readline leser tegn-for-tegn fra terminalen
   Readline bufrer tegn til mottak av en newline
   Output: strøm av tegn (for _en_ kommandolinje)
 
 Lexer
-  Input: linje
   Tokeniserer linjen
   Klassifiserer tokens (escape- og sitattegn)
-  Ekspanderer history events 
-  Ekspanderer alias 
-  Output: strøm av tokens
+  Ekspanderer history events
+  Ekspanderer alias
+  Output: strøm av tokens (ord og operatorer)
 
 Parser
-  Input: strøm av ord og operatorer
-  Verifiserer input el rapporterer syntaksfeil
+  Verifiserer input eller rapporterer syntaksfeil
   Bygger opp en datastruktur for kommandoen (command structure)
   Output: command structure
 
 Makroprosessor
-  Input: command structure
   Ekspanderer braces
   Ekspanderer tilde
   Ekspanderer params
-  Kommandosubstitusjon
+  Substituerer kommando
   Ekspanderer aritmetiske expr
-  Prosessubstitusjon
-  Orddeling
+  Substituerer prosess
+  Deler ord
   Ekspanderer filnavn
   Fjerner escape- og sitattegn
   Output: command structure
 
 Kjøresystem
-  Input: command structure
   Utfører omdirigeringer
-  Ekspanderer og tilordner rhs til variabler
-> Command search: ...
-> and execution:  Kjører (enkelt)kommando(er) -> fork, wait|execve etc
+  Ekspanderer og tilordner variabelverdier
+  Antar første ord er navn, resten er args
+  Hvis navn ikke inneholder /
+  • Hvis match, kjører funksjon
+  • Hvis match, kjører builtin
+  • Gjør path-søk på kjørbar fil
+  Hvis navn inneholder /, eller path-søk OK
+  • Kjører fil i separat kjøremiljø
+  If this execution fails because the file is not in executable format, and the file is not
+a directory, it is assumed to be a shell script and the shell executes it as described in
+Section 3.8 [Shell Scripts], page 42.
+  -> fork
+  -> wait (hvis ikke asynkron)
+  -> execve
   Utfører jobbkontroll (signaler)
 
 Outputprosessor
