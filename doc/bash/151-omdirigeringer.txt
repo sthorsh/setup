@@ -27,12 +27,6 @@ Syntaks
   cmd₁ 2>&1 | cmd₂    cmd₁ stdout og stderr til cmd₂ stdin
   ...
 
-Om syntaks
-  Operatorer kan stå foran, i, eller etter cmd
-  Prosesseres fra venstre mot høyre dvs rekkefølge teller
-  RHS utsettes for ekspansjon og quote removal
-
-------------
 Omdirigering
   Manipulering av fildeskriptortabeller
 

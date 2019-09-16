@@ -23,9 +23,9 @@ Krøllparentes
 
 Tilde
   ~                         $HOME
+  ~user                     $HOME of user
   ~+                        $PWD
   ~-                        $OLDPWD
-  ~user                     $HOME of user
 
 Parameter
   $param
