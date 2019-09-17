@@ -1,14 +1,30 @@
-Miljøet (kun bash ?)
-  Et skall har et miljø (env)
-  Et miljø er en liste med name=value params/funksjoner
-  Et skall eksporterer sitt miljø til sine barn (export) 
-  Env-=navn: declare +x name
-  Env-=navn: export -n name
-  Env-=navn: unset name
-  Env+=navn: declare -x name[=value]
-  Env+=navn: export name
-  Env+=navn: name=value cmd
+Syntaks
+  declare -x              vise  
+  export                  vise 
+  env                     vise 
 
+  declare -x name=value   deklerare og eksportere
+  export name=value       deklarere og eksportere
+
+  declare -x name         eksportere
+  export name             eksportere var
+  export -f name          eksportere funksjon
+
+  name=value cmd          eksportere midlertidig
+  
+  declare +x name         fjerne
+  export -n name          fjerne
+
+  unset name              slette
+  
+params og funksjoner
+ekposrterer til barn, ALLE kommandoer "arver"
+
+Miljø
+  Et liste av navn=verdi,...
+  Bash har et miljø, som det eksporter til sine barneprosesser
+  Dvs funksjoner/builtins og script/os-cms hhv bruker og arver bash' miljø
+  
 Kjøremiljø (alle prosesser ?)
   Aliaser           alias               alias='...'
   Arbeidskatalog    pwd                 parent OR cd ...
