@@ -1,0 +1,20 @@
+OMDIRIGERING
+
+Omdirigering
+  Manipulering av fildeskriptortabeller
+
+Fil
+  Alt i linux er en fil
+  Alle prosesser har stdin, stdout, stderr
+
+Fildeskriptor
+  En fildeskriptor en en handle for en fil
+  En fildeskriptor er et tall 0,1,2,...255
+
+Fildeskriptortabell
+  Per-prosess fildeskriptortabell: lsof -p $$
+  Fildeskriptortabell --> filtabell --> inodetabell
+  Operasjoner: open, close, read, write, copy/dup(licate)
+  Bash åpner fd0, fd1, og fd2; fd3... åpnes programmatisk
+  En kommando arver fildeskriptorer fra sin foreldreprosess
+

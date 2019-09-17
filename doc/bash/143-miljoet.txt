@@ -1,0 +1,30 @@
+Permanent
+
+  declare -x                    vis eksporterte vars
+  declare -x name=value         deklarer/eksporter var
+  declare -x name               eksporter var
+  declare +x name               skru av export for var
+  declare -fx                   vis eksporterte funksjoner
+  declare -fx name              eksporter funksjon
+  declare -f +x name            skru av export for funksjon
+
+  export                        vis eksporterte vars
+  export name=value             deklarer/eksporter var
+  export name                   eksporter var
+  export -n name                skru av export for var
+  export -f                     vis eksporterte funksjoner
+  export -f name                eksporter funksjon
+  export -fn name               skru av export for funksjon
+
+  unset name                    slett var
+  unset -f name                 slett funksjon
+
+Temporært
+
+  name=value command          eksporter var
+
+  env                         vis eksporterte vars/funksjoner
+  env name=value command      eksporter var
+  env -i command              ignorer eksisterende miljø
+  env -u name command         unset name
+

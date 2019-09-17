@@ -1,7 +1,7 @@
 BEGREPER
 
 Builtins   
-  Alle er implementert som C-funksjoner.
+  Hver builtin er implementert som en C-funksjon.
 
 Variabeltilordning
    Er en form for enkeltkommando.
@@ -9,6 +9,23 @@ Variabeltilordning
 Variabelskop
   Prosess, kommando, globalt, funksjon.
 
+Miljø
+  Et liste av navn=verdi,...
+  Bash har et miljø, som det eksporter til sine barneprosesser
+  Dvs funksjoner/builtins og script/os-cms hhv bruker og arver bash' miljø
+  
 Enkeltkommando
   Funksjon, builtin, script, OS-kommando.
+
+Sammensatte kommandoer
+  Hver compound command er implementert som en C-funksjon
+  For eksempel, for var in *; do ...; done
+  • Parser konstruerer commmand structure
+  • Makroprosessor ekspanderer * til liste av ord 
+  • Kjøresystemet itererer gjennom listen og for hvert ord
+    • Tilordner ordet til var
+    • Kjører kommandoen(e) i for-kommandoens body
+    • Hensyntar evt bruk av builtins break el continue
+  • Kjøresystemet terminerer når iterasjonen er ferdig
+  • Altså: _implementasjonen_ av compound commands følger _beskrivelsen/grammatikken_ tett 
 
