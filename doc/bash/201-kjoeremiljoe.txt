@@ -1,35 +1,38 @@
 KJØREMILJØ
 
-ProsessID'er      
-  $$; $PPID
+PID: $$ 
 
-Opsjoner          
-  $-; or set -o       bash -... OR set -o ...
-  shopt -p            shopt -s ...
+PPID: $PPID
 
-Params            
-  declare -p          parent env OR set -- ... OR name=value
+Opsjoner: shopt [-o]
+  bash opt
+  set... OR shopt...
 
-Funksjoner        
-  declare -F          parent env OR name(){...}
+Alias: alias
+  alias...
 
-Jobber
-  jobs -p             cmd &
+Variabler: declare -p          
+  Arver miljø
+  Deklarasjon
 
-Traps             
-  trap -p             trap ...
+Funksjoner: declare -F          
+  Arver miljø 
+  Deklarasjon
 
-Fildeskriptorer   
-  lsof -p $$          parent OR exec N...
+Arbeidskatalog: $PWD              
+  Arv
+  cd...
 
-Arbeidskatalog    
-  pwd                 parent OR cd ...
+Rettighetsmaske: umask               
+  Arv
+  umask...
 
-Umaske            
-  umask               parent | umask ...
+Åpne filer: lsof -p $$          
+  Arv 
+  exec...
 
-> Alias
->   alias               alias='...'
+Signalfeller: trap                
+  trap...
 
 ---------------------------------------------------------------------------
 Commands executed from the filesystem (cause the creation of a new process)

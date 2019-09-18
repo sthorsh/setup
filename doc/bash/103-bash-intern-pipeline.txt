@@ -34,20 +34,23 @@ Kjøresystem
   Utfører omdirigeringer
   Ekspanderer og tilordner variabelverdier
   Antar første ord er navn, resten er args
-  Hvis navn ikke inneholder /
-    • Hvis match, kjører funksjon
-    • Hvis match, kjører builtin
-    • Søker i path etter _kjørbar_ fil
-  Hvis navn inneholder /, eller path-søk OK
-    • Kjører fil i separat kjøremiljø
+  Hvis navn uten slash && navn matcher funksjon
+  • Kjører funksjon → done
+  Hvis navn uten slash && navn matcher builtin
+  • Kjører builtin → done
+  Gjør path-søk etter kjørbar fil
+  Hvis navn med slash || path-søk treff
     • Bash gjør fork()
+    • Bash oppretter kjøremiljø
     • Bash gjør wait()
-    • Barneprosess gjør exec()
-    • Barneprosess gjør exit()
-  Bash kan kjøre ikke-kjørbare script som $ bash name
-    • Søker i . etter script
-    • Søker i path etter script
-    • Hvis treff: kjører script
+    • Barn gjør exec()
+    • Barn kjører i separat kjøremiljø...
+    • Barn gjør exit()
+    Bash kan kjøre ikke-kjørbare script som $ bash name (REF: BRM 3.8)
+      • Søker i . etter script
+      • Søker i path etter script
+      • Hvis treff: fork, ... exit ?????????????????
+        
   Feiler med "command not found"
 
 Outputprosessor
