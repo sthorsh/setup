@@ -1,26 +1,46 @@
 KJØRE
 
-I skall
-  $ echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL
-  $ bash -c "echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL"
-  ...
+Enkeltkommandoer
+  $ function
+    Current prosess
+    Current skall
 
-I subskall
-  $ $(echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL) (C-A-e)
+  $ builtin
+    Current prosess
+    Current skall
+
+  $ filename
+    Subprosess
+    Nytt skall
+    Non-empty hash
+
+Sammensatte kommandoer
+  $ $( expr ) (C-A-e)
+  
+
   $ >(echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL;) 
+
   $ funksjon | nl
+
   $ echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL | nl
+
   $ echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL &
+
   $ (echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL)
-  ...
 
-I subskall → nytt skall (subprosess)
+
+  $ ./file (I subskall → nytt skall (subprosess) direkte, file er kjørbar, hash table non-empty)
+
+  $ bash   
+
   $ bash file.sh (fra . eller path, hash table empty)
-  $ file (fra path, file er kjørbar, hash table non-empty)
-  $ bash file (fra path, file er kjørbar, hash table empty)
-  $ ./file (direkte, file er kjørbar, hash table non-empty)
-  ...
 
-Direkte i nytt skall (subprosess)
-  $ bash
+  $ bash file (fra path, file er kjørbar, hash table empty)
+
+  $ bash -c "echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL"
+
+  $ bash -c filename
+
+-------------------------------------------------
+cmd: echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL
 
