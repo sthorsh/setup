@@ -14,17 +14,18 @@ Lexer
   Output: strøm av tokens (ord og operatorer)
 
 Parser
-  Verifiserer input eller rapporterer syntaksfeil
-  Bygger opp en datastruktur for kommandoen (command structure)
-  Output: command structure
+  Verifiserer input
+  Kaster syntaksfeil (evt)
+  Bygger en «command structure» (datastruktur)
+  Output: command structure (representerer kommandoen)
 
 Makroprosessor
   Ekspanderer braces
   Ekspanderer tilde
   Ekspanderer params
-  Substituerer kommando
+  Substituerer kommando (subskall)
   Ekspanderer aritmetiske expr
-  Substituerer prosess
+  Substituerer prosess  (subskall)
   Deler ord
   Ekspanderer filnavn
   Fjerner escape- og sitattegn
@@ -40,21 +41,20 @@ Kjøresystem
   • Kjører builtin → done
   Gjør path-søk etter kjørbar fil
   Hvis navn med slash || path-søk treff
-    • Bash gjør fork()
-    • Bash oppretter kjøremiljø
-    • Bash gjør wait()
-    • Barn gjør exec()
-    • Barn kjører i separat kjøremiljø...
-    • Barn gjør exit()
+  • Bash: syskall fork
+  • Bash: lager kjøremiljø
+  • Bash: syskall wait: exit status 0..255
+  • Barn: syskall exec
+  • Barn: kjører kommando i separat kjøremiljø
+  • Barn: syskall exit → done
     Bash kan kjøre ikke-kjørbare script som $ bash name (REF: BRM 3.8)
       • Søker i . etter script
       • Søker i path etter script
       • Hvis treff: fork, ... exit ?????????????????
-        
-  Feiler med "command not found"
+  Ellers, kaster "command not found"
 
 Outputprosessor
+  Leser exit status
   Opphever omdirigeringer
-  Beregner exit/return status 0..255
-  Eksponerer exit/return status i $?
+  Eksponerer exit status i $?
 
