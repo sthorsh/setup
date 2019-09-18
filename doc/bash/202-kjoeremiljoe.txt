@@ -1,0 +1,38 @@
+KJØREMILJØ
+
+PIDs etc
+  $$ - prosess
+  $PPID - parent
+  $BASHPID - subskall
+  $SHLVL - subprosess
+
+Opsjoner
+  set ... OR shopt ...
+  Til barn vha $ bash [set_opt] [shopt_opt]
+
+Alias
+  alias ...
+
+Variabler
+  Vha deklarasjon
+  Til barn vha arv (ref miljø)
+
+Funksjoner
+  Vha deklarasjon
+  Til barn vha arv (ref miljø)
+
+Arbeidskatalog
+  cd ...
+  Til barn vha arv
+
+Rettighetsmaske
+  umask ...
+  Til barn vha arv
+
+Åpne filer
+  exec ...
+  Til barn vha arv
+
+Signalfeller
+  trap ...
+

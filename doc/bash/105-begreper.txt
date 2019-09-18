@@ -29,3 +29,15 @@ Sammensatte kommandoer
   • Kjøresystemet terminerer når iterasjonen er ferdig
   • Altså: _implementasjonen_ av compound commands følger _beskrivelsen/grammatikken_ tett 
 
+Skall
+  Er en prosess
+  Har et kjøremiljø
+
+Subskall
+  Skall _kan_ kalle fork → subskall _kan_ være en prosess
+  Har et duplikat kjøremiljø
+
+Subprosess
+  Skall _må_ kalle for → subskall _er_ en prosess
+  Har et separat kjøremiljø
+

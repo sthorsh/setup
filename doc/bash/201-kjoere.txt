@@ -1,0 +1,22 @@
+KJØRE
+
+I skallet
+  $ echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL
+  $ bash -c "echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL"
+  ...
+
+I subskall
+  $ $(echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL) (C-A-e)
+  $ >(echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL;) 
+  $ funksjon | nl
+  $ echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL | nl
+  $ echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL &
+  $ (echo $$ $PPID $BASHPID $BASH_SUBSHELL $SHLVL)
+  ...
+
+I subprosess
+  $ bash
+  $ kjørbar_fil
+  $ bash script.sh (trenger ikke være kjørbart)
+  ...
+
