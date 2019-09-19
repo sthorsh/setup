@@ -1,50 +1,24 @@
 JOBBKONTROLL
 
-  Job
-    a command being executed by one or more processes.
-    e.g job:prosessgruppe:prosesser 1:1:N
-    only pipelines result in more than one process being associated with a job
+Builtins
+  jobs
+  fg OR fg jobspec
+  bg OR bg jobspec
+  kill -l [sigspec] OR kill -sigspec jobspec|pid
+  disown OR disown jobspec|pid
+  suspend OR suspend
+  wait OR wait jobspec|pid
 
-  Job control
-    the ability to move processes (commands being executed) between the foreground and background
-    the ability to suspend and resume their execution.
+Spesifikasjon
+  jobspec: %N
+  sigspec: 1|hup|sighup etc
 
-  Process group 
-    a collection of one or more processes
-    process group leader: en av prosessene i gruppen
-    process group ID (PGID): process group leaders' PID
-
-  The shell can execute commands in the 
-    foreground: it waits for the command to finish and collects its exit status
-    background: the shell immediately reads the next command
-
-  Signaler: jobbkontroll?
-    1 sighup: exit
-    2 sigint: catch
-    3 sigquit: ignore
-    6 sigabrt: exit
-    9 sigkill: exit 
-    15 sigterm: ignore
-    20 sigtstp: ignore
-    ...
-
-The shell can execute commands in the foreground, in which it waits for the command to finish and collects its exit status, or the background, where the shell
-immediately reads the next command. Job control is the ability to move processes (commands being executed) between the foreground and background, and to suspend
-and resume their execution. To implement this, bash introduces the concept of a job, which is essentially a command being executed by one or more processes. A
-pipeline, for instance, uses one process for each of its elements. The process group is a way to join separate processes together into a single job. The
-terminal has a process group ID associated with it, so the foreground process group is the one whose process group ID is the same as the terminal's.
-
-The shell uses a few simple data structures in its job control implementation. There is a structure to represent a child process, including its process ID, its
-state, and the status it returned when it terminated. A pipeline is just a simple linked list of these process structures. A job is quite similar: there is a
-list of processes, some job state (running, suspended, exited, etc.), and the job's process group ID. The process list usually consists of a single process;
-only pipelines result in more than one process being associated with a job. Each job has a unique process group ID, and the process in the job whose process ID
-is the same as the job's process group ID is called the process group leader. The current set of jobs is kept in an array, conceptually very similar to how it's
-presented to the user. The job's state and exit status are assembled by aggregating the state and exit statuses of the constituent processes.
-
-Like several other things in the shell, the complex part about implementing job control is bookkeeping. The shell must take care to assign processes to the
-correct process groups, make sure that child process creation and process group assignment are synchronized, and that the terminal's process group is set
-appropriately, since the terminal's process group determines the foreground job (and, if it's not set back to the shell's process group, the shell itself won't
-be able to read terminal input). Since it's so process-oriented, it's not straightforward to implement compound commands such as while and for loops so an
-entire loop can be stopped and started as a unit, and few shells have done so.
-
-
+Signaler
+  1  sighup   exit
+  2  sigint   catch
+  3  sigquit  ignore
+  6  sigabrt  exit
+  9  sigkill  exit 
+  15 sigterm  ignore
+  20 sigtstp  ignore
+  ...

@@ -1,0 +1,33 @@
+JOBBKONTROLL
+
+Jobb
+  En kommando som kjøres av ≥1 prosesser
+  E.g ls | sort kjøres prosess₁ ls og prosess₂ sort
+
+Eksempel
+  Session: SID 101; 1:N til jobber
+  Jobb: kommando e.g ls | sort; 1:1 til prosessgruppe
+  Prosessgruppe: PGID 103 (ls); 1:N til prosesser
+  Prosesser: PID 103 (ls, prosessgruppeleder), PID 104 (sort)
+  
+Datastruktur
+  PGID
+  En liste med prosesser
+  Tilstand: running, suspended, exited etc
+
+Jobbkontroll
+  En egenskap ved bash
+  Bash starter/stopper jobber
+  Bash suspends/resumes jobber
+  Bash flytter prosesser til fg/bg
+  Støttes av terminal-drivere (ctrl-c, ctrl-z)
+
+Signaler
+   1 sighup: exit
+   2 sigint: catch
+   3 sigquit: ignore
+   6 sigabrt: exit
+   9 sigkill: exit 
+  15 sigterm: ignore
+  20 sigtstp: ignore
+  ...
