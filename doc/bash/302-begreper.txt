@@ -3,17 +3,14 @@ BEGREPER
 Builtins   
   Hver builtin er implementert som en C-funksjon.
 
+------------------
 Variabeltilordning
    Er en form for enkeltkommando.
 
 Variabelskop
   Prosess, kommando, globalt, funksjon.
 
-Miljø
-  Et liste av navn=verdi,...
-  Bash har et miljø, som det eksporter til sine barneprosesser
-  Dvs funksjoner/builtins og script/os-cms hhv bruker og arver bash' miljø
-  
+--------------
 Enkeltkommando
   Funksjon, builtin, script, OS-kommando.
 
@@ -29,15 +26,36 @@ Sammensatte kommandoer
   • Kjøresystemet terminerer når iterasjonen er ferdig
   • Altså: _implementasjonen_ av compound commands følger _beskrivelsen/grammatikken_ tett 
 
+----------
+Kjøremiljø
+  ... 
+
+Miljø
+  Et liste av navn=verdi,...
+  Bash har et miljø, som det eksporter til sine barneprosesser
+  Dvs funksjoner/builtins og script/os-cms hhv bruker og arver bash' miljø
+  
+-----
 Skall
   Er en prosess
   Har et kjøremiljø
+  Altså: en prosess, ett kjøremiljø
+  Altså: kommando kan lese tilstand, skrive tilstand
 
 Subskall
-  Skall _kan_ kalle fork → subskall _kan_ være en prosess
-  Har et duplikat kjøremiljø
+  Kort for subshell execution environment (fokus: kjøremiljø)
+  POSIX-spesifikasjonen stiller krav til _duplisert_ kjøremiljø
+  POSIX-spesifikasjonen stiller ingen krav til implementasjonen (to fork or not to fork)
+  Bash implementerer subskall vha fork dvs en ny (sub)prosess
+  Altså: to prosesser, dupliserte kjøremiljøer
+  Altså: kommando kan lese tilstand, ikke skrive tilstand
 
 Subprosess
-  Skall _må_ kalle for → subskall _er_ en prosess
-  Har et separat kjøremiljø
+  Kort for subprocess execution environment
+  En subprosess har et _separat_ kjøremiljø
+  Bash implementerer dette vha fork-wait/exec-exit
+  Altså: to prosesser, separate kjøremiljøer
+  Altså: kommando kan lese kun eksportert tilstand, ikke skrive tilstand
 
+----------
+  
