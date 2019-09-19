@@ -22,12 +22,3 @@ Jobbkontroll
   Bash flytter prosesser til fg/bg
   Støttes av terminal-drivere (ctrl-c, ctrl-z)
 
-Signaler
-   1 sighup: exit
-   2 sigint: catch
-   3 sigquit: ignore
-   6 sigabrt: exit
-   9 sigkill: exit 
-  15 sigterm: ignore
-  20 sigtstp: ignore
-  ...
