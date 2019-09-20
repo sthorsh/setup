@@ -1,0 +1,3 @@
+ps        ps -efj --header
+
+telnet    telnet hostname|ip-address port
