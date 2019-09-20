@@ -1,6 +1,6 @@
 BASH → READLINE
 
-  A-N                    arg:N
+  A-N                    arg N
 
   C-v                    quoted-insert
 
@@ -11,8 +11,8 @@ BASH → READLINE
   A-b                    back word
   C-a                    BOL
 
-  C-]                    char-search →
-  C-[                    char-search ←
+  C-]                    search char →
+  C-[                    search char ←
 
   A-c                    caps
   A-l                    lowercase
@@ -31,18 +31,18 @@ BASH → READLINE
   C-y                    yank kill-ring
   A-y                    rotate-yank kill-ring
 
-  C-x (                  macro start
-  C-x )                  macro end
-  C-x e                  mecro execute
-
+  C-x (                  start macro
+  C-x )                  end macro
+  C-x e                  execute macro
+                           
   C-p                    prev cmdline
   C-n                    next cmdline
   C-o                    operate-and-get-next
   C-r C-[gjm]            reverse-i-search (rep)
   C-s                    i-search (rep)
 
-  A-.                    prev cmdline word 0..N (rep)
-  C-A-y                  yank prev cmdline word 0..N
+  C-A-y                  yank 1st or 0..Nth arg
+  A-.                    yank 0..Nth or last arg (rep)
 
   C-i or Tab             complete $ ~ @ cmd / (rep)
   A-*                    insert-completions $ ~ @ cmd /
