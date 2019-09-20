@@ -1,4 +1,4 @@
-BASH INTERN PIPELINE
+INTERPRETER (BASH INTERNAL PIPELINE)
 
 Inputprosessor
   Leser tegn fra terminalen, fil eller streng
