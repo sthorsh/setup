@@ -1,5 +1,17 @@
-# If ! interactive, return
+# Stop if not interactive
 [[ $- != *i*  ]] && return
+
+# Readline
+bind 'tab:menu-complete'
+bind 'set menu-complete-display-prefix on'
+bind 'set show-all-if-ambiguous on'
+bind 'space:magic-space'
+bind '"\C-[":character-search-backward'
+bind '"\C-q":unix-filename-rubout'
+bind '"\e\C-b":complete-into-braces'
+bind '"\e\C-g":glob-complete-word'
+bind '"\e\C-f":glob-expand-word'
+stty -ixon -ixoff
 
 # Options
 set -o ignoreeof
@@ -7,6 +19,27 @@ set -o noclobber
 set -o notify
 shopt -s globstar
 shopt -s histappend
+
+# Aliases
+alias gradle="/opt/gradle/bin/gradle"
+alias grep='grep --color=auto'
+alias gta='cd /usr/lib/apache-activemq/'
+alias gtf='cd /usr/lib/jboss-fuse/'
+alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
+alias jobs="jobs -l"
+alias l='ls -lF --color=auto --group-directories-first'
+alias la='ls -alF --color=auto --group-directories-first'
+alias mount='mount | column -t'
+alias mvnf='mvn clean install -Pfindbugs,checkstyle'
+alias mvnl='mvn clean install -Dmaven.test.skip=true'
+alias path='echo -e ${PATH//:/"\n"}'
+alias postman='/opt/Postman/Postman > /dev/null 2>&1 &'
+alias ps='ps -efj --header'
+alias soapui="/opt/SoapUI-5.5.0/bin/soapui.sh > /dev/null 2>&1 &"
+alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
+alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
+alias type='type -a'
+alias x='exit'
 
 # Variables
 export AMQ_HOME=/usr/lib/apache-activemq
@@ -45,45 +78,13 @@ if [ "$color_prompt" != yes ]; then
 fi
 unset color_prompt
 
-# Readline
-bind 'tab:menu-complete'
-bind 'set menu-complete-display-prefix on'
-bind 'set show-all-if-ambiguous on'
-bind 'space:magic-space'
-bind '"\C-[":character-search-backward'
-bind '"\C-q":unix-filename-rubout'
-bind '"\e\C-b":complete-into-braces'
-bind '"\e\C-g":glob-complete-word'
-bind '"\e\C-f":glob-expand-word'
-stty -ixon -ixoff
-
-# Aliases
-alias gradle="/opt/gradle/bin/gradle"
-alias grep='grep --color=auto'
-alias gta='cd /usr/lib/apache-activemq/'
-alias gtf='cd /usr/lib/jboss-fuse/'
-alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
-alias jobs="jobs -l"
-alias l='ls -lF --color=auto --group-directories-first'
-alias la='ls -alF --color=auto --group-directories-first'
-alias mount='mount | column -t'
-alias mvnf='mvn clean install -Pfindbugs,checkstyle'
-alias mvnl='mvn clean install -Dmaven.test.skip=true'
-alias path='echo -e ${PATH//:/"\n"}'
-alias postman='/opt/Postman/Postman > /dev/null 2>&1 &'
-alias ps='ps -efj --header'
-alias soapui="/opt/SoapUI-5.5.0/bin/soapui.sh > /dev/null 2>&1 &"
-alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
-alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
-alias type='type -a'
-alias x='exit'
-
-# Startup files
+# Source startup files
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
 [ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
 [ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
 
-# Starting programs
+# Start programs
 ! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa_git )
 [[ -d $AMQ_HOME ]] && ! activemq status >/dev/null && activemq start >/dev/null 
 ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
+
