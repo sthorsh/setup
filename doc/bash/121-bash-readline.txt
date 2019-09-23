@@ -1,7 +1,6 @@
 BASH → READLINE
 
   A-N                    arg N
-
   C-v                    quoted-insert
 
   C-f                    forward
@@ -31,24 +30,19 @@ BASH → READLINE
   C-y                    yank kill-ring
   A-y                    rotate-yank kill-ring
 
-  C-x (                  start macro
-  C-x )                  end macro
-  C-x e                  execute macro
-                           
-  C-p                    prev cmdline
-  C-n                    next cmdline
-  C-o                    operate-and-get-next
-  C-r C-[gjm]            reverse-i-search (rep)
-  C-s                    i-search (rep)
+    C-p                    prev cmdline
+    C-n                    next cmdline
+    C-o                    operate-and-get-next
+    C-r C-[gjm]            reverse-i-search (rep)
+    C-s                    i-search (rep)
+    C-A-y                  yank 1st or 0..Nth arg
+    A-.                    yank 0..Nth or last arg (rep)
+    C-A-i                  dynamic-complete-history
 
-  C-A-y                  yank 1st or 0..Nth arg
-  A-.                    yank 0..Nth or last arg (rep)
-
-  C-i or Tab             complete $ ~ @ cmd / (rep)
-  A-*                    insert-completions $ ~ @ cmd /
+  C-i                    complete $ ~ @ cmd /
   C-A-b                  complete-into-braces
   C-A-g                  glob-complete-word * ?
-  C-A-i                  dynamic-complete-history
+  A-*                    insert-completions $ ~ @ cmd /
 
   C-A-e                  expand
   C-A-f                  expand filename
@@ -60,3 +54,8 @@ BASH → READLINE
   C-m                    accept-line (mac eol cr)
 
   C-l                    clear-screen
+
+  C-x (                  start macro
+  C-x )                  end macro
+  C-x e                  execute macro
+                           
