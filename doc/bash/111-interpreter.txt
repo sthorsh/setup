@@ -26,7 +26,7 @@ Makroprosessor
   Substituerer kommando (subskall)
   Ekspanderer aritmetiske expr
   Substituerer prosess  (subskall)
-  Deler ord
+  Felt-/orddeling
   Ekspanderer filnavn
   Fjerner escape- og sitattegn
   Output: command structure

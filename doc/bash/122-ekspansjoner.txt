@@ -33,21 +33,17 @@ $((expr))                 aritmetisk ekspansjon
 <(list)                   prosessubstitusjon
 >(list)
 
-felt → ord                felt-/orddeling iht IFS
-
-    *                         fil|dir
-    **                        rekursivt fil|dir
-    **/                       rekursivt dir
-    **/file                   rekursivt fil
-    ?                         anything
-    [abc]                     a or b or c
-    [!abc]                    anything except
-    [^abc]                    anything except
-    [a-cx-z]                  range
-    [[:class:]]               e.g [[:alnum:]] 
-    ?(pattern-list)           zero-or-one
-    *(pattern-list)           zero-or-more
-    +(pattern-list)           zero-or-one
-    @(pattern-list)           one-of 
-    !(pattern-list)           anything-except
+*                         file AND dir 
+**/*                      recursive file AND dir
+**/*/                     recursive dir
+?                         any char
+[abc]                     a OR b OR c
+[!abc]                    anything except
+[a-cx-z]                  range
+[[:class:]]               e.g [[:alnum:]] 
+?(pattern-list)           zero-or-one
+*(pattern-list)           zero-or-more
++(pattern-list)           zero-or-one
+@(pattern-list)           one-of 
+!(pattern-list)           anything-except
 
