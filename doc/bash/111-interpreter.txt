@@ -7,7 +7,7 @@ Inputprosessor
   Output: strøm av tegn (for _en_ kommandolinje)
 
 Lexer
-  Tokeniserer linjen
+  Splitter linje i tokens vha <space><tab> (command line splitting)
   Klassifiserer tokens (escape- og sitattegn)
   Ekspanderer history events
   Ekspanderer alias
@@ -26,7 +26,7 @@ Makroprosessor
   Substituerer kommando (subskall)
   Ekspanderer aritmetiske expr
   Substituerer prosess  (subskall)
-  Felt-/orddeling
+  Splitter felt i ord vha IFS (word splitting)
   Ekspanderer filnavn
   Fjerner escape- og sitattegn
   Output: command structure
