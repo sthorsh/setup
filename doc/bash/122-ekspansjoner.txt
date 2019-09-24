@@ -1,63 +1,53 @@
 EKSPANSJONER
 
-History
-  !N                        cmdline N
-  !!                        forrige cmdline
-  !*                        forrige cmdline opts & args
-  !!:s/x/y                  forrige cmdline, sub 1st x med y (evt: ^x^y)
-  !!:gs/x/y                 forrige cmdline, sub alle x med y
-  !cmd                      cmdline
-  !cmd^                     cmdline 1st arg
-  !cmd$                     cmdline siste arg
-  !cmd:N                    cmdline arg N
-  !cmd:s/x/y                cmdline, sub 1st x med y
-  !cmd:gs/x/y               cmdline, sub alle x med y
+!N                        event N
+!!                        prev event
+!*                        prev event: opts & args
+!!:s/x/y                  prev event: sub 1st x → y
+!!:gs/x/y                 prev event: sub all x → y
+!cmd                      event ^cmd
+!cmd^                     event ^cmd: 1st arg
+!cmd$                     event ^cmd: last arg
+!cmd:N                    event ^cmd: Nth arg
+!cmd:s/x/y                event ^cmd: sub 1st x → y
+!cmd:gs/x/y               event ^cmd: sub all x → y
 
-Alias
-  ...
+...                       alias
 
-Krøllparentes
-  pre{str₁,...}post        
-  pre{N₁..N₂..N₃}post
-  pre{char..char..N}post
+pre{str₁,...}post         brace expansion
+pre{N₁..N₂..N₃}post
+pre{char..char..N}post
 
-Tilde
-  ~                         $HOME
-  ~user                     $HOME of user
-  ~+                        $PWD
-  ~-                        $OLDPWD
+~                         $HOME
+~user                     $HOME of user
+~+                        $PWD
+~-                        $OLDPWD
 
-Parameter
-  $param
-  ${param}
+$param                    parameterekspansjon
+${param}
 
-Kommandosubstitusjon
-  $(cmd)                    
+$(cmd)                    kommandosubstitusjon
 
-Aritmetikk
-  $((expr))                 
+$((expr))                 aritmetisk ekspansjon
 
-Prosessubstitusjon
-  <(list)
-  >(list)
+<(list)                   prosessubstitusjon
+>(list)
 
-Orddeling
-  Iht $IFS
+felt → ord                felt-/orddeling iht IFS
 
-Filnavn                     
-  *                         fil|dir
-  **                        rekursivt fil|dir
-  **/                       rekursivt dir
-  **/file                   rekursivt fil
-  ?                         anything
-  [abc]                     a or b or c
-  [!abc]                    anything except
-  [^abc]                    anything except
-  [a-cx-z]                  range
-  [[:class:]]               e.g [[:alnum:]] 
-  ?(pattern-list)           zero-or-one
-  *(pattern-list)           zero-or-more
-  +(pattern-list)           zero-or-one
-  @(pattern-list)           one-of 
-  !(pattern-list)           anything-except
+    *                         fil|dir
+    **                        rekursivt fil|dir
+    **/                       rekursivt dir
+    **/file                   rekursivt fil
+    ?                         anything
+    [abc]                     a or b or c
+    [!abc]                    anything except
+    [^abc]                    anything except
+    [a-cx-z]                  range
+    [[:class:]]               e.g [[:alnum:]] 
+    ?(pattern-list)           zero-or-one
+    *(pattern-list)           zero-or-more
+    +(pattern-list)           zero-or-one
+    @(pattern-list)           one-of 
+    !(pattern-list)           anything-except
 
