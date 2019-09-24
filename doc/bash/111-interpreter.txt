@@ -47,10 +47,10 @@ Kjøresystem
   • Barn: syskall exec
   • Barn: kjører kommando i separat kjøremiljø
   • Barn: syskall exit → done
-    Bash kan kjøre ikke-kjørbare script som $ bash name (REF: BRM 3.8)
-      • Søker i . etter script
-      • Søker i path etter script
-      • Hvis treff: fork, ... exit ?????????????????
+  Bash kan kjøre ikke-kjørbare script som $ bash name (REF: BRM 3.8)
+  • Søker i . etter script
+  • Søker i path etter script
+  • Hvis treff: fork
   Ellers, kaster "command not found"
 
 Outputprosessor
