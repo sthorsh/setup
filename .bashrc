@@ -3,6 +3,8 @@
 
 # Readline
 bind 'tab:menu-complete'
+bind 'set colored-completion-prefix on'
+bind 'set completion-display-width 0'
 bind 'set menu-complete-display-prefix on'
 bind 'set show-all-if-ambiguous on'
 bind 'space:magic-space'
