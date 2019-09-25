@@ -1,61 +1,61 @@
 BASH → READLINE
 
-A-N                    arg N
-C-v                    quoted-insert
-
-C-f                    forward
-A-f                    forward word
-C-e                    EOL
-C-b                    back
-A-b                    back word
-C-a                    BOL
-
-C-]                    search char →
-C-[                    search char ←
-
-A-c                    caps
-A-l                    lowercase
-A-u                    uppercase
-C-t                    transpose
-A-t                    transpose word 
-
-C-d                    delete
-A-d                    kill word
-C-k                    kill eol
-C-h                    delete
-C-q                    kill filename
-C-w                    kill word
-C-u                    kill bol
-
-C-y                    yank kill-ring
-A-y                    rotate-yank kill-ring
-
-C-p                    previous
-C-n                    next
-C-o                    operate-and-get-next
-C-r C-[gjm]            reverse search
-C-s                    search
-C-A-y                  yank 1st OR 0..Nth arg
-A-.                    yank 0..Nth OR last arg
-
-C-i                    complete $ ~ @ cmd /
-C-A-b                  complete-into-braces
-C-A-g                  glob-complete-word * ?
-C-A-i                  dynamic-complete-history
-A-*                    insert-completions $ ~ @ cmd /
-
-C-A-e                  expand
-C-A-f                  expand filename
-
-A-r                    revert-line
-C-x C-u                undo
-
-C-j                    accept-line (nix eol lf)
-C-m                    accept-line (mac eol cr)
-
-C-l                    clear-screen
-
-C-x (                  start macro
-C-x )                  end macro
-C-x e                  execute macro
-                         
+  A-N                    arg N
+  C-v                    quoted-insert
+  
+  C-f                    forward
+  A-f                    forward word
+  C-e                    EOL
+  C-b                    back
+  A-b                    back word
+  C-a                    BOL
+  
+  C-]                    search char →
+  C-[                    search char ←
+  
+  A-c                    caps
+  A-l                    lowercase
+  A-u                    uppercase
+  C-t                    transpose
+  A-t                    transpose word 
+  
+  C-d                    delete
+  A-d                    kill word
+  C-k                    kill eol
+  C-h                    delete
+  C-q                    kill filename
+  C-w                    kill word
+  C-u                    kill bol
+  
+  C-y                    yank kill-ring
+  A-y                    rotate-yank kill-ring
+  
+  C-p                    previous
+  C-n                    next
+  C-o                    operate-and-get-next
+  C-r C-[gjm]            reverse search
+  C-s                    search
+  C-A-y                  yank 1st OR 0..Nth arg
+  A-.                    yank 0..Nth OR last arg
+  
+  C-i                    complete $ ~ @ cmd /
+  C-A-b                  complete-into-braces
+  C-A-g                  glob-complete-word * ?
+  C-A-i                  dynamic-complete-history
+  A-*                    insert-completions $ ~ @ cmd /
+  
+  C-A-e                  expand
+  C-A-f                  expand filename
+  
+  A-r                    revert-line
+  C-x C-u                undo
+  
+  C-j                    accept-line (nix eol lf)
+  C-m                    accept-line (mac eol cr)
+  
+  C-l                    clear-screen
+  
+  C-x (                  start macro
+  C-x )                  end macro
+  C-x e                  execute macro
+                           
