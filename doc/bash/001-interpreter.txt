@@ -2,8 +2,8 @@ BASH INTERNAL PIPELINE
 
 Inputprosessor
   Fra terminal vha readline (interaktivt)
-  Fra fil vha stdio (ikke-interaktivt)
-  Output: en linje dvs et buffer med tegn terminert av en newline
+  Fra fil/script vha stdio (ikke-interaktivt)
+  Output: en linje dvs et buffer m/tegn terminert av newline
 
   Lexer
     Splitter linje i tokens vha <space><tab> (command line splitting)
