@@ -1,18 +1,24 @@
 # Stop if not interactive
 [[ $- != *i*  ]] && return
 
-# Readline
-bind 'tab:menu-complete'
-bind 'set colored-completion-prefix on'
-bind 'set completion-display-width 0'
-bind 'set menu-complete-display-prefix on'
-bind 'set show-all-if-ambiguous on'
+# Readline functions
 bind 'space:magic-space'
+bind 'tab:menu-complete'
 bind '"\C-[":character-search-backward'
 bind '"\C-q":unix-filename-rubout'
 bind '"\e\C-b":complete-into-braces'
 bind '"\e\C-g":glob-complete-word'
 bind '"\e\C-f":glob-expand-word'
+# Readline macros
+bind '"\C-x\"": "\"\"\C-b'
+bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
+# Readline variables
+bind 'set colored-completion-prefix on'
+bind 'set completion-display-width 0'
+bind 'set menu-complete-display-prefix on'
+bind 'set show-all-if-ambiguous on'
+
+# Disable ^S ^Q
 stty -ixon -ixoff
 
 # Options
