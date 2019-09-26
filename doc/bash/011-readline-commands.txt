@@ -1,4 +1,4 @@
-BASH → READLINE
+READLINE COMMANDS
 
   A-N                    arg N
   C-v                    quoted-insert
