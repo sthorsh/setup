@@ -7,8 +7,8 @@ bind 'tab:menu-complete'
 bind '"\C-[":character-search-backward'
 bind '"\C-q":unix-filename-rubout'
 bind '"\e\C-b":complete-into-braces'
+bind '"\e\C-f":shell-forward-word'
 bind '"\e\C-g":glob-complete-word'
-bind '"\e\C-f":glob-expand-word'
 
 # Readline macros
 bind '"\C-x\"": "\"\"\C-b'
