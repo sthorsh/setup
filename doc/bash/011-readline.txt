@@ -11,20 +11,19 @@ READLINE
   A-f                    forward-word
   A-b                    backward-word
   C-A-f                  shell-forward-word
-  (?)                    previous-screen-line (bash 5)
+  C-A-b                  shell-backward-word
+  C-]                    char-search
+  C-[                    char-search-backward
     
-    C-]                    search char →
-    C-[                    search char ←
-    
+    ...                    self-insert
+    C-v                    quoted-insert
+
     A-c                    caps
     A-l                    lowercase
     A-u                    uppercase
     C-t                    transpose
     A-t                    transpose word 
     
-    ...                    self-insert
-    C-v                    quoted-insert
-
     C-d                    delete
     A-d                    kill word
     C-k                    kill eol
@@ -51,7 +50,8 @@ READLINE
     A-*                    insert-completions $ ~ @ cmd /
     
     C-A-e                  expand line
-    C-x *                  expand pattern (sjekk OS for binding C-A-p)
+    C-x *                  expand pattern
+    C-A-x                  expand line and pattern
     
     A-r                    revert-line
     C-x C-u                undo
