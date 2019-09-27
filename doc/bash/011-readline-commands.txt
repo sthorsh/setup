@@ -66,4 +66,6 @@ READLINE
     C-x ...                readline macro
     C-x ...                readline macro
     C-x ...                readline macro
+
+    .... sjekk mot bashrc !
                             
