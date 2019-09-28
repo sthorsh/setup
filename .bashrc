@@ -12,17 +12,16 @@ bind 'set show-all-if-ambiguous on'
 bind '"\e\C-b":shell-backward-word'
 bind '"\e\C-f":shell-forward-word'
 bind '"\C-[":character-search-backward'
-bind '"\C-q":unix-filename-rubout'
-#bind 'tab:menu-complete'
-#bind '"\e\C-b":complete-into-braces'
-#bind '"\e\C-g":glob-complete-word'
-#bind 'space:magic-space'
+bind 'tab:menu-complete'
+bind '"\ep":glob-complete-word'
+bind 'space:magic-space'
 bind '"\e\C-p":glob-expand-word'
+bind '"\C-q":unix-filename-rubout'
 
 # Readline macros
-#bind '"\C-x\"": "\"\"\C-b'
-#bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
-#bind '"\C-xq": "\eb\"\ef\""'
+bind '"\C-x\"": "\"\"\C-b'
+bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
+bind '"\C-xq": "\eb\"\ef\""'
 
 # Disable ^S ^Q
 stty -ixon -ixoff

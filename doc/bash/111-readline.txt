@@ -1,72 +1,71 @@
 READLINE
 
-  C-l                    clear-screen
+  C-l                   clear-screen
 
-  A-N                    digit-argument
+  A-N                   digit-argument
   
-  C-a                    beginning-of-line
-  C-e                    end-of-line
-  C-f                    forward-char
-  C-b                    backward-char
-  A-f                    forward-word
-  A-b                    backward-word
-  C-A-f                  shell-forward-word
-  C-A-b                  shell-backward-word
-  C-]                    char-search
-  C-[                    char-search-backward
+  C-a                   beginning-of-line
+  C-e                   end-of-line
+  C-f                   forward-char
+  C-b                   backward-char
+  A-f                   forward-word
+  A-b                   backward-word
+  A-C-f                 shell-forward-word
+  A-C-b                 shell-backward-word
+  C-]                   char-search
+  C-[                   char-search-backward
+  C-@                   set-mark
+  C-x C-x               exchange-point-and-mark
     
-  ...                    self-insert
-  C-v                    quoted-insert
-  C-d                    end-of-file
+  C-p                   previous-history
+  C-n                   next-history
+  C-o                   operate-and-get-next
+  C-r C-[gjm]           reverse-search-history
+  C-s                   search-history
+  A-C-y                 yank 1st OR 0..Nth arg
+  A-.                   yank 0..Nth OR last arg
+    
+  ...                   self-insert
+  C-d                   end-of-file
+  C-v                   quoted-insert
+  C-x"                  readline macro: _ → ""
+  C-xp                  readline macro: _ → PATH=_...
+  C-xq                  readline macro: word_ → "word"_
 
-  A-c                    cap word
-  A-l                    lowercase word
-  A-u                    uppercase word
-  C-t                    transpose/drag char →
-  A-t                    transpose/drag word → 
+  A-c                   cap word
+  A-l                   lowercase word
+  A-u                   uppercase word
+  C-t                   transpose/drag char →
+  A-t                   transpose/drag word → 
     
-  C-d                    del char under cursor
-  C-h                    del char behind cursor
-  A-d                    kill word under cursor
-  C-q                    kill word behind cursor (unix-filename-rubout)
-  C-w                    kill word behind cursor
-  C-k                    kill line under cursor
-  C-u                    kill line behind cursor
-    
-  C-y                    yank kill-ring
-  A-y                    rotate-and-yank kill-ring
-    
-    C-p                    previous
-    C-n                    next
-    C-o                    operate-and-get-next
-    C-r C-[gjm]            reverse search
-    C-s                    search
-    C-A-y                  yank 1st OR 0..Nth arg
-    A-.                    yank 0..Nth OR last arg
-    
-    C-i                    complete $ ~ @ cmd /
-    C-A-b                  complete-into-braces
-    C-A-g                  glob-complete-word * ?
-    C-A-i                  dynamic-complete-history
-    A-*                    insert-completions $ ~ @ cmd /
-    
-    C-A-e                  expand line
-    C-x *                  expand pattern
-    C-A-x                  expand line and pattern
-    
-    A-r                    revert-line
-    C-x C-u                undo
-    
-    C-j                    accept-line (nix eol lf)
-    C-m                    accept-line (mac eol cr)
-    
-  C-x (                  start macro
-  C-x )                  end macro
-  C-x e                  execute macro
+  C-i                   menu-complete $ ~ @ cmd /
+  A-C-i                 dynamic-complete-history
+  A-{                   complete-into-braces {}
+  A-p                   complete pattern * ? []
 
-    C-x ...                readline macro
-    C-x ...                readline macro
-    C-x ...                readline macro
+  A-C-e                 expand line
+  Space                 expand history event (magic-space)
+  A-C-p                 expand pattern
+    
+  C-d                   del char under cursor
+  C-h                   del char bak (til venstre for) cursor
+  A-d                   kill word foran (til høyre for) cursor
+  C-q                   kill word bak cursor (unix-filename-rubout)
+  C-w                   kill word bak cursor
+  C-k                   kill line under cursor
+  C-u                   kill line bak cursor
+  C-y                   yank kill-ring
+  A-y                   rotate-and-yank kill-ring
+    
+  A-r                   revert-line
+  C-x C-u               undo
+    
+  C-g                   abort
+  C-j                   accept-line (lf, nix eol)
+  C-m                   accept-line (cr, mac eol)
+    
+  C-x (                 start macro
+  C-x )                 end macro
+  C-x e                 execute macro
 
-    .... sjekk mot bashrc !
-                            
+  C-x C-e               edit-and-execute-command (vi)
