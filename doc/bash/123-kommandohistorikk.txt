@@ -1,0 +1,50 @@
+KOMMANDOHISTORIKK
+
+Opsjoner
+  set history             on
+  set histexpand          on
+  shopt cmdhist           on
+  shopt histappend        on
+  shopt histreedit        off
+  shopt histverify        off
+  shopt lithist           off
+
+Variabler
+  HISTSIZE                100000
+  HISTFILE                ~/.bash_history
+  HISTFILESIZE            100000
+  HISTTIMEFORMAT          %Y-%m-%d %H:%M
+  HISTCMD                 4930
+  HISTCONTROL             ignoreboth
+
+Builtins
+  history                 list
+  history N               list N
+  history -c              clear
+  history -d              delete  
+  history -a              history list → history file
+  history -n              history list ← history file
+  history -r              read
+  history -w              write
+
+Event: repeat cmds
+  !N                      entry N
+  !-N                     entry N lines back
+  !!                      entry !-1
+  !x                      entry starting with x
+  !?x                     entry containing x
+  ^x^y                    entry !! with x for y
+  !#                      entry typed so far
+
+  Words: reuse parts
+      !*                    prev event: opts & args
+      !cmd^                 event ^cmd: 1st arg
+      !cmd$                 event ^cmd: last arg
+      !cmd:N                event ^cmd: Nth arg
+
+  Modifiers: fix cmds
+      !!:s/x/y              prev event: sub 1st x → y
+      !!:gs/x/y             prev event: sub all x → y
+      !cmd:s/x/y            event ^cmd: sub 1st x → y
+      !cmd:gs/x/y           event ^cmd: sub all x → y
+

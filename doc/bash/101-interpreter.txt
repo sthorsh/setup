@@ -3,13 +3,14 @@ BASH INTERNAL PIPELINE
 Inputprosessor
   Fra terminal vha readline (interaktivt)
   Fra fil/script vha stdio (ikke-interaktivt)
-  Output: en linje dvs et buffer m/tegn terminert av newline
+  Output: en linje dvs en strøm av el et buffer m/tegn terminert av newline
 
-  Lexer
-    Splitter linje i tokens vha <space><tab> (command line splitting)
+Lexer
+    Tokeniserer linjen vha metategn (command line splitting)
     Klassifiserer tokens (escape- og sitattegn)
-    Ekspanderer event
-    Ekspanderer alias
+    Ekspanderer !... → ny input stream
+    Ekspanderer alias → ny input stream
+    Skriver kommandolinje til historikken
     Output: strøm av tokens (ord og operatorer)
   
   Parser
