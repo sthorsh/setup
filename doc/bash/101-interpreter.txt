@@ -10,7 +10,7 @@ GNU history library
   Skriver til ~/.bash_history
   Output: readline + history stream
 
-Lexer
+Lexer: https://en.wikipedia.org/wiki/Lexical_analysis
     Escapetegn: \
     Sitattegn: "" ''
     Metategn: space tab newline | ; & ( ) < >
