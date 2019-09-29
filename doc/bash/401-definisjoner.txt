@@ -1,15 +1,19 @@
 DEFINISJONER 
 
-Token         En tegnsekvens.
-              Et ord ELLER en operator.
+Escapetegn
+  \ skrur av spesialtegn
+  untatt \newline
 
-Escape        \ skrur av spesialtegn, untatt \newline
+-------------------------------
 
 Sitattegn     ' skrur av spesialtegn og nøkkelord, untatt ' 
               " skrur av spesialtegn og nøkkelord, untatt \ ' ! $ (BRM 3.1.2.3)
 
 Metategn      Et skilletegn for ord.
               space tab newline | ; & ( ) < >
+
+Token         En tegnsekvens.
+              Et ord ELLER en operator.
 
 Ord           Et token uten aktive metategn.
               Et nøkkelord ELLER et ord.

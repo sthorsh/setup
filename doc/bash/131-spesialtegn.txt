@@ -1,0 +1,42 @@
+Backslash
+  \
+
+Enkelfnutt
+  ''
+
+Dobbelfnutt
+  ""
+
+Metategn
+  space 
+  tab 
+  newline 
+  | 
+  ; 
+  & 
+  ( 
+  ) 
+  < 
+  >
+
+Pipeline NOT
+  !
+
+Command block
+  {
+  }
+
+Tilde
+  ~
+
+Variabel
+  $
+
+Filsti
+  /
+
+Pattern
+  * 
+  ? 
+  [
+  ]
