@@ -1,20 +1,26 @@
-BASH INTERNAL PIPELINE
+PIPELINE
 
-Inputprosessor
-  Fra terminal vha readline (interaktivt)
-  Fra fil/script vha stdio (ikke-interaktivt)
-  Output: en linje dvs en strøm av el et buffer m/tegn terminert av newline
+GNU readline library
+  Leser tegn fra terminalen
+  En newline markerer end-of-line
+  Output: linje/strøm/buffer m/tegn
+
+GNU history library
+  Ekspanderer !
+  Skriver til ~/.bash_history
+  Output: readline + history stream
 
 Lexer
-    Tokeniserer linjen vha metategn (command line splitting)
-    Klassifiserer tokens (escape- og sitattegn)
-    Ekspanderer !... → ny input stream
-    Ekspanderer alias → ny input stream
-    Skriver kommandolinje til historikken
-    Output: strøm av tokens (ord og operatorer)
+    Escapetegn: \
+    Sitattegn: "" ''
+    Metategn: space tab newline | ; & ( ) < >
+    Identifiserer leksemer: vha metategn
+    Kategoriserer leksemer: token = type, verdi
+    Ekspanderer alias
+    Output: linje/strøm/buffer m/tokens
   
   Parser
-    Verifiserer input
+    Sjekker syntaks
     Kaster syntaksfeil (evt)
     Bygger en «command structure» (datastruktur)
     Output: command structure (representerer kommandoen)
