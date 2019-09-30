@@ -1,18 +1,35 @@
 SITATTEGN
 
-Sitattegn
-  \
-  ''
-  ""
+\
+  Bevarer literal verdi for neste tegn 
+  Unntak: \<newline> betyr line continuation (fjerner <newline>) 
 
-Hva er det?
+''
+  Bevarer literal verdi for alle tegn
+  Unntak: '
+  Words $'string': bash dekoder \\ \' \" \t mfl
+
+""
+  Bevarer literal verdi for alle tegn
+  Unntak: ! \ " $
+  Param "$*": "$1c$2c..."
+  Param "$@": "$1" "$2" ...
+  Words $"string": bash oversetter string iht current locale
+
+Hva er sitattegn?
   Avmetafisere tegn/ord
-  Fjerne "spesiell betydning" for tegn/ord
+  Bevare tegn/ords literale/verbatime verdi
   Sørger for at tegn/ord representerer "seg selv"
+  Fjerne "spesiell betydning" for tegn/ord
 
-Hva er bruksområdene?
-  Bevar tegn literal/verbatim verdi
-  Bevar nøkkelord literal/verbatim verdi
-  Unngå makroprosessering dvs (param)ekspansjon
-
-
+Når brukes sitattegn?
+  Ekspansjon !
+  Metategn
+  Nøkkel-/reserverte ord
+  Pipeline not !
+  Blokk/gruppe {}
+  Ekspansjon {}
+  Ekspansjon ~
+  Ekspansjon $
+  Ekspansjon *
+  

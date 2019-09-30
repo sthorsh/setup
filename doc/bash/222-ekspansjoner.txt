@@ -1,18 +1,6 @@
 EKSPANSJONER
 
-!N                        event N
-!!                        prev event
-!*                        prev event: opts & args
-!!:s/x/y                  prev event: sub 1st x → y
-!!:gs/x/y                 prev event: sub all x → y
-!cmd                      event ^cmd
-!cmd^                     event ^cmd: 1st arg
-!cmd$                     event ^cmd: last arg
-!cmd:N                    event ^cmd: Nth arg
-!cmd:s/x/y                event ^cmd: sub 1st x → y
-!cmd:gs/x/y               event ^cmd: sub all x → y
-
-...                       alias
+alias                     alias
 
 pre{str₁,...}post         brace expansion
 pre{N₁..N₂..N₃}post

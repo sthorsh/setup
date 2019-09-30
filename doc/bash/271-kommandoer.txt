@@ -9,10 +9,10 @@ KOMMANDOSYNTAKS
  3 Liste
    pipeline₁ [; or & or && or || pipeline₂ ...] [\n or ; or &]
  
- 4 Gruppe
+ 4 Blokk/gruppe
    { list ; }
  
- 5 Gruppe i subskall
+ 5 Blokk/gruppe i subskall
    ( list )
  
  6 Evaluer aritmetisk uttrykk (ekvivalent med let)

@@ -3,7 +3,6 @@ TEGN
 Metategn
   space 
   tab 
-  newline 
   | 
   ; 
   & 
@@ -11,6 +10,7 @@ Metategn
   ) 
   < 
   >
+  newline 
 
 Pipeline NOT
   !
