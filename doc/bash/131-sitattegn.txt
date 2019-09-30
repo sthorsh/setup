@@ -1,0 +1,18 @@
+SITATTEGN
+
+Sitattegn
+  \
+  ''
+  ""
+
+Hva er det?
+  Avmetafisere tegn/ord
+  Fjerne "spesiell betydning" for tegn/ord
+  Sørger for at tegn/ord representerer "seg selv"
+
+Hva er bruksområdene?
+  Bevar tegn literal/verbatim verdi
+  Bevar nøkkelord literal/verbatim verdi
+  Unngå makroprosessering dvs (param)ekspansjon
+
+

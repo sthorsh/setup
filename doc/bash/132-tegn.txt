@@ -1,11 +1,4 @@
-Backslash
-  \
-
-Enkelfnutt
-  ''
-
-Dobbelfnutt
-  ""
+TEGN
 
 Metategn
   space 

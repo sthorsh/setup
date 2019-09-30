@@ -43,3 +43,6 @@ KOMMANDOSYNTAKS
 14 Coprosess
    coproc [NAME] command [redirections]
 
+FUNKDEL GOES HERE
+  REF man bash grammatikk
+
