@@ -2,29 +2,30 @@ PIPELINE
 
 GNU readline library
   Leser tegn fra terminalen
-  En newline betyr end-of-line
-  Output: linje/strøm/buffer m/tegn
+  En newline markerer end-of-line
+  Output: en sekvens med tegn (en kommandolinje)
 
 GNU history library
   Ekspanderer !
   Skriver til ~/.bash_history
-  Output: readline + history stream
+  Output: en sekvens med tegn (en kommandolinje)
 
-Lexer: scanner tegn
-    Identifiserer leksemer: vha metategn
-    Fjerner kommentarer # ...
-    Kategoriserer leksemer: token = (type, verdi)
-    Sjekker 1st token: hvis alias → ekspanderer alias
-    Sjekker 1st token: hvis opening keyword → leser neste cmd
-    Output: linje/strøm/buffer m/tokens
-    URL: https://en.wikipedia.org/wiki/Lexical_analysis
-    URL: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_03
+Lexer
+    Finner leksemer vha metategn (scanner)
+    Gir hvert token et navn (klassifiserer)
+    Gir hvert token evt en verdi (evaluerer)
+    Fjerner whitespace
+    Fjerner kommentarer
+    Hvis 1st token alias: ekspanderer alias
+    Hvis 1st token opening keyword: leser cmd
+    Hvis \<newline>: line continuation
+    Output: en sekvens med tokens (en kommandolinje)
   
-Parser: parser tokens
+  Parser (Bison)
     Sjekker syntaks
     Kaster syntaksfeil (evt)
     Bygger en «command structure» (datastruktur)
-    Output: command structure (representerer kommandoen)
+    Output: command structure (en kommandolinje)
   
   Makroprosessor
     Ekspanderer braces
@@ -36,7 +37,7 @@ Parser: parser tokens
     Splitter felt i ord vha IFS (word splitting)
     Ekspanderer filnavn
     Fjerner escape- og sitattegn
-    Output: command structure
+    Output: command structure (en kommandolinje)
   
   Kjøresystem
     Utfører omdirigeringer
