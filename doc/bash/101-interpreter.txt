@@ -10,14 +10,17 @@ GNU history library
   Skriver til ~/.bash_history
   Output: readline + history stream
 
-Lexer: https://en.wikipedia.org/wiki/Lexical_analysis
+Lexer: scanner tegn
     Identifiserer leksemer: vha metategn
+    Fjerner kommentarer # ...
     Kategoriserer leksemer: token = (type, verdi)
-    Fjerner # ...
-    Ekspanderer alias
+    Sjekker 1st token: hvis alias → ekspanderer alias
+    Sjekker 1st token: hvis opening keyword → leser neste cmd
     Output: linje/strøm/buffer m/tokens
+    URL: https://en.wikipedia.org/wiki/Lexical_analysis
+    URL: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_03
   
-  Parser
+Parser: parser tokens
     Sjekker syntaks
     Kaster syntaksfeil (evt)
     Bygger en «command structure» (datastruktur)
