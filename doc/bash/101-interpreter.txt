@@ -11,9 +11,9 @@ GNU history library
   Output: readline + history stream
 
 Lexer: https://en.wikipedia.org/wiki/Lexical_analysis
-    Fjerner kommentarer #
     Identifiserer leksemer: vha metategn
-    Kategoriserer leksemer: token = type, verdi
+    Kategoriserer leksemer: token = (type, verdi)
+    Fjerner # ...
     Ekspanderer alias
     Output: linje/strøm/buffer m/tokens
   
