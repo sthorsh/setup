@@ -2,7 +2,7 @@ PIPELINE
 
 GNU readline library
   Leser tegn fra terminalen
-  En newline markerer end-of-line
+  En newline betyr end-of-line
   Output: linje/strøm/buffer m/tegn
 
 GNU history library
@@ -11,9 +11,7 @@ GNU history library
   Output: readline + history stream
 
 Lexer: https://en.wikipedia.org/wiki/Lexical_analysis
-    Escapetegn: \
-    Sitattegn: "" ''
-    Metategn: space tab newline | ; & ( ) < >
+    Fjerner kommentarer #
     Identifiserer leksemer: vha metategn
     Kategoriserer leksemer: token = type, verdi
     Ekspanderer alias

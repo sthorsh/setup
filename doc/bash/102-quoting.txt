@@ -1,4 +1,4 @@
-SITATTEGN
+QUOTING
 
 \
   Bevarer literal verdi for neste tegn 
@@ -16,11 +16,14 @@ SITATTEGN
   Param "$@": "$1" "$2" ...
   Words $"string": bash oversetter string iht current locale
 
-Hva er sitattegn?
-  Avmetafisere tegn/ord
-  Bevare tegn/ords literale/verbatime verdi
-  Sørger for at tegn/ord representerer "seg selv"
-  Fjerne "spesiell betydning" for tegn/ord
+Hensikt
+  Fortelle skallet om tegn eller ord er «vanlige» eller «spesielle»
+  Sørge for at tegn eller ord representerer «seg selv»
+  Frata (strippe) tegn eller ord (for) «spesiell betydning»
+
+Effekt
+  Tegn bevarer literal verdi, ord bevarer verbatim verdi
+  Tegn eller ord blir beskyttet for prosessering i readline, history, bash
 
 Når brukes sitattegn?
   Ekspansjon !
@@ -32,4 +35,9 @@ Når brukes sitattegn?
   Ekspansjon ~
   Ekspansjon $
   Ekspansjon *
-  
+
+bash vs other programs
+  bash          will process
+  cat, wc ...   will not process
+  find, grep    will process *, ?, []
+

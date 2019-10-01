@@ -12,6 +12,10 @@ Metategn
   >
   newline 
 
+Reserved words
+  
+
+
 Pipeline NOT
   !
 
@@ -31,5 +35,4 @@ Filsti
 Pattern
   * 
   ? 
-  [
-  ]
+  []
