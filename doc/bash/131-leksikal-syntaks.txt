@@ -1,48 +1,45 @@
-Quting
-  \ 
-  ''
-  ""
-
-Spesialtegn: shall quote
-    \ ' " space tab | ; & ( ) < >  newline $
-
-Spesialtegn: may need to quoute (kontekstavhengig)
-    # = ~ * ? [ %
+Quotes
+  \ '' ""
 
 Metategn
   space tab | ; & ( ) < > newline 
 
+Spesialtegn
+  quotes metategn $ (krever quotes)
+  # = ~ * ? [ %  (kan kreve quotes)
+
 Token
-  En operator eller et ord
+    En sekvens med tegn 
+    Et ord eller en operator
 
-Operatorer  
-  Inneholder unquoted metategn
+  Ord
+    Inneholder ingen unqoted metategn
+    
+  Reserverte ord
+    ! 
+    { } 
+    [[ ]]
+    if then else elif fi
+    case esac
+    for select while until do done in
+    function
+    time
+    coproc
 
-KONTROLLOPERATORER
-  newline | |& ; & && || (  ) ;; ;& ;;&
+  Identifier/name
 
-REDIROP
-  < > | &
+  Assignment_word (posix)
 
-Ord
-  Inneholder ingen unqoted metategn
-  
-RESERVERTE ORD
-  ! 
-  { } 
-  [[ ]]
-  if then else elif fi
-  case esac
-  for select while until do done in
-  function
-  time
-  coproc
+  IO_number (posix)
 
-IDENTIFIER/NAME
+  ...
 
-ASSIGNMENT_WORD (posix)
+  Operatorer  
+    Inneholder minst ett unquoted metategn
 
-IO_NUMBER (posix)
+  Kontrolloperatorer
+    newline | |& ; & && || (  ) ;; ;& ;;&
 
-...
+  Omdirigeringsoperator
+    < > | &
 

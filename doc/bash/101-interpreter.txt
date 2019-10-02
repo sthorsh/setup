@@ -22,8 +22,8 @@ Lexer
     Output: en sekvens med tokens (en kommandolinje)
   
   Parser (Bison)
-    Sjekker syntaks
-    Kaster syntaksfeil (evt)
+    Parser tokens (AST)
+    Kaster evt syntaksfeil
     Bygger en «command structure» (datastruktur)
     Output: command structure (en kommandolinje)
   
