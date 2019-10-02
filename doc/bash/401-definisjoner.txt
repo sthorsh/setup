@@ -13,15 +13,7 @@ Metategn      Et skilletegn for ord.
               space tab newline | ; & ( ) < >
 
 Token         En tegnsekvens.
-              Et ord ELLER en operator.
-
-Ord           Et token uten aktive metategn.
-              Et nøkkelord ELLER et ord.
-
-Nøkkelord     ! { } [[ ]] if then else elif fi case in esac 
-              for select while until do done coproc function time
-
-Pattern       Et ord, med en av * ? [
+              En operator ELLER et ord.
 
 Operator      Et token av ett eller flere aktive metategn.
               Er kontrollOperator ELLER omdirigeringsOperator.
@@ -29,6 +21,15 @@ Operator      Et token av ett eller flere aktive metategn.
 KontrOp       newline | |& ; & && || ( ) ;; ;& ;;&        
 
 OmdirOp       En eller flere av < > | &
+
+Ord           Et token uten aktive metategn.
+              Et nøkkelord ELLER et ord.
+
+Nøkkelord     ! { } [[ ]] 
+              if then else elif fi case in esac 
+              for select while until do done coproc function time
+
+Pattern       Et ord, med en av * ? [
 
 Felt          Tekst som resultat av (en av) ekspansjonene.
 

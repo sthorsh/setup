@@ -11,9 +11,9 @@ GNU history library
   Output: en sekvens med tegn (en kommandolinje)
 
 Lexer
-    Finner leksemer vha metategn (scanner)
-    Gir hvert token et navn (klassifiserer)
-    Gir hvert token evt en verdi (evaluerer)
+    Scanner dvs finner leksemer vha metategn
+    Klassifiserer → tokens' navn/-type (kontekstavhengig e.g for)
+    Evaluerer → tokens' verdi
     Fjerner whitespace
     Fjerner kommentarer
     Hvis 1st token alias: ekspanderer alias

@@ -5,6 +5,3 @@ Deklarere
   function name compound-command 
   function name() compound-command
 
-Slette
-  unset f
-

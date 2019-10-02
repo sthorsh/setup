@@ -1,0 +1,48 @@
+Quting
+  \ 
+  ''
+  ""
+
+Spesialtegn: shall quote
+    \ ' " space tab | ; & ( ) < >  newline $
+
+Spesialtegn: may need to quoute (kontekstavhengig)
+    # = ~ * ? [ %
+
+Metategn
+  space tab | ; & ( ) < > newline 
+
+Token
+  En operator eller et ord
+
+Operatorer  
+  Inneholder unquoted metategn
+
+KONTROLLOPERATORER
+  newline | |& ; & && || (  ) ;; ;& ;;&
+
+REDIROP
+  < > | &
+
+Ord
+  Inneholder ingen unqoted metategn
+  
+RESERVERTE ORD
+  ! 
+  { } 
+  [[ ]]
+  if then else elif fi
+  case esac
+  for select while until do done in
+  function
+  time
+  coproc
+
+IDENTIFIER/NAME
+
+ASSIGNMENT_WORD (posix)
+
+IO_NUMBER (posix)
+
+...
+
