@@ -2,7 +2,7 @@ PIPELINE
 
 GNU readline library
   Leser tegn fra terminalen
-  En newline markerer end-of-line
+  En <newline> markerer EOL (en terminator)
   Output: en sekvens med tegn (en kommandolinje)
 
 GNU history library
