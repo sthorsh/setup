@@ -1,4 +1,4 @@
-
+KOMMANDOER
 
 Enkeltkommando 
    [name=value ...] [words] [redirections]
