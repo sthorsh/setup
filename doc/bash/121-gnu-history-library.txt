@@ -28,7 +28,7 @@ Builtins
   history -w            write list → file
 
 Event
-  !N                    entry N
+  !N                    entry Ns
   !-N                   entry N lines back
   !!                    entry !-1
   !x                    entry starting with x

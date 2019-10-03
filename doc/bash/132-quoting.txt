@@ -1,26 +1,25 @@
-QUOTES
+QUOTING
 
 Quotes
-  \         for spesialtegn
-  ''        for ord, nøkkelord; unntak '
-  ""        for ord, nøkkelord; unntak ! \ " $
-  
-Spesialtegn
-  !          må quote    
-  quotes     må quote   
-  metategn   må quote   
-  #          kontekst
-  =          kontekst
-  {          kontekst
-  ~          kontekst  
-  $          må quote
-  *          kontekst (pattern)
-  ?          kontekst (pattern)
-  [          kontekst (pattern)
-  %          kontekst  
+  \               tegn
+  ''              tegn eller ord; unntak '
+  ""              tegn eller ord; unntak \ " $
 
-OS
-  find       find . -name PATTERN
-  grep       grep PATTERN file
+Spesialtegn
+  quotes          må quote (hvis tegn skal representere seg selv)
+  metategn        må quote 
+  #               må evt quote (kontekstavhengig)
+  =               må evt quote 
+  {               må evt quote
+  ~               må evt quote
+  $               må quote
+  *               må evt quote
+  ?               må evt quote
+  [               må evt quote
+  %               må evt quote
+
+OS-kommandoer
+  find            find . -name PATTERN
+  grep            grep PATTERN file ...
   ...
 

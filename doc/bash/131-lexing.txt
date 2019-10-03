@@ -1,3 +1,5 @@
+LEXING
+
 Metategn
   space tab | ; & ( ) < > newline 
 
@@ -6,34 +8,30 @@ Token
   Et ord eller en operator
 
 Ord
-  Ingen unqoted metategn
+  En tegnsekvens uten unqoted metategn
+  Et nøkkelord, et navn, ...
     
 Operatorer  
-  Ett eller flere unquoted metategn
+  En tegnsekvens med ett el flere sammenhengende unquoted metategn
 
-START HERE
-  Reserverte ord
-    ! 
-    { } 
-    [[ ]]
-    if then else elif fi
-    case esac
-    for select while until do done in
-    function
-    time
-    coproc
+Nøkkelord
+  ! 
+  time
+  if then else elif fi case esac select
+  for in while until do done
+  [[ ]]
+  { } 
+  coproc
+  function
 
-  Identifier/name
+Navn
+  Starter altid med bokstav el underscore 
+  Består av bokstaver, tall el underscore
+  E.g [a-zA-Z][_]{1}[a-zA-Z][0-9[_] (ish)
 
-  Assignment_word (posix)
+Kontrolloperatorer
+    | |& ; & && || (  ) ;; ;& ;;& newline
 
-  IO_number (posix)
-
-  ...
-
-  Kontrolloperatorer
-    newline | |& ; & && || (  ) ;; ;& ;;&
-
-  Omdirigeringsoperator
+Omdirigeringsoperator
     < > | &
 
