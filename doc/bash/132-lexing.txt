@@ -1,20 +1,17 @@
-Quotes
-  \ '' ""
-
 Metategn
   space tab | ; & ( ) < > newline 
 
-Spesialtegn
-  quotes metategn $ (krever quotes)
-  # = ~ * ? [ %  (kan kreve quotes)
-
 Token
-    En sekvens med tegn 
-    Et ord eller en operator
+  En sekvens med tegn 
+  Et ord eller en operator
 
-  Ord
-    Inneholder ingen unqoted metategn
+Ord
+  Ingen unqoted metategn
     
+Operatorer  
+  Ett eller flere unquoted metategn
+
+START HERE
   Reserverte ord
     ! 
     { } 
@@ -33,9 +30,6 @@ Token
   IO_number (posix)
 
   ...
-
-  Operatorer  
-    Inneholder minst ett unquoted metategn
 
   Kontrolloperatorer
     newline | |& ; & && || (  ) ;; ;& ;;&

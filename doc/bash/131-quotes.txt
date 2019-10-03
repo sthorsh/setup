@@ -1,0 +1,26 @@
+QUOTES
+
+Quotes
+  \         for spesialtegn
+  ''        for ord, nøkkelord; unntak '
+  ""        for ord, nøkkelord; unntak ! \ " $
+  
+Spesialtegn
+  !          må quote    
+  quotes     må quote   
+  metategn   må quote   
+  #          kontekst
+  =          kontekst
+  {          kontekst
+  ~          kontekst  
+  $          må quote
+  *          kontekst (pattern)
+  ?          kontekst (pattern)
+  [          kontekst (pattern)
+  %          kontekst  
+
+OS
+  find       find . -name PATTERN
+  grep       grep PATTERN file
+  ...
+
