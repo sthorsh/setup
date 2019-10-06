@@ -4,8 +4,9 @@ Metategn
   space tab | ; & ( ) < > newline 
 
 Token
-  En sekvens med tegn 
+  En sekvens med tegn
   Et ord eller en operator
+  Inkluderer evt quotes feks foo\|bar
 
 Ord
   En tegnsekvens uten unqoted metategn
