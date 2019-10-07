@@ -1,0 +1,33 @@
+BASH
+
+Start
+  $ bash [opt₁] [opt₂] [set_opt] [shopt_opt]
+  $ bash [opt₁] [opt₂] [set_opt] [shopt_opt] -c str
+  $ bash [opt₁] [opt₂] [set_opt] [shopt_opt] [--] filename arg₁ ...
+
+opt₁
+  --help
+  --init-file file
+  --login
+  --noprofile
+  --norc
+  --posix
+  --rcfile file
+  --restricted
+  --verbose
+  --version
+
+opt₂
+  -i interactive
+  -l login
+  -r restricted
+  -s
+  -v verbose
+  -x print commands as they are executed
+
+Type skall
+  Login interaktivt: tty, tmux, ssh
+  Login ikke-interaktivt: ...
+  Ikke-login interaktivt: gnome-terminal
+  Ikke-login ikke-interaktivt: $ filename
+

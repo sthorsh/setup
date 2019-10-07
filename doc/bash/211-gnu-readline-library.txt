@@ -69,3 +69,5 @@ READLINE
   C-x e                 execute macro
 
   C-x C-e               edit-and-execute-command (vi)
+
+  C-x C-v               display-shell-version

@@ -1,6 +1,4 @@
-EKSPANSJONER
-
-alias                     alias
+WORD EXPANSIONS
 
 pre{str₁,...}post         brace expansion
 pre{N₁..N₂..N₃}post

@@ -1,0 +1,41 @@
+PARAM EXPANSION
+
+Syntaks
+  $param                        verdi
+  ${param}                      verdi
+
+  ${#param}                     lengde
+    
+  ${param:N₁:N₂}                substring
+  ${param:-word}                verdi el word
+  ${param:=word}                verdi el word (param=word)
+  ${param:?word}                verdi el word til stderr
+  ${param:+word}                word el null
+    
+  ${param^}                     upcase 1st
+  ${param^^}                    upcase all
+
+  ${param,}                     lowcase 1st
+  ${param,,}                    lowcase all
+    
+    ${param/pattern/string        replace pattern 
+    ${param//pattern/string       replace pattern all
+    
+    ${param#pattern}              rm pattern from start
+    ${param##pattern}             rm pattern from start greedy
+
+    ${param%pattern}              rm pattern from end
+    ${param%%pattern}             rm pattern from end greedy
+
+    ${param@a}                    attrs
+    ${param@A}                    assign
+    ${param@E}                    escape
+    ${param@P}                    prompt
+    ${param@Q}                    quoted
+    
+    ${!param}                     indirect expansion
+    ${!param[*]}                  array indices or keys
+    ${!param[@]}                  array indices or keys
+    ${!prefix*}                   name begins with prefix
+    ${!prefix@}                   name begins with prefix
+

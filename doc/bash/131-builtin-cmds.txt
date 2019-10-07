@@ -1,8 +1,5 @@
 BUILTINS
 
-  jobspec: %N
-  sigspec: 1|hup|sighup etc
-
   :
   alias OR alias name=value
   bg OR bg jobspec
@@ -57,4 +54,7 @@ BUILTINS
   unalias name
   unset var OR unset function
   wait OR wait jobspec|pid
+
+  jobspec: %N
+  sigspec: 1|hup|sighup etc
 
