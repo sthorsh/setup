@@ -29,10 +29,20 @@ Nøkkelord     ! { } [[ ]]
               if then else elif fi case in esac 
               for select while until do done coproc function time
 
-Pattern       Et ord, med en av * ? [
-
 Felt          Tekst som resultat av (en av) ekspansjonene.
 
 IFS           Tegn som skiller felt fra hverandre. Brukes ved orddeling.
               space tab newline
 
+Pattern
+  *
+  ?
+  []
+  *(pattern|...)           zero-or-more
+  ?(pattern|...)           zero-or-one
+  +(pattern|...)           one-or-more
+  @(pattern|...)           one-of
+  !(pattern|...)           anything except
+
+[POSIX extended] regular expression
+  ...
