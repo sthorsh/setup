@@ -1,12 +1,9 @@
-VARDEKL
+VARIABLER
 
-Deklarere
+Deklarasjoner
   name=value
   name+=value               
 
-  name=value command        
-  name+=value command        
-    
   declare opts name         
   declare opts name=value   
     
@@ -18,4 +15,3 @@ Deklarere
     
 Slette
   unset name              
-    

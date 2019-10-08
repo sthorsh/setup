@@ -1,0 +1,69 @@
+MAKROER
+
+  s₁{str₁,...}s₂            s₁str₁s₂,...
+  s₁{N₁..N₂..N₃}s₂          s₁N₁s₂,...
+  s₁{char₁..char₂..N}s₂     s₁char₁s₂,...
+
+  ~                         $HOME
+  ~user                     $HOME of user
+  ~+                        $PWD
+  ~-                        $OLDPWD
+
+  $param                    value or $value
+  ${param}                  value or $value
+  ${!param}                 ${value} or name referenced
+  ${#param}                 length of value
+  ${!prefix*}               names of variables
+  ${!prefix@}               names of variables
+  ${!array[*]}              array indices/keys
+  ${!array[@]}              array indices/keys
+  ${param^[^]}              upcase value [all]
+  ${param,[,]}              lowcase value [all]
+  ${param:-word}            value or word
+  ${param:=word}            value or word (param=word)
+  ${param:?word}            value or word (write to stderr)
+  ${param:+word}            word or null
+  ${param:N₁:N₂}            substring of value
+  ${param#pattern}          value with leading match deleted
+  ${param##pattern}         value with longest leading match deleted
+  ${param%pattern}          value with trailing match deleted
+  ${param%%pattern}         value with longest trailing match deleted
+  ${param/pattern/str}      value with match replaced with str
+  ${param//pattern/str}     value with matches replaced with str
+  ${param@A|a|E|P|Q}        assign|attrs|escape|prompt|quoted
+
+  $(command)                exec command; replace with stdout
+
+  $((expr))                 eval arithmetic expr; replace with result
+
+  <(list)                   run list; input appears as filename
+  >(list)                   run list; output appears as filename
+
+    *                           file AND dir
+    **/*                        recursive file AND dir
+    **/*/                       recursive dir
+    ?                           any char
+    [abc]                       a OR b OR c
+    [!abc]                      anything except
+    [a-cx-z]                    range
+    [[:class:]]                 e.g [[:alnum:]]
+
+------------------------------
+Bruk
+  case
+  [[]]
+  param makro
+  filename makro
+
+Pattern
+  *
+  ?
+  []
+  *(pattern|...)           zero-or-more
+  ?(pattern|...)           zero-or-one
+  +(pattern|...)           one-or-more
+  @(pattern|...)           one-of
+  !(pattern|...)           anything except
+
+[POSIX extended] regular expression
+  ...
