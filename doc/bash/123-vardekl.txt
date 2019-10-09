@@ -1,10 +1,14 @@
-VARIABLER
+VARDEKL
 
 Deklarasjoner
   name=value
   name+=value               
 
-  declare opts name         
+  declare name
+  declare -a array
+  declare -A map 
+  declare -i int            
+  declare -n ref
   declare opts name=value   
     
   export name               
@@ -15,3 +19,4 @@ Deklarasjoner
     
 Slette
   unset name              
+

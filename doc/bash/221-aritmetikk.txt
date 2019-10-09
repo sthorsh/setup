@@ -1,0 +1,51 @@
+ARITMETISKE UTTRYKK (SOM C)
+
+Aritmetiske
+  ++id       inkrement-prefix
+  id++       inkrement-suffix
+  --id       dekrement-prefix
+  id--       dekrement-suffix
+  +          unær pluss
+  -          unær minus
+  +          pluss
+  -          minus
+  *          gange
+  **         grunntall opphøyd-i eksponent
+  /          dele 
+  %          rest 
+  =          tilordning
+  +=         tilordning
+  -=         tilordning
+  *=         tilordning
+  /=         tilordning
+  %=         tilordning
+  <<=        tilordning
+  >>=        tilordning
+  &=         tilordning
+  ^=         tilordning
+  |=         tilordning
+  
+Bit
+  <<         skift ←
+  >>         skift →
+  ~          not
+  &          and
+  |          or
+  ^          xor
+  
+Sammenligning
+  ==         eq          
+  !=         ne          
+  <          lt          
+  >          gt          
+  <=         le            
+  >=         ge          
+  
+Logiske
+  !          not
+  &&         and
+  ||         or
+  
+Kondisjonal
+  ?:         ternær
+  

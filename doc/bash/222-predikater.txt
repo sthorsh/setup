@@ -1,0 +1,54 @@
+PREDIKATER
+
+Predikater
+  -o set-opt                    is on?
+  
+  -n $param                     is not empty?
+  -z $param                     is zero? 
+
+  -v var                        is declared?
+  -R var                        is nameref?
+
+  -b filename                   is block device?
+  -c filename                   is char device?
+  -d filename                   is directory?
+  -e filename                   exists?
+  -f filename                   exists and is regular file?
+  -g filename                   has setgid bit?
+  -G filename                   is owned by my group?
+  -h filename                   is symbolic link?
+  -k filename                   has sticky bit?
+  -N filename                   is changed since last read?
+  -O filename                   is owned by me?
+  -p filename                   is named pipe?
+  -r filename                   is readable for me?
+  -s filename                   exists and is not empty?
+  -t fildeskriptor              is open in a terminal?
+  -u filename                   has setuid bit?              
+  -w filename                   is writeable for me?
+  -x filename                   is executable for me?
+
+  $param = word                 eq?
+  $param < word                 lt?
+  $param > word                 gt?
+  $param == pattern             eq? (kun [[]])
+  $param != pattern             ne? (kun [[]])
+  $param =~ regex               eq? (kun [[]])
+
+  int₁ -eq int₂                 arithmetic eq?
+  int₁ -ne int₂                 arithmetic ne?    
+  int₁ -lt int₂                 arithmetic lt?    
+  int₁ -gt int₂                 arithmetic gt?    
+  int₁ -le int₂                 arithmetic le?    
+  int₁ -ge int₂                 arithmetic ge?    
+
+  filename₁ -ef filename₂       is link to?
+  filename₁ -nt filename₂       is newer than?
+  filename₁ -ot filename₂       is older than?
+
+  ! predicate                   not
+  predicate₁ && predicate₂      and (kun [[]])
+  predicate₁ || predicate₂      or  (kun [[]])
+  predicate₁ -a predicate₂      and ([] or test)
+  predicate₁ -o predicate₂      or  ([] or test)
+  

@@ -32,9 +32,9 @@ MAKROER
   ${param//pattern/str}     value w/matches replaced
   ${param@A|a|E|P|Q}        assign|attrs|escape|prompt|quoted
 
-  $(command)                exec and replace macro with stdout
+  $(command)                exec command; replace macro with stdout
 
-  $((aritmetic-expr))       eval and replace macro with result
+  $((aritmetic-expr))       eval arithmetic expr; replace macro with result
 
   <(list)                   run list; input appears as filename
   >(list)                   run list; output appears as filename
