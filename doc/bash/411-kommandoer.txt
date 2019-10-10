@@ -6,9 +6,9 @@ KOMMANDOER
     
  3 Liste            pipeline₁ [; or & or && or || pipeline₂]... [; or & or \n]
     
- 4 Blokk            { list ; }
-   
- 5 Blokk            ( list )                                      
+ 4 Blokk            ( list )                                      
+
+ 5 Blokk            { list ; }
    
  6 Aritmetikk       (( expression ))
    
@@ -28,4 +28,8 @@ KOMMANDOER
 13 until            until commands; do commands; done
    
 14 Coprosess        coproc [name] command [redirections]
-   
+
+15 Funksjoner       name() compound-command 
+                    function name compound-command 
+                    function name() compound-command
+

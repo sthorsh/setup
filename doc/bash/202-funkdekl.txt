@@ -1,9 +1,0 @@
-FUNKSJONER
-
-Deklarere
-  name() compound-command 
-  function name compound-command 
-  function name() compound-command
-
-unset
-  

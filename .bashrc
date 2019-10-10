@@ -1,6 +1,13 @@
 # Stop if not interactive
 [[ $- != *i*  ]] && return
 
+# Options
+set -o ignoreeof
+set -o noclobber
+set -o notify
+shopt -s globstar
+shopt -s histappend
+
 # Readline variables
 bind 'set colored-completion-prefix on'
 bind 'set completion-display-width 0'
@@ -26,13 +33,6 @@ bind '"\C-xq": "\eb\"\ef\""'
 # Disable ^S ^Q
 stty -ixon -ixoff
 
-# Options
-set -o ignoreeof
-set -o noclobber
-set -o notify
-shopt -s globstar
-shopt -s histappend
-
 # Aliases
 alias gradle="/opt/gradle/bin/gradle"
 alias grep='grep --color=auto'
@@ -40,7 +40,7 @@ alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
 alias jobs="jobs -l"
-alias l='ls -lF --color=auto --group-directories-first'
+alias l='ls -ilF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
 alias mount='mount | column -t'
 alias mvnf='mvn clean install -Pfindbugs,checkstyle'
