@@ -47,14 +47,14 @@ Lexer
     Fjerner escape- og sitattegn
     Output: en kommandolinje (command structure)
   
-  Kjøresystem
-    Utfører omdirigeringer
-    Ekspanderer og tilordner variabelverdier
+  Utfører omdirigeringer
+  Ekspanderer og tilordner variabelverdier
+  Command search and execution/invocation
     Antar første ord er navn, resten er args
     Hvis navn uten slash && navn matcher funksjon
-    • Kjører funksjon → done
+    • Kjører funksjon
     Hvis navn uten slash && navn matcher builtin
-    • Kjører builtin → done
+    • Kjører builtin
     Gjør path-søk etter kjørbar fil
     Hvis navn med slash || path-søk treff
     • Bash: syskall fork
@@ -69,8 +69,17 @@ Lexer
     • Hvis treff: fork
     Ellers, kaster "command not found"
   
-  Outputprosessor
-    Leser exit status
-    Opphever omdirigeringer
-    Eksponerer exit status i $?
+  Jobbkontroll
   
+  Opphever omdirigeringer
+  
+  Eksponerer exit status i $?
+    0    success
+    1    no such file or directory
+    2    syntax error e.g invalid option
+    ...
+    126  permission denied
+    127  command not found 
+    ...
+    255  failure
+    

@@ -28,6 +28,8 @@ Omdirigeringer
   exec 3<> f          åpne f for read-write; pek fd3 → f
   ...
 
+KONTEKST 
+
 For hver Unix-prosess inkl bash
   FD 0: standardstrøm for innmating (stdin)
   FD 1: standardstrøm for utmating (stdout)

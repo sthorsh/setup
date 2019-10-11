@@ -1,0 +1,50 @@
+JOBBKONTROLL
+
+Builtins
+  jobs
+  jobspec OR fg OR fg N OR fg jobspec
+  bg OR bg N OR bg jobspec ...
+  kill [-sigspec] jobspec|pid
+  disown [jobspec|pid]...
+  suspend
+  wait [jobspec|pid]...
+      
+Spesialtegn: stty -a
+  ctrl-c intr: sigint
+  ctrl-\ quit: sigquit
+  ctrl-z susp: sigtstp
+  ...
+
+jobspec
+  %       current job
+  %%      current job
+  %+      current job
+  %-      previous job
+  %N      job N
+  %name   command name prefix
+  %?str   command line substring
+        
+sigspec: kill -l
+   1|hup|sighup
+   2|int|sigint
+   3|quit|sigquit 
+   6|abrt|sigabrt 
+   9|kill|sigkill
+  15|term|sigterm (kills' default)
+  18|cont|sigcont
+  20|tstp|sigtstp
+  ...
+
+KONTEKST
+
+Begreper
+  Sesjon: terminalbegrep, 1:N til jobber
+  Jobb: skallbegrep, 1:1 til prosessgruppe
+  Prosessgruppe: OS-begrep, 1:N til prosesser
+  Prosess: OS-begrep, et program under utførelse
+
+Jobb
+  En jobb er en abstraksjon for en pipeline
+  Bash oppretter _en_ jobb for hver pipeline (|)
+  En jobb utføres av ≥1 prosesser, e.g ls | sort
+
