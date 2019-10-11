@@ -5,37 +5,34 @@ Operatorer
   >                   output redirect operator
 
 Omdirigeringer
-  cmd < f             open f for read; bruk f som stdin
-  cmd << EOL          bruk N lines of text som stdin
-  cmd <<< "..."       bruk single line of text som stdin
+  cmd < f             åpne f for read; pek stdin → f
+  cmd << EOL          pek stdin → linjer (heredoc)
+  cmd <<< "..."       pek stdin → string (herestr)
 
-  cmd > f             open f for write; send stdout til f
-  cmd > /dev/null     open bit bucket for write; send stdout til bit bucket
-  cmd >| f            open f for overwrite; send stdout til f
-  cmd >> f            open f for append; send stdout til f
+  cmd > f             åpne f for write; pek stdout → f
+  cmd > /dev/null     åpne bit-bucket for write; pek stdout → bit-bucket
+  cmd >| f            åpne f for overwrite; pek stdout → f
+  cmd >> f            åpne f for append; pek stdout til f
 
-  cmd 2> f            open f for write; send stderr til f
-  cmd > f 2>&1        ...; dup stderr to be a copy of stdout
+  cmd 2> f            åpne f for write; pek stderr → f
+  cmd >& f            åpne f for write; pek stdout og stderr → f
 
-    exec 3< fil         open fd3 read fil
-    read -n 5 var <&3   read dvs stdin dup fd3
-    exec 3<&-           close fd3 dvs fd3 "copy" -
+  exec 3< f           åpne f for read; pek fd3 → f
+  read -n 5 var <&3   pek stdin → fd3 (→ f)
+  exec 3<&-           pek fd3 → - (dvs lukk fd3)
 
-    exec 3> fil         open fd3 write fil 
-    echo foo >&3        write dvs stdout dup fd3
-    exec 3>&-           close fd3 dvs fd3 "copy" -
+  exec 3> f           åpne f for write; pek fd3 → f
+  echo foo >&3        pek stdout → fd3 (→ f)
+  exec 3>&-           pek fd3 → - (dvs lukk fd3)
 
-    exec 3<>fil         open fd3 read-write fil 
-
-    cmd₁ | cmd₂         cmd₁-stdout write cmd₂-stdin
-    cmd₁ |& cmd₂        cmd₁-stdout write cmd₂-stdin; cmd₁-stderr write cmd₂-stdin
-    ...
+  exec 3<> f          åpne f for read-write; pek fd3 → f
+  ...
 
 For hver Unix-prosess inkl bash
-  FD 0: standard input stream (stdin)
-  FD 1: standard output stream (stdout)
-  FD 2: standard error stream (stderr)
-  FD 3: input/output stream
+  FD 0: standardstrøm for innmating (stdin)
+  FD 1: standardstrøm for utmating (stdout)
+  FD 2: standardstrøm for feilmeldinger (stderr)
+  FD 3: strøm for input el output
   ...
 
 Tabeller
