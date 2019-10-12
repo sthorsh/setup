@@ -47,39 +47,27 @@ Lexer
     Fjerner escape- og sitattegn
     Output: en kommandolinje (command structure)
   
-  Utfører omdirigeringer
-  Ekspanderer og tilordner variabelverdier
-  Command search and execution/invocation
-    Antar første ord er navn, resten er args
-    Hvis navn uten slash && navn matcher funksjon
-    • Kjører funksjon
-    Hvis navn uten slash && navn matcher builtin
-    • Kjører builtin
-    Gjør path-søk etter kjørbar fil
-    Hvis navn med slash || path-søk treff
-    • Bash: syskall fork
-    • Bash: lager kjøremiljø
-    • Bash: syskall wait: exit status 0..255
-    • Barn: syskall exec
-    • Barn: kjører kommando i separat kjøremiljø
-    • Barn: syskall exit → done
-    Bash kan kjøre ikke-kjørbare script som $ bash name (REF: BRM 3.8)
-    • Søker i . etter script
-    • Søker i path etter script
-    • Hvis treff: fork
-    Ellers, kaster "command not found"
+  Utførelse
+    Omdirigeringer
+      Ekspanderer
+      Utfører omdirigeringer
+      Removes the redirection operators and their operands from the argument list.
+    Tilordninger
+      Ekspanderer RHS
+      Utfører tilordninger
+    Kommandosøk
+    Invocation; utførelse
+    Jobbkontroll
+    Opphever omdirigeringer
   
-  Jobbkontroll
-  
-  Opphever omdirigeringer
-  
-  Eksponerer exit status i $?
-    0    success
-    1    no such file or directory
-    2    syntax error e.g invalid option
-    ...
-    126  permission denied
-    127  command not found 
-    ...
-    255  failure
-    
+  Output
+    Eksponerer exit status i $?
+      0    success
+      1    no such file or directory
+      2    syntax error e.g invalid option
+      ...
+      126  permission denied
+      127  command not found 
+      ...
+      255  failure
+     

@@ -1,0 +1,32 @@
+ENVIRONMENT
+
+Evironment
+  En array av strings
+  En liste av name-value par
+  Gis til program ved invokering
+
+Innhold
+  The shell's initial environment
+  Endringer: declare/export (permanent)
+  Endringer: name=value cmd (temporært)
+  
+declare
+  declare -x                    vis vars
+  declare -x name               eksporter var
+  declare -x name=value         eksporter var
+  declare +x name               skru av export
+  
+  declare -fx                   vis funksjoner
+  declare -fx name              eksporter funksjon
+  declare -f +x name            skru av export
+  
+export
+  export                        vis vars
+  export name                   eksporter var
+  export name=value             eksporter var
+  export -n name                skru av export
+    
+  export -f                     vis funksjoner
+  export -f name                eksporter funksjon
+  export -fn name               skru av export
+  

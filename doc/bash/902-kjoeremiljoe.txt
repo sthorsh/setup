@@ -1,0 +1,35 @@
+KJØREMILJØ
+
+Shell execution environment (ee₁)
+  alias
+  options
+  params
+  variables
+  functions
+  working directory
+  open files
+  user file creation mask
+  signal traps
+
+Subshell execution environment (dup: ee₂)
+  alias
+  options
+  params
+  variables
+  functions
+  working directory
+  open files
+  user file creation mask
+  ?
+  
+Separate execution environment (new: ee₃)
+  -
+  -
+  -
+  env/exported variables
+  env/exported functions
+  working directory
+  open files
+  user file creation mask
+  -
+
