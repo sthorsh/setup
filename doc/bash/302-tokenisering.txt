@@ -1,4 +1,16 @@
-LEXING
+TOKENISERING
+
+Tokenisering
+  Hvis EOL: avgrense token
+  Hvis del-av-op: legg til op
+  Hvis ugyldig del-av-op: avgrense op; start ny token
+  Hvis \ ' ": les qoute
+  Hvis $: les makro token
+  Hvis start-av-op: avgrense token; start ny op token
+  Hvis blank: avgrense token; forkast blank
+  Hvis del-av-ord: legg til ord
+  Hvis #: les og forkast resten av linjen
+  Start nytt ord
 
 Metategn
   space tab | ; & ( ) < > newline 
