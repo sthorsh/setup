@@ -1,4 +1,4 @@
-KOMMANDOHISTORIKK
+HISTORY
 
 Opsjoner
   set history           on
