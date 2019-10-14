@@ -1,13 +1,6 @@
 # Stop if not interactive
 [[ $- != *i*  ]] && return
 
-# Options
-set -o ignoreeof
-set -o noclobber
-set -o notify
-shopt -s globstar
-shopt -s histappend
-
 # Readline variables
 bind 'set colored-completion-prefix on'
 bind 'set completion-display-width 0'
@@ -32,6 +25,13 @@ bind '"\C-xq": "\eb\"\ef\""'
 
 # Disable ^S ^Q
 stty -ixon -ixoff
+
+# Options
+set -o ignoreeof
+set -o noclobber
+set -o notify
+shopt -s globstar
+shopt -s histappend
 
 # Aliases
 alias gradle="/opt/gradle/bin/gradle"
