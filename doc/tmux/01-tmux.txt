@@ -1,60 +1,58 @@
 tmux
 
-  C-a                               send-prefix
-  :                                 command-prompt
+Keys
+    C-a                               send-prefix
 
------------------------------------------------------
-  $ tmux ls                         list-sessions
-  $ tmux lscm                       list-commands
-  $ tmux lsk                        list-keys 
+    s                                 choose-tree
+    d                                 detach-client
+    C-p                               switch-client -p
+    C-n                               switch-client -n
 
-  $ tmux att -t name                attach-session
-  $ tmux new -s name                new-session
-  $ tmux kill-session -t name       kill-session
+  c                                 create window
+  C-w                               kill window
+  1-9                               select window 1..9
+  C-hl                              select window
+  ,                                 rename window
+  C-S-←→                            swap windows
+  .                                 move window to session
 
-  s                                 choose-tree
-  d                                 detach-client
-  C-p                               switch-client -p
-  C-n                               switch-client -n
+  -|                                create pane
+  x                                 kill pane
+  q1-9                              select pane
+  hjkl                              select pane
+  z                                 resize pane
+  C-A-←↑↓→                          resize pane
+  {}                                swap panes
+  !                                 move pane to new window
+  H                                 clear history
+  P                                 toggle pipe output
+  S                                 toggle synchronize panes
 
------------------------------------------------------
-  c                                 create new-window
-  C-w                               kill-window
-  ,                                 rename-window
-  C-hl                              select-window -t :±
-  1..9                              select-window -t :1..9
-  C-S-←→                            swap-window -t ±1
-  .                                 move-window (to another session)
+    C-c                               copy-mode-vi
+    :                                 command-prompt
 
------------------------------------------------------
-  |                                 create new pane (split-window)
-  -                                 create new pane (split-window)
-  x                                 kill-pane
-  hjkl                              select-pane
-  q[1..9]                           display-panes
-  C-k                               clear-history
-  C-A-s                             synchronize-panes
-  L                                 pipe-pane
-  z                                 resize-pane
-  C-A-←↑↓→                          resize-pane
-  {}                                swap-pane
-  !                                 break-pane (new-window)
+    r                                 reload tmux.conf
+    I                                 tpm: install
+    U                                 tpm: update
+    C-s                               tmux-resurrect: save
+    C-r                               tmux-resurrect: restore
 
------------------------------------------------------
-  C-c                               copy-mode-vi
-  /                                 search ↓
-  ?                                 search ↑
-  v|V|C-v                           select text
-  ␣                                 clear selection
-  y                                 yank text → clipit buffer, tmux buffer
-  C-v                               paste from clipit buffer
+  -----------------------------------------------------
+  copy-mode-vi
+    /                                 search ↓
+    ?                                 search ↑
+    v|V|C-v                           select text
+    ␣                                 clear selection
+    y                                 yank text → clipit buffer, tmux buffer
+    C-v                               paste from clipit buffer
 
------------------------------------------------------
-  r                                 reload tmux.conf
+  -----------------------------------------------------
+  Commands
+    $ tmux ls                         list-sessions
+    $ tmux lscm                       list-commands
+    $ tmux lsk                        list-keys 
 
-  C-I                               tpm: install
-  C-U                               tpm: update
-
-  C-s                               tmux-resurrect: save
-  C-r                               tmux-resurrect: restore
+    $ tmux att -t name                attach-session
+    $ tmux new -s name                new-session
+    $ tmux kill-session -t name       kill-session
 
