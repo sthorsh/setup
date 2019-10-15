@@ -1,16 +1,22 @@
 BASH INTERPRETER
 
-GNU readline library
-  Leser tegn fra terminalen
-  En <newline> markerer EOL (terminator)
-  Output: kommandolinje (sekvens med tegn)
+Leser input:
+  • interaktivt: readline/history (fra terminalen)
+  • ikke-interaktivt: egne bash-funksjoner (fra filer/script, pipes)
+  • som arg til bash: bash -c "command_string"
 
-GNU history library
-  Ekspanderer !
-  Skriver linje til ~/.bash_history
-  Output: kommandolinje (sekvens med tegn)
+  GNU readline library
+    Leser tegn fra terminalen
+    En <newline> markerer EOL (terminator)
+    Output: kommandolinje (sekvens med tegn)
+
+  GNU history library
+    Ekspanderer !
+    Skriver linje til ~/.bash_history
+    Output: kommandolinje (sekvens med tegn)
 
 Lexer
+  Input: kommandolinje (sekvens med tegn)
   Tokeniserer input (line splitting)
   Klassifiserer tokens: (type)
   Evt evaluerer tokens: (type, verdi)
@@ -49,7 +55,9 @@ Utførelse
   Utfører kommando
 
 Jobbkontroll
+  Interaktivt kontrollere jobber
     
 Fullførelse
   Opphever omdirigeringer
   Eksponerer exit status 0...255
+
