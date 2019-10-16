@@ -5,7 +5,6 @@ Keys
   C-a d                             detach-client
   C-a C-n                           next session (switch-client)
 
-================================================================================
   C-a c                             new-window
   C-a C-w                           kill-window
   C-a 1-9                           select-window
@@ -14,6 +13,7 @@ Keys
   C-a .                             move-window 
   C-S-←→                            swap-window
 
+================================================================================
     -|                                create pane
     x                                 kill pane
     q1-9                              select pane
@@ -26,16 +26,14 @@ Keys
     P                                 toggle pipe output
     S                                 toggle synchronize panes
 
+  C-a r                             reload ~/.tmux.conf
+  C-a I                             tpm install
+  C-a U                             tpm updates
+  C-a C-s                           tmux-resurrect: save
+  C-a C-r                           tmux-resurrect: restore
 
-    r                                 reload tmux.conf
-    I                                 tpm: install
-    U                                 tpm: update
-    C-s                               tmux-resurrect: save
-    C-r                               tmux-resurrect: restore
-
+================================================================================
     C-c                               copy-mode-vi
-    :                                 command-prompt
-    -----------------------------------------------------
     copy-mode-vi
     /                                 search ↓
     ?                                 search ↑
@@ -44,7 +42,8 @@ Keys
     y                                 yank text → clipit buffer, tmux buffer
     C-v                               paste from clipit buffer
 
-    -----------------------------------------------------
+================================================================================
+    :                                 command-prompt
     Commands
     $ tmux ls                         list-sessions
     $ tmux lscm                       list-commands
