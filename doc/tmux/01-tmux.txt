@@ -1,32 +1,30 @@
 tmux
 
 Keys
-    C-a                               send-prefix
+  C-a s                             sessions/windows/panes (choose-tree)
+  C-a d                             detach-client
+  C-a C-n                           next session (switch-client)
 
-    s                                 choose-tree
-    d                                 detach-client
-    C-p                               switch-client -p
-    C-n                               switch-client -n
+================================================================================
+    c                                 create window
+    C-w                               kill window
+    1-9                               select window 1..9
+    C-hl                              select window
+    ,                                 rename window
+    C-S-←→                            swap windows
+    .                                 move window to session
 
-  c                                 create window
-  C-w                               kill window
-  1-9                               select window 1..9
-  C-hl                              select window
-  ,                                 rename window
-  C-S-←→                            swap windows
-  .                                 move window to session
-
-  -|                                create pane
-  x                                 kill pane
-  q1-9                              select pane
-  hjkl                              select pane
-  z                                 resize pane
-  C-A-←↑↓→                          resize pane
-  {}                                swap panes
-  !                                 move pane to new window
-  H                                 clear history
-  P                                 toggle pipe output
-  S                                 toggle synchronize panes
+    -|                                create pane
+    x                                 kill pane
+    q1-9                              select pane
+    hjkl                              select pane
+    z                                 resize pane
+    C-A-←↑↓→                          resize pane
+    {}                                swap panes
+    !                                 move pane to new window
+    H                                 clear history
+    P                                 toggle pipe output
+    S                                 toggle synchronize panes
 
     C-c                               copy-mode-vi
     :                                 command-prompt
@@ -37,8 +35,8 @@ Keys
     C-s                               tmux-resurrect: save
     C-r                               tmux-resurrect: restore
 
-  -----------------------------------------------------
-  copy-mode-vi
+    -----------------------------------------------------
+    copy-mode-vi
     /                                 search ↓
     ?                                 search ↑
     v|V|C-v                           select text
@@ -46,8 +44,8 @@ Keys
     y                                 yank text → clipit buffer, tmux buffer
     C-v                               paste from clipit buffer
 
-  -----------------------------------------------------
-  Commands
+    -----------------------------------------------------
+    Commands
     $ tmux ls                         list-sessions
     $ tmux lscm                       list-commands
     $ tmux lsk                        list-keys 
