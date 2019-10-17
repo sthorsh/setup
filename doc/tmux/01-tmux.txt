@@ -1,32 +1,34 @@
-tmux
+TMUX
 
-Keys
+Sessions
   C-a s                             session tree (choose-tree)
   C-a d                             detach-client
   C-a C-n                           next session (switch-client)
 
+Windows
   C-a c                             new-window
   C-a C-w                           kill-window
   C-a 1-9                           select-window
   C-a C-hl                          select-window
   C-a ,                             rename-window
-  C-a .                             move-window 
+  C-a .                             move-window (to session)
   C-S-←→                            swap-window
 
-================================================================================
-    -                                 create pane
-    |                                 create pane
-    x                                 kill pane
-    q1-9                              select pane
-    hjkl                              select pane
-    z                                 resize pane
-    C-A-←↑↓→                          resize pane
-    {}                                swap panes
-    !                                 move pane to new window
-    H                                 clear history
-    P                                 toggle pipe output
-    S                                 toggle synchronize panes
+Panes
+  C-a -                             new pane
+  C-a |                             new pane
+  C-a x                             kill-pane
+  C-a q 1..9                        select-pane
+  C-a hjkl                          select-pane
+  C-a z                             resize-pane
+  C-A-←↑↓→                          resize-pane
+  C-A {}                            swap-pane
+  C-A !                             move pane (to new window)
+  C-A H                             clear-history
+  C-A P                             toggle pipe output
+  C-A S                             toggle synchronize panes
 
+Config
   C-a r                             reload ~/.tmux.conf
   C-a I                             tpm install
   C-a U                             tpm updates
@@ -34,7 +36,7 @@ Keys
   C-a C-r                           tmux-resurrect: restore
 
 ================================================================================
-C-c copy-mode-vi
+Copy-mode-vi (C-c)
     /                                 search ↓
     ?                                 search ↑
     v|V|C-v                           select text
@@ -47,7 +49,7 @@ C-c copy-mode-vi
     Commands
     $ tmux ls                         list-sessions
     $ tmux lscm                       list-commands
-    $ tmux lsk                        list-keys 
+    $ tmux lsk                        list-keys
 
     $ tmux att -t name                attach-session
     $ tmux new -s name                new-session
