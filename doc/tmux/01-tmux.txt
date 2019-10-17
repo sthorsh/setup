@@ -14,7 +14,8 @@ Keys
   C-S-←→                            swap-window
 
 ================================================================================
-    -|                                create pane
+    -                                 create pane
+    |                                 create pane
     x                                 kill pane
     q1-9                              select pane
     hjkl                              select pane
@@ -33,8 +34,7 @@ Keys
   C-a C-r                           tmux-resurrect: restore
 
 ================================================================================
-    C-c                               copy-mode-vi
-    copy-mode-vi
+C-c copy-mode-vi
     /                                 search ↓
     ?                                 search ↑
     v|V|C-v                           select text
