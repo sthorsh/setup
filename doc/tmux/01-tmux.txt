@@ -1,4 +1,4 @@
-TMUX
+tmux
 
 Sessions
   C-a s                       session tree (choose-tree)
