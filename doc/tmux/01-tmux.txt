@@ -35,6 +35,8 @@ Config
   C-a C-s               tmux-resurrect: save
   C-a C-r               tmux-resurrect: restore
 
+----------------------------------------------------
+
 C-a C-c
   /                     search ↓
   ?                     search ↑
@@ -50,14 +52,13 @@ Paste
   C-a C-v               paste text + formatting
   C-S-v                 paste text 
 
-================================================================================
-    :                                 command-prompt
-    Commands
-    $ tmux ls                         list-sessions
+------------------------------------------------
+
+Commands
+  $ tmux a -t name      attach-session
+  $ tmux ls                         list-sessions
     $ tmux lscm                       list-commands
     $ tmux lsk                        list-keys
-
-    $ tmux att -t name                attach-session
-    $ tmux new -s name                new-session
     $ tmux kill-session -t name       kill-session
+    $ tmux new -s name                new-session
 
