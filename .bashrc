@@ -35,7 +35,7 @@ shopt -s histappend
 
 # Aliases
 alias gradle="/opt/gradle/bin/gradle"
-alias grep='grep --color=auto'
+alias grep='grep -in --color=auto'
 alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
