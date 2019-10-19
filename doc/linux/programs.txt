@@ -1,0 +1,9 @@
+Prosesser
+  ps
+
+Tekst
+✓ grep --[tab]
+
+Nettverk
+  telnet    
+
