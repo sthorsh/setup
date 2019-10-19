@@ -1,0 +1,4 @@
+Commands
+  grep [-EFPr] [opts] pattern [file ...]
+  ...
+
