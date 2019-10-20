@@ -20,6 +20,9 @@ bind '"\C-q":unix-filename-rubout'
 
 # Readline macros
 bind '"\C-x\"": "\"\"\C-b'
+bind '"\C-x{": "{}\C-b"'
+bind '"\C-x[": "[]\C-b"'
+bind '"\C-x:": "::\C-b"'
 bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
 bind '"\C-xq": "\eb\"\ef\""'
 
@@ -35,7 +38,7 @@ shopt -s histappend
 
 # Aliases
 alias gradle="/opt/gradle/bin/gradle"
-alias grep='grep -in --color=auto'
+alias grep='grep -E --color=auto'
 alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'

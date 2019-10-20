@@ -1,4 +1,15 @@
 Commands
-  grep [-EFPr] [opts] pattern [file ...]
-  ...
+
+  awk [opts] '[pattern] [{ action }]' [files]
+
+  cut -c list [files]
+  cut -d delim -f list [files]
+
+  grep [-EFPr] [opts] regex [files]
+
+  join [opts] file₁ file₂
+  
+  sed [-En] 'cmd' [files]
+  sed [-En] 'cmd ; cmd ...' [files]
+  sed [-En] -f script-files [files]
 
