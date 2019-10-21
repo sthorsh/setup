@@ -1,5 +1,5 @@
 Commands
-
+  awk [opts] 'program' [files]
   awk [opts] '[pattern] [{ action }]' [files]
 
   cut -c list [files]
@@ -12,4 +12,22 @@ Commands
   sed [-En] 'cmd' [files]
   sed [-En] 'cmd ; cmd ...' [files]
   sed [-En] -f script-files [files]
+
+  sort [opts] [files]
+  sort -t: /etc/passwd
+  sort -t: -k4nr,4 /etc/passwd
+  sort -t: -k4nr,4 -u /etc/passwd (uniq keys)
+  sort -t: -k4nr,4 --stable /etc/passwd
+
+  uniq [-c] [-d] [-u] [files] (uniq records)
+
+  wc [opts] [files]
+  
+---------
+
+awk, cut, join, sort
+  Input is stream of records
+  Records consists of fields
+  Records are delimited by newline (lines)
+  Fields are delimited by whitespace or opt (columns)
 
