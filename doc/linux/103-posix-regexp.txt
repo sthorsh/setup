@@ -1,45 +1,51 @@
-Chars                 
-  Alphabetic          a-zA-Z
-  Numeric             0-9
-  Whitespace          space tab newline
-  Punctuation         ! : < > - ; & @ # ...
+POSIX REGEX
+
+Tegn
+    Alfabetisk          a-zA-Z
+    Numerisk            0-9
+    Whitespace          space tab newline
+    Andre ! " # % &
     
-Metachars
-  [::]                char class
-  [==]                collation char
-  [..]                collation char
+vim \v
+    %   %^ bof, %$ eof
 
-  \metachar           literal metachar
 
-  .                   char
-  [abc]               a, b or c
-  [a-c]               a, b or c
-  [[::]]              alnum|lower|space|upper|...
-  [[==]]              collation char
-  [[..]]              collation char
-  \w                  ≡ [_[:alnum:]]
-  \W                  ≡ [^_[:alnum:]] 
-  \s                  ≡ [[:space:]] 
-  \S                  ≡ [^[:space:]]
+Metategn
+    [::]                char class
+    [==]                collation char
+    [..]                collation char
 
-  (re)                group
-  (re)...\n           capturing group...backref (ERE)
-  \(re\)...\n         capturing group...backref (BRE)
+    \metachar           literal metachar
 
-  re*                 0..∞ (may match null string)
-  re?                 0..1 
-  re+                 1..∞ 
-  re{n}               n
-  re{n,}              ≥n 
-  re{,m}              ≤m 
-  re{n,m}             n..m 
+    .                   char
+    [abc]               a, b or c
+    [a-c]               a, b or c
+    [[::]]              alnum|lower|space|upper|...
+    [[==]]              collation char
+    [[..]]              collation char
+    \w                  ≡ [_[:alnum:]]
+    \W                  ≡ [^_[:alnum:]] 
+    \s                  ≡ [[:space:]] 
+    \S                  ≡ [^[:space:]]
 
-  n/a                 concatenation
+    (re)                group
+    (re)...\n           capturing group...backref (ERE)
+    \(re\)...\n         capturing group...backref (BRE)
 
-  ^                   BOL anchor
-  $                   EOL anchor       
-  \b                  word boundary anchor
-  \B                  not word boundary anchor
+    re*                 0..∞ (may match null string)
+    re?                 0..1 
+    re+                 1..∞ 
+    re{n}               n
+    re{n,}              ≥n 
+    re{,m}              ≤m 
+    re{n,m}             n..m 
 
-  re₁|re₂|...         alternation
+    n/a                 concatenation
+
+    ^                   BOL anchor
+    $                   EOL anchor       
+    \b                  word boundary anchor
+    \B                  not word boundary anchor
+
+    re₁|re₂|...         alternation
 
