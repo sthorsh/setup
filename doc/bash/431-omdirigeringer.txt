@@ -31,9 +31,9 @@ Omdirigeringer
 KONTEKST 
 
 For hver Unix-prosess inkl bash
-  FD 0: standardstrøm for innmating (stdin)
-  FD 1: standardstrøm for utmating (stdout)
-  FD 2: standardstrøm for feilmeldinger (stderr)
+  FD 0: standardstrøm for innmating (stdin) (data source)
+  FD 1: standardstrøm for utmating (stdout) (data sink)
+  FD 2: standardstrøm for feilmeldinger (stderr) (error reports)
   FD 3: strøm for input el output
   ...
 
