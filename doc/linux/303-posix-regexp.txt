@@ -1,0 +1,44 @@
+POSIX REGEX
+
+Tegn
+  Alfabetisk            a-zA-Z
+  Numerisk              0-9
+  Whitespace            space tab
+  Ikke-alfanumeriske    ! " # % & ' , - / : ; < = > @ _ ` ~
+
+Metategn
+  \                     \ . [] () * ? + {} ^ $ |
+  \w                    [_[:alnum:]]
+  \W                    [^_[:alnum:]] 
+  \s                    [[:space:]] 
+  \S                    [^[:space:]]
+  \b                    word boundary
+  \B                    not word boundary
+
+  .                     ethvert tegn
+
+  [abc]                 a, b el c
+  [a-c]                 a, b el c
+  [[::]]                tegnklasser
+  [[==]]                sorteringstegn
+  [[..]]                sorteringstegn
+
+  (RE)                  gruppe
+  (RE)...\n             gruppe...bakoverref (ERE)
+  \(RE\)...\n           gruppe...bakoverref (BRE)
+
+  RE*                   0..∞ (may match null string)
+  RE?                   0..1 
+  RE+                   1..∞ 
+  RE{n}                 n
+  RE{n,}                ≥n 
+  RE{,m}                ≤m 
+  RE{n,m}               n..m 
+
+  N/A                   konkatenering
+
+  ^                     BOL
+  $                     EOL
+
+  RE₁|RE₂|...           RE₁ el RE₂ el ...
+
