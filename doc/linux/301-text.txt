@@ -19,6 +19,8 @@ Commands
   sort -t: -k4nr,4 -u /etc/passwd (uniq keys)
   sort -t: -k4nr,4 --stable /etc/passwd
 
+  tr [opts] char-set₁ char-set₂
+
   uniq [-c] [-d] [-u] [files] (uniq records)
 
   wc [opts] [files]
