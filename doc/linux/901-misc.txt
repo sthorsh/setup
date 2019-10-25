@@ -1,0 +1,12 @@
+locale
+  locale
+  locale -a
+  LC_ALL=nb_NO.utf8 locale -ck LC_ADDRESS
+  LC_ALL=nb_NO.utf8 locale -ck LC_IDENTIFICATION
+  LC_ALL=nb_NO.utf8 locale -ck LC_MEASUREMENT
+  LC_ALL=nb_NO.utf8 locale -ck LC_MONETARY
+  LC_ALL=nb_NO.utf8 locale -ck LC_NAME
+  LC_ALL=nb_NO.utf8 locale -ck LC_NUMERIC
+  LC_ALL=nb_NO.utf8 locale -ck LC_PAPER
+  LC_ALL=nb_NO.utf8 locale -ck LC_TELEPHONE
+  LC_ALL=nb_NO.utf8 locale -ck LC_TIME
