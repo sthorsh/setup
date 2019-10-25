@@ -1,44 +1,58 @@
 POSIX REGEX
 
 Tegn
-  Alfabetisk            a-zA-Z
-  Numerisk              0-9
-  Whitespace            space tab
-  Ikke-alfanumeriske    ! " # % & ' , - / : ; < = > @ _ ` ~
+  Bokstaver           a-zA-Z
+  Tall                0-9
+  Blankt              space tab
+  Symboler            ! " # % & ' , - / : ; < = > @ ] _ ` } ~
 
 Metategn
-  \                     \ . [] () * ? + {} ^ $ |
-  \w                    [_[:alnum:]]
-  \W                    [^_[:alnum:]] 
-  \s                    [[:space:]] 
-  \S                    [^[:space:]]
-  \b                    word boundary
-  \B                    not word boundary
+  \m                  ett av \ . [ ( ) * ? + { ^ $ |
 
-  .                     ethvert tegn
+  .                   ett tegn
 
-  [abc]                 a, b el c
-  [a-c]                 a, b el c
-  [[::]]                tegnklasser
-  [[==]]                sorteringstegn
-  [[..]]                sorteringstegn
+  [abc]               ett tegn fra mengde
+  [^abc]              ett tegn ikke fra mengde
+  [a-z]               ett tegn fra range
+  [^a-z]              ett tegn ikke fra range
+  [[==]]              ett tegn fra collation
+  [[..]]              ett tegn fra collation
+  [[:alnum:]]         [a-zA-Z0-9]
+  [[:alpha:]]         [a-zA-Z]
+  [[:blank:]]         [ \t]
+  [[:cntrl:]]         [\x00-\x1F\x7F]
+  [[:digit:]]         [0-9] 
+  [[:graph:]]         [\x21-\x7E]
+  [[:lower:]]         [a-z]
+  [[:print:]]         [\x20-\x7E]
+  [[:punct:]]         [!"#%&',-/:;<=>@]_`}~\.[()*?+{^$|]
+  [[:space:]]         [ \t\r\n\v\f]
+  [[:upper:]]         [A-Z]
+  [[:xdigit:]]        [A-Fa-f0-9]
+  \w                  [a-zA-Z0-9_]
+  \W                  [^a-zA-Z0-9_]
+  \s                  [ \t\r\n\v\f]
+  \S                  [^ \t\r\n\v\f]
 
-  (RE)                  gruppe
-  (RE)...\n             gruppe...bakoverref (ERE)
-  \(RE\)...\n           gruppe...bakoverref (BRE)
+  (regex)             gruppe
+  \N                  bakoverreferanse
 
-  RE*                   0..∞ (may match null string)
-  RE?                   0..1 
-  RE+                   1..∞ 
-  RE{n}                 n
-  RE{n,}                ≥n 
-  RE{,m}                ≤m 
-  RE{n,m}               n..m 
+  *                   tegn|mengde|gruppe: 0..∞ (kan matche null e.g bol, eol)
+  ?                   tegn|mengde|gruppe: 0..1
+  +                   tegn|mengde|gruppe: 1..∞
+  {n}                 tegn|mengde|gruppe: n 
+  {n,}                tegn|mengde|gruppe: ≥n 
+  {,m}                tegn|mengde|gruppe: ≤m 
+  {n,m}               tegn|mengde|gruppe: n..m 
 
-  N/A                   konkatenering
+  N/A                 konkatenering
 
-  ^                     BOL
-  $                     EOL
+  ^                   BOL
+  $                   EOL
+  \<                  word boundary
+  \>                  word boundary
+  \b                  word boundary
+  \B                  not word boundary
 
-  RE₁|RE₂|...           RE₁ el RE₂ el ...
+  regex₁|regex₂|...   regex₁ el regex₂ el ...
 
