@@ -1,0 +1,38 @@
+SED: STREAM EDITOR
+
+Syntax
+  sed [opts] '[addr]cmd; ...' [file.text ...]
+  
+Options                                           
+  -e [addr]cmd ...          --expression=
+  -f script.sed             --file=    
+  -i                        --in-place
+  -n                        --silent (no-autoprint)
+  -r                        --regexp-extended
+  
+Address
+  N[!]                      line N
+  $[!]                      last line
+  /regex/[I][!]             lines matched
+  addr₁,addr₂[!]            lines in range
+  addr,+N[!]                lines in range
+  N~M[!]                    e.g 5~2 → 5,7,9,11...
+  addr,~N[!]                lines from addr to multiples-of-N
+  
+Commands
+  a text                    append after line
+  c text                    change/replace line
+  d                         delete line
+  i text                    insert before line
+  s/regex/subex/igNpwem     substitute part of line
+  
+Subex
+  &                         pattern space match
+  \N                        group 0..9
+  \n                        newline 
+  \l                        lowercase next char 
+  \u                        uppercase next char
+  \L                        lowercase rest of subex 
+  \U                        uppercase rest of subex
+  \E                        end of \L or \U
+  

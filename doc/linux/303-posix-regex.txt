@@ -1,0 +1,59 @@
+POSIX REGEX
+
+Tegn
+  Kontrolltegn        n/a
+  Space               ␣ 
+  Symboler            !"#%&',-/:;<=>@]_`}~
+  Siffer              0-9
+  Bokstaver           A-Za-z 
+
+Metategn
+  \m                  \.[()*?+{^$|
+
+  .                   tegn t
+
+  []                  mengde M (metategn → tegn)
+  [^]                 ikke mengde
+  [a-z]               range/mengde
+  [^a-z]              ikke range/mengde
+  [[=e=]]             ekvivalensklasse (ref locale)
+  [[.ch.]]            sorteringssymbol (ref locale)
+  [[:alnum:]]         [a-zA-Z0-9]
+  [[:alpha:]]         [a-zA-Z]
+  [[:blank:]]         [ \t]
+  [[:cntrl:]]         [\x00-\x1F\x7F]
+  [[:digit:]]         [0-9] 
+  [[:graph:]]         [\x21-\x7E]
+  [[:lower:]]         [a-z]
+  [[:print:]]         [\x20-\x7E]
+  [[:punct:]]         [!"#%&',-/:;<=>@]_`}~\.[()*?+{^$|]
+  [[:space:]]         [ \t\r\n\v\f]
+  [[:upper:]]         [A-Z]
+  [[:xdigit:]]        [A-Fa-f0-9]
+  \w                  [a-zA-Z0-9_]
+  \W                  [^a-zA-Z0-9_]
+  \s                  [ \t\r\n\v\f]
+  \S                  [^ \t\r\n\v\f]
+
+  ()                  gruppe G
+  \N                  bakoverreferanse
+
+  t|M|G*              0..∞ (kan matche null)
+  t|M|G?              0..1
+  t|M|G+              1..∞
+  t|M|G{n}            n 
+  t|M|G{n,}           ≥n 
+  t|M|G{,m}           ≤m 
+  t|M|G{n,m}          n..m 
+
+  N/A                 konkatenering
+
+  ^                   BOL
+  $                   EOL
+  \<                  word boundary
+  \>                  word boundary
+  \b                  word boundary
+  \B                  not word boundary
+
+  RE₁|RE₂|...         RE₁ el RE₂ el ...
+

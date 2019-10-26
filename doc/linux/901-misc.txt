@@ -10,3 +10,6 @@ locale
   LC_ALL=nb_NO.utf8 locale -ck LC_PAPER
   LC_ALL=nb_NO.utf8 locale -ck LC_TELEPHONE
   LC_ALL=nb_NO.utf8 locale -ck LC_TIME
+
+localectl
+  localectl status
