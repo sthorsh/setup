@@ -27,13 +27,13 @@ Commands
   s/regex/subex/[igNpwem]     substitute: align-match-replace/move
   
 Subex metategn
-    &                           the match
-    \N                          group 0..9
-    \l                          lowercase next char 
-    \u                          uppercase next char
-    \L                          lowercase rest of subex 
-    \U                          uppercase rest of subex
-    \E                          end of \L or \U
+  &                           matching portion
+  \N                          backref to group 0..9
+  \l                          lowercase char 
+  \u                          uppercase char
+  \L                          lowercase subex 
+  \U                          uppercase subex
+  \E                          end of \L or \U
 
 --------------------------------------------------
 Syklus
