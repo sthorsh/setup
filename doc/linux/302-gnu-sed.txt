@@ -20,11 +20,12 @@ Address
   addr,~N[!]                  lines from addr to multiples-of-N
   
 Commands
-  a text                      append after line
-  c text                      change/replace line
-  d                           delete line
-  i text                      insert before line
-  s/regex/subex/[igNpwem]     substitute: align-match-replace/move
+  a txt                       append txt after line
+  c txt                       change line to txt
+  d                           delete pattern space; abort script
+  D                           delete pattern space 1st line; abort script
+  i txt                       insert txt before line
+  s/regex/subex/[igNpwem]     sub: align-match-replace/move
   
 Subex metategn
   &                           matching portion
@@ -35,12 +36,3 @@ Subex metategn
   \U                          uppercase subex
   \E                          end of \L or \U
 
---------------------------------------------------
-Syklus
-  Read line
-  Remove newline
-  Execute script: edit pattern space
-  If s/regex/subex/e: execute pattern space
-  Add newline
-  Print pattern space
-  
