@@ -1,4 +1,4 @@
-SED: STREAM EDITOR
+SED
 
 Syntax
   sed [opts] '[addr]cmd; ...' [file.text ...]
@@ -28,7 +28,11 @@ Commands
   l                           list pattern space (debug)
   p                           print pattern space
   P                           print pattern space up to 1st \n
+  r file                      read file
+  R file                      read next line from file 
   s/regex/subex/[igNpwem]     substitute: align-match-replace/move
+  w                           write to file 
+  W                           write up to 1st \n to file 
   
 Subex metategn
   &                           matching portion
