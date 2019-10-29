@@ -23,9 +23,12 @@ Commands
   a txt                       append txt after line
   c txt                       change line to txt
   d                           delete pattern space; abort script
-  D                           delete pattern space 1st line; abort script
+  D                           delete pattern space up to 1st \n; abort script
   i txt                       insert txt before line
-  s/regex/subex/[igNpwem]     sub: align-match-replace/move
+  l                           list pattern space (debug)
+  p                           print pattern space
+  P                           print pattern space up to 1st \n
+  s/regex/subex/[igNpwem]     substitute: align-match-replace/move
   
 Subex metategn
   &                           matching portion
