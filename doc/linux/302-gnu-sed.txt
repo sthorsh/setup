@@ -1,7 +1,7 @@
 SED
 
 Syntax
-  sed [opts] '[addr]cmd; ...' [file.text ...]
+  sed [opts] '[addr]{cmd₁; ...}; ...' [file.text ...]
   
 Options                                           
   -e [addr]cmd ...            --expression=
@@ -26,6 +26,8 @@ Commands
   D                           delete pattern space up to 1st \n; abort script
   i txt                       insert txt before line
   l                           list pattern space (debug)
+  n                           print (if not -n); read next line; overwrite pattern space
+  N                           read next line; append to pattern space; print (if not -n)
   p                           print pattern space
   P                           print pattern space up to 1st \n
   r file                      read file
