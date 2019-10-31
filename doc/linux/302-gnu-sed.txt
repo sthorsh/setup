@@ -21,20 +21,30 @@ Address
   
 Commands
   a txt                       append txt after line
+  b                           branch to (label or) end of script
   c txt                       change line to txt
   d                           delete pattern space; abort script
   D                           delete pattern space up to 1st \n; abort script
+  g                           hold space >| pattern space
+  G                           hold space >> pattern space
+  h                           pattern space >| hold space
+  H                           pattern space >> hold space
   i txt                       insert txt before line
   l                           list pattern space (debug)
   n                           print (if not -n); read next line; overwrite pattern space
   N                           read next line; append to pattern space; print (if not -n)
   p                           print pattern space
   P                           print pattern space up to 1st \n
+  q                           print pattern space; quit sed
+  Q                           quit sed
   r file                      read file
   R file                      read next line from file 
-  s/regex/subex/[igNpwem]     substitute: align-match-replace/move
+• s/regex/subex/[igNpwem]     substitute: align-match-replace/move
+  t                           branch to (label or) end of sed script if s replaced
+  T                           branch to (label or) end of sed script if s did not replace
   w                           write to file 
   W                           write up to 1st \n to file 
+  x                           pattern space <> hold space (swap)
   
 Subex metategn
   &                           matching portion
