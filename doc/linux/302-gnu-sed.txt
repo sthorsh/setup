@@ -1,6 +1,7 @@
 SED
 
 Syntax
+  sed [opts] script [files]
   sed [opts] '[addr]{cmd₁; ...}; ...' [file.text ...]
   
 Options                                           
@@ -20,11 +21,13 @@ Address
   addr,~N[!]                  lines from addr to multiples-of-N
   
 Commands
+  =                           print line number
   a txt                       append txt after line
   b                           branch to (label or) end of script
   c txt                       change line to txt
   d                           delete pattern space; abort script
   D                           delete pattern space up to 1st \n; abort script
+  e cmd                       execute cmd
   g                           hold space >| pattern space
   G                           hold space >> pattern space
   h                           pattern space >| hold space
@@ -39,12 +42,14 @@ Commands
   Q                           quit sed
   r file                      read file
   R file                      read next line from file 
-• s/regex/subex/[igNpwem]     substitute: align-match-replace/move
+  s/regex/subex/[igNpwem]     substitute: align-match-replace/move
   t                           branch to (label or) end of sed script if s replaced
   T                           branch to (label or) end of sed script if s did not replace
   w                           write to file 
   W                           write up to 1st \n to file 
   x                           pattern space <> hold space (swap)
+  y/chars/chars/              tr(ansliterate) (use tr instead)
+  z                           clear (zap) pattern space (same as s/.*//)
   
 Subex metategn
   &                           matching portion

@@ -8,3 +8,6 @@ Prinsipper for «software tools(et)»
   • La noen andre gjøre den vanskelige jobben
   • Ved behov, ta tiden til å bygge et spesialisert tool
 
+sed vs awk
+  If the input data file has fields, it's usually better to use awk
+
