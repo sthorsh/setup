@@ -52,7 +52,7 @@ Commands
   z                           clear (zap) pattern space (same as s/.*//)
   
 Subex metategn
-  &                           matching portion
+  &                           the part of pattern space matching the regex
   \N                          backref to group 0..9
   \l                          lowercase char 
   \u                          uppercase char
