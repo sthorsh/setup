@@ -5,4 +5,3 @@ LC_ALL=nb_NO.utf8 locale -ck LC_ADDRESS
 
 localectl status
 
-seq N
