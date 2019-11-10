@@ -39,8 +39,9 @@ shopt -s globstar
 shopt -s histappend
 
 # Aliases
+alias fgrep='fgrep --color=auto'
 alias gradle="/opt/gradle/bin/gradle"
-alias grep='grep -E --color=auto'
+alias grep='grep --color=auto --extended-regexp --ignore-case'
 alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
