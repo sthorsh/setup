@@ -1,68 +1,60 @@
 GREP
 
+Syntax
+  grep opts regex [files]
+  grep opts --regexp=regex ... [files]
+  grep opts --file=filename ... [files]
+
 Regex
-  -G --basic-regexp
-  -E --extended-regexp
-  -F --fixed-strings
-  -P --perl-regexp
+  --basic-regexp
+  --extended-regexp
+  --fixed-strings
+  --perl-regexp
 
-  -i --ignore-case
-  -x --line-regexp
-  -w --word-regexp
-
-  -e --regexp=re₁ ...
-  -f --file=file
-
-  -v --invert-match
+Regex control
+  --ignore-case  (-i)
+  --word-regexp  (-w)
+  --line-regexp  (-x)
+  --invert-match (-v)
 
 Files
-  -m --max-count=N
+  --recursive (-r)
+  --dereference-recursive (-R)
 
-  -r --recursive
-  -R --dereference-recursive
+Binary files
+  --binary
+  --binary-files=binary|text|without-match
+  --devices=read|skip
+  --null-data
 
-     --binary-files=binary|text|without-match
-     --devices=read|skip
-
-Prefix
-  -l --files-with-matches
-  -L --files-without-match
-
-  -h --no-filename
-  -H --with-filename
-     --label=LABEL
-  -Z --null
-
-  -c --count
-
-  -n --line-number
-  -b --byte-offset
-
-  -T --initial-tab
-
+File globbing
+  --include=glob
+  --exclude=glob
+  --exclude-dir=glob
+  --exclude-from=file
 
 Output
-     --color
-
-  -N --context=N
-  -B --before-context=N
-  -C --after-context=N
-
-  -o --only-matching
-  -q --silent (quiet)
-
-Help
-  --help
-
-Version
-  -V --version
-
-------------------------------------------
-  --binary
-  --exclude=
-  --exclude-dir=
-  --exclude-from=
-  --include=
-  --line-buffered
+  --color
+  --count 
+  --max-count=N
+  --files-with-matches
+  --files-without-match
+  --silent
   --no-messages
-  --null-data
+  --line-buffered
+
+Output prefix
+  --with-filename
+  --no-filename
+  --label=label
+  --null
+  --line-number
+  --byte-offset
+
+Output line
+  --initial-tab
+  --only-matching
+  --context=N
+  --before-context=N
+  --after-context=N
+

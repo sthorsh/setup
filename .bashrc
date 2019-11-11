@@ -15,7 +15,7 @@ bind '"\C-[":character-search-backward'
 bind 'tab:menu-complete'
 bind '"\ep":glob-complete-word'
 bind 'space:magic-space'
-bind '"\e\C-p":glob-expand-word'
+bind '"\e\C-g":glob-expand-word'
 bind '"\C-q":unix-filename-rubout'
 
 # Readline macros
@@ -41,7 +41,7 @@ shopt -s histappend
 # Aliases
 alias fgrep='fgrep --color=auto'
 alias gradle="/opt/gradle/bin/gradle"
-alias grep='grep --color=auto --extended-regexp --ignore-case'
+alias grep='grep --extended-regexp --ignore-case --color=auto'
 alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
