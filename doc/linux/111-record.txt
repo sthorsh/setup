@@ -1,23 +1,16 @@
-Line-oriented
-  cat
-  grep*
-  head
-  nl
-  sed* 
-  seq
-  tac
-  tail
-  tr
-  wc
+RECORD
 
-Record-oriented
   awk*
+
     cut -c list [files]
     cut -d delim -f list [files]
+
     join 
+
     sort [opts] [files]
     sort -t: /etc/passwd
     sort -t: -k4nr,4 /etc/passwd
     sort -t: -k4nr,4 -u /etc/passwd (uniq keys)
     sort -t: -k4nr,4 --stable /etc/passwd
+
   uniq
