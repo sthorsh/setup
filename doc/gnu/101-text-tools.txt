@@ -7,7 +7,7 @@ Commands
   cut -c list [files]
   cut -d delim -f list [files]
 
-  grep [-EFPr] [opts] regex [files]
+  grep → grep.txt
 
   head
 
