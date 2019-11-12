@@ -1,16 +1,48 @@
-RECORD
+RECORD e.g /etc/password
 
-  awk*
+cut  --delimiter=:
+     --fields=1|1,2,...|1-3
+     --bytes=1|1,2,...|1-3
+     --characters=1|1,2,...|1-3
+     --complement
+     --only-delimited
+     --output-delimiter=char
+     ...
 
-    cut -c list [files]
-    cut -d delim -f list [files]
+sort --field-separator=:
+     --key=field[.char][opts] ...
+     --dictionary-order (-d)
+     --general-numeric-sort (-g)
+     --ignore-case (-f)
+     --human-numeric-sort (-h)
+     --ignore-leading-blanks (-b)
+     --ignore-nonprinting (-i)
+     --month-sort (-M)
+     --numeric-sort (-n)
+     --random-sort (-R)
+     --reverse (-r)
+     --version-sort (-V)
+     --stable
+     --unique
+     --debug
+     ...
 
-    join 
+uniq --count
+     --ignore-case
+     --repeated
+     --skip-chars=N
+     --skip-fields=N
+     --unique
+     ...
 
-    sort [opts] [files]
-    sort -t: /etc/passwd
-    sort -t: -k4nr,4 /etc/passwd
-    sort -t: -k4nr,4 -u /etc/passwd (uniq keys)
-    sort -t: -k4nr,4 --stable /etc/passwd
-
-  uniq
+  join -a 1 -a 2         output paired and unpaired
+       -e -              empty char
+       -i                ignore-case
+       -j N              join on field N
+       -o 0,1.2,1.3,2.2  output format
+       -t :              field separator
+       -v 1 -v 2         output unpaired only
+       -1 N₁             join on file 1 field N₁
+       -2 N₂             join on file 2 field N₂
+       ... 
+    

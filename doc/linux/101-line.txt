@@ -4,9 +4,13 @@ cat      --number
          --show-all
          --squeeze-blank
 
-expand   --initial
-        
+tac      --
+
 head     --bytes=N
+         --lines=N
+
+tail     --bytes=N
+         --follow
          --lines=N
 
 nl       --body-numbering=a|n
@@ -17,17 +21,11 @@ nl       --body-numbering=a|n
          --starting-line-number=N
          --number-width=N
 
-seq      --equal-width
-
-tac      --
-
-tail     --bytes=N
-         --follow
-         --lines=N
-
 tr       --complement
          --delete charset
          --squeeze-repeats charset
+
+expand   --initial
 
 unexpand --all
 
@@ -35,3 +33,4 @@ wc       --bytes
          --chars
          --lines
          --words
+

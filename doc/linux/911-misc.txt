@@ -1,7 +1,13 @@
-locale
-locale -a
-LC_ALL=nb_NO.utf8 locale -ck LC_ADDRESS
-...
+I/O
+  echo
+  printf
+  seq
 
-localectl status
+?
+  locale
+  locale -a
+  LC_ALL=nb_NO.utf8 locale -ck LC_ADDRESS
+  ...
+
+  localectl status
 
