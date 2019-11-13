@@ -46,7 +46,7 @@ alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
 alias jobs="jobs -l"
-alias l='ls -ilF --color=auto --group-directories-first'
+alias l='ls -lF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
 alias mount='mount | column -t'
 alias mvnf='mvn clean install -Pfindbugs,checkstyle'
