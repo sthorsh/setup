@@ -1,0 +1,13 @@
+I/O
+  echo
+  printf
+  seq
+
+?
+  locale
+  locale -a
+  LC_ALL=nb_NO.utf8 locale -ck LC_ADDRESS
+  ...
+
+  localectl status
+
