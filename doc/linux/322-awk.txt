@@ -1,1 +1,24 @@
-TODO
+AWK
+
+Awk
+  $ awk 'program' file₁ ...
+  $ awk -f file.awk file₁ ...
+  $ file.awk
+
+Program
+  pattern { action }
+  ...
+
+Pattern
+  Regular expression: /regex/
+  Relational expression: e.g length($0) > 80
+
+Action
+
+--------------
+Opts
+
+Vars
+
+Functions
+ 
