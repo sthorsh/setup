@@ -1,24 +1,33 @@
 AWK
 
 Awk
-  $ awk 'program' file₁ ...
-  $ awk -f file.awk file₁ ...
-  $ file.awk
+  awk [opts] 'program'
+  awk [opts] 'program' file₁ ...
+  awk [opts] 'program' [var=val] ...
 
-Program
-  pattern { action }
+Opts
+  --assign var=val
+  --dump-variables
+  --field-separator:fs
+  --pretty-print
   ...
 
+Program
+  rule; ...
+  pattern { action }; ...
+  pattern { stmt; ...}; ...
+  
 Pattern
   Regular expression: /regex/
   Relational expression: e.g length($0) > 80
 
-Action
-
---------------
-Opts
-
+----
 Vars
+  awk --dump-variables ''
+
+Exprs
+
+Stmts
 
 Functions
- 
+
