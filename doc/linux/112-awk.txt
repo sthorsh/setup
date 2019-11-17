@@ -18,8 +18,9 @@ Program
   pattern { stmt; ...}; ...
   
 Pattern
-  Regular expression: /regex/
+  Regular expression: /regexp/
   Relational expression: e.g length($0) > 80
+  Matching expression: exp [!]~ regexp
 
 ----
 Vars

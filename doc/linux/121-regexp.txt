@@ -1,14 +1,7 @@
-POSIX REGEX
-
-Tegn
-  Kontrolltegn          \t \n \r
-  Space                 ␣ 
-  Symboler              ! " #  % & ' , - / : ; < = > @ ] _ ` } ~
-  Siffer                0-9
-  Bokstaver             A-Za-z 
+REGEX
 
 Metategn
-  \\ ...                \ . [ ( ) * ? + { ^ $ |        
+  \                     \ . [ ( ) * ? + { ^ $ |
 
   .                     tegn t
 
