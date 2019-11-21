@@ -17,22 +17,22 @@ cntrl
   00011111    \037   031    \x1f           ^_              US
                                         
 print                                   
-  00100000    \040   032    \x20                  ␣          Mellomrom/space
-  00100001    \041   033    \x21                  !          Utropstegn/bang
-  00100010    \042   034    \x22    \"            "          Anførselstegn/dobbelfnutt
-  00100011    \043   035    \x23                  #          Nummertegn/hash
+  00100000    \040   032    \x20                  ␣          Space
+  00100001    \041   033    \x21                  !          Bang
+  00100010    \042   034    \x22    \"            "          Double quote
+  00100011    \043   035    \x23                  #          Hash
   00100100    \044   036    \x24                  $          Dollar
-  00100101    \045   037    \x25                  %          Prosent/modulo
-  00100110    \046   038    \x26                  &          Ampersand/og
-  00100111    \047   039    \x27    \'            '          Apostrof/fnutt
+  00100101    \045   037    \x25                  %          Percent
+  00100110    \046   038    \x26                  &          Og
+  00100111    \047   039    \x27    \'            '          Quote
   00101000    \050   040    \x28                  (          Parentes
   00101001    \051   041    \x29                  )          Parentes slutt
-  00101010    \052   042    \x2a                  *          Asterisk/stjerne
+  00101010    \052   042    \x2a                  *          Stjerne
   00101011    \053   043    \x2b                  +          Pluss
   00101100    \054   044    \x2c                  ,          Komma
-  00101101    \055   045    \x2d                  -          Bindestrek/dash/minus
-  00101110    \056   046    \x2e                  .          Punktum/dot
-  00101111    \057   047    \x2f                  /          Skråstrek/slash
+  00101101    \055   045    \x2d                  -          Bindestrek
+  00101110    \056   046    \x2e                  .          Punkt
+  00101111    \057   047    \x2f                  /          Slash
   00110000    \060   048    \x30                  0          0
   ...         ...    ...    ...                              ...
   00111001    \071   057    \x39                  9          9
@@ -42,7 +42,7 @@ print
   00111101    \075   061    \x3d                  =          Er-lik
   00111110    \076   062    \x3e                  >          Vinkelparentes slutt
   00111111    \077   063    \x3f                  ?          Spørsmålstegn
-  01000000    \100   064    \x40                  @          Krøllalfa/at
+  01000000    \100   064    \x40                  @          Krøllalfa
   01000001    \101   065    \x41                  A          A
   ...         ...    ...    ...                              ...
   01011010    \132   090    \x5a                  Z          Z
