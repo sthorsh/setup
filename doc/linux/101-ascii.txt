@@ -1,63 +1,63 @@
 ASCII
 
 cntrl
-  00000000    \000    000    \x00      ∅       \0     ^@     ∅        NUL
-  00000001    \001    001    \x01      ∅        ∅     ^a     ∅        SOH
-  ...         ...     ...    ...      ...      ...    ...   ...       ...
-  00001000    \008    010    \x08      ∅       \b     ^h     ∅        Backspace
-  00001001    \009    011    \x09      ∅       \t     ^i     ∅        Tab
-  00001010    \010    012    \x0a      ∅       \n     ^j     ∅        Line Feed
-  00001011    \011    013    \x0b      ∅       \v     ^k     ∅        Line Tab
-  00001100    \012    014    \x0c      ∅       \f     ^l     ∅        Form Feed
-  00001101    \013    015    \x0d      ∅       \r     ^m     ∅        Carriage Return
-  ...         ...     ...    ...      ...      ...    ...   ...       ...
-  00011010    \026    032    \x1a      ∅        ∅     ^z     ∅        SUB
-  00011011    \027    033    \x1b      ∅        ∅     ^[     ∅        ESC
-  ...         ...     ...    ...      ...      ...    ...   ...       ...
-  00011111    \031    037    \x1f      ∅        ∅     ^_     ∅        US
-                                                   
-print                                              
-  00100000    \032    040    \x20    &#032;     ∅      ∅     ␣          Mellomrom/space
-  00100001    \033    041    \x21    &#033;     ∅      ∅     !          Utropstegn/bang
-  00100010    \034    042    \x22    &#034;    \"      ∅     "          Anførselstegn/dobbelfnutt
-  00100011    \035    043    \x23    &#035;     ∅      ∅     #          Nummertegn/hash
-  00100100    \036    044    \x24    &#036;     ∅      ∅     $          Dollar
-  00100101    \037    045    \x25    &#037;     ∅      ∅     %          Prosent/modulo
-  00100110    \038    046    \x26    &#038;     ∅      ∅     &          Ampersand/og
-  00100111    \039    047    \x27    &#039;    \'      ∅     '          Apostrof/fnutt
-  00101000    \040    050    \x28    &#040;     ∅      ∅     (          Parentes
-  00101001    \041    051    \x29    &#041;     ∅      ∅     )          Parentes slutt
-  00101010    \042    052    \x2a    &#042;     ∅      ∅     *          Asterisk/stjerne
-  00101011    \043    053    \x2b    &#043;     ∅      ∅     +          Pluss
-  00101100    \044    054    \x2c    &#044;     ∅      ∅     ,          Komma
-  00101101    \045    055    \x2d    &#045;     ∅      ∅     -          Bindestrek/dash/minus
-  00101110    \046    056    \x2e    &#046;     ∅      ∅     .          Punktum/dot
-  00101111    \047    057    \x2f    &#047;     ∅      ∅     /          Skråstrek/slash
-  00110000    \048    060    \x30    &#048;     ∅      ∅     0          0
-  ...         ...     ...    ...      ...      ...    ...   ...         ...
-  00111001    \057    071    \x39    &#057;     ∅      ∅     9          9
-  00111010    \058    072    \x3a    &#058;     ∅      ∅     :          Kolon
-  00111011    \059    073    \x3b    &#059;     ∅      ∅     ;          Semikolon
-  00111100    \060    074    \x3c    &#060;     ∅      ∅     <          Vinkelparentes
-  00111101    \061    075    \x3d    &#061;     ∅      ∅     =          Er-lik
-  00111110    \062    076    \x3e    &#062;     ∅      ∅     >          Vinkelparentes slutt
-  00111111    \063    077    \x3f    &#063;     ∅      ∅     ?          Spørsmålstegn
-  01000000    \064    100    \x40    &#064;     ∅      ∅     @          Krøllalfa/at
-  01000001    \065    101    \x41    &#065;     ∅      ∅     A          A
-  ...         ...     ...    ...      ...      ...    ...   ...         ...
-  01011010    \090    132    \x5a    &#090;     ∅      ∅     Z          Z
-  01011011    \091    133    \x5b    &#091;     ∅      ∅     [          Hakeparentes
-  01011100    \092    134    \x5c    &#092;    \\      ∅     \          Omvendt skråstrek/backslash
-  01011101    \093    135    \x5d    &#093;     ∅      ∅     ]          Hakeparents slutt
-  01011110    \094    136    \x5e    &#094;     ∅      ∅     ^          Sirkumfleks/caret
-  01011111    \095    137    \x5f    &#095;     ∅      ∅     _          Underscore
-  01100001    \096    140    \x60    &#096;     ∅      ∅     `          Grav aksent (backquote)
-  01100010    \097    141    \x61    &#097;     ∅      ∅     a          a
-  ...         ...     ...    ...      ...      ...    ...   ...         ...
-  01111010    \122    172    \x7a    &#122;     ∅      ∅     z          z
-  01111011    \123    173    \x7b    &#123;     ∅      ∅     {          Krøllparentes
-  01111100    \124    174    \x7c    &#124;     ∅      ∅     |          Strek (pipe)
-  01111101    \125    175    \x7d    &#125;     ∅      ∅     }          Krøllparentes slutt
-  01111110    \126    176    \x7e    &#126;     ∅      ∅     ~          Tilde
-  01111111    \127    177    \x7f      ∅        ∅     ^?     ~          Delete
-                                                   
+  00000000    \000   000    \x00    \0     ^@              NUL
+  00000001    \001   001    \x01           ^a              SOH
+  ...         ...    ...    ...            ..              ...
+  00001000    \010   008    \x08    \b     ^h              Backspace
+  00001001    \011   009    \x09    \t     ^i              Tab
+  00001010    \012   010    \x0a    \n     ^j              Line Feed
+  00001011    \013   011    \x0b    \v     ^k              Line Tab
+  00001100    \014   012    \x0c    \f     ^l              Form Feed
+  00001101    \015   013    \x0d    \r     ^m              Carriage Return
+  ...         ...    ...    ...            ..              ...
+  00011010    \032   026    \x1a           ^z              SUB
+  00011011    \033   027    \x1b           ^[              ESC
+  ...         ...    ...    ...            ..              ...
+  00011111    \037   031    \x1f           ^_              US
+                                        
+print                                   
+  00100000    \040   032    \x20                  ␣          Mellomrom/space
+  00100001    \041   033    \x21                  !          Utropstegn/bang
+  00100010    \042   034    \x22    \"            "          Anførselstegn/dobbelfnutt
+  00100011    \043   035    \x23                  #          Nummertegn/hash
+  00100100    \044   036    \x24                  $          Dollar
+  00100101    \045   037    \x25                  %          Prosent/modulo
+  00100110    \046   038    \x26                  &          Ampersand/og
+  00100111    \047   039    \x27    \'            '          Apostrof/fnutt
+  00101000    \050   040    \x28                  (          Parentes
+  00101001    \051   041    \x29                  )          Parentes slutt
+  00101010    \052   042    \x2a                  *          Asterisk/stjerne
+  00101011    \053   043    \x2b                  +          Pluss
+  00101100    \054   044    \x2c                  ,          Komma
+  00101101    \055   045    \x2d                  -          Bindestrek/dash/minus
+  00101110    \056   046    \x2e                  .          Punktum/dot
+  00101111    \057   047    \x2f                  /          Skråstrek/slash
+  00110000    \060   048    \x30                  0          0
+  ...         ...    ...    ...                              ...
+  00111001    \071   057    \x39                  9          9
+  00111010    \072   058    \x3a                  :          Kolon
+  00111011    \073   059    \x3b                  ;          Semikolon
+  00111100    \074   060    \x3c                  <          Vinkelparentes
+  00111101    \075   061    \x3d                  =          Er-lik
+  00111110    \076   062    \x3e                  >          Vinkelparentes slutt
+  00111111    \077   063    \x3f                  ?          Spørsmålstegn
+  01000000    \100   064    \x40                  @          Krøllalfa/at
+  01000001    \101   065    \x41                  A          A
+  ...         ...    ...    ...                              ...
+  01011010    \132   090    \x5a                  Z          Z
+  01011011    \133   091    \x5b                  [          Hakeparentes
+  01011100    \134   092    \x5c    \\            \          Omvendt skråstrek/backslash
+  01011101    \135   093    \x5d                  ]          Hakeparents slutt
+  01011110    \136   094    \x5e                  ^          Sirkumfleks/caret
+  01011111    \137   095    \x5f                  _          Underscore
+  01100001    \140   096    \x60                  `          Grav aksent (backquote)
+  01100010    \141   097    \x61                  a          a
+  ...         ...    ...    ...                              ...
+  01111010    \172   122    \x7a                  z          z
+  01111011    \173   123    \x7b                  {          Krøllparentes
+  01111100    \174   124    \x7c                  |          Strek (pipe)
+  01111101    \175   125    \x7d                  }          Krøllparentes slutt
+  01111110    \176   126    \x7e                  ~          Tilde
+  01111111    \177   127    \x7f           ^?                Delete
+                                                  

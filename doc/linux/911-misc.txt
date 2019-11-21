@@ -11,3 +11,6 @@ I/O
 
   localectl status
 
+hexdump
+xxd
+
