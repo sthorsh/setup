@@ -20,13 +20,13 @@ Metategn
   [[:lower:]]           [a-z]
   [[:print:]]           [\x20-\x7E]
   [[:punct:]]           [!"#%&',-/:;<=>@]_`}~\.[()*?+{^$|]
-  [[:space:]]           [ \t\r\n\v\f]
+  [[:space:]]           [ \t\n\v\f\r]
   [[:upper:]]           [A-Z]
   [[:xdigit:]]          [A-Fa-f0-9]
-  \s                    [ \t\r\n\v\f]
-  \S                    [^ \t\r\n\v\f]
-  \w                    [a-zA-Z0-9_]
-  \W                    [^a-zA-Z0-9_]
+  \s                    [[:space:]]
+  \S                    [^[:space:]]
+  \w                    [[:alnum:]_]
+  \W                    [^[:alnum:]_]
 
   ()                    gruppe G
   \N                    bakoverreferanse
@@ -45,7 +45,7 @@ Metategn
   $                     EOL (empty string before newline)
   \<                    word boundary
   \>                    word boundary
-  \b                    word boundary
+  \b (gawk: \y)         word boundary
   \B                    not word boundary
 
   RE₁|RE₂|...           RE₁ el RE₂ el ...
