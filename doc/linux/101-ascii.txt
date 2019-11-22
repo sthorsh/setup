@@ -17,47 +17,47 @@ cntrl
   00011111    \037   031    \x1f           ^_              US
                                         
 print                                   
-  00100000    \040   032    \x20                  ␣          Space
-  00100001    \041   033    \x21                  !          Bang
-  00100010    \042   034    \x22    \"            "          Double quote
-  00100011    \043   035    \x23                  #          Hash
-  00100100    \044   036    \x24                  $          Dollar
-  00100101    \045   037    \x25                  %          Percent
-  00100110    \046   038    \x26                  &          Og
-  00100111    \047   039    \x27    \'            '          Quote
-  00101000    \050   040    \x28                  (          Parentes
-  00101001    \051   041    \x29                  )          Parentes slutt
-  00101010    \052   042    \x2a                  *          Stjerne
-  00101011    \053   043    \x2b                  +          Pluss
-  00101100    \054   044    \x2c                  ,          Komma
-  00101101    \055   045    \x2d                  -          Bindestrek
-  00101110    \056   046    \x2e                  .          Punkt
-  00101111    \057   047    \x2f                  /          Slash
-  00110000    \060   048    \x30                  0          0
-  ...         ...    ...    ...                              ...
-  00111001    \071   057    \x39                  9          9
-  00111010    \072   058    \x3a                  :          Kolon
-  00111011    \073   059    \x3b                  ;          Semikolon
-  00111100    \074   060    \x3c                  <          Vinkelparentes
-  00111101    \075   061    \x3d                  =          Er-lik
-  00111110    \076   062    \x3e                  >          Vinkelparentes slutt
-  00111111    \077   063    \x3f                  ?          Spørsmålstegn
-  01000000    \100   064    \x40                  @          Krøllalfa
-  01000001    \101   065    \x41                  A          A
-  ...         ...    ...    ...                              ...
-  01011010    \132   090    \x5a                  Z          Z
-  01011011    \133   091    \x5b                  [          Hakeparentes
-  01011100    \134   092    \x5c    \\            \          Omvendt skråstrek/backslash
-  01011101    \135   093    \x5d                  ]          Hakeparents slutt
-  01011110    \136   094    \x5e                  ^          Sirkumfleks/caret
-  01011111    \137   095    \x5f                  _          Underscore
-  01100001    \140   096    \x60                  `          Grav aksent (backquote)
-  01100010    \141   097    \x61                  a          a
-  ...         ...    ...    ...                              ...
-  01111010    \172   122    \x7a                  z          z
-  01111011    \173   123    \x7b                  {          Krøllparentes
-  01111100    \174   124    \x7c                  |          Strek (pipe)
-  01111101    \175   125    \x7d                  }          Krøllparentes slutt
-  01111110    \176   126    \x7e                  ~          Tilde
-  01111111    \177   127    \x7f           ^?                Delete
+  00100000    \040   032    \x20                  ␣        Space
+  00100001    \041   033    \x21                  !        Bang
+  00100010    \042   034    \x22    \"            "        Double quote
+  00100011    \043   035    \x23                  #        Hash
+  00100100    \044   036    \x24                  $        Dollar
+  00100101    \045   037    \x25                  %        Prosent
+  00100110    \046   038    \x26                  &        (Ampers)and
+  00100111    \047   039    \x27    \'            '        Quote
+  00101000    \050   040    \x28                  (        Parentes
+  00101001    \051   041    \x29                  )        Parentes slutt
+  00101010    \052   042    \x2a                  *        Stjerne
+  00101011    \053   043    \x2b                  +        Pluss
+  00101100    \054   044    \x2c                  ,        Komma
+  00101101    \055   045    \x2d                  -        Bindestrek
+  00101110    \056   046    \x2e                  .        Punkt
+  00101111    \057   047    \x2f                  /        Slash
+  00110000    \060   048    \x30                  0        0
+  ...         ...    ...    ...                            ...
+  00111001    \071   057    \x39                  9        9
+  00111010    \072   058    \x3a                  :        Kolon
+  00111011    \073   059    \x3b                  ;        Semikolon
+  00111100    \074   060    \x3c                  <        Vinkelparentes
+  00111101    \075   061    \x3d                  =        Lik
+  00111110    \076   062    \x3e                  >        Vinkelparentes slutt
+  00111111    \077   063    \x3f                  ?        Spørsmålstegn
+  01000000    \100   064    \x40                  @        Krøllalfa
+  01000001    \101   065    \x41                  A        A
+  ...         ...    ...    ...                            ...
+  01011010    \132   090    \x5a                  Z        Z
+  01011011    \133   091    \x5b                  [        Hakeparentes
+  01011100    \134   092    \x5c    \\            \        Backslash
+  01011101    \135   093    \x5d                  ]        Hakeparents slutt
+  01011110    \136   094    \x5e                  ^        Caret
+  01011111    \137   095    \x5f                  _        Underscore
+  01100001    \140   096    \x60                  `        Backquote
+  01100010    \141   097    \x61                  a        a
+  ...         ...    ...    ...                            ...
+  01111010    \172   122    \x7a                  z        z
+  01111011    \173   123    \x7b                  {        Krøllparentes
+  01111100    \174   124    \x7c                  |        Pipe
+  01111101    \175   125    \x7d                  }        Krøllparentes slutt
+  01111110    \176   126    \x7e                  ~        Tilde
+  01111111    \177   127    \x7f           ^?              Delete
                                                   
