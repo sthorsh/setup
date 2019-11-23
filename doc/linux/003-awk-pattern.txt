@@ -1,0 +1,7 @@
+AWK PATTERNS
+
+Pattern
+  BEGIN
+  Relational expression: e.g length($0) > 80
+  Regular expression: /regexp/
+  Matching expression: exp [!]~ regexp

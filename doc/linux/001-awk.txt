@@ -1,0 +1,19 @@
+AWK
+
+Awk
+  awk [opts] 'program'
+  awk [opts] 'program' file₁ ...
+  awk [opts] 'program' [var=val] ...
+
+Opts
+  --assign var=val
+  --dump-variables
+  --field-separator:fs (-F fs)
+  --pretty-print
+  ...
+
+Program
+  rule; rule; ...
+  pattern { action }; pattern { action }; ...
+  pattern { stmt; ... }; pattern { stmt; ... }; ...
+

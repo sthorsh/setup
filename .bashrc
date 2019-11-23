@@ -21,7 +21,7 @@ bind '"\C-q":unix-filename-rubout'
 # Readline macros
 bind '"\C-x(": "()\C-b"'
 bind '"\C-x[": "[]\C-b"'
-bind '"\C-x{": "{}\C-b"'
+bind '"\C-x{": "{}\C-b  \C-b"'
 bind '"\C-x:": "::\C-b"'
 #bind "'\C-x\'': ''\C-b'"
 bind '"\C-x\"": "\"\"\C-b"'
