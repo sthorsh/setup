@@ -1,9 +1,9 @@
 AWK EXPRS
 
-  Konstanter
-    Numeriske: 123
-    Strenger: "foo"
-    Regexp's: /foo/
+Konstanter
+  Numerisk: 11, 011, 0x11, 1.5, 1.5e2
+  Streng: "foo"
+  Regulært uttrykk: /foo/
 
   Variabler
     Predefinerte: ARGC, … 
@@ -15,20 +15,20 @@ AWK EXPRS
   Funksjonskall
     foo(arg₁, arg₂, …)
 
-  Operasjoner
-    (…)                       gruppe
-    $                         feltreferanse
-    ++ --                     Increment, decrement
-    ^ **                      Exponentiation (right-to-left)
-    + - !                     Unary plus, minus, logical not
-    * / %                     Multiplication, division, remainder
-    + -                       Addition, subtraction
-    n/a                       String concatenation
-    < <= == != > >= >> | |&   Relational and redirection
-    ~ !~                      Matching, nonmatching
-    in                        Array membership
-    &&                        Logical and
-    ||                        Logical or
-    ?:                        Conditional (right-to-left)
-    = += -= *= /= %= ^= **=   Assignment (right-to-left)
+Operasjoner
+    (…)                         gruppe
+    $                           feltreferanse
+  ++ --                       Inkrement, dekrement
+  ^ **                        Eksponent
+  + - !                       Unær pluss, unær minus, logisk not
+  * / %                       Multiplikasjon, divisjon, rest
+  + -                         Addisjon, subtraksjon
+  ∅                           Strengkonkatenering
+    < <= == != > >= >> | |&     Relational and redirection
+    ~ !~                        Matching, nonmatching
+    in                          Array membership
+    &&                          Logical and
+    ||                          Logical or
+    ?:                          Conditional (right-to-left)
+  = += -= *= /= %= ^= **=     Tilordning: lvalue=rvalue
 
