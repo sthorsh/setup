@@ -9,26 +9,26 @@ Konstanter
     Predefinerte: ARGC, … 
     Egendefinerte: foo, … 
 
-  Referanser (array)
+  Referanse til array
     foo[index-expression] 
 
   Funksjonskall
     foo(arg₁, arg₂, …)
 
 Operasjoner
-    (…)                         gruppe
-    $                           feltreferanse
-  ++ --                       Inkrement, dekrement
-  ^ **                        Eksponent
-  + - !                       Unær pluss, unær minus, logisk not
-  * / %                       Multiplikasjon, divisjon, rest
-  + -                         Addisjon, subtraksjon
-  ∅                           Strengkonkatenering
-    < <= == != > >= >> | |&     Relational and redirection
-    ~ !~                        Matching, nonmatching
-    in                          Array membership
-    &&                          Logical and
-    ||                          Logical or
-    ?:                          Conditional (right-to-left)
-  = += -= *= /= %= ^= **=     Tilordning: lvalue=rvalue
+  (…)                         gruppe
+  $                           referanse til felt
+  ++ --                       inkrement, dekrement
+  ^ **                        eksponent
+  + - !                       unær pluss, unær minus, logisk not
+  * / %                       multiplikasjon, divisjon, rest
+  + -                         addisjon, subtraksjon
+  ∅                           strengkonkatenering
+  < <= == != > >= >> | |&     sammenligning, omdirigering
+  ~ !~                        matching, nonmatching
+  in                          array-medlem
+  &&                          logisk og
+  ||                          logisk eller
+  ?:                          betingelse
+  = += -= *= /= %= ^= **=     tilordning: lvalue=rvalue
 
