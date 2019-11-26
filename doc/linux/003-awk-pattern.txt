@@ -1,7 +1,20 @@
 AWK PATTERNS
 
-Pattern
-  BEGIN
-  Relational expression: e.g length($0) > 80
-  Regular expression: /regexp/
-  Matching expression: exp [!]~ regexp
+BEGIN
+
+BEGINFILE
+
+Empty
+
+Expression
+  exp
+
+Regular expression
+  /regexp/
+
+Record range
+  begin-pattern, end-pattern
+
+ENDFILE
+
+END
