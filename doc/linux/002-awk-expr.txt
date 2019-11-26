@@ -5,19 +5,19 @@ Konstanter
   Streng: "foo"
   Regulært uttrykk: /foo/
 
-  Variabler
-    Predefinerte: ARGC, … 
-    Egendefinerte: foo, … 
+Variabler
+  Predefinerte: ARGC, … 
+  Egendefinerte: foo, … 
 
-  Referanse til array
-    foo[index-expression] 
+Referanse → array
+  foo[index-expr] 
 
-  Funksjonskall
-    foo(arg₁, arg₂, …)
+Funksjonskall
+  foo(arg₁, arg₂, …)
 
-Operasjoner
+Operatorer
   (…)                         gruppe
-  $                           referanse til felt
+  $                           referanse → felt
   ++ --                       inkrement, dekrement
   ^ **                        eksponent
   + - !                       unær pluss, unær minus, logisk not
