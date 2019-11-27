@@ -1,0 +1,31 @@
+AWK STATEMENTS
+
+Control
+  if-else
+  while
+  do-while
+  for
+  switch
+  break
+  continue
+  next
+  nextfile
+  exit
+
+Compound
+  {...}
+
+Input
+  getline
+
+Output
+  print item₁, item₂, … [> "filename"]
+  printf "", item₁, item₂, … [> "filename"]
+
+Delete
+  delete
+
+Expression
+  Function call
+  Assignment
+

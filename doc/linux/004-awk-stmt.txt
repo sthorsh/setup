@@ -1,6 +1,0 @@
-AWK STATEMENTS
-
-Statements
-  print item₁, item₂, … [> "filename"]
-  printf "", item₁, item₂, … [> "filename"]
-
