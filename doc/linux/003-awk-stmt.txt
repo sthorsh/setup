@@ -1,6 +1,16 @@
 AWK STATEMENTS
 
-Control
+Input
+  getline
+
+Output
+  print item₁, item₂, … [> "filename"]
+  printf "", item₁, item₂, … [> "filename"]
+
+Delete
+  delete
+
+Kontroll
   if-else
   while
   do-while
@@ -15,17 +25,7 @@ Control
 Compound
   {...}
 
-Input
-  getline
-
-Output
-  print item₁, item₂, … [> "filename"]
-  printf "", item₁, item₂, … [> "filename"]
-
-Delete
-  delete
-
-Expression
-  Function call
-  Assignment
+Uttrykk
+  Funksjonskall
+  Tilordning
 
