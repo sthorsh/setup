@@ -1,6 +1,6 @@
 AWK VARS
 
-Predefinerte
+Built-in
   ARGC: 1
   ARGIND: 0
   ARGV: array, 1 elements

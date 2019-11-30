@@ -19,6 +19,15 @@ Program
   …
   function name(args) { … }
   
+Pattern
+  BEGIN
+  BEGINFILE
+  Empty
+  Expression: exp
+  Regular expression: /regexp/
+  Record range: begin-pattern, end-pattern
+  ENDFILE
+  END
 
 Types
   Number

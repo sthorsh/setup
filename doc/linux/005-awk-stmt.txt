@@ -14,7 +14,8 @@ Kontroll
   if-else
   while
   do-while
-  for
+  for(e in arr) {...}
+  for(expr; expr; expr) {...}
   switch
   break
   continue
