@@ -1,23 +1,28 @@
-AWK EXPRS
+AWK EXP                       
 
 Konstanter
-  Numerisk: 11, 011, 0x11, 1.5, 1.5e2
-  Streng: "foo"
-  Regulært uttrykk: /foo/
+  11                          numerisk 
+  011                         numerisk 
+  0x11                        numerisk 
+  1.1                         numerisk 
+  1.1e2                       numerisk 
+  "foo"                       strenger 
+  /foo/                       regulære uttrykk
 
-Variabler
-  Predefinerte: ARGC, … 
-  Egendefinerte: foo, … 
+Variabler                     
+  ARGC, …                     builtin
+  foo, …                      egendefinerte
 
-Referanse → array
-  foo[index-expr] 
+Referanser
+  foo[exp]                    array
 
 Funksjonskall
-  foo(arg₁, arg₂, …)
+  atan2() …                   builtin
+  foo(arg₁, …)                egendefinert
 
 Operatorer
   (…)                         gruppe
-  $                           referanse → felt
+  $                           feltreferanse
   ++ --                       inkrement, dekrement
   ^ **                        eksponent
   + - !                       unær pluss, unær minus, logisk not
