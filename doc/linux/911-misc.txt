@@ -1,7 +1,11 @@
-I/O
+GNU coreutils
+  date
   echo
   printf
   seq
+
+BSD
+  hexdump
 
 ?
   locale
@@ -11,6 +15,5 @@ I/O
 
   localectl status
 
-hexdump
-xxd
+  xxd
 

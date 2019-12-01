@@ -29,7 +29,42 @@ Pattern
   ENDFILE
   END
 
+AWK STATEMENTS
+
+Input
+  getline
+
+Output
+  print item₁, item₂, … [> "filename"]
+  printf "", item₁, item₂, … [> "filename"]
+
+Delete
+  delete
+
+Kontroll
+  if-else
+  while
+  do-while
+  for(e in arr) {...}
+  for(expr; expr; expr) {...}
+  switch
+  break
+  continue
+  next
+  nextfile
+  exit
+
+Compound
+  {...}
+
+Uttrykk
+  Funksjonskall → 
+  Tilordning
+
+
+---------------
 Types
   Number
   String
+  
 
