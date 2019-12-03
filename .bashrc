@@ -40,8 +40,8 @@ shopt -s histappend
 
 # Aliases
 alias awkde="cat ~/doc/awk/exp.txt"
-alias awkdf="cat ~/doc/awk/func.txt"
 alias awkdv="awk --dump-variables=$(tty) ''"
+alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
 alias fgrep='fgrep --color=auto'
 alias gradle="/opt/gradle/bin/gradle"
 alias grep='grep --extended-regexp --ignore-case --color=auto'

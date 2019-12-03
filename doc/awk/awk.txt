@@ -1,70 +1,63 @@
 AWK
 
 Awk
-  awk [opts] 'program'
-  awk [opts] 'program' file₁ …
-  awk [opts] 'program' var=val file₁ …
-  … 
-  
+  $ awk [opts] 'pattern { stmt; ... }; ... ' [[var=val] file₁] ...
+    
 Opts
-  --assign var=val (-v)
-  --dump-variables (-d)
-  --field-separator:fs (-F)
-  --pretty-print (-o)
-  …
+  $ awk --^I
 
-Program
-  pattern { stmt; … }
-  pattern { stmt; … }
-  …
-  function name(args) { … }
-  
 Pattern
-  BEGIN
-  BEGINFILE
-  Empty
-  Expression: exp
-  Regular expression: /regexp/
-  Record range: begin-pattern, end-pattern
-  ENDFILE
-  END
+  BEGIN[FILE]
+  Tomt
+  Uttrykk 
+  Regulæruttrykk: /.../
+  Range: pattern₁, pattern₂
+  END[FILE]
 
-AWK STATEMENTS
-
-Input
-  getline
-
-Output
-  print item₁, item₂, … [> "filename"]
-  printf "", item₁, item₂, … [> "filename"]
-
-Delete
-  delete
-
-Kontroll
-  if-else
-  while
-  do-while
-  for(e in arr) {...}
-  for(expr; expr; expr) {...}
-  switch
-  break
-  continue
-  next
-  nextfile
-  exit
-
-Compound
-  {...}
+Statement
+  if-else                                         
+  switch-case-default                               
+  for(exp; exp; exp) {...}                       
+  for(key in arr) {...}                               
+  while                                             
+  do-while                                          
+  break                                             
+  continue                                          
+  next                                              
+  nextfile                                        
+  exit                                            
+  getline                                           
+  print exp₁, ... [> "file"]              
+  printf "...", exp₁, ... [> "file"] 
+  delete arr[key]
+  {stmt₁; stmt₂; ... }
 
 Uttrykk
-  Funksjonskall → 
-  Tilordning
+  11 011 0x11 1.1 1.1e2     konstant (number)
+  "..."                     konstant (string)
+  /.../                     konstant (regexp)
+  foo                       variabel
+  foo(...)                  funksjonskall
+  foo[exp]                  arrayreferanse
+  ()                        presedens
+  $                         feltreferanse
+  ++ --                     inkrement, dekrement
+  ^ **                      eksponent
+  + - !                     unær pluss, unær minus, logisk negasjon
+  * / %                     gange, dele, rest
+  + -                       pluss, minus
+  ∅                         konkatenering
+  < <= == != > >= >> | |&   sammenligning, omdirigering
+  ~ !~                      match, ikke-match
+  in                        medlem in array
+  &&                        logisk og
+  ||                        logisk eller
+  ?:                        ternær
+  = += -= *= /= %= ^= **=   tilordning
 
+Variabler 
+  $ awkdv
 
----------------
-Types
-  Number
-  String
-  
+Funksjoner
+  $ awkdf
 
