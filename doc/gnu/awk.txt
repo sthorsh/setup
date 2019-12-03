@@ -6,6 +6,12 @@ Awk
 Opts
   $ awk --^I
 
+Variabler 
+  $ awkdv
+
+Funksjoner
+  $ awkdf
+
 Pattern
   BEGIN[FILE]
   Tomt
@@ -54,10 +60,4 @@ Uttrykk
   ||                        logisk eller
   ?:                        ternær
   = += -= *= /= %= ^= **=   tilordning
-
-Variabler 
-  $ awkdv
-
-Funksjoner
-  $ awkdf
 
