@@ -12,6 +12,32 @@ Variabler
 Funksjoner
   $ awkdf
 
+Associative arrays
+  arr[key] = value
+
+Uttrykk
+  11 011 0x11 1.1 1.1e2     konstant (number)
+  "..."                     konstant (string)
+  /.../                     konstant (regexp)
+  foo                       variabel
+  foo(...)                  funksjonskall
+  foo[exp]                  arrayreferanse
+  ()                        presedens
+  $                         feltreferanse
+  ++ --                     inkrement, dekrement
+  ^ **                      eksponent
+  + - !                     unær pluss, unær minus, logisk negasjon
+  * / %                     gange, dele, rest
+  + -                       pluss, minus
+  ∅                         konkatenering
+  < <= == != > >= >> | |&   sammenligning, omdirigering
+  ~ !~                      match, ikke-match
+  in                        medlem in array
+  &&                        logisk og
+  ||                        logisk eller
+  ?:                        ternær
+  = += -= *= /= %= ^= **=   tilordning
+
 Pattern
   BEGIN[FILE]
   Tomt
@@ -37,27 +63,4 @@ Statement
   printf "...", exp₁, ... [> "file"] 
   delete arr[key]
   {stmt₁; stmt₂; ... }
-
-Uttrykk
-  11 011 0x11 1.1 1.1e2     konstant (number)
-  "..."                     konstant (string)
-  /.../                     konstant (regexp)
-  foo                       variabel
-  foo(...)                  funksjonskall
-  foo[exp]                  arrayreferanse
-  ()                        presedens
-  $                         feltreferanse
-  ++ --                     inkrement, dekrement
-  ^ **                      eksponent
-  + - !                     unær pluss, unær minus, logisk negasjon
-  * / %                     gange, dele, rest
-  + -                       pluss, minus
-  ∅                         konkatenering
-  < <= == != > >= >> | |&   sammenligning, omdirigering
-  ~ !~                      match, ikke-match
-  in                        medlem in array
-  &&                        logisk og
-  ||                        logisk eller
-  ?:                        ternær
-  = += -= *= /= %= ^= **=   tilordning
 
