@@ -9,11 +9,11 @@ Opts
 Variabler 
   $ awkdv
 
+Associative arrays
+  $ arr[key] = value
+
 Funksjoner
   $ awkdf
-
-Associative arrays
-  arr[key] = value
 
 Uttrykk
   11 011 0x11 1.1 1.1e2     konstant (number)
@@ -63,4 +63,3 @@ Statement
   printf "...", exp₁, ... [> "file"] 
   delete arr[key]
   {stmt₁; stmt₂; ... }
-
