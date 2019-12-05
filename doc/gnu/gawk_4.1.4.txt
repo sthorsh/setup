@@ -1,19 +1,19 @@
 AWK
 
 Awk
-  $ awk [opts] 'pat { stmt; ... }; ... ' [[var=val] file] ...
+  awk opts 'pat { stmt; ... }; ...' var=val file ...
     
 Opts
-  $ awk --^I
+  awk --help
 
 Variabler 
-  $ awkdv
+  awkdv
 
 Associative arrays
-  $ arr[key] = value
+  arr[key] = value
 
 Funksjoner
-  $ awkdf
+  awkdf
 
 Uttrykk
   11 011 0x11 1.1 1.1e2     konstant (number)
@@ -26,15 +26,15 @@ Uttrykk
   $                         feltreferanse
   ++ --                     inkrement, dekrement
   ^ **                      eksponent
-  + - !                     unær pluss, unær minus, logisk negasjon
+  + - !                     unær pluss, unær minus, not
   * / %                     gange, dele, rest
   + -                       pluss, minus
   ∅                         konkatenering
   < <= == != > >= >> | |&   sammenligning, omdirigering
   ~ !~                      match, ikke-match
   in                        medlem in array
-  &&                        logisk og
-  ||                        logisk eller
+  &&                        og
+  ||                        eller
   ?:                        ternær
   = += -= *= /= %= ^= **=   tilordning
 
