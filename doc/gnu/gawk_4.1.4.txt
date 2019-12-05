@@ -1,7 +1,7 @@
 AWK
 
 Awk
-  $ awk [opts] 'pattern { stmt; ... }; ... ' [[var=val] file₁] ...
+  $ awk [opts] 'pat { stmt; ... }; ... ' [[var=val] file] ...
     
 Opts
   $ awk --^I
