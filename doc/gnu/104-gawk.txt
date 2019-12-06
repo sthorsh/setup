@@ -1,0 +1,66 @@
+GAWK
+
+Syntaks
+  awk opts 'pat { stmt; ... }; ...' var=val file ...
+    
+Opts
+  awk --help
+
+Patterns
+  Tomt
+  /regexp/
+  Uttrykk
+  pattern₁, pattern₂
+  BEGIN[FILE]
+  END[FILE]
+
+Setninger
+  if-else                                         
+  switch-case-default                               
+  for(exp; exp; exp) {...}                       
+  for(key in arr) {...}                               
+  while                                             
+  do-while                                          
+  break                                             
+  continue                                          
+  next                                              
+  nextfile                                        
+  exit                                            
+  getline                                           
+  print exp₁, ... [> "file"]              
+  printf "...", exp₁, ... [> "file"] 
+  delete arr[key]
+  {stmt₁; stmt₂; ... }
+
+Uttrykk
+  11 011 0x11 1.1 1.1e2     konstant (number)
+  "..."                     konstant (string)
+  /.../                     konstant (regexp)
+  foo                       variabel
+  foo[exp]                  arrayref
+  foo(...)                  funksjonskall
+  ()                        presedens
+  $                         feltref
+  ++ --                     inkrement, dekrement
+  ^ **                      eksponent
+  + - !                     unær pluss, unær minus, not
+  * / %                     gange, dele, rest
+  + -                       pluss, minus
+  ∅                         konkatenering
+  < <= == != > >= >> | |&   sammenligning, omdirigering
+  ~ !~                      match, ikke-match
+  in                        medlem in array
+  &&                        og
+  ||                        eller
+  ?:                        ternær
+  = += -= *= /= %= ^= **=   tilordning
+
+Variabler 
+  awkdv
+
+Arrays
+  arr[key] = value
+
+Funksjoner
+  awkdf
+
