@@ -6,9 +6,41 @@ Syntaks
 Opts
   awk --help
 
+Variabler 
+  awkdv
+
+Arrays
+  arr[key] = value
+
+Funksjoner
+  awkdf
+
+Uttrykk
+  11 011 0x11 1.1 1.1e2     konstant (number)
+  "..."                     konstant (string)
+  /.../                     konstant (regexp), betyr $0 ~ /.../
+  foo                       variabel
+  foo[exp]                  arrayref
+  foo(...)                  funksjonskall
+  ()                        presedens
+  $                         feltref
+  ++ --                     inkrement, dekrement
+  ^ **                      eksponent
+  + - !                     unær pluss, unær minus, not
+  * / %                     gange, dele, rest
+  + -                       pluss, minus
+  ∅                         konkatenering
+  < <= == != > >= >> | |&   sammenligning, omdirigering
+  ~ !~                      match exp el /regexp/, ikke-match
+  in                        medlem in array
+  &&                        og
+  ||                        eller
+  ?:                        ternær
+  = += -= *= /= %= ^= **=   tilordning
+
 Patterns
   Tomt
-  /regexp/
+  /regexp/                  regexp ~ strings, pattern ~ records
   Uttrykk
   pattern₁, pattern₂
   BEGIN[FILE]
@@ -31,36 +63,4 @@ Setninger
   printf "...", exp₁, ... [> "file"] 
   delete arr[key]
   {stmt₁; stmt₂; ... }
-
-Uttrykk
-  11 011 0x11 1.1 1.1e2     konstant (number)
-  "..."                     konstant (string)
-  /.../                     konstant (regexp)
-  foo                       variabel
-  foo[exp]                  arrayref
-  foo(...)                  funksjonskall
-  ()                        presedens
-  $                         feltref
-  ++ --                     inkrement, dekrement
-  ^ **                      eksponent
-  + - !                     unær pluss, unær minus, not
-  * / %                     gange, dele, rest
-  + -                       pluss, minus
-  ∅                         konkatenering
-  < <= == != > >= >> | |&   sammenligning, omdirigering
-  ~ !~                      match, ikke-match
-  in                        medlem in array
-  &&                        og
-  ||                        eller
-  ?:                        ternær
-  = += -= *= /= %= ^= **=   tilordning
-
-Variabler 
-  awkdv
-
-Arrays
-  arr[key] = value
-
-Funksjoner
-  awkdf
 
