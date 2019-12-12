@@ -1,7 +1,7 @@
 AWK
 
 Syntaks
-  awk opts 'pat { stmt; ... }; ...' var=val file ...
+  awk opts 'pattern { stmt; ... }; ...' var=val file ...
     
 Opts
   awk --help
@@ -16,31 +16,29 @@ Funksjoner
   awkdf
 
 Uttrykk
-  11 011 0x11 1.1 1.1e2     konstant number
-  "foobar"                  konstant string
-  /regexp/                  konstant regexp for $0 ~ /regexp/
-  foo                       variabel
-  foo[exp]                  arrayref
-  foo(...)                  funksjonskall
-  ()                        presedens
-  $                         feltref
-  ++ --                     inkrement, dekrement
-  ^ **                      eksponent
-  + - !                     unær pluss, unær minus, not
-  * / %                     gange, dele, rest
-  + -                       pluss, minus
-  ∅                         konkatenering
-  < <= == != > >= >> | |&   sammenligning, omdirigering
-  ~ !~                      match exp el /regexp/, ikke-match
-  in                        medlem in array
-  &&                        og
-  ||                        eller
-  ?:                        ternær
-  = += -= *= /= %= ^= **=   tilordning
+  11 011 0x11 1.1 1.1e2       konstant number
+  "foobar"                    konstant string
+  foo                         variabel
+  foo[exp]                    arrayref
+  foo(...)                    funksjonskall
+  ()                          presedens
+  $                           feltref
+  ++ --                       inkrement, dekrement
+  ^ **                        eksponent
+  + - !                       unær pluss, unær minus, not
+  * / %                       gange, dele, rest
+  + -                         pluss, minus
+  ∅                           konkatenere
+  < <= == != > >= >> | |&     sammenligne, omdirigere
+  ~ !~                        match; $0 ~ /regexp/ ≡ /regexp/
+  in                          medlem i array
+  &&                          og
+  ||                          eller
+  ?:                          ternær
+  = += -= *= /= %= ^= **=     tilordne
 
 Patterns
   Tomt
-  /regexp/                  regexp ~ strings, pattern ~ records
   Uttrykk
   pattern₁, pattern₂
   BEGIN[FILE]
@@ -62,5 +60,5 @@ Setninger
   print exp₁, ... [> "file"]              
   printf "...", exp₁, ... [> "file"] 
   delete arr[key]
-  {stmt₁; stmt₂; ... }
+  { stmt₁; stmt₂; ... }
 
