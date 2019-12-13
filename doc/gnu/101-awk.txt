@@ -8,7 +8,7 @@ Opts
 
 Patterns
   Tomt
-  Uttrykk: $0 ~ /regexp/ ≡ /regexp/
+  Uttrykk: $0 ~ /regexp/ ≡ /regexp/ 
   pattern₁, pattern₂
   BEGIN[FILE]
   END[FILE]
