@@ -2,18 +2,34 @@ AWK
 
 Syntaks
   awk opts 'pattern { stmt; ... }; ...' var=val file ...
-    
+
 Opts
   awk --help
 
-Variabler 
-  awkdv
+Patterns
+  Tomt
+  Uttrykk: $0 ~ /regexp/ ≡ /regexp/
+  pattern₁, pattern₂
+  BEGIN[FILE]
+  END[FILE]
 
-Arrays
-  arr[key] = value
-
-Funksjoner
-  awkdf
+Setninger
+  if(exp) stmt; else stmt
+  switch(exp) { case konstant: stmt ...; default: stmt }
+  for(exp; exp; exp) stmt
+  for(key in arr) stmt
+    while
+    do-while
+    break
+    continue
+    next
+    nextfile
+    exit
+    getline
+    print exp₁, ... [> "file"]
+    printf "...", exp₁, ... [> "file"]
+    delete arr[key]
+    { stmt₁; stmt₂; ... }
 
 Uttrykk
   11 011 0x11 1.1 1.1e2       konstant number
@@ -30,35 +46,22 @@ Uttrykk
   + -                         pluss, minus
   ∅                           konkatenere
   < <= == != > >= >> | |&     sammenligne, omdirigere
-  ~ !~                        match; $0 ~ /regexp/ ≡ /regexp/
+  ~ !~                        sammenligne
   in                          medlem i array
   &&                          og
   ||                          eller
   ?:                          ternær
   = += -= *= /= %= ^= **=     tilordne
 
-Patterns
-  Tomt
-  Uttrykk
-  pattern₁, pattern₂
-  BEGIN[FILE]
-  END[FILE]
+Regulæruttrykk
+  /regexp/                    konstant regexp
 
-Setninger
-  if-else                                         
-  switch-case-default                               
-  for(exp; exp; exp) {...}                       
-  for(key in arr) {...}                               
-  while                                             
-  do-while                                          
-  break                                             
-  continue                                          
-  next                                              
-  nextfile                                        
-  exit                                            
-  getline                                           
-  print exp₁, ... [> "file"]              
-  printf "...", exp₁, ... [> "file"] 
-  delete arr[key]
-  { stmt₁; stmt₂; ... }
+Variabler
+  awkdv
+
+Arrays
+  arr[key] = value
+
+Funksjoner
+  awkdf
 
