@@ -1,8 +1,0 @@
-Chapt 1
-  Fig 1.10    Exchange MEP
-  Fig 1.13    Component, endpoint, consumer, producer, exchange, processor
-  Fig 1.14    Component consumer event-driven
-  Fig 1.15    Component consumer polling
-
-Chap 2
-
