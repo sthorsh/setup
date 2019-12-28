@@ -6,34 +6,18 @@ Syntaks
 Opts
   awk --help
 
-Patterns
-  Tomt
-  Uttrykk: $0 ~ /regexp/ ≡ /regexp/ 
-  pattern₁, pattern₂
-  BEGIN[FILE]
-  END[FILE]
+Vars
+  awkdv
 
-Setninger
-  if(exp) stmt; else stmt
-  switch(exp) { case konstant: stmt ...; default: stmt }
-  for(exp; exp; exp) stmt
-  for(key in arr) stmt
-    while
-    do-while
-    break
-    continue
-    next
-    nextfile
-    exit
-    getline
-    print exp₁, ... [> "file"]
-    printf "...", exp₁, ... [> "file"]
-    delete arr[key]
-    { stmt₁; stmt₂; ... }
+Array vars
+  arr[key] = value
+
+Funksjoner
+  awkdf
 
 Uttrykk
-  11 011 0x11 1.1 1.1e2       konstant number
-  "foobar"                    konstant string
+  1 01 0x1 1.1 1.1e1          konstant number
+  "foo"                       konstant string
   foo                         variabel
   foo[exp]                    arrayref
   foo(...)                    funksjonskall
@@ -45,23 +29,36 @@ Uttrykk
   * / %                       gange, dele, rest
   + -                         pluss, minus
   ∅                           konkatenere
-  < <= == != > >= >> | |&     sammenligne, omdirigere
-  ~ !~                        sammenligne
+  | |&                        omdirigere
+  < <= == != > >= >>          sammenligne
+  ~ !~                        sammenligne: /regexp/ ≡ $0 ~ /regexp/
   in                          medlem i array
   &&                          og
   ||                          eller
   ?:                          ternær
   = += -= *= /= %= ^= **=     tilordne
 
-Regulæruttrykk
-  /regexp/                    konstant regexp
+Patterns
+  Tomt
+  Uttrykk
+  BEGIN[FILE]
+  END[FILE]
+  pattern₁, pattern₂
 
-Variabler
-  awkdv
-
-Arrays
-  arr[key] = value
-
-Funksjoner
-  awkdf
-
+Setninger
+  if(exp) stmt; else stmt
+  switch(exp) { case konstant: stmt ...; default: stmt }
+  for(exp; exp; exp) stmt
+  for(key in arr) stmt
+  while(exp) stmt
+  do stmt while(exp)
+  break
+  continue
+  delete arr[key]
+  exit
+  getline
+  next
+  nextfile
+  print exp, ... > "file"
+  printf "...", exp, ... > "file"
+  { stmt; ...}
