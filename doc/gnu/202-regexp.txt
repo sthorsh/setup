@@ -1,14 +1,16 @@
-REGEX
+REGEXP
+
+Tegn
+  …                     tegn
 
 Metategn
-  \                     \ . [ ( ) * ? + { ^ $ |
+  \…                    metategn \ . [ ( * ? + { ^ $ |
 
-  .                     tegn t
+  .                     tegn|metategn
 
-  []                    mengde M: [\] matcher \ etc
-  [^]                   ikke mengde
-  [a-z]                 range
-  [^a-z]                ikke range
+  [...]                 tegn|metategn ∈ mengde
+  [^...]                tegn|metategn ∉ mengde
+  [a-zA-Z0-9]           range
   [[=e=]]               ekvivalensklasse (ref locale)
   [[.ch.]]              sorteringssymbol (ref locale)
   [[:alnum:]]           [a-zA-Z0-9]
@@ -28,25 +30,25 @@ Metategn
   \w                    [[:alnum:]_]
   \W                    [^[:alnum:]_]
 
-  ()                    gruppe G
-  \N                    bakoverreferanse
+  (...)                 gruppe
+  \N                    ref til gruppe
 
-  t|M|G*                0..∞ (kan matche null)
-  t|M|G?                0..1
-  t|M|G+                1..∞
-  t|M|G{n}              n 
-  t|M|G{n,}             ≥n 
-  t|M|G{,m}             ≤m 
-  t|M|G{n,m}            n..m 
+  ...*                  0..∞
+  ...?                  0..1
+  ...+                  1..∞
+  ...{n}                n 
+  ...{n,}               ≥n 
+  ...{,m}               ≤m 
+  ...{n,m}              n..m 
 
-  t₁t₂t₃...             konkatenering
+  t₁t₂t₃…               konkatenering
 
-  ^                     BOL (empty string after newline)
-  $                     EOL (empty string before newline)
+  ^                     BOL 
+  $                     EOL 
   \<                    word boundary
   \>                    word boundary
-  \b (gawk: \y)         word boundary
+  \b                    word boundary (gawk: \y)
   \B                    not word boundary
 
-  RE₁|RE₂|...           RE₁ el RE₂ el ...
+  RE₁|RE₂               RE₁ el RE₂
 
