@@ -7,9 +7,9 @@ Syntax
 
 Regex
   --basic-regexp
-  --extended-regexp
-  --fixed-strings
-  --perl-regexp
+  --extended-regexp (-E)
+  --fixed-strings   (-F)
+  --perl-regexp     (-P)
 
 Regex control
   --ignore-case  (-i)

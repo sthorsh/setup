@@ -1,10 +1,10 @@
 REGEXP
 
 Tegn
-  …                     tegn
+  ...                   tegn
 
 Metategn
-  \…                    metategn \ . [ ( * ? + { ^ $ |
+  \...                  escape-sekvens metategn|standard C
 
   .                     tegn|metategn
 
@@ -41,7 +41,7 @@ Metategn
   ...{,m}               ≤m 
   ...{n,m}              n..m 
 
-  t₁t₂t₃…               konkatenering
+  t₁t₂t₃...             konkatenering
 
   ^                     BOL 
   $                     EOL 

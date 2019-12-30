@@ -44,7 +44,7 @@ alias awkdv="awk --dump-variables=$(tty) ''"
 alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
 alias fgrep='fgrep --color=auto'
 alias gradle="/opt/gradle/bin/gradle"
-alias grep='grep --extended-regexp --ignore-case --color=auto'
+alias grep='grep --ignore-case --color=auto'
 alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
 alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
