@@ -3,52 +3,63 @@ REGEXP
 Tegn
   ...                   tegn
 
+Escapesekvens
+  \/                    awk /
+  \<                    awk|grep word-boundary
+  \>                    awk|grep word-boundary
+  \NNN                  awk|grep -P oct
+  \N                    grep -E backref
+  \b                    awk bs, grep word-boundary
+  \B                    awk|grep not-word-boundary
+  \f                    awk|grep -P ff
+  \n                    awk|grep -P lf
+  \r                    awk|grep -P cr
+  \s                    awk|grep [[:space:]]
+  \S                    awk|grep [^[:space:]]
+  \t                    awk|grep -P tab
+  \v                    awk|grep -P vt
+  \w                    awk|grep [[:alnum:]_]
+  \W                    awk|grep [^[:alnum:]]
+  \y                    awk word-boundary
+  \xHH                  awk|grep -P hex
+    
 Metategn
-  \...                  escape-sekvens metategn|standard C
+    \...                  metategn
 
-  .                     tegn|metategn
+    .                     tegn|metategn
 
-  [...]                 tegn|metategn ∈ mengde
-  [^...]                tegn|metategn ∉ mengde
-  [a-zA-Z0-9]           range
-  [[=e=]]               ekvivalensklasse (ref locale)
-  [[.ch.]]              sorteringssymbol (ref locale)
-  [[:alnum:]]           [a-zA-Z0-9]
-  [[:alpha:]]           [a-zA-Z]
-  [[:blank:]]           [ \t]
-  [[:cntrl:]]           [\x00-\x1F\x7F]
-  [[:digit:]]           [0-9] 
-  [[:graph:]]           [\x21-\x7E]
-  [[:lower:]]           [a-z]
-  [[:print:]]           [\x20-\x7E]
-  [[:punct:]]           [!"#%&',-/:;<=>@]_`}~\.[()*?+{^$|]
-  [[:space:]]           [ \t\n\v\f\r]
-  [[:upper:]]           [A-Z]
-  [[:xdigit:]]          [A-Fa-f0-9]
-  \s                    [[:space:]]
-  \S                    [^[:space:]]
-  \w                    [[:alnum:]_]
-  \W                    [^[:alnum:]_]
+    [...]                 tegn|metategn ∈ mengde
+    [^...]                tegn|metategn ∉ mengde
+    [an-an]               alnum range
+    [[:alnum:]]           [a-zA-Z0-9] (char class)
+    [[:alpha:]]           [a-zA-Z]
+    [[:blank:]]           [ \t]
+    [[:cntrl:]]           [\x00-\x1F\x7F]
+    [[:digit:]]           [0-9] 
+    [[:graph:]]           [\x21-\x7E]
+    [[:lower:]]           [a-z]
+    [[:print:]]           [\x20-\x7E]
+    [[:punct:]]           [!"#%&',-/:;<=>@]_`}~\.[()*?+{^$|]
+    [[:space:]]           [ \t\n\v\f\r]
+    [[:upper:]]           [A-Z]
+    [[:xdigit:]]          [A-Fa-f0-9]
+    [[=e=]]               ekvivalensklasse (ref locale)
+    [[.ch.]]              sorteringssymbol (ref locale)
 
-  (...)                 gruppe
-  \N                    ref til gruppe
+    (...)                 gruppe (grep -E)
 
-  ...*                  0..∞
-  ...?                  0..1
-  ...+                  1..∞
-  ...{n}                n 
-  ...{n,}               ≥n 
-  ...{,m}               ≤m 
-  ...{n,m}              n..m 
+    ...*                  0..∞
+    ...?                  0..1
+    ...+                  1..∞
+    ...{n}                n 
+    ...{n,}               ≥n 
+    ...{,m}               ≤m 
+    ...{n,m}              n..m 
 
-  t₁t₂t₃...             konkatenering
+    t₁t₂t₃...             konkatenering
 
-  ^                     BOL 
-  $                     EOL 
-  \<                    word boundary
-  \>                    word boundary
-  \b                    word boundary (gawk: \y)
-  \B                    not word boundary
+    ^                     BOL 
+    $                     EOL 
 
-  RE₁|RE₂               RE₁ el RE₂
+    RE₁|RE₂               RE₁ el RE₂
 
