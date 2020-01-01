@@ -1,61 +1,61 @@
 ASCII
 
-000   Null (NUL)               ^@    \0    \000    \x00   00000000    
-001   Start Of Header (SOH)    ^a          \001    \x01   00000001    
-...   ...                      ..          ...     ...    ...         
-008   Backspace (BS)           ^h    \b    \010    \x08   00001000    
-009   Char Tab (HT)            ^i    \t    \011    \x09   00001001    
-010   Line Feed (LF/NL)        ^j    \n    \012    \x0a   00001010    
-011   Line Tab (VT)            ^k    \v    \013    \x0b   00001011    
-012   Form Feed (FF)           ^l    \f    \014    \x0c   00001100    
-013   Carriage Return (CR)     ^m    \r    \015    \x0d   00001101    
-...   ...                      ..          ...     ...    ...         
-026   Substitute (SUB)         ^z          \032    \x1a   00011010    
-027   Escape (ESC)             ^[          \033    \x1b   00011011    
-028   File Separator (FS)      ^\          \034    \x1c   00011100    
-029   Group Separator (GS)     ^]          \035    \x1d   00011101    
-030   Record Separator (RS)    ^^          \036    \x1e   00011110    
-031   Unit Separator (US)      ^_          \037    \x1f   00011111    
-032   Space                     ␣          \040    \x20   00100000    
-033   Utropstegn/bang           !          \041    \x21   00100001    
-034   Double quote              "    \"    \042    \x22   00100010    
-035   Nummertegn/hash           #          \043    \x23   00100011    
-036   Dollar                    $          \044    \x24   00100100    
-037   Prosent                   %          \045    \x25   00100101    
-038   Ampersand                 &          \046    \x26   00100110    
-039   Quote                     '    \'    \047    \x27   00100111    
-040   Parentes                  (          \050    \x28   00101000    
-041   Parentes slutt            )          \051    \x29   00101001    
-042   Asterisk/stjerne          *          \052    \x2a   00101010    
-043   Pluss                     +          \053    \x2b   00101011    
-044   Komma                     ,          \054    \x2c   00101100    
-045   Bindestrek/minus          -          \055    \x2d   00101101    
-046   Dot                       .          \056    \x2e   00101110    
-047   Slash                     /    \/    \057    \x2f   00101111    
-048   0                         0          \060    \x30   00110000    
-...   ...                      ...         ...     ...    ...         
-057   9                         9          \071    \x39   00111001    
-058   Kolon                     :          \072    \x3a   00111010    
-059   Semikolon                 ;          \073    \x3b   00111011    
-060   Vinkelparentes            <          \074    \x3c   00111100    
-061   Er-lik                    =          \075    \x3d   00111101    
-062   Vinkelparentes slutt      >          \076    \x3e   00111110    
-063   Spørsmålstegn             ?          \077    \x3f   00111111    
-064   Krøllalfa                 @          \100    \x40   01000000    
-065   A                         A          \101    \x41   01000001    
-...   ...                      ...         ...     ...    ...         
-090   Z                         Z          \132    \x5a   01011010    
-091   Hakeparentes              [          \133    \x5b   01011011    
-092   Backslash                 \    \\    \134    \x5c   01011100    
-093   Hakeparents slutt         ]          \135    \x5d   01011101    
-094   Hatt/sirkumfleks          ^          \136    \x5e   01011110    
-095   Underscore                _          \137    \x5f   01011111    
-096   Backtick/grav aksent      `          \140    \x60   01100001    
-097   a                         a          \141    \x61   01100010    
-...   ...                      ...         ...     ...    ...         
-122   z                         z          \172    \x7a   01111010    
-123   Krøllparentes             {          \173    \x7b   01111011    
-124   Pipe                      |          \174    \x7c   01111100    
-125   Krøllparentes slutt       }          \175    \x7d   01111101    
-126   Tilde                     ~          \176    \x7e   01111110    
-127   Delete (DEL)             ^?          \177    \x7f   01111111    
+000   Null (NUL)               ^@    \0    000    00   00000000    
+001   Start Of Header (SOH)    ^a          001    01   00000001    
+...   ...                      ..          ..     .    ...         
+008   Backspace (BS)           ^h    \b    010    08   00001000    
+009   Char Tab (HT)            ^i    \t    011    09   00001001    
+010   Line Feed (LF/NL)        ^j    \n    012    0a   00001010    
+011   Line Tab (VT)            ^k    \v    013    0b   00001011    
+012   Form Feed (FF)           ^l    \f    014    0c   00001100    
+013   Carriage Return (CR)     ^m    \r    015    0d   00001101    
+...   ...                      ..          ..     .    ...         
+026   Substitute (SUB)         ^z          032    1a   00011010    
+027   Escape (ESC)             ^[          033    1b   00011011    
+028   File Separator (FS)      ^\          034    1c   00011100    
+029   Group Separator (GS)     ^]          035    1d   00011101    
+030   Record Separator (RS)    ^^          036    1e   00011110    
+031   Unit Separator (US)      ^_          037    1f   00011111    
+032   Space                     ␣          040    20   00100000    
+033   Utropstegn/bang           !          041    21   00100001    
+034   Double quote              "    \"    042    22   00100010    
+035   Nummertegn/hash           #          043    23   00100011    
+036   Dollar                    $          044    24   00100100    
+037   Prosent                   %          045    25   00100101    
+038   Ampersand                 &          046    26   00100110    
+039   Quote                     '    \'    047    27   00100111    
+040   Parentes                  (          050    28   00101000    
+041   Parentes slutt            )          051    29   00101001    
+042   Asterisk/stjerne          *          052    2a   00101010    
+043   Pluss                     +          053    2b   00101011    
+044   Komma                     ,          054    2c   00101100    
+045   Bindestrek/minus          -          055    2d   00101101    
+046   Dot                       .          056    2e   00101110    
+047   Slash                     /    \/    057    2f   00101111    
+048   0                         0          060    30   00110000    
+...   ...                      ...         ..     .    ...         
+057   9                         9          071    39   00111001    
+058   Kolon                     :          072    3a   00111010    
+059   Semikolon                 ;          073    3b   00111011    
+060   Vinkelparentes            <          074    3c   00111100    
+061   Er-lik                    =          075    3d   00111101    
+062   Vinkelparentes slutt      >          076    3e   00111110    
+063   Spørsmålstegn             ?          077    3f   00111111    
+064   Krøllalfa                 @          100    40   01000000    
+065   A                         A          101    41   01000001    
+...   ...                      ...         ..     .    ...         
+090   Z                         Z          132    5a   01011010    
+091   Hakeparentes              [          133    5b   01011011    
+092   Backslash                 \    \\    134    5c   01011100    
+093   Hakeparents slutt         ]          135    5d   01011101    
+094   Hatt/sirkumfleks          ^          136    5e   01011110    
+095   Underscore                _          137    5f   01011111    
+096   Backtick/grav aksent      `          140    60   01100001    
+097   a                         a          141    61   01100010    
+...   ...                      ...         ..     .    ...         
+122   z                         z          172    7a   01111010    
+123   Krøllparentes             {          173    7b   01111011    
+124   Pipe                      |          174    7c   01111100    
+125   Krøllparentes slutt       }          175    7d   01111101    
+126   Tilde                     ~          176    7e   01111110    
+127   Delete (DEL)             ^?          177    7f   01111111    

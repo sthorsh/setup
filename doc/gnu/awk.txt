@@ -31,7 +31,7 @@ Uttrykk
   ∅                           konkatenere
   | |&                        omdirigere
   < <= == != > >= >>          sammenligne
-  ~ !~                        exp ~ /regexp/; $0 ~ /regexp/ ≡ /regexp/
+  ~ !~                        exp ~ /regexp/; /regexp/ ≡ $0 ~ /regexp/ (EREs)
   in                          medlem i array
   &&                          og
   ||                          eller

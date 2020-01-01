@@ -1,65 +1,68 @@
 REGEXP
 
 Tegn
-  ...                   tegn
+  …                       representerer seg selv
 
-Escapesekvens
-  \/                    awk /
-  \<                    awk|grep word-boundary
-  \>                    awk|grep word-boundary
-  \NNN                  awk|grep -P oct
-  \N                    grep -E backref
-  \b                    awk bs, grep word-boundary
-  \B                    awk|grep not-word-boundary
-  \f                    awk|grep -P ff
-  \n                    awk|grep -P lf
-  \r                    awk|grep -P cr
-  \s                    awk|grep [[:space:]]
-  \S                    awk|grep [^[:space:]]
-  \t                    awk|grep -P tab
-  \v                    awk|grep -P vt
-  \w                    awk|grep [[:alnum:]_]
-  \W                    awk|grep [^[:alnum:]]
-  \y                    awk word-boundary
-  \xHH                  awk|grep -P hex
-    
+Escape
+  \/                      awk: /
+  \<                      word-boundary (BRE)
+  \>                      word-boundary (BRE)
+  \NNN                    oktal (PCRE)
+  \1..9                   awk: n/a, backref (BRE)
+  \b                      awk: bs, word-boundary (BRE)
+  \B                      not word-boundary (BRE)
+  \f                      ff (PCRE)
+  \n                      lf (PCRE)
+  \r                      cr (PCRE)
+  \s                      [[:space:]] (BRE)
+  \S                      [^[:space:]] (BRE)
+  \t                      tab (PCRE)
+  \v                      vt (PCRE)
+  \w                      [[:alnum:]_] (BRE)
+  \W                      [^[:alnum:]] (BRE)
+  \y                      awk: word-boundary
+  \xHH                    heksadesimal (PCRE)
+
 Metategn
-    \...                  metategn
+  [[.ch.]]                sorteringssymbol (ref locale)
+  [[=e=]]                 ekvivalensklasse (ref locale)
+  [[:alnum:]]             [a-zA-Z0-9]
+  [[:alpha:]]             [a-zA-Z]
+  [[:blank:]]             [ \t]
+  [[:cntrl:]]             [\x00-\1F\x7F]
+  [[:digit:]]             [0-9]
+  [[:graph:]]             [\x21-\x7E]
+  [[:lower:]]             [a-z]
+  [[:print:]]             [\x20-\x7E]
+  [[:punct:]]             [!"#%&',-/:;<=>@]_`}~\.[()*?+{^$|]
+  [[:space:]]             [ \t\n\v\f\r]
+  [[:upper:]]             [A-Z]
+  [[:xdigit:]]            [A-Fa-f0-9]
 
-    .                     tegn|metategn
+  \…                      escape \.[(*?+{^$|
+  \…                      enable () {} (BRE)
 
-    [...]                 tegn|metategn ∈ mengde
-    [^...]                tegn|metategn ∉ mengde
-    [an-an]               alnum range
-    [[:alnum:]]           [a-zA-Z0-9] (char class)
-    [[:alpha:]]           [a-zA-Z]
-    [[:blank:]]           [ \t]
-    [[:cntrl:]]           [\x00-\x1F\x7F]
-    [[:digit:]]           [0-9] 
-    [[:graph:]]           [\x21-\x7E]
-    [[:lower:]]           [a-z]
-    [[:print:]]           [\x20-\x7E]
-    [[:punct:]]           [!"#%&',-/:;<=>@]_`}~\.[()*?+{^$|]
-    [[:space:]]           [ \t\n\v\f\r]
-    [[:upper:]]           [A-Z]
-    [[:xdigit:]]          [A-Fa-f0-9]
-    [[=e=]]               ekvivalensklasse (ref locale)
-    [[.ch.]]              sorteringssymbol (ref locale)
+  .                       tegn|metategn
 
-    (...)                 gruppe (grep -E)
+  [...]                   tegnmengde
+  [^...]                  tegnmengde (not)
+  [alnum₁-alnum₂]         tegnmengde (range)
 
-    ...*                  0..∞
-    ...?                  0..1
-    ...+                  1..∞
-    ...{n}                n 
-    ...{n,}               ≥n 
-    ...{,m}               ≤m 
-    ...{n,m}              n..m 
+  (...) \1..9             subexp m/backref (BRE)
+  (...)                   gruppering e.g (ab|cd)+, ^(ab|cd)$, (ab|cd) (ERE)
 
-    t₁t₂t₃...             konkatenering
+  ...*                    0..∞ reps
+  ...?                    0..1 reps (ERE)
+  ...+                    1..∞ reps (ERE)
+  ...{n}                  n reps
+  ...{n,}                 ≥n reps
+  ...{,m}                 ≤m reps
+  ...{n,m}                n..m reps
 
-    ^                     BOL 
-    $                     EOL 
+  ∅                       konkatenering
 
-    RE₁|RE₂               RE₁ el RE₂
+  ^                       anker BOL
+  $                       anker EOL
+
+  RE₁|RE₂                 alternering (ERE)
 
