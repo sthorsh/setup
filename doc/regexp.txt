@@ -61,8 +61,8 @@ Metategn
 
   ∅                       konkatenering
 
-  ^                       anker BOL
-  $                       anker EOL
+  ^                       empty string at BOL (anker)
+  $                       empty string at EOL (anker)
 
   RE₁|RE₂                 alternering (ERE)
 
