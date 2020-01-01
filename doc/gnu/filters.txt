@@ -1,7 +1,5 @@
 FILTERS
 
-awk*
-
 cat       --number
           --show-all
           --squeeze-blank
@@ -17,8 +15,6 @@ cut       --delimiter=:
 dc        --expression "1 2 + p"
 
 expand    --initial
-
-grep*
 
 head      --bytes=N
           --lines=N
@@ -40,8 +36,6 @@ nl        --body-numbering=a|n
           --number-separator=string
           --starting-line-number=N
           --number-width=N
-
-sed*
 
 sort      --field-separator=:
           --key=field[.char][opts] ...
