@@ -1,25 +1,55 @@
 AWK
 
-Syntaks
-  awk opts 'pattern { stmt; ... }; ...' var=val file ...
+Bruk
+  awk [opts] 'program' [var=val file ... ]
+  awk [opts] -f pf.awk [var=val file ... ]
 
 Opts
   awk --help
 
-Vars
-  awkdv
+Program
+  pattern { action }
+  pattern { action }
+  ...
 
-Datastruktur
-  assoc_arr[key] = value
+Operation
+  foreach file
+    foreach line/record (RS:"\n", FS:" ")
+      foreach pattern
+        if pattern matches line/record
+          do action
 
-Funksjoner
-  awkdf
+Pattern
+  BEGIN
+  BEGINFILE
+  Utrykk
+  Pat₁, pat₂
+  ENDFILE
+  END
+
+Actions
+  if(exp) stmt; else stmt
+  switch(exp) { case konstant: stmt ...; default: stmt }
+  for(exp; exp; exp) stmt
+  for(key in assoc_arr) stmt
+  while(exp) stmt
+  do stmt while(exp)
+  break
+  continue
+  exit
+    delete assoc_arr[key]
+    getline
+    next
+    nextfile
+    print exp, ... > "file"
+    printf "...", exp, ... > "file"
+    { stmt; ...}
 
 Uttrykk
-  1 01 0x1 1.1 1.1e1          konstant number
+  1 01 0x1 1.1 1.1e1          konstant tall
   "foo"                       konstant string
   foo                         variabel
-  foo[exp]                    arrayref
+  foo[exp]                    assoc_arr-ref
   foo(...)                    funksjonskall
   ()                          presedens
   $                           feltref
@@ -32,33 +62,18 @@ Uttrykk
   | |&                        omdirigere
   < <= == != > >= >>          sammenligne
   ~ !~                        /regexp/; exp ~ /regexp/; exp₁ ~ exp₂ (EREs, case)
-  in                          medlem i array
+  in                          medlem i assoc_arr
   &&                          og
   ||                          eller
   ?:                          ternær
-  = += -= *= /= %= ^= **=     tilordne
+  = += -= *= /= %= ^= **=     tilordning (stmt/exp)
 
-Patterns
-  Tomt
-  Uttrykk
-  BEGIN[FILE]
-  END[FILE]
-  pattern₁, pattern₂
+Vars
+  awkdv
 
-Setninger
-  if(exp) stmt; else stmt
-  switch(exp) { case konstant: stmt ...; default: stmt }
-  for(exp; exp; exp) stmt
-  for(key in arr) stmt
-  while(exp) stmt
-  do stmt while(exp)
-  break
-  continue
-  delete arr[key]
-  exit
-  getline
-  next
-  nextfile
-  print exp, ... > "file"
-  printf "...", exp, ... > "file"
-  { stmt; ...}
+Datastruktur
+  assoc_arr[key] = value
+
+Funksjoner
+  awkdf
+
