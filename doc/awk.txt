@@ -9,8 +9,8 @@ Opts
 Vars
   awkdv
 
-Array vars
-  arr[key] = value
+Datastruktur
+  assoc_arr[key] = value
 
 Funksjoner
   awkdf
