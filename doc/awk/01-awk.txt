@@ -4,18 +4,43 @@ Bruk
   awk [opts] 'program' [var=val file ... ]
   awk [opts] -f pf.awk [var=val file ... ]
 
-Opts
-  awk --help
+Opts: awk --help
+    -b                  --characters-as-bytes
+    -c                  --traditional
+    -C                  --copyright
+    -d[file]            --dump-variables[=file]
+    -D[file]            --debug[=file]
+    -e 'program-text'   --source='program-text'
+    -E file             --exec=file
+    -f progfile         --file=progfile
+    -F fs               --field-separator=fs
+    -g                  --gen-pot
+    -h                  --help
+    -i includefile      --include=includefile
+    -l library          --load=library
+    -L[fatal|invalid]   --lint[=fatal|invalid]
+    -M                  --bignum
+    -N                  --use-lc-numeric
+    -n                  --non-decimal-data
+    -o[file]            --pretty-print[=file]
+    -O                  --optimize
+    -p[file]            --profile[=file]
+    -P                  --posix
+    -r                  --re-interval
+    -S                  --sandbox
+    -t                  --lint-old
+    -v var=val          --assign=var=val
+    -V                  --version
 
 Program
   pattern { action }
   pattern { action }
   ...
 
-Operation
+Eksekvering
   foreach file
-    foreach line/record (RS:"\n", FS:" ")
+    foreach record (RS, FS)
       foreach pattern
-        if pattern matches line/record
+        if pattern matches record
           do action
 

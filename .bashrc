@@ -19,12 +19,13 @@ bind '"\e\C-g":glob-expand-word'
 bind '"\C-q":unix-filename-rubout'
 
 # Readline macros
+bind '"\C-x\x27":"\x27\x27\C-b"'
 bind '"\C-x(": "()\C-b"'
-bind '"\C-x[": "[]\C-b"'
-bind '"\C-x{": "{}\C-b  \C-b"'
+bind '"\C-x/": "//\C-b"'
 bind '"\C-x:": "::\C-b"'
-#bind "'\C-x\'': ''\C-b'"
+bind '"\C-x[": "[]\C-b"'
 bind '"\C-x\"": "\"\"\C-b"'
+bind '"\C-x{": "{}\C-b  \C-b"'
 bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
 bind '"\C-xq": "\eb\"\ef\""'
 
