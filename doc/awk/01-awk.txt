@@ -1,0 +1,21 @@
+AWK
+
+Bruk
+  awk [opts] 'program' [var=val file ... ]
+  awk [opts] -f pf.awk [var=val file ... ]
+
+Opts
+  awk --help
+
+Program
+  pattern { action }
+  pattern { action }
+  ...
+
+Operation
+  foreach file
+    foreach line/record (RS:"\n", FS:" ")
+      foreach pattern
+        if pattern matches line/record
+          do action
+
