@@ -33,13 +33,13 @@ Opts: awk --help
     -V                  --version
 
 Program
-  pattern { action }
-  pattern { action }
+  pattern { action } (regel₁)
+  pattern { action } (regel₂)
   ...
 
 Eksekvering
-  foreach file
-    foreach record (RS, FS)
+  foreach file (RS)
+    foreach record (FS)
       foreach pattern
         if pattern matches record
           do action

@@ -1,0 +1,80 @@
+Konstanter
+    ...
+
+Vars: awkdv
+    ARGC: 1
+    ARGIND: 0
+    ARGV: array, 1 elements
+    BINMODE: 0
+    CONVFMT: "%.6g"
+    ENVIRON: array, 83 elements
+    ERRNO: ""
+  FIELDWIDTHS for fixed-width data: ""
+  FILENAME    file name: ""
+  FNR         file number of records: 0
+  FPAT        field pattern: "[^[:space:]]+"
+  FS          field separator: "", " ", "char", "regexp"
+    FUNCTAB: array, 41 elements
+  IGNORECASE  for regexp: 0|1...
+    LINT: 0
+  NF          number of fields: 0 
+  NR          number of records: 0
+    OFMT: "%.6g"
+  OFS         output field separator: " " 
+  ORS         output record separator: "\n"
+    PREC: 53
+    PROCINFO: array, 25 elements
+    RLENGTH: 0
+    ROUNDMODE: "N"
+  RS          record separator: "", "\n", "char", "regexp"
+    RSTART: 0
+  RT          record text that matched RS: ""
+    SUBSEP: "\034"
+    SYMTAB: array, 28 elements
+    TEXTDOMAIN: "messages"
+
+Datastruktur: assoc array
+    assoc_arr[key] = value
+
+Funksjoner: awkdf
+    and
+    asort
+    asorti
+    atan2
+    bindtextdomain
+    close
+    compl
+    cos
+    dcgettext
+    dcngettext
+    exp
+    extension
+    fflush
+    gensub
+    gsub
+    index
+    int
+    isarray
+    length
+    log
+    lshift
+    match
+    mktime
+    or
+    patsplit
+    rand
+    rshift
+    sin
+    split
+    sprintf
+    sqrt
+    srand
+    strftime
+    strtonum
+    sub
+    substr
+    system
+    systime
+    tolower
+    toupper
+    xor

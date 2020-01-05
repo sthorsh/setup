@@ -28,6 +28,7 @@ bind '"\C-x\"": "\"\"\C-b"'
 bind '"\C-x{": "{}\C-b  \C-b"'
 bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
 bind '"\C-xq": "\eb\"\ef\""'
+bind '"\C-xu":"\eb\eu "'
 
 # Disable ^S ^Q
 stty -ixon -ixoff
