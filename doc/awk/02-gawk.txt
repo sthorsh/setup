@@ -7,7 +7,6 @@ Pattern
   END
 
 Actions
-  getline [var or < file or var < file]
     if(exp) stmt; else stmt
     switch(exp) { case konstant: stmt ...; default: stmt }
     for(exp; exp; exp) stmt
@@ -20,8 +19,9 @@ Actions
     delete assoc_arr[key]
     next
     nextfile
-    print exp, ... > "file"
-    printf "...", exp, ... > "file"
+  getline [var] or [< file] or [var < file]
+  print [""] or [exp, ...] [> file]
+  printf format_string, exp, ... [> file]
     { stmt; ...}
 
 Uttrykk

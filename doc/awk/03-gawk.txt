@@ -19,7 +19,7 @@ Vars: awkdv
     LINT: 0
   NF          number of fields: 0 
   NR          number of records: 0
-    OFMT: "%.6g"
+  OFMT        output format string: "%.6g"
   OFS         output field separator: " " 
   ORS         output record separator: "\n"
     PREC: 53
