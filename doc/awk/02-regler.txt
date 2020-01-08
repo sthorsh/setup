@@ -1,0 +1,41 @@
+Pattern
+  BEGIN
+  BEGINFILE
+  Expression
+  Pattern₁, pattern₂
+  ENDFILE
+  END
+
+Actions (stmts)
+  getline
+  getline var
+  getline < file
+  getline var < file
+
+    if(exp) stmt; else stmt
+    switch(exp) { case konstant: stmt ...; default: stmt }
+    for(exp; exp; exp) stmt
+    for(key in assoc_arr) stmt
+    while(exp) stmt
+    do stmt while(exp)
+    break
+    continue
+    exit
+    delete assoc_arr[key]
+    next
+    nextfile
+  
+  funksjonskall (stmt/exp)
+  tilordning (stmt/exp)
+
+  print
+  print ""
+  print exp, ...
+  print ... > file
+  print ... >> file
+  print ... | command
+  print ... |& command
+  printf fmtstr, exp, ... [redir]
+
+    { stmt; ...}
+

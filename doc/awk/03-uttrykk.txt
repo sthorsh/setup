@@ -1,0 +1,28 @@
+Uttrykk
+  Konstant (num)                  123 12.3 12e3 0123 0x123
+  Konstant (string)               "verdi" 
+  Konstant (regexp)               /regexp/; eq $0 ~ /regexp/ (verdi: 0, 1)
+
+  Variabel                        navn
+
+    Assosiativ array ref                               navn[key]                   
+                                                                                   
+    Funksjonskall (stmt/exp)                           navn(...)                   
+                                                                                   
+    Presedens                                          ()                          
+    Feltref e.g $0, $1, $NF                            $exp                        
+    Inkrement, dekrement (stmt/exp)                    ++ --                       
+    Eksponent                                          ^ **                        
+    Unær pluss, unær minus, not                        + - !                       
+    Gange, dele, rest                                  * / %                       
+    Pluss, minus                                       + -                         
+    Konkatenere                                        ∅                           
+    Omdirigere                                         | |&                        
+    Sammenligne                                        < <= == != > >= >>          
+    Exp ~ /regexp/; exp₁ ~ exp₂ (EREs, case)           ~ !~                        
+    Medlem i assoc_arr                                 in                          
+    Og                                                 &&                          
+    Eller                                              ||                          
+    Ternær                                             ?:                          
+    Tilordning (stmt/exp)                              = += -= *= /= %= ^= **=     
+                                                                                   
