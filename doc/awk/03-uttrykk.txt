@@ -1,36 +1,36 @@
 Uttrykk
-  11 1.1 1e1 01 0x1         num konstant
-  "verdi"                   str konstant
-  /regexp/                  regexp konstant, eq $0 ~ /regexp/
+  11 1.1 1e1 01 0x1         num literal
+  "verdi"                   str literal
+  /regexp/                  regexp literal, eq $0 ~ /regexp/
 
-  navn                      var (lvalue)
-  navn[key]                 arrayelement (lvalue)
-  navn(...)                 funksjonskall
+  navn                      var (lval)
+  navn[key]                 arrayelement (lval)
+  navn(...)                 funksjonskall (exp/stmt)
 
   (...)                     operatorpresedens
 
-  $exp                      field reference operator (lvalue)
-  ++lvalue                  preinkrement op
-  lvalue++                  postinkrement op
-  --lvalue                  predekrement op
-  lvalue--                  postdekrement op
-  ^                         aritmetiske op
-  + - !                     artimetiske op, logisk op
-  * / %                     aritmetiske op
-  + -                       aritmetiske op
-  exp exp ...               strengkonkatenering
-  | |&                      redirigering op
-  < <= == != > >= >>        sammenligning op
-  exp ~ exp                 matching op, e.g exp ~ /regexp/ (EREs)
-  exp !~ exp                matching op, e.g exp !~ /regexp/ (EREs)
-  var in array              array membership op
-  && ||                     logisk op
-  ?:                        conditional op
-  lvalue =  rvalue          tilordningsop
-  lvalue += rvalue          tilordningsop
-  lvalue -= rvalue          tilordningsop
-  lvalue *= rvalue          tilordningsop
-  lvalue /= rvalue          tilordningsop
-  lvalue %= rvalue          tilordningsop
-  lvalue ^= rvalue          tilordningsop
-
+    $exp                      feltref op (lval)
+    ++lval                    preinkr op
+    lval++                    postinkr op
+    --lval                    predekr op
+    lval--                    postdekr op
+    ^                         aritmetisk op
+    + - !                     artimetisk op, logisk op
+    * / %                     aritmetisk op
+    + -                       aritmetisk op
+    exp exp ...               strengkonkatenering
+    | |&                      redirigering op
+    < <= == != > >= >>        sammenligning op
+    exp ~ exp                 matching op, e.g exp ~ /regexp/ (EREs)
+    exp !~ exp                nonmatching op, e.g exp !~ /regexp/ (EREs)
+    var in array              array membership op
+    && ||                     logisk op
+    ?:                        conditional op
+    lvalue =  rvalue          tilordning op (exp/stmt)
+    lvalue += rvalue          tilordning op
+    lvalue -= rvalue          tilordning op
+    lvalue *= rvalue          tilordning op
+    lvalue /= rvalue          tilordning op
+    lvalue %= rvalue          tilordning op
+    lvalue ^= rvalue          tilordning op
+                                         
