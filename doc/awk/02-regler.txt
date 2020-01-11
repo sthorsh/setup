@@ -24,7 +24,7 @@ Actions (stmts)
     delete assoc_arr[key]
     next
     nextfile
-  
+
   funksjonskall (stmt/exp)
   tilordning (stmt/exp)
 
