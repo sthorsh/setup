@@ -6,28 +6,23 @@ Pattern
   ENDFILE
   END
 
-Actions (stmts)
+Actions/stmts
+  if(exp) stmt; else stmt
+  switch(exp) { case konstant: stmt ...; default: stmt }
+  for(exp; exp; exp) stmt
+  for(key in array) stmt
+  while(exp) stmt
+  do stmt; while(exp)
+  break
+  continue
+    next
+    nextfile
+  exit
+
   getline
   getline var
   getline < file
   getline var < file
-
-  tilordning (exp/stmt)
-  funksjonskall (exp/stmt)
-
-    if(exp) stmt; else stmt
-    switch(exp) { case konstant: stmt ...; default: stmt }
-    for(exp; exp; exp) stmt
-    for(key in assoc_arr) stmt
-    while(exp) stmt
-    do stmt while(exp)
-    break
-    continue
-    next
-    nextfile
-    exit
-
-    delete assoc_arr[key]
 
   print
   print ""
@@ -37,6 +32,11 @@ Actions (stmts)
   print ... | command
   print ... |& command
   printf fmtstr, exp, ... [redir]
+
+    tilordning (exp/stmt)
+    funksjonskall (exp/stmt)
+
+    delete assoc_arr[key]
 
     { stmt; ...}
 
