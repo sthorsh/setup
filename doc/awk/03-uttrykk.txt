@@ -5,7 +5,7 @@ Uttrykk
 
   navn                    variabelnavn (lval)
   navn[key]               arrayelement (lval)
-  navn(...)               funksjonskall (exp/stmt)
+  navn(...)               funksjonskall (stmt/exp)
 
   (...)                   operatorpresedens
 
@@ -26,7 +26,7 @@ Uttrykk
   indeks in array         array membership op
   && ||                   boolsk op
   ?:                      ternær op
-  lvalue =  rvalue        tilordning op (exp/stmt)
+  lvalue =  rvalue        tilordning op (stmt/exp)
   lvalue += rvalue        tilordning op
   lvalue -= rvalue        tilordning op
   lvalue *= rvalue        tilordning op

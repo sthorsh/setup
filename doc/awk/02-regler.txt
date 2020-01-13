@@ -1,8 +1,8 @@
 Pattern
   BEGIN
   BEGINFILE
-  Expression
-  Pattern₁, pattern₂
+  expression
+  pattern, pattern: on, off, on, off ...
   ENDFILE
   END
 
@@ -12,6 +12,9 @@ Actions (stmts)
   getline < file
   getline var < file
 
+  tilordning (exp/stmt)
+  funksjonskall (exp/stmt)
+
     if(exp) stmt; else stmt
     switch(exp) { case konstant: stmt ...; default: stmt }
     for(exp; exp; exp) stmt
@@ -20,13 +23,11 @@ Actions (stmts)
     do stmt while(exp)
     break
     continue
-    exit
-    delete assoc_arr[key]
     next
     nextfile
+    exit
 
-  funksjonskall (stmt/exp)
-  tilordning (stmt/exp)
+    delete assoc_arr[key]
 
   print
   print ""
