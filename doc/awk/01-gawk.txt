@@ -44,4 +44,3 @@ Eksekvering
         if pattern matches record
           do action
 
-

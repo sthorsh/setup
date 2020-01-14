@@ -1,6 +1,3 @@
-Konstanter
-    ...
-
 Vars: awkdv
     ARGC: 1
     ARGIND: 0
@@ -32,7 +29,3 @@ Vars: awkdv
     SUBSEP: "\034"
     SYMTAB: array, 28 elements
     TEXTDOMAIN: "messages"
-
-Datastruktur: assoc array
-    assoc_arr[key] = value
-
