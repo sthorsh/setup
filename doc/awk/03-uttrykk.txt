@@ -1,7 +1,7 @@
 Uttrykk
-  11 1.1 1e1 01 0x1       num literal
-  "foo"                   str literal
-  /regexp/                regexp literal, /regexp/ eq $0 ~ /regexp/
+  11 1.1 1e1 01 0x1       num konstant
+  "foo"                   str konstant
+  /regexp/                regexp konstant, /regexp/ eq $0 ~ /regexp/
 
   navn                    variabelnavn (lval)
   navn[key]               arrayelement (lval)
@@ -26,15 +26,9 @@ Uttrykk
   indeks in array         array membership op
   && ||                   boolsk op
   ?:                      ternær op
-  lvalue =  rvalue        tilordning op (stmt/exp)
-  lvalue += rvalue        tilordning op
-  lvalue -= rvalue        tilordning op
-  lvalue *= rvalue        tilordning op
-  lvalue /= rvalue        tilordning op
-  lvalue %= rvalue        tilordning op
-  lvalue ^= rvalue        tilordning op
+  = ^= *= /= %= += -=     lval op rval (stmt/exp)
 
 Typer
-  numeric
-  string
+  Numerisk
+  Streng
 
