@@ -25,7 +25,7 @@ Vars: awkdv
   SUBSEP: "\034"
   TEXTDOMAIN: "messages"
   
-Array vars: awkdv
+Arrays: awkdv
   ARGV: array, 1 elements
   ENVIRON: array, 83 elements
   FUNCTAB: array, 41 elements

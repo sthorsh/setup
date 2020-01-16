@@ -28,7 +28,3 @@ Uttrykk
   ?:                      ternær op
   = ^= *= /= %= += -=     lval op rval (stmt/exp)
 
-Typer
-  Numerisk
-  Streng
-

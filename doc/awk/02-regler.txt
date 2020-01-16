@@ -25,7 +25,7 @@ Action/stmt
 
   tilordning
   funksjonskall
-  delete array[key]
+  delete array[key] or delete array
 
   if(exp) stmt; else stmt
   switch(exp) { case konstant: stmt ...; default: stmt }
