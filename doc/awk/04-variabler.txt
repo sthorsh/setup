@@ -1,4 +1,6 @@
-Vars: awkdv
+VARIABLER
+
+Variabler: awkdv
   ARGC: 1
   ARGIND: 0
   BINMODE: 0

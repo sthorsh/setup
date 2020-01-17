@@ -1,39 +1,46 @@
-Funksjoner: awkdf
-    and()
-    asort()
-    asorti()
+FUNKSJONER: awkdf
+
+Arrays
+  asort()
+  asorti()
+
+Numerisk 
   atan2()
+  cos()
+  exp()
+  int()
+  log()
+  rand()
+  sin()
+  sqrt()
+  srand()
+
+Strenger
+  gensub()
+  gsub()
+  index()       $ cmd | awk '{ print index($0, "...") }'
+  sub()         $ cmd | awk '{ sub(/.../, "..."); print }'
+  length()      $ cmd | awk '{ length() }'
+  match()       $ cmd | awk '{ match($0, /regex/, arr) }'
+  split()       $ cmd | awk '{ split($1, arr, /.../); print arr[1] }'
+
+    and()
     bindtextdomain()
     close()
     compl()
-  cos()
     dcgettext()
     dcngettext()
-  exp()
     extension()
     fflush()
-    gensub()
-    gsub()
-    index()
-  int()
     isarray()
-    length()
-  log()
     lshift()
-    match()
     mktime()
     or()
     patsplit()
-  rand()
     rshift()
-    sin()
-    split()
     sprintf()
-    sqrt()
-  srand()
     strftime()
     strtonum()
-    sub()
     substr()
     system()
     systime()
