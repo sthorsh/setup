@@ -4,6 +4,11 @@ Arrays
   asort()
   asorti()
 
+I/O
+  close()
+  fflush()
+    system()
+
 Numerisk 
   atan2()
   cos()
@@ -16,34 +21,31 @@ Numerisk
   srand()
 
 Strenger
-  gensub()
+  index()         $ cmd | awk '{ print index($0, "...") }'
+  length()        $ cmd | awk '{ length() }'
+  match()         $ cmd | awk '{ match($0, /regex/, arr) }'
+  split()         $ cmd | awk '{ split($1, arr, /.../); print arr[1] }'
+  patsplit()
+  sprintf()       $ sprintf(format, exp₁, ...)
+  strtonum()      $ echo 0x11 | awk '{ printf "%d\n", strtonum($0) }'
+  sub()           $ cmd | awk '{ sub(/.../, "..."); print }'
   gsub()
-  index()       $ cmd | awk '{ print index($0, "...") }'
-  sub()         $ cmd | awk '{ sub(/.../, "..."); print }'
-  length()      $ cmd | awk '{ length() }'
-  match()       $ cmd | awk '{ match($0, /regex/, arr) }'
-  split()       $ cmd | awk '{ split($1, arr, /.../); print arr[1] }'
+  gensub()
+  substr()        $ echo str | awk '{ print substr($0,3,5) }'
+  tolower()       $ cmd | awk '{ tolower($0}) }'
+  toupper()       $ cmd | awk '{ toupper($0}) }'
 
     and()
     bindtextdomain()
-    close()
     compl()
     dcgettext()
     dcngettext()
     extension()
-    fflush()
     isarray()
     lshift()
     mktime()
     or()
-    patsplit()
     rshift()
-    sprintf()
     strftime()
-    strtonum()
-    substr()
-    system()
     systime()
-    tolower()
-    toupper()
     xor()
