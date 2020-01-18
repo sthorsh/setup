@@ -21,13 +21,9 @@ Action/stmt
   print exp, ...
   print ... > file
   print ... >> file
-  print ... | command
+  print ... | command; e.g print "date" | "/bin/bash"
   print ... |& command
   printf fmtstr, exp, ... [redir]
-
-  tilordning
-  funksjonskall
-  delete array[key] or delete array
 
   if(exp) stmt; else stmt
   switch(exp) { case konstant: stmt ...; default: stmt }
@@ -40,4 +36,9 @@ Action/stmt
   next
   nextfile
   exit [return_code]
+
+  tilordning
+  funksjonskall
+
+  delete array[key] or delete array
 

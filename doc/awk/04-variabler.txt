@@ -1,6 +1,6 @@
-VARIABLER
+VARIABLER: awkdv
 
-Variabler: awkdv
+Skalare 
   ARGC: 1
   ARGIND: 0
   BINMODE: 0
@@ -27,7 +27,7 @@ Variabler: awkdv
   SUBSEP: "\034"
   TEXTDOMAIN: "messages"
   
-Arrays: awkdv
+Arrays
   ARGV: array, 1 elements
   ENVIRON: array, 83 elements
   FUNCTAB: array, 41 elements

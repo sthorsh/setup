@@ -3,11 +3,25 @@ FUNKSJONER: awkdf
 Arrays
   asort()
   asorti()
+  isarray()
+
+Bits
+  and()
+  compl()
+  lshift()
+  or()
+  rshift()
+  xor()
 
 I/O
   close()
   fflush()
-    system()
+  system()          system(command); e.g system("date")
+
+I18n
+  bindtextdomain()  
+  dcgettext()
+  dcngettext()
 
 Numerisk 
   atan2()
@@ -15,37 +29,28 @@ Numerisk
   exp()
   int()
   log()
-  rand()
+  rand()            print rand()
+  srand()           srand(systime()); print rand()
   sin()
   sqrt()
-  srand()
 
 Strenger
-  index()         $ cmd | awk '{ print index($0, "...") }'
-  length()        $ cmd | awk '{ length() }'
-  match()         $ cmd | awk '{ match($0, /regex/, arr) }'
-  split()         $ cmd | awk '{ split($1, arr, /.../); print arr[1] }'
+  index()           print index($0, "...")
+  length()          print length()
+  match()           match($0, /regex/, arr)
+  split()           split($1, arr, /regex/)
   patsplit()
-  sprintf()       $ sprintf(format, exp₁, ...)
-  strtonum()      $ echo 0x11 | awk '{ printf "%d\n", strtonum($0) }'
-  sub()           $ cmd | awk '{ sub(/.../, "..."); print }'
+  sprintf()         sprintf(fmt, exp₁, ...)
+  strtonum()        strtonum($1)
+  sub()             sub(/regex/, "...") 
   gsub()
   gensub()
-  substr()        $ echo str | awk '{ print substr($0,3,5) }'
-  tolower()       $ cmd | awk '{ tolower($0}) }'
-  toupper()       $ cmd | awk '{ toupper($0}) }'
+  substr()          print substr($1,3,5) }'
+  tolower()         tolower($1)
+  toupper()         toupper($1)
 
-    and()
-    bindtextdomain()
-    compl()
-    dcgettext()
-    dcngettext()
-    extension()
-    isarray()
-    lshift()
-    mktime()
-    or()
-    rshift()
-    strftime()
-    systime()
-    xor()
+Tid
+  systime()         print systime()
+  mktime()          print mktime("2020 01 18 12 10 30 ")
+  strftime()        print strftime()
+
