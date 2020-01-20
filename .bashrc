@@ -66,6 +66,7 @@ alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 
 alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
 alias type='type -a'
 alias x='exit'
+alias xsc='xclip -selection clipboard'
 
 # Variables
 export AMQ_HOME=/usr/lib/apache-activemq
