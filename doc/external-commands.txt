@@ -1,0 +1,34 @@
+Filer
+  file
+  find
+  locate
+  ls              l; la; ld
+  stat
+  touch
+
+Kataloger   
+  cd
+  mkdir
+  pwd
+
+Kommandoer
+  man             man -k regexp
+  strace          echo exit | strace bash -li |& grep '^open'
+  tldr            apt
+  type            builtin
+  which
+
+gnu
+  awk
+  sed
+  
+coreutils
+  sort
+  ...
+
+moreutils
+  combine
+  sponge
+  ts
+  ...
+

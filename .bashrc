@@ -1,6 +1,8 @@
 # Stop if not interactive
 [[ $- != *i*  ]] && return
 
+echo "~/.bashrc..."
+
 # Readline variables
 bind 'set colored-completion-prefix on'
 bind 'set completion-display-width 0'
@@ -53,7 +55,7 @@ alias ij='/bin/bash /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1 &'
 alias jobs="jobs -l"
 alias l='ls -lF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
-alias lg='ls -lF --color=auto'
+alias ld='ls -dl --color=auto --group-directories-first  .[!.]*'
 alias mount='mount | column -t'
 alias mvnf='mvn clean install -Pfindbugs,checkstyle'
 alias mvnl='mvn clean install -Dmaven.test.skip=true'
