@@ -1,6 +1,6 @@
-BASH INTERPRETER
+FORTOLKNING
 
-Leser input:
+Leser input
   • interaktivt: readline/history (fra terminalen)
   • ikke-interaktivt: egne bash-funksjoner (fra filer/script, pipes)
   • som arg til bash: bash -c "command_string"
@@ -23,7 +23,7 @@ Lexer
   Ekspanderer alias (og tokeniserer på nytt)
   Output: kommandolinje (sekvens med tokens)
     
-Parser (Bison)
+Parser
   Parser tokens:
     • kommandoer
     • variabeltilordninger

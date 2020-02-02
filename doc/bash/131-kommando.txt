@@ -1,0 +1,62 @@
+GRAMMATIKK
+
+Cmd
+  • alias
+  • funksjon
+  • builtin cmd
+  • bin
+  • script
+
+        Variabel
+          name=val ...
+  
+Kommando
+  cmd [args] [redir]
+  name=val ... cmd [args] [redir]
+   
+Pipeline         
+  [!] cmd [| cmd]...
+  [!] cmd [|& cmd]...
+   
+Liste            
+  pipeline [; pipeline]...  [; or & or \n]
+  pipeline [& pipeline]...  [; or & or \n]
+  pipeline [&& pipeline]... [; or & or \n]
+  pipeline [|| pipeline]... [; or & or \n]
+   
+Sammensatte kommandoer
+  Uttrykk
+    ((arithmetic-expr))
+    [[ predicate-expr ]]                                   
+    
+  if               
+    if cmds; then cmds; ... fi
+    
+  case             
+    case word in pattern) cmds ;;... esac
+    
+  select           
+    select name in words; do cmds; done
+    
+  for              
+    for name in words; do cmds; done
+    for (( expr; expr; expr )); do cmds; done
+    
+  while            
+    while cmds; do cmds; done
+    
+  until            
+    until cmds; do cmds; done
+    
+  Gruppe
+    ( list )                                      
+    { list; }
+    
+Coprosess        
+  coproc [name] cmd [redir]
+    
+                    Funksjon
+                      name() compound-command 
+                      function name compound-command 
+                      function name() compound-command
+    

@@ -1,0 +1,25 @@
+DEKLARASJONER
+
+Variabler
+  $ name=value
+  $ name+=value               
+  $ declare name
+  $ declare -a array
+  $ declare -A map 
+  $ declare -i int            
+  $ declare -n ref
+  $ declare opts name=value   
+  $ export name               
+  $ export name=value         
+  $ local opts name           
+  $ local opts name=value     
+  $ unset name              
+
+Alias
+  $ alias
+
+Funksjoner
+  $ name() compound-command 
+  $ function name compound-command 
+  $ function name() compound-command
+    

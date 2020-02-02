@@ -1,0 +1,34 @@
+BASH
+
+Start
+  $ bash [opt₁] [opt₂] 
+  $ bash [opt₁] [opt₂] -c str
+  $ bash [opt₁] [opt₂] [--] fil arg₁ ...
+
+opt₁
+  --help
+  --login
+  --verbose
+
+opt₂
+  -i ($ echo $-)
+  -l ($ shopt login_shell)
+  ±o set_opt
+  ±O shopt_opt
+
+Login interaktivt
+  tty, tmux, ssh
+  Globalt: /etc/profile
+  Per-bruker: ~/.bash_profile
+
+Ikke-login interaktivt
+  gnome-terminal
+  Globalt: /etc/bash.bashrc
+  Per-bruker: ~/.bashrc
+
+Login ikke-interaktivt
+  ?
+
+Ikke-login ikke-interaktivt
+  Script
+    

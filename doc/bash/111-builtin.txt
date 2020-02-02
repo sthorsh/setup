@@ -1,0 +1,29 @@
+BUILTIN
+
+Opts
+  $ set -o
+  $ shopt
+
+Params
+  -      options (read-only)
+  $      pid bash (read-only)
+  !      pid last bg job (read-only)
+  ?      exit status last fg pipeline (read-only)
+  #      positional param count (read-only)
+  *      positional params 1... (read-only)
+  @      positional params 1... (read-only)
+  _      name shell OR name script OR last arg last fg cmd OR ... (read-only)
+  0      name shell OR name script
+  1      param 1
+  ...
+  {10}   param 10
+
+Vars
+  $ declare -p
+
+Kommandoer
+  $ enable -a
+
+Funksjoner
+  $ declare -F
+
