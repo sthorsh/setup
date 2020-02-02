@@ -19,7 +19,7 @@ Params
   {10}   param 10
 
 Vars
-  $ declare -p
+  $ declare -p | grep -v _xspecs
 
 Kommandoer
   $ enable -a

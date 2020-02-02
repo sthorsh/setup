@@ -1,0 +1,55 @@
+HISTORY
+
+Event
+  !N                    line N
+  !!                    previous line
+  !x                    line starting with x
+  !#                    line typed so far
+  ^x^y                  previous line with x for y
+
+Words
+ N                     word N
+  ^                     word 1
+  $                     word last
+  N-M                   word N-M   
+  *                     word 1-$
+  N*                    word N-$
+  ...
+
+Modifiers
+  h                     ~/tmp/file.dat → ~/tmp
+  t                     ~/tmp/file.dat → file.dat
+  r                     ~/tmp/file.dat → ~/tmp/file
+  e                     ~/tmp/file.dat → .dat
+  s/old/new             sub old → new
+  gs/old/new            sub all old → new
+  ...
+
+Opts
+  set history           on
+  set histexpand        on
+  shopt cmdhist         on
+  shopt histappend      on
+  shopt histreedit      off
+  shopt histverify      off
+  shopt lithist         off
+
+Vars
+  HISTSIZE              100000
+  HISTFILE              ~/.bash_history
+  HISTFILESIZE          100000
+  HISTTIMEFORMAT        %Y-%m-%d %H:%M
+  HISTCMD               4930
+  HISTCONTROL           ignoreboth
+
+Cmds
+  history               list all
+  history N             list last N
+  history -c            clear list
+  history -d            delete from list
+  history -a            append list → file
+  history -n            append list ← file
+  history -r            read list ← file
+  history -w            write list → file
+
+

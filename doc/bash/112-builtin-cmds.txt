@@ -1,12 +1,6 @@
-KOMMANDO 
+BUILTIN CMDS
 
-Alias
-  $ alias
-
-Funksjon
-  $ declare -F
-
-Builtin kommando
+Builtin cmds
   $ :
   $ bg OR bg jobspec (jobspec: %N)
   $ bind -pv OR bind keyseq:function OR bind -r keyseq OR bind -u function
@@ -60,10 +54,4 @@ Builtin kommando
   $ unalias name
   $ unset var OR unset function
   $ wait OR wait jobspec|pid
-
-Ekstern kommando: binærfil
-  $ foo
-
-Ekstern kommando: script
-  $ foo
 
