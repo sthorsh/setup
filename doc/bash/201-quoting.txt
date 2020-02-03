@@ -1,0 +1,44 @@
+QUOTING
+
+Quotes
+    \               alle tegn
+    ''              alle tegn unntatt '
+    ""              alle tegn unntatt \ " ! $
+
+  Metategn
+    space                 lexer
+    tab                   lexer
+    |                     parser liste
+    ;                     parser liste
+    &                     parser liste
+    (                     parser gruppe
+    )                     parser gruppe
+    <                     parser io
+    >                     parser io
+    newline               readline
+  
+  Spesialtegn
+      #                   kommentar
+      !                   history
+      =                   parser tilordning
+      {                   parser gruppe
+      ~                   makro home
+      $                   makro glob
+      *                   makro glob
+      ?                   makro glob
+      [                   makro glob
+      %                   jobbkontroll
+
+  Quoting
+    Quotes: må quotes
+    Metategn: må quotes
+    Spesialtegn: kontekstavhengig
+  
+  find
+    find . -name PATTERN
+
+  grep
+    grep PATTERN file ...
+
+  ...
+  

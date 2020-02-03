@@ -29,13 +29,14 @@ Operatorer
 
 Nøkkelord
   ! 
+  [[ ]]
   time
+  { } 
   if then else elif fi case esac select
   for in while until do done
-  [[ ]]
-  { } 
   coproc
   function
+  time
 
 Navn
   Starter altid med bokstav el underscore 
