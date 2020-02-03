@@ -1,32 +1,32 @@
 SOEK OG KJOER
 
-Enkeltkommando
-  $ navn₁        funksjon
-  $ navn₂        builtin
-  $ navn₃        kjørbar fil i path
-  $ ./navn₄      kjørbar fil
-  $ bash navn₅   kjørbart/ikke-kjørbart script
-
-Bash antar
-  Første ord er navn
-  Resterende ord er args
-
-Bash søker og kjører/feiler
-  Hvis navn uten slash:
-    Hvis navn₁: kaller funksjon
-    Hvis navn₂: kaller C-funksjon
-    Søker i hash
-    Hvis miss: søker i path
-    Hvis miss: kaller command_not_found_handle
-  Hvis treff navn₃ || navn₄:
-    bash₁: fork → barn m/separat kjøremiljø
-    bash₁: wait... 
-    bash₂: exec[ve] → kjører fil
-    bash₂: exit
-  Hvis søk i . || path på navn₅ gir treff:
-    bash₁: fork → barn m/separat kjøremiljø
-    bash₁: wait... 
-    bash₂: exec[ve] → kjører fil
-    bash₂: exit
-  Bash kaster "bash: foo: No such file or directory"
-
+  Enkeltkommando
+    $ navn₁        funksjon
+    $ navn₂        builtin
+    $ navn₃        kjørbar fil i path
+    $ ./navn₄      kjørbar fil
+    $ bash navn₅   kjørbart/ikke-kjørbart script
+  
+  Bash antar
+    Første ord er navn
+    Resterende ord er args
+  
+  Bash søker og kjører/feiler
+    Hvis navn uten slash:
+      Hvis navn₁: kaller funksjon
+      Hvis navn₂: kaller C-funksjon
+      Søker i hash
+      Hvis miss: søker i path
+      Hvis miss: kaller command_not_found_handle
+    Hvis treff navn₃ || navn₄:
+      bash₁: fork → barn m/separat kjøremiljø
+      bash₁: wait... 
+      bash₂: exec[ve] → kjører fil
+      bash₂: exit
+    Hvis søk i . || path på navn₅ gir treff:
+      bash₁: fork → barn m/separat kjøremiljø
+      bash₁: wait... 
+      bash₂: exec[ve] → kjører fil
+      bash₂: exit
+    Bash kaster "bash: foo: No such file or directory"
+  
