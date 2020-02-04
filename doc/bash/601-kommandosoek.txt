@@ -1,4 +1,47 @@
-SOEK OG KJOER
+KJØRESYSTEM 
+
+Forutsetning
+  ? har ekspandert ALIAS
+  Parser har sjekket syntaks for NØKKELORD
+  Parser har gjemt unna VARTILORDNINGER og I/O
+
+Kjøresystem
+  Mottar linje med ord
+  Antar første ord er et <navn>
+  Antar resterende ord er args
+
+  Hvis <navn> uten slash:
+    Hvis funksjon <navn> finnes:
+      Kjører <navn>
+    Hvis builtin <navn> finnes:
+      Kjører <navn>
+    Slår opp <navn> i hash:
+      Hvis hit₁:
+        Lagrer <navn>
+      Hvis miss:
+        Slår opp <navn> i path:
+          Hvis hit₂:
+            Lagrer <navn>
+          Hvis miss:
+            Exit med "<navn>: command not found"
+
+  Hvis <navn> med slash eller hit₁ eller hit₂:
+    Hvis <navn> finnes:
+      Hvis <navn> er kjørbar:
+        Kjører <navn>:
+          bash₁: fork → barn m/separat kjøremiljø
+          bash₁: wait... 
+          bash₂: exec[ve] → kjører fil
+          bash₂: exit
+      Hvis <navn> ikke er kjørbar:
+        Exit med "-bash: ./navn: Permission denied"
+    Exit med "-bash: <navn>: No such file or directory"
+    
+  Hvis kommando er $ bash <navn> for kjørbart/ikke-kjørbart script:
+    
+      
+    
+  
 
   Enkeltkommando
     $ navn₁        funksjon
@@ -7,10 +50,6 @@ SOEK OG KJOER
     $ ./navn₄      kjørbar fil
     $ bash navn₅   kjørbart/ikke-kjørbart script
   
-  Bash antar
-    Første ord er navn
-    Resterende ord er args
-  
   Bash søker og kjører/feiler
     Hvis navn uten slash:
       Hvis navn₁: kaller funksjon
@@ -18,15 +57,18 @@ SOEK OG KJOER
       Søker i hash
       Hvis miss: søker i path
       Hvis miss: kaller command_not_found_handle
+
     Hvis treff navn₃ || navn₄:
       bash₁: fork → barn m/separat kjøremiljø
       bash₁: wait... 
       bash₂: exec[ve] → kjører fil
       bash₂: exit
-    Hvis søk i . || path på navn₅ gir treff:
+
+    Hvis oppslag på navn₅ i . eller path gir treff:
       bash₁: fork → barn m/separat kjøremiljø
       bash₁: wait... 
       bash₂: exec[ve] → kjører fil
       bash₂: exit
+
     Bash kaster "bash: foo: No such file or directory"
   
