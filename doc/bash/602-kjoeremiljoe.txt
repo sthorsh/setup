@@ -1,35 +1,36 @@
-KJØREMILJØ
+JØREMILJØ
 
-Shell execution environment (ee₁)
-  alias
-  options
-  params
-  variables
-  functions
-  working directory
-  open files
-  user file creation mask
-  signal traps
-
-Subshell execution environment (dup: ee₂)
-  alias
-  options
-  params
-  variables
-  functions
-  working directory
-  open files
-  user file creation mask
-  ?
+Current
+  Opts
+  Params
+  Vars
+  Alias
+  Funksjoner
+  Arbeidskatalog
+  Tilgangsmaske
+  Åpne filer
+  Traps
+                      
+Duplisert (subskall)
+  Opts: ingen export
+  Params: ingen export
+  Vars: ingen export
+  Alias: ingen export
+  Funksjoner: ingen export
+  Arbeidskatalog: ingen effekt
+  Tilgangsmaske: ingen effekt
+  Åpne filer: ingen effekt
+  Traps: unntak, ingen effekt
   
-Separate execution environment (new: ee₃)
-  -
-  -
-  -
-  env/exported variables
-  env/exported functions
-  working directory
-  open files
-  user file creation mask
-  -
+
+Separat
+    Opts:
+    Params:
+    Vars: env/exported
+    Alias:
+    Funksjoner: env/exported
+    Arbeidskatalog
+    Tilgangsmaske
+    Åpne filer
+    Traps: -
 
