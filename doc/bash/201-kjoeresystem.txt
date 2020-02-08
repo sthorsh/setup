@@ -1,4 +1,4 @@
-KJØRESYSTEM 
+KJØRESYSTEM
 
 Gitt
   Lekser har ekspandert alias
@@ -6,7 +6,7 @@ Gitt
   Parser har merket variabeltilordninger
   Parser har merket omdirigeringer
   Makroprosessor har ekspandert makroer
-  
+
 Kjøresystem
   Mottar en linje med ord
   Antar første ord er <navn> på kommando
@@ -14,38 +14,37 @@ Kjøresystem
   ...
   Hvis <navn> uten /
     Hvis <navn> er funksjon
-      Kjører funksjon - current kjøremiljø
-    Hvis <navn> er builtin 
-      Kjører builtin - current kjøremiljø
-    Slår opp <navn> i hash
-    Hvis hash hit₁
+      Kjører funksjon: current kjøremiljø
+    Hvis <navn> er builtin
+      Kjører builtin: current kjøremiljø
+    Slår opp <navn> i path
+    Hvis path hit
       Lagrer <navn>
-    Hvis hash miss
-      Slår opp <navn> i path
-      Hvis path hit₂
-        Lagrer <navn>
-      Hvis path miss
-        Exit: "Command not found"
+    Hvis path miss
+      Exit: "Command not found"
   ...
-  Hvis <navn> med / | hit₁ | hit₂
-    Slår opp <navn> i filsystemet
-    Hvis treff
-      Hvis <navn> er kjørbar fil
+  Hvis <navn> med / || path hit
+    Hvis <navn> er fil
+      Hvis fil er ELF
         bash₁ fork bash₂: separat kjøremiljø
-        bash₁ wait 
-        bash₂ exec[ve]: kjører binary el script
+        bash₁ wait
+        bash₂ exec[ve]: kjører binary
         bash₂ exit
-      Hvis <navn> ikke er kjørbar
-        Exit: "Permission denied"
+      Hvis script er kjørbart
+        bash₁ fork bash₂: separat kjøremiljø
+        bash₁ wait
+        bash₂ exec[ve] kjører script
+        bash₂ exit
+      Exit: "Permission denied"
   ...
   Hvis $ bash <navn>
     Slår opp <navn> i . og path
     Hvis treff
       Hvis <navn> er script
         bash₁ fork bash₂: separat kjøremiljø
-        bash₁ wait 
+        bash₁ wait
         bash₂ exec[ve]: kjører script
         bash₂ exit
   ...
   Exit: "No such file or directory"
-  
+

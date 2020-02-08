@@ -1,6 +1,12 @@
 DEKLARASJONER
 
-Variabler
+Opts
+  -
+
+Params
+  -
+
+Vars
   $ name=value
   $ name+=value               
   $ declare name
@@ -23,3 +29,6 @@ Funksjoner
   $ function name compound-command 
   $ function name() compound-command
     
+Builtins
+  -
+

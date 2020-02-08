@@ -1,0 +1,38 @@
+KJØREMILJØ
+
+Current
+  Opts
+  Params
+    Vars
+  Alias
+    Funksjoner
+    Hash
+    Arbeidskatalog
+    Tilgangsmaske
+    Åpne filer
+    Traps
+
+Duplikat: subskall
+  Opts: dup, isolert
+  Params
+    Vars
+  Alias: dup, isolert
+    Hash
+    Funksjoner
+    Arbeidskatalog
+    Tilgangsmaske
+    Åpne filer
+    Traps: unntak
+
+Separat: reinitialisert subskall
+  Opts: reinit, isolert
+  Params
+    Vars: env/exported
+  Alias: reinit, isolert
+    Hash: eneste som ikke reinitialiseres
+    Funksjoner: env/exported
+    Arbeidskatalog
+    Tilgangsmaske
+    Åpne filer
+    Traps: -
+

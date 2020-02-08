@@ -32,7 +32,7 @@ MAKROER
   ${param//pattern/str}     value w/matches replaced
   ${param@A|a|E|P|Q}        assign|attrs|escape|prompt|quoted
 
-  $(command)                exec command; replace macro with stdout
+  $(command)                exec command; replace macro with stdout (duplikat kjøremiljø)
 
   $((aritmetic-expr))       eval arithmetic expr; replace macro with result
 

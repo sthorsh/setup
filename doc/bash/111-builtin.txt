@@ -21,9 +21,12 @@ Params
 Vars
   $ declare -p | grep -v _xspecs
 
-Kommandoer
-  $ enable -a
+Alias
+  -
 
 Funksjoner
   $ declare -F
+
+Builtins
+  $ enable -a
 

@@ -1,26 +1,16 @@
 GRAMMATIKK
 
-Cmd
-  • alias
-  • funksjon
-  • builtin cmd
-  • bin
-  • script
-
-        Variabel
-          name=val ...
-  
 Kommando
   cmd [args] [redir]
   name=val ... cmd [args] [redir]
    
-Pipeline         
-  [!] cmd [| cmd]...
+Pipeline
+  [!] cmd [| cmd]... (duplikat kjøremiljø)
   [!] cmd [|& cmd]...
    
 Liste            
   pipeline [; pipeline]...  [; or & or \n]
-  pipeline [& pipeline]...  [; or & or \n]
+  pipeline [& pipeline]...  [; or & or \n] (duplikat kjøremiljø)
   pipeline [&& pipeline]... [; or & or \n]
   pipeline [|| pipeline]... [; or & or \n]
    
@@ -49,14 +39,9 @@ Sammensatte kommandoer
     until cmds; do cmds; done
     
   Gruppe
-    ( list )                                      
+    ( list ) (duplikat kjøremiljø)                                     
     { list; }
     
 Coprosess        
-  coproc [name] cmd [redir]
-    
-                    Funksjon
-                      name() compound-command 
-                      function name compound-command 
-                      function name() compound-command
+  coproc [name] cmd [redir] (duplikat kjøremiljø)
     
