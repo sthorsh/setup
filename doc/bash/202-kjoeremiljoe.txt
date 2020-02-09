@@ -3,36 +3,36 @@ KJØREMILJØ
 Current
   Opts
   Params
-    Vars
+  Vars
   Alias
-    Funksjoner
-    Hash
-    Arbeidskatalog
-    Tilgangsmaske
-    Åpne filer
-    Traps
+  Funksjoner
+  Hash
+  Traps
+  Stående katalog
+  Tilgangsrettighetsmaske
+  Åpne filer
 
 Duplikat: subskall
   Opts: dup, isolert
-  Params
-    Vars
+  Params: dup, isolert
+  Vars: dup, isolert
   Alias: dup, isolert
-    Hash
-    Funksjoner
-    Arbeidskatalog
-    Tilgangsmaske
-    Åpne filer
-    Traps: unntak
+  Funksjoner: dup, isolert
+  Hash: dup, isolert
+  Traps: dup, isolert
+  Stående katalog: dup, isolert
+  Tilgangsrettighetsmaske: dup, isolert
+  Åpne filer: dup, isolert
 
 Separat: reinitialisert subskall
   Opts: reinit, isolert
-  Params
-    Vars: env/exported
+  Params: reinit, isolert
+  Vars: export, isolert (miljøvariabler)
   Alias: reinit, isolert
-    Hash: eneste som ikke reinitialiseres
-    Funksjoner: env/exported
-    Arbeidskatalog
-    Tilgangsmaske
-    Åpne filer
-    Traps: -
+  Funksjoner: reinit, isolert 
+  Hash: dup, isolert 
+  Traps: reinit, isolert
+  Stående katalog: dup, isolert
+  Tilgangsrettighetsmaske: dup, isolert
+  Åpne filer: dup, isolert
 

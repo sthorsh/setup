@@ -33,7 +33,7 @@ Kjøresystem
       Hvis script er kjørbart
         bash₁ fork bash₂: separat kjøremiljø
         bash₁ wait
-        bash₂ exec[ve] kjører script
+        bash₂ exec[ve]: kjører script
         bash₂ exit
       Exit: "Permission denied"
   ...

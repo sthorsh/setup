@@ -5,7 +5,7 @@ Kommando
   name=val ... cmd [args] [redir]
    
 Pipeline
-  [!] cmd [| cmd]... (duplikat kjøremiljø)
+  [!] cmd [| cmd]... (duplikat kjøremiljø, pipeline → _en_ jobb)
   [!] cmd [|& cmd]...
    
 Liste            

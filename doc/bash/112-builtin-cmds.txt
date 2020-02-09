@@ -2,6 +2,7 @@ BUILTIN CMDS
 
 Builtin cmds
   $ :
+  $ alias [name[=value]]
   $ bg OR bg jobspec (jobspec: %N)
   $ bind -pv OR bind keyseq:function OR bind -r keyseq OR bind -u function
   $ builtin builtin

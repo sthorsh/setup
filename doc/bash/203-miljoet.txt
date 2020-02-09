@@ -1,0 +1,27 @@
+MILJØET
+
+declare
+  declare -x                    vis miljøvars
+  declare -x name=value         deklarer miljøvar
+  declare -x name               skru på export attr
+  declare +x name               skru av export attr
+  declare -fx                   vis miljøfunksjoner
+  declare -fx name              skru på export attr
+  declare -f +x name            skru av export attr
+    
+export
+  export                        vis miljøvars
+  export name=value             deklarer miljøvar
+  export name                   skru på export attr
+  export -n name                skru av export attr
+  export -f                     vis miljøfunksjoner
+  export -f name                skru på export attr
+  export -fn name               skru av export attr
+  
+unset
+  unset name                    slette var
+  unset -f name                 slette funksjon
+  
+Per-cmd
+  name=value cmd                per-cmd miljøvar
+

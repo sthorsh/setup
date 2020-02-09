@@ -43,14 +43,16 @@ Makroprosessor
   Fjerner quoting
   Output: kommandolinje (parse-/syntakstre)
     
-Utførelse
-  Utfører omdirigeringer
+  [Utfører] variabeltilordninger
+    Ekspanderer RHS
+    Utfører tilordninger
+
+  [Utfører] omdirigeringer
     Ekspanderer RHS
     Utfører omdirigeringer
     Fjerner operatorer/operander
-  Utfører variabeltilordninger
-    Ekspanderer RHS
-    Utfører tilordninger
+
+Utførelse kommando
   Søker kommando
   Utfører kommando
 
