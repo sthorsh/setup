@@ -1,28 +1,32 @@
 JOBBKONTROLL
-      
-Spesialtegn: stty -a
-  ctrl-c intr: sigint
-  ctrl-\ quit: sigquit
-  ctrl-z susp: sigtstp
+
+Builtins
+  jobs [jobspec]
+  kill [-sigspec] jobspec|pid
+  ...
+
+stty -a
+  ctrl-c    sigint
+  ctrl-z    sigtstp (suspend)
   ...
 
 jobspec
-  %       current job
-  %%      current job
-  %+      current job
-  %-      previous job
-  %N      job N
-  %name   command name prefix
-  %?str   command line substring
-        
-sigspec: kill -l
-   1|hup|sighup
-   2|int|sigint
-   3|quit|sigquit 
-   6|abrt|sigabrt 
-   9|kill|sigkill
-  15|term|sigterm (kills' default)
-  18|cont|sigcont
-  20|tstp|sigtstp
+  %         current job
+  %%        current job
+  %+        current job
+  %-        previous job
+  %N        job N
+  %str      cmd name prefix
+  %?str     cmd line substring
+
+sigspec
+   1        sighup|hup
+   2        sigint|int
+   3        sigquit|quit
+   6        sigabrt|abrt
+   9        sigkill|kill
+  15        sigterm|term
+  18        sigcont|cont
+  20        sigtstp|tstp
   ...
 

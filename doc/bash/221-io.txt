@@ -1,0 +1,29 @@
+I/O
+
+For hver Unix-prosess inkl bash
+  FD 0: standardstrøm for innmating (stdin) (data source)
+  FD 1: standardstrøm for utmating (stdout) (data sink)
+  FD 2: standardstrøm for feilmeldinger (stderr) (error reports)
+  FD 3: strøm for input el output
+  ...
+
+Tabeller
+  Per-prosess fd-tabell: 0, 1, 2...
+  System-wide filtabell: r, u, w... (modus)
+  System-wide inodetabell: index number, file name
+    
+Når Bash starter
+  0 → u → /dev/pts/1 (pseudoterminal)
+  1 → u → /dev/pts/1 
+  2 → u → /dev/pts/1 
+  ...
+
+Når Bash kjører kommando
+  Bash fork'er barnprosess
+  Barnet arver fd's fra bash 
+  Bash etablerer evt omdirigeringer
+  Bash kjører kommandoen evt m/omdirigeringer
+
+Systemkall
+  open, close, read, write, dup, ...
+
