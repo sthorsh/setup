@@ -41,6 +41,7 @@ shopt -s histappend
 # Vars
 export AMQ_HOME=/usr/lib/apache-activemq
 export EDITOR=/usr/bin/vim
+export FOP_HOME="/usr/lib/fop/fop"
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=100000
@@ -54,6 +55,7 @@ export VISUAL=/usr/bin/vim
 
 # PATH
 [[ ":$PATH:" != *${AMQ_HOME}/bin* ]] && export PATH=${PATH}:${AMQ_HOME}/bin
+[[ ":$PATH:" != *${FOP_HOME} ]] && export PATH=${PATH}:${FOP_HOME}
 [[ ":$PATH:" != *${JAVA_HOME}/bin* ]] && export PATH=${PATH}:${JAVA_HOME}/bin
 [[ ":$PATH:" != *${MAVEN_HOME}/bin* ]] && export PATH=${PATH}:${MAVEN_HOME}/bin
 
