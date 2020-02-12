@@ -1,6 +1,36 @@
 # Stop if not interactive
 [[ $- != *i*  ]] && return
 
+# Disable ^S ^Q
+stty -ixon -ixoff
+
+# Readline vars 
+bind 'set colored-completion-prefix on'
+bind 'set completion-display-width 0'
+bind 'set completion-query-items 75'
+bind 'set menu-complete-display-prefix on'
+bind 'set show-all-if-ambiguous on'
+
+# Readline cmds
+bind '"\e\C-f":shell-forward-word'
+bind '"\e\C-b":shell-backward-word'
+bind '"\C-[":character-search-backward'
+bind 'tab:menu-complete'
+bind '"\ep":glob-complete-word'
+bind 'space:magic-space'
+bind '"\e\C-g":glob-expand-word'
+bind '"\C-q":unix-filename-rubout'
+
+# Readline macros
+bind '"\C-x\x27":"\x27\x27\C-b"'
+bind '"\C-x\"": "\"\"\C-b"'
+bind '"\C-x(": "()\C-b"'
+bind '"\C-x{": "{}\C-b  \C-b"'
+bind '"\C-x[": "[]\C-b"'
+bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
+bind '"\C-xq": "\eb\"\ef\""'
+bind '"\C-xu":"\eb\eu "'
+
 # Opts
 set -o ignoreeof
 set -o noclobber
@@ -72,38 +102,6 @@ alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'
 alias type='type -a'
 alias x='exit'
 alias xsc='xclip -selection clipboard'
-
-# Disable ^S ^Q
-stty -ixon -ixoff
-
-# Readline vars 
-bind 'set colored-completion-prefix on'
-bind 'set completion-display-width 0'
-bind 'set completion-query-items 75'
-bind 'set menu-complete-display-prefix on'
-bind 'set show-all-if-ambiguous on'
-
-# Readline cmds
-bind '"\e\C-b":shell-backward-word'
-bind '"\e\C-f":shell-forward-word'
-bind '"\C-[":character-search-backward'
-bind 'tab:menu-complete'
-bind '"\ep":glob-complete-word'
-bind 'space:magic-space'
-bind '"\e\C-g":glob-expand-word'
-bind '"\C-q":unix-filename-rubout'
-
-# Readline macros
-bind '"\C-x\x27":"\x27\x27\C-b"'
-bind '"\C-x(": "()\C-b"'
-bind '"\C-x/": "//\C-b"'
-bind '"\C-x:": "::\C-b"'
-bind '"\C-x[": "[]\C-b"'
-bind '"\C-x\"": "\"\"\C-b"'
-bind '"\C-x{": "{}\C-b  \C-b"'
-bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
-bind '"\C-xq": "\eb\"\ef\""'
-bind '"\C-xu":"\eb\eu "'
 
 # Source startup files
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
