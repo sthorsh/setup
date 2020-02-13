@@ -23,35 +23,24 @@ BASH/READLINE
   C-xp               readline macro: PATH=_...
   C-xq               readline macro: word_ → "word"_
   C-xu               readline macro: word_ → WORD _ 
----------------------------------
----------------------------------
-  A-c                cap word
+
+  A-c                capital word
   A-l                lowercase word
   A-u                uppercase word
-  C-t                transpose/drag char →
-  A-t                transpose/drag word → 
+  C-t                transpose/tug char →
+  A-t                transpose/tug word → 
 
   C-d                del char under cursor
-  C-h                del char bak (til venstre for) cursor
-  A-d                kill word foran (til høyre for) cursor
-  C-q                kill word bak cursor (unix-filename-rubout)
-  C-w                kill word bak cursor
+  A-d                kill word under cursor
   C-k                kill line under cursor
-  C-u                kill line bak cursor
-  C-y                yank kill-ring
-  A-y                rotate-and-yank kill-ring
-    
-  C-x C-u            undo
-  A-r                revert-line
-    
-  C-p                previous-history
-  C-n                next-history
-  C-o                operate-and-get-next
-  C-r C-[gjm]        reverse-search-history
-  C-s                search-history
-  A-.                yank 0..Nth OR last word
-  C-A-y              yank 1st OR 0..Nth word from prev line
+  C-h                del char before cursor
+  C-q                kill word before cursor
+  C-w                kill word before cursor
+  C-u                kill line before cursor
 
+  C-y [A-y ...]      yank [rotate] kill-ring
+
+---------------------------------    
   C-i                menu-complete $ ~ @ cmd /
   A-C-i              dynamic-complete-history
   A-{                complete-into-braces {}
@@ -61,16 +50,30 @@ BASH/READLINE
   Space              expand history event (magic-space)
   A-C-p              expand pattern
     
+  C-x C-u            undo
+  A-r                revert-line
+
   C-g                abort
   C-j                accept-line (lf, nix eol)
   C-m                accept-line (cr, mac eol)
-    
+---------------------------------    
+  C-d                eof
+
+  C-l                clear-screen
+
+  A-N                digit-argument
+
+  C-x C-e            edit-and-execute-command (vi)
+
   C-x (              start macro
   C-x )              end macro
   C-x e              execute macro
 
-  C-d                eof
-  C-l                clear-screen
-  A-N                digit-argument
-  
-  C-x C-e            edit-and-execute-command (vi)
+  C-p                previous-history
+  C-n                next-history
+  C-o                operate-and-get-next
+  C-r C-[gjm]        reverse-search-history
+  C-s                search-history
+  A-.                yank 0..Nth OR last word
+  C-A-y              yank 1st OR 0..Nth word from prev line
+
