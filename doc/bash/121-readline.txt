@@ -1,45 +1,42 @@
 READLINE
 
-    A-N                digit-argument
+  A-N                digit-argument
 
-    C-f                forward-char
-    A-f                forward-word
-    C-A-f              shell-forward-word
-    C-e                end-of-line
-    C-b                backward-char
-    A-b                backward-word
-    C-A-b              shell-backward-word
-    C-a                beginning-of-line
-    C-]                char-search
-    C-[                char-search-backward
-    C-@                set-mark
-    C-x C-x            exchange-point-and-mark
+  C-f                forward-char
+  A-f                forward-word
+  C-A-f              shell-forward-word
+  C-e                end-of-line
+  C-b                backward-char
+  A-b                backward-word
+  C-A-b              shell-backward-word
+  C-a                beginning-of-line
+  C-]                char-search
+  C-[                char-search-backward
+  C-@                set-mark
+  C-x C-x            exchange-point-and-mark
 
-    ...                self-insert
-    C-v                quoted-insert
+  ...                self-insert
+  C-v                quoted-insert
 
---- Fjerne C-x ? ---------------- 
-    C-x'               readline macro: ''
-    C-x"               readline macro: ""
-    C-x(               readline macro: ()
-    C-x{               readline macro: {}
-    C-x[               readline macro: []
-    C-xp               readline macro: PATH=_...
-    C-xq               readline macro: word_ → "word"_
-    C-xu               readline macro: word_ → WORD _
+  C-x'               ''
+  C-x"               ""
+  C-x(               ()
+  C-x{               {}
+  C-x[               []
+  C-xp               PATH=_...
+  C-xq               word_ → "word" _
+  C-xu               word_ → WORD _
 
----------------------------------
-    C-i                complete var: $ $_
-    C-i                complete tilde: $ ~_
-    C-i                complete host: $ host @_
-    C-i                complete cmd: $ a_
-    C-i                complete file: $ /_
-    A-{                complete braces: $ A-{
-    A-g                complete globbing: $ _
+  C-i                complete var: $ $_
+  C-i                complete tilde: $ ~_
+  C-i                complete host: $ host @_
+  C-i                complete cmd: $ a_
+  C-i                complete file: $ /_
+  A-{                complete braces: $ A-{
+  A-g                complete globbing: $ _
 
-    A-C-e              expand line
-    A-C-w              expand wildcard * ? []
-
+  A-C-e              expand line
+  A-C-w              expand wildcard: $ *_
 ---------------------------------
     A-c                capital word
     A-l                lowercase word
@@ -56,7 +53,6 @@ READLINE
     C-u                cut/kill line before cursor
 
     C-y [A-y ...]      paste/yank [rotate] kill-ring
-
 ---------------------------------
     C-x C-u            undo
     A-r                revert-line
@@ -69,7 +65,5 @@ READLINE
     A-m                end macro
     C-x e              execute macro
 ---------------------------------
-    C-l                clear-screen
     C-x C-e            edit-and-execute-command (vi)
-    C-d                terminal end-of-file ref $ stty -a
 
