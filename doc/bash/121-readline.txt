@@ -1,5 +1,7 @@
 READLINE
 
+  A-N                digit-argument
+
   C-f                forward-char
   A-f                forward-word
   C-A-f              shell-forward-word
@@ -15,59 +17,60 @@ READLINE
 
   ...                self-insert
   C-v                quoted-insert
-  C-x'               readline macro: ''
-  C-x"               readline macro: ""
-  C-x(               readline macro: ()
-  C-x{               readline macro: {}
-  C-x[               readline macro: []
-  C-xp               readline macro: PATH=_...
-  C-xq               readline macro: word_ → "word"_
-  C-xu               readline macro: word_ → WORD _ 
 
-  A-c                capital word
-  A-l                lowercase word
-  A-u                uppercase word
-  C-t                transpose/tug char →
-  A-t                transpose/tug word → 
+--------------------------------- Fjerne C-x?
+    C-x'               readline macro: ''
+    C-x"               readline macro: ""
+    C-x(               readline macro: ()
+    C-x{               readline macro: {}
+    C-x[               readline macro: []
+    C-xp               readline macro: PATH=_...
+    C-xq               readline macro: word_ → "word"_
+    C-xu               readline macro: word_ → WORD _
 
-  C-d                delete char under cursor
-  A-d                kill word under cursor
-  C-k                kill line under cursor
-  C-h                delete char before cursor
-  C-q                kill word before cursor
-  C-w                kill word before cursor
-  C-u                kill line before cursor
-
-  C-y [A-y ...]      yank [rotate] kill-ring
-
----------------------------------    
+---------------------------------
     C-i                complete var: $ $_
     C-i                complete tilde: $ ~_
     C-i                complete host: $ host @_
     C-i                complete cmd: $ a_
     C-i                complete file: $ /_
-    A-{                complete braces: $ Alt{
-    A-g                complete glob: $ _
+    A-{                complete braces: $ A-{
+    A-g                complete globbing: $ _
 
-  A-C-e              expand line
-  A-C-w              expand wildcard * ? []
-    
+    A-C-e              expand line
+    A-C-w              expand wildcard * ? []
+
+---------------------------------
+  A-c                capital word
+  A-l                lowercase word
+  A-u                uppercase word
+  C-t                tug/transpose char →
+  A-t                tug/transpose word →
+
+  C-d                delete char under cursor
+  A-d                cut/kill word under cursor 
+  C-k                cut/kill line under cursor 
+  C-h                delete char before cursor
+  C-q                cut/kill word before cursor
+  C-w                cut/kill word before cursor
+  C-u                cut/kill line before cursor
+
+  C-y [A-y ...]      paste/yank [rotate] kill-ring
+
+---------------------------------
   C-x C-u            undo
   A-r                revert-line
 
   C-g                abort
   C-j                accept-line (lf, nix eol)
   C-m                accept-line (cr, mac eol)
----------------------------------    
-  C-x (              start macro
-  C-x )              end macro
-  C-x e              execute macro
+---------------------------------
+  C-d                end of file (stty -a)
+---------------------------------
+    C-l                clear-screen
 
-  C-d                eof
+    C-x (              start macro
+    C-x )              end macro
+    C-x e              execute macro
 
-  C-l                clear-screen
-
-  A-N                digit-argument
-
-  C-x C-e            edit-and-execute-command (vi)
-
+    C-x C-e            edit-and-execute-command (vi)
