@@ -1,4 +1,4 @@
-BASH/READLINE
+READLINE
 
   C-f                forward-char
   A-f                forward-word
@@ -30,10 +30,10 @@ BASH/READLINE
   C-t                transpose/tug char →
   A-t                transpose/tug word → 
 
-  C-d                del char under cursor
+  C-d                delete char under cursor
   A-d                kill word under cursor
   C-k                kill line under cursor
-  C-h                del char before cursor
+  C-h                delete char before cursor
   C-q                kill word before cursor
   C-w                kill word before cursor
   C-u                kill line before cursor
@@ -41,14 +41,16 @@ BASH/READLINE
   C-y [A-y ...]      yank [rotate] kill-ring
 
 ---------------------------------    
-  C-i                menu-complete $ ~ @ cmd /
-  A-C-i              dynamic-complete-history
-  A-{                complete-into-braces {}
-  A-p                complete pattern * ? []
+    C-i                complete var: $ $_
+    C-i                complete tilde: $ ~_
+    C-i                complete host: $ host @_
+    C-i                complete cmd: $ a_
+    C-i                complete file: $ /_
+    A-{                complete braces: $ Alt{
+    A-g                complete glob: $ _
 
   A-C-e              expand line
-  Space              expand history event (magic-space)
-  A-C-p              expand pattern
+  A-C-w              expand wildcard * ? []
     
   C-x C-u            undo
   A-r                revert-line
@@ -57,6 +59,10 @@ BASH/READLINE
   C-j                accept-line (lf, nix eol)
   C-m                accept-line (cr, mac eol)
 ---------------------------------    
+  C-x (              start macro
+  C-x )              end macro
+  C-x e              execute macro
+
   C-d                eof
 
   C-l                clear-screen
@@ -64,16 +70,4 @@ BASH/READLINE
   A-N                digit-argument
 
   C-x C-e            edit-and-execute-command (vi)
-
-  C-x (              start macro
-  C-x )              end macro
-  C-x e              execute macro
-
-  C-p                previous-history
-  C-n                next-history
-  C-o                operate-and-get-next
-  C-r C-[gjm]        reverse-search-history
-  C-s                search-history
-  A-.                yank 0..Nth OR last word
-  C-A-y              yank 1st OR 0..Nth word from prev line
 

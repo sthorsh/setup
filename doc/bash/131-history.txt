@@ -1,4 +1,17 @@
-BASH/HISTORY
+HISTORY
+
+Readline
+  C-p                previous-history
+  C-n                next-history
+  C-o                operate-and-get-next
+  C-r C-[gjm]        reverse-search-history
+  C-s                search-history
+  A-.                yank 0..Nth OR last word
+  C-A-y              yank 1st OR 0..Nth word from prev line
+
+      A-C-i              dynamic-complete-history
+
+      Space              expand history event (magic-space)
 
 Event
   !N                    line N

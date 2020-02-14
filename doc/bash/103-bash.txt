@@ -32,3 +32,7 @@ Login ikke-interaktivt
 Ikke-login ikke-interaktivt
   Script
     
+Globbe/globbing
+  Globbe: en bash feature
+  Pattern: å globbe er å lage et pattern eg *.xml
+  Wildcard: et pattern kan inneholde wildcards * ? []
