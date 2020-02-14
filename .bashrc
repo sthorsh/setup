@@ -15,9 +15,10 @@ bind 'set show-all-if-ambiguous on'
 bind '"\e\C-f":shell-forward-word'
 bind '"\e\C-b":shell-backward-word'
 bind '"\C-[":character-search-backward'
-bind '"\C-q":unix-filename-rubout'
-#bind 'tab:menu-complete'
 bind '"\e\C-w":glob-expand-word'
+bind '"\C-q":unix-filename-rubout'
+bind '"\e\C-m":start-kbd-macro'
+bind '"\em":end-kbd-macro'
 bind 'space:magic-space'
 
 # Readline macros

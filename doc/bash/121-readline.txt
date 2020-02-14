@@ -1,24 +1,24 @@
 READLINE
 
-  A-N                digit-argument
+    A-N                digit-argument
 
-  C-f                forward-char
-  A-f                forward-word
-  C-A-f              shell-forward-word
-  C-e                end-of-line
-  C-b                backward-char
-  A-b                backward-word
-  C-A-b              shell-backward-word
-  C-a                beginning-of-line
-  C-]                char-search
-  C-[                char-search-backward
-  C-@                set-mark
-  C-x C-x            exchange-point-and-mark
+    C-f                forward-char
+    A-f                forward-word
+    C-A-f              shell-forward-word
+    C-e                end-of-line
+    C-b                backward-char
+    A-b                backward-word
+    C-A-b              shell-backward-word
+    C-a                beginning-of-line
+    C-]                char-search
+    C-[                char-search-backward
+    C-@                set-mark
+    C-x C-x            exchange-point-and-mark
 
-  ...                self-insert
-  C-v                quoted-insert
+    ...                self-insert
+    C-v                quoted-insert
 
---------------------------------- Fjerne C-x?
+--- Fjerne C-x ? ---------------- 
     C-x'               readline macro: ''
     C-x"               readline macro: ""
     C-x(               readline macro: ()
@@ -41,36 +41,35 @@ READLINE
     A-C-w              expand wildcard * ? []
 
 ---------------------------------
-  A-c                capital word
-  A-l                lowercase word
-  A-u                uppercase word
-  C-t                tug/transpose char →
-  A-t                tug/transpose word →
+    A-c                capital word
+    A-l                lowercase word
+    A-u                uppercase word
+    C-t                tug/transpose char →
+    A-t                tug/transpose word →
 
-  C-d                delete char under cursor
-  A-d                cut/kill word under cursor 
-  C-k                cut/kill line under cursor 
-  C-h                delete char before cursor
-  C-q                cut/kill word before cursor
-  C-w                cut/kill word before cursor
-  C-u                cut/kill line before cursor
+    C-d                delete char under cursor
+    A-d                cut/kill word under cursor 
+    C-k                cut/kill line under cursor 
+    C-h                delete char before cursor
+    C-q                cut/kill word before cursor
+    C-w                cut/kill word before cursor
+    C-u                cut/kill line before cursor
 
-  C-y [A-y ...]      paste/yank [rotate] kill-ring
+    C-y [A-y ...]      paste/yank [rotate] kill-ring
 
 ---------------------------------
-  C-x C-u            undo
-  A-r                revert-line
-
-  C-g                abort
-  C-j                accept-line (lf, nix eol)
-  C-m                accept-line (cr, mac eol)
+    C-x C-u            undo
+    A-r                revert-line
 ---------------------------------
-  C-d                end of file (stty -a)
+    C-g                abort
+    C-j                accept-line (lf, nix eol)
+    C-m                accept-line (cr, mac eol)
+---------------------------------
+    C-A-m              start macro
+    A-m                end macro
+    C-x e              execute macro
 ---------------------------------
     C-l                clear-screen
-
-    C-x (              start macro
-    C-x )              end macro
-    C-x e              execute macro
-
     C-x C-e            edit-and-execute-command (vi)
+    C-d                terminal end-of-file ref $ stty -a
+
