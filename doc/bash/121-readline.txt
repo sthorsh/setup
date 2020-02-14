@@ -38,7 +38,7 @@ READLINE
   A-C-e              expand line
   A-C-w              expand wildcard: $ *_
 ---------------------------------
-    A-c                capital word
+    A-c                capitalize word
     A-l                lowercase word
     A-u                uppercase word
     C-t                tug/transpose char →
