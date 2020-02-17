@@ -3,9 +3,9 @@ BUILTIN
 Opts
   $ set -o
   $ shopt
-
+  
 Params
-  -      options (read-only)
+  -      opts (read-only)
   $      pid bash (read-only)
   !      pid last bg job (read-only)
   ?      exit status last fg pipeline (read-only)
@@ -17,16 +17,17 @@ Params
   1      param 1
   ...
   {10}   param 10
+  
 
 Vars
   $ declare -p | grep -v _xspecs
 
 Alias
-  -
-
+  n/a
+  
 Funksjoner
   $ declare -F
-
+  
 Builtins
   $ enable -a
 

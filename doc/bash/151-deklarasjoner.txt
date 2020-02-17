@@ -1,34 +1,33 @@
 DEKLARASJONER
 
 Opts
-  -
+  n/a
 
 Params
-  -
+  n/a
 
 Vars
   $ name=value
-  $ name+=value               
-  $ declare name
-  $ declare -a array
-  $ declare -A map 
-  $ declare -i int            
-  $ declare -n ref
-  $ declare opts name=value   
-  $ export name               
-  $ export name=value         
-  $ local opts name           
-  $ local opts name=value     
-  $ unset name              
+  $ name+=value
+  $ declare -a name[=value]
+  $ declare -A name[=value]
+  $ declare -i name[=value]
+  $ declare -n name[=value]
+  $ declare -x name[=value]
+  $ export name
+  $ export name=value
+  $ local opts name
+  $ local opts name=value
+  $ unset name
 
 Alias
   $ alias
 
 Funksjoner
-  $ name() compound-command 
-  $ function name compound-command 
+  $ name() compound-command
+  $ function name compound-command
   $ function name() compound-command
-    
+
 Builtins
-  -
+  n/a
 

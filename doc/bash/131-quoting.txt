@@ -1,0 +1,42 @@
+QUOTING
+
+Quotes
+  \               alle tegn
+  ''              alle tegn unntatt '
+  ""              alle tegn unntatt \ " ! $
+  
+Metategn
+  space           
+  tab               
+  |               liste
+  ;               liste
+  &               liste
+  (               gruppe
+  )               gruppe
+  <               io
+  >               io
+  newline         readline
+    
+Spesialtegn
+  !               macro
+  #               kommentar
+  =               tilordning
+  {               gruppe
+  ~               $HOME
+  $               wildcard  
+  *               wildcard  
+  ?               wildcard  
+  [               wildcard  
+  %               jobspec
+  
+Regler
+  Quotes          må quotes
+  Metategn        må quotes
+  Spesialtegn     kontekstavhengig
+    
+find
+  find . -name PATTERN
+  
+grep
+  grep PATTERN file ...
+  
