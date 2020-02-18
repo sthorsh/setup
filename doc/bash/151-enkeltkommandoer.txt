@@ -12,7 +12,7 @@ Funksjon
 Builtin
   $ enable -a
 
-Binary
+Binary/ELF
 
 Script
 
