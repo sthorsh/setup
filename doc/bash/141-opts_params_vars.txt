@@ -17,17 +17,19 @@ Params
   1      param 1
   ...
   {10}   param 10
-  
 
 Vars
-  $ declare -p | grep -v _xspecs
-
-Alias
-  n/a
-  
-Funksjoner
-  $ declare -F
-  
-Builtins
-  $ enable -a
+  $ declare -p
+  $ name=value
+  $ name+=value
+  $ declare -a name[=value]
+  $ declare -A name[=value]
+  $ declare -i name[=value]
+  $ declare -n name[=value]
+  $ declare -x name[=value]
+  $ export name
+  $ export name=value
+  $ local opts name
+  $ local opts name=value
+  $ unset name
 

@@ -1,0 +1,18 @@
+EKSEKVERBAR
+
+Alias
+  $ alias
+
+Funksjon
+  $ declare -F
+  $ name() compound-command
+  $ function name compound-command
+  $ function name() compound-command
+
+Builtin
+  $ enable -a
+
+Binary
+
+Script
+
