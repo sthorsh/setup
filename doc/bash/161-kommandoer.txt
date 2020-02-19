@@ -1,47 +1,29 @@
-GRAMMATIKK
+KOMMANDOER
 
-Kommando
-  cmd [args] [redir]
-  name=val ... cmd [args] [redir]
-   
-Pipeline
-  [!] cmd [| cmd]... (duplikat kjøremiljø, pipeline → _en_ jobb)
-  [!] cmd [|& cmd]...
-   
-Liste            
-  pipeline [; pipeline]...  [; or & or \n]
-  pipeline [& pipeline]...  [; or & or \n] (duplikat kjøremiljø)
-  pipeline [&& pipeline]... [; or & or \n]
-  pipeline [|| pipeline]... [; or & or \n]
-   
-Sammensatte kommandoer
-  Uttrykk
-    ((arithmetic-expr))
-    [[ predicate-expr ]]                                   
+Kommandoer
+  [name=value]... cmd [args] [redir]              enkeltkommando
+       
+  [!] command [| command]...                      pipeline
+       
+  pipeline [; pipeline]...  [; or & or \n]        sekvensiell liste
+  pipeline [& pipeline]...  [; or & or \n]        asynkron liste
+  pipeline [&& pipeline]... [; or & or \n]        and-liste
+  pipeline [|| pipeline]... [; or & or \n]        or-liste
+       
+  ((expr))                                        eval aritmetisk uttrykk
+  [[ expr ]]                                      eval predikat
     
-  if               
-    if cmds; then cmds; ... fi
+  if commands; then commands; ... fi                
+  case word in pattern) commands ;;... esac         
+  select name in words; do commands; done           
+  
+  for name in words; do commands; done              
+  for (( expr; expr; expr )); do commands; done     
+  while commands; do commands; done                 
+  until commands; do commands; done                 
     
-  case             
-    case word in pattern) cmds ;;... esac
-    
-  select           
-    select name in words; do cmds; done
-    
-  for              
-    for name in words; do cmds; done
-    for (( expr; expr; expr )); do cmds; done
-    
-  while            
-    while cmds; do cmds; done
-    
-  until            
-    until cmds; do cmds; done
-    
-  Gruppe
-    ( list ) (duplikat kjøremiljø)                                     
-    { list; }
-    
-Coprosess        
-  coproc [name] cmd [redir] (duplikat kjøremiljø)
-    
+  ( list )                                        gruppe av liste av kommandoer
+  { list; }                                       gruppe av liste av kommandoer
+        
+  coproc [name] cmd [redir]                       coprocess
+      
