@@ -1,49 +1,27 @@
 ARITMETIKK
 
-Operatorer
-    id++ id--       post-inkr, post-dekr
-    ++id --id       pre-inkr, pre-dekr
-    - +             unær minus, unær pluss
+Bruk
+  declare -i name=expr
+  let expr
+  ((expr))
+  $((expr))
 
-    +          pluss
-    -          minus
-    *          gange
-    **         grunntall opphøyd-i eksponent
-    /          dele 
-    %          rest 
-    =          tilordning
-    +=         tilordning
-    -=         tilordning
-    *=         tilordning
-    /=         tilordning
-    %=         tilordning
-    <<=        tilordning
-    >>=        tilordning
-    &=         tilordning
-    ^=         tilordning
-    |=         tilordning
-    
-  Bit
-    <<         skift ←
-    >>         skift →
-    ~          not
-    &          and
-    |          or
-    ^          xor
-    
-  Sammenligning
-    ==         eq          
-    !=         ne          
-    <          lt          
-    >          gt          
-    <=         le            
-    >=         ge          
-    
-  Logiske
-    !          not
-    &&         and
-    ||         or
-    
-  Kondisjonal
-    ?:         ternær
-    
+Operatorer
+    ++ --           post-inkr, post-dekr
+    ++ --           pre-inkr, pre-dekr
+    + -             unær pluss og minus
+    ! ~             logisk og bitvis NOT
+    **              eksponent
+    * / %           gange, dele, rest
+    + -             pluss, minus
+    << >>           bitvis skift
+    < <= > >=       sammenligning
+    == !=           lik, ulik
+    &               bitvis AND
+    ^               bitvis XOR
+    |               bitvis OR
+    &&              logisk AND
+    ||              logisk OR
+    ?:              ternær
+    = += -= ...     tilordning
+
