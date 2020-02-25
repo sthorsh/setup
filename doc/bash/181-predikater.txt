@@ -1,11 +1,11 @@
 PREDIKATER
 
-Bruk
-  [ expr ] 
-  test expr
-  [[ expr ]]
-
-Operatorer
+  Bruk
+    [ expr ] 
+    test expr
+    [[ expr ]]
+  
+  Operatorer
     -o set-opt                    is on?
     
     -n $param                     is not empty?

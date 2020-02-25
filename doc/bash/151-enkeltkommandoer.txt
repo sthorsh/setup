@@ -1,4 +1,4 @@
-EKSEKVERBAR
+ENKELTKOMMANDOER
 
 Alias
   $ alias

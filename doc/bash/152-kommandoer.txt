@@ -1,29 +1,28 @@
 KOMMANDOER
 
 Kommandoer
-  [name=value]... cmd [args] [redir]              enkeltkommando
-       
-  [!] command [| command]...                      pipeline
-       
-  pipeline [; pipeline]...  [; or & or \n]        sekvensiell liste
-  pipeline [& pipeline]...  [; or & or \n]        asynkron liste
-  pipeline [&& pipeline]... [; or & or \n]        and-liste
-  pipeline [|| pipeline]... [; or & or \n]        or-liste
-       
-  ((expr))                                        eval aritmetisk uttrykk
-  [[ expr ]]                                      eval predikat
-    
-  if commands; then commands; ... fi                
-  case word in pattern) commands ;;... esac         
-  select name in words; do commands; done           
-  
-  for name in words; do commands; done              
-  for (( expr; expr; expr )); do commands; done     
-  while commands; do commands; done                 
-  until commands; do commands; done                 
-    
-  ( list )                                        gruppe av liste av kommandoer
-  { list; }                                       gruppe av liste av kommandoer
-        
-  coproc [name] cmd [redir]                       coprocess
-      
+  [name=value]... cmd [args] [redir]           enkeltkommando
+
+  [!] command [| command]...                   pipeline
+
+  pipeline [; pipeline]...  [; or & or \n]     sekvensiell liste
+  pipeline [& pipeline]...  [; or & or \n]     asynkron liste
+  pipeline [&& pipeline]... [; or & or \n]     og-liste
+  pipeline [|| pipeline]... [; or & or \n]     eller-liste
+
+  ((expr))                                     help "(("
+  [[ expr ]]                                   help [[
+
+  if                                           help if
+  case                                         help case
+  select                                       help select
+
+  for                                          help for
+  while                                        help while
+  until                                        help until
+
+  ( list )                                     gruppe
+  { list; }                                    gruppe
+
+  coproc [name] cmd [redir]                    coprocess
+

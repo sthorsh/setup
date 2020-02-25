@@ -1,4 +1,4 @@
-BUILTIN
+DATA
 
 Opts
   $ set -o

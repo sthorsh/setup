@@ -1,12 +1,12 @@
 ARITMETIKK
 
-Bruk
-  declare -i name=expr
-  let expr
-  ((expr))
-  $((expr))
+  Bruk
+    declare -i name=expr
+    let expr
+    ((expr))
+    $((expr))
 
-Operatorer
+  Operatorer
     ++ --           post-inkr, post-dekr
     ++ --           pre-inkr, pre-dekr
     + -             unær pluss og minus
