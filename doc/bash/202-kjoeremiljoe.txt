@@ -1,6 +1,8 @@
 KJØREMILJØ
 
 Current
+  $ cmd
+  ...
   Opts
   Params
   Vars
@@ -13,6 +15,12 @@ Current
   Åpne filer
 
 Duplikat: subskall
+  $ cmd [| cmd]...
+  $ pipeline [& pipeline]...
+  $ ( list  )
+  $ coproc [name] cmd [redir]
+  $ $(command)
+  ...
   Opts: dup, isolert
   Params: dup, isolert
   Vars: dup, isolert
@@ -25,7 +33,11 @@ Duplikat: subskall
   Åpne filer: dup, isolert
 
 Separat: reinitialisert subskall
-  Opts: reinit, isolert
+  $ myscript
+  $ ./myscript
+  $ bash myscript
+  ...
+  Opts: reint, isolert
   Params: reinit, isolert
   Vars: export, isolert (miljøvariabler)
   Alias: reinit, isolert

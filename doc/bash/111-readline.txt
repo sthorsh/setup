@@ -34,7 +34,7 @@ READLINE
   A-C-i                          complete history: $ _
 
   A-C-e                          expand macros
-  A-C-w                          expand wildcard: $ *_
+  A-C-g                          glob ie expand pattern containing wildcard * ? []
 
   C-f                            forward-char
   A-f                            forward-word

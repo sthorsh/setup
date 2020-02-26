@@ -1,7 +1,10 @@
 JOBBKONTROLL
 
-Builtins
-  jobs [jobspec]
+Jobb
+  Hver pipeline → _en_ jobb 
+
+Builthins
+  jobs [jobspec]          
   kill [-sigspec] jobspec|pid
   ...
 

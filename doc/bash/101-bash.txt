@@ -31,19 +31,4 @@ Login ikke-interaktivt
 
 Ikke-login ikke-interaktivt
   Script
-    
-Globbing
-  Globbe: bash feature
-  Pattern: å globbe er å lage et pattern eg *.xml
-  Wildcard: et pattern kan inneholde wildcards * ? []
-
-Pipeline/jobs
-  For hver pipeline: skallet oppretter _en_ jobb
-
-Duplisert kjøremiljø
-  cmd [| cmd]... 
-  pipeline [& pipeline]... 
-  ( list ) 
-  coproc [name] cmd [redir] 
-  $(command)                
 
