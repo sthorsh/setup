@@ -1,3 +1,18 @@
+ENKELTKOMMANDOER
+
+  Alias
+    $ alias
+  
+  Funksjon
+    $ declare -F
+  
+  Builtin
+    $ enable -a
+  
+  Binary/ELF
+  
+  Script
+  
 KOMMANDOER
 
 Kommandoer
@@ -26,3 +41,6 @@ Kommandoer
 
   coproc [name] cmd [redir]                    coprocess
 
+  name() compound-command
+  function name compound-command
+  function name() compound-command
