@@ -1,49 +1,49 @@
 MAKROER
 
-    s₁{str₁,...}s₂            s₁str₁s₂,...
-    s₁{N₁..N₂..N₃}s₂          s₁N₁s₂,...
-    s₁{char₁..char₂..N}s₂     s₁char₁s₂,...
+  s₁{str₁,...}s₂            s₁str₁s₂,...
+  s₁{N₁..N₂..N₃}s₂          s₁N₁s₂,...
+  s₁{char₁..char₂..N}s₂     s₁char₁s₂,...
 
-    ~                         $HOME
-    ~user                     $HOME of user
-    ~+                        $PWD
-    ~-                        $OLDPWD
+  ~                         $HOME
+  ~user                     $HOME of user
+  ~+                        $PWD
+  ~-                        $OLDPWD
 
-    $param                    value or $value
-    ${param}                  value or $value
-    ${!param}                 ${value} or name referenced
-    ${#param}                 length of value
-    ${!prefix*}               names of variables
-    ${!prefix@}               names of variables
-    ${!array[*]}              array indices/keys
-    ${!array[@]}              array indices/keys
-    ${param^[^]}              upcase value [all]
-    ${param,[,]}              lowcase value [all]
-    ${param:-word}            value or word
-    ${param:=word}            value or word (param=word)
-    ${param:?word}            value or word (write to stderr)
-    ${param:+word}            word or null
-    ${param:N₁:N₂}            substring of value
-    ${param#pattern}          value w/leading match deleted
-    ${param##pattern}         value w/longest leading match deleted
-    ${param%pattern}          value w/trailing match deleted
-    ${param%%pattern}         value w/longest trailing match deleted
-    ${param/pattern/str}      value w/match replaced
-    ${param//pattern/str}     value w/matches replaced
-    ${param@A|a|E|P|Q}        assign|attrs|escape|prompt|quoted
+  $param                    value
+  ${param}                  value
+  ${!param}                 reference
+  ${#param}                 length
+  ${!prefix*}               variable names
+  ${!prefix@}               variable names
+  ${!array[*]}              array indices/keys
+  ${!array[@]}              array indices/keys
+  ${param^[^]}              uppercase char[s]
+  ${param,[,]}              lowercase char[s]
+  ${param:-word}            value or word
+  ${param:=word}            value or word (param=word)
+  ${param:?word}            value or word (write to stderr)
+  ${param:+word}            word or null
+  ${param:N₁:N₂}            substring
+  ${param/pattern/str}      replace match
+  ${param//pattern/str}     replace matches
+  ${param#pattern}          delete leading match
+  ${param##pattern}         delete longest leading match
+  ${param%pattern}          delete trailing match 
+  ${param%%pattern}         delete longest trailing match
+  ${param@A|a|E|P|Q}        assign|attrs|escape|prompt|quoted
 
-    $(command)                exec command; replace macro with stdout (duplikat kjøremiljø)
+  $(cmd)                    cmd stdout
 
-    $((aritmetic-expr))       eval arithmetic expr; replace macro with result
+  $((expr))                 arithmetic expr result
 
-    <(list)                   run list; input appears as filename
-    >(list)                   run list; output appears as filename
+  <(list)                   filedescriptor
+  >(list)                   filedescriptor
 
-    *                         file-/dirnames
-    **/*                      file-/dirnames recursively
-    **/*/                     dirnames recursively
-    ?                         any char
-    [abc]                     a or b or c
-    [!abc]                    anything but a or b or c
-    [a-cx-z]                  range
-    [[:class:]]               e.g [[:alnum:]]
+  *                         file-/dirnames
+  **/*                      file-/dirnames recursively
+  **/*/                     dirnames recursively
+  ?                         any char
+  [abc]                     a or b or c
+  [!abc]                    anything but a or b or c
+  [a-cx-z]                  range
+  [[:class:]]               e.g [[:alnum:]]
