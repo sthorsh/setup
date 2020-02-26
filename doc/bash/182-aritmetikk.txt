@@ -1,27 +1,27 @@
 ARITMETIKK
 
-  Bruk
-    declare -i name=expr
-    let expr
-    ((expr))
-    $((expr))
+Bruk
+  declare -i name=expr
+  let expr
+  ((expr))
+  $((expr))
 
-  Operatorer
-    ++ --           post-inkr, post-dekr
-    ++ --           pre-inkr, pre-dekr
-    + -             unær pluss og minus
-    ! ~             logisk og bitvis NOT
-    **              eksponent
-    * / %           gange, dele, rest
-    + -             pluss, minus
-    << >>           bitvis skift
-    < <= > >=       sammenligning
-    == !=           lik, ulik
-    &               bitvis AND
-    ^               bitvis XOR
-    |               bitvis OR
-    &&              logisk AND
-    ||              logisk OR
-    ?:              ternær
-    = += -= ...     tilordning
+Operatorer
+  ++ --           post-inkr, post-dekr
+  ++ --           pre-inkr, pre-dekr
+  + -             unær pluss og minus
+  ! ~             logisk og bitvis NOT
+  **              eksponent
+  * / %           gange, dele, rest
+  + -             pluss, minus
+  << >>           bitvis skift
+  < <= > >=       sammenligning
+  == !=           lik, ulik
+  &               bitvis AND
+  ^               bitvis XOR
+  |               bitvis OR
+  &&              logisk AND
+  ||              logisk OR
+  ?:              ternær
+  = += -= ...     tilordning
 

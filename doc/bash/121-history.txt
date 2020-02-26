@@ -1,6 +1,6 @@
 HISTORY
 
-Macro
+Makro
   !N              line N
   !!              previous line
   !word           line starting with word
