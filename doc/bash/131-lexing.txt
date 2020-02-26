@@ -1,0 +1,58 @@
+LEXING
+
+Tegn
+  a-z        
+  A-Z        
+  0-9        
+  
+Metategn
+  space      
+  tab        
+  |         
+  ;         
+  &         
+  (         
+  )         
+  <         
+  >         
+  newline   
+      
+Spesialtegn
+  #          
+  =          
+  ~          
+  $          
+  *          
+  ?          
+  [          
+  %          
+    
+Sitattegn
+    \        for alle tegn
+    ''       for alle tegn unntatt '; for $ find -name '...'; for $ grep '...' files
+    ""       for alle tegn unntatt \ " ! $; for $ find -name '...'; for $ grep '...' files
+    
+Nøkkelord
+  ! 
+  [[ 
+  ]]
+  { 
+  } 
+  function
+  if
+  then
+  else
+  elif
+  fi
+  case
+  esac
+  select
+  for 
+  in 
+  while 
+  until 
+  do 
+  done
+  coproc
+  time
+  
