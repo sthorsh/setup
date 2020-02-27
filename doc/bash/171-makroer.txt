@@ -27,18 +27,18 @@ MAKROER
   ${var%%pattern}         delete longest trailing
   ...
 
-    $(cmd)                    cmd stdout
+  $(cmd)                    exec cmd → output
 
-    $((expr))                 arithmetic expr result
+  $((expr))                 eval arithmetic expr → value
 
-    <(list)                   filedescriptor
-    >(list)                   filedescriptor
+  <(list)                   /dev/fd/NN
+  >(list)                   /dev/fd/NN
 
-    *                         file-/dirnames
-    **/*                      file-/dirnames recursively
-    **/*/                     dirnames recursively
-    ?                         any char
-    [abc]                     a or b or c
-    [!abc]                    anything but a or b or c
-    [a-cx-z]                  range
-    [[:class:]]               e.g [[:alnum:]]
+  *                         dir-/filenames
+  **/*/                     dirnames recursively
+  **/*                      dir-/filenames recursively
+  ?                         any char
+  [c₁c₂c₃...]               c₁ or c₂ or c₃ ...
+  [!c₁c₂c₃...]              anything but c₁ or c₂ or c₃ ...
+  [c₁-c₂c₃-c₄]              range
+  [[:class:]]               e.g [[:alnum:]]
