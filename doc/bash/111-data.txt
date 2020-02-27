@@ -20,16 +20,21 @@ Params
 
 Vars
   $ declare -p
+  
   $ name=value
   $ name+=value
+  
   $ declare -a name[=value]
   $ declare -A name[=value]
   $ declare -i name[=value]
   $ declare -n name[=value]
   $ declare -x name[=value]
+
   $ export name
   $ export name=value
+
   $ local opts name
   $ local opts name=value
+
   $ unset name
 
