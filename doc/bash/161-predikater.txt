@@ -1,7 +1,7 @@
 PREDIKATER
 
 Bruk
-  [ expr ] 
+  [ expr ]                      synonym for test
   test expr
   [[ expr ]]
   
