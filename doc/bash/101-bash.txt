@@ -11,24 +11,19 @@ opt₁
   --verbose
 
 opt₂
-  -i ($ echo $-)
-  -l ($ shopt login_shell)
+  -l ($0 → -bash)
+  -i ($- → ..i..)
   ±o set_opt
   ±O shopt_opt
 
-Login interaktivt
-  tty, tmux, ssh
-  Globalt: /etc/profile
-  Per-bruker: ~/.bash_profile
+Typer
+  tty, tmux, ssh → login interaktivt (li)
+  ssh → login ikke-interaktivt (l-)
+  gnome-terminal → ikke-login interaktivt (-i)
+  script → ikke-login ikke-interaktivt (--)
 
-Ikke-login interaktivt
-  gnome-terminal
-  Globalt: /etc/bash.bashrc
-  Per-bruker: ~/.bashrc
-
-Login ikke-interaktivt
-  ?
-
-Ikke-login ikke-interaktivt
-  Script
-
+Konfigurasjon
+  li: /etc/profile; ~/.bash_profile
+  l-: /etc/profile; ~/.bash_profile
+  -i: /etc/bash.bashrc; ~/.bashrc
+  --: n/a

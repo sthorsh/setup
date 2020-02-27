@@ -1,3 +1,4 @@
+echo ~/.bashrc
 # Stop if not interactive
 [[ $- != *i*  ]] && return
 
