@@ -1,0 +1,35 @@
+KOMMANDO
+
+Kommando
+  $ alias
+  $ function
+  $ builtin
+  $ binary
+  $ script
+
+Kommandoer
+  [var=val]... cmd [args] [redir]        kommando
+
+  [!] command [| command]...             pipeline
+
+  pipeline [; pipeline]...  [;&]\n       liste
+  pipeline [& pipeline]...  [;&]\n       asynkron liste
+  pipeline [&& pipeline]... [;&]\n       og-liste
+  pipeline [|| pipeline]... [;&]\n       el-liste
+
+  if                                     help if
+  case                                   help case
+  select                                 help select
+  for                                    help for
+  while                                  help while
+  until                                  help until
+
+  [[ expr ]]                             eval predikat: exit status 0, 1
+  (( expr ))                             eval aritmetisk expr: exit status 0, 1
+
+  { list; } [redir]                      gruppe
+  ( list )  [redir]                      subskallgruppe
+
+  name() compound-command                funksjon
+  function name compound-command         funksjon; kun {}
+  function name() compound-command       funksjon 

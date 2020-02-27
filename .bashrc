@@ -19,7 +19,6 @@ bind '"\e\C-g":glob-expand-word'
 bind '"\C-q":unix-filename-rubout'
 bind '"\e\C-m":start-kbd-macro'
 bind '"\em":end-kbd-macro'
-bind 'space:magic-space'
 
 # Readline macros
 bind '"\C-x\x27":"\x27\x27\C-b"'
