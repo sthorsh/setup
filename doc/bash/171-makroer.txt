@@ -1,49 +1,44 @@
 MAKROER
 
-  s₁{str₁,...}s₂            s₁str₁s₂,...
-  s₁{N₁..N₂..N₃}s₂          s₁N₁s₂,...
-  s₁{char₁..char₂..N}s₂     s₁char₁s₂,...
+  {str₁,...}              str₁ ...
+  {N₁..N₂..N₃}            N₁ ... N₂
+  {char₁..char₂..N}       char₁ ... char₂
 
-  ~                         $HOME
-  ~user                     $HOME of user
-  ~+                        $PWD
-  ~-                        $OLDPWD
+  ~                       $HOME
+  ~user                   $HOME of user
+  ...
 
-  $param                    value
-  ${param}                  value
-  ${!param}                 reference
-  ${#param}                 length
-  ${!prefix*}               variable names
-  ${!prefix@}               variable names
-  ${!array[*]}              array indices/keys
-  ${!array[@]}              array indices/keys
-  ${param^[^]}              uppercase char[s]
-  ${param,[,]}              lowercase char[s]
-  ${param:-word}            value or word
-  ${param:=word}            value or word (param=word)
-  ${param:?word}            value or word (write to stderr)
-  ${param:+word}            word or null
-  ${param:N₁:N₂}            substring
-  ${param/pattern/str}      replace match
-  ${param//pattern/str}     replace matches
-  ${param#pattern}          delete leading match
-  ${param##pattern}         delete longest leading match
-  ${param%pattern}          delete trailing match 
-  ${param%%pattern}         delete longest trailing match
-  ${param@A|a|E|P|Q}        assign|attrs|escape|prompt|quoted
+  $var                    value
+  ${var}                  value
+  ${var[*]}               array values
+  ${!var[*]}              array indexes or keys
+  ${#var}                 length
+  ${var^[^]}              uppercase
+  ${var,[,]}              lowercase
+  ${var:+word}            null or word
+  ${var:-word}            word or value
+  ${var:=word}            word or value (var=word)
+  ${var:N₁:N₂}            substring
+  ${var/pattern/str}      replace
+  ${var//pattern/str}     replace all
+  ${var#pattern}          delete leading
+  ${var##pattern}         delete longest leading
+  ${var%pattern}          delete trailing
+  ${var%%pattern}         delete longest trailing
+  ...
 
-  $(cmd)                    cmd stdout
+    $(cmd)                    cmd stdout
 
-  $((expr))                 arithmetic expr result
+    $((expr))                 arithmetic expr result
 
-  <(list)                   filedescriptor
-  >(list)                   filedescriptor
+    <(list)                   filedescriptor
+    >(list)                   filedescriptor
 
-  *                         file-/dirnames
-  **/*                      file-/dirnames recursively
-  **/*/                     dirnames recursively
-  ?                         any char
-  [abc]                     a or b or c
-  [!abc]                    anything but a or b or c
-  [a-cx-z]                  range
-  [[:class:]]               e.g [[:alnum:]]
+    *                         file-/dirnames
+    **/*                      file-/dirnames recursively
+    **/*/                     dirnames recursively
+    ?                         any char
+    [abc]                     a or b or c
+    [!abc]                    anything but a or b or c
+    [a-cx-z]                  range
+    [[:class:]]               e.g [[:alnum:]]
