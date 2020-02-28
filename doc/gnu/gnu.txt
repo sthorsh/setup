@@ -1,4 +1,4 @@
-FILTERS
+GNU
 
 cat       --number
           --show-all
@@ -75,7 +75,4 @@ uniq      --count
           --skip-fields=N
           --unique
 
-wc        --bytes
-          --chars
-          --lines
-          --words
+wc        --bytes --chars --lines --words
