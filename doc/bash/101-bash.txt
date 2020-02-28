@@ -11,20 +11,30 @@ opt₁
   --verbose
 
 opt₂
-  -l $0 → -bash
-  -i $- → ..i..
+  -l ($0: -bash)
+  -i ($-: i)
   ±o set_opt
-  ±O shopt_opt
+  ±O shopt_opt  
 
-Kombinasjoner
-  Login interaktivt (li): tty, tmux, ssh
-  Login ikke-interaktivt (l-): ssh ...
-  Ikke-login interaktivt (-i): gnome-terminal
-  Ikke-login ikke-interaktivt (--): binary, script, ssh host cmd
+Login interaktivt
+  tty3-6 
+  $ tmux
+  $ ssh sit4
+  ⟳ /etc/profile
+  ⟳ ~/.bash_profile
 
-Konfigurasjon
-  li: /etc/profile; ~/.bash_profile
-  l-: /etc/profile; ~/.bash_profile
-  -i: /etc/bash.bashrc; ~/.bashrc
-  --: -
+Login ikke-interaktivt
+  $ ssh ...
+  ⟳ /etc/profile
+  ⟳ ~/.bash_profile
+
+Ikke-login interaktivt
+  $ gnome-terminal
+  ⟳ /etc/bash.bashrc
+  ⟳ ~/.bashrc
+
+Ikke-login ikke-interaktivt
+  $ binary
+  $ script
+  $ ssh sit4 cmd
 

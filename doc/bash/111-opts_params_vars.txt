@@ -5,31 +5,30 @@ Opts
   $ shopt
   
 Params
-  -      opts (read-only)
-  $      pid bash (read-only)
-  !      pid last bg job (read-only)
-  ?      exit status last fg pipeline (read-only)
-  #      positional param count (read-only)
-  *      positional params 1... (read-only)
-  @      positional params 1... (read-only)
-  _      name shell OR name script OR last arg last fg cmd OR ... (read-only)
-  0      name shell OR name script
-  1      param 1
-  ...
-  {10}   param 10
+  -      opts (ro)
+  $      bash pid (ro)
+  ?      last fg pipeline exit status (ro)
+  !      last bg job pid (ro)
+  *      pos params (ro)
+  #      pos params count (ro)
+  _      name shell or ... (ro)
+  0      name shell or ... (rw)
+  1      pos param 1 (rw)
+  {10}   pos param 10 (rw)
 
 Vars
-  $ declare -p
-  
   $ name=value
   $ name+=value
   
+  $ declare -p
+  $ declare -p name
   $ declare -a name[=value]
   $ declare -A name[=value]
   $ declare -i name[=value]
   $ declare -n name[=value]
   $ declare -x name[=value]
 
+  $ export
   $ export name
   $ export name=value
 

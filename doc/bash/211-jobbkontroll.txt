@@ -1,35 +1,32 @@
 JOBBKONTROLL
 
-Jobb
-  Hver pipeline → _en_ jobb 
-
 Builtins
-  jobs [jobspec]          
-  kill [-sigspec] jobspec|pid
+  jobs        $ jobs [jobspec] (hver pipeline → en jobb)
+  kill        $ kill [-sigspec] jobspec|pid
   ...
 
 stty -a
-  ctrl-c    sigint
-  ctrl-z    sigtstp (suspend)
+  ctrl-c      sigint
+  ctrl-z      sigtstp (suspend)
   ...
 
 jobspec
-  %         current job
-  %%        current job
-  %+        current job
-  %-        previous job
-  %N        job N
-  %str      cmd name prefix
-  %?str     cmd line substring
+  %           current job
+  %%          current job
+  %+          current job
+  %-          previous job
+  %N          job N
+  %str        cmd name prefix
+  %?str       cmd line substring
 
 sigspec
-   1        sighup|hup
-   2        sigint|int
-   3        sigquit|quit
-   6        sigabrt|abrt
-   9        sigkill|kill
-  15        sigterm|term
-  18        sigcont|cont
-  20        sigtstp|tstp
+   1          sighup|hup
+   2          sigint|int
+   3          sigquit|quit
+   6          sigabrt|abrt
+   9          sigkill|kill
+  15          sigterm|term
+  18          sigcont|cont
+  20          sigtstp|tstp
   ...
 
