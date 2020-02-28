@@ -1,35 +1,5 @@
-echo ~/.bashrc
 # Stop if not interactive
 [[ $- != *i*  ]] && return
-
-# Disable ^S ^Q
-stty -ixon -ixoff
-
-# Readline vars 
-bind 'set colored-completion-prefix on'
-bind 'set completion-display-width 0'
-bind 'set completion-query-items 75'
-bind 'set menu-complete-display-prefix on'
-bind 'set show-all-if-ambiguous on'
-
-# Readline cmds
-bind '"\e\C-f":shell-forward-word'
-bind '"\e\C-b":shell-backward-word'
-bind '"\C-[":character-search-backward'
-bind '"\e\C-g":glob-expand-word'
-bind '"\C-q":unix-filename-rubout'
-bind '"\e\C-m":start-kbd-macro'
-bind '"\em":end-kbd-macro'
-
-# Readline macros
-bind '"\C-x\x27":"\x27\x27\C-b"'
-bind '"\C-x\"": "\"\"\C-b"'
-bind '"\C-x(": "()\C-b"'
-bind '"\C-x{": "{}\C-b  \C-b"'
-bind '"\C-x[": "[]\C-b"'
-bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
-bind '"\C-xq": "\eb\"\ef\" "'
-bind '"\C-xu":"\eb\eu "'
 
 # Opts
 set -o ignoreeof
@@ -76,6 +46,35 @@ if [ "$color_prompt" != yes ]; then
     fi
 fi
 unset color_prompt
+
+# Disable ^S ^Q
+stty -ixon -ixoff
+
+# Readline vars 
+bind 'set colored-completion-prefix on'
+bind 'set completion-display-width 0'
+bind 'set completion-query-items 75'
+bind 'set menu-complete-display-prefix on'
+bind 'set show-all-if-ambiguous on'
+
+# Readline cmds
+bind '"\e\C-f":shell-forward-word'
+bind '"\e\C-b":shell-backward-word'
+bind '"\C-[":character-search-backward'
+bind '"\e\C-g":glob-expand-word'
+bind '"\C-q":unix-filename-rubout'
+bind '"\e\C-m":start-kbd-macro'
+bind '"\em":end-kbd-macro'
+
+# Readline macros
+bind '"\C-x\x27":"\x27\x27\C-b"'
+bind '"\C-x\"": "\"\"\C-b"'
+bind '"\C-x(": "()\C-b"'
+bind '"\C-x{": "{}\C-b  \C-b"'
+bind '"\C-x[": "[]\C-b"'
+bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
+bind '"\C-xq": "\eb\"\ef\" "'
+bind '"\C-xu":"\eb\eu "'
 
 # Aliases
 alias awkde="cat ~/doc/awk/exp.txt"
