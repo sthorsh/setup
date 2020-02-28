@@ -1,11 +1,10 @@
 ARITMETIKK
 
 Bruk
-  declare -i name=expr
-  let expr
-  ((expr))                  synonym for let
-  $((expr))
-
+  $ declare -i var=expr     eval og tilordne
+  $ ((expr))                eval og exit status 0 1; synonym $ let expr
+  $ $((expr))               eval og ekspandere
+  
 Operatorer
   ++ --                     post-inkr, post-dekr
   ++ --                     pre-inkr, pre-dekr
