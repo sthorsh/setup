@@ -1,0 +1,42 @@
+TEGN
+
+Tegn
+  a-z        
+  A-Z        
+  0-9        
+  
+Metategn
+  space      
+  tab        
+  |         
+  ;         
+  &         
+  (         
+  )         
+  <         
+  >         
+  newline   
+      
+Spesialtegn
+  #          
+  =          
+  ~          
+  $          
+  *          
+  ?          
+  [          
+  %          
+    
+Sitattegn
+  \    alle tegn
+  ''   alle tegn unntatt '
+  ""   alle tegn unntatt \ " ! $
+
+find
+  $ find -name '...'
+  $ find -name "..."
+
+grep
+  $ grep '...' files
+  $ grep "..." files
+    

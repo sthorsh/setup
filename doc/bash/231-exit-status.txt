@@ -1,6 +1,5 @@
 EXIT STATUS
 
-Exit status
     0  success
     1  no such file or directory
     2  syntax error e.g invalid option

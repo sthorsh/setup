@@ -1,4 +1,4 @@
-OMDIRIGERING
+OMDIRIGERINGER
 
 Operatorer
   <                   input redirect operator 

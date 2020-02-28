@@ -1,4 +1,4 @@
-MILJØ
+MILJØET
 
 declare
   declare -x                    vis miljøvars

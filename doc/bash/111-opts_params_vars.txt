@@ -1,4 +1,4 @@
-DATA
+OPTS/PARAMS/VARS
 
 Opts
   $ set -o

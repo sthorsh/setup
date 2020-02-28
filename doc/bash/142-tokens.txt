@@ -1,0 +1,52 @@
+TOKENS
+
+Token
+  Ord: ingen unquoted metategn
+  Operator: ≥1 unquoted metategn
+
+Nøkkelord
+  ! 
+  [[ 
+  ]]
+  { 
+  } 
+  function
+  if
+  then
+  else
+  elif
+  fi
+  case
+  esac
+  select
+  for 
+  in 
+  while 
+  until 
+  do 
+  done
+  coproc
+  time
+
+Navn
+  [_a-zA-Z][_a-zA-Z0-9]*
+
+Kontrolloperatorer
+  |
+  |&
+  ;
+  &
+  &&
+  ||
+  ;;
+  ;&
+  ;;&
+  (
+  )
+  newline
+
+Omdirigeringsoperatorer
+  <
+  >
+  <>
+  ...

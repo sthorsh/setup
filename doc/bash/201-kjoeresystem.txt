@@ -43,7 +43,7 @@ Kjøresystem
       Hvis <navn> er script
         bash₁ fork bash₂: separat kjøremiljø
         bash₁ wait
-        bash₂ exec[ve]: kjører script
+        bash₂ exec[ve]: kjører script (OS cmd exec mekanisme)
         bash₂ exit
   ...
   Exit: "No such file or directory"
