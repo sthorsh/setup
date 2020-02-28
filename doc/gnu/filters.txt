@@ -37,6 +37,8 @@ nl        --body-numbering=a|n
           --starting-line-number=N
           --number-width=N
 
+seq       ...
+
 sort      --field-separator=:
           --key=field[.char][opts] ...
           --dictionary-order (-d)
