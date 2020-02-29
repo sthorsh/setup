@@ -265,3 +265,6 @@ echo "installation done..."
 # echo \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
 # curl -u "user" --data \'{\"title\":\"${label}\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"\}\' https://api.github.com/user/keys
 
+# Install cheat
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-use-command-line-cheat-sheets-on-ubuntu-14-04
+

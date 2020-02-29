@@ -1,34 +1,32 @@
 GNU
 
-cat       --number
-          --show-all
-          --squeeze-blank
+$ cmd --
+$ cmd --TAB
+$ cmd --help
+$ cmd --version
+$ man cmd
+$ info cmd
+$ cheat cmd
+$ tldr cmd
+$ google-chrome www.gnu.org/software/coreutils/cmd
 
-cut       --delimiter=:
-          --fields=1|1,2,...|1-3
-          --bytes=1|1,2,...|1-3
-          --characters=1|1,2,...|1-3
-          --complement
-          --only-delimited
-          --output-delimiter=char
+coreutils 8.28
+  cat       
+  cut
+  expand        tabs → spaces
+  head
 
-dc        --expression "1 2 + p"
-
-expand    --initial
-
-head      --bytes=N
-          --lines=N
-
-join      -t :          field separator
-          -j N          join on field N
-          -1 N₁         join on file 1 field N₁
-          -2 N₂         join on file 2 field N₂
-          -i            ignore-case
-          -a 1 -a 2     output also unpaired
-          -v 1 -v 2     output only unpaired
-          -e -          empty char
-          -o N₁.N₂,...  e.g join -t: -a1 -a2 -e'-' -o 1.1,... file₁ file₂
-    
+---------------------------------------------------
+  join      -t :          field separator
+            -j N          join on field N
+            -1 N₁         join on file 1 field N₁
+            -2 N₂         join on file 2 field N₂
+            -i            ignore-case
+            -a 1 -a 2     output also unpaired
+            -v 1 -v 2     output only unpaired
+            -e -          empty char
+            -o N₁.N₂,...  e.g join -t: -a1 -a2 -e'-' -o 1.1,... file₁ file₂
+---------------------------------------------------
 nl        --body-numbering=a|n
           --line-increment=N
           --join-blank-lines=N
