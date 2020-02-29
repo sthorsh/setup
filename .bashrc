@@ -10,6 +10,7 @@ shopt -s histappend
 
 # Vars
 export AMQ_HOME=/usr/lib/apache-activemq
+export CHEATCOLORS=true
 export EDITOR=/usr/bin/vim
 export FOP_HOME="/usr/lib/fop/fop"
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
@@ -106,8 +107,9 @@ alias xsc='xclip -selection clipboard'
 
 # Source startup files
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
-[ -f ~/bin/bash_completion_mvn.sh ] && source ~/bin/bash_completion_mvn.sh
-[ -f ~/bin/bash_completion_tmux.sh ] && source ~/bin/bash_completion_tmux.sh
+[ -f ~/bin/completion/mvn.sh ] && source ~/bin/completion/mvn.sh
+[ -f ~/bin/completion/tmux.sh ] && source ~/bin/completion/tmux.sh
+[ -f ~/bin/completion/cheat.bash ] && source ~/bin/completion/cheat.bash
 
 # Start programs
 ! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa_git )

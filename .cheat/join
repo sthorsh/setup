@@ -1,0 +1,6 @@
+join
+
+Join lines of two sorted files on a common field.
+
+# join files
+  join file₁ file₂
