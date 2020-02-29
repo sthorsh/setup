@@ -1,59 +1,28 @@
 GNU
 
-$ cmd --
-$ cmd --TAB
-$ cmd --help
-$ cmd --version
-$ man cmd
-$ info cmd
-$ cheat cmd
-$ tldr cmd
-$ google-chrome www.gnu.org/software/coreutils/cmd
-
 coreutils 8.28
   cat       
   cut
-  expand        tabs → spaces
+  expand  
   head
+  join
+  nl        
+  seq     
+sort
 
 ---------------------------------------------------
-  join      -t :          field separator
-            -j N          join on field N
-            -1 N₁         join on file 1 field N₁
-            -2 N₂         join on file 2 field N₂
-            -i            ignore-case
-            -a 1 -a 2     output also unpaired
-            -v 1 -v 2     output only unpaired
-            -e -          empty char
-            -o N₁.N₂,...  e.g join -t: -a1 -a2 -e'-' -o 1.1,... file₁ file₂
+      --dictionary-order (-d)
+      --field-separator=: (-t)
+    --numeric-sort (-n)
+      --general-numeric-sort (-g)
+      --human-numeric-sort (-h)
+      --ignore-case (-f)
+      --ignore-leading-blanks (-b)
+      --ignore-nonprinting (-i)
+      --key=field[.char][opts] ... (-k)
+      --month-sort (-M)
+      --version-sort (-V)
 ---------------------------------------------------
-nl        --body-numbering=a|n
-          --line-increment=N
-          --join-blank-lines=N
-          --number-format=ln|rn|rz
-          --number-separator=string
-          --starting-line-number=N
-          --number-width=N
-
-seq       ...
-
-sort      --field-separator=:
-          --key=field[.char][opts] ...
-          --dictionary-order (-d)
-          --general-numeric-sort (-g)
-          --ignore-case (-f)
-          --human-numeric-sort (-h)
-          --ignore-leading-blanks (-b)
-          --ignore-nonprinting (-i)
-          --month-sort (-M)
-          --numeric-sort (-n)
-          --random-sort (-R)
-          --reverse (-r)
-          --version-sort (-V)
-          --stable
-          --unique
-          --debug
-
 tac       --
 
 tail      --bytes=N

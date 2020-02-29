@@ -38,3 +38,13 @@ Ikke-login ikke-interaktivt
   $ script
   $ ssh sit4 cmd
 
+Help
+  $ cmd --TAB
+  $ cmd --help
+  $ cmd --version
+  $ man cmd
+  $ cheat cmd
+  $ manly cmd --option
+  $ tldr cmd
+  $ google-chrome www.gnu.org/software/coreutils/cmd
+

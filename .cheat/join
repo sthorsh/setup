@@ -1,6 +1,43 @@
 join
 
-Join lines of two sorted files on a common field.
+Join lines of two files on a common field. Files must be sorted.
 
 # join files
   join file₁ file₂
+  
+# join on field N in file₁
+  join -1 N file₁ file₂
+  
+# join on field N in file₂
+  join -2 N file₁ file₂
+  
+# print unjoined lines in file₁
+  join -a 1 file₁ file₂
+  
+# print unjoined lines in file₂
+  join -a 2 file₁ file₂
+  
+# print empty fields
+  join ... -e - ... file₁ file₂
+  
+# case-insensitive
+  join -i file₁ file₂
+  
+# join on field N
+  join -j N file₁ file₂
+  
+# print formatted output
+  join -o 1.1,1.2,2.1,2.2 file₁ file₂
+  
+# field separator
+  join -t: file₁ file₂
+  
+# print _only_ unjoined lines in file₁
+  join -v 1 file₁ file₂
+  
+# print _only_ unjoined lines in file₂
+  join -v 2 file₁ file₂
+  
+# print result as table
+  join -a 1 -a 2 -e - -o 1.1,1.2,2.1,2.2 file1 file2 | column -t
+  
