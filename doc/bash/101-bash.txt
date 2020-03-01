@@ -39,12 +39,12 @@ Ikke-login ikke-interaktivt
   $ ssh sit4 cmd
 
 Help
+  $ cheat cmd
+  $ tldr cmd
   $ cmd --TAB
+  $ manly cmd --opt
   $ cmd --help
   $ cmd --version
   $ man cmd
-  $ cheat cmd
-  $ manly cmd --option
-  $ tldr cmd
   $ google-chrome www.gnu.org/software/coreutils/cmd
 
