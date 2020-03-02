@@ -10,7 +10,7 @@ shopt -s histappend
 
 # Vars
 export AMQ_HOME=/usr/lib/apache-activemq
-export CHEATCOLORS=true
+export CHEATCOLORS=false
 export EDITOR=/usr/bin/vim
 export FOP_HOME="/usr/lib/fop/fop"
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
@@ -73,6 +73,7 @@ bind '"\C-x\"": "\"\"\C-b"'
 bind '"\C-x(": "()\C-b"'
 bind '"\C-x{": "{}\C-b  \C-b"'
 bind '"\C-x[": "[]\C-b"'
+bind '"\C-x:": "::\C-b"'
 bind '"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"'
 bind '"\C-xq": "\eb\"\ef\" "'
 bind '"\C-xu":"\eb\eu "'
@@ -81,6 +82,7 @@ bind '"\C-xu":"\eb\eu "'
 alias awkde="cat ~/doc/awk/exp.txt"
 alias awkdv="awk --dump-variables=$(tty) ''"
 alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
+alias egrep='egrep --ignore-case --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gradle="/opt/gradle/bin/gradle"
 alias grep='grep --ignore-case --color=auto'
