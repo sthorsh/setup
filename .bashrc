@@ -99,7 +99,6 @@ alias mvnl='mvn clean install -Dmaven.test.skip=true'
 alias path='echo -e ${PATH//:/"\n"}'
 alias postman='/opt/Postman/Postman > /dev/null 2>&1 &'
 alias ps='ps -efj --header'
-alias sed='sed -r'
 alias soapui="/opt/SoapUI-5.5.0/bin/soapui.sh > /dev/null 2>&1 &"
 alias sqldeveloper='/bin/bash /usr/lib/sqldeveloper/sqldeveloper.sh > /dev/null 2>&1 &'
 alias squirrelsql='/usr/lib/squirrelsql/squirrel-sql.sh &'

@@ -1,62 +1,60 @@
 SED
 
 Syntax
-  sed [opts] script [files]
-  sed [opts] '[addr]{cmd₁; ...}; ...' [file.text ...]
+    sed [opts] 'address{cmd₁; ...}; ...' [files]
   
-Options                                           
-  -e [addr]cmd ...            --expression=
-  -f script.sed               --file=    
-  -i                          --in-place
-  -n                          --silent (no-autoprint)
-  -r                          --regexp-extended
+Opts                                              
+  -i --in-place
+  -n --silent
+  -r --regexp-extended
+  ...
   
 Address
-  N[!]                        [not] line N
-  $[!]                        [not] last line
-  /regexp/[I][!]               lines [not] matched
-  addr₁,addr₂[!]              lines [not] in range
-  addr,+N[!]                  lines [not] in range
-  addr,~N[!]                  lines [not] in range
-  N~M[!]                      e.g 5~2[!] → [not] 5,7,9...
+    N[!]                        [not] line N
+    $[!]                        [not] last line
+    /regexp/[I][!]               lines [not] matched
+    addr₁,addr₂[!]              lines [not] in range
+    addr,+N[!]                  lines [not] in range
+    addr,~N[!]                  lines [not] in range
+    N~M[!]                      e.g 5~2[!] → [not] 5,7,9...
+    
+  Commands
+    =                           print line number before line
+    a txt                       append after line
+    b                           branch to label or end-of-script
+    c txt                       del pspace; print txt (change)
+    d                           del pspace; abort script
+    D                           del pspace 1st line; abort script
+    e [cmd]                     exec cmd
+    g                           get pspace |< hspace
+    G                           get pspace << hspace
+    h                           hold pspace >| hspace
+    H                           hold pspace >> hspace
+    i txt                       insert before line
+    l                           list pspace
+    n                           print pspace; read next line >| pspace (loop)
+    N                           read next line >> pspace; print pspace (loop)
+    p                           print pspace
+    P                           print pspace 1st line
+    q                           print pspace; quit sed
+    Q                           quit sed
+    r file                      read file
+    R file                      read next line from file 
+    s/regexp/subexp/[gNipwem]   align; match; replace-or-rshift
+    t                           if s replaced: branch to label or end-of-script
+    T                           if s did not replace: branch to label or end-of-script
+    w file                      write pspace to file
+    W file                      write pspace 1st line to file
+    x                           exchange pspace <> hspace
+    y/chars₁/chars₂/            transliterate
+    z                           clear space (zap)
+    
+  Subex metategn
+    &                           the part of pattern space matching the regexp
+    \N                          backref to group 0..9
+    \l                          lowercase char 
+    \u                          uppercase char
+    \L                          lowercase subexp
+    \U                          uppercase subexp
+    \E                          end of \L or \U
   
-Commands
-  =                           print line number before line
-  a txt                       append after line
-  b                           branch to label or end-of-script
-  c txt                       del pspace; print txt (change)
-  d                           del pspace; abort script
-  D                           del pspace 1st line; abort script
-  e [cmd]                     exec cmd
-  g                           get pspace |< hspace
-  G                           get pspace << hspace
-  h                           hold pspace >| hspace
-  H                           hold pspace >> hspace
-  i txt                       insert before line
-  l                           list pspace
-  n                           print pspace; read next line >| pspace (loop)
-  N                           read next line >> pspace; print pspace (loop)
-  p                           print pspace
-  P                           print pspace 1st line
-  q                           print pspace; quit sed
-  Q                           quit sed
-  r file                      read file
-  R file                      read next line from file 
-  s/regexp/subexp/gNipwem     align; match; replace-or-rshift
-  t                           if s replaced: branch to label or end-of-script
-  T                           if s did not replace: branch to label or end-of-script
-  w file                      write pspace to file
-  W file                      write pspace 1st line to file
-  x                           exchange pspace <> hspace
-  y/chars₁/chars₂/            transliterate
-  z                           clear space (zap)
-  
-Subex metategn
-  &                           the part of pattern space matching the regexp
-  \N                          backref to group 0..9
-  \l                          lowercase char 
-  \u                          uppercase char
-  \L                          lowercase subexp
-  \U                          uppercase subexp
-  \E                          end of \L or \U
-
