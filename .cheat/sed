@@ -1,0 +1,74 @@
+SED
+
+Syntaks
+  sed [opts] '' [filer]
+  sed [opts] 'adr {}' [filer]
+  sed [opts] 'cmd' [filer]
+  sed [opts] 'adr cmd' [filer]
+  sed [opts] 'adr { cmd; ...}' [filer]
+  sed [opts] 'adr cmd; adr cmd; ...' [filer]
+  sed [opts] 'adr { cmd; ...}; adr { cmd; ... } [filer]
+
+Opts
+  -i --in-place
+  -n --silent
+  -r --regexp-extended
+  ...
+
+Adresse
+  N[!]                        [not] line N
+  $[!]                        [not] last line
+  N₁~N₂[!]                    [not] N₁ N₁+N₂ ...
+  /regexp/[!I]                [not] [case-insensitive]
+  addr₁,addr₂[!]              [not] from addr₁ to addr₂
+  addr,+N[!]                  [not] from addr to addr+N
+  addr,~N[!]                  [not] from addr to next multiple-of-N
+
+Kommando
+  =
+  a txt                       append txt
+  b                           -
+  c txt                       change lines
+  d                           delete lines
+  D                           -
+  e cmd                       exec cmd; insert stdout
+  g                           -
+  G                           -
+  h                           -
+  H                           -
+  i txt                       insert txt
+  l                           list pspace
+  n                           -
+  N                           -
+  p                           print pspace
+  P                           -
+  q                           print pspace; quit
+  Q                           quit
+  r file                      read file; append content
+  R file                      -
+  s/regexp/subexp/flags       string search; if match sub regexp with subexp
+  t                           -
+  T                           -
+  w file                      write pspace to file
+  W file                      -
+  x                           -
+  y/chars₁/chars₂/            tr
+  z                           clear lines
+
+s subexp
+  &                           backref to match
+  \N                          backref to group 0..9
+  \l                          lowercase next char
+  \L                          lowercase subexp
+  \u                          uppercase next char
+  \U                          uppercase subexp
+  \E                          end of \L or \U
+
+s flagg
+  N                           sub Nth match
+  e                           exec pspace as shell cmd
+  g                           sub all matches
+  i                           case-insensitive
+  w file                      write to file
+  ...
+

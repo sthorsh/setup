@@ -1,0 +1,74 @@
+Tegn
+  …                         repr seg selv
+
+Tegnklasser
+  [[:alnum:]]               [a-zA-Z0-9]
+  [[:alpha:]]               [a-zA-Z]
+  [[:blank:]]               [ \t]
+  [[:cntrl:]]               [\x00-\1F\x7F]
+  [[:digit:]]               [0-9]
+  [[:graph:]]               [\x21-\x7E]
+  [[:lower:]]               [a-z]
+  [[:print:]]               [\x20-\x7E]
+  [[:punct:]]               [!"#%&',-/:;<=>@]_`}~\.[()*?+{^$|]
+  [[:space:]]               [ \t\n\v\f\r]
+  [[:upper:]]               [A-Z]
+  [[:xdigit:]]              [A-Fa-f0-9]
+  [[.ch.]]                  sorteringssymbol (ref locale)
+  [[=e=]]                   ekvivalensklasse (ref locale)
+
+Metategn
+  \                         enable el escape
+  .                         hvilket som helst tegn
+  [...]                     mengde
+  [^...]                    mengde: not
+  [alnum₁-alnum₂]           mengde: range
+  (...)                     gruppe e.g (ab|cd)+, ^(ab|cd)$, (ab|cd) (ERE, PCRE)
+  ...*                      kvantor: 0..∞
+  ...?                      kvantor: 0..1 (ERE, PCRE)
+  ...+                      kvantor: 1..∞ (ERE, PCRE)
+  ...{n}                    kvantor: n (ERE, PCRE)
+  ...{n,}                   kvantor: ≥n (ERE, PCRE)
+  ...{,m}                   kvantor: ≤m (ERE)
+  ...{n,m}                  kvantor: n..m (ERE)
+  ∅                         str concat str
+  ^                         anker: tom str at BOL 
+  $                         anker: tom str at EOL
+  RE₁|RE₂                   eller (ERE, PCRE)
+
+Enable: tegn → metategn           
+  \(                        gruppe (BRE)
+  \)                        gruppe (BRE)
+  \?                        kvantor (BRE)
+  \+                        kvantor (BRE)
+  \{                        kvantor (BRE)
+  \}                        kvantor (BRE)
+  \|                        eller (BRE)
+  \<                        word-boundary (BRE, ERE)
+  \>                        word-boundary (BRE, ERE)
+  \b                        word-boundary 
+  \B                        not word-boundary
+  \n                        lf (PCRE)
+  \r                        cr (PCRE)
+  \s                        [[:space:]]
+  \S                        [^[:space:]]
+  \t                        ht (PCRE)
+  \w                        [[:alnum:]_]
+  \W                        [^[:alnum:]] 
+  \1-9                      tilbakereferanse
+  \NNN                      oktal (PCRE)
+  \xHH                      hex (PCRE)
+    
+Escape: tegn ← metategn
+  \\
+  \.
+  \[
+  \(                        (ERE, PCRE)
+  \*
+  \?                        (ERE, PCRE)
+  \+                        (ERE, PCRE)
+  \{                        (ERE, PCRE)
+  \^
+  \$
+  \|                        (ERE, PCRE)
+
