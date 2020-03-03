@@ -1,0 +1,37 @@
+# Usage
+  grep [opts] regexp [files]
+  
+# Regexp
+  -E --extended-regexp
+  -F --fixed-strings 
+  -P --perl-regexp   
+  -w --word-regexp  
+  -x --line-regexp  
+  -v --invert-match 
+
+# Files
+  -a --text
+  -i --ignore-case
+     --include=pattern
+     --exclude=pattern
+     --exclude-dir=pattern
+  -r --recursive
+  
+# Context
+  -A --after-context=N
+  -B --before-context=N
+  -C --context=N
+
+# Output
+  -b --byte-offset
+     --color=auto
+  -c --count 
+  -H --with-filename
+  -l --files-with-matches
+  -L --files-without-match
+  -m --max-count=N
+  -n --line-number
+  -o --only-matching
+  -s --silent
+  -T --initial-tab
+      

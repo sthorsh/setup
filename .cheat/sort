@@ -1,0 +1,24 @@
+# Sort
+  sort file
+
+# Ignorecase
+  sort -f file
+
+# Key
+  sort -k field[.char][opts] file
+
+# Numeric
+  sort -n file
+
+# Random
+  sort -R file
+
+# Reverse
+  sort -r file
+
+# Field separator
+  sort -t : file
+
+# Unique
+  sort -u file
+

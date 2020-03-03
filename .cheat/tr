@@ -1,0 +1,20 @@
+# Translate 
+  echo a:b:c | tr : "\n"
+  echo abcabcabc | tr abc 123
+  echo abcabcabc | tr [:lower:] [:upper:]
+
+# Complement
+  echo abcabcabc | tr -c b "*"
+  echo abcabcabc | tr -c ac "*"
+
+# Delete
+  echo abcabcabc | tr -d b
+  echo abcabcabc | tr -d ac
+
+# Squeeze
+  echo aaabbbccc | tr -s b
+  echo aaabbbccc | tr -s ac
+
+# Delete non-printable chars
+  tr -cd "[:print:]" < file1
+

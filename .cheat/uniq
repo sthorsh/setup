@@ -1,0 +1,17 @@
+# Uniq
+  sort file | uniq
+
+# Count
+  sort file | uniq -c
+
+# Duplicated only
+  sort file | uniq -d
+
+# Unique only
+  sort file | uniq -u
+
+# Count unique
+  sort file | uniq -cu
+
+# Count duplicated
+  sort file | uniq -cd
