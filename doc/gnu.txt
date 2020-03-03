@@ -1,5 +1,7 @@
 GNU    
+  awk
   grep
+  sed
 
 GNU coreutils 8.28
   cat

@@ -1,40 +1,4 @@
-Filer
-  file
-  find
-  locate
-  ls              l; la; ld
-  stat
-  touch
-
-Kataloger   
-  cd
-  mkdir
-  pwd
-
-Kommandoer
-  man             man -k regexp
-  strace          echo exit | strace bash -li |& grep '^open'
-  tldr            apt
-  type            builtin
-  which
-
-gnu
-  awk
-  sed
-  
-coreutils
-  sort
-  ...
-
-moreutils
-  combine
-  sponge
-  ts
-  ...
-
----------
-
-apt
+APT
   apt autoremove    remove unwanted pkgs      apt-get autoremove        
   apt edit-sources  edit sources list         -                     
   apt full-upgrade  upgrade pkgs              apt-get dist-upgrade      
@@ -47,26 +11,27 @@ apt
   apt update        refresh repo index        apt-get update    
   apt upgrade       upgrade upgradable pkgs   apt-get upgrade   
 
-------------------
-
-GNU coreutils
-  date
-  echo
-  printf
-  seq
-
-BSD
+Cmds
   hexdump
-
-?
-  locale
-  locale -a
-  LC_ALL=nb_NO.utf8 locale -ck LC_ADDRESS
-  ...
-
-  localectl status
-
+  man               man -k regexp
+  strace            echo exit | strace bash -li |& grep '^open'
+  tldr              apt
+  type              builtin
+  which
   xxd
 
- 
+Filer
+  cd
+  file
+  find
+  locate
+  ls            
+  mkdir
+  pwd
+  stat
+  touch
 
+Locale
+  locale -a
+  localectl status
+    
