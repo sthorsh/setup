@@ -1,7 +1,13 @@
 SED
 
-Syntax
-    sed [opts] 'address{cmd₁; ...}; ...' [files]
+Syntaks
+  sed [opts] '' [filer]
+  sed [opts] 'adr {}' [filer]
+  sed [opts] 'cmd' [filer]
+  sed [opts] 'adr cmd' [filer]
+  sed [opts] 'adr cmd; adr cmd; ...' [filer]
+  sed [opts] 'adr { cmd; ...}' [filer]
+  sed [opts] 'adr { cmd; ...}; adr { cmd; ... } [filer]
   
 Opts                                              
   -i --in-place
@@ -9,18 +15,21 @@ Opts
   -r --regexp-extended
   ...
   
-Address
-    N[!]                        [not] line N
-    $[!]                        [not] last line
-    /regexp/[I][!]               lines [not] matched
-    addr₁,addr₂[!]              lines [not] in range
-    addr,+N[!]                  lines [not] in range
-    addr,~N[!]                  lines [not] in range
-    N~M[!]                      e.g 5~2[!] → [not] 5,7,9...
+Adresse
+  N[!]                        [not] line N
+  $[!]                        [not] last line
+  N₁~N₂[!]                    [not] N₁ N₁+N₂ ...
+  /regexp/[!I]                [not] [case-insensitive]
+  addr₁,addr₂[!]              [not] from addr₁ to addr₂
+  addr,+N[!]                  [not] from addr to addr+N 
+  addr,~N[!]                  [not] from addr to next multiple-of-N
     
-  Commands
-    =                           print line number before line
-    a txt                       append after line
+Kommando
+    a txt                       append txt
+    i txt                       insert txt
+    ...
+    =                           append line number
+
     b                           branch to label or end-of-script
     c txt                       del pspace; print txt (change)
     d                           del pspace; abort script
@@ -30,11 +39,10 @@ Address
     G                           get pspace << hspace
     h                           hold pspace >| hspace
     H                           hold pspace >> hspace
-    i txt                       insert before line
     l                           list pspace
     n                           print pspace; read next line >| pspace (loop)
     N                           read next line >> pspace; print pspace (loop)
-    p                           print pspace
+    p                           print pspace (default command)
     P                           print pspace 1st line
     q                           print pspace; quit sed
     Q                           quit sed
@@ -49,7 +57,7 @@ Address
     y/chars₁/chars₂/            transliterate
     z                           clear space (zap)
     
-  Subex metategn
+  Subexp metategn
     &                           the part of pattern space matching the regexp
     \N                          backref to group 0..9
     \l                          lowercase char 
