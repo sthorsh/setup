@@ -1,60 +1,66 @@
 tmux
+      $ tmux start                                noop
+      $ tmux kill-server                          kill clients, sessions and server
 
-  Session
-    C-a s                             choose-session
-    C-a d                             detach
-    C-a C-n                           next session (switch-client)
-    $ tmux ls                         list-sessions
-    $ tmux attach [-t target]
-    $ tmux kill-session [-t target]
-    $ tmux new [-d] [-s name]          new-session [detached]
-  
-  Window
-      C-a c                           new-window
-      C-a C-w                         kill-window
-      C-a 1-9                         select-window
-      C-a C-hl                        select-window
-      C-a ,                           rename-window
-      C-a .                           move-window (to session)
-      C-S-←→                          swap-window
-  
-  Pane
-      C-a -                           new pane
-      C-a |                           new pane
-      C-a x                           kill-pane
-      C-a q 1..9                      select-pane
-      C-a hjkl                        select-pane
-      C-a z                           resize-pane
-      C-A-←↑↓→                        resize-pane
-      C-A {}                          swap-pane
-      C-A !                           move pane (to new window)
-      C-A H                           clear-history
-      C-A P                           toggle pipe output
-      C-A S                           toggle synchronize panes
-  
-  C-a C-c
-    /                                 search ↓
-    ?                                 search ↑
-    v                                 begin-selection
-    V                                 select-line
-    C-v                               rectangle-toggle
-    o                                 other-end
-    Space                             clear-selection
-    y                                 yank (to clipit)
-    C-c                               cancel
-  
-  Paste
-    C-a C-v                           paste text + formatting
-    C-S-v                             paste text 
-  
-  Cmds
-    $ tmux lscm                       list-commands
-    $ tmux lsk                        list-keys
-  
-  Config
-      C-a r                           reload ~/.tmux.conf
-      C-a I                           tpm install
-      C-a U                           tpm updates
-      C-a C-s                         tmux-resurrect: save
-      C-a C-r                         tmux-resurrect: restore
-  
+   ↓  $ tmux ls                                   list sessions
+      $ tmux [new -d] [-s sid]                    create [new detached] session [w/sid]
+      $ tmux attach [-t sid]                      attach to previous session [or sid]
+      $ tmux detach [-s sid]                      detach from current session [or sid]
+      $ tmux kill-session [-t sid]                kill previous session [or sid]
+
+--------------------------------------------------------------------------
+      $ tmux list-clients
+      $ tmux list-sessions
+      $ tmux list-windows
+      $ tmux list-panes
+      $ tmux list-keys
+      $ tmux list-commands
+--------------------------------------------------------------------------
+
+        C-a d                                       detah
+        C-a s                                       choose-session
+        C-a C-n                                     next session (switch-client)
+      
+        C-a c                                       create new window
+        C-a C-w                                     kill-window
+        C-a 1-9                                     select-window
+        C-a C-hl                                    select-window
+        C-a ,                                       rename-window
+        C-a .                                       move-window (to session)
+        C-S-←→                                      swap-window
+      
+        C-a -                                       new pane
+        C-a |                                       new pane
+        C-a x                                       kill-pane
+        C-a q 1..9                                  select-pane
+        C-a hjkl                                    select-pane
+        C-a z                                       resize-pane
+        C-A-←↑↓→                                    resize-pane
+        C-A {}                                      swap-pane
+        C-A !                                       move pane (to new window)
+        C-A H                                       clear-history
+        C-A P                                       toggle pipe output
+        C-A S                                       toggle synchronize panes
+      
+        C-a C-c
+          /                                         search ↓
+          ?                                         search ↑
+          v                                         begin-selection
+          V                                         select-line
+          C-v                                       rectangle-toggle
+          o                                         other-end
+          Space                                     clear-selection
+          y                                         yank (to clipit)
+          C-c                                       cancel
+      
+      
+        C-a C-v                                     paste text + formatting
+        C-S-v                                       paste text 
+      
+        C-a r                                       reload ~/.tmux.conf
+
+        C-a I                                       tpm install
+        C-a U                                       tpm updates
+        C-a C-s                                     tmux-resurrect: save
+        C-a C-r                                     tmux-resurrect: restore
+      
