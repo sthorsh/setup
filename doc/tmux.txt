@@ -1,11 +1,6 @@
 tmux
-      $ tmux start                                noop
+      $ tmux start                                start server (noop)
       $ tmux kill-server                          kill clients, sessions and server
-
-      $ tmux [new -d] [-s sid]                    create [detached] session [w/sid]
-      $ tmux attach [-t sid]                      attach to previous session [or sid]
-      $ tmux detach [-s sid]                      detach from current session [or sid]
-      $ tmux kill-session [-t sid]                kill previous session [or sid]
 
       $ tmux lsc                                  list-clients
       $ tmux ls                                   list-sessions
@@ -13,10 +8,22 @@ tmux
       $ tmux lsp                                  list-panes
       $ tmux lscm                                 list-commands
       $ tmux lsk                                  list-keys
+
+      $ tmux [new -d] [-s sid]                    create [detached] session [w/sid]
+      $ tmux attach [-t sid]                      attach to previous session [or sid]
+      $ tmux detach [-s sid]                      detach from current session [or sid]
+      $ tmux kill-session [-t sid]                kill previous session [or sid]
+
 --------------------------------------------------------------------------
         C-a C-n                                     select next session
         C-a s                                       select session/window/pane
         C-a d                                       detach from current session
+--------------------------------------------------------------------------
+        C-a r                                       reload ~/.tmux.conf
+        C-a I                                       tpm install
+        C-a U                                       tpm updates
+        C-a C-s                                     tmux-resurrect: save
+        C-a C-r                                     tmux-resurrect: restore
 --------------------------------------------------------------------------
 
         C-a c                                       create new window
@@ -51,14 +58,6 @@ tmux
           y                                         yank (to clipit)
           C-c                                       cancel
 
-
         C-a C-v                                     paste text + formatting
         C-S-v                                       paste text
-
-        C-a r                                       reload ~/.tmux.conf
-
-        C-a I                                       tpm install
-        C-a U                                       tpm updates
-        C-a C-s                                     tmux-resurrect: save
-        C-a C-r                                     tmux-resurrect: restore
 
