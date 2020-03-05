@@ -1,19 +1,8 @@
 tmux
-      $ tmux start-server                         noop
-      $ tmux kill-server                          kill server, sessions and clients
-
-      $ tmux lsc                                  list-clients
-      $ tmux ls                                   list-sessions
-      $ tmux lsw                                  list-windows
-      $ tmux lsp                                  list-panes
-      $ tmux lscm                                 list-commands
-      $ tmux lsk                                  list-keys
-
       $ tmux [new -d] [-s sid]                    create [detached] session [sid]
       $ tmux attach [-t sid]                      attach to previous session [or sid]
       $ tmux detach [-s sid]                      detach from current session [or sid]
       $ tmux kill-session [-t sid]                kill previous session [or sid]
-
       C-a C-n                                     select next session (r)
       C-a s                                       select session/window/pane
       C-a d                                       detach from current session
@@ -51,11 +40,19 @@ tmux
 
       C-S-v                                       paste text from clipboard
       C-a C-v                                     paste text from clipboard
-
---------------------------------------------------------------------------
+--------------------------------
         C-a r                                       reload ~/.tmux.conf
         C-a I                                       tpm install
         C-a U                                       tpm updates
         C-a C-s                                     tmux-resurrect: save
         C-a C-r                                     tmux-resurrect: restore
---------------------------------------------------------------------------
+---------------------------------
+      $ tmux start-server                         noop
+      $ tmux kill-server                          kill server, sessions and clients
+
+      $ tmux lsc                                  list-clients
+      $ tmux ls                                   list-sessions
+      $ tmux lsw                                  list-windows
+      $ tmux lsp                                  list-panes
+      $ tmux lscm                                 list-commands
+      $ tmux lsk                                  list-keys
