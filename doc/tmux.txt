@@ -25,7 +25,7 @@ tmux
       C-a ,                                       rename window
       C-S-←→                                      move window (r)
       C-a . sid:                                  move window to session
---------------------------------------------------------------------------
+
       C-a |-                                      create pane (r)
       C-a x                                       close pane (r)
       C-a q 1-9                                   select pane 1-9
@@ -34,11 +34,10 @@ tmux
       C-a z                                       resize/zoom pane
       C-A {}                                      move pane ← → (r)
       C-A !                                       move pane to new window
-        C-A H                                       clear-history
-        C-A P                                       toggle pipe output
-        C-A S                                       toggle synchronize panes
+      C-A H                                       clear pane history
+      C-A D                                       toggle duplicate pane input
+      C-A P                                       toggle pipe pane I/O to cmd
 --------------------------------------------------------------------------
-
         C-a C-c
           /                                         search ↓
           ?                                         search ↑
@@ -52,7 +51,6 @@ tmux
 
         C-a C-v                                     paste text + formatting
         C-S-v                                       paste text
-
 --------------------------------------------------------------------------
         C-a r                                       reload ~/.tmux.conf
         C-a I                                       tpm install
