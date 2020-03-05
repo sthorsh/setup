@@ -34,23 +34,24 @@ tmux
       C-a z                                       resize/zoom pane
       C-A {}                                      move pane ← → (r)
       C-A !                                       move pane to new window
-      C-A H                                       clear pane history
       C-A D                                       toggle duplicate pane input
       C-A P                                       toggle pipe pane I/O to cmd
---------------------------------------------------------------------------
-        C-a C-c
-          /                                         search ↓
-          ?                                         search ↑
-          v                                         begin-selection
-          V                                         select-line
-          C-v                                       rectangle-toggle
-          o                                         other-end
-          Space                                     clear-selection
-          y                                         yank (to clipit)
-          C-c                                       cancel
+      C-A H                                       clear pane history
 
-        C-a C-v                                     paste text + formatting
-        C-S-v                                       paste text
+      C-a C-c                                     copy-mode-vi
+        /                                         search ↓
+        ?                                         search ↑
+        v                                         select
+        V                                         select line
+        C-v                                       select toggle rectangle
+        o                                         move cursor to opposite corner
+        Space                                     unselect
+        y                                         copy to clipboard
+        C-c                                       cancel copy-mode-vi
+
+      C-S-v                                       paste text from clipboard
+      C-a C-v                                     paste text from clipboard
+
 --------------------------------------------------------------------------
         C-a r                                       reload ~/.tmux.conf
         C-a I                                       tpm install
