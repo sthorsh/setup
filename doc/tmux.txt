@@ -1,61 +1,63 @@
 tmux
   $ tmux lsc                        list clients
-  $ tmux [new] [-s sid]             create client and attach to ? [or sid]
-  $ tmux attach [-t sid]            create client and attach to previous session [or sid]
-  $ tmux detach [-s sid]            detach client from current session [or sid]
+  $ tmux                            create client and session N
+  $ tmux new -s sid                 create client and session sid
+  $ tmux attach -t sid              create client and attach to sid
+  $ tmux attach                     create client and reattach to session
+  $ tmux detach -s sid              detach client from session sid
+  C-a d                             detach current client from its session
 
   $ tmux ls                         list sessions
-  $ tmux [new] -d [-s sid]          create detached session [sid]
-  $ tmux kill-session [-t sid]      kill previous session [or sid]
-  C-a C-n                           select next session (r)
-  C-a s                             select session/window/pane
-  C-a d                             detach from current session
+    $ tmux [new] -d [-s sid]          create detached session [sid]
+    $ tmux kill-session [-t sid]      kill previous session [or sid]
+    C-a C-n                           select next session (r)
+    C-a s                             select session/window/pane
 
-  C-a C-t                           create window (r)
-  C-a C-w                           close window (r)
-  C-a 1-9                           select window 1-9
-  C-a C-hl                          select window ← → (r)
-  C-a ,                             rename window
-  C-S-←→                            move window (r)
-  C-a . sid:                        move window to session
+    C-a C-t                           create window (r)
+    C-a C-w                           close window (r)
+    C-a 1-9                           select window 1-9
+    C-a C-hl                          select window ← → (r)
+    C-a ,                             rename window
+    C-S-←→                            move window (r)
+    C-a . sid:                        move window to session
 
-  C-a |-                            create pane (r)
-  C-a x                             close pane (r)
-  C-a q 1-9                         select pane 1-9
-  C-a hjkl                          select pane (r)
-  C-A-←↓↑→                          resize pane
-  C-a z                             resize/zoom pane
-  C-A {}                            move pane ← → (r)
-  C-A !                             move pane to new window
-  C-A D                             toggle duplicate pane input
-  C-A P                             toggle pipe pane I/O to cmd
-  C-A H                             clear pane history
+    C-a |-                            create pane (r)
+    C-a x                             close pane (r)
+    C-a q 1-9                         select pane 1-9
+    C-a hjkl                          select pane (r)
+    C-A-←↓↑→                          resize pane
+    C-a z                             resize/zoom pane
+    C-A {}                            move pane ← → (r)
+    C-A !                             move pane to new window
+    C-A D                             toggle duplicate pane input
+    C-A P                             toggle pipe pane I/O to cmd
+    C-A H                             clear pane history
 
-  C-a C-c                           copy-mode-vi
-    /                                 search ↓
-    ?                                 search ↑
-    v                                 select
-    V                                 select line
-    C-v                               select toggle rectangle
-    o                                 move cursor to opposite corner
-    Space                             unselect
-    y                                 copy to clipboard
-    C-c                               cancel copy-mode-vi
+    C-a C-c                           copy-mode-vi
+      /                                 search ↓
+      ?                                 search ↑
+      v                                 select
+      V                                 select line
+      C-v                               select toggle rectangle
+      o                                 move cursor to opposite corner
+      Space                             unselect
+      y                                 copy to clipboard
+      C-c                               cancel copy-mode-vi
 
-  C-S-v                             paste from clipboard
-  C-a C-v                           paste from clipboard
+    C-S-v                             paste from clipboard
+    C-a C-v                           paste from clipboard
 
-  C-a C-s                           save sessions, windows, panes (tmux-resurrect)
-  C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
+    C-a C-s                           save sessions, windows, panes (tmux-resurrect)
+    C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
 
-  C-a r                             reload ~/.tmux.conf
+    C-a r                             reload ~/.tmux.conf
 
-  $ tmux start                      noop
-  $ tmux kill-server                kill server, sessions and clients
+    $ tmux start                      noop
+    $ tmux kill-server                kill server, sessions and clients
 
-  C-a I                             install plugin (tpm)
-  C-a U                             update plugins (tpm)
+    C-a I                             install plugin (tpm)
+    C-a U                             update plugins (tpm)
 
-  $ tmux lscm                       list cmds
-  $ tmux lsk                        list keys
+    $ tmux lscm                       list cmds
+    $ tmux lsk                        list keys
 
