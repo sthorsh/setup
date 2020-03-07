@@ -1,13 +1,19 @@
 tmux
-  $ tmux lsc                        list clients
-  $ tmux                            create client and session N
-  $ tmux new -s sid                 create client and session sid
-  $ tmux attach -t sid              create client and attach to sid
-  $ tmux attach                     create client and reattach to session
-  $ tmux detach -s sid              detach client from session sid
-  C-a d                             detach current client from its session
+    $ tmux [-S SID] [cmd] [flags]
 
-  $ tmux ls                         list sessions
+    $ tmux lsc                        list clients
+    $ tmux                            create client and session N
+    $ tmux new -s sid                 create client and session sid
+    $ tmux attach -t sid              create client and attach to sid
+    $ tmux attach                     create client and reattach to session
+    $ tmux detach -s sid              detach client from session sid
+    C-a d                             detach current client from its session
+    $ tmux -S /tmp/SID                server socket SID...
+
+    $ tmux start                      noop
+    $ tmux [-S SID] kill-server       kill server, sessions and clients
+
+    $ tmux [-S sid] ls                  list sessions
     $ tmux [new] -d [-s sid]          create detached session [sid]
     $ tmux kill-session [-t sid]      kill previous session [or sid]
     C-a C-n                           select next session (r)
@@ -15,16 +21,19 @@ tmux
 
     C-a C-t                           create window (r)
     C-a C-w                           close window (r)
-    C-a 1-9                           select window 1-9
+!   A-hl                              select window prev|next
     C-a C-hl                          select window ← → (r)
+    C-a 1-9                           select window 1-9
     C-a ,                             rename window
     C-S-←→                            move window (r)
     C-a . sid:                        move window to session
 
     C-a |-                            create pane (r)
     C-a x                             close pane (r)
-    C-a q 1-9                         select pane 1-9
+!   A-,                               select pane ++
     C-a hjkl                          select pane (r)
+    C-a q 1-9                         select pane 1-9
+!   A-←↓↑→                            resize pane
     C-A-←↓↑→                          resize pane
     C-a z                             resize/zoom pane
     C-A {}                            move pane ← → (r)
@@ -33,6 +42,15 @@ tmux
     C-A P                             toggle pipe pane I/O to cmd
     C-A H                             clear pane history
 
+    C-a C-s                           save sessions, windows, panes (tmux-resurrect)
+    C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
+
+    C-a r                             reload ~/.tmux.conf
+
+    C-a I                             install plugin (tpm)
+    C-a U                             update plugins (tpm)
+
+!   A-c
     C-a C-c                           copy-mode-vi
       /                                 search ↓
       ?                                 search ↑
@@ -47,17 +65,10 @@ tmux
     C-S-v                             paste from clipboard
     C-a C-v                           paste from clipboard
 
-    C-a C-s                           save sessions, windows, panes (tmux-resurrect)
-    C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
-
-    C-a r                             reload ~/.tmux.conf
-
-    $ tmux start                      noop
-    $ tmux kill-server                kill server, sessions and clients
-
-    C-a I                             install plugin (tpm)
-    C-a U                             update plugins (tpm)
-
     $ tmux lscm                       list cmds
     $ tmux lsk                        list keys
+
+URLs
+  https://wtanaka.com/node/8136
+  https://www.slideshare.net/chenkaie/tmux-rocks
 
