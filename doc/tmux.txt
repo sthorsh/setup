@@ -1,77 +1,72 @@
 tmux
-        $ tmux [-S SID] [cmd] [flags]
+  A-n                               goto next session
+  C-a ()                            goto prev|next session
+  C-a s                             select session
+  C-a d                             detach client
+  
+  C-a C-t                           open window 
+  C-a C-w                           close window
+  A-hl                              goto window
+  C-a C-hl                          goto window
+  C-a 1-9                           select window
+  C-S-←→                            move window 
+  C-a . sid:                        move window to session sid
+  C-a , ...                         rename window to ...
 
--------------------------------
+  C-a |-                            open pane
+  C-a x                             close pane
+  A-,                               goto pane
+  C-a hjkl                          goto pane 
+  C-a q 1-9                         select pane
+  C-A {}                            move pane
+  C-A !                             move pane to new window
+  A-←↓↑→                            resize pane
+  C-A-←↓↑→                          resize pane
+  C-a z                             resize pane
+  C-A H                             clear pane history
+  C-A D                             toggle duplicate pane input
+  C-A P                             toggle pipe pane I/O to cmd
 
+  A-c                               copy-mode-vi
+  C-a C-c                           copy-mode-vi
+    /                                 search ↓
+    ?                                 search ↑
+    v                                 select
+    V                                 select line
+    C-v                               toggle rectangle
+    o                                 goto opposite corner
+    space                             unselect
+    y                                 copy to clipboard
+    C-c                               cancel copy-mode-vi
 
-      $ tmux ls                         list sessions
-      $ tmux new -d [-s sid]            create detached session [sid]
-      $ tmux kill-session [-t sid]      kill session [sid]
-
-      $ tmux kill-server                detach clients, destroy sessions, stop server
--------------------------------
-        C-a C-n                           select next session (r)
-        C-a s                             select session/window/pane
-
-        C-a C-s                           save sessions, windows, panes (tmux-resurrect)
-        C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
-
-    $ tmux lsc                        list clients
-    $ tmux                            create client and session N
-    $ tmux new -s sid                 create client and session sid
-    $ tmux attach -t sid              create client and attach to sid
-    $ tmux attach                     create client and reattach to session
-    $ tmux detach -s sid              detach client from session sid
-    C-a d                             detach current client from its session
-    $ tmux -S /tmp/SID                server socket SID...
-
-    C-a C-t                           create window (r)
-    C-a C-w                           close window (r)
-!   A-hl                              select window prev|next
-    C-a C-hl                          select window ← → (r)
-    C-a 1-9                           select window 1-9
-    C-a ,                             rename window
-    C-S-←→                            move window (r)
-    C-a . sid:                        move window to session
-
-    C-a |-                            create pane (r)
-    C-a x                             close pane (r)
-!   A-,                               select pane ++
-    C-a hjkl                          select pane (r)
-    C-a q 1-9                         select pane 1-9
-!   A-←↓↑→                            resize pane
-    C-A-←↓↑→                          resize pane
-    C-a z                             resize/zoom pane
-    C-A {}                            move pane ← → (r)
-    C-A !                             move pane to new window
-    C-A D                             toggle duplicate pane input
-    C-A P                             toggle pipe pane I/O to cmd
-    C-A H                             clear pane history
+  C-S-v                             paste from clipboard (bash)
+  C-a C-v                           paste from clipboard (tmux)
 
     C-a r                             reload ~/.tmux.conf
 
     C-a I                             install plugin (tpm)
     C-a U                             update plugins (tpm)
 
-!   A-c
-    C-a C-c                           copy-mode-vi
-      /                                 search ↓
-      ?                                 search ↑
-      v                                 select
-      V                                 select line
-      C-v                               select toggle rectangle
-      o                                 move cursor to opposite corner
-      Space                             unselect
-      y                                 copy to clipboard
-      C-c                               cancel copy-mode-vi
+    C-a C-s                           save sessions, windows, panes (tmux-resurrect)
+    C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
 
-    C-S-v                             paste from clipboard
-    C-a C-v                           paste from clipboard
+---------------------------------
+  $ tmux [opts] [cmd] [flags]       tmux syntax
 
-    $ tmux lscm                       list cmds
-    $ tmux lsk                        list keys
+  $ tmux lsc                        list clients
+  $ tmux att -t sid                 attach client to session [sid]
+  $ tmux [new -s sid]               start server
+                                    open session [sid]
+                                    attach client to session [sid]
+  $ tmux detach [-t cid] [-s sid]   detach client [cid] from session [sid]
 
+  $ tmux ls                         list sessions
+  $ tmux new -d [-s sid]            open detached session [sid]
+  $ tmux kill-session [-t sid]      kill session [sid]
+  $ tmux kill-server                detach clients, close sessions, stop server
+---------------------------------
 URLs
   https://wtanaka.com/node/8136
   https://www.slideshare.net/chenkaie/tmux-rocks
+  https://arcolinux.com/everthing-you-need-to-know-about-tmux-servers-and-sessions/
 
