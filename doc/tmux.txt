@@ -1,5 +1,20 @@
 tmux
-    $ tmux [-S SID] [cmd] [flags]
+        $ tmux [-S SID] [cmd] [flags]
+
+-------------------------------
+
+
+      $ tmux ls                         list sessions
+      $ tmux new -d [-s sid]            create detached session [sid]
+      $ tmux kill-session [-t sid]      kill session [sid]
+
+      $ tmux kill-server                detach clients, destroy sessions, stop server
+-------------------------------
+        C-a C-n                           select next session (r)
+        C-a s                             select session/window/pane
+
+        C-a C-s                           save sessions, windows, panes (tmux-resurrect)
+        C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
 
     $ tmux lsc                        list clients
     $ tmux                            create client and session N
@@ -9,15 +24,6 @@ tmux
     $ tmux detach -s sid              detach client from session sid
     C-a d                             detach current client from its session
     $ tmux -S /tmp/SID                server socket SID...
-
-    $ tmux start                      noop
-    $ tmux [-S SID] kill-server       kill server, sessions and clients
-
-    $ tmux [-S sid] ls                  list sessions
-    $ tmux [new] -d [-s sid]          create detached session [sid]
-    $ tmux kill-session [-t sid]      kill previous session [or sid]
-    C-a C-n                           select next session (r)
-    C-a s                             select session/window/pane
 
     C-a C-t                           create window (r)
     C-a C-w                           close window (r)
@@ -41,9 +47,6 @@ tmux
     C-A D                             toggle duplicate pane input
     C-A P                             toggle pipe pane I/O to cmd
     C-A H                             clear pane history
-
-    C-a C-s                           save sessions, windows, panes (tmux-resurrect)
-    C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
 
     C-a r                             reload ~/.tmux.conf
 
