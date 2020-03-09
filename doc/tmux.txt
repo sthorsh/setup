@@ -14,20 +14,20 @@ keys
   C-a , ...                         rename window
 
 --------------------------------------------------------------------
-
-  C-a |-                            open pane
-  C-a x                             close pane
-  A-,                               goto pane
-  C-a hjkl                          goto pane 
-  C-a q 1-9                         select pane
-  C-A {}                            move pane
-  C-A !                             move pane to new window
-  A-←↓↑→                            resize pane
-  C-A-←↓↑→                          resize pane
-  C-a z                             resize pane
-  C-A H                             clear pane history
-  C-A D                             toggle duplicate pane input
-  C-A P                             toggle pipe pane I/O to cmd
+    C-a |-                            open pane
+    C-a x                             close pane
+    A-,                               goto pane
+    C-a hjkl                          goto pane 
+    C-a q 1-9                         select pane
+    C-A {}                            move pane
+    C-A !                             move pane to new window
+    A-←↓↑→                            resize pane
+    C-A-←↓↑→                          resize pane
+    C-a z                             resize pane
+    C-A H                             clear pane history
+    C-A D                             toggle duplicate pane input
+    C-A P                             toggle pipe pane I/O to cmd
+--------------------------------------------------------------------
 
   A-c                               copy-mode-vi
   C-a C-c                           copy-mode-vi
