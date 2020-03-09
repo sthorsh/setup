@@ -1,4 +1,6 @@
 tmux
+
+keys
   A-n                               goto next session
   C-a ()                            goto prev|next session
   C-a s                             select session
@@ -42,31 +44,24 @@ tmux
   C-S-v                             paste from clipboard (bash)
   C-a C-v                           paste from clipboard (tmux)
 
-    C-a r                             reload ~/.tmux.conf
+  C-a r                             reload ~/.tmux.conf
 
-    C-a I                             install plugin (tpm)
-    C-a U                             update plugins (tpm)
+  C-a I                             install plugin 
+  C-a U                             update plugins 
 
-    C-a C-s                           save sessions, windows, panes (tmux-resurrect)
-    C-a C-r                           restore sessions, windows, panes (tmux-resurrect)
+  C-a C-s                           save environment
+  C-a C-r                           restore environment
 
----------------------------------
+commands
   $ tmux [opts] [cmd] [flags]       tmux syntax
 
   $ tmux lsc                        list clients
   $ tmux att -t sid                 attach client to session [sid]
-  $ tmux [new -s sid]               start server
-                                    open session [sid]
-                                    attach client to session [sid]
+  $ tmux [new -s sid]               start server, open session [sid], attach client to session [sid]
   $ tmux detach [-t cid] [-s sid]   detach client [cid] from session [sid]
 
   $ tmux ls                         list sessions
   $ tmux new -d [-s sid]            open detached session [sid]
   $ tmux kill-session [-t sid]      kill session [sid]
   $ tmux kill-server                detach clients, close sessions, stop server
----------------------------------
-URLs
-  https://wtanaka.com/node/8136
-  https://www.slideshare.net/chenkaie/tmux-rocks
-  https://arcolinux.com/everthing-you-need-to-know-about-tmux-servers-and-sessions/
 
