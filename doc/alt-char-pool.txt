@@ -1,59 +1,39 @@
 Alt char pool
   a
-  b         bash backward-word
-  c         bash capitalize-word
-  d         bash kill-word
+  b         bash      backward-word
+  b         tmux      bind-key -T copy-mode send-keys -X previous-word
+  b         vim       imap * <Esc>Bi
+  c         bash      capitalize-word
+  c         tmux      bind-key -T root copy-mode
+  d         bash      kill-word
+  d         vim       imap * <C-O>de
   e
-  f         bash forward-word
+  f         bash      forward-word
+  f         tmux      bind-key -T copy-mode send-keys -X next-word-end
+  f         vim       imap * <Esc>ef i
   g
-  h
+  h         
   i
   j
   k
-  l         bash downcase-word
-  m 
-  n         bash nif-search-hist
+  l         bash      downcase-word
+  l         tmux      bind-key -T root select-window -t :+
+  l         vim       imap * imode → nmode
+  m         tmux      bind-key -T root select-window -t :+
+  m         tmux      bind-key -T copy-mode send-keys -X back-to-indentation
+  n         bash      non-incremental-forward-search-hist
+  n         tmux      bind-key -T prefix  next-window -a
+  n         tmux      bind-key -T root select-window -t :-
   o
-  p         bash nir-search-hist
+  p         bash      non-incremental-backward-search-history
   q
-  r         bash revert-line
+  r         bash      revert-line
+  r         tmux      bind-key -T copy-mode send-keys -X middle-line
   s
-  t         bash transpose-words
-  u         bash upcase-word
-  v
-  w
-  x
-  y         bash yank-pop
+  t         bash      transpose-words
+  u         bash      upcase-word
+  v         tmux      bind-key -T copy-mode send-keys -X page-up
+  w         tmux      bind-key -T copy-mode send-keys -X copy-selection-and-cancel
+  x         tmux      kill-pane
+  y         bash      yank-pop
   z
-
-tmux
-    M-b         bind-key -T copy-mode send-keys -X previous-word
-    M-c         bind-key -T root      copy-mode
-    M-f         bind-key -T copy-mode send-keys -X next-word-end
-    M-h         bind-key -T root      kill-pane
-    M-l         bind-key -T root      select-window -t :+
-    M-m         bind-key -T root      select-window -t :+
-    M-m         bind-key -T copy-mode send-keys -X back-to-indentation
-    M-n         bind-key -T prefix    next-window -a
-    M-n         bind-key -T root      select-window -t :-
-    M-o         bind-key -T prefix    rotate-window -D
-    M-p         bind-key -T prefix    previous-window -a
-    M-r         bind-key -T copy-mode send-keys -X middle-line
-    M-u         bind-key -T prefix    run-shell /home/svein/.tmux/plugins/tpm/bindings/clean_plugins
-    M-v         bind-key -T copy-mode send-keys -X page-up
-    M-w         bind-key -T copy-mode send-keys -X copy-selection-and-cancel
-
-vim
-    <Esc>b      imap * <Esc>Bi
-    <Esc>d      imap * <C-O>de
-    <Esc>f      imap * <Esc>ef i
-    <Esc-l>     ???????????????
-    <Esc>m      imap * <Esc>l
-
-gnome-terminal
-    alt-1..9    goto tab
-
-ubuntu  
-    alt-tab     switch-applications
-
-

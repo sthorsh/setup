@@ -8,16 +8,14 @@ keys
   C-a C-t                           open window 
   C-a C-w                           close window
   A-nm                              goto window
-  C-a 1..9                          select window
   C-A-nm                            move window 
   C-a . sid:                        move window to session sid
   C-a , ...                         rename window
 
 --------------------------------------------------------------------
-    C-a |-                            open pane
-    C-a x                             close pane
-    C-a hjkl                          goto pane 
-    C-a q 1-9                         select pane
+  C-a |-                            open pane
+  A-x                               close pane
+  C-a hjkl                          goto pane 
     C-a {}                            move pane
     C-a !                             move pane to new window
     A-←↓↑→                            resize pane
