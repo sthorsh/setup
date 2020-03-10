@@ -73,7 +73,7 @@ READLINE
   C-m                            accept-line (cr, mac eol)
 
   C-A-m                          start macro
-  A-m                            end macro
+  C-x )                          end macro
   C-x e                          execute macro
 
   C-x C-e                        edit-and-execute-command

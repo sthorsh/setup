@@ -65,7 +65,6 @@ bind '"\C-[":character-search-backward'
 bind '"\e\C-p":glob-expand-word'
 bind '"\C-q":unix-filename-rubout'
 bind '"\e\C-m":start-kbd-macro'
-bind '"\em":end-kbd-macro'
 
 # Readline macros
 bind '"\C-x\x27":"\x27\x27\C-b"'

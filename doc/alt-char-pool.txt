@@ -1,22 +1,30 @@
-Ledig
+Alt char pool
   a
-  e [bash bol]
-  
-
-bash            
-    \e...       character-search-backward
-    \eb         backward-word
-    \ec         capitalize-word
-    \ed         kill-word
-    \ef         forward-word
-    \el         downcase-word
-    \em         end-kbd-macro
-    \en         non-incremental-forward-search-history
-    \ep         non-incremental-reverse-search-history
-    \er         revert-line
-    \et         transpose-words
-    \eu         upcase-word
-    \ey         yank-pop
+  b         bash backward-word
+  c         bash capitalize-word
+  d         bash kill-word
+  e
+  f         bash forward-word
+  g
+  h
+  i
+  j
+  k
+  l         bash downcase-word
+  m 
+  n         bash nif-search-hist
+  o
+  p         bash nir-search-hist
+  q
+  r         bash revert-line
+  s
+  t         bash transpose-words
+  u         bash upcase-word
+  v
+  w
+  x
+  y         bash yank-pop
+  z
 
 tmux
     M-b         bind-key -T copy-mode send-keys -X previous-word
@@ -39,6 +47,7 @@ vim
     <Esc>b      imap * <Esc>Bi
     <Esc>d      imap * <C-O>de
     <Esc>f      imap * <Esc>ef i
+    <Esc-l>     ???????????????
     <Esc>m      imap * <Esc>l
 
 gnome-terminal
@@ -46,3 +55,5 @@ gnome-terminal
 
 ubuntu  
     alt-tab     switch-applications
+
+
