@@ -138,6 +138,7 @@ vmap <expr> <right> DVB_Drag('right')
 inoremap b <Esc>Bi
 inoremap f <Esc>ef i
 inoremap d <C-O>de
+inoremap m <Esc>l
 inoremap <C-c> <Nop>
 inoremap <C-d> <C-o>x
 inoremap <C-s> <C-o>:update<CR><Esc>l

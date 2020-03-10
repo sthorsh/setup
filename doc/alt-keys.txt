@@ -1,0 +1,48 @@
+Ledig
+  a
+  e [bash bol]
+  
+
+bash            
+    \e...       character-search-backward
+    \eb         backward-word
+    \ec         capitalize-word
+    \ed         kill-word
+    \ef         forward-word
+    \el         downcase-word
+    \em         end-kbd-macro
+    \en         non-incremental-forward-search-history
+    \ep         non-incremental-reverse-search-history
+    \er         revert-line
+    \et         transpose-words
+    \eu         upcase-word
+    \ey         yank-pop
+
+tmux
+    M-b         bind-key -T copy-mode send-keys -X previous-word
+    M-c         bind-key -T root      copy-mode
+    M-f         bind-key -T copy-mode send-keys -X next-word-end
+    M-h         bind-key -T root      kill-pane
+    M-l         bind-key -T root      select-window -t :+
+    M-m         bind-key -T root      select-window -t :+
+    M-m         bind-key -T copy-mode send-keys -X back-to-indentation
+    M-n         bind-key -T prefix    next-window -a
+    M-n         bind-key -T root      select-window -t :-
+    M-o         bind-key -T prefix    rotate-window -D
+    M-p         bind-key -T prefix    previous-window -a
+    M-r         bind-key -T copy-mode send-keys -X middle-line
+    M-u         bind-key -T prefix    run-shell /home/svein/.tmux/plugins/tpm/bindings/clean_plugins
+    M-v         bind-key -T copy-mode send-keys -X page-up
+    M-w         bind-key -T copy-mode send-keys -X copy-selection-and-cancel
+
+vim
+    <Esc>b      imap * <Esc>Bi
+    <Esc>d      imap * <C-O>de
+    <Esc>f      imap * <Esc>ef i
+    <Esc>m      imap * <Esc>l
+
+gnome-terminal
+    alt-1..9    goto tab
+
+ubuntu  
+    alt-tab     switch-applications

@@ -30,7 +30,7 @@ READLINE
   C-i                            complete cmd: $ a_
   C-i                            complete file: $ /_
   A-{                            complete braces: $ A-{
-  A-g                            complete globbing: $ _
+  A-C-p                          complete pattern: $ _
   A-C-i                          complete history: $ _
 
   A-C-e                          expand macros
