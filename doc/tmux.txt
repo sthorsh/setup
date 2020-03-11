@@ -15,15 +15,14 @@ keys
 --------------------------------------------------------------------
   C-a |-                            open pane
   A-x                               close pane
-  C-a hjkl                          goto pane 
-    C-a {}                            move pane
+  A-hjkl                            goto pane 
+  C-a hjkl                          move pane
     C-a !                             move pane to new window
-    A-←↓↑→                            resize pane
-    C-A-←↓↑→                          resize pane
+  C-A-hjkl                          resize pane
     C-a z                             resize pane
-    C-a H                             clear pane history
-    C-a D                             toggle duplicate pane input
-    C-a P                             toggle pipe pane I/O to cmd
+  C-a C                             clear-history
+  C-a P                             pipe-pane -o ...
+  C-a S                             synchronize-panes on|off
 --------------------------------------------------------------------
 
   A-c                               copy-mode-vi
