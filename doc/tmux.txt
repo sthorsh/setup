@@ -1,63 +1,60 @@
-tmux
+TMUX                                  
 
-keys
-  C-a ()                            goto session
-  C-a s                             select session
-  C-a d                             detach client
+Keys
+  C-a ()                              goto session
+  C-a s                               select session
+  C-a d                               detach client
   
-  C-a C-t                           open window 
-  C-a C-w                           close window
-  A-nm                              goto window
-  C-A-nm                            move window 
-  C-a . sid:                        move window to session sid
-  C-a , ...                         rename window
+  C-a C-t                             open window 
+  A-nm                                goto window
+  C-A-nm                              move window 
+  C-a . sid:                          move window to session sid
+  C-a , ...                           rename window
+  C-a C-w                             close window
 
---------------------------------------------------------------------
-  C-a |-                            open pane
-  A-x                               close pane
-  A-hjkl                            goto pane 
-  C-a hjkl                          move pane
-    C-a !                             move pane to new window
-  C-A-hjkl                          resize pane
-    C-a z                             resize pane
-  C-a C                             clear-history
-  C-a P                             pipe-pane -o ...
-  C-a S                             synchronize-panes on|off
---------------------------------------------------------------------
+  C-a |-                              open pane
+  A-hjkl                              goto pane 
+  C-a hjkl                            move pane
+  C-a !                               move pane to new window
+  C-A-hjkl                            resize pane
+  C-a z                               resize pane
+  C-a C                               clear-history
+  C-a P                               pipe-pane -o ...
+  C-a S                               synchronize-panes on|off
+  A-x                                 close pane
 
-  A-c                               copy-mode-vi
-  C-a C-c                           copy-mode-vi
-    /                                 search ↓
-    ?                                 search ↑
-    v                                 select
-    V                                 select line
-    C-v                               toggle rectangle
-    o                                 goto opposite corner
-    space                             unselect
-    y                                 copy to clipboard
-    C-c                               cancel copy-mode-vi
+  A-c                                 copy-mode-vi
+    /                                   search ↓
+    ?                                   search ↑
+    v                                   select
+    V                                   select line
+    C-v                                 toggle rectangle
+    o                                   goto opposite corner
+    space                               unselect
+    y                                   copy to clipboard
+    C-c                                 exit copy-mode-vi
+  C-a C-v                             paste from clipboard (tmux)
+  C-S-v                               paste from clipboard (linux)
 
-  C-S-v                             paste from clipboard (bash)
-  C-a C-v                           paste from clipboard (tmux)
+  C-a r                               reload ~/.tmux.conf
 
-  C-a r                             reload ~/.tmux.conf
+  C-a I                               install plugin 
+  C-a U                               update plugins 
 
-  C-a I                             install plugin 
-  C-a U                             update plugins 
+  C-a C-s                             save environment
+  C-a C-r                             restore environment
 
-  C-a C-s                           save environment
-  C-a C-r                           restore environment
+Cmds
+  $ tmux [opts] [cmd] [flags]         tmux syntax
 
-commands
-  $ tmux [opts] [cmd] [flags]       tmux syntax
+  $ tmux lsc                          list clients
+  $ tmux att -t sid                   attach client to session [sid]
+  $ tmux [new -s sid]                 start server, open session [sid], attach client to session [sid]
+  $ tmux detach [-t cid] [-s sid]     detach client [cid] from session [sid]
 
-  $ tmux lsc                        list clients
-  $ tmux att -t sid                 attach client to session [sid]
-  $ tmux [new -s sid]               start server, open session [sid], attach client to session [sid]
-  $ tmux detach [-t cid] [-s sid]   detach client [cid] from session [sid]
-
-  $ tmux ls                         list sessions
-  $ tmux new -d [-s sid]            open detached session [sid]
-  $ tmux kill-session [-t sid]      kill session [sid]
-  $ tmux kill-server                detach clients, close sessions, stop server
+  $ tmux ls                           list sessions
+  $ tmux new -d [-s sid]              open detached session [sid]
+  $ tmux rename-session sid           rename session
+  $ tmux kill-session [-t sid]        kill session [sid]
+  $ tmux kill-server                  detach clients, close sessions, stop server
 
