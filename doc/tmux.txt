@@ -1,8 +1,7 @@
-TMUX                                  
+Tmux
 
 Keys
-  C-a ()                              goto session
-  C-a s                               select session
+  A-we                                switch client
   C-a d                               detach client
   
   C-a C-t                             open window 
@@ -22,6 +21,8 @@ Keys
   C-a P                               pipe-pane -o ...
   C-a S                               synchronize-panes on|off
   A-x                                 close pane
+
+  C-a s                               tree mode
 
   A-c                                 copy-mode-vi
     /                                   search ↓
@@ -45,7 +46,7 @@ Keys
   C-a C-r                             restore environment
 
 Cmds
-  $ tmux [opts] [cmd] [flags]         tmux syntax
+  $ tmux [opts] [cmd] [flags]         syntax
 
   $ tmux lsc                          list clients
   $ tmux att -t sid                   attach client to session [sid]

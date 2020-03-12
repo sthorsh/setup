@@ -7,17 +7,17 @@ Alt char pool
   c         tmux      bind-key -T root copy-mode
   d         bash      kill-word
   d         vim       imap * <C-O>de
-  e
+  e         tmux      goto-session
   f         bash      forward-word
   f         tmux      bind-key -T copy-mode send-keys -X next-word-end
   f         vim       imap * <Esc>ef i
-  g
-  h         
-  i
-  j
-  k
+  g         tmux      select-session
+  h         tmux      select-pane
+  i         
+  j         tmux      select-pane
+  k         tmux      select-pane
   l         bash      downcase-word
-  l         tmux      bind-key -T root select-window -t :+
+  l         tmux      select-pane
   l         vim       imap * imode → nmode
   m         tmux      bind-key -T root select-window -t :+
   m         tmux      bind-key -T copy-mode send-keys -X back-to-indentation
@@ -33,6 +33,7 @@ Alt char pool
   t         bash      transpose-words
   u         bash      upcase-word
   v         tmux      bind-key -T copy-mode send-keys -X page-up
+  w         tmux      goto session
   w         tmux      bind-key -T copy-mode send-keys -X copy-selection-and-cancel
   x         tmux      kill-pane
   y         bash      yank-pop
