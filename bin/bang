@@ -270,3 +270,6 @@ echo "installation done..."
 
 # Install manly
 
+# Install docker
+# curl https://get.docker.com/ | sudo sh
+
