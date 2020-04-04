@@ -1,0 +1,40 @@
+DOCKER NOTES
+
+Virtualisering
+  Container
+  Hypervisor
+  Container + hypervisor (cloud)
+
+Container-teknologier
+  Docker
+  LXC (https://linuxcontainers.org/)
+  ...
+
+Docker editions
+  Docker CE
+  Docker EE
+
+Docker stack
+  Applikasjon: ≥1 prosesser
+  Biblioteker
+  Docker: application deployment engine
+  Docker: container execution environment
+  OS: linux kernel features eg libcontainer, cgroups, namespaces, ...
+  Host: any x64 host
+
+Installere Docker
+  $ curl https://get.docker.com/ | sudo sh
+  
+We are now logged into a new container, with the catchy ID of f7cbdac22a02 , as
+the root user. This is a fully fledged Ubuntu host, and we can do anything we
+like in it. Let’s explore it a bit, starting with asking for its hostname. 
+
+Docker then used this image to create a new container inside a filesystem. The
+container has a network, IP address, and a bridge interface to talk to the local
+host.
+
+The Ubuntu image is actually a series of images collected under a single
+repository. We call it the Ubuntu operating system, but really it is not the
+full operating system. It’s a cut-down version with the bare runtime required to
+run the distribution.
+
