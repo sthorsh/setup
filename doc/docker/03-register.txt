@@ -1,7 +1,15 @@
 REGISTERE
 
+Register
+  Public: Docker Hub
+  Privat: Docker Trusted Registry
+
 Repository
-  sthorsh
+  Root: repo e.g ubuntu
+  User: user/repo e.g sthorsh/web
+
+  Public
+  Privat
 
 Images
 

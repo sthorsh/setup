@@ -1,15 +1,5 @@
 RUNTIME
 
-Binary
-  $ dockerd
-
-Images
-  Repository    sthorsh/ctx:imagetag
-  Tag
-  ID            4e5021d210f6
-  Created
-  Size
-
 Containers
   ID            
   Image
@@ -18,4 +8,14 @@ Containers
   Status
   Ports         if:host-port->container-port
   Name
+
+Images
+  Repository    sthorsh/ctx:imagetag
+  Tag
+  ID            4e5021d210f6
+  Created
+  Size
+
+Binary
+  $ dockerd
 
