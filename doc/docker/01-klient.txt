@@ -24,4 +24,6 @@ Dockerfile
   EXPOSE        listen on port
   ONBUILD       add trigger to image
   HEALTHCHECK   test container
-  
+
+Host
+  ~/.docker/config.json
