@@ -1,0 +1,22 @@
+NETWORKING
+
+CLI docker
+  $ docker network
+  $ docker network ls
+  $ docker network create acme
+  $ docker network inspect acme
+  $ docker network connect acme db
+  $ docker network disconnect acme db
+
+ls
+  ID              a2a47c201dfd
+  NAME            acme
+  DRIVER          bridge|host|null
+  SCOPE           local
+
+inspect
+  Name            acme
+  Id              a2a47c201dfd...
+  Subnet          172.18.0.0/16
+  Gateway         172.18.0.1
+

@@ -1,0 +1,25 @@
+Jenkins container
+  Create home directory
+    /var/jenkins_home/
+
+  Build Jenkins image from Dockerfile
+    Inherit FROM jenkins/jenkins:lts image
+    Install the sudo package
+    Install the docker binary
+    Install Jenkins plugins
+    ...
+
+Docker_test_job
+  Workspace /var/jenkins_home/jobs/Docker_test_job/workspace
+  Download Git repository to workspace
+  Build step: execute shell script
+    • docker build ...
+    • capture image ID
+    • docker run ...
+    • capture container ID
+    • docker attach
+    • docker wait
+    • capture exit code
+    • docker rm ...
+    • exit step with exit code   
+  

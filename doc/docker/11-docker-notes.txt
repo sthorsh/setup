@@ -38,3 +38,44 @@ repository. We call it the Ubuntu operating system, but really it is not the
 full operating system. It’s a cut-down version with the bare runtime required to
 run the distribution.
 
+In this configuration file, the daemon off; option stops Nginx from going into
+the background and forces it to run in the foreground. This is because Docker
+containers rely on the running process inside them to remain active. By default,
+Nginx daemonizes itself when started, which would cause the container to run
+briefly and then stop when the daemon was forked and launched and the original
+process that forked it stopped
+
+Volumes are specially designated directories within one or more contain- ers
+that bypass the layered Union File System to provide persistent or shared data
+for Docker. This means that changes to a volume are made directly and bypass the
+image. They will not be included when we commit or build an image. The -v option
+works by specifying a directory or mount on the local host separated from the
+directory on the container with a : . If the container directory doesn’t exist
+Docker will create it.
+
+Connecting containers
+  Docker internal networking: Dockers own network stack
+  Docker Networking: $ docker network
+
+Docker internal networking
+  Every time Docker creates a container, it creates a pair of peer interfaces
+  that are like opposite ends of a pipe (i.e., a packet sent on one will be
+  received on the other). It gives one of the peers to the container to become its
+  eth0 interface and keeps the other peer, with a unique name like vethec6a , out
+  on the host machine.  You can think of a veth interface as one end of a virtual
+  network cable. One end is plugged into the docker0 bridge, and the other end is
+  plugged into the container.  By binding every veth* interface to the docker0
+  bridge, Docker creates a virtual subnet shared between the host machine and
+  every Docker container.
+
+$ docker run -p 4567 --net=app --name network_test -t -i jamtur01/sinatra bash
+
+  As the container has been started inside the app network, Docker will have
+  taken note of all other containers running inside that network and populated
+  their ad- dresses in local DNS. Let’s see this now in the network_test
+  container.
+
+  We could now start our application and have our Sinatra application write its
+  variables into Redis via the connection between the db and webapp containers
+  that we’ve established via the app network.
+  
