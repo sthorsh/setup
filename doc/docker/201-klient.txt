@@ -1,10 +1,12 @@
 KLIENT
 
-Binary
+Cmds
   $ docker
 
-Context
-  ctx
+Mgmt cmds
+
+Build context
+  ~/devops/docker/jenkins  
 
 Dockerfile
   FROM          base image
@@ -19,11 +21,15 @@ Dockerfile
   VOLUME        mount point for volume from host or other container (data)
   SHELL         override sh -c for running cmds
   RUN           exec cmd in new layer on top of current image && commit layer
-  CMD           exec cmd when container is launched
   ENTRYPOINT    exec cmd when container is launched
+  CMD           exec cmd when container is launched
   EXPOSE        listen on port
   ONBUILD       add trigger to image
   HEALTHCHECK   test container
 
-Host
-  ~/.docker/config.json
+Client container mgmt without ssh
+  We need to sign into a container: $ docker exec ... (cf ssh)
+  We need to send a signal to a container: $ docker kill ...
+  Service is managed via a network if: expose that (networking)
+  Service is managed through a Unix socket: expose it with a volume (volumes)
+ 

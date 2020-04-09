@@ -19,10 +19,25 @@ Images
   Created       30 mins ago
   Size          123MB
 
+Network
+
+Volumes
+
 Binary
   $ dockerd
   $ service docker start|stop|restart|status
 
-Host
-  /var/lib/docker/*
+/var/lib/docker/
+  builder/
+  buildkit/
+  containers/
+  image/
+  network/
+  overlay2/
+  plugins/
+  runtimes/
+  swarm/
+  tmp/
+  trust/
+  volumes/
 

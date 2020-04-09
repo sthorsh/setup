@@ -24,6 +24,11 @@ Docker stack
 
 Installere Docker
   $ curl https://get.docker.com/ | sudo sh
+
+Bruk
+  Local development
+  Continuous integration
+  Production services
   
 We are now logged into a new container, with the catchy ID of f7cbdac22a02 , as
 the root user. This is a fully fledged Ubuntu host, and we can do anything we
@@ -78,4 +83,13 @@ $ docker run -p 4567 --net=app --name network_test -t -i jamtur01/sinatra bash
   We could now start our application and have our Sinatra application write its
   variables into Redis via the connection between the db and webapp containers
   that we’ve established via the app network.
+
+NETWORKING
+Here we’ve created a container with the docker run command from the jamtur01
+/redis_primary image. We’ve used a new flag that we’ve not seen before, -h ,
+which sets the hostname of the container. This overrides the default behavior
+(setting the hostname of the container to the short container ID) and allows us
+to specify our own hostname. We’ll use this to ensure that our container is
+given a hostname of redis_primary and will thus be resolved that way with local
+DNS.
   

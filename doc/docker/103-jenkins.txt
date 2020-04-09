@@ -1,3 +1,41 @@
+JENKINS
+
+CI 
+  Test scenario
+    Install software
+    Deploy host (docker build & run)
+    Run tests
+    Clean up (docker rm)
+
+JENKINS SERVER
+  Dockerfile
+    Inherit FROM jenkins/jenkins:lts image
+    Install sudo
+    Install docker
+    Install Jenkins plugins
+
+  Home directory
+    /var/jenkins_home/
+
+  Build image
+    $ docker build -t sthorsh/jenkins .
+
+  Run image
+    $ docker run \
+             -d \
+             -p 8080:8080 \
+             -p 50000:50000 \
+             -v /var/jenkins_home:/var/jenkins_home \
+             -v /var/run/docker.sock:/var/run/docker.sock \
+             --name jenkins \
+      sthorsh/jenkins
+
+  Check logs
+    $ docker logs [-f] jenkins
+    ...
+    Jenkins is fully up and running
+    ...
+
 SINGLE-CONTAINER TEST
 
 Jenkins job
@@ -27,3 +65,4 @@ Jenkins job
 
 Enabling SCM polling
   TODO
+
