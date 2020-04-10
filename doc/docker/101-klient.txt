@@ -13,21 +13,21 @@ Build context
   ~/devops/docker/...
   
 Dockerfile
-    FROM          base image
-    LABEL         metadata
-    ARG           for $ docker build --build-arg ...
-    ENV           environment variable
-    USER          user which runs container 
-    STOPSIGNAL    signal which stops container 
-    ADD           add files from ctx or url to image
-    COPY          copy files from ctx to image
-    WORKDIR       working directory
-    VOLUME        mount point for volume from host or other container (data)
-    SHELL         override sh -c for running cmds
-    RUN           exec cmd in new layer on top of current image && commit layer
-    ENTRYPOINT    exec cmd when container is launched
-    CMD           exec cmd when container is launched
-    EXPOSE        listen on port
-    ONBUILD       add trigger to image
-    HEALTHCHECK   test container
+  FROM          set base image
+  LABEL         add metadata to image
+  ARG           define variable
+  ENV           define variable persisted in image
+  SHELL         set shell for RUN etc
+  USER          set user for RUN etc
+  WORKDIR       set working directory for RUN etc
+  RUN cmd       execute shell cmd && commit layer
+  ADD           add files inside context to image filesystem
+  COPY          add files inside context to image filesystem
+  VOLUME arg    create mount point at arg for volume
+  ONBUILD       add on-build trigger to image
+  EXPOSE        document port intended to be published
+  CMD           execute cmd on launch
+  ENTRYPOINT    execute cmd on launch
+  HEALTHCHECK   check container health
+  STOPSIGNAL    set signal to stop container
   
