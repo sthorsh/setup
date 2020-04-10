@@ -93,6 +93,7 @@ alias jobs="jobs -l"
 alias l='ls -lF --color=auto --group-directories-first'
 alias la='ls -alF --color=auto --group-directories-first'
 alias ld='ls -dl --color=auto --group-directories-first  .[!.]*'
+alias manopt='manly'
 alias mount='mount | column -t'
 alias mvnf='mvn clean install -Pfindbugs,checkstyle'
 alias mvnl='mvn clean install -Dmaven.test.skip=true'

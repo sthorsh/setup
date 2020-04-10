@@ -1,0 +1,42 @@
+NETWORKS
+
+Docker networking
+  Setup your own networks through which containers can communicate
+  Supplement the existing docker0 network with new, user managed networks
+
+Features
+  You can run containers in any order
+  You can connect to a container before it is created
+  Containers can be connected across ≥2 different hosts
+  No need for connection updates on container stop|start|restart
+  The network provides internal container name resolution (local DNS)
+
+Container Network Model (CNM)
+  Sandbox
+  Endpoint
+  Network
+  Docker engine
+  Driver
+  Controller
+
+Driver
+  Bridge: container added to docker0
+  Host: container added to host network
+  None: no network 
+  Overlay: network spanning docker hosts
+  Macvlan: container assigned mac address
+
+Tasks
+  Create network: $ docker network create foo
+  Remove network: $ docker network rm foo
+  Launch container in network: $ docker run --net=foo --name bar ...
+  Lookup container from other container using DNS: # host bar
+  Add container to network: $ docker network connect foo bar
+  Remove container from network: $ docker network disconnect foo bar
+  Create address pools:
+  Delete address pools:
+  Allocate container IP addresses:
+  Deallocate container IP addresses:
+
+URLs
+  http://medium.com/edureka/docker-networking-1a7d65e89013
