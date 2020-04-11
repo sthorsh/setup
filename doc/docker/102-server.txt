@@ -1,28 +1,5 @@
 RUNTIME
 
-Containers
-  ID            43a906eec3f2 (UUID)
-  Image         sthorsh/ctx:v1
-  Command       /bin/bash ...
-  Created       30 mins ago
-  Status        Up 30 minutes
-  Ports         if:host-port->container-port
-  Name          custom (ctx) or random (gray_cat)
-  
-  Hostname      $ hostname 43a906eec3f2
-  If/IP         $ hostname -I → 172.17.0.4
-
-Images
-  Repository    sthorsh/ctx
-  Tag           v1
-  ID            4e5021d210f6 (UUID)
-  Created       30 mins ago
-  Size          123MB
-
-Network
-
-Volumes
-
 Binary
   $ dockerd
   $ service docker start|stop|restart|status
@@ -40,4 +17,23 @@ Binary
   tmp/
   trust/
   volumes/
+
+Images
+  Repository    sthorsh/ctx
+  Tag           v1
+  ID            4e5021d210f6 (UUID)
+  Created       30 mins ago
+  Size          123MB
+
+Containers
+  ID            43a906eec3f2 (UUID)
+  Image         sthorsh/ctx:v1
+  Command       /bin/bash ...
+  Created       30 mins ago
+  Status        Up 30 minutes
+  Ports         if:host-port->container-port
+  Name          custom (ctx) or random (gray_cat)
+  
+  Hostname      $ hostname 43a906eec3f2
+  If/IP         $ hostname -I → 172.17.0.4
 
