@@ -1,6 +1,6 @@
 KLIENT
 
-Docker CLI
+CLI docker
   $ docker <HT>
   $ docker <CR>
   $ docker cmd [--help]

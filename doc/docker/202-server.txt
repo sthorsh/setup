@@ -1,6 +1,6 @@
-RUNTIME
+SERVER
 
-Binary
+dockerd
   $ dockerd
   $ service docker start|stop|restart|status
 
@@ -33,7 +33,6 @@ Containers
   Status        Up 30 minutes
   Ports         if:host-port->container-port
   Name          custom (ctx) or random (gray_cat)
-  
   Hostname      $ hostname 43a906eec3f2
   If/IP         $ hostname -I → 172.17.0.4
 
