@@ -1,0 +1,6 @@
+CONTAINER
+
+Definisjon
+  En container er en _isolert_ prosess.
+
+
