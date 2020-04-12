@@ -1,12 +1,12 @@
 CONTAINER
 
 Definisjon
-  En container er en prosess(gruppe)
-  En container er en prosess(gruppe) + isolasjon
+  En container er en (eller flere) prosess(er)
+  En container er en (eller flere) prosess(er) + isolasjon
 
 Default isolasjon
-  Tilstand/kontekstsvitsjing
-  Virtuelt addresserom/minne
+  Prosess: "egen" CPU
+  Virtuelt adresserom: "eget" fysisk minne
   Prosess → bruker → privilegier (privileged/unprivileged)
 
 Opt-in isolasjon
