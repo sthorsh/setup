@@ -1,0 +1,25 @@
+CONTAINER IMAGE
+
+Image (OCI)
+  manifest.json
+  Lag 1..N
+  config.json (default config)
+
+Image layers (FS)
+  Lag 2: nginx, nginx.conf (RO)
+  Lag 1 OS: bash, libc.so.6 (RO)
+
+Image register
+  Public: Docker Hub
+  Privat: Docker Trusted Registry
+
+Image repository
+  Root: repo e.g ubuntu
+  User: user/repo e.g sthorsh/web
+  Public
+  Privat
+
+Image cache
+  Docker ekstraherer (splitter) image i lag ved pull
+  Docker lagrer hvert lag i image cache for gjenbruk
+

@@ -1,4 +1,4 @@
-CONTAINER
+CONTAINER RUNTIME
 
 Definisjon
   En container er en (eller flere) prosess(er)
@@ -31,7 +31,7 @@ Namespace
 
 Container og isolasjon
   Default: ✓
-  Mount namespace: ± 
+  Mount namespace: $ sudo unshare -m bash
   UTS namespace: ± 
   IPC namespace: ± 
   Network namespace: ± 
@@ -41,4 +41,13 @@ Container og isolasjon
   Capabilities: ± 
   AppArmor: ± 
   SELinux: ± 
+
+App vs system container
+  App container e.g nginx (Docker)
+  System container e.g ubuntu (LXC, emulerer VM)
+
+Container layers
+  Container: RW
+  Framework: nginx, RO
+  OS: RO
 

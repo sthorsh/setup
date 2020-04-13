@@ -1,0 +1,47 @@
+ARKITEKTUR
+
+Utvikle
+  ...
+
+Bygge
+  Bygge container image            $ docker build
+  Bygge image filsystem (IFS)
+
+Distribuere ↑
+  Laste opp image                  $ docker push
+
+Docker Hub
+  95 % av all software
+  Erstatter apt repo etc
+  Alt: quay.io (Red Hat)
+
+Distribuere ↓
+  Søke opp image                   $ docker search
+  Laste ned image                  $ docker pull
+  Lagre lag i image cache
+
+Installere
+  Lage container                   $ docker create
+  Lage union filsystem             aufs, overlayfs
+  Lage union mount point           IFS: nginx + OS
+  Merge container: website (RW)    CFS: container + IFS
+
+Konfigurere
+  Eg env var                       $ docker run -e FOO=BAR
+  Container runtime config.json    overstyrer image default config.json
+
+Kjøre
+  Kjøre binary fra CFS             $ docker run 
+  Lage mount punkt for CFS
+  Mounte CFS på mount punkt
+
+Starte|stoppe
+  Starte container                 $ docker start
+  Stoppe container                 $ docker stop
+
+Bygge website
+  Ta snapshot                      $ docker build
+
+Distribuere website ↑
+  Laste opp image                  $ docker push
+
