@@ -1,0 +1,28 @@
+Utvikling
+  ...
+
+Distribusjon (opp)
+  Bygge container image         $ docker build
+  Laste opp image               $ docker push 
+  ...
+
+Distribusjon (ned)
+  Søke opp image                $ docker search
+  Laste ned image               $ docker pull
+  ...
+
+Installasjon
+  Installere                  
+  Konfigurere
+  Oppdatere
+  ...
+
+Operasjonelt/drift
+  Starte container              $ docker run
+  Stoppe container              $ docker stop
+  Restarte container            $ docker start
+  Avhengigheter
+  Konflikt biblioteker
+  Konflikt nettverksporter
+  ...
+
