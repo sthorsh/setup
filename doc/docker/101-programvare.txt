@@ -1,0 +1,33 @@
+PROGRAMVARE
+
+Utvikling
+  ...
+
+Distribusjon (opp)
+  Bygge container image             $ docker build
+  Laste opp container image         $ docker push 
+  ...
+
+Docker Hub
+  
+
+Distribusjon (ned)
+  Søke opp container image          $ docker search
+  Laste ned container image         $ docker pull
+  ...
+
+Installasjon
+  Installere                  
+  Konfigurere
+  Oppdatere
+  ...
+
+Operasjonelt/drift
+  Starte container                  $ docker run
+  Stoppe container                  $ docker stop
+  Restarte container                $ docker start
+  Avhengigheter
+  Konflikt biblioteker              container mount namespace
+  Konflikt nettverksporter          container network namespace
+  ...
+
