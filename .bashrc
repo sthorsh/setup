@@ -81,7 +81,7 @@ bind '"\C-xu":"\eb\eu "'
 alias awkde="cat ~/doc/awk/exp.txt"
 alias awkdv="awk --dump-variables=$(tty) ''"
 alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
-alias bat="cat"
+alias bat="bat"
 alias cs="cheat"
 alias egrep='egrep --ignore-case --color=auto'
 alias fgrep='fgrep --color=auto'
