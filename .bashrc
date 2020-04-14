@@ -81,7 +81,8 @@ bind '"\C-xu":"\eb\eu "'
 alias awkde="cat ~/doc/awk/exp.txt"
 alias awkdv="awk --dump-variables=$(tty) ''"
 alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
-alias cs=cheat
+alias bat="cat"
+alias cs="cheat"
 alias egrep='egrep --ignore-case --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gradle="/opt/gradle/bin/gradle"
@@ -98,6 +99,7 @@ alias mount='mount | column -t'
 alias mvnf='mvn clean install -Pfindbugs,checkstyle'
 alias mvnl='mvn clean install -Dmaven.test.skip=true'
 alias path='echo -e ${PATH//:/"\n"}'
+alias pip="pip3.7"
 alias postman='/opt/Postman/Postman > /dev/null 2>&1 &'
 alias ps='ps -efj --header'
 alias soapui="/opt/SoapUI-5.5.0/bin/soapui.sh > /dev/null 2>&1 &"
