@@ -78,6 +78,7 @@ bind '"\C-xq": "\eb\"\ef\" "'
 bind '"\C-xu":"\eb\eu "'
 
 # Aliases
+alias ansible-playbook="ansible-playbook -e ansible_python_interpreter=/usr/bin/python"
 alias awkde="cat ~/doc/awk/exp.txt"
 alias awkdv="awk --dump-variables=$(tty) ''"
 alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
