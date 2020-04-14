@@ -1,0 +1,45 @@
+ANSIBLE
+
+Arkitektur
+  Control node: ansible 2.9.6
+  Plugins: docker, ssh, kubectl, winrm ($ ansible-doc)
+  Managed nodes: container, linux vm, pod, windows fysisk
+
+Rekonsilliering
+  Current state: absent, differs, same (hva, deklarativt, ansible)
+  Add file, replace file, nothing (hvordan, prosedyralt, bash)
+  Desired state: ✓ (hva, deklarativt, ansible)
+
+Idempotent
+  En kommando kan utføres ≥1 ganger uten endret utfall
+  De fleste (men ikke alle) ansible-moduler er idempotente
+
+Drift
+  Over tid: current state != desired state
+  Feks noen endret konfig på en server → boom!
+
+Ansible som rammeverk
+  Kontrollnode: bruker moduler
+  Moduler: utfører idempotente kommandoer
+  Kommandoer: ensures desired state
+
+Ansible modes
+  Ad-hoc → playbook.yml
+  Docker CLI → docker-compose.yml
+
+CLI
+  $ ansible
+  $ ansible-config
+  $ ansible-connection
+  $ ansible-console
+• $ ansible-doc
+  $ ansible-galaxy
+  $ ansible-inventory
+  $ ansible-playbook
+  $ ansible-pull
+  $ ansible-test
+  $ ansible-vault
+
+Modulindeks
+  https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
