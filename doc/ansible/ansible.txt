@@ -1,9 +1,24 @@
 ANSIBLE
 
+CLI
+• $ ansible
+  $ ansible-config
+  $ ansible-connection
+  $ ansible-console
+• $ ansible-doc
+    $ ansible-doc -t connection -l
+    $ ansible-doc -t inventory -l
+  $ ansible-galaxy
+  $ ansible-inventory
+• $ ansible-playbook
+  $ ansible-pull
+  $ ansible-test
+  $ ansible-vault
+
 Arkitektur
-  Control node: ansible 2.9.6
-  Plugins: docker, ssh, kubectl, winrm ($ ansible-doc)
-  Managed nodes: container, linux vm, pod, windows fysisk
+  Kontrollnode: ansible 2.9.6
+  Connection: docker, ssh, kubectl, winrm (plugins)
+  Managed noder: container, linux vm, pod, fysisk windows 
 
 Rekonsilliering
   Current state: absent, differs, same (hva, deklarativt, ansible)
@@ -27,19 +42,19 @@ Ansible modes
   Ad-hoc → playbook.yml
   Docker CLI → docker-compose.yml
 
-CLI
-  $ ansible
-  $ ansible-config
-  $ ansible-connection
-  $ ansible-console
-• $ ansible-doc
-  $ ansible-galaxy
-  $ ansible-inventory
-  $ ansible-playbook
-  $ ansible-pull
-  $ ansible-test
-  $ ansible-vault
+Ansible inventory
+  What: db, web, leaf, spine
+  Where: east, west, floor_19, building_A
+  When: dev, test, staging, prod
 
-Modulindeks
+Ansible modules
   https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
 
+Configuration
+  Using -e extra variables at the command line 
+  Variables
+  Playbook keywords
+  Command-line options
+  Environment variables
+  Configuration file: ansible.cfg (lavest presedens)
+ 
