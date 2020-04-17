@@ -1,0 +1,45 @@
+POD
+
+Pod
+  K8s objekt
+
+Pod
+  IP: 10.0.0.12 (dynamisk)
+  ID: front-end, db:v1, ...
+  Label: prod, be, 1.2.3
+
+Pod
+  Environment
+  • Kernel namespaces (mount etc)
+  • Nettverkstakk: en ip-addr per pod
+  ...
+  Containere
+  • Main container: nginx
+  • Sidecar container(s): eg logging
+  • En container kjører alltid i en pod
+
+Pods er atomic 
+  • enhet for deployment (pod er minste uow som kan deployes på en node)
+  • enhet for skedulering 
+  • enhet for skalering
+  • en pod er enten "up", ellers finnes den ikke
+  • en pod finnes på _en_ node, aldri spredt over flere
+
+Livssyklus/faser
+  Pending
+  Running
+  Succeeded/failed: kan ikke restartes
+
+Deployment objekt
+  Alt1: deployment
+  Alt2: vha replication controller
+  Alt3: pod vha manifest-fil (kind: Pod)
+
+IP churn
+  Hver ny pod får ny IP
+  Feks hvis pod går ned → k8s starter ny pod
+  Feks hvis pod skaleres opp → k8s starter ny pod
+  Feks hvis pod oppdateres med ny kode → k8s starter ny pod
+  Konsekvens: 
+
+  

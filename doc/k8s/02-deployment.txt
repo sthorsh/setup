@@ -1,0 +1,12 @@
+DEPLOYMENT
+
+Deployment
+  K8s objekt
+  Adds features around replica sets
+
+Features
+  Simple rolling updates
+    → Multiple concurrent version
+  Simple rolling rollbacks 
+    → Simple versioned rollbacks
+  

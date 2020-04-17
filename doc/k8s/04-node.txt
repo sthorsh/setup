@@ -1,0 +1,16 @@
+NODER
+
+Kubelet
+  Agent
+  Instansierer pods
+  Endepunkt på :10255
+  Rapporterer tilbake til master
+
+Container runtime (docker)
+  Pull image  
+  Start|stop container
+
+kube-proxy
+  Gir hver pod en IP-adresse
+  Lastbalanserer mellom alle pods i en service
+

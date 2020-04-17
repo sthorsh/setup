@@ -1,0 +1,41 @@
+ARKITEKTUR
+
+Applikasjon 
+  LB → pod 10.0.0.64
+  FE → pod 10.0.0.16
+  FE → pod 10.0.0.12
+  IAM → pod 10.0.0.2
+  Search → pod 10.0.0.80
+  DB → pod 10.0.0.10
+  KV → pod 10.0.0.1
+  Log → pod 10.0.0.20
+  ...
+  
+Deklarativ modell
+  Desired state: ønsket tilstand for clusteret 
+  Manifest: beskriver desired state (yaml, json)
+  Current state: clusterets faktiske tilstand
+  Drift: current tilstand != desired state
+  Rectify: k8s forsøker å gjenopprette desired state
+
+Fordeler ved deklarativ modell
+  Selvdokumenterende
+  Spec-once deploy-many
+  Versjonskontroll (CVS)
+
+K8s cluster
+  Master
+  Noder
+
+K8s objekter
+  Proper 1st class rest objects in k8s api
+  Definert i form av YAML el JSON manifest
+  Deployes ved å sende manifest til apiserver
+  
+
+K8s label
+  Produksjon: prod
+  Backend: be
+  Versjon: 1.2.3
+  ...
+

@@ -1,0 +1,17 @@
+MASTER
+
+apiserver
+  $ kubectl
+  JSON
+  REST API
+  Endepunkt på :443
+
+Controller
+
+Scheduler
+  Tilordner arbeid til noder
+
+Cluster store
+  Key-Value store
+  etcd
+
