@@ -1,17 +1,34 @@
 MASTER
 
+Komponenter
+  apiserver (stateless)
+  Controller (stateless)
+  Scheduler (stateless)
+  Persistent lager (stateful)
+
 apiserver
-  $ kubectl
-  JSON
-  REST API
-  Endepunkt på :443
-
+  Eksponerer api
+  Konsumerer json/yaml
+  Bruker tcp port :443
+  
 Controller
-
+  Node controller
+  Endpoints controller
+  Namespace controller
+  ...
+  Ser etter endringer
+  Bevarer desired state
+  
 Scheduler
-  Tilordner arbeid til noder
-
-Cluster store
-  Key-Value store
-  etcd
-
+  Ser etter nye pods
+  Tilordner work til noder
+  Affinity 
+  Constraints
+  Resource mgmt
+  ...
+  
+Persistent lager
+  Lagrer config
+  Lagrer tilstand
+  Bruker en distribuert nosql key-value database (etcd)
+  

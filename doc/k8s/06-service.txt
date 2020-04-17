@@ -2,6 +2,15 @@ SERVICE
 
 Service
   K8s objekt
+  
+Hensikt
+  Networking
+  Lastbalansering
+  Mikrotjenester (?)
+
+Ideen
+  En IP → flere pods
+  N pods → _en_ service → N pods
 
 Service
   IP: 10.0.0.60 (statisk)
@@ -9,9 +18,9 @@ Service
   Label: prod, be, 1.2.3
 
 Egenskaper
-  Balanserer last (default: random)
+  Lastbalanserer (random)
+  Session affinity kan konfigureres
   Sender trafikk kun til healthy pods
-  Kan konfigureres for session affinity
   Kan peke til ting utenfor clusteret
   Bruker TCP per default (støtter UDP)
 

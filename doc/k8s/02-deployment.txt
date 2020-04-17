@@ -2,11 +2,15 @@ DEPLOYMENT
 
 Deployment
   K8s objekt
-  Adds features around replica sets
+  En feature-rik abstraksjon
+  For administrasjon av pods
 
-Features
-  Simple rolling updates
-    → Multiple concurrent version
-  Simple rolling rollbacks 
-    → Simple versioned rollbacks
-  
+Deklarerer
+  Desired state
+  Skalere opp
+  Skalere ned
+  Rulle ut nye versjoner
+  Flere versjoner side-ved-side
+  Rulle tilbake til tidligere versjoner
+  ...
+

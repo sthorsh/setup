@@ -1,16 +1,24 @@
 NODER
 
+Komponenter
+  Kubelet
+  Container runtime
+  Kube proxy
+
 Kubelet
-  Agent
-  Instansierer pods
-  Endepunkt på :10255
+  K8s agent (installert)
+  Registrerer noden i clustert
+  Lytter etter work assigments fra master
+  Instansierer pods (→)
   Rapporterer tilbake til master
+  Eksponerer /health, /pods, /spec over tcp :10255
 
-Container runtime (docker)
-  Pull image  
-  Start|stop container
-
+Container runtime
+  Cf docker
+  
 kube-proxy
-  Gir hver pod en IP-adresse
-  Lastbalanserer mellom alle pods i en service
+  K8s networking
+  For hver pod: en ip addr
+  For hver container i pod: en tcp port
+  For service noder: LB mellom pod noder
 

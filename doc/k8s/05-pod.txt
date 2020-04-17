@@ -5,8 +5,7 @@ Pod
 
 Pod
   IP: 10.0.0.12 (dynamisk)
-  ID: front-end, db:v1, ...
-  Label: prod, be, 1.2.3
+  Label: prod, be, 1.2.3, ...
 
 Pod
   Environment
