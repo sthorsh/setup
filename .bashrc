@@ -82,7 +82,7 @@ alias ansible-playbook="ansible-playbook -e ansible_python_interpreter=/usr/bin/
 alias awkde="cat ~/doc/awk/exp.txt"
 alias awkdv="awk --dump-variables=$(tty) ''"
 alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
-alias bat="bat"
+alias cat="bat"
 alias cs="cheat"
 alias egrep='egrep --ignore-case --color=auto'
 alias fgrep='fgrep --color=auto'

@@ -12,3 +12,6 @@ Deklarerer
   Rulle tilbake til tidligere versjoner
   ...
 
+The Good Stuff
+  https://medium.com/@xcoulon/deploying-your-first-web-app-on-minikube-6e98d2884b3a
+
