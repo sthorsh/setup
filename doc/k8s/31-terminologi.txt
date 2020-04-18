@@ -1,0 +1,32 @@
+TERMINOLOGI
+
+K8s
+  When you deploy k8s, you get a cluster (k8s)
+  If you’re running k8s, you’re running a cluster (redhat)
+
+Cluster
+  Master node(r)
+  Worker node(r)
+  ...
+
+Tilstand
+  Desired state: manifest
+  Current state: drift
+
+Objekt
+  Persistent entitet
+  Representerer tilstand
+  Pod, Service, ReplicaSet, Deployment, ... (API)
+  Namespace, Node, ...
+
+---------------------
+Controller
+  Overvåker tilstand
+  Regulerer tilstand (termostat)
+  ReplicaSet, Deployment, Job, NodeController, ...
+
+Label
+  Produksjon: prod
+  Backend: be
+  Versjon: 1.2.3
+

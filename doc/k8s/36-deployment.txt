@@ -1,7 +1,6 @@
 DEPLOYMENT
 
 Deployment
-  K8s objekt
   En feature-rik abstraksjon
   For administrasjon av pods
 
@@ -13,4 +12,9 @@ Deklarerer
   Flere versjoner side-ved-side
   Rulle tilbake til tidligere versjoner
   ...
+
+Deployment objekt
+  Alt1: deployment
+  Alt2: vha replication controller
+  Alt3: pod vha manifest-fil (kind: Pod)
 

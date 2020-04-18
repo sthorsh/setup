@@ -1,0 +1,46 @@
+POD
+
+Pod
+  En main container
+  N supporting containers
+  Mount namespace: fs
+  Network namespace: ip (netns)
+  IPC namespace
+  cgroups
+  Volumes
+  ...
+
+Pods er atomic
+  Minste enhet for deployment
+  Minste enhet for skedulering
+  Minste enhet for work
+  Minste enhet for skalering
+  Alle eller ingen containerer starter (db)
+  Enten er den ikke der, ellers er den oppe
+  Deployes til kun en node, ikke over flere
+  
+Livssyklus
+  Pending
+  Running
+  Succeeded
+  Failed
+
+TCP/IP
+  Pod: 10.0.0.1
+  Container: 10.0.0.1:port
+
+Kommunikasjon
+  Intra pod: localhost
+  Inter pod: pod network
+
+IP churn
+  Ny pod → ny ip
+  Deployment → ny pod/ip
+  Pod går ned → ny pod/ip
+  Pod skaleres opp → ny pod/ip
+  Pod oppdateres med ny kode → ny pod/ip
+  ...
+  
+Label
+  Feks: prod, be, 1.2.3, ...
+
