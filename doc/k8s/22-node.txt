@@ -1,0 +1,21 @@
+NODER
+
+Kubelet
+  Agent
+  Registrerer nye noder i clusteret
+  Mottar work assigments fra master
+  Instansierer pods
+  Rapporterer tilbake til master
+  Eksponerer endepunkt ip:10255/health
+  Eksponerer endepunkt ip:10255/pods
+  Eksponerer endepunkt ip:10255/spec
+
+Container runtime
+  Cf docker
+  
+kube-proxy
+  Networking
+  For hver pod: en ip addr
+  For hver container i pod: en tcp port
+  For service noder: LB mellom pod noder
+

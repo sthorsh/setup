@@ -3,7 +3,7 @@ $ kubectl
   annotate
   api-resources
   api-versions
-  apply
+• apply
   attach
   auth
   autoscale
@@ -15,7 +15,7 @@ $ kubectl
   cordon
   cp
 • create
-  delete
+• delete
 • describe
   diff
   drain
@@ -23,7 +23,7 @@ $ kubectl
   exec
   explain
   expose
-  get
+• get
   kustomize
   label
   logs

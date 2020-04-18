@@ -16,15 +16,19 @@ Tilstand
 Objekt
   Persistent entitet
   Representerer tilstand
-  Pod, Service, ReplicaSet, Deployment, ... (API)
-  Namespace, Node, ...
+  Pod: pod
+  ReplicaSet: pods + desired state
+  Service: aksess til pods + LB
+  Endpoint: list of all pods in service
+  Deployment
+  Job
 
----------------------
 Controller
   Overvåker tilstand
   Regulerer tilstand (termostat)
-  ReplicaSet, Deployment, Job, NodeController, ...
+  DeploymentController, ReplicaSetController, JobController
 
+-------------------
 Label
   Produksjon: prod
   Backend: be

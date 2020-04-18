@@ -1,7 +1,6 @@
 DEPLOYMENT
 
-Deployment
-  En feature-rik abstraksjon
+Hensikt
   For administrasjon av pods
 
 Deklarerer
@@ -12,9 +11,4 @@ Deklarerer
   Flere versjoner side-ved-side
   Rulle tilbake til tidligere versjoner
   ...
-
-Deployment objekt
-  Alt1: deployment
-  Alt2: vha replication controller
-  Alt3: pod vha manifest-fil (kind: Pod)
 

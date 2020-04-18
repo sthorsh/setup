@@ -1,0 +1,30 @@
+SERVICE
+
+Service
+  Aksess til pods
+  Lastbalansering
+
+TCP/IP
+  Fast IP: 10.0.0.1
+  Fast DNS: service-name
+  Fast cluster-wide port: 12345
+
+Aksess
+  Innifra: IP/DNS + port
+  Utenfra: IP/DNS + cluster-wide port
+
+Binding service → pods
+  Service: label selector
+  Pods: label feks prod.v1
+
+Discovery
+  DNS (default)
+  Environment variables
+  
+----------
+
+TCP/IP
+  Fast public? IP: 10.0.0.1
+  Fast public? DNS: service-name
+  Fast public? cluster-wide port: 12345
+

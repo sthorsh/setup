@@ -1,12 +1,12 @@
 MASTER
 
-apiserver
-  Eksponerer api
-  Konsumerer json
-  Over tcp port :443
+API-server
+  Eksponerer API
+  Konsumerer JSON
+  TCP port :443
   
 Controller manager
-  Administrerer controllere
+  ...
   
 Scheduler
   Deployer pods til noder
@@ -18,5 +18,5 @@ Scheduler
 Persistent lager
   Lagrer config
   Lagrer tilstand
-  Bruker en distribuert nosql key-value database (etcd)
+  Distribuert nosql key-value database (etcd)
   
