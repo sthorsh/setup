@@ -20,9 +20,9 @@ $ kubectl
   diff
   drain
   edit
-  exec
-  explain
-  expose
+• exec
+• explain
+• expose
 • get
   kustomize
   label
@@ -33,7 +33,7 @@ $ kubectl
   port-forward
   proxy
   replace
-  rollout
+• rollout
   run
   scale
   set

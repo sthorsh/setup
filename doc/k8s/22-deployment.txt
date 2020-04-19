@@ -1,0 +1,27 @@
+DEPLOYMENT
+
+Deployment
+  Oppdateringer
+  Tilbakerullinger
+
+ReplicaSet
+  Reliability
+  Scalability
+  Desired state
+  ...
+
+ReplicaController
+  Reliability
+  Scalability
+  Desired state
+  ...
+
+Pod
+  ...
+
+Service
+  ...
+
+URLs
+  https://medium.com/@xcoulon/deploying-your-first-web-app-on-minikube-6e98d2884b3a
+
