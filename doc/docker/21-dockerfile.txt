@@ -1,13 +1,4 @@
-KLIENT
-
-CLI docker
-  $ docker <HT>
-  $ docker <CR>
-  $ docker cmd [--help]
-  $ docker mgmt [cmd [--help]]
-  $ man docker
-  $ man docker-cmd
-  $ man docker-mgmt-cmd
+DOCKERFILE
     
 Build context
   ~/devops/docker/...

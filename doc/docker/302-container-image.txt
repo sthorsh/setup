@@ -9,6 +9,7 @@ Image layers (FS)
   Lag 2: nginx, nginx.conf (RO)
   Lag 1 OS: bash, libc.so.6 (RO)
 
+---------------------------------
 Image register
   Public: Docker Hub
   Privat: Docker Trusted Registry

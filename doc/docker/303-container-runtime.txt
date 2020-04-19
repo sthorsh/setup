@@ -1,4 +1,4 @@
-CONTAINER RUNTIME
+CONTAINER
 
 Definisjon
   En container er en (eller flere) prosess(er)

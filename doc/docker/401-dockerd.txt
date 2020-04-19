@@ -2,6 +2,8 @@ SERVER
 
 dockerd
   $ dockerd
+
+service
   $ service docker start|stop|restart|status
 
 /var/lib/docker/
