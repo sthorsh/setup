@@ -13,7 +13,7 @@ Objektmodell (graf)
   Commit → commit, tree
   Tree → tree, blob
   Blob 
-  Tag → commit (.git/refs/tags/)
+  Tag → commit
 
 Branch
   En ref til en commit: .git/refs/heads/...
@@ -23,9 +23,19 @@ HEAD
   En ref til current branch: .git/HEAD 
   Eller en ref til en commit (detached HEAD)
 
+Tag 
+  En ref til en commit: .git/refs/tags/
+  En tag er som en branch som aldri flytter seg
+
 Merge
   Merge commit: en commit med to parent commits
   Fast-forward merge: move current branch tip to target branch tip
+  Merges bevarer historien (graf)
 
 Rebasing
+  Reapply commits on top of another base tip (change base)
+  Rebasing bevarer ikke historien (fra graf til linje)
+
+Distribusjon
+  
   
