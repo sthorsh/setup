@@ -1,7 +1,7 @@
 GIT 
 
 git
-  add                     working dir → staging area
+  add                     workspace → staging
   am
   annotate
   apply
@@ -10,17 +10,17 @@ git
   blame
   branch
   bundle
-  checkout
+  checkout                switch to branch: move HEAD && update workspace
   cherry
   cherry-pick
   clean
-  clone
-  commit                  staging area → local repo
+  clone                   workspace ← remote repo
+  commit                  staging → repo
   config                 
   describe
   diff
   difftool
-  fetch
+  fetch                   repo ← remote repo
   filter-branch
   format-patch
   fsck
@@ -29,7 +29,7 @@ git
   grep
   help
   imap-send
-  init
+  init                    workspace → repo
   instaweb
   interpret-trailers
   log
@@ -38,11 +38,11 @@ git
   mv
   name-rev
   notes
-  pull
-  push
+  pull                    workspace ← remote repo
+  push                    repo → remote repo
   rebase
   reflog
-  remote                  local repo → remote repo
+  remote                  
   repack
   replace
   request-pull
@@ -60,5 +60,5 @@ git
   tag
   verify-commit
   whatchanged
-  worktree
+  workspacetree
   
