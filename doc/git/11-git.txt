@@ -10,4 +10,7 @@ Persistent map
 
 Stupid content tracker
   
+---------------------------------
+Filesystem
+  .git/objects    object database
 
