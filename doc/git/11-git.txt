@@ -1,16 +1,64 @@
-Git
-  Persistent map: keys + values
-  Stupid content tracker
-  Revision control system: branches, history, merges, ...
-  Distribuert revision control system: distribuert 
+GIT 
 
-Persistent map
-  Key: sha1 e.g 23991897e13e47ed0adb91a0082c31c82fe0cbe5
-  Value: pieces of content e.g "Apple Pie"
-
-Stupid content tracker
+git
+  add                     working dir → staging area
+  am
+  annotate
+  apply
+  archive
+  bisect
+  blame
+  branch
+  bundle
+  checkout
+  cherry
+  cherry-pick
+  clean
+  clone
+  commit                  staging area → local repo
+  config                 
+  describe
+  diff
+  difftool
+  fetch
+  filter-branch
+  format-patch
+  fsck
+  gc
+  get-tar-commit-id
+  grep
+  help
+  imap-send
+  init
+  instaweb
+  interpret-trailers
+  log
+  merge
+  mergetool
+  mv
+  name-rev
+  notes
+  pull
+  push
+  rebase
+  reflog
+  remote                  local repo → remote repo
+  repack
+  replace
+  request-pull
+  reset
+  revert
+  rm
+  shortlog
+  show
+  show-branch
+  stage
+  stash
+  status
+  submodule
+  subtree
+  tag
+  verify-commit
+  whatchanged
+  worktree
   
----------------------------------
-Filesystem
-  .git/objects    object database
-

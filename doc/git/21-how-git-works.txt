@@ -1,0 +1,16 @@
+Git
+  Persistent map: keys + values
+  Stupid content tracker
+  Revision control system: branches, history, merges, ...
+  Distribuert revision control system: distribuert 
+
+Persistent map
+  Key: sha1 e.g 23991897e13e47ed0adb91a0082c31c82fe0cbe5
+  Value: pieces of content e.g "Apple Pie"
+
+Stupid content tracker
+  
+---------------------------------
+Filesystem
+  .git/objects    object database
+
