@@ -1,10 +1,10 @@
 PROSJEKT
 
-Prosjekt[rot]
+Prosjekt
   .git/
   working area
 
-.git
+.git (repository)
   .git/objects/ - objektdatabasen
   ...
   .git/refs/heads/ - branches
@@ -19,4 +19,5 @@ Prosjekt[rot]
   .git/config - konfigurasjon
    ...
   .git/HEAD - lokal HEAD
+  .git/index - staging area
 

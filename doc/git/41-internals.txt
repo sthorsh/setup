@@ -14,6 +14,12 @@ Objektmodell
   Tree → tree, blob
   Blob
   Tag → commit
+  Objekter er immutable (kun create, delete)
+
+Commit
+  Peker til parent commit (history)
+  Peker til snapshot av working area
+  Unreachable commit: cannot be accessed through a branch or tag
 
 Branch
   En peker/ref til en commit

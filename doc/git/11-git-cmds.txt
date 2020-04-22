@@ -1,7 +1,7 @@
 GIT CMDS
 
 git
-  $ git add                         mv wrk_area → stg_area
+  $ git add                         mv wrk_area → index
   $ git am
   $ git annotate
   $ git apply
@@ -14,13 +14,13 @@ git
   $ git cherry
   $ git cherry-pick
   $ git clean
-  $ git clone                       cp loc_repo ← rem_repo && build wrk_area
-  $ git commit                      mv stg_area → loc_repo
+  $ git clone                       cp repo ← rem_repo && build wrk_area
+  $ git commit                      mv index → repo
   $ git config
   $ git describe
-  $ git diff
+  $ git diff [--cached]             diff wrk_area index [or index repo]
   $ git difftool
-  $ git fetch <remote>              loc_repo ← rem_repo
+  $ git fetch <remote>              repo ← rem_repo
   $ git filter-branch
   $ git format-patch
   $ git fsck
@@ -29,7 +29,7 @@ git
   $ git grep
   $ git help
   $ git imap-send
-  $ git init                        mv wrk_area → loc_repo
+  $ git init                        mv wrk_area → repo
   $ git instaweb
   $ git interpret-trailers
   $ git log
@@ -39,7 +39,7 @@ git
   $ git name-rev
   $ git notes
   $ git pull <remote>               fetch + merge
-  $ git push <remote> <branch>      loc_repo → rem_repo: push commits to branch
+  $ git push <remote> <branch>      repo → rem_repo: push commits to branch
   $ git rebase
   $ git reflog
   $ git remote
