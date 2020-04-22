@@ -1,0 +1,23 @@
+PROSJEKT
+
+Prosjekt
+  $PROJECT_ROOT
+    .git/
+    working area
+
+.git
+  .git/objects/ - objektdatabasen
+  ...
+  .git/refs/heads/ - branches
+  .git/refs/heads/master - lokal master branch
+  ...
+  .git/refs/remotes/origin - default remote
+  .git/refs/remotes/origin/HEAD - remote HEAD
+  .git/refs/remotes/origin/master - remote master branch (packed-ref)
+  ...
+  .git/refs/tags/ - tags
+   ...
+  .git/config - konfigurasjon
+   ...
+  .git/HEAD - lokal HEAD
+  

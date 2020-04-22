@@ -82,7 +82,6 @@ alias ansible-playbook="ansible-playbook -e ansible_python_interpreter=/usr/bin/
 alias awkde="cat ~/doc/awk/exp.txt"
 alias awkdv="awk --dump-variables=$(tty) ''"
 alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
-alias cat="bat"
 alias cs="cheat"
 alias egrep='egrep --ignore-case --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -117,7 +116,7 @@ alias xsc='xclip -selection clipboard'
 [ -f ~/bin/completion/cheat.bash ] && source ~/bin/completion/cheat.bash
 
 # Start programs
-! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa_git )
+! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa )
 [[ -d $AMQ_HOME ]] && ! activemq status >/dev/null && activemq start >/dev/null 
 ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
 
