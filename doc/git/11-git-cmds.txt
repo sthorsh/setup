@@ -1,67 +1,64 @@
-GIT                           
+GIT CMDS
 
-git cmd
-  add                         mv wrk_area → stg_area
-  am
-  annotate
-  apply
-  archive
-  bisect
-  blame
-  branch
-  bundle
-  checkout                    switch to branch: mv HEAD && update wrk_area
-  cherry
-  cherry-pick
-  clean
-  clone                       cp loc_repo ← rem_repo && build wrk_area
-  commit                      mv stg_area → loc_repo
-  config                 
-  describe
-  diff
-  difftool
-  fetch <remote>              loc_repo ← rem_repo
-  filter-branch
-  format-patch
-  fsck
-  gc
-  get-tar-commit-id
-  grep
-  help
-  imap-send
-  init                        mv wrk_area → loc_repo
-  instaweb
-  interpret-trailers
-  log
-  merge <src> <dst>           merge source branch into destination branch
-  mergetool
-  mv
-  name-rev
-  notes
-  pull <remote>               fetch + merge
-  push <remote> <branch>      loc_repo → rem_repo: push commits to branch
-  rebase
-  reflog
-  remote                  
-  repack
-  replace
-  request-pull
-  reset
-  revert
-  rm
-  shortlog
-  show
-  show-branch
-  stage
-  stash
-  status
-  submodule
-  subtree
-  tag
-  verify-commit
-  whatchanged
-  workspacetree
-  
-git plumbing cmd
-  git cat-file 
-  git show-ref master
+git
+  $ git add                         mv wrk_area → stg_area
+  $ git am
+  $ git annotate
+  $ git apply
+  $ git archive
+  $ git bisect
+  $ git blame
+  $ git branch
+  $ git bundle
+  $ git checkout                    switch to branch: mv HEAD && update wrk_area
+  $ git cherry
+  $ git cherry-pick
+  $ git clean
+  $ git clone                       cp loc_repo ← rem_repo && build wrk_area
+  $ git commit                      mv stg_area → loc_repo
+  $ git config
+  $ git describe
+  $ git diff
+  $ git difftool
+  $ git fetch <remote>              loc_repo ← rem_repo
+  $ git filter-branch
+  $ git format-patch
+  $ git fsck
+  $ git gc
+  $ git get-tar-commit-id
+  $ git grep
+  $ git help
+  $ git imap-send
+  $ git init                        mv wrk_area → loc_repo
+  $ git instaweb
+  $ git interpret-trailers
+  $ git log
+  $ git merge <src> <dst>           merge source branch into destination branch
+  $ git mergetool
+  $ git mv
+  $ git name-rev
+  $ git notes
+  $ git pull <remote>               fetch + merge
+  $ git push <remote> <branch>      loc_repo → rem_repo: push commits to branch
+  $ git rebase
+  $ git reflog
+  $ git remote
+  $ git repack
+  $ git replace
+  $ git request-pull
+  $ git reset
+  $ git revert
+  $ git rm
+  $ git shortlog
+  $ git show
+  $ git show-branch
+  $ git stage
+  $ git stash
+  $ git status
+  $ git submodule
+  $ git subtree
+  $ git tag
+  $ git verify-commit
+  $ git whatchanged
+  $ git workspacetree
+

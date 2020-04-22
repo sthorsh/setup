@@ -1,9 +1,8 @@
 PROSJEKT
 
-Prosjekt
-  $PROJECT_ROOT
-    .git/
-    working area
+Prosjekt[rot]
+  .git/
+  working area
 
 .git
   .git/objects/ - objektdatabasen
@@ -20,4 +19,4 @@ Prosjekt
   .git/config - konfigurasjon
    ...
   .git/HEAD - lokal HEAD
-  
+

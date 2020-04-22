@@ -12,7 +12,7 @@ Git er filsystem
 Objektmodell
   Commit → commit, tree
   Tree → tree, blob
-  Blob 
+  Blob
   Tag → commit
 
 Branch
@@ -22,7 +22,7 @@ HEAD
   En peker/ref til current branch
   Eller en peker/ref til en commit (detached HEAD)
 
-Tag 
+Tag
   En peker/ref til en commit
   En tag er en branch som aldri flytter seg
 
@@ -30,15 +30,20 @@ Merge
   Fra source branch inn i target branch
   En merge er en commit med to parent commits (merge commit)
   Fast-forward merge: move current branch tip to target branch tip
-  
+
 Rebasing
   Alternativ til merge
   Gjenta commits on top of another base tip
-  
+
 Distribusjon
   Maskin1: repo (remote: maskin2)
   Maskin2: klone av repo (remote: maskin1)
   Ved kloning: git oppretter remote origin
   Et prosjekt kan ha ≥1 remotes: $ git remote add <new_remote> <url>
-  Hver remote kan ha ≥1 urls: $ git remote set-url --add <remote> <new_url> 
+  Hver remote kan ha ≥1 urls: $ git remote set-url --add <remote> <new_url>
+
+Kloning og branches
+  Origin: master branch
+  Lokalt: master branch
+  Lokalt: origin/master branch (i synk med remote origin master branch)
 
