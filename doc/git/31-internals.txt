@@ -1,43 +1,42 @@
-Git er VCS
+Git er et VCS
   Distribuert VCS
   VCS
   Content tracker
   Persistent map: ~/,git/objects
 
-Git er filsystem
+Git er et filsystem
   Fil: blob
   Katalog: tree
   Versjon: commit
 
-Objektmodell
-  Commit → commit, tree
-  Tree → tree, blob
-  Blob
-  Tag → commit
-  Objekter er immutable (kun create, delete)
+Objekter
+  Commit, tree, blob, tag
+  Alle objekter er immutable
 
 Commit
-  Peker til parent commit (history)
-  Peker til snapshot av working area
+  Er et snapshot/freeze-frame av prosjektet
+  Har en peker til et tree-objekt (snapshotet)
+  Har en peker til parent commit(s) (historikken)
   Unreachable commit: cannot be accessed through a branch or tag
 
+Tag
+  Har en peker til en commit
+  Er som en branch som aldri flytter seg
+
 Branch
-  En peker/ref til en commit
+  Er en ref/peker til en commit
+  Er et entry punkt til en history of commits
 
 HEAD
-  En peker/ref til current branch
-  Eller en peker/ref til en commit (detached HEAD)
-
-Tag
-  En peker/ref til en commit
-  En tag er en branch som aldri flytter seg
+  Er en ref/peker til en branch (ref-til-ref)
+  Vanligvis: HEAD → current branch → current commit
+  Eller er en ref/peker direkte til en commit (detached HEAD)
 
 Merge
-  Fra source branch inn i target branch
-  En merge er en commit med to parent commits (merge commit)
+  Merge commit: ny commit med to parent commits (source, target)
   Fast-forward merge: move current branch tip to target branch tip
 
-Rebasing
+Rebase
   Alternativ til merge
   Gjenta commits on top of another base tip
 

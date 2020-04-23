@@ -1,11 +1,11 @@
-GIT CMDS
+GIT CMDs
 
-To understand <cmd>
-  1. How does <cmd> move data across the four areas?
-  2. How does <cmd> change the repository?
+For å forstå <cmd>
+  Hvordan flytter <cmd> data og endrer <cmd> repo?
+  Hvordan endrer <cmd> repo og flytter <cmd> data?
 
 git
-  $ git add                         mv wrk_area → index
+  $ git add <file>                cp data tree → index
   $ git am
   $ git annotate
   $ git apply
@@ -14,17 +14,17 @@ git
   $ git blame
   $ git branch
   $ git bundle
-  $ git checkout                    switch to branch: mv HEAD && update wrk_area
+  $ git checkout <branch>         mv HEAD in repo; cp data tree ← index ← repo
   $ git cherry
   $ git cherry-pick
   $ git clean
-  $ git clone                       cp repo ← rem_repo && build wrk_area
-  $ git commit                      mv index → repo
+  $ git clone                     cp data tree ← index ← repo ← remote_repo
+  $ git commit                    cp data index → repo; update repo objects and refs
   $ git config
   $ git describe
-  $ git diff [--cached]             diff wrk_area index [or index repo]
+  $ git diff [--cached]           diff(tree,index) or diff(index,repo)
   $ git difftool
-  $ git fetch <remote>              repo ← rem_repo
+  $ git fetch <remote>            cp data repo ← remote_repo
   $ git filter-branch
   $ git format-patch
   $ git fsck
@@ -33,17 +33,17 @@ git
   $ git grep
   $ git help
   $ git imap-send
-  $ git init                        mv wrk_area → repo
+  $ git init                      init repo
   $ git instaweb
   $ git interpret-trailers
-  $ git log
-  $ git merge <src> <dst>           merge source branch into destination branch
+  $ git log [-N]
+  $ git merge <source> <target>   merge from source branch to target branch
   $ git mergetool
-  $ git mv
+  $ git mv <file₁> <file₂>        mv file in tree; update index with new name
   $ git name-rev
   $ git notes
-  $ git pull <remote>               fetch + merge
-  $ git push <remote> <branch>      repo → rem_repo: push commits to branch
+  $ git pull <remote>             fetch; merge
+  $ git push <remote> <branch>    cp data repo → remote_repo
   $ git rebase
   $ git reflog
   $ git remote
@@ -52,13 +52,13 @@ git
   $ git request-pull
   $ git reset
   $ git revert
-  $ git rm
+  $ git rm <file>                 rm file from tree and index
   $ git shortlog
   $ git show
   $ git show-branch
   $ git stage
   $ git stash
-  $ git status
+  $ git status                    clean, untracked, unstaged|staged changes
   $ git submodule
   $ git subtree
   $ git tag

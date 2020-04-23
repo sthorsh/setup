@@ -5,21 +5,34 @@ Prosjekt
   .git/
 
 Areas
-  Working tree
+  Working tree (tree)
   Index
   Repository
-  Stash
-  Remote repository
+  Stash: midlertidig lagring
+
+Tree
+  Prosjektkatalogen
+  $ git diff → diff(tree, index)
+  Clean tree: tree eq index eq repo
   
+Index
+  Mellomliggende lagring (staging)
+  $ git diff --cached → diff(index, repo)
+  Cf .git: index
+  
+Repository
+  Prosjekthistorikken
+  Cf .git: objektdb, refs
+
 .git/
-  objects/ - objektdatabasen
-  refs/heads/ - branches
-  refs/heads/master - lokal master branch
-  refs/remotes/origin - default remote
-  refs/remotes/origin/HEAD - remote HEAD
-  refs/remotes/origin/master - remote master branch (packed-ref)
-  refs/tags/ - tags
-  config - konfigurasjon
-  HEAD - lokal HEAD
-  index - staging area
+  objects/                    objektdb
+  refs/heads/                 branches
+  refs/heads/master           lokal master branch
+  refs/remotes/origin         default remote
+  refs/remotes/origin/HEAD    remote HEAD
+  refs/remotes/origin/master  remote master branch (packed-ref)
+  refs/tags/                  tags
+  config                      remote mm
+  HEAD                        lokal HEAD (singleton)
+  index                       binary file
 
