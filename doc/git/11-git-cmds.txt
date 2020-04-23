@@ -1,5 +1,9 @@
 GIT CMDS
 
+To understand <cmd>
+  1. How does <cmd> move data across the four areas?
+  2. How does <cmd> change the repository?
+
 git
   $ git add                         mv wrk_area → index
   $ git am

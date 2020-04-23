@@ -1,23 +1,25 @@
 PROSJEKT
 
 Prosjekt
+  Working tree
   .git/
-  working area
 
-.git (repository)
-  .git/objects/ - objektdatabasen
-  ...
-  .git/refs/heads/ - branches
-  .git/refs/heads/master - lokal master branch
-  ...
-  .git/refs/remotes/origin - default remote
-  .git/refs/remotes/origin/HEAD - remote HEAD
-  .git/refs/remotes/origin/master - remote master branch (packed-ref)
-  ...
-  .git/refs/tags/ - tags
-   ...
-  .git/config - konfigurasjon
-   ...
-  .git/HEAD - lokal HEAD
-  .git/index - staging area
+Areas
+  Working tree
+  Index
+  Repository
+  Stash
+  Remote repository
+  
+.git/
+  objects/ - objektdatabasen
+  refs/heads/ - branches
+  refs/heads/master - lokal master branch
+  refs/remotes/origin - default remote
+  refs/remotes/origin/HEAD - remote HEAD
+  refs/remotes/origin/master - remote master branch (packed-ref)
+  refs/tags/ - tags
+  config - konfigurasjon
+  HEAD - lokal HEAD
+  index - staging area
 
