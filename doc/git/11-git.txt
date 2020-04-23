@@ -1,8 +1,8 @@
 GIT CMDs
 
-For å forstå <cmd>
-  Hvordan flytter <cmd> data og endrer <cmd> repo?
-  Hvordan endrer <cmd> repo og flytter <cmd> data?
+To understand <cmd>
+  Hvordan flytter <cmd> data, og endrer <cmd> repo?
+  Hvordan endrer <cmd> repo, og flytter <cmd> data?
 
 git
   $ git add <file>                cp data tree → index
@@ -36,7 +36,7 @@ git
   $ git init                      init repo
   $ git instaweb
   $ git interpret-trailers
-  $ git log [-N]
+  $ git log [-N]                  $ git log --graph
   $ git merge <source> <target>   merge from source branch to target branch
   $ git mergetool
   $ git mv <file₁> <file₂>        mv file in tree; update index with new name
@@ -50,14 +50,14 @@ git
   $ git repack
   $ git replace
   $ git request-pull
-  $ git reset                     mv current branch; soft|mixed|hard reset
+  $ git reset                     mv current branch; hard|mixed|soft reset
   $ git revert
   $ git rm <file>                 rm file from tree and index
   $ git shortlog
   $ git show
   $ git show-branch
   $ git stage
-  $ git stash
+  $ git stash                     cp data stash ← tre & index; checkout current commit
   $ git status                    clean, untracked, unstaged|staged changes
   $ git submodule
   $ git subtree

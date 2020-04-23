@@ -42,7 +42,9 @@ Rebase
 
 Reset 
   Step 1: flytter current branch i repo til en annen commit
-  Step 2: kopierer data iht soft reset, mixed reset, hard reset
+  Step 2: kopierer data iht hard reset, mixed reset, soft reset
+  HEAD reset: repo uendret; kopierer data fra repo til index
+  Hard HEAD reset: repo uendret; kopierer data fra repo til tree og index
 
 Distribusjon
   Maskin1: repo (remote: maskin2)

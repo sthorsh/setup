@@ -8,7 +8,7 @@ Areas
   Working tree (tree)
   Index
   Repository
-  Stash: midlertidig lagring
+  Stash: cf svn shelve
 
 Tree
   Prosjektkatalogen
