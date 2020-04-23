@@ -50,7 +50,7 @@ git
   $ git repack
   $ git replace
   $ git request-pull
-  $ git reset
+  $ git reset                     mv current branch; soft|mixed|hard reset
   $ git revert
   $ git rm <file>                 rm file from tree and index
   $ git shortlog

@@ -40,6 +40,10 @@ Rebase
   Alternativ til merge
   Gjenta commits on top of another base tip
 
+Reset 
+  Step 1: flytter current branch i repo til en annen commit
+  Step 2: kopierer data iht soft reset, mixed reset, hard reset
+
 Distribusjon
   Maskin1: repo (remote: maskin2)
   Maskin2: klone av repo (remote: maskin1)
