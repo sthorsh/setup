@@ -1,9 +1,5 @@
 GIT CMDs
 
-To understand <cmd>
-  Hvordan flytter <cmd> data, og endrer <cmd> repo?
-  Hvordan endrer <cmd> repo, og flytter <cmd> data?
-
 git
   $ git add <file>                cp data tree → index
   $ git am
@@ -11,10 +7,10 @@ git
   $ git apply
   $ git archive
   $ git bisect
-  $ git blame
-  $ git branch
+  $ git blame <file>              explore history
+  $ git branch [[-d] name]        list|create|delete branch
   $ git bundle
-  $ git checkout <branch>         mv HEAD in repo; cp data tree ← index ← repo
+  $ git checkout [branch]         mv HEAD in repo; cp data tree ← index ← repo
   $ git cherry
   $ git cherry-pick
   $ git clean
@@ -36,7 +32,7 @@ git
   $ git init                      init repo
   $ git instaweb
   $ git interpret-trailers
-  $ git log [-N]                  $ git log --graph
+  $ git log                       explore history
   $ git merge <source> <target>   merge from source branch to target branch
   $ git mergetool
   $ git mv <file₁> <file₂>        mv file in tree; update index with new name
@@ -44,17 +40,17 @@ git
   $ git notes
   $ git pull <remote>             fetch; merge
   $ git push <remote> <branch>    cp data repo → remote_repo
-  $ git rebase
-  $ git reflog
-  $ git remote
+  $ git rebase [-i]               swiss army knife
+  $ git reflog HEAD               explore history
+  $ git remote [-v]
   $ git repack
   $ git replace
   $ git request-pull
   $ git reset                     mv current branch; hard|mixed|soft reset
-  $ git revert
+  $ git revert HEAD
   $ git rm <file>                 rm file from tree and index
   $ git shortlog
-  $ git show
+  $ git show                      explore history
   $ git show-branch
   $ git stage
   $ git stash                     cp data stash ← tre & index; checkout current commit
@@ -65,4 +61,11 @@ git
   $ git verify-commit
   $ git whatchanged
   $ git workspacetree
+
+For å forstå en cmd
+  Hvordan flytter cmd data?
+  Hvordan endrer cmd repository?
+
+The golden rule of git
+  Aldri endre pushed history      commit --amend, rebase -i, revert
 
