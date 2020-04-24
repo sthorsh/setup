@@ -289,5 +289,6 @@ echo "installation done..."
 
 # GRadle
 # sdk install gradle
-
+# curl
+# https://raw.githubusercontent.com/gradle/gradle-completion/master/gradle-completion.bash -o ~/bin/completion/gradle.bash
 

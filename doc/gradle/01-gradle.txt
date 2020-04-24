@@ -1,0 +1,39 @@
+GRADLE
+
+gradle
+  $ gradle                        help
+  $ gradle --help                 cmdline opts
+  $ gradle tasks --all            list all tasks
+  $ gradle help --task <task>     task help
+  $ gradle <task> ...             run primary task(s)
+  $ gradle -qwid <task>           run primary task w/log level
+
+Build
+  Project                         root project
+  Subprojects                     multi-project
+  Settings script (DSL)           settings.gradle
+
+Build lifecycle
+  Initialization                  reads settings, creates projects
+  Configuration                   executes build scripts, builds DAG of tasks
+  Execution                       executes tasks according to dependency order
+  
+Project
+  Build script (DSL)              build.gradle
+
+Defined task
+  doFirst
+  doLast
+  dependsOn <task>                task dependencies
+
+Plugins
+  Known plugins                   java, ...
+  Community plugins               flyway, ...
+  Plugins have tasks              may be overridden
+  Plugins have properties         may be overridden
+
+Task
+  builtin task                    init, ...
+  plugin task                     clean, ...
+  defined task                    foo
+

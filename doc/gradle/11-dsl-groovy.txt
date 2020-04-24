@@ -1,0 +1,15 @@
+GROOVY DSL
+
+Build script
+  plugins                         
+  import
+  version
+  task                            defined tasks
+  ...
+  sourceSets                      custom code layout
+
+Defined task
+  doFirst
+  doLast
+  dependsOn <task>                task dependencies
+
