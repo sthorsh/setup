@@ -12,6 +12,7 @@ shopt -s histappend
 export AMQ_HOME=/usr/lib/apache-activemq
 export CHEATCOLORS=false
 export EDITOR=/usr/bin/vim
+export GRADLE_HOME="/home/svein/.sdkman/candidates/gradle/current"
 export FOP_HOME="/usr/lib/fop/fop"
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
 export HISTCONTROL=ignoreboth
@@ -29,6 +30,8 @@ export VISUAL=/usr/bin/vim
 [[ ":$PATH:" != *${FOP_HOME} ]] && export PATH=${PATH}:${FOP_HOME}
 [[ ":$PATH:" != *${JAVA_HOME}/bin* ]] && export PATH=${PATH}:${JAVA_HOME}/bin
 [[ ":$PATH:" != *${MAVEN_HOME}/bin* ]] && export PATH=${PATH}:${MAVEN_HOME}/bin
+[[ ":$PATH:" != *${GRADLE_HOME}/bin* ]] && export PATH=${PATH}:${GRADLE_HOME}/bin
+
 
 # TERM
 [[ -n "$DISPLAY" && "$TERM" == "xterm" ]] && export TERM=xterm-256color
@@ -85,7 +88,6 @@ alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
 alias cs="cheat"
 alias egrep='egrep --ignore-case --color=auto'
 alias fgrep='fgrep --color=auto'
-alias gradle="/opt/gradle/bin/gradle"
 alias grep='grep --ignore-case --color=auto'
 alias gta='cd /usr/lib/apache-activemq/'
 alias gtf='cd /usr/lib/jboss-fuse/'
@@ -121,3 +123,7 @@ alias xsc='xclip -selection clipboard'
 ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
 
 source <(kubectl completion bash)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/svein/.sdkman"
+[[ -s "/home/svein/.sdkman/bin/sdkman-init.sh" ]] && source "/home/svein/.sdkman/bin/sdkman-init.sh"
