@@ -1,13 +1,20 @@
 CLI
 
 gradle
-  $ gradle                            help
-  $ gradle --help                     cmdline opts
-  $ gradle tasks --all                list all tasks
-  $ gradle help --task <task>         task help
+  $ gradle                            
+  $ gradle --help                     
+  $ gradle tasks --all                
+  $ gradle help --task <task>         
 
-  $ gradle -q <task> <task> ...       run primary task(s) quiet
-  $ gradle -w <task> <task> ...       run primary task(s) warning
-  $ gradle -i <task> <task> ...       run primary task(s) info
-  $ gradle -d <task> <task> ...       run primary task(s) debug
+  $ gradle -q <task> <task> ...       
+  $ gradle -w <task> <task> ...       
+  $ gradle -i <task> <task> ...       
+  $ gradle -d <task> <task> ...       
+
+  $ gradle -q dependencies            
+  $ gradle -q dependencies --configuration implementation
+  $ gradle -q dependencies --configuration compileClasspath
+  $ gradle -q dependencies --configuration runtimeClasspath
+  $ gradle -q dependencies --configuration testCompileClasspath
+  $ gradle -q dependencies --configuration testRuntimeClasspath
 
