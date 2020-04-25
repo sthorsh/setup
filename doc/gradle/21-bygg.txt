@@ -1,0 +1,64 @@
+BYGG
+
+Faser
+  Initialisere
+  Per-prosjekt konfigurere
+  Per-prosjekt kjøre
+
+$ gradle -i hello
+  Initialized native services in: /home/svein/.gradle/native
+  The client will now receive all logging from the daemon (pid: 27533). 
+  The daemon log file: /home/svein/.gradle/daemon/6.3/daemon-27533.out.log
+  Starting 188th build in daemon [ ... ]
+  Using 6 worker leases.
+  Starting Build
+  Settings evaluated using settings file '/home/svein/devops/gradle/alfa/settings.gradle'.
+  Using local directory build cache for the root build: /home/svein/.gradle/caches/build-cache-1.
+  Projects loaded. Root project using build file '/home/svein/devops/gradle/alfa/build.gradle'.
+  Included projects: [root project 'alfa', project ':beta', project ':core']
+  
+  > Configure project :
+  Evaluating root project 'alfa' using build file '/home/svein/devops/gradle/alfa/build.gradle'.
+  
+  > Configure project :beta
+  Evaluating project ':beta' using build file '/home/svein/devops/gradle/alfa/beta/build.gradle'.
+  
+  > Configure project :core
+  Evaluating project ':core' using build file '/home/svein/devops/gradle/alfa/core/build.gradle'.
+  All projects evaluated.
+  Selected primary task 'hello' from project :
+  Tasks to be executed: [task ':hello', task ':beta:hello', task ':core:hello']
+  Tasks that were excluded: []
+  :hello (Thread[Execution worker for ':',5,main]) started.
+  
+  > Task :hello
+  Custom actions are attached to task ':hello'.
+  Caching disabled for task ':hello' because:
+    Caching has not been enabled for the task
+  Task ':hello' is not up-to-date because:
+    Task has not declared any outputs despite executing actions.
+  I'm alfa
+  :hello (Thread[Execution worker for ':',5,main]) completed. Took 0.001 secs.
+  :beta:hello (Thread[Execution worker for ':',5,main]) started.
+  
+  > Task :beta:hello
+  Custom actions are attached to task ':beta:hello'.
+  Caching disabled for task ':beta:hello' because:
+    Caching has not been enabled for the task
+  Task ':beta:hello' is not up-to-date because:
+    Task has not declared any outputs despite executing actions.
+  I'm beta
+  :beta:hello (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+  :core:hello (Thread[Execution worker for ':',5,main]) started.
+  
+  > Task :core:hello
+  Custom actions are attached to task ':core:hello'.
+  Caching disabled for task ':core:hello' because:
+    Caching has not been enabled for the task
+  Task ':core:hello' is not up-to-date because:
+    Task has not declared any outputs despite executing actions.
+  I'm core
+  :core:hello (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+  
+  BUILD SUCCESSFUL in 312ms
+  3 actionable tasks: 3 executed

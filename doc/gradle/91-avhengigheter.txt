@@ -15,6 +15,7 @@ Konfigurasjon
   runtimeClasspath
 
 Konfigurasjonsskop
+  api
   implementation
   • compileOnly
   • runtimeOnly

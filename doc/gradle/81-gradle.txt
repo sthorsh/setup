@@ -1,0 +1,38 @@
+GRADLE
+
+Project                           application, root project
+  build.gradle                    version, project deps, ...
+  settings.gradle                 root project, subprojects
+  Project                         subproject
+    gradle/wrapper/gradle-wrapper.properties
+    src/                          project source code
+    build.gradle                  plugins, repos, deps, tasks, ...
+    gradlew*
+  ...
+
+Plugins
+  Plugins                         java, ...
+  Community plugins               flyway, ...
+  Plugins have props              may be overridden
+  Plugins have tasks              may be overridden
+
+Repositories
+  Maven compatible repos          maven central, jcenter, ...
+  Ivy compatible repos
+  Custom repo                     statnett
+  Local repo                      ~/.gradle/caches/modules-2/files-2.1/ 
+  Filesystem
+
+Dependencies
+  cf 41-avhengigheter.txt
+
+Builtin tasks
+  Builtin task                    init, wrapper, tasks, ...
+  Plugin task                     plugin:task
+  Defined Task                    foo
+
+Task
+  doFirst
+  doLast
+  dependsOn <task>              
+  
