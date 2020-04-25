@@ -1,4 +1,4 @@
-GROOVY DSL
+DSL
 
 plugins {
     id "java"

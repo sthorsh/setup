@@ -1,37 +1,35 @@
-GROOVY DSL
+GRADLE
 
-plugins {
-    id "java"
-}
+Build
+  Project                         root project
+  Subprojects                     multi-project
+  Settings script (DSL)           settings.gradle
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
- 
-group = "com.mycompany.hadoopproject"
-version = "1.2.1"
+Build lifecycle
+  Initialization                  reads settings, creates projects
+  Configuration                   executes build scripts, builds DAG of tasks
+  Execution                       executes tasks according to dependency order
+  
+Project
+  Build script (DSL)              build.gradle
 
-repositories {
-    mavenCentral()
-}
+Defined task
+  doFirst
+  doLast
+  dependsOn <task>                task dependencies
 
+Plugins
+  Known plugins                   java, ...
+  Community plugins               flyway, ...
+  Plugins have tasks              may be overridden
+  Plugins have properties         may be overridden
 
-sourceSets {
-    main {
-        compileClasspath += configurations.provided
-    }
-}
+Task
+  builtin task                    init, ...
+  plugin task                     clean, ...
+  defined task                    foo
 
-ext.hadoopVersion = "2.0.0-mr1-cdh4.0.1"
-
-dependencies {
-    implementation "org.hibernate:hibernate-core:3.6.7.Final"
-}
-
-task <name> {
-  dependsOn <task>           
-  doFirst{}
-  doLast{}
-}
+Repositories
+  Public                          maven central, ...
+  Local                           ~/.gradle/caches/modules-2/files-2.1/
 
