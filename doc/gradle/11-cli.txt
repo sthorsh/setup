@@ -5,7 +5,7 @@ gradle
   $ gradle --help                 cmdline opts
   $ gradle tasks --all            list all tasks
   $ gradle help --task <task>     task help
-  $ gradle <task> ...             run primary task(s)
+  $ gradle <task> ...             run primary task(s): $ gradle clean build
   $ gradle -qwid <task>           run primary task w/log level
 
 Build
@@ -36,4 +36,8 @@ Task
   builtin task                    init, ...
   plugin task                     clean, ...
   defined task                    foo
+
+Repositories
+  Public                          maven central, ...
+  Local                           ~/.gradle/caches/modules-2/files-2.1/
 
