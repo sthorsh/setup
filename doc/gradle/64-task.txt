@@ -1,0 +1,20 @@
+TASK
+
+Task
+  A single atomic piece of work for a build
+  A task has a name e.g task1 or project:task1
+
+Actions
+  doFirst()
+  doLast()
+
+Dependencies
+  dependsOn()
+
+Ordering
+  mustRunAfter()
+  shouldRunAfter()
+
+Properties
+  property()
+

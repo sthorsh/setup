@@ -1,0 +1,31 @@
+REPOSITORIES
+
+Repository
+  Plugin repository       plugins.gradle.org
+  Build repositories      dependency resolution
+
+Repositories
+  Maven
+  Ivy
+  Filesystem
+
+Maven
+  Remote public           
+  Remote in-house         [protocol]://repo.acme.com/maven2/
+  Local                   file:///home/svein/.m2/repository/
+
+Remote public maven
+  Central                 [protocol]://repo1.maven.org/maven2/
+  JCenter                 [protocol]://jcenter.bintray.com/
+  ...
+  
+Protocol
+  http
+  https
+  sftp
+  file
+  ...
+
+Content filtering
+  todo
+

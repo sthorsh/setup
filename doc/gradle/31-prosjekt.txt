@@ -1,8 +1,0 @@
-PROSJEKT
-
-Prosjekt
-  Plugins
-  Repositories
-  Dependencies
-  Tasks
-

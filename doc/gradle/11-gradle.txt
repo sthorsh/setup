@@ -1,0 +1,37 @@
+CLI
+
+gradle
+  $ gradle                            
+  
+  $ gradle -<HT>
+  $ gradle --<HT>
+  $ gradle --help                     
+
+  $ gradle -d 
+  $ gradle -i
+  $ gradle -q  
+  $ gradle -w 
+  $ gradle --console plain
+  $ gradle --warning-mode all
+  
+  $ gradle <task>
+  $ gradle <builtin|plugin|build.gradle>
+  $ gradle <builtin|plugin|build.gradle> ...
+
+  $ gradle dependencies --configuration implementation
+  $ gradle dependencies --configuration compileClasspath
+  $ gradle dependencies --configuration runtimeClasspath
+ 
+  $ gradle dependencyInsight --dependency <dependency>
+  
+  $ gradle help --task <task>         
+
+  $ gradle tasks
+  $ gradle tasks --all                
+
+gradlew
+  ...
+
+gradle.properties
+  org.gradle.console=plain
+  ...

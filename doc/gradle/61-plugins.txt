@@ -1,0 +1,32 @@
+PLUGINS
+
+Plugins
+  Gradle plugins
+  Community plugins
+
+Gradle plugins
+  JVM languages and frameworks
+  Native languages
+  Packaging and distribution
+  Code analysis
+  IDE integration
+  Utility
+
+JVM languages and frameworks
+  java
+  java-library
+  ...
+
+Packaging and distribution
+  ...
+
+Code analysis
+  ...
+IDE integration
+  ...
+
+Utility
+  ...
+
+Community plugins               
+  ...
