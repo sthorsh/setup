@@ -1,0 +1,8 @@
+REPOS
+
+Repositories
+  Maven compatible repos          maven central, jcenter, ...
+  Ivy compatible repos
+  Custom repo                     statnett
+  Local repo                      ~/.gradle/caches/modules-2/files-2.1/ 
+  Filesystem

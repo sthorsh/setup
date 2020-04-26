@@ -18,3 +18,8 @@ gradle
   $ gradle -q dependencies --configuration testCompileClasspath
   $ gradle -q dependencies --configuration testRuntimeClasspath
 
+gradlew
+  ...
+
+gradle.properties
+  ...

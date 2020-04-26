@@ -1,0 +1,55 @@
+FILSYSTEM
+
+Prosjekt
+  alfa/
+  ├── build/
+  │   ├── classes/
+  │   │   └── java/
+  │   ├── distributions/
+  │   │   ├── beta.tar
+  │   │   └── beta.zip
+  │   ├── generated/
+  │   │   └── sources/
+  │   ├── libs/
+  │   │   └── beta.jar
+  │   ├── reports/
+  │   │   └── tests/
+  │   ├── scripts/
+  │   │   ├── beta*
+  │   │   └── beta.bat
+  │   ├── test-results/
+  │   │   └── test/
+  │   └── tmp/
+  │       ├── compileJava/
+  │       ├── compileTestJava/
+  │       └── jar/
+  ├── gradle/
+  │   └── wrapper/
+  │       ├── gradle-wrapper.jar
+  │       └── gradle-wrapper.properties
+  ├── src/
+  │   ├── main/
+  │   │   ├── java/
+  │   │   └── resources/
+  │   └── test/
+  │       ├── java/
+  │       └── resources/
+  ├── build.gradle
+  ├── gradle.properties
+  ├── gradlew*
+  └── settings.gradle
+
+gradle
+  /home/svein/.gradle/
+    ├── 6.3
+    ├── buildOutputCleanup
+    ├── caches
+    ├── checksums
+    ├── completion
+    ├── daemon
+    ├── native
+    ├── notifications
+    ├── vcs-1
+    ├── workers
+    └── wrapper
+    

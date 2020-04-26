@@ -1,0 +1,8 @@
+PLUGINS
+
+Plugins
+  Plugins                         java, ...
+  Community plugins               flyway, ...
+  Plugins have props              may be overridden
+  Plugins have tasks              may be overridden
+

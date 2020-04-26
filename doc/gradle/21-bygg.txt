@@ -1,5 +1,10 @@
 BYGG
 
+Bygg
+  Ett prosjekt: single-level
+  Flere prosjekter: multi-level
+  En rettet asyklisk graf (DAG) av tasks (units of work) 
+
 Faser
   Initialisere
   Per-prosjekt konfigurere
