@@ -1,0 +1,64 @@
+GRADLE DSL
+
+Basics
+  Gradle scripts are _configuration_ scripts
+  Gradle scripts implement the Script interface
+
+Scripts → delegate object
+  Init script init.gradle → Gradle
+  Settings script settings.gradle → Settings
+  Build script build.gradle → Project
+
+Build script
+  Looks mostly like configuration.
+  The configuration is based on Groovy constructs.
+  The constructs relate to Gradle’s API documentation.
+  Every build script is backed by an instance of Project.
+
+Build script
+  Statements
+  Script blocks
+  Elements allowed in a Groovy script: class|method defs
+
+Statement
+  Method calls
+  Property assignments
+  Local variable definitions
+
+Script block
+  A method call which takes a closure as a parameter.
+  The closure configures some delegate object as it executes.
+
+Top level script blocks
+  allprojects{}
+  dependencies{}
+  repositories{}
+  ...
+
+Core types
+  Project
+  Task
+  Settings
+  Script
+  ...
+
+Properties
+  object.name                get property value
+  object.name = value        set property value
+  "$name"                    embed property value in string
+  "${object.name}"           embed property value in string
+
+Methods
+  object.name()              method call with no args
+  object.name(arg, arg)      method call with multiple args
+  object.name arg, arg       method call with multiple args 
+
+Blocks
+  object.name {
+    ...
+  }
+  
+  object.name(arg, arg) {
+    ...
+  }
+  
