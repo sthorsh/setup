@@ -1,0 +1,59 @@
+TERMINOLOGI
+
+Artifact
+  A file produced by a build
+  E.g compiled code artifact: guava-29.0-jre.jar
+  E.g source code artifact: guava-29.0-jre-sources.jar 
+  E.g javadoc artifact: guava-29.0-jre-javadoc.jar  
+
+Capability
+
+Component
+  Any single version of a module e.g com.google:guava:18.0
+
+Component metadata rule
+
+Configuration
+  A named set of dependencies grouped together for a specific goal
+  E.g java plugin: implementation, compileClasspath, runtimeClasspath etc
+
+Dependency
+  A pointer to another piece of software required to build, test or run a module
+
+Dependency constraint
+
+Dependency management
+  How to declare, resolve and use project dependencies
+
+Dependency scope
+  Compile, test, runtime, ...
+
+Feature variant
+
+Module
+  A piece of software that evolves over time e.g. google guava
+
+Module metadata
+  E.g. coordinates, transitive dependencies (mvn pom)
+
+Module version
+
+Platform
+
+Publication
+
+Repository
+  Hosts a set of modules
+  Each module may provide one or many releases (components)
+
+Resolution rule
+
+Transitive dependency
+  Direct/declared dependency
+  Transitive dependency 
+
+Variant
+  A variant of a component e.g google guava android and java
+
+Variant attribute
+

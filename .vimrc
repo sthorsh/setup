@@ -97,7 +97,7 @@ set history=500
 set laststatus=2
 set shiftwidth=2
 set softtabstop=2
-set textwidth=80
+set textwidth=120
 
 " Strings
 set cpoptions+=$

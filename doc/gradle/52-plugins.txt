@@ -1,0 +1,31 @@
+PLUGINS
+
+JVM languages and frameworks
+    java
+    java-library
+    ...
+  
+  Packaging and distribution
+    ...
+  
+  Code analysis
+    ...
+  IDE integration
+    ...
+  
+  Utility
+    ...
+  
+  Community plugins               
+    ...
+
+Libra
+  com.sourcemuse.mongo
+  findbugs
+  java
+  net.ossindex.audit
+  org.sonarqube
+  pmd
+  uu.appg01
+  uu.appg01.devkit
+  war

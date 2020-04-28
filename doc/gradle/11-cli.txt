@@ -1,37 +1,47 @@
 CLI
 
 gradle
-  $ gradle                            
-  
-  $ gradle -<HT>
-  $ gradle --<HT>
-  $ gradle --help                     
+  $ gradle <ht>
+  $ gradle -<ht>
+  $ gradle --<ht>
+  $ gradle --help
 
-  $ gradle -d 
+  $ gradle [task ...] [opt ...]
+  $ gradle [subproject:task ...] [opt ...]
+
   $ gradle -i
-  $ gradle -q  
-  $ gradle -w 
-  $ gradle --console plain
-  $ gradle --warning-mode all
-  
-  $ gradle <task>
-  $ gradle <builtin|plugin|build.gradle>
-  $ gradle <builtin|plugin|build.gradle> ...
+  $ gradle -q
+  $ gradle --console=auto|plain|rich|verbose
+  $ gradle --dry-run
+  $ gradle --exclude-task=<task>
+  $ gradle --warning-mode=all|fail|none|summary
+  ...
 
-  $ gradle dependencies --configuration implementation
-  $ gradle dependencies --configuration compileClasspath
-  $ gradle dependencies --configuration runtimeClasspath
- 
-  $ gradle dependencyInsight --dependency <dependency>
-  
-  $ gradle help --task <task>         
+  $ gradle buildEnvironment
 
-  $ gradle tasks
-  $ gradle tasks --all                
+  $ gradle dependencies 
+  $ gradle dependencies | grep " - "
+  $ gradle dependencies --configuration=<configuration>
+
+  $ gradle dependencyInsight --dependency 
+
+  $ gradle help --task=<task>
+
+  $ gradle projects
+
+  $ gradle tasks [--all]
+  ...
+
+gradle.properties
+  org.gradle.console=auto
+  ...
 
 gradlew
   ...
 
-gradle.properties
-  org.gradle.console=plain
-  ...
+  When executing the Gradle Wrapper from subprojects, one must reference gradlew
+  relatively. For example: ../gradlew taskName. The community gdub project aims to
+  make this more convenient.
+
+
+
