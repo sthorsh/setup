@@ -1,0 +1,36 @@
+DEPENDENCIES
+
+Dependencies
+
+Dependency versions
+  Exact version: 1.2.3
+  Maven version range: [1.0,),]
+  Prefix version range: 1.+
+  Latest-status version: latest.rc
+  Maven SNAPSHOT version: 1.0-SNAPSHOT
+
+Dependency declaration
+  Form 1 
+  Form 2
+
+Declaring a dependency on a component is usually done by providing a set of coordinates (group,
+artifact, version also known as GAV coordinates). This allows the engine to determine the
+component we’re looking for, but such a component may provide different variants. A variant is
+typically chosen based on the usage. For example, we might choose a different variant for
+compiling against a component (in which case we need the API of the component) or when
+executing code (in which case we need the runtime of the component). All variants of a component
+provide a number of capabilities, which are denoted similarly using GAV coordinates.
+
+A capability is denoted by GAV coordinates, but you must think of it as feature description:
+  • "I provide an SLF4J binding"
+  • "I provide runtime support for MySQL"
+  • "I provide a Groovy runtime"
+And in general, having two components that provide the same thing in the graph is a problem 
+(they conflict).
+
+Dependency constraints
+  Allows you to define a version or a version range  
+  Applies to both direct and transitive dependencies
+  Use case 1: enforce a version of a transitive dependency
+  Use case 2: exclude a transitive dependency from the graph
+  

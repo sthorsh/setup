@@ -1,43 +1,17 @@
-DEPENDENCIES
+AVHENGIGHETER
 
-Dependency
-  A pointer/reference to another piece of software
-  The software is required to build, test or run a module
+Avhengighet
+  En peker/ref fra et prosjekt A til programvare B
+  Prosjekt A trenger B ifm bygging, testing, kjøring, ...
 
-App vs lib
-  Consumer: the end of the consumption chain (app)
-  Producer e.g google guava: android and java variants (lib)
-
-Kinds
-  Project dependency → project in multi-project build
-  Module dependency → module in repository
-  File dependency → file in shared drive or VCS
-
-Configurations 
-  Custom: someConfiguration ... 
-  Plugins e.g java: compileJava ...
-  A dependency is added to a configuration (belongs to a scope)
-
----------------
-Repository type
-  Plugin repository: plugins.gradle.org
-  Build repository: e.g repo1.maven.org/maven2/ ...
-
-Repository format
-  Maven: jar, pom ...
-  Flat directory: jar 
-
-Maven repositories
-  Public: mavenCentral()
-  Custom: https://maven.springframework.org/release
-  Composite: http://repo2.acme.com/maven2 + http://repo.acme.com/jars
-  Local maven cache: mavenLocal()
-
-Flat directory repository
-  Path/to/jar
-
-Repository cache (of resolved deps)
-  Local gradle cache: .gradle/
-  Custom cache: artifactory, nexus, ...
-  ...
+Programvare B
+  Prosjekt: i et multi-prosjekt bygg
+  Modul: i et repository
+  Fil: på et shared drive eller i et VCS
   
+App vs lib
+  Konsument: enden av the consumption chain (app)
+  Produsent: må evt støtte flere varianter e.g guava jre|android (lib)
+
+Snippets 
+  Gradle may "discover" more dependencies and artifacts depending on the tasks you execute

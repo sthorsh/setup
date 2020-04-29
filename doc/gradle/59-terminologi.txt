@@ -1,18 +1,49 @@
 TERMINOLOGI
 
+Modul
+  A piece of software that evolves over time e.g guava
+
+Module metadata
+  E.g. coordinates, transitive dependencies (mvn pom)
+
+Module version
+
+Komponent - THE GRADLE COMPONENT MODEL
+  Any single version of a module e.g com.google:guava:18.0
+  Components are identified by GAV coordinates/triplet (G,A,V)
+  Component artifacts are identified by their file names
+
+Component metadata rule
+
+Variant
+  A variant of a component e.g com.google:guava:18.0
+  A variant is identified by a set of attributes and features (capabilities)
+
+Feature variant
+  A feature variant of a component: group:component-feature:version
+  E.g com.google:guava:18.0-jre (non-conformant to naming convention)
+  While the engine supports feature variants independently of the the ecosystem, this
+  feature is currently only available using the Java plugins and is incubating.
+
+Variant attribute
+  Attribute e.g org.gradle.jvm.version=11
+  In practice, variants are selected thanks to the use of attributes, which provide semantics 
+  to the variants and help the engine in achieving a consistent resolution result.
+
+Variant capability
+  A capability identifies a feature offered by one or multiple components
+  Use case 1: to express that a component provides multiple feature variants 
+  Use case 2: that two different components implement the same feature (cannot be used together)
+  In an ideal world, components shouldn’t declare dependencies on explicit GAVs, but rather express
+  their requirements in terms of capabilities: "give me a component which provides logging"
+
 Artifact
   A file produced by a build
   E.g compiled code artifact: guava-29.0-jre.jar
   E.g source code artifact: guava-29.0-jre-sources.jar 
   E.g javadoc artifact: guava-29.0-jre-javadoc.jar  
 
-Capability
-
-Component
-  Any single version of a module e.g com.google:guava:18.0
-
-Component metadata rule
-
+------------------------
 Configuration
   A named set of dependencies grouped together for a specific goal
   E.g java plugin: implementation, compileClasspath, runtimeClasspath etc
@@ -28,16 +59,6 @@ Dependency management
 Dependency scope
   Compile, test, runtime, ...
 
-Feature variant
-
-Module
-  A piece of software that evolves over time e.g. google guava
-
-Module metadata
-  E.g. coordinates, transitive dependencies (mvn pom)
-
-Module version
-
 Platform
 
 Publication
@@ -49,11 +70,6 @@ Repository
 Resolution rule
 
 Transitive dependency
-  Direct/declared dependency
+  Direct dependency
   Transitive dependency 
-
-Variant
-  A variant of a component e.g google guava android and java
-
-Variant attribute
 

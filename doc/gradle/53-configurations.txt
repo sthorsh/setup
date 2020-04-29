@@ -1,0 +1,7 @@
+CONFIGURATIONS
+
+Configurations 
+  Custom: someConfiguration ... 
+  Plugins e.g java: compileJava ...
+  A dependency is added to a configuration (belongs to a scope)
+
