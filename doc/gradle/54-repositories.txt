@@ -1,0 +1,28 @@
+REPOSITORIES
+
+Repository
+  Hosts a set of modules
+  Each module may provide one or many releases (components)
+
+Repository type
+  Plugin repository: plugins.gradle.org
+  Build repository: e.g repo1.maven.org/maven2/ ...
+
+Repository format
+  Maven: jar, pom ...
+  Flat directory: jar 
+
+Maven compatible repositories
+  Public: mavenCentral()
+  Custom: https://maven.springframework.org/release
+  Composite: http://repo2.acme.com/maven2 + http://repo.acme.com/jars
+  Local maven cache: mavenLocal()
+
+Flat directory repository
+  Path/to/jar
+
+Repository cache (of resolved deps)
+  Local gradle cache: .gradle/
+  Custom cache: artifactory, nexus, ...
+  ...
+  
