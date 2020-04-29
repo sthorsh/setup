@@ -1,0 +1,6 @@
+DEPENDENCY VERIFICATION
+
+Dependency verification
+  Checksum verification: the integrity of a dependency
+  Signature verification: the provenance of a dependency
+

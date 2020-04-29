@@ -1,0 +1,71 @@
+DEPENDENCY RESOLUTION
+
+Dependency resolution
+  For each dependency
+  • resolves version conflicts: selects highest
+  • resolves implementation conflicts
+      same API: slf4j
+      implementation 1: slf4j-simple (dev)
+      implementation 2: slf4-over-log4j (prod)
+      ...
+  • fetches metadata from repo (pom)
+  • fetches artifacts from repo
+  • adds metadata and artifacts to ./gradle/caches/
+  • adds dependency to graph
+  • repeats process for transitive dependencies
+
+Dependency graph
+  The result of the resolution process
+
+The storage path for a downloaded artifact includes the SHA1 checksum, meaning that 2 artifacts with 
+the same name but different content can easily be cached.
+
+Dependency resolution will fail if the required artifacts are not available in any repository specified
+by the build, even if the local cache has a copy of this artifact which was retrieved from a different
+repository.
+
+Before downloading an artifact, Gradle tries to determine the checksum of the required artifact by
+downloading the sha file associated with that artifact. If the checksum can be retrieved, an artifact
+is not downloaded if an artifact already exists with the same id and checksum.
+
+As well as considering artifacts downloaded from a different repository, Gradle will also attempt to
+reuse artifacts found in the local Maven Repository. If a candidate artifact has been downloaded by
+Maven, Gradle will use this artifact if it can be verified to match the checksum declared by the
+remote server.
+
+Gradle keeps track of which artifacts in the dependency cache are accessed. Using this information,
+the cache is periodically (at most every 24 hours) scanned for artifacts that have not been used for
+more than 30 days. Obsolete artifacts are then deleted to ensure the cache does not grow
+indefinitely.
+
+It’s a common practice to run builds in ephemeral containers. A container is typically spawned to
+only execute a single build before it is destroyed. This can become a practical problem when a build
+depends on a lot of dependencies which each container has to re-download. To help with this scenario, 
+Gradle provides a couple of options:
+  • copying the dependency cache into each container
+  • sharing a read-only dependency cache between multiple containers
+
+In practice, variants are selected thanks to the use
+of attributes, which provide semantics to the variants and help the engine in achieving a consistent
+resolution result.
+
+For historical reasons, Gradle differentiates between two kind of components:
+• local components, built from sources, for which variants are mapped to outgoing configurations
+• external components, published on repositories, in which case either the module was published
+with Gradle Module Metadata and variants are natively supported, or the module is using
+Ivy/Maven metadata and variants are derived from metadata. In both cases, Gradle performs variant aware selection.
+                
+
+Resolution and variants
+  variant aware resolution is bypassed
+  variant aware resolution is performed
+
+The role of the dependency resolution engine is to find a suitable variant of a producer given the
+constraints expressed by a consumer.
+
+A consumer needs to explain what variant it needs and this is done by setting attributes on the
+consumer.
+
+Neither Maven nor Ivy have the concept of variants, which are only natively supported by Gradle
+Module Metadata. However, it doesn’t prevent Gradle from working with them thanks to different
+strategies.
