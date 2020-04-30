@@ -1,6 +1,10 @@
 PLUGINS
 
-JVM languages and frameworks
+Plugins
+  Core plugins
+  Community plugins
+
+  JVM languages and frameworks
     java
     java-library
     ...
@@ -19,13 +23,13 @@ JVM languages and frameworks
   Community plugins               
     ...
 
-Libra
-  com.sourcemuse.mongo
-  findbugs
-  java
-  net.ossindex.audit
-  org.sonarqube
-  pmd
-  uu.appg01
-  uu.appg01.devkit
-  war
+  Libra
+    com.sourcemuse.mongo
+    findbugs
+    java
+    net.ossindex.audit
+    org.sonarqube
+    pmd
+    uu.appg01
+    uu.appg01.devkit
+    war

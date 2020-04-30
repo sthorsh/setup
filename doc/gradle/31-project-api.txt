@@ -1,0 +1,29 @@
+PROJECT API
+
+Properties
+  description             String
+  gradle                  Gradle instance
+  group                   object.toString()
+  name                    String
+  path                    String
+  plugins                 PluginContainer API
+  project                 Project instance
+  projectDir              File
+  properties              Map<String, ?>
+  repositories            RepositoryHandler API
+  tasks                   TaskContainer API
+  version                 object.toString()
+  ...
+
+Methods
+  defaultTasks(args)      String ... defaultTasks
+  TODO
+
+Script blocks
+  allprojects {}          → each Project
+  buildscript {}          → ScriptHandler API
+  configurations {}       → ConfigurationHandler API
+  dependencies {}         → DependencyHandler API
+  repositories {}         → RepositoryHandler API
+  ...
+

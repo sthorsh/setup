@@ -1,4 +1,16 @@
-TERMINOLOGI
+TERMINOLOGI GRADLE
+
+Project
+  A project does not necessarily represent a thing to be built.
+  A project might represent a web application or a library JAR. 
+  A project might represent a thing to be done, such as deploying.
+
+Task
+  A task represents some atomic piece of work which a build performs.
+  Each task is available as a build script property: clean.doFirst {...}
+  You may define default tasks that are executed if no tasks are specified.
+
+TERMINOLOGI DEPS
 
 Modul
   A piece of software that evolves over time e.g guava
