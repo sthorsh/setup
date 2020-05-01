@@ -1,0 +1,33 @@
+GROOVY
+
+Datatyper
+  Cf Java
+
+Operatorer
+  Cf Java
+
+Variabler
+  def name = value
+  <type> name = value
+
+Metoder
+  def name(args) { ... }
+
+Løkker
+  Cf Java
+
+Classes
+  Cf Java
+
+Properties
+  Properties
+  Dynamic properties
+
+Closures
+  def name = { println "hi" }
+  name.call()
+  def name = { param -> println $param  }
+  name.call("hi world")
+  
+...
+

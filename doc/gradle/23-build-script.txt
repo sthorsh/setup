@@ -1,0 +1,52 @@
+BUILD SCRIPT
+
+Properties
+  name
+  ref.name
+  ref.getName()
+  name = value
+  ref.name = value
+  ref.setName(value)
+  "$name" or "$ref.name" or "${ref.name}
+
+Properties skop
+  Objektet selv (rw)
+  Extra properties (rw)
+  Extension properties (plugins, ro)
+  Convention properties (plugins, ro/rw)
+  Task name (ro)
+  Parent properties (ro)
+
+Properties implementasjon
+  name → getName()
+  name = value → setName(value)
+
+Metoder
+  name()
+  ref.name()
+  name arg, ...
+  name(arg, ...)
+  ref.name arg, ... 
+  ref.name(arg, ...)
+
+Metoder skop
+  Objektet selv
+  Metodedeklarasjoner
+  Extension metoder (plugins)
+  Convention metoder (plugins)
+  Task name
+  Parent metoder rekursivt
+  En property hvis verdi er en closure
+  
+Metoder konvensjon
+  Hvis en metode har likt navn som en collection-basert property,
+  vil Gradle ved kall til metoden legge til args i collection'en.
+
+Blokker
+  name[(args)]{...}
+  ref.name[(args)]{...}
+  
+Blokker implementasjon
+  name {...} → name(Action|Closure)
+  name(args) {...} → name(args, Action|Closure)
+  

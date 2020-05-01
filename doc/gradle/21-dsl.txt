@@ -1,0 +1,15 @@
+DSL
+
+Script
+  Init: init.gradle
+  Settings: settings.gradle
+  Build: build.gradle
+
+Script API
+  Scripts implements Script
+
+Delegate objects
+  Init → Gradle
+  Settings → Settings
+  Build → Project
+
