@@ -25,6 +25,7 @@ gradle
   $ gradle help --task=<task>
   $ gradle outgoingVariants
   $ gradle projects
+  $ gradle properties
   $ gradle tasks [--all]
   ...
 
