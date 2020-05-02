@@ -6,9 +6,6 @@ gradle
   $ gradle --<ht>
   $ gradle --help
 
-  $ gradle [task ...] [opt ...]
-  $ gradle [subproject:task ...] [opt ...]
-
   $ gradle -i
   $ gradle -q
   $ gradle --console=auto|plain|rich|verbose
@@ -17,6 +14,12 @@ gradle
   $ gradle --scan
   $ gradle --warning-mode=all|fail|none|summary
   ...
+
+  $ gradle [task ...] [opt ...]
+  $ gradle [subproject:task ...] [opt ...]
+
+  $ gradle init
+  $ gradle wrapper
 
   $ gradle buildEnvironment
   $ gradle dependencies 
@@ -27,10 +30,9 @@ gradle
   $ gradle outgoingVariants
   $ gradle projects
   $ gradle properties
+  $ gradle properties | grep "plugins:" | tr , "\n" | sed "s/plugins: //"
   $ gradle tasks [--all]
   ...
-  // plugins
-  $ gradle properties | grep "plugins:" | tr , "\n" | sed "s/plugins: //"
 
 gradlew
   --- from Task types: Wrapper

@@ -1,0 +1,29 @@
+MODELL
+
+Project
+  one or more
+  has a collection of tasks (dag)
+  Gradle models its builds as Directed Acyclic Graphs (DAGs) of tasks (units of work). 
+
+Task
+  one or more
+  performs some basic operation (uow)
+  consists of Actions: opt e.g build has no action
+  consists of Inputs   opt e.g build has no input
+  consists of Outputs  opt e.g build has no output
+  typer
+    gradle-task-type no-plugin no-cfg: buildEnvironment
+    gradle-task-type no-plugin cfg: copy
+    gradle-task-type plugin cfg: zip
+    gradle-task-type plugin [cfg]: java*
+
+Action
+  Performs some action against objects of type T.
+  pieces of work that do something, like copy files or compile source
+
+Inputs
+  values, files and directories that the actions use or operate on
+
+Output
+  files and directories that the actions modify or generate
+
