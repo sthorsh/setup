@@ -1,9 +1,9 @@
 DSL
 
 Scripts
-  Init: init.gradle
-  Settings: settings.gradle
-  Build: build.gradle
+  Init script: init.gradle
+  Settings script: settings.gradle
+  Build [configuration] script: build.gradle
 
 The Script API
   All script instances implement the Script API 
@@ -11,5 +11,5 @@ The Script API
 Delegate objects
   Init script: configures Gradle API delegate object
   Settings script: configures Settings API delegate object
-  Build script: configures Project API delegate object
+  Build [configuration] script: configures Project API delegate object
 
