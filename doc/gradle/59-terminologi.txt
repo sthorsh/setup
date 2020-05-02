@@ -6,6 +6,7 @@ Project
   A project might represent a thing to be done, such as deploying.
 
 Task
+  A single atomic piece of work for a build.
   A task represents some atomic piece of work which a build performs.
   Each task is available as a build script property: clean.doFirst {...}
   You may define default tasks that are executed if no tasks are specified.
