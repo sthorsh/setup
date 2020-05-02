@@ -1,0 +1,23 @@
+BUILD PHASES
+
+Build phases
+  Gradle evaluates and executes build scripts in three phases
+
+Phase 1: initialization
+  Set up the environment for the build (eval init script)
+  Determine which projects will take part in it (eval settings script)
+
+Phase 2: configuration
+  Constructs the task graph for the build (DAG)
+  Configures the task graph for the build (eval build scripts)
+  Determines which tasks need to run and in which order, based on the task the user wants to run.
+  • everything involved in this phase is evaluated every time the build runs.
+
+Phase 3: execution
+  Runs the tasks selected at the end of the configuration phase (eval build script tasks actions)
+
+Phases → scripts
+  Initialize: init.gradle, settings.gradle
+  Configure: build.gradle
+  Execute: build.gradle task action
+
