@@ -1,15 +1,15 @@
 DSL
 
-Script
+Scripts
   Init: init.gradle
   Settings: settings.gradle
   Build: build.gradle
 
-Script API
-  Scripts implements Script
+The Script API
+  All script instances implement the Script API 
 
 Delegate objects
-  Init → Gradle
-  Settings → Settings
-  Build → Project
+  Init script: configures Gradle API delegate object
+  Settings script: configures Settings API delegate object
+  Build script: configures Project API delegate object
 
