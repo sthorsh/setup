@@ -1,9 +1,4 @@
-MODELL
-
-Project
-  one or more
-  has a collection of tasks (dag)
-  Gradle models its builds as Directed Acyclic Graphs (DAGs) of tasks (units of work). 
+TASKS
 
 Task
   one or more

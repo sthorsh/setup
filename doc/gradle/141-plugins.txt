@@ -1,70 +1,51 @@
 PLUGINS 
 
-Gradle User Manual
-  Using Gradle Plugins
-
 Plugin
-  Script plugin
-  Binary plugin
+  A plugin extends Gradle
+  A plugin encapsulates build logic
+  A plugin configures a target object
+  The target object can be any type of object
+  Usually, the target object is a Project object
 
-Plugins
-  Core plugins
-  Community plugins
-
-Plugin
-  A Plugin represents an extension to Gradle.
-  A plugin applies some configuration to a target object.
-  Usually, this target object is a Project, but plugins can be applied to any type of objects.
-
-Adds: base
-  configurations
-  conventions
-  properties: ...
-  tasks: assemble, build, clean, check
-
-Plugins
-  help-tasks build-init wrapper ...
+What plugins do
+  Add conventions
+  Add domain objects
+  Add properties
+  Add repositories
+  Add tasks
+  Extends core objects
+  Extends objects from other plugins
+  Extend the Gradle model
+    
+What Gradle does
+  Resolve plugin
+  Apply plugin to target
   
-Plugin → tasks
-  help-tasks
-    • buildEnvironment
-    - ...
-    • tasks
-  build-init
-    • init
-  wrapper
-    • wrapper
-  custom tasks (Gradle comes with a library of tasks that you can configure in your own projects.)
-    • copy
-  base; lifecycle-base
-    • assemble
-    • build
-    • check
-    • clean
-  java; java-base; reporting-base
+Plugin types
+  Core binary plugins: autoresolved (base)
+  Non-core binary plugins: unresolved (com.jfrog.bintray)
+  Script plugins: autoresolved
 
------------------------------
-  JVM languages and frameworks
-    java
-    java-library
-    ...
-  Packaging and distribution
-    ...
-  Code analysis
-    ...
-  IDE integration
-    ...
-  Utility
-    ...
-  Community plugins               
-    ...
-  Libra
-    com.sourcemuse.mongo
-    findbugs
-    java
-    net.ossindex.audit
-    org.sonarqube
-    pmd
-    uu.appg01
-    uu.appg01.devkit
-    war
+Alt1 resolve-apply
+  Core: plugins { id "..." }
+  Non-core: plugins { id "..." version "..." }
+
+Alt2 resolve-apply
+  Core: apply plugin: ...
+  Non-core: buildscript { ... } + apply plugin: ...
+
+Plugins
+  HelpTasksPlugin
+  BuildInitPlugin
+  WrapperPlugin
+
+Core plugins
+  BasePlugin: base
+  CheckstylePlugin: checkstyle
+  IdeaPlugin: idea
+  JavaPlugin: java
+  PmdPlugin: pmd
+  ...
+
+Non-core plugins
+  ...

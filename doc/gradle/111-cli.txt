@@ -21,7 +21,7 @@ gradle
   $ gradle init
   $ gradle wrapper
 
-  $ gradle buildEnvironment
+  $ gradle buildEnvironment       build script classpath: plugin w/transitive dependencies
   $ gradle dependencies 
   $ gradle dependencies | grep " - "
   $ gradle dependencies --configuration=<configuration>

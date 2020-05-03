@@ -1,0 +1,13 @@
+PROJECT
+
+Project
+  buildscript         build script classpath
+  plugins             resolve-and-apply plugins
+  ...
+  ext                 cf ExtraPropertiesExtension
+  ...
+  repositories
+  dependencies
+  ...
+  tasks               directed acyclic graph (DAG)
+  
