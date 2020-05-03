@@ -1,39 +1,3 @@
-CLI
-
-gradle
-  $ gradle <ht>
-  $ gradle -<ht>
-  $ gradle --<ht>
-  $ gradle --help
-
-  $ gradle -i
-  $ gradle -q
-  $ gradle --console=auto|plain|rich|verbose
-  $ gradle --dry-run
-  $ gradle --exclude-task=<task>
-  $ gradle --scan
-  $ gradle --warning-mode=all|fail|none|summary
-  ...
-
-  $ gradle [task ...] [opt ...]
-  $ gradle [subproject:task ...] [opt ...]
-
-  $ gradle init
-  $ gradle wrapper
-
-  $ gradle buildEnvironment       build script classpath: plugin w/transitive dependencies
-  $ gradle dependencies 
-  $ gradle dependencies | grep " - "
-  $ gradle dependencies --configuration=<configuration>
-  $ gradle dependencyInsight --dependency 
-  $ gradle help --task=<task>
-  $ gradle outgoingVariants
-  $ gradle projects
-  $ gradle properties
-  $ gradle properties | grep "plugins:" | tr , "\n" | sed "s/plugins: //"
-  $ gradle tasks [--all]
-  ...
-
 gradlew
   --- from Task types: Wrapper
     Generates scripts (for *nix and windows) which allow you to build your project with Gradle, without having to
@@ -54,9 +18,4 @@ gradlew
 
 gw
   https://github.com/dougborg/gdub
-
-gradle.properties
-  org.gradle.console=auto
-  ...
-
 
