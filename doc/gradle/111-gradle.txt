@@ -1,39 +1,35 @@
 GRADLE
 
 gradle
-  $ gradle <ht>
-  $ gradle -<ht>
-  $ gradle --<ht>
-  $ gradle --help
-
-  $ gradle -i
-  $ gradle -q
-  $ gradle --console=auto|plain|rich|verbose
-  $ gradle --dry-run
-  $ gradle --exclude-task=<task>
-  $ gradle --scan
-  $ gradle --warning-mode=all|fail|none|summary
+  $ gradle <ht>                           
+  $ gradle -<ht>                          
+  $ gradle --<ht>                         
+  $ gradle --help                         
+  
+  $ gradle -i ...
+  $ gradle -q ...
+  $ gradle --console plain ...
+  $ gradle --dry-run ...
+  $ gradle --exclude-task [task] ...
+  $ gradle --scan ...
   ...
-
-  $ gradle [task ...] [opt ...]
-  $ gradle [subproject:task ...] [opt ...]
-
-  $ gradle init
-  $ gradle wrapper
-
-  $ gradle buildEnvironment       build script classpath: plugin w/transitive dependencies
-  $ gradle dependencies 
-  $ gradle dependencies | grep " - "
-  $ gradle dependencies --configuration=<configuration>
-  $ gradle dependencyInsight --dependency 
-  $ gradle help --task=<task>
+  
+  $ gradle [opts] [task ...] 
+  $ gradle [opts] [subproject:task ...]
+  
+  $ gradle buildEnvironment             
+  $ gradle dependencies [--configuration ...]
+  $ gradle dependencyInsight --dependency ...
+  $ gradle help --task ...
   $ gradle outgoingVariants
   $ gradle projects
   $ gradle properties
-  $ gradle properties | grep "plugins:" | tr , "\n" | sed "s/plugins: //"
   $ gradle tasks [--all]
   ...
-
+  $ gradle init
+  ...
+  $ gradle wrapper
+  
 gradle.properties
   ...
 
