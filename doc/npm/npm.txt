@@ -1,0 +1,58 @@
+npm
+  $ npm<cr>
+  ...
+  $ npm audit
+  $ npm audit fix
+  ...
+  $ npm help cmd
+  ...
+  $ npm init
+  ...
+  $ npm install
+  $ npm install name
+  $ npm install name --dev or --prod
+  $ npm install name --global
+  $ npm install name@n₁.n₂.n₃
+  $ npm install name@n₁.n₂.n₃ --save-exact
+  $ npm install https://github.com/strongloop/express
+  $ npm install /path/to/directory
+  ...
+  $ npm ls 
+  $ npm ls --depth N
+  $ npm ls --dev or --prod
+  $ npm ls --global
+  ...
+  $ npm pack
+  ...
+  $ npm prune --production
+  ...
+  $ npm repo name
+  ...
+  $ npm run <cr>
+  $ npm run [pre|post]foo
+  ...
+  $ npm start|stop|restart
+  ...
+  $ npm [pre|post]test
+  ...
+  $ npm uninstall name
+  ...
+  $ npm update
+
+npx
+  $ npm install jshint
+  $ npx jshint server.js
+
+Pakke
+  JS-filer
+  node_modules/         package repository
+  node_modules/.bin/    package binaries
+  package.json          metadata
+  package-lock.json     overstyrer package.json
+
+Globalt repository
+  /usr/local/lib/node_modules/
+
+Register
+  https://www.npmjs.com/
+
