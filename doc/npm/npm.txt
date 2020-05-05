@@ -38,6 +38,8 @@ npm
   $ npm uninstall name
   ...
   $ npm update
+  ...
+  $ npm version major|minor|patch
 
 npx
   $ npm install jshint
