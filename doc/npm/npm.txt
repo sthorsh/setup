@@ -4,6 +4,8 @@ npm
   $ npm audit
   $ npm audit fix
   ...
+  $ npm clean-install
+  ...
   $ npm help cmd
   ...
   $ npm init
@@ -41,20 +43,22 @@ npm
   ...
   $ npm version major|minor|patch
 
-npx
-  $ npm install jshint
-  $ npx jshint server.js
-
 Pakke
   JS-filer
-  node_modules/         package repository
-  node_modules/.bin/    package binaries
-  package.json          metadata
-  package-lock.json     overstyrer package.json
+  node_modules/         
+  node_modules/.bin/    
+  .npmrc
+  package.json          
+  package-lock.json: npm v5 may 2017
 
-Globalt repository
+Lokale pakker
+  $PWD/node_modules/
+  $PWD/node_modules/.bin
+  
+Globale pakker
+  /usr/local/bin/
   /usr/local/lib/node_modules/
 
-Register
+Pakkeregister
   https://www.npmjs.com/
 

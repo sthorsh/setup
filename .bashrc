@@ -113,6 +113,7 @@ alias xsc='xclip -selection clipboard'
 
 # Source startup files
 [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
+[ -f ~/bin/func_cd ] && source ~/bin/func_cd
 [ -f ~/bin/completion/mvn.sh ] && source ~/bin/completion/mvn.sh
 [ -f ~/bin/completion/tmux.sh ] && source ~/bin/completion/tmux.sh
 [ -f ~/bin/completion/cheat.bash ] && source ~/bin/completion/cheat.bash
