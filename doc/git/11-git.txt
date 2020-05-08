@@ -1,6 +1,11 @@
 GIT CMDs
 
+Spør for å forstå en kommando
+  Hvordan flytter kommandoen data?
+  Hvordan endrer kommandoen repositoriet?
+
 git
+------------------------------------------------------
   $ git add <file>                cp data tree → index
   $ git am
   $ git annotate
@@ -61,10 +66,6 @@ git
   $ git verify-commit
   $ git whatchanged
   $ git workspacetree
-
-For å forstå en cmd
-  Hvordan flytter cmd data?
-  Hvordan endrer cmd repository?
 
 The golden rule of git
   Aldri endre pushed history      commit --amend, rebase -i, revert
