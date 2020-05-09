@@ -1,0 +1,27 @@
+HEAD
+  Er en ref til en branch
+  Feks: HEAD → current branch
+  Feks: HEAD → commit (detached HEAD)
+
+Branch
+  Er en ref til en commit
+  Feks: master → current commmit
+
+Tag
+  Er en ref til en commit
+  En tag vil aldri flytte seg
+
+Commit
+  Er et objekt
+  Har en peker til et tree
+  Har en peker til sin(e) parent commit(s)
+  Unreachable commit: kan ikke nås vha branch el tag
+
+Tree
+  Er et objekt
+  Representerer en katalog
+
+Blob
+  Er et objekt
+  Representerer en fil i en katalog
+
