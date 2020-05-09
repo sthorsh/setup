@@ -6,7 +6,7 @@ Spør for å forstå en kommando
 
 git
 ------------------------------------------------------
-  $ git add <file>                cp data tree → index
+$ git add <file>                cp data tree → index
   $ git am
   $ git annotate
   $ git apply
@@ -20,10 +20,10 @@ git
   $ git cherry-pick
   $ git clean
   $ git clone                     cp data tree ← index ← repo ← remote_repo
-  $ git commit                    cp data index → repo; update repo objects and refs
+$ git commit                    cp data index → repo; update repo objects and refs
   $ git config
   $ git describe
-  $ git diff [--cached]           diff(tree,index) or diff(index,repo)
+$ git diff [--cached]           diff(tree,index) or diff(index,repo)
   $ git difftool
   $ git fetch <remote>            cp data repo ← remote_repo
   $ git filter-branch
@@ -34,7 +34,7 @@ git
   $ git grep
   $ git help
   $ git imap-send
-  $ git init                      init repo
+$ git init                      init repo
   $ git instaweb
   $ git interpret-trailers
   $ git log                       explore history
@@ -59,7 +59,7 @@ git
   $ git show-branch
   $ git stage
   $ git stash                     cp data stash ← tre & index; checkout current commit
-  $ git status                    clean, untracked, unstaged|staged changes
+$ git status                    clean, untracked, unstaged|staged changes
   $ git submodule
   $ git subtree
   $ git tag

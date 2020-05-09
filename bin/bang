@@ -172,6 +172,7 @@ else
   echo "configure git..."
   git config --global user.name svein
   git config --global user.email sthorsh@gmail.com
+  git config --global color.ui auto
   git config --global core.pager ''
   git init
   git remote add origin https://github.com/sthorsh/setup.git

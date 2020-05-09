@@ -1,6 +1,0 @@
-GIT PLUMBING CMDS
-
-git
-  $ git cat-file
-  $ git show-ref master
-  ...
