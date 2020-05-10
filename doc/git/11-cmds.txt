@@ -1,29 +1,51 @@
+init
+  Lag .git
+  Lag master branch
+  Lag HEAD → master
+
+----------------------
 add
   Add endringer til index
 
-branch
-  Form 1: ls branches
-  Form 2: lag branch
+mv
+  Move files in wtree
+  Move files in index
 
-checkout
-  Form 1: move HEAD; update index; update wtree (cf switch)
-  Form 2 w/pathspec: update index; update wtree (cf restore)
+rm  
+  Remove files in wtree
+  Remove files in index
 
+----------------------
 commit
   Commit endringer til repo
   Lag ny commit
   Flytt master til ny commit
   Flytt HEAD til master (implisitt)
 
-init
-  Lag .git
-  Lag master branch
-  Lag HEAD → master
+----------------------
+branch
+  Alt1: list [--all | --remotes] branches
+  Alt2: lag ny branch fra HEAD [el <start-point>]
 
-mv
-  Move files in wtree
-  Move files in index
+switch
+  Move HEAD
+  Update index
+  Update wtree
+  
+checkout
+  Alt1: move HEAD; update index; update wtree (cf switch)
+  Alt2 w/pathspec: update index; update wtree (cf restore)
 
+----------------------
+>> Merge
+>>   Merge commit: ny commit med to parent commits (source, target)
+>>   Fast-forward merge: move current branch tip to target branch tip
+>>
+>> Rebase
+>>   Alternativ til merge
+>>   Gjenta commits on top of another base tip
+
+----------------------
 reset
   Reset current HEAD: flytt current branch i repo til en annen commit
   Default: reset index fra repo
@@ -32,10 +54,7 @@ reset
 restore
   Restore wtree fra index
 
-rm  
-  Remove files in wtree
-  Remove files in index
-
+--------------------------------------------------
 status
   Branch
   No commits yet
@@ -44,14 +63,3 @@ status
   Changes to be committed
   Nothing to commit, working tree clean
 
-switch
-  Move HEAD, update index, update wtree
-  
---------------------------------------------------
->> Merge
->>   Merge commit: ny commit med to parent commits (source, target)
->>   Fast-forward merge: move current branch tip to target branch tip
->>
->> Rebase
->>   Alternativ til merge
->>   Gjenta commits on top of another base tip

@@ -9,6 +9,7 @@ CMDs
 
   $ git status
   $ git log --oneline
+  $ git diff --staged
 
   $ git add <files>             step 1: stage changes
   $ git mv <files>              mv files
@@ -20,19 +21,19 @@ CMDs
                                 fix commits: commit --amend
                                 fix commits: rebase
                                 fix commits: reset
-
 branches
+
   $ git branch  
   $ git checkout
+  $ merge
+  $ rebase
 
 tags
 
 remotes
-
+  $ git pull
+  $ git fetch                   merge
   $ git push                    push changes
-
-------------------------------------------------------------------
-  $ git diff --staged
 
 ------------------------------------------------------------------
 LOW LEVEL
