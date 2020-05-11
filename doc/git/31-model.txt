@@ -5,11 +5,13 @@ HEAD
 
 Branch
   Er en ref til en commit
-  Feks: master → current commmit
+  Er en fil hvis innhold er en commit
+  Feks .git/refs/heads/master → 7b398de... (siste commit)
 
 Tag
   Er en ref til en commit
-  En tag vil aldri flytte seg
+  Er en fil (ro) hvis innhold er en commit
+  Feks .git/refs/tags/clib-v1.2.3 → 7b398de... (fast commit)
 
 Commit
   Er et objekt

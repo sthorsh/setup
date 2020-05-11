@@ -1,0 +1,78 @@
+CMDs
+  $ apt-get install git
+
+  $ git config --global user.name svein
+  $ git config --global user.email sthorsh@gmail.com
+
+  $ git init
+  $ git clone <remote_repo>
+
+--------------------------------
+  $ git status
+    Status
+    Branch
+    No commits yet
+    Untracked files
+    Changes not staged for commit
+    Changes to be committed
+    Nothing to commit, working tree clean
+
+  $ git log --oneline
+  $ git diff --staged
+--------------------------------
+  $ git add <files>             
+  $ git mv <files>              
+  $ git rm <files>              
+  $ git reset ...               
+  $ git restore ...             
+
+--------------------------------
+commit
+  $ git commit -m <message>     
+  fix commits: commit --amend
+  fix commits: rebase
+  fix commits: reset
+
+amend commit
+
+erase commit
+  $ git rebase -i <commit>
+  $ git reset --hard HEAD^
+
+revert commit
+  $ git revert commit
+
+retrieve commits
+  $ git reflog; git cherry-pick <commit>
+
+--------------------------------
+branches
+  $ git branch <name>
+  $ git switch <name>
+
+  $ git merge <branch>
+  $ git merge --no-ff <branch>
+  $ git rebase <branch>
+
+  $ git branch --delete <name>
+
+tags
+  $ git tag <name>
+  $ git tag --delete <name>
+
+--------------------------------
+remotes
+  $ git pull
+  $ git fetch                   
+  $ git push                    
+
+--------------------------------
+LOW LEVEL
+  $ git cat-file
+
+  $ ls                          
+  $ git ls-files                
+  $ git ls-tree -r HEAD         
+
+  $ git show-ref --head
+  ...
