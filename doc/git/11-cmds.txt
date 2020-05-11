@@ -54,6 +54,8 @@ reset
 restore
   Restore wtree fra index
 
+revert
+
 --------------------------------------------------
 status
   Branch
