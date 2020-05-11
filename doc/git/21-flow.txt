@@ -9,16 +9,9 @@ CMDs
 
 --------------------------------
   $ git status
-    Status
-    Branch
-    No commits yet
-    Untracked files
-    Changes not staged for commit
-    Changes to be committed
-    Nothing to commit, working tree clean
-
   $ git log --oneline
   $ git diff --staged
+
 --------------------------------
   $ git add <files>             
   $ git mv <files>              
