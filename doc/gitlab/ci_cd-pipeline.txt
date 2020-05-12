@@ -23,8 +23,9 @@ GitLab pipeline definition file: $PROJECT_ROOT/.gitlab-ci.yml
   
   job:
     stage: build
+    image: alpine|node
     script:
-      - cmd
+      - cmd (exit code 0, 1-255)
       - ...
     artifacts:
       paths:
