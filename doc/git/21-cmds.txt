@@ -8,6 +8,7 @@ status
   Changes not staged for commit
   Changes to be committed
   Nothing to commit, working tree clean
+
 --------------------------------------------------
 add
   Add til index
@@ -19,9 +20,10 @@ rm
   Remove from wtree; remove from index
 
 commit
-  Lag ny commit; flytt branch; flytt HEAD
+  Lag commit; flytt current branch (; flytt HEAD)
 
 revert
+  Revert commmit
 
 ----------------------
 branch
@@ -29,24 +31,21 @@ branch
   F2: lag ny branch fra HEAD [el <start-point>]
 
 switch
-  Move HEAD to branch; update index; update wtree
-  
-checkout
-  F1: update index; update wtree (path)
-  F2: move HEAD to <branch>; update index; update wtree (no path)
+  Flytt HEAD; oppdater index; oppdater wtree
 
 merge
    Fast-forward merge: ingen ny commit
    Rekursiv merge: _en_ ny merge commit
 
-----------------------
 rebase
   Rebase current branch oppå en annen branch
 
-reset
-  F1: reset index for <path>
-  F2: reset HEAD (soft); reset index (mixed); reset wtree (hard)
-
+----------------------
 restore
-  Restore wtree fra index
+  Discard fra wtree: git restore <file>
+  Unstage fra index: git restore --staged <file>
+
+reset
+  F1: reset index fra repo for <path>
+  F2: reset HEAD (soft); reset index (mixed); reset wtree (hard)
 

@@ -1,17 +1,18 @@
 HEAD
-  Er en ref til en branch
-  Feks: HEAD → current branch
-  Feks: HEAD → commit (detached HEAD)
+  Er en ref til current branch (*)
+  Er en fil med ref til en fil
+  Feks HEAD → refs/head/master
+  Feks HEAD → commit (detached HEAD)
 
 Branch
   Er en ref til en commit
-  Er en fil hvis innhold er en commit
-  Feks .git/refs/heads/master → 7b398de... (siste commit)
+  Er en fil med en commit-id (rw)
+  Feks git/refs/heads/master → 7b398de...
 
 Tag
   Er en ref til en commit
-  Er en fil (ro) hvis innhold er en commit
-  Feks .git/refs/tags/clib-v1.2.3 → 7b398de... (fast commit)
+  Er en fil med en commit-id (ro)
+  Feks .git/refs/tags/clib-v1.2.3 → 7b398de...
 
 Commit
   Er et objekt
