@@ -6,18 +6,15 @@ stages:
   - build
   - test (default)
   - deploy
-  ...
 
 cache: (only for temp storage of deps)
   key:
   paths:
     - node_modules/
-    - ...
 
 variables:
   predefinerte
   egendefinerte
-  ...
 
 job:
   stage: build
@@ -31,16 +28,17 @@ job:
   when: manual
   before_script:
     - cmd
-    - ...
   script:
     - cmd (exit code 0, 1-255 → success, fail)
     - cmd &
     - cmd | cmd
     - cmd ... $ENV_VAR ...
-    - ...
   artifacts:
+    when: always
     paths:
-      - ./path/to/dir-or-file
+      - ./build/reports/tests/
+    reports:
+      - ./build/test-results/test/*.xml
 
 .disabled_job:
   ...
