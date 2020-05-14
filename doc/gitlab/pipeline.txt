@@ -1,0 +1,49 @@
+.gitlab-ci.yml
+
+image: node
+
+stages:
+  - build
+  - test (default)
+  - deploy
+  ...
+
+cache: (only for temp storage of deps)
+  key:
+  paths:
+    - node_modules/
+    - ...
+
+variables:
+  predefinerte
+  egendefinerte
+  ...
+
+job:
+  stage: build
+  image: alpine|node|...
+  environment:
+    name: staging
+    url: magentaloot-staging.surge.sh
+  allow_failure: false
+  only:
+    - master
+  when: manual
+  before_script:
+    - cmd
+    - ...
+  script:
+    - cmd (exit code 0, 1-255 → success, fail)
+    - cmd &
+    - cmd | cmd
+    - cmd ... $ENV_VAR ...
+    - ...
+  artifacts:
+    paths:
+      - ./path/to/dir-or-file
+
+.disabled_job:
+  ...
+
+...
+

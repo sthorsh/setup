@@ -1,0 +1,20 @@
+Arkitektur
+  GitLab server: https://gitlab.com/
+  GitLab runner: gitlab-runner 12.10.0-rc2 (6c8c540f)
+  ...
+
+Prosjekt
+  Project overview
+  Repository
+    → ...
+  CI/CD
+    → Pipelines → CI Lint
+    ...
+  Operations
+    → Environments
+  Settings
+    → CI/CD
+      → Runners
+      → Variables (credentials, usernames, passwords, tokens, secrets, ...)
+  ...
+
