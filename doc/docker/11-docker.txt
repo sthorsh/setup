@@ -1,60 +1,58 @@
 DOCKER
 
-docker
+CLI
   $ docker<CR>
-  $ docker mgmt<CR>
-
-  $ docker <HT>
-  $ docker mgmt <HT>
-
-  $ docker cmd<CR>
   $ docker cmd --help
-  $ docker cmd <HT>
-
+  $ docker mgmt_cmd<CR>
+  $ docker mgmt_cmd cmd --help
   $ man docker
   $ man docker-cmd
   $ man dockerfile
 
-docker
-  build       build image from Dockerfile
-  commit      not recommended
-  history     show history of image
-  images      list images
-  -----
-  attach      Attach local standard input, output, and error streams to a running container
-  cp          Copy files/folders between a container and the local filesystem
-  create      Create a new container
-  diff        Inspect changes to files or directories on a container's filesystem
-  events      Get real time events from the server
-  exec        Run a command in a running container
-  export      Export a container's filesystem as a tar archive
-  import      Import the contents from a tarball to create a filesystem image
-  info        Display system-wide information
-  inspect     Return low-level information on Docker objects
-  kill        Kill one or more running containers
-  load        Load an image from a tar archive or STDIN
-  login       Log in to a Docker registry
-  logout      Log out from a Docker registry
-  logs        Fetch the logs of a container
-  pause       Pause all processes within one or more containers
-  port        List port mappings or a specific mapping for the container
-  ps          List containers
-  pull        Pull an image or a repository from a registry
-  push        Push an image or a repository to a registry
-  rename      Rename a container
-  restart     Restart one or more containers
-  rm          Remove one or more containers
-  rmi         Remove one or more images
-  run         Run a command in a new container
-  save        Save one or more images to a tar archive (streamed to STDOUT by default)
-  search      Search the Docker Hub for images
-  start       Start one or more stopped containers
-  stats       Display a live stream of container(s) resource usage statistics
-  stop        Stop one or more running containers
-  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
-  top         Display the running processes of a container
-  unpause     Unpause all processes within one or more containers
-  update      Update configuration of one or more containers
-  version     Show the Docker version information
-  wait        Block until one or more containers stop, then print their exit codes
+cmds
+  search      search docker hub
+  run         pull && extract image; create && start container; run cmd
+  ...
+  build       build image
+  tag         tag an image
+    images      list images
 
+    history     show image history
+    rmi         remove image(s)
+    save        save image as tar
+    load        load image from tar
+    export      export container:fs → fs.tar 
+    import      create image from tar
+...
+    create      create container
+    rename      rename container
+...
+    cp          cp fs ↔ container:fs
+    diff        diff fs container:fs
+    attach      attach to running container
+    exec        exec cmd in running container
+    pause       pause container
+    unpause     unpause container
+    restart     restart running container
+    kill        kill running containers
+    stop        stop running containers
+    start       start stopped containers
+    ps          list containers
+    rm          remove containers
+    logs        fetch logs of container
+    port        list port mappings of container
+    top         list containers running processes
+    update      update container(s) config
+...
+    login       ref ~/.docker/config.json
+    logout      ref ~/.docker/config.json
+    pull        pull image|repo ← registry
+    push        push image|repo → registry
+...
+    events      real-time events from dockerd
+    wait        until one or more containers stop
+...
+    info        system-wide info
+    inspect     low-level info on object
+    stats       container(s) resource usage statistics
+    version     Show the Docker version information

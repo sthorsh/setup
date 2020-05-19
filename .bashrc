@@ -12,14 +12,15 @@ shopt -s histappend
 export AMQ_HOME=/usr/lib/apache-activemq
 export CHEATCOLORS=false
 export EDITOR=/usr/bin/vim
-export GRADLE_HOME="/home/svein/.sdkman/candidates/gradle/current"
 export FOP_HOME="/usr/lib/fop/fop"
 export FZF_DEFAULT_OPTS='--extended --height 60% --reverse --border'
+export GRADLE_HOME="/home/svein/.sdkman/candidates/gradle/current"
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M "
 export JAVA_HOME=/usr/lib/jvm/java
+export JFROG_HOME=/home/svein/jfrog/
 export LESS='--LINE-NUMBERS --LONG-PROMPT'
 export MAVEN_HOME=/usr/lib/apache-maven
 export PROMPT_COMMAND="${PROMPT_COMMAND:=history -a; history -c; history -r; $PROMPT_COMMAND}"
