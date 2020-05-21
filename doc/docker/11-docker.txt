@@ -1,58 +1,59 @@
 DOCKER
 
-CLI
+docker
   $ docker<CR>
   $ docker cmd --help
   $ docker mgmt_cmd<CR>
   $ docker mgmt_cmd cmd --help
+
+man
   $ man docker
   $ man docker-cmd
   $ man dockerfile
 
-cmds
-  search      search docker hub
-  run         pull && extract image; create && start container; run cmd
-  ...
-  build       build image
-  tag         tag an image
-    images      list images
+cmd
+  info        system info
+  version     version info
+  events      real-time events from dockerd
 
-    history     show image history
-    rmi         remove image(s)
-    save        save image as tar
-    load        load image from tar
-    export      export container:fs → fs.tar 
-    import      create image from tar
-...
-    create      create container
-    rename      rename container
-...
-    cp          cp fs ↔ container:fs
-    diff        diff fs container:fs
-    attach      attach to running container
-    exec        exec cmd in running container
-    pause       pause container
-    unpause     unpause container
-    restart     restart running container
-    kill        kill running containers
-    stop        stop running containers
-    start       start stopped containers
-    ps          list containers
-    rm          remove containers
-    logs        fetch logs of container
-    port        list port mappings of container
-    top         list containers running processes
-    update      update container(s) config
-...
-    login       ref ~/.docker/config.json
-    logout      ref ~/.docker/config.json
-    pull        pull image|repo ← registry
-    push        push image|repo → registry
-...
-    events      real-time events from dockerd
-    wait        until one or more containers stop
-...
-    info        system-wide info
-    inspect     low-level info on object
-    stats       container(s) resource usage statistics
-    version     Show the Docker version information
+  build       nytt image vha Dockerfile
+  load        nytt image fra saved image
+  import      nytt image fra eksportert container
+
+  search      ls docker_hub images
+  login       lagre i ~/.docker/config.json
+  logout      slett i ~/.docker/config.json
+  pull        nytt image fra docker_hub eller ...
+
+  images      ls images
+  history     ls image history
+  inspect     ls image details
+  tag         tag image
+  create      lag container
+  run         pull; extract; create; start; run
+  save        save image som tar
+  push        push image til docker_hub eller ...
+  rmi         remove image(s)
+
+  ps          ls containers
+  top         ls container processes
+  port        ls container port mappings
+  diff        ls container fs changes
+  logs        ls container logs
+  stats       ls container resource usage
+  inspect     ls container details
+  start       start container(s); run cmd(s)
+  attach      attach to container
+  cp          fra/til path til/fra container:path
+  exec        exec cmd in container
+  export      export container 
+  rename      rename container
+  update      update container config/resources
+  wait        wait for container(s) to stop
+  pause       pause container(s)
+  unpause     unpause container(s)
+  restart     restart container(s)
+  stop        stop container(s)
+  kill        kill container(s)
+  rm          remove container(s)
+
