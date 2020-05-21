@@ -1,0 +1,34 @@
+DOCKERFILE
+
+Build_context
+  dir₁/                 kataloger
+  ...
+  Dockerfile            instruksjoner
+  file₁                 filer
+  ...
+  
+Dockerfile
+  FROM name:tag         base image
+  LABEL key=value       metadata
+  ...
+  ARG name[=value]      build-time variabel
+  ENV key value         build-/runtime variabel
+  ...
+  RUN cmd               /bin/sh -c cmd
+  ...
+  USER user[:group]     for RUN, CMD, ENTRYPOINT, runtime
+  WORKDIR path          for RUN, ADD, COPY, CMD, ENTRYPOINT, runtime
+  ...
+  ADD src dest          path|tar|url → container_path
+  COPY src dest         path → container_path
+  ...
+  VOLUME container-dir  create mount point in container
+  ...
+----------------------
+    ONBUILD                                add on-build trigger to image
+  EXPOSE port           for documentation only
+    CMD                                    execute cmd on launch
+    ENTRYPOINT                             execute cmd on launch
+    HEALTHCHECK                            check container health
+    STOPSIGNAL                             set signal to stop container
+    

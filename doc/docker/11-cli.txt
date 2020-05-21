@@ -1,0 +1,58 @@
+CLI
+
+CLI
+  $ docker<CR>
+  $ docker cmd<CR>
+  $ docker cmd --<HT>
+  $ docker cmd --help
+
+cmd
+  info                          ls info
+  version                       ls version
+  events                        ls real-time events 
+
+  build PATH                    build_context → dockerd
+  build URL-GIT                 clone repo; build_context → dockerd
+  build URL-TAR                 fetch .tar; build_context → dockerd
+  ...
+  search TERM                   docker_hub
+  login [FQDN]                  index.docker.io [el fqdn]
+  logout [FQDN]                 index.docker.io [el fqdn]
+  pull NAME[:TAG]               fra index.docker.io [el fqdn] (https)
+  ...                           
+  load < IMG.TAR                fra save image  
+  ...
+  import CNT.TAR                fra export container
+
+  images                        ls images
+  history IMG                   ls history
+  inspect IMG                   ls details
+  create IMG                    ny container
+  run -it IMG [CMD] [ARGS]      pull; create; start
+  tag IMG NAME[:TAG]            tag image
+  push NAME[:TAG]               til index.docker.io [el fqdn] (https)
+  save IMG                 
+  rmi IMGs                      remove images
+
+  ps                            ls containers
+  stats                         ls containers ressurser
+  top CNT                       ls prosesser
+  port CNT                      ls port mappings
+  diff CNT                      ls fs change/add/delete 
+  logs CNT                      ls logger
+  inspect CNT                   ls detaljer
+  start CNTs                    start containers; run cmds|CMDs
+
+  attach CNT                    
+  cp SRC DEST                   path/container:path → container:path/path
+  exec CNT CMD                  exec cmd
+  export CNT                    export til tar
+  rename CNT NEW_NAME           
+  update OPTS CNTs              cf stats
+  wait CNTs                     block shell until stop
+  pause CNTs                 
+  unpause CNTs               
+  restart CNTs                  
+  stop CNTs                     
+  kill CNTs                     
+  rm CNTs                       
