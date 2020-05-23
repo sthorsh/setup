@@ -1,6 +1,9 @@
 CLI
 
-CLI
+Binary
+  $ /usr/bin/docker
+
+Usage
   $ docker<CR>
   $ docker cmd<CR>
   $ docker cmd --<HT>
@@ -39,6 +42,7 @@ cmd
   run -p p₀:p₁ ...           host port p₀ → container port p₁
   run -P ...                 random host ports → exposed container ports
   run -t ...                 tty
+  run -v dir₀:dir₁ ...       volume
   run --rm ...               remove
 
   rmi img ...                remove images

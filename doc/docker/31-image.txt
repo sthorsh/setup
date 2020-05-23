@@ -1,0 +1,29 @@
+CONTAINER IMAGE
+
+Image
+  En fil
+  Et snapshot av et fs
+
+Image fs lag
+  Ved run: systemaktiviteter (RW)
+  Ved build: program e.g bash (RO)
+  Ved build: base OS e.g alpine (RO)
+
+Image cache
+  Klient pull'er image
+  Server ekstraherer (splitter) image i lag
+  Server lagrer hvert lag i image cache for gjenbruk
+
+Image register
+  Privat: docker registry
+  Public: docker hub
+
+Docker registry image repository
+  todo
+
+Docker Hub image repository
+  Privat
+  Public
+  Root: busybox
+  User: sthorsh/myimage
+
