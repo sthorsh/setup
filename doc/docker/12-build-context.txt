@@ -11,13 +11,13 @@ Dockerfile
   ARG name[=value]            buildtime
   ENV key value               build-/runtime
 
-  RUN cmd                     buildtime /bin/sh -c cmd
+  RUN cmd && cmd ...          buildtime /bin/sh -c cmd (new layer)
 
   USER user[:group]           for RUN, CMD, ENTRYPOINT, runtime
   WORKDIR path                for RUN, ADD, COPY, CMD, ENTRYPOINT, runtime
 
-  ADD from to                 host path|tar|url → container path
-  COPY from to                host path → container path
+  ADD from to                 host path|tar|url → container path (new layer)
+  COPY from to                host path → container path (new layer)
 
   EXPOSE port                 map: cf run -p
   VOLUME directory            mount: cf run -v

@@ -1,0 +1,25 @@
+Install vha apt
+  $ sudo apt update 
+  $ sudo apt install docker-registry
+  $ sudo service docker-registry start
+
+List images
+  $ curl localhost:5000/v2/_catalog
+  $ curl 192.168.0.7:5000/v2/_catalog
+
+Push to registry
+  $ docker pull hello-world
+  $ docker tag hello-world localhost:5000/hello-world:latest
+  $ docker push localhost:5000/hello-world:latest
+
+Pull from registry
+  $ docker pull localhost:5000/hello-world:latest
+
+Data
+  /var/lib/docker-registry/docker/registry/v2/repositories/
+    helloworld/
+      ...
+    nginx/
+      ...
+    ...
+

@@ -6,29 +6,30 @@ Binary
 Service
   $ service docker start|status|restart|stop
 
-Data cf /var/lib/docker/
-  builder/
-  buildkit/
-  containers/
-    accafd6fa9ac/ (ett objekt)
-    ...
-  image/
-    overlay2/
-      imagedb/
-        content/
-          sha256/
-            d0d16daa5bb3 (ett objekt)
-            ...
-  network/
-  overlay2/ (image cache)
-    05dbd0c5645/ (ett individuelt lag)
-    ...
-  plugins/
-  runtimes/
-  swarm/
-  tmp/
-  trust/
-  volumes/
+Data
+  /var/lib/docker/
+    builder/
+    buildkit/
+    containers/
+      accafd6fa9ac/ (ett objekt)
+      ...
+    image/
+      overlay2/
+        imagedb/
+          content/
+            sha256/
+              d0d16daa5bb3 (ett objekt)
+              ...
+    network/
+    overlay2/ (image cache)
+      05dbd0c5645/ (ett individuelt lag)
+      ...
+    plugins/
+    runtimes/
+    swarm/
+    tmp/
+    trust/
+    volumes/
 
 Container
   ID/UUID         accafd6fa9ac
