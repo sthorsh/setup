@@ -1,0 +1,8 @@
++
+  Manage images
+  Within a private network
+  Støtter en CI/CD workflow
+  Deploy a cluster of nodes built on custom images
+
+-
+  No GUI
