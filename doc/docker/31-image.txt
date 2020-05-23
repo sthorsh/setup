@@ -22,8 +22,8 @@ Docker registry image repository
   todo
 
 Docker Hub image repository
-  Privat
-  Public
   Root: busybox
   User: sthorsh/myimage
+  Privat
+  Public: busybox
 
