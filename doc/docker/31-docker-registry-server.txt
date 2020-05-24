@@ -1,4 +1,10 @@
-Install vha apt
+Oppsett
+  Container CA
+  Container self-signed
+  Service CA (*.*.fifty.eu)
+  Service self-signed (acme.com)
+
+Install
   $ sudo apt update 
   $ sudo apt install docker-registry
   $ sudo service docker-registry start
@@ -7,19 +13,33 @@ List images
   $ curl localhost:5000/v2/_catalog
   $ curl 192.168.0.7:5000/v2/_catalog
 
+Pull from registry
+  $ docker pull localhost:5000/hello-world:latest
+
 Push to registry
   $ docker pull hello-world
   $ docker tag hello-world localhost:5000/hello-world:latest
   $ docker push localhost:5000/hello-world:latest
 
-Pull from registry
-  $ docker pull localhost:5000/hello-world:latest
+-----------------------------------------------------------
+Configure encryption traffic (https)
+  $   
+  
+CA sertifikater
+  1.
+  2.
+  3.
 
+Self-signed sertifikater
+
+.............................
+Configure login autentisering
+  $   
+
+-----------------------------------------------------------
 Data
   /var/lib/docker-registry/docker/registry/v2/repositories/
-    helloworld/
-      ...
-    nginx/
-      ...
+    helloworld/...
+    nginx/...
     ...
 

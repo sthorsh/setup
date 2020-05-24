@@ -76,6 +76,7 @@ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/k
 echo "creating directories..."
 if [ ! -e ~/bin ]; then mkdir ~/bin; fi
 if [ ! -e ~/bin ]; then mkdir ~/books; fi
+if [ ! -e ~/certs ]; then mkdir ~/certs; fi
 if [ ! -e ~/dev ]; then mkdir ~/dev; fi
 if [ ! -e ~/devops ]; then mkdir ~/devops; fi
 if [ ! -e ~/doc ]; then mkdir ~/doc; fi
