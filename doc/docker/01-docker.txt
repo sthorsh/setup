@@ -1,0 +1,12 @@
+Install
+  $ wget -qO- https://get.docker.com/ | sh
+  $ sudo usermod -aG docker <username> 
+
+Docker client
+  $ docker<CR>              use
+  $ docker cmd --help       cmd use + opts
+  $ docker cmd<CR>          cmd use
+  $ docker cmd --<HT>       cmd opts
+
+Docker server
+

@@ -1,73 +1,67 @@
 CLI
 
-Binary
-  $ /usr/bin/docker
+cmds ls
+  info                      client/server
+  version                   client/server versions
 
-Usage
-  $ docker<CR>
-  $ docker cmd<CR>
-  $ docker cmd --<HT>
-  $ docker cmd --help
+  images                    images
+  history img               image history
+  inspect img               image details
 
-cmd
-  info
-  version
-  events
+  ps -a                     containers
+  stats                     containers statistics
+  diff cnt                  container fs change/add/delete
+  inspect cnt               container details
+  logs cnt                  container logs
+  port cnt                  container port mappings
+  top cnt                   container processes
 
-  .........
-  images                     ls images
-  history img                ls history
-  inspect img                ls details
+  events                    server events in real-time
+    
+cmds image
+    build path | url          build_context → server
+    tag img name[:tag]        tag image
 
-  build path | url           build_context → dockerd
-  tag img name[:tag]         tag image
+    search term               docker_hub
+    login [fqdn]              index.docker.io [el fqdn]
+    logout [fqdn]             index.docker.io [el fqdn]
+    pull name[:tag]           index.docker.io [el fqdn] (https)
+    push name[:tag]           index.docker.io [el fqdn] (https)
 
-  load < img.tar             load fra tar
-  save img -o img.tar        save til tar
+    load < img.tar            load fra tar
+    save img -o img.tar       save til tar
 
-  import cnt.tar             import fra tar
-  export cnt -o cnt.tar      export til tar
+    import cnt.tar            import fra tar
+    export cnt -o cnt.tar     export til tar
 
-  search term                docker_hub
-  login [fqdn]               index.docker.io [el fqdn]
-  logout [fqdn]              index.docker.io [el fqdn]
-  pull name[:tag]            index.docker.io [el fqdn] (https)
-  push name[:tag]            index.docker.io [el fqdn] (https)
+    rmi img ...               remove images
 
-  create img                 ny container
+cmds image → container
+    create img                ny container
 
-  run img [cmd]              pull; create; start
-  run -d ...                 detach
-  run -i ...                 interactive
-  run -p p₀:p₁ ...           host port p₀ → container port p₁
-  run -P ...                 random host ports → exposed container ports
-  run -t ...                 tty
-  run -v dir₀:dir₁ ...       volume
-  run --rm ...               remove
+    run img [cmd]             search; pull; create; start
+    run -d ...                detach
+    run -i ...                interactive
+    run -p p₀:p₁ ...          host port p₀ → container port p₁
+    run -P ...                random host ports → exposed container ports
+    run -t ...                tty
+    run -v dir₀:dir₁ ...      volume
+    run --rm ...              remove
+  
+cmds container
+    start cnt ...             start containers; run cmds|CMDs
+    pause cnt ...
+    unpause cnt ...
+    restart cnt ...
+    stop cnt ...
+    kill cnt ...
 
-  rmi img ...                remove images
+    attach cnt                requires running container
+    cp src dest               path/container:path → container:path/path
+    exec -d -it cnt cmd       requires running container
+    rename cnt new_name
+    update opts cnt ...       cf stats
+    wait cnt ...
 
-  .........
-  ps -a                      ls containers
-  stats                      ls containers resource usage stats
-  diff cnt                   ls fs change/add/delete
-  inspect cnt                ls low-level info
-  logs cnt                   ls logger
-  port cnt                   ls port mappings
-  top cnt                    ls prosesser
-
-  start cnt ...              start containers; run cmds|CMDs
-  pause cnt ...
-  unpause cnt ...
-  restart cnt ...
-  stop cnt ...
-  kill cnt ...
-
-  attach cnt                 requires running container
-  cp src dest                path/container:path → container:path/path
-  exec -d -it cnt cmd        requires running container
-  rename cnt new_name
-  update opts cnt ...        cf stats
-  wait cnt ...
-
-  rm cnt ...                 remove containers
+    rm cnt ...                remove containers
+  

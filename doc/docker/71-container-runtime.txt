@@ -1,8 +1,25 @@
+BIG PICTURE
+
+Container model
+  N containere (VM: N OS)
+  1 container engine (VM: N VMs)
+  1 [host] OS (VM: 1 hypervisor)
+  1 server: CPU, RAM, fs, disk, I/O
+  
+---------------------
+OPPSUMMERT: isolasjon
+  • default
+  + capabilities
+  + cgroups
+  + [kernel] namespaces
+  
+--------------------
 CONTAINER [RUNTIME]
 
 Definisjon
   En container er en (eller flere) prosess(er)
   En container er en (eller flere) prosess(er) + isolasjon
+  En container er et vrituelt OS: eget prosesstre, fs, nettverk etc
 
 Default isolasjon
   Prosess: "egen" CPU
@@ -41,13 +58,4 @@ Container og isolasjon
   Capabilities: ± 
   AppArmor: ± 
   SELinux: ± 
-
-App vs system container
-  App container e.g nginx (Docker)
-  System container e.g ubuntu (LXC, emulerer VM)
-
-Container layers
-  Container: RW
-  Framework: nginx, RO
-  OS: RO
 
