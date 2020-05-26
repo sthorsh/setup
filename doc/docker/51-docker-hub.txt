@@ -1,0 +1,6 @@
+Docker Hub
+
+Levels
+  Top level images: image_name
+  Second level images: namespace/image_name
+
