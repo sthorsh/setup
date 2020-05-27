@@ -1,4 +1,4 @@
-DOCKER REGISTRY (DR)
+DOCKER REGISTRY SERVER
 
 Setup
   Container + CA_crt
