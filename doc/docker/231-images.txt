@@ -27,3 +27,10 @@ Docker Hub image repository
   Privat
   Public: busybox
 
+DOCKER HUB
+
+Levels
+  Top level images: image_name
+  Second level images: namespace/image_name
+
+

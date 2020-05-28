@@ -1,0 +1,38 @@
+DOCKER
+
+Docker CLI: docker
+  $ docker run ...
+
+REST API
+  POST /containers/create
+
+Container daemon: dockerd
+  Starter && dispatcher til containerd
+  Builds
+  Stacks
+  Orkestrering
+  Overlay networks
+  
+GRPC API
+  client.newContainer(ctx, ...)
+
+Container manager: containerd
+  Starter containerd-shim for hver container
+  Execution
+  Livssyklus
+  Networking
+  Storage
+  Image distribution
+  ...
+  Dispatcher til containerd-shim
+
+Container shim: containerd-shim
+  Starter runc for hver container
+  ...
+  Dispatcher til runc
+
+Container runtime: OCI/runc
+  Gjør systemkall
+  ...
+  Retultat: ny container
+

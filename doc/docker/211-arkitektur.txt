@@ -1,47 +1,17 @@
 ARKITEKTUR
 
-Arkitektur
-  Containere
-  Docker engine
-  OS/kernel
-  Maskin/server
+Arkitektur/modell
+  N containere (VM: N OS)
+  En container engine (VM: N VMs)
+  Ett OS (VM: en hypervisor)
+  En fysisk maskin: cpu, ram, disk, i/o
 
-Container
+Container (NP)
   Et virtuelt OS
-  En _isolert_ del at _ett_ OS (namespaces)
-  Med _resource_usage_limits_ applied (control groups)
+  En _isolert_ del at _ett_ OS (namespace)
+  Med _resource_usage_limits_ applied (control group)
 
-Docker engine
-  Virtualiserer prosesstre
-  Virtualiserer prosesstre
-  
---------------------
-Docker (komponenter)
-  Klient: /usr/bin/docker
-  Server: /usr/bin/dockerd
-  Containerd: /usr/bin/containerd
-  Runc: /usr/bin/docker/runc
-  Shim: /usr/bin/docker-containerd-shim
+Container (WH)
+  En container er en (eller flere) prosess(er)
+  En container er en (eller flere) prosess(er) + isolasjon
 
-CLI 
-  $ docker run ...
-
-Container engine
-  API: endepunkter e.g /containers/create
-  containerd
-  OCI 
-  ...
-
---------------------
-Kernel features
-  Navnerom: isolasjon
-  Kontrollgrupper: ressurser
-
-Navnerom 
-  pid → virtuell pid_table
-  mnt → virtuelt filsystem /...
-  net → virtuell tcp, ip, eth/nic, ...
-  ipc → virtuelt shared memory
-  uts → virtuelt hostname
-  user → e.f host non-privileged usr → container root usr
-  
