@@ -12,6 +12,13 @@ Container daemon: dockerd
   Stacks
   Orkestrering
   Overlay networks
+
+Docker registry
+  Docker Hub
+  ...
+  
+Docker registry API
+  https://docs.docker.com/registry/spec/api/
   
 GRPC API
   client.newContainer(ctx, ...)
