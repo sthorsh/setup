@@ -5,8 +5,8 @@ KERNEL
 Navnerom
   pid: virtuell pid-tabell [1..N]
   mnt: virtuelt filsystem /
-  net: virtuelt nettverksstack (eth, ip, tcp)
   ipc: virtuelt shared memory
+  net: virtuelt nettverksstack (eth, ip, tcp)
   uts: virtuelt hostnavn (701f283cc244)
   user: virtuelle bruker-/gruppekontoer (uid, gid)
 
@@ -15,9 +15,9 @@ Kontrollgrupper
   Begrenser ressursbruk cpu, ram, disk i/o
 
 UFS
-  ...
   aufs
   overlay2
+  ...
 
 Kapabiliteter
   ...
