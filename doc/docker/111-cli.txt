@@ -28,7 +28,7 @@ image
   login [fqdn]                index.docker.io [el fqdn]
   logout [fqdn]               index.docker.io [el fqdn]
   pull name[:tag]             index.docker.io [el fqdn] (https, individuelle lag)
-  push name[:tag]             index.docker.io [el fqdn] (https, individuelle lag)
+  push name[:tag]             get manifest, pull layers, hash content, store layers (overlay2)
 • load < img.tar              load fra tar
   save img -o img.tar         save til tar
 • import cnt.tar              import fra tar

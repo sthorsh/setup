@@ -1,89 +1,52 @@
-CONTAINER IMAGES
-
-IMAGE
-  MANIFEST
-  A bunch of loosely coupled LAYERS
-  Hvert lag har a bunch of FILES and stuff inside
+IMAGES
 
 Image
-  Er en mal for containere (template)
-  Er read-only RO (hver container får et RW-lag på toppen)
-  Er en build-time konstruksjon («en stoppet container»)
-  Er N filer (ikke 1 fil/blob)
-  Manifest: → lag
-  Er en stack med lag
-  Et image kan deles av flere containere (shareable)
-  Et image lagres i et register (on-premise el i skyen)
+  Image_id: sha256:36304d3b4540
+  Repository: redis
+  Tag: latest
+  Size: 6927
+  Content hash: sha256:d27740b5bd12 (digest)
+  Layers: [sha256:afb6ec6fdc1c, ...] (stack)
 
-Image
-  ID, digest, repository, tag, created, size, LAG
-
-Manifest
-  + liste med (refs til) lagene
-  + hvordan stacke lagene
-  $ docker manifest inspect <image_id> [-v]
-  https://docs.docker.com/engine/reference/commandline/manifest/
-
-Image stack
-  Et image fremstår flatt (unified)
-  Et image er bygget opp av lag (hver pull complete)
-  Et lag er selvstendig (uvitende om «the bigger image»)
+Stack
+  Et image fremstår flatt
+  Et image består av N lag
+  Hvert lag er read-only (RO)
+  Hvert lag er uavhenig av andre lag
+  Øvre lag: app, cfg, deps, libs, ...
+  Nederste lag: OS minus kernel (base layer)
 
 Storage driver
-  $ docker info → Storage Driver: overlay2
-  Hensikt: pulls together all of this layering
-  Lagene: /var/lib/docker/overlay2/
-  • 
-  • base layer: OS distro minus kernel feks UBUNTU ROOT_FS, TOOLS (apt)
-  ○ host OS distro: feks CentOS MED LINUX KERNEL 4.15.0-101-generic (OS proper)
+  Holder lagene sammen
+  Cf /var/lib/docker/overlay2/
 
-Lag
-  Hvert lag har a bunch of files and stuff inside
-  Hvert lag har en layer_id (digest sha256)
-  Hvert lag i host_fs: /var/lib/docker/overlay2/layer_dir/diff/layer_fs
-  Problem: layer_id != layer_dir
-  Layer_id: $ docker pull image or $ docker manifest inspect image -v 
+  Lag
+    Hvert lag har a bunch of files and stuff inside
+    Hvert lag har en layer_id (digest sha256)
+    Hvert lag i host_fs: /var/lib/docker/overlay2/layer_dir/diff/layer_fs
+    Problem: layer_id != layer_dir
+    Layer_id: $ docker pull image or $ docker manifest inspect image -v
   
-Layer "id"
-  Layer ID: docker manifest inspect && pull complete
-  Content hash: docker inspect image_id
-  Directory name: /var/lib/docker/overlay2/<name>/
+  Layer "id"
+    Layer ID: docker manifest inspect && pull complete
+    Content hash: docker inspect image_id
+    Directory name: /var/lib/docker/overlay2/<name>/
   
-Filsystemet
-    Applikasjonen
-    Konfigurasjon etc
-    Biblioteker: java, node (kun runtime-deps)
-    OS: filer, libs, shared objects, ... (kun runtime-deps)
+  Filsystemet
+      Applikasjonen
+      Konfigurasjon etc
+      Biblioteker: java, node (kun runtime-deps)
+      OS: filer, libs, shared objects, ... (kun runtime-deps)
 
-..............................
-*
-  $ docker images → 
-  $ docker history image_id → 
-  $ docker inspect image_id → config, lag, ...
-  $ docker manifest inspect → layers
-
-..............................
+*===================================
 Register
   On-premise eller cloud
   Local-dr-dtr-dh, ...
   Pull: fra register (ned)
   Push: til register (opp)
 
-Pull
-  Server: get fat manifest (liste)
-  Server: get image manifest (x86_64)
-  Server: parser image manifest
-  Server: requester image (sha256)
-  Server: pull ned lag for lag
-  Server: beregner sha256₂
-  Server: hash(content) == sha256 ? continue : abort
-  Server: lagrer hvert lag i image cache (?)
-
 Docker registry REST API
   https://docs.docker.com/registry/spec/api/
-
-
-*===================================
 
 Image register
   Privat: docker registry
