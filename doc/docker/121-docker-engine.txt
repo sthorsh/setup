@@ -8,22 +8,10 @@ Service
 
 Data
   /var/lib/docker/
-    builder/
-    buildkit/
     containers/
-      accafd6fa9ac/ (ett objekt)
-      ...
     image/
-      overlay2/
-        imagedb/
-          content/
-            sha256/
-              d0d16daa5bb3 (ett objekt)
-              ...
     network/
-    overlay2/
-      05dbd0c5645/ (ett individuelt lag)
-      ...
+    overlay2/ - lokalt register
     plugins/
     runtimes/
     swarm/
@@ -41,11 +29,4 @@ Container
   Name            random (red_cat) or custom
   Hostname        $ hostname → accafd6fa9ac
   IP addresses    $ hostname -i → 172.17.0.2, ...
-
-Image
-  Repository      alpine
-  Tag             latest
-  ID/UUID         d0d16daa5bb3
-  Created         4 weeks ago
-  Size            5.61 MB
 

@@ -1,26 +1,49 @@
 DOCKERFILE
 
 Build_context
-  Dockerfile                  instruksjoner
+  Dockerfile                  $ man Dockerfile
   ...
 
 Instruksjoner
-  FROM name:tag               base image
-  LABEL name=value            metadata
+  FROM name:tag               image: base layer
 
-  ARG name[=value]            buildtime
-  ENV key value               build-/runtime
+  LABEL name=value            image: config Labels
 
-  RUN cmd && cmd ...          buildtime /bin/sh -c cmd (→ nytt image layer)
+  ARG name[=value]            build: defined
+                              image: n/a
+                              run/container: n/a
 
-  USER user[:group]           for RUN, CMD, ENTRYPOINT, runtime
-  WORKDIR path                for RUN, ADD, COPY, CMD, ENTRYPOINT, runtime
+  ENV key value               build: defined
+                              image: config Env
+                              run/container: defined
 
-  ADD from to                 host path|tar|url → container path (→ nytt image layer)
-  COPY from to                host path → container path (→ nytt image layer)
+  USER user[:group]           for subsequent commands
+                              image: config User
+                              run/container: user is required
 
-  EXPOSE port                 map: cf run -p
-  VOLUME directory            mount: cf run -v
+  WORKDIR path                for subsequent RUN, ADD, COPY, ENTRYPOINT, CMD
+                              image: config WorkingDir
+                              run/container: directory is created
 
-  ENTRYPOINT cmd              forms: exec|shell
-  CMD cmd                     forms: exec|param|shell
+  RUN cmd && cmd ...          /bin/sh -c cmd && ...
+                              image: cmd echo → n/a  
+                              image: cmd mkdir → nytt layer
+
+  ADD path|tar|url path       image: nytt layer
+
+  COPY path path              image: nytt layer
+
+  EXPOSE port                 map ports
+                              image: config ExposedPorts
+                              run -p ...
+
+  VOLUME directory            mount volume
+                              image: config Volumes
+                              run -v ...
+
+  ENTRYPOINT cmd              exec|shell
+                              image: config Entrypoint
+
+  CMD cmd                     exec|param|shell
+                              image: config Cmd
+

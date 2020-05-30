@@ -1,0 +1,13 @@
+REGISTERE
+
+Register
+  Lokalt: /var/lib/docker/overlay2
+  Docker hub: docker.io
+  Docker registry: localhost:5000
+  ...
+
+Register → repo → image
+  Form: <register>/<repo>:<tag>
+  Feks: <register>/<namespace>:<image>
+  Feks: docker.io/sthorsh/acme:1.2.3
+  

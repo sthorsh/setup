@@ -1,0 +1,51 @@
+IMAGE
+
+Image
+  Image_id: sha256:330fdabba8e4
+  Repository: bash
+  Tag: latest
+  Size: 13.2 MB
+  Content_hash: sha256:145e00f05adb (digest)
+  OS: linux
+  Architecture: amd64
+  Config: $ docker inspect bash | ... | jq '.Config'
+  Layers: $ docker inspect bash | ... | jq '.RootFS' (stack)
+  ...
+
+Image navn
+  repo:tag
+
+Stack
+  Et image fremstår flatt
+  Et image har egentlig N lag
+  Hvert lag er read-only (RO)
+  Hvert lag er selvstendig'ish
+  Lag har parent-child relasjoner (graf)
+  Øverste laget: copy-on-write (runtime)
+  Midtre lagene: app, cfg, deps, libs, ...
+  Nederste laget: OS minus kernel (base layer)
+
+Graph driver
+  Layer management
+  API: create, get, put, remove, diff
+  Cf integratedcode.us/2016/08/30/storage-drivers-in-docker-a-deep-dive/
+
+Lag
+  Layer_id: sha256:cbdbe7a5bc2a
+  Content_hash: sha256:3e207b409db3
+  Layer_directory_name: 90b063beb23
+  Cf /var/lib/docker/overlay2/layer_directory_name/ (image layer)
+  Cf /var/lib/docker/overlay2/layer_directory_name/diff (fs diff)
+  Cf /var/lib/docker/overlay2/layer_directory_name/link (parent-child)
+  Cf /var/lib/docker/overlay2/layer_directory_name/lower (parent-child)
+
+Register
+  Lokalt: /var/lib/docker/overlay2
+  Docker hub: docker.io
+  Docker registry: localhost:5000
+  ...
+
+Register → repo → image
+  Form: <register>/<repo>:<tag>
+  Feks: docker.io/sthorsh/acme:1.2.3
+
