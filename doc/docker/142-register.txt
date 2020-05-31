@@ -1,0 +1,28 @@
+REGISTER
+
+Lokalt register
+  /var/lib/docker/overlay2
+
+Docker Hub
+  Image navn
+    docker.io/repo:tag
+
+  Offisielt image
+    docker.io/library/program:tag
+    E.g: docker.io/library/alpine:3.12.0
+    Les: docker_hub/toplevel_namespace:image
+
+  Uoffisielt image
+    docker.io/username/program:tag
+    E.g: docker.io/sthorsh/test:1.2.3
+    Les: docker_hub/username_namespace:image
+
+  Beste praksis
+    Bruk offisielle images hvis mulig
+    Bygg egne images på offisielle images
+    Bruk små images
+    Bruk spesifikke tag'er fremfor latest
+
+Docker Registry
+  localhost:5000/repo:tag
+

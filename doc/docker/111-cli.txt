@@ -1,29 +1,19 @@
 CLI
 
-CLI
-  $ docker<CR>                    docker --help
-  $ docker cmd --help             cmd use, opts
-  $ docker cmd<CR>                cmd use
-  $ docker cmd --<HT>             cmd opts
-
-ls
+Klient/server
   version                         klient, server
   info                            klient, server
   events                          server real-time events
 
-image
+Image
   images                          repo, tag, [digest], image_id, created, size
   history <image>                 instruksjoner
   inspect <image>                 image_id, config, layers, ...
 
-  build path | url                send context → server, build image, cache layers
-  tag image repo:tag              tag df5b34555b36 sthorsh/test:1.2.3
-
-  search term                     docker_hub
-  login register                  docker.io, ...
-  logout register                 https://index.docker.io/v1/, ...
-  pull register/repo:tag          get manifest, pull layers, hash content, cache layers
-  push register/repo:tag          docker.io/sthorsh/repo:1.2.3, ...
+  build path | url                send context → server
+                                  build image
+                                  cache layers
+  tag image repo:tag              tag existing image
 
   save img -o img.tar             save til tar
   load < img.tar                  load fra tar
@@ -31,12 +21,24 @@ image
   export cnt -o cnt.tar           export til tar
   import cnt.tar                  import fra tar
 
-  rmi img ...                     remove images
+  rmi img ...                     remove fra lokalt register
 
-image → container
+Image register
+  search term                     docker.io
+  login register                  docker.io, ...
+  logout register                 https://index.docker.io/v1/, ...
+  pull register/repo:tag          pull manifest
+                                  pull compressed layers (distribution hash)
+                                  uncompress layers (content hash)
+                                  store layers
+  push register/repo:tag          push manifest
+                                  compress layers
+                                  push compressed layers (distribution hash)
+
+Image → container
   create img                      ny container
 
-  run img [cmd]                   search; pull; extract layers; create; start
+  run img [cmd]                   search; pull; create; start
   run -d ...                      detach
   run -i ...                      interactive
   run -p p₀:p₁ ...                host port p₀ → container port p₁
@@ -45,10 +47,10 @@ image → container
   run -v dir₀:dir₁ ...            volume
   run --rm ...                    remove
 
-container
+Container
   ps -a                           containers
   stats                           containers statistics
-  diff <container>                cow_fs diff ro_fs
+  diff <container>                diff cow_fs ro_fs
   inspect cnt                     container details
   logs cnt                        container logs
   port cnt                        container port mappings

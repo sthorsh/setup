@@ -13,7 +13,8 @@ Image
   ...
 
 Image navn
-  repo:tag
+  registry/repository:tag
+  registry/namespace:image
 
 Stack
   Et image fremstår flatt
@@ -30,22 +31,19 @@ Graph driver
   API: create, get, put, remove, diff
   Cf integratedcode.us/2016/08/30/storage-drivers-in-docker-a-deep-dive/
 
-Lag
+Layer
   Layer_id: sha256:cbdbe7a5bc2a
   Content_hash: sha256:3e207b409db3
-  Layer_directory_name: 90b063beb23
-  Cf /var/lib/docker/overlay2/layer_directory_name/ (image layer)
-  Cf /var/lib/docker/overlay2/layer_directory_name/diff (fs diff)
-  Cf /var/lib/docker/overlay2/layer_directory_name/link (parent-child)
-  Cf /var/lib/docker/overlay2/layer_directory_name/lower (parent-child)
+  Distribution_hash: sha256:f162bcda163e
+  Random_uid: sha256:90b063beb23
+  /var/lib/docker/overlay2/random_uid/ (layer)
+  /var/lib/docker/overlay2/random_uid/diff (fs)
+  /var/lib/docker/overlay2/random_uid/link (parent-child)
 
-Register
-  Lokalt: /var/lib/docker/overlay2
-  Docker hub: docker.io
-  Docker registry: localhost:5000
+Layer fs
+  /var/lib/docker/overlay2/random_uid/diff/ (fs)
+  /var/lib/docker/overlay2/random_uid/diff/bin/ (binaries)
+  /var/lib/docker/overlay2/random_uid/diff/etc/ (config)
+  /var/lib/docker/overlay2/random_uid/diff/lib/ (libraries)
   ...
-
-Register → repo → image
-  Form: <register>/<repo>:<tag>
-  Feks: docker.io/sthorsh/acme:1.2.3
 
