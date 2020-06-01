@@ -22,7 +22,6 @@ Stack
   Hvert lag er read-only (RO)
   Hvert lag er selvstendig'ish
   Lag har parent-child relasjoner (graf)
-  Øverste laget: copy-on-write (runtime)
   Midtre lagene: app, cfg, deps, libs, ...
   Nederste laget: OS minus kernel (base layer)
 

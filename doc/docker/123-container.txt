@@ -1,23 +1,23 @@
 CONTAINER
 
-Container (NP)
-  Et virtuelt OS
+Container
+  Atomisk UoS/UoW
+  En prosess (cmd)
+  Et CoW fs over N read-only fs
+  Et virtuelt OS (minus kernel)
   En _isolert_ del at _ett_ OS (namespace)
-  Med _resource_usage_limits_ applied (control group)
-
-Container (WH)
-  En container er en (eller flere) prosess(er)
-  En container er en (eller flere) prosess(er) + isolasjon
+  Med _resource_usage_limits_ applied (cgroup)
 
 Container fs
-  CoW layer
-  Unified "file system": aufs, overlay2, ...
-  Underlying file system: ext4, ...
+  cow (runtime)
+  overlay2 (buildtime)
+  ext4 (kernel)
 
-Unified filesystem
-  Allows a stack of directories to be merged into a single mountpoint
-  (cf https://integratedcode.us/2016/08/30/storage-drivers-in-docker-a-deep-dive/)
+Egenskaper
+  Ephemeral: forbigående
+  Immutable: uforanderlig
   
+----------------------------------------------
 Container
   ID/UUID         accafd6fa9ac
   Image           alpine
@@ -28,10 +28,4 @@ Container
   Name            random (red_cat) or custom
   Hostname        $ hostname → accafd6fa9ac
   IP addresses    $ hostname -i → 172.17.0.2, ...
-
-Arkitektur/modell
-  N containere (VM: N OS)
-  En container engine (VM: N VMs)
-  Ett OS (VM: en hypervisor)
-  En fysisk maskin: cpu, ram, disk, i/o
 
