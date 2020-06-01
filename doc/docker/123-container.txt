@@ -1,11 +1,5 @@
 CONTAINER
 
-Arkitektur/modell
-  N containere (VM: N OS)
-  En container engine (VM: N VMs)
-  Ett OS (VM: en hypervisor)
-  En fysisk maskin: cpu, ram, disk, i/o
-
 Container (NP)
   Et virtuelt OS
   En _isolert_ del at _ett_ OS (namespace)
@@ -34,4 +28,10 @@ Container
   Name            random (red_cat) or custom
   Hostname        $ hostname → accafd6fa9ac
   IP addresses    $ hostname -i → 172.17.0.2, ...
+
+Arkitektur/modell
+  N containere (VM: N OS)
+  En container engine (VM: N VMs)
+  Ett OS (VM: en hypervisor)
+  En fysisk maskin: cpu, ram, disk, i/o
 
