@@ -1,0 +1,20 @@
+DOCKER ENGINE
+
+Binary
+  $ /usr/bin/dockerd
+
+Service
+  $ service docker start|status|restart|stop
+
+Data
+  /var/lib/docker/
+    containers/
+    image/
+    network/
+    overlay2/ - lokalt register
+    plugins/
+    runtimes/
+    swarm/
+    tmp/
+    trust/
+    volumes/

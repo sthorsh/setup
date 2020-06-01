@@ -7,12 +7,16 @@ Klient/server
 
 Image
   images                          repo, tag, [digest], image_id, created, size
-  history <image>                 instruksjoner
-  inspect <image>                 image_id, config, layers, ...
+  history <image>                 layers
+  inspect <image>                 image_json
 
-  build path | url                send context → server
-                                  build image
-                                  cache layers
+  build path | url                klient: build_context → engine
+                                  engine: utfører hver instruksjon:
+                                  engine:   spinner opp container
+                                  engine:   produserer layer
+                                  engine:   fjerner container
+                                  engine: successfully built 757450e29ce9
+
   tag image repo:tag              tag existing image
 
   save img -o img.tar             save til tar
@@ -70,4 +74,3 @@ Container
   rename cnt new_name
   update opts cnt ...             cf stats
   wait cnt ...                    wait for running container
-

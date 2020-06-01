@@ -1,4 +1,4 @@
-ARKITEKTUR
+CONTAINER
 
 Arkitektur/modell
   N containere (VM: N OS)

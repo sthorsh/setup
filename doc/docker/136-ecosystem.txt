@@ -43,3 +43,10 @@ Container runtime: OCI/runc
   ...
   Retultat: ny container
 
+============================
+Docker host
+  Linux: CentOS
+    Kernel: 4.n.n
+  Arkitektur
+    64-bit
+
