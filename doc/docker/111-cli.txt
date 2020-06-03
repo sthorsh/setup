@@ -1,5 +1,11 @@
 CLI
 
+CLI
+  $ docker<CR>                    docker --help
+  $ docker cmd --help             cmd use, opts
+  $ docker cmd<CR>                cmd use
+  $ docker cmd --<HT>             cmd opts
+
 Klient/server
   version                         klient, server
   info                            klient, server
@@ -9,22 +15,17 @@ Image
   images                          repo, tag, [digest], image_id, created, size
   history <image>                 layers
   inspect <image>                 image_json
-
   build path | url                klient: build_context → engine
                                   engine: utfører hver instruksjon:
-                                  engine:   spinner opp container
-                                  engine:   produserer layer
-                                  engine:   fjerner container
+                                  engine: ✓ spinner opp container
+                                  engine: ✓ produserer layer
+                                  engine: ✓ fjerner container
                                   engine: successfully built 757450e29ce9
-
   tag image repo:tag              tag existing image
-
   save img -o img.tar             save til tar
   load < img.tar                  load fra tar
-
   export cnt -o cnt.tar           export til tar
   import cnt.tar                  import fra tar
-
   rmi img ...                     remove fra lokalt register
 
 Image register
@@ -41,7 +42,6 @@ Image register
 
 Image → container
   create img                      ny container
-
   run img [cmd]                   search; pull; create; start
   run -d ...                      detach
   run -i ...                      interactive
@@ -59,7 +59,6 @@ Container
   logs cnt                        container logs
   port cnt                        container port mappings
   top cnt                         container process(es) (single-process)
-
   start cnt ...                   start container; run CMD [el cmd]
   pause cnt ...
   unpause cnt ...
@@ -67,7 +66,6 @@ Container
   stop cnt ...
   kill cnt ...
   rm cnt ...                      remove container
-
   attach cnt                      attach to running container
   cp src dest                     path/container:path → container:path/path
   exec -it cnt cmd                exec cmd in running container

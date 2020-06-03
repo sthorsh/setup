@@ -280,7 +280,8 @@ echo "installation done..."
 # Install ansible
 
 # Install docker
-# curl https://get.docker.com/ | sudo sh
+# wget -qO- https://get.docker.com/ | sh
+# sudo usermod -aG docker <username>
 
 # Install k8s
 # cf ~/k8s/11-minikube
