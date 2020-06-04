@@ -1,5 +1,6 @@
-KERNEL
+HOST
 
+Kernel
   Navnerom
     pid: pid-tabell [1..n]
     mnt: filsystem /

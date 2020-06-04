@@ -42,7 +42,7 @@ Image register
 
 Image → container
   create img                      ny container
-  run img [cmd]                   search; pull; create; start
+  run img [cmd]                   search; pull; create; start (spinne opp)
   run -d ...                      detach
   run -i ...                      interactive
   run -p p₀:p₁ ...                host port p₀ → container port p₁
@@ -59,7 +59,7 @@ Container
   logs cnt                        container logs
   port cnt                        container port mappings
   top cnt                         container process(es) (single-process)
-  start cnt ...                   start container; run CMD [el cmd]
+  start cnt ...                   start container; run CMD [el cmd] (spinne opp)
   pause cnt ...
   unpause cnt ...
   restart cnt ...

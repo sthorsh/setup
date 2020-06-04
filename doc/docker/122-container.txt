@@ -1,31 +1,44 @@
 CONTAINER
 
 Container
-  Atomisk UoS/UoW
   En prosess (cmd)
-  Et CoW fs over N read-only fs
-  Et virtuelt OS (minus kernel)
-  En _isolert_ del at _ett_ OS (namespace)
-  Med _resource_usage_limits_ applied (cgroup)
-
-Container fs
-  cow (runtime)
-  overlay2 (buildtime)
-  ext4 (kernel)
-
+  En atomisk uos/uow
+  En isolert del at et OS
+  Kernel namespaces → isolert prosess
+  Kernel cgroup → kontrollert prosess
+    
 Egenskaper
-  Ephemeral: forbigående
-  Immutable: uforanderlig
+  Ephemeral: kortlivet
+  Immutable: ssh fix er fy
+  Livssyklus: create, ..., remove
+  Ingen kjerne: linux container → linux host
   
-----------------------------------------------
-Container
-  ID/UUID         accafd6fa9ac
-  Image           alpine
-  Command         /bin/sh
-  Created         30 mins ago
-  Status          Up 30 minutes
-  Ports           if:port₀ → port₁/tcp|udp
-  Name            random (red_cat) or custom
-  Hostname        $ hostname → accafd6fa9ac
-  IP addresses    $ hostname -i → 172.17.0.2, ...
+  Virtuelt prosesstre
+    Pid 1..N
+      
+  Virtuelt fs
+    Union fs/mount
+    • Container rw/cow layer
+    • Shared image ro layers
+    Kernel backing fs e.g extfs
 
+  Virtuell nettverksstack
+    IP addresses: $ hostname -i → 172.17.0.2, ...
+
+  Virtuelt hostnavn     
+    $ hostname → accafd6fa9ac
+
+--------------------------------
+  Container
+    ID/UUID         accafd6fa9ac
+    Image           alpine
+    Command         /bin/sh
+    Created         30 mins ago
+    Status          Up 30 minutes
+    Ports           if:port₀ → port₁/tcp|udp
+    Name            random (red_cat) or custom
+  
+---------------------------------
+  Container/host
+    Volumes
+    Kernel

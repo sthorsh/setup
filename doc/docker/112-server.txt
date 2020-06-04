@@ -1,4 +1,4 @@
-DOCKER ENGINE
+DOCKER SERVER
 
 Binary
   $ /usr/bin/dockerd

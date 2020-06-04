@@ -37,3 +37,13 @@ Dockerfile
 
   CMD exec|param|shell          image_json: .Config.Cmd (defalt command to run)
                                                      
+Containerisering
+  Monolitt
+  ...
+  Mikrotjenester
+
+Mikrotjenester
+  Hver container: en prosess
+  Hver container: gjør en jobb
+  Kommunikasjon vha (REST) APIs
+  
