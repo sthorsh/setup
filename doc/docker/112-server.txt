@@ -1,26 +1,30 @@
-DOCKER
+DOCKER ENGINE
 
-  Docker CLI: docker
-    $ docker run ...
-  
-  REST API
-    POST /containers/create
-  
+Binary
+  $ /usr/bin/dockerd
+
+Service
+  $ service docker start|status|restart|stop
+
+Data
+  /var/lib/docker/
+    containers/
+    image/
+    network/
+    overlay2/ - lokalt register
+    plugins/
+    runtimes/
+    swarm/
+    tmp/
+    trust/
+    volumes/
+
   Docker daemon: dockerd
     Starter && dispatcher til containerd
     Builds
     Stacks
     Orkestrering
     Overlay networks
-  
-  Docker registry
-    Docker Hub
-    
-  Docker registry API
-    https://docs.docker.com/registry/spec/api/
-    
-  GRPC API
-    client.newContainer(ctx, ...)
   
   Container manager: containerd
     Starter containerd-shim for hver container
@@ -40,8 +44,4 @@ DOCKER
   Container runtime: OCI/runc
     Gjør systemkall
     Retultat: ny container
-  
-  Docker host
-    Linux: CentOS
-    Kernel: 4.n.n
   
