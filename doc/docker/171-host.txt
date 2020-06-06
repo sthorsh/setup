@@ -1,13 +1,13 @@
 HOST
 
-Kernel
+Kernel: virtualisering
   Navnerom
     pid: pid-tabell [1..n]
     mnt: filsystem /
-    net: nettverksstack (tcp, ip, eth)
-    ipc: shared memory, ...
+    net: nettverk (tcp, ip, eth)
     uts: hostnavn (701f283cc244)
-    user: bruker (uid), grupper (gid)
+    ipc: shared memory, ...
+    user: brukere (uid), grupper (gid)
   
   Kontrollgrupper
     Grupperer containere/prosesser

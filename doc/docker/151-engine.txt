@@ -6,6 +6,9 @@ Binary
 Service
   $ service docker start|status|restart|stop
 
+Logs
+  $ journalctl -u docker.service
+
 Data
   /var/lib/docker/
     containers/

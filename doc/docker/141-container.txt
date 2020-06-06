@@ -1,0 +1,36 @@
+CONTAINER
+
+Container
+  Et execution_environment for en prosess
+  En atomisk uos/uow
+  En isolert del at et OS (ingen kernel)
+  Kernel namespaces → isolert environment
+  Kernel cgroup → kontrollert environment
+    
+Egenskaper
+  Ephemeral: create, ..., rm (livssyklus)
+  Immutable: config vha image, persistensi vha volumes
+  Non-persistence: cf volumes
+  Stateless: cf volumes
+
+Navnerom
+  Prosesser  $ docker exec cnt ps
+  Filsystem  $ docker exec cnt ls /
+  Nettverk   $ docker exec cnt ifconfig
+  Hostnavn   $ docker exec cnt hostname
+  Brukere    $ docker exec cnt cat /etc/passwd
+  IPC        $ docker exec cnt ipcs
+
+Prosesser
+  PID 1
+  PID ...
+
+Filsystem
+  Union fs/mount
+  • Container rw/cow layer
+  • Shared image ro layers
+  Kernel backing fs e.g extfs
+
+Nettverk
+  Cf ...
+
