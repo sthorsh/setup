@@ -1,0 +1,6 @@
+VOLUMES
+
+Data
+  Non-persistent: .GraphDriver.Data
+  Persistent: volume storage
+

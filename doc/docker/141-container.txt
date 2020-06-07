@@ -8,10 +8,10 @@ Container
   Kernel cgroup → kontrollert environment
     
 Egenskaper
-  Ephemeral: create, ..., rm (livssyklus)
-  Immutable: config vha image, persistensi vha volumes
-  Non-persistence: cf volumes
-  Stateless: cf volumes
+  Ephemeral: kort livssyklus
+  Immutable: en container «røres» ikke
+  Stateless: tilstand lagres ikke (cf volumes)
+  Non-persistent: data (tilstand) lagres ikke (cf volumes)
 
 Navnerom
   Prosesser  $ docker exec cnt ps
