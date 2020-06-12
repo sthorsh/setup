@@ -1,0 +1,29 @@
+CLI
+
+ClI
+  ls                                repo, tag, [digest], image_id, created, size
+  history <image>                   layers
+  inspect [-f] <image>              image_json
+
+  build path | url                  klient: build_context → engine
+                                    engine: utfører hver instruksjon:
+                                    engine: ✓ spinner opp container
+                                    engine: ✓ produserer layer
+                                    engine: ✓ fjerner container
+                                    engine: successfully built 757450e29ce9
+  tag image repo:tag                tag existing image
+
+  save img -o img.tar               save til tar
+  load < img.tar                    load fra tar
+  import cnt.tar                    import fra tar
+
+  prune
+  rm img ...                        remove fra lokalt register
+
+  pull register/repo:tag            pull manifest
+                                    pull compressed layers (distribution hash)
+                                    uncompress layers (content hash)
+                                    store layers
+  push register/repo:tag            push manifest
+                                    compress layers
+                                    push compressed layers (distribution hash)

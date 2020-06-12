@@ -1,0 +1,11 @@
+CLI system
+
+Cmd
+  version                           klient, server
+
+Subcmds
+  df
+  info                              klient, server
+  events                            server real-time events
+  prune
+

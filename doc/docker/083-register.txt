@@ -1,0 +1,8 @@
+CLI REGISTER
+
+CLI
+  search term                       docker.io
+
+  login register                    docker.io, ...
+  logout register                   https://index.docker.io/v1/, ...
+

@@ -1,0 +1,6 @@
+CLI ENGINE
+
+  activate    Activate Enterprise Edition
+  check       Check for available engine updates
+  update      Update a local engine
+
