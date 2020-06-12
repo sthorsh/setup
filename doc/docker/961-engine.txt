@@ -14,13 +14,13 @@ Data
     containers/
     image/
     network/
-    overlay2/ - lokalt register
+  ✓ overlay2/ - lokalt register
     plugins/
     runtimes/
     swarm/
     tmp/
     trust/
-    volumes/
+  ✓ volumes/
 
   Docker daemon: dockerd
     Starter && dispatcher til containerd

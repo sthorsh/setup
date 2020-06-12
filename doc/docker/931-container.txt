@@ -23,7 +23,8 @@ Navnerom
 
 Prosesser
   PID 1
-  PID ...
+  ...
+  PID N
 
 Filsystem
   Union fs/mount
@@ -31,6 +32,7 @@ Filsystem
   • Shared image ro layers
   Kernel backing fs e.g extfs
 
-Nettverk
-  Cf ...
+Datalager
+  Data: graph driver, couplet til container
+  Persistente data: volumes, decoupled fra container
 
