@@ -1,6 +1,0 @@
-CLI
-  $ docker<CR>                      docker --help
-  $ docker cmd --help               cmd use, opts
-  $ docker cmd<CR>                  cmd use
-  $ docker cmd --<HT>               cmd opts
-

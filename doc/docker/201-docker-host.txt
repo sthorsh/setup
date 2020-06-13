@@ -1,11 +1,37 @@
-HOST
+DOCKER HOST
 
-Kernel: virtualisering
+Klient
+  ~/.docker/config.json
+                      
+Server
+  /var/lib/docker/
+    builders/
+    buildkit/
+    containers/
+      18d5f20c7de2...
+      ...
+    image/overlay2/layerdb/sha256/
+      50644c29ef5a...
+      ...
+    network/    
+    overlay2/
+      a24bb4013296...
+      ...
+    plugins/
+    runtimes/
+    swarm/
+    tmp/
+    trust/
+    volumes/
+      1bec2f60c5c1...
+      ...
+
+Kernel
   Navnerom
-    pid: pid-tabell [1..n]
+    pid: pid-tabell [0..n]
     mnt: filsystem /
     net: nettverk (tcp, ip, eth)
-    uts: hostnavn (701f283cc244)
+    uts: hostnavn (700f283cc244)
     ipc: shared memory, ...
     user: brukere (uid), grupper (gid)
   
@@ -14,11 +40,5 @@ Kernel: virtualisering
     Begrenser ressursbruk cpu, ram, disk i/o
   
   Kapabiliteter
-    Privilegier
-
   AppArmor
-    ...
-
   SELinux
-    ...
-

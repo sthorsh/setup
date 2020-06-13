@@ -1,0 +1,12 @@
+CLI
+
+docker
+  $ docker<CR>                  opts, subcmds, cmds
+  $ docker --help               opts, subcmds, cmds
+
+  $ docker subcmd<CR>           usage, cmds
+  $ docker subcmd --help        usage, cmds
+
+  $ docker subcmd cmd<CR>       usage
+  $ docker subcmd cmd --help    usage, opts
+

@@ -1,0 +1,40 @@
+ARKITEKTUR
+
+docker
+  ...
+
+dockerd
+  Starter containerd
+  Bygger image
+  Sender image til containerd
+  Logging
+  Volumes
+  ...
+  
+containerd
+  Starter containerd-shim 
+  Create container
+  Run/start container → shim
+  Stop, ..., rm container → shim
+  Image distribution: pull, push
+  Local storage: cow fs (overlay)
+  Networking: tcp, ip, eth0 etc
+  ...
+  
+containerd-shim
+  Starter runc
+  Run/start container → runc
+  Rapporterer container exit status til containerd
+  ...
+  
+runc
+  Starter container vha systemkall (eneste oppgave)
+
+container
+  nginx master: container pid 1, host pid 6366
+  nginx worker: container pid 28, host pid 6510
+  ...
+
+docker_host
+  ...
+

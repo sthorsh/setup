@@ -14,12 +14,12 @@ Egenskaper
   Non-persistent: data (tilstand) lagres ikke (cf volumes)
 
 Navnerom
-  Prosesser  $ docker exec cnt ps
-  Filsystem  $ docker exec cnt ls /
-  Nettverk   $ docker exec cnt ifconfig
-  Hostnavn   $ docker exec cnt hostname
-  Brukere    $ docker exec cnt cat /etc/passwd
-  IPC        $ docker exec cnt ipcs
+  Prosesser  $ docker exec <cnt> ps
+  Filsystem  $ docker exec <cnt> ls /
+  Nettverk   $ docker exec <cnt> ifconfig
+  Hostnavn   $ docker exec <cnt> hostname
+  Brukere    $ docker exec <cnt> cat /etc/passwd
+  IPC        $ docker exec <cnt> ipcs
 
 Prosesser
   PID 1
@@ -32,7 +32,7 @@ Filsystem
   • Shared image ro layers
   Kernel backing fs e.g extfs
 
-Datalager
+Lagre data
   Data: graph driver, couplet til container
   Persistente data: volumes, decoupled fra container
 

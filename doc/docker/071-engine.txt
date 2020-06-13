@@ -1,6 +1,16 @@
-CLI ENGINE
+ENGINE 
 
-  activate    Activate Enterprise Edition
-  check       Check for available engine updates
-  update      Update a local engine
+$ docker
+  $ docker engine activate    
+  $ docker engine check       
+  $ docker engine update      
 
+$ service
+  $ service docker status
+  $ service docker start
+  $ service docker stop
+  $ service docker restart
+
+$ journalctl
+  $ journalctl -u docker.service
+  
