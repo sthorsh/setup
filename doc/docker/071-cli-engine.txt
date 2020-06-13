@@ -1,6 +1,6 @@
 ENGINE 
 
-$ docker
+$ docker engine
   $ docker engine activate    
   $ docker engine check       
   $ docker engine update      

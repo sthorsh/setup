@@ -1,0 +1,33 @@
+CLI
+
+$ docker image
+  ls                                repo, tag, [digest], image_id, created, size
+  history <image>                   layers
+  inspect <image>                   json
+
+  build <path|url>                  docker: sender build_context til dockerd
+                                    dockerd: for hver instruksjon
+                                     ⟳ starter container
+                                     ⟳ produserer layer
+                                     ⟳ fjerner container
+                                    dockerd: successfully built 757450e29ce9
+
+  tag <image> <repo>:<tag>          tag image
+
+  save <image> -o img.tar           save til tar
+  load < img.tar                    load fra tar
+
+  import cnt.tar                    import fra tar
+
+  rm <image>                        remove image
+  prune                             remote dangling images
+
+  pull <register>/<repo>:<tag>      pull manifest
+                                    pull layers (distribution hash)
+                                    uncompress layers (content hash)
+                                    store layers
+
+  push <register>/<repo>:<tag>      push manifest
+                                    compress layers
+                                    push layers (distribution hash)
+

@@ -1,13 +1,12 @@
-VOLUMES
+DOCKER VOLUME
 
 CLI 
-  $ docker volume --help
+  $ docker volume <CR>
   $ docker volume <cmd> --help
 
-CLI cmd
   $ docker volume create [name]
-  $ docker volume inspect <names>
+  $ docker volume inspect <name>
   $ docker volume ls
   $ docker volume prune
-  $ docker volume rm <names>
+  $ docker volume rm <name>
 

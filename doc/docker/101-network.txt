@@ -1,15 +1,13 @@
-NETTVERK
+DOCKER NETWORK
 
-CLI 
-  $ docker network --help
+CLI
+  $ docker network <CR>
   $ docker network <cmd> --help
 
-CLI cmd
   $ docker network connect <network> <container>
   $ docker network create [name]
   $ docker network disconnect <network> <container>
-  $ docker network inspect <names>
+  $ docker network inspect <name>
   $ docker network ls
   $ docker network prune
-  $ docker network rm <names>
-
+  $ docker network rm <name>

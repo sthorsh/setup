@@ -1,6 +1,6 @@
 CLI
 
-docker
+CLI
   $ docker<CR>                  opts, subcmds, cmds
   $ docker --help               opts, subcmds, cmds
 
@@ -9,4 +9,7 @@ docker
 
   $ docker subcmd cmd<CR>       usage
   $ docker subcmd cmd --help    usage, opts
+
+$ docker
+  $ docker version              klient, server
 

@@ -1,11 +1,8 @@
-CLI system
+DOCKER SYSTEM
 
-Cmd
-  version                           klient, server
-
-Subcmds
-  df
-  info                              klient, server
-  events                            server real-time events
-  prune
+$ docker system
+  df            disk usage
+  events        real-time events from server
+  info          klient, server
+  prune         remove unused data
 
