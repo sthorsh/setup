@@ -1,33 +1,43 @@
-CLI
+CLI DOCKER IMAGE                   
 
 $ docker image
-  ls                                repo, tag, [digest], image_id, created, size
-  history <image>                   layers
-  inspect <image>                   json
+  build <path|url>                 Sending build context to Docker daemon: 3.072kB
+                                   Step 1/N : FROM alpine:3.12.0
+                                   3.12.0: Pulling from library/alpine
+                                   df20fa9351a1: Pull complete
+                                   Digest: sha256:185518070891758909c9...
+                                   Status: Downloaded newer image for alpine:3.12.0
+                                    ---> a24bb4013296
+                                   Step 2..N: <instruction>
+                                    ---> Running in a8432eb2dddb (starter container)
+                                   Removing intermediate container a8432eb2dddb (fjerner container)
+                                    ---> a1c0baef4b4a (produserer layer)
+                                   Successfully built 642fb7ebd922
+                                     
+  import cnt.tar                   import exported container
 
-  build <path|url>                  docker: sender build_context til dockerd
-                                    dockerd: for hver instruksjon
-                                     ⟳ starter container
-                                     ⟳ produserer layer
-                                     ⟳ fjerner container
-                                    dockerd: successfully built 757450e29ce9
+  load < img.tar                   load saved image
 
-  tag <image> <repo>:<tag>          tag image
+  pull <registry>/<repo>:<tag>     pull manifest
+                                   pull layers (distribution hash)
+                                   uncompress layers (content hash)
+                                   store layers
 
-  save <image> -o img.tar           save til tar
-  load < img.tar                    load fra tar
+  tag <image> <repo>:<tag>         tag image
 
-  import cnt.tar                    import fra tar
+  save <image> -o img.tar          save for load
 
-  rm <image>                        remove image
-  prune                             remote dangling images
+  push <registry>/<repo>:<tag>     push manifest
+                                   compress layers (content hash)
+                                   push layers (distribution hash)
 
-  pull <register>/<repo>:<tag>      pull manifest
-                                    pull layers (distribution hash)
-                                    uncompress layers (content hash)
-                                    store layers
+  rm <image>                       remove image
 
-  push <register>/<repo>:<tag>      push manifest
-                                    compress layers
-                                    push layers (distribution hash)
+  prune                            remove dangling images
+
+  ls                               repo, tag, [digest], image_id, created, size
+
+  history <image>                  layers
+
+  inspect <image>                  json
 

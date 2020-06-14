@@ -1,0 +1,41 @@
+CLI DOCKER CONTAINER          
+
+$ docker container
+  create <image> [cmd]        search image; pull layers; create cont; [override CMD]
+
+  run <image> [cmd]           create; start
+  run -d                      detached
+  run -i                      interaktiv
+  run -p p₀:p₁                host_port : CMD|cmd
+  run -P                      random_host_port : cont_port
+  run -t                      terminal
+  run -v d₀:d₁                host_dir : cont_dir
+  run --mount <mount>         attach fs mount to cont
+  run --rm                    remove cont on exit
+
+  start <cont>                start cont; run CMD [or cmd]
+  restart <cont>              -
+  pause <cont>                -
+  unpause <cont>              -
+  stop <cont>                 -
+  kill <cont>                 -
+  rm <cont>                   -
+  prune                       remove stopped conts
+    
+  attach <cont>               -
+  commit <cont>               -
+  cp <src> <dest>             host_path/cont:path → cont:path/host_path
+  exec [-it] <cont> <cmd>     exec cmd i cont
+  export <cont> -o cont.tar   -
+  rename <cont> name          -
+  update <opts> <cont>        cf cont stats
+  wait <cont>                 -
+
+  ls -a                       list conts
+  stats                       list conts stats
+  diff <cont>                 diff cow_fs ro_fs
+  inspect <cont>              json
+  logs [-f] <cont>            pid 1: [follow] stdout/stderr
+  port <cont>                 port mappings
+  top <cont>                  docker host table of processes 
+
