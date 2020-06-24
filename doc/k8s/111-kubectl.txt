@@ -7,6 +7,7 @@ $ kubectl
   attach
   auth
   autoscale
+
   certificate
   cluster-info
   completion
@@ -15,30 +16,43 @@ $ kubectl
   cordon
   cp
 • create
+
 • delete
 • describe
   diff
   drain
+
   edit
 • exec
 • explain
 • expose
+
 • get
+
   kustomize
+
   label
   logs
+
   options
+
   patch
   plugin
   port-forward
   proxy
+
   replace
 • rollout
   run
+
   scale
   set
+
   taint
   top
+
   uncordon
+
   version
+
   wait
