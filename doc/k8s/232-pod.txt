@@ -1,0 +1,30 @@
+POD
+
+Pod
+  N containere
+  Omgivelse cf kernel namespaces
+
+Atomic unit
+  For deployment: pod
+  For skedulering: pod
+  For arbeid (uow): pod
+  For skalering opp/ned: pod
+  
+Livssyklus
+  Pending
+  Running
+  Succeeded or failed
+
+Label
+  Miljø: prod
+  Backend: be
+  Versjon: 1.2.3
+  
+Kobling
+  Tett: 2 containere, 1 pod
+  Løst: 2 containere, 2 pods
+  
+Nettverk
+  Pod: <ip>
+  Container: <ip>:<port>
+  

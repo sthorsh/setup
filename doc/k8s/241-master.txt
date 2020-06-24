@@ -6,14 +6,16 @@ API-server
   Konsumerer JSON (fra manifest)
   Kommuniserer over TCP port 443
   
-Kontroller
+Kontroller_manager
+  Deployment controller
+  ReplicaSet controller
+  Job controller
   Node controller
   Endpoint controller
   Namespace controller
-  ...
   Ser etter endringer i clusteret
-  Sørger for at current_state == desired_state
-  
+  Holder faktisk tilstand == ønsket tilstand
+
 Skeduler
   Ser etter nye pods
   Tilordner nye pods til arbeidsnoder

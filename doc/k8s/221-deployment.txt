@@ -16,10 +16,12 @@ ReplicaController
   Desired state
   ...
 
-Pod
+Service
+  Aksess til pods
+  Lastbalansering
   ...
 
-Service
+Pod
   ...
 
 URLs

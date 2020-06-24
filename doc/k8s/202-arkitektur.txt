@@ -5,42 +5,14 @@ Applikasjon
   Containerisering
   Container images
 
-------------
 Deployment
   Manifest (.yml)
 
-------------
 Applikasjon
   Pods
   Services
   
-------------
 Cluster/infrastruktur
   Kontrollplan
   Arbeidernoder
 
-============================================================
-  Controller
-    Overvåker tilstand
-    Regulerer tilstand (termostat)
-    DeploymentController, ReplicaSetController, JobController
-  
-  Tilstand
-    Desired state: manifest
-    Current state: drift
-  
-  Objekt
-    Persistent entitet
-    Representerer tilstand
-    Pod: pod
-    ReplicaSet: pods + desired state
-    Service: aksess til pods + LB
-    Endpoint: list of all pods in service
-    Deployment
-    Job
-  
-  Label
-    Produksjon: prod
-    Backend: be
-    Versjon: 1.2.3
-  
