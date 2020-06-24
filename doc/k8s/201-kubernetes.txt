@@ -1,4 +1,4 @@
-KUBERNETES/k8s
+KUBERNETES
 
 Bakgrunn
   Fra Google
@@ -8,10 +8,11 @@ Bakgrunn
   Borg → Omega → k8s (rormann)
   
 K8s
-  Container_management_teknologi
+  En orkestrator
+  En container_manager (fergie)
   Feks nordic libra 14 containere
 
-K8s ift cluster
+K8s som cluster
   When you deploy k8s, you get a cluster (k8s)
   If you’re running k8s, you’re running a cluster (redhat)
 
@@ -19,35 +20,3 @@ K8s ift datasenter
   Budtjenester
   Cattle fremfor pets
 
-------------------------------------
-  Arkitektur
-    Master node(r)
-    Worker node(r)
-    Pods
-    Services
-    ...
-  
-  Tilstand
-    Desired state: manifest
-    Current state: drift
-  
-  Objekt
-    Persistent entitet
-    Representerer tilstand
-    Pod: pod
-    ReplicaSet: pods + desired state
-    Service: aksess til pods + LB
-    Endpoint: list of all pods in service
-    Deployment
-    Job
-  
-  Controller
-    Overvåker tilstand
-    Regulerer tilstand (termostat)
-    DeploymentController, ReplicaSetController, JobController
-  
-  Label
-    Produksjon: prod
-    Backend: be
-    Versjon: 1.2.3
-  

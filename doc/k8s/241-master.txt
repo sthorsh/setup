@@ -1,0 +1,29 @@
+MASTER (KONTROLLPLAN)
+
+API-server
+  Frontend
+  Eksponerer REST API
+  Konsumerer JSON (fra manifest)
+  Kommuniserer over TCP port 443
+  
+Kontroller
+  Node controller
+  Endpoint controller
+  Namespace controller
+  ...
+  Ser etter endringer i clusteret
+  Sørger for at current_state == desired_state
+  
+Skeduler
+  Ser etter nye pods
+  Tilordner nye pods til arbeidsnoder
+  Affinitet
+  Constraints
+  Resource management
+  ...
+  
+Database
+  Clusterets konfigurasjon
+  Clusterets tilstand
+  Distribuert nosql key-value database (etcd)
+  
