@@ -1,4 +1,4 @@
-KUBERNETES
+K8S
 
 Bakgrunn
   Fra Google
