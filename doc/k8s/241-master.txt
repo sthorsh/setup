@@ -16,9 +16,10 @@ Kontroller_manager
   Ser etter endringer i clusteret
   Holder faktisk tilstand == ønsket tilstand
 
-Skeduler
-  Ser etter nye pods
-  Tilordner nye pods til arbeidsnoder
+Scheduler
+  Sjekker manifest for nye pods
+  Instansierer pods i clusteret
+  Tilordner pods til arbeidsnoder
   Affinitet
   Constraints
   Resource management

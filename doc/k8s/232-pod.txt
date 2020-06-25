@@ -1,30 +1,32 @@
 POD
 
 Pod
-  N containere
-  Omgivelse cf kernel namespaces
+  N containere (løs/tett kobling)
+  Omgivelse (namespaces, cgroups)
 
 Atomic unit
-  For deployment: pod
-  For skedulering: pod
-  For arbeid (uow): pod
-  For skalering opp/ned: pod
+  For deployment: pod (manifest)
+  For scheduling: pod
+  For arbeid: pod (arbeidernoder)
+  For skalering: pod opp/ned
   
-Livssyklus
-  Pending
-  Running
-  Succeeded or failed
+Former
+  Applikasjonspod
+  Pod bak service (endepunkt)
+  Systempod (dns, logging mfl)
 
-Label
-  Miljø: prod
-  Backend: be
-  Versjon: 1.2.3
-  
-Kobling
-  Tett: 2 containere, 1 pod
-  Løst: 2 containere, 2 pods
-  
-Nettverk
+Livssyklus
+  Manifest
+  Scheduling
+  Pending → running or failed
+  Running
+  Succedded or failed (cattle)
+
+Pod netns
   Pod: <ip>
-  Container: <ip>:<port>
-  
+  Container: <port>
+
+Kommunikasjon
+  Intra-pod: 127.0.0.1
+  Inter-pod: pod network
+

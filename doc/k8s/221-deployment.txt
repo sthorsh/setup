@@ -8,12 +8,12 @@ Deployment
   • canary releases
   Versioned rollbacks
 
-ReplicaSet/ReplicaController
-  Replikering
-  ...
-
 Service
   Lastbalansering
+  ...
+
+ReplicaSet/ReplicaController
+  Replikaer
   ...
 
 Pod

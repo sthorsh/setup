@@ -1,0 +1,47 @@
+INSTALLASJON
+
+Alternativer
+  Manuelt: vha kubeadm
+✓ Minikube: lokalkube + docker_engine 
+  Amazon Elastic Kubernetes Service (EKS)
+  Azure Kubernetes Service (AKS)
+  Google Kubernetes Engine (GKE)
+  ...
+
+Minikube
+  BIOS
+    Enable støtte for virtualisering
+
+  Update deps
+    $ cd ~/install
+    $ sudo apt-get update
+    $ sudo apt-get install -y apt-transport-https
+
+  Install virtualbox
+    $ sudo apt-get install -y virtualbox virtualbox-ext-pack 
+    
+  Install kubectl
+    $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    $ sudo touch /etc/apt/sources.list.d/kubernetes.list 
+    $ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+    $ sudo apt-get update
+    $ sudo apt-get install -y kubectl
+     
+  Install minikube
+    $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.2/minikube-linux-amd64
+    $ chmod +x minikube && sudo mv minikube /usr/local/bin/
+  
+  Minikube
+    $ minikube start (starter vm; starter k8s single-node cluster dvs lokalkube + docker_engine)
+    $ minikube dashboard &
+    ...
+    
+  Virtualbox
+    $ virtualbox & (dashboard)
+
+  Kubectl
+    $ kubectl <cmd> (kubectl utenfor vm → k8s apiserver inni vm)
+
+  Cf
+    http://matthewpalmer.net/kubernetes-app-developer/articles/install-kubernetes-ubuntu-tutorial.html
+  

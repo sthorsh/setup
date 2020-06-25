@@ -1,14 +1,14 @@
-NODER (MINIONS)
+ARBEIDERNODER (MINIONS)
 
 Kubelet
   K8s agent installert på en linux host
   Registrerer host som node i clusteret
   Poller apiserver på master for arbeid
-  Utfører arbeid: instansierer pods
+  Administrerer application/system pods
   Rapporterer (feil) tilbake til master
-  Eksponerer endepunkt ip:10255/health
-  Eksponerer endepunkt ip:10255/pods
-  Eksponerer endepunkt ip:10255/spec
+  Eksponerer endepunkt <ip>:10255/pods
+  Eksponerer endepunkt <ip>:10255/health
+  Eksponerer endepunkt <ip>:10255/spec
   ...
   
 Container engine

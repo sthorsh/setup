@@ -1,58 +1,16 @@
-$ kubectl
-  alpha
-  annotate
-  api-resources
-  api-versions
-• apply
-  attach
-  auth
-  autoscale
+KUBECTL
 
-  certificate
-  cluster-info
-  completion
-  config
-  convert
-  cordon
-  cp
-• create
+kubectl
+  $ kubectl<CR>
+  $ kubectl <cmd> --help
 
-• delete
-• describe
-  diff
-  drain
+cmds
+  $ kubectl apply -f pod.yml
+  ...
+  $ kubectl create -f pod.yml
+  ...
+  $ kubectl delete <resource>
+  $ kubectl describe <resource>
+  ...
+  $ kubectl get <resource>
 
-  edit
-• exec
-• explain
-• expose
-
-• get
-
-  kustomize
-
-  label
-  logs
-
-  options
-
-  patch
-  plugin
-  port-forward
-  proxy
-
-  replace
-• rollout
-  run
-
-  scale
-  set
-
-  taint
-  top
-
-  uncordon
-
-  version
-
-  wait
