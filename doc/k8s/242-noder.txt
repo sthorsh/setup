@@ -1,4 +1,4 @@
-ARBEIDERNODER (MINIONS)
+NODER (MINIONS)
 
 Kubelet
   K8s agent installert på en linux host

@@ -1,29 +1,21 @@
 DEPLOYMENT
 
 Deployment
-  Oppdateringer
-  Tilbakerullinger
+  Versioning
+  Rolling updates
+  Concurrent releases
+  • blue/green deployment
+  • canary releases
+  Versioned rollbacks
 
-ReplicaSet
-  Reliability
-  Scalability
-  Desired state
-  ...
-
-ReplicaController
-  Reliability
-  Scalability
-  Desired state
+ReplicaSet/ReplicaController
+  Replikering
   ...
 
 Service
-  Aksess til pods
   Lastbalansering
   ...
 
 Pod
   ...
-
-URLs
-  https://medium.com/@xcoulon/deploying-your-first-web-app-on-minikube-6e98d2884b3a
 
