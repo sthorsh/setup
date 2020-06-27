@@ -1,19 +1,18 @@
 POD
 
 Pod
-  N containere (løs/tett kobling)
-  Omgivelse (namespaces, cgroups)
+  N containere: løs/tett kobling
+  Omgivelse: namespaces, cgroups
 
 Atomic unit
-  For deployment: pod (manifest)
-  For scheduling: pod
-  For arbeid: pod (arbeidernoder)
-  For skalering: pod opp/ned
+  Deployment: pod
+  Schedulering: pod
+  Arbeid: pod
+  Skalering: pod
   
 Former
   Applikasjonspod
-  Pod bak service (endepunkt)
-  Systempod (dns, logging mfl)
+  Systempod: dns, logging mfl
 
 Livssyklus
   Manifest
