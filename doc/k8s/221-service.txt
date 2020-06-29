@@ -1,4 +1,4 @@
-Service 
+SERVICE 
 
 API
   Name           my-svc (dns)
