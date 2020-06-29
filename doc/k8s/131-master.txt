@@ -1,18 +1,18 @@
 MASTER (KONTROLLPLAN)
 
-API-server
+API server
   Frontend
   Eksponerer REST API
   Konsumerer JSON (fra manifest)
   Kommuniserer over TCP port 443
   
-Kontroller_manager
+Controller manager
   Deployment controller
-  ReplicaSet controller
-  Job controller
-  Node controller
   Endpoint controller
+  Job controller
   Namespace controller
+  Node controller
+  ReplicaSet controller
   Ser etter endringer i clusteret
   Holder faktisk tilstand == ønsket tilstand
 
@@ -25,8 +25,8 @@ Scheduler
   Resource management
   ...
   
-Database
+Store (etcd)
   Clusterets konfigurasjon
   Clusterets tilstand
   Distribuert nosql key-value database (etcd)
-  
+

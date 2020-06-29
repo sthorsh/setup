@@ -1,14 +1,12 @@
-INSTALLASJON
+MINIKUBE
 
-Alternativer
-  Manuelt: vha kubeadm
-✓ Minikube: lokalkube + docker_engine 
-  Amazon Elastic Kubernetes Service (EKS)
-  Azure Kubernetes Service (AKS)
-  Google Kubernetes Engine (GKE)
+minikube
+  $ minikube<cr>
+  $ minikube <ht>
+  $ minikube <cmd> --help
   ...
 
-Minikube
+Installasjon
   BIOS
     Enable støtte for virtualisering
 
@@ -44,4 +42,4 @@ Minikube
 
   Cf
     http://matthewpalmer.net/kubernetes-app-developer/articles/install-kubernetes-ubuntu-tutorial.html
-  
+

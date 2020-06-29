@@ -9,7 +9,7 @@ Bakgrunn
   
 K8s
   En orkestrator
-  En manager for containere (klopp)
+  En container manager (klopp)
   Feks nordic libra's 14 containere
 
 Cluster
@@ -21,7 +21,7 @@ Tilstand
   Faktisk clustertilstand: drifter fra ønsket tilstand
 
 Objekter
-  Defineres vha yml-manifest
+  Defineres vha json/yaml
   Opprettes ved å "throw it at the API-server"
   Refererer til "proper first class REST objects"
 

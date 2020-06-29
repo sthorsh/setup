@@ -1,6 +1,0 @@
-APIs resource objects
-  Deployment
-  Pod
-  Service
-  ReplicationController
-  ...

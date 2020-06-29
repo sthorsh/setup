@@ -1,4 +1,21 @@
-POD
+POD 
+
+API
+  Name:             my-pod
+  Namespace:        default
+  Labels:           my-key=my-val
+  IP:               172.17.0.3
+  Containers:
+    my-container:
+      Image:        nigelpoulton/pluralsight-docker-ci:latest
+      Port:         8080/TCP
+  Events:
+    scheduler       Successfully assigned my-pod to minikube
+    kubelet         MountVolume.SetUp succeeded for volume "..."
+    kubelet         Successfully pulled image "..."
+    kubelet         Created container
+    kubelet         Started container
+  ...
 
 Pod
   N containere: løs/tett kobling

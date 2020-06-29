@@ -1,0 +1,24 @@
+KUBECTL
+
+kubectl
+  $ kubectl<cr>
+  $ kubectl <ht>
+  $ kubectl <cmd> --help
+  
+kubectl <cmd>
+  $ kubectl api-resources
+  $ kubectl apply -f <manifest> --record
+  
+  $ kubectl cluster-info
+
+  $ kubectl create -f <manifest>
+
+  $ kubectl delete <type> <name or --all>
+  $ kubectl describe <type> [name]
+
+  $ kubectl get <type> [name] --output=wide
+
+  $ kubectl replace ...
+
+  $ kubectl rollout <cmd> ...
+                                   

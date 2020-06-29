@@ -1,0 +1,20 @@
+Service 
+
+API
+  Name           my-svc (dns)
+  Namespace      default
+  Labels         key₁: value₁ (svc)
+  Type           ClusterIP or NodePort or LoadBalancer
+  Port           8080/TCP 
+  TargetPort     8080/TCP
+  NodePort       30001-32767/TCP
+  IP             10.101.30.241
+  Selector       key₂: value₂ (endpoints)
+  Endpoints      172.17.0.1:8080,172.17.0.2:8080,...
+  ...
+
+Service
+  Et fast endepunkt (dns, ip, port)
+  Eksponerer app/pods ut av cluster
+  Lastbalanserer over endpoints/pods
+
