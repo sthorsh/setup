@@ -1,4 +1,4 @@
-MASTER (KONTROLLPLAN)
+MASTERNODE
 
 API server
   Frontend
@@ -25,7 +25,7 @@ Scheduler
   Resource management
   ...
   
-Store (etcd)
+Store/database
   Clusterets konfigurasjon
   Clusterets tilstand
   Distribuert nosql key-value database (etcd)

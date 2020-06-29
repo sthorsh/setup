@@ -1,0 +1,18 @@
+VIRTUALBOX INSTALL
+
+BIOS
+  Enable virtualization
+
+Update
+  $ sudo apt-get update
+  $ sudo apt-get install -y apt-transport-https (?)
+
+Install
+  $ sudo apt-get install -y virtualbox virtualbox-ext-pack 
+
+Dashboard
+  $ virtualbox & 
+
+Cf
+  http://matthewpalmer.net/kubernetes-app-developer/articles/install-kubernetes-ubuntu-tutorial.html
+

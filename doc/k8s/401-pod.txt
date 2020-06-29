@@ -23,7 +23,7 @@ Pod
 
 Atomic unit
   Deployment: pod
-  Schedulering: pod
+  Scheduling: pod
   Arbeid: pod
   Skalering: pod
   

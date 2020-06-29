@@ -13,12 +13,18 @@ kubectl <cmd>
 
   $ kubectl create -f <manifest>
 
-  $ kubectl delete <type> <name or --all>
-  $ kubectl describe <type> [name]
+  $ kubectl delete <resources>
+  $ kubectl describe resources>
 
-  $ kubectl get <type> [name] --output=wide
+  $ kubectl explain <resource>
+
+  $ kubectl get <resources>
+
+  $ kubectrl port-forward [podname] port₁:port₂
 
   $ kubectl replace ...
 
   $ kubectl rollout <cmd> ...
+
+  $ kubectrl run [podname] --image=nginx:alpine
                                    

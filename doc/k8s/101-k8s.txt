@@ -8,7 +8,7 @@ Bakgrunn
   Borg → Omega → k8s (rormann)
   
 K8s
-  En orkestrator
+  En orkestrator (dirigent)
   En container manager (klopp)
   Feks nordic libra's 14 containere
 
@@ -17,8 +17,19 @@ Cluster
   If you’re running k8s, you’re running a cluster (redhat)
 
 Tilstand
-  Ønsket clustertilstand: manifest (deklarativ modell)
-  Faktisk clustertilstand: drifter fra ønsket tilstand
+  Current state: clusterets nå-tilstand (drifter)
+  Desired state: ønsket clustertilstand (manifest)
+
+Key features
+  Service discovery
+  Load balancing
+  Storage orchestration
+  Automate rollouts
+  Automate rollbacks
+  Self-healing
+  Secret management
+  Configuration management
+  Horizontal scaling
 
 Objekter
   Defineres vha json/yaml
