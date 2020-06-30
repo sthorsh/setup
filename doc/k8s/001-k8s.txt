@@ -17,8 +17,8 @@ Cluster
   If you’re running k8s, you’re running a cluster (redhat)
 
 Tilstand
-  Current state: clusterets nå-tilstand (drifter)
-  Desired state: ønsket clustertilstand (manifest)
+  Desired state: ønsket clustertilstand (vha manifest)
+  Current state: clusterets nå-tilstand (drifter fra desired)
 
 Key features
   Service discovery

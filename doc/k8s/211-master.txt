@@ -1,4 +1,4 @@
-MASTERNODE
+MASTER
 
 API server
   Frontend

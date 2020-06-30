@@ -7,24 +7,40 @@ kubectl
   
 kubectl <cmd>
   $ kubectl api-resources
+
   $ kubectl apply -f <manifest> --record
   
   $ kubectl cluster-info
 
-  $ kubectl create -f <manifest>
+  $ kubectl create -f <manifest> --save-config
+  $ kubectl create service clusterip my-svc --tcp=80:80 [--dry-run=client] [--output=yaml]
 
-  $ kubectl delete <resources>
-  $ kubectl describe resources>
+  $ kubectl delete -f <manifest>
+  $ kubectl delete <type> <name>
 
-  $ kubectl explain <resource>
+  $ kubectl describe -f <manifest>
+  $ kubectl describe <type> <name>
 
-  $ kubectl get <resources>
+  $ kubectl edit <type> <name>
 
-  $ kubectrl port-forward [podname] port₁:port₂
+  $ kubectl exec <pod> [-it] -- <cmd>
+  $ kubectl exec <pod> -- curl 172.17.0.2:80
+
+  $ kubectl explain <type>
+
+  $ kubectl get -f <manifest> 
+  $ kubectl get <type> <name> [--output=yaml] [--show-labels]
+
+  $ kubectl port-forward pod/my-pod 8080:80 (localhost:8080)
+  $ kubectl port-forward deployment/my-dpm 8080:80 (localhost:8080)
+  $ kubectl port-forward service/my-svc 8080:80 (localhost:8080)
 
   $ kubectl replace ...
 
   $ kubectl rollout <cmd> ...
 
-  $ kubectrl run [podname] --image=nginx:alpine
+  $ kubectl run [podname] --image=nginx:alpine [--dry-run=client] [--output=yaml]
+  
+  $ kubectl scale -f <manifest> --replicas=5
+  $ kubectl scale <type> <name> --replicas=5
                                    

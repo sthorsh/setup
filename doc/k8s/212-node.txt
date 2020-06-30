@@ -1,4 +1,4 @@
-ARBEIDERNODER
+NODE
 
 Kubelet
   K8s agent installert på en linux host

@@ -1,31 +1,27 @@
 DEPLOYMENT                    
 
 API
-  Name                        my-dpm
-  Namespace                   default
-  Labels                      <none>
-  Selector                    my-key=my-value
-  Replicas                    3 desired | 3 updated | 3 total | 3 available | 0 unavailable
-  StrategyType                RollingUpdate
-  MinReadySeconds             0
-  RollingUpdateStrategy       25% max unavailable, 25% max surge
-  Pod Template
-    Labels                    my-key=my-value
-    Containers
-     my-ctr
-      Image                   nigelpoulton/pluralsight-docker-ci:latest
-      Port                    8080/TCP
-      Host Port               0/TCP
-    Volumes                   <none>
-  NewReplicaSet               my-dpm-7b97d94878 (3/3 replicas created)
-  Events
-    deployment-controller     Scaled up replica set my-dpm-7b97d94878 to 3
+  apiVersion              apps/v1
+  kind                    Deployment
+  metadata                ObjectMeta
+    name                  my-dpm
+    namespace             default
+    labels                my-key=my-val
+    ...
+  spec                    DeploymentSpec
+    minReadySeconds       10
+    strategy              DeploymentStrategy
+    replicas              5
+    selector              LabelSelector
+    template              PodTemplateSpec
+  status                  DeploymentStatus (ro)
   
 Create
-  Clean deployment
+  Clean deploy            cf kubectl apply -f dpm.yml
 
 Update
-  Rolling update 
-  
+  Rolling update          zero downtime
+
 Rollback
-  Simple rollback
+  Simple rollback         cf kubectl rollout undo -f dpm.yml
+
