@@ -1,6 +1,6 @@
-SERVICE               
-
 API
+
+Service
   apiVersion            v1
   kind                  Service
   metadata              ObjectMeta
@@ -17,20 +17,4 @@ API
       protocol          TCP or UDP
       targetPort        8080
   status                ServiceStatus (ro)
-
-Service
-  ETT entrypunkt        for N pods
-  Et FAST entrypunkt    dns|ip:port
-  Ekstern eksponering   ut av noden
-  Lastbalansering       random over endpoints
-
-Service type
-  ClusterIP             pod → svc → pod
-  NodePort              ext → np_svc → pod
-  LoadBalancer          ext → lb_svc → np_svc
-  ExternalName          pod → en_svc → ext_svc
-
-Service selector
-  A/B deployment        e.g 1.1 → 1.2
-  Canary deployment     e.g 1.1 → 1.2
 

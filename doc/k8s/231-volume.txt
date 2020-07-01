@@ -1,0 +1,41 @@
+API
+
+      Volume mount MOVE TO EG POD
+        References a volume
+        Gjør dette vha et navn
+        Definerer how to mount to the volume
+        Definerer en mountPath
+
+      Volume
+        References a storage location
+        Har et unikt navn
+        Er attached til en pod
+        Kan være tied til en pods lifetime
+
+Volume
+  azureDisk
+  azureFile
+  cephfs
+  configMap
+  csi
+  downwardAPI
+  emptyDir
+  fc
+  flexVolume
+  flocker
+  gcePersistentDisk
+  glusterfs
+  hostpath
+  lscsi
+  local
+  nfs
+  persistentVolumeClaim
+  projected
+  portworxVolume
+  quotebyte
+  rbd
+  scaleIO
+  secret
+  storageos
+  vsphereVolume
+

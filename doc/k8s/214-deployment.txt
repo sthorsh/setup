@@ -1,6 +1,6 @@
-DEPLOYMENT                    
-
 API
+
+Deployment
   apiVersion              apps/v1
   kind                    Deployment
   metadata                ObjectMeta
@@ -16,12 +16,3 @@ API
     template              PodTemplateSpec
   status                  DeploymentStatus (ro)
   
-Create
-  Clean deploy            cf kubectl apply -f dpm.yml
-
-Update
-  Rolling update          zero downtime
-
-Rollback
-  Simple rollback         cf kubectl rollout undo -f dpm.yml
-

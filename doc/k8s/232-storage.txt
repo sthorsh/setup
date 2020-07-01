@@ -1,0 +1,25 @@
+DATA
+
+Lagring
+  Pod fs
+  Volume
+  Database
+
+Volumes
+  E.g emptyDir
+  E.g hostPath 
+  PersistentVolume (pv)
+  StorageClass
+
+      Volume mount
+        References a volume
+        Gjør dette vha et navn
+        Definerer how to mount to the volume
+        Definerer en mountPath
+      
+      Volume
+        References a storage location
+        Har et unikt navn
+        Er attached til en pod
+        Kan være tied til en pods lifetime
+      

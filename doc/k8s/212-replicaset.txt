@@ -1,6 +1,6 @@
-REPLICASET
-
 API
+
+ReplicaSet
   apiVersion      apps/v1
   kind            ReplicaSet
   metadata        ObjectMeta

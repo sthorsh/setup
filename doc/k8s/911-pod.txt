@@ -1,23 +1,5 @@
 POD 
 
-API
-  apiVersion      v1
-  kind            Pod
-  metadata        ObjectMeta
-    name          my-pod (no k8s dns entry)
-    namespace     default
-    labels        my-key=my-val
-    ...
-  spec            PodSpec
-    containers    Container[]
-      name        my-ctr
-      image       nginx:alpine
-      ...
-    volumes
-      name        data
-      emptyDir    {}
-  status          PodStatus (ro)
-
 Pod
   N containere: løs/tett kobling
   Omgivelse: namespaces, cgroups
