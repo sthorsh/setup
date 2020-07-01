@@ -1,0 +1,19 @@
+API
+
+Workload
+  Pod
+  ReplicaSet
+  ...
+
+Service
+  Service
+  ...
+
+Storage
+  ...
+
+Metadata
+  ...
+
+Cluster
+  ...

@@ -11,7 +11,7 @@ Volumes
   PersistentVolume (pv)
   StorageClass
 
-      Volume mount
+      olume mount
         References a volume
         Gjør dette vha et navn
         Definerer how to mount to the volume

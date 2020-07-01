@@ -41,5 +41,6 @@ Labels
   Attaches til objekter feks pods
 
 URL
+  https://github.com/kubernetes/examples
   https://medium.com/@xcoulon/deploying-your-first-web-app-on-minikube-6e98d2884b3a
 

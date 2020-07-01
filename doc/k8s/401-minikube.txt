@@ -11,18 +11,18 @@ $ minikube <cmd>
   $ minikube cache
   $ minikube completion
   $ minikube config
-  $ minikube dashboard
+✓ $ minikube dashboard
   $ minikube delete
   $ minikube docker-env
   $ minikube get-k8s-versio
-  $ minikube ip
+✓ $ minikube ip
   $ minikube logs
   $ minikube mount
   $ minikube profile
   $ minikube service
-  $ minikube ssh
+✓ $ minikube ssh
   $ minikube ssh-key
-  $ minikube start
+✓ $ minikube start
   $ minikube status
   $ minikube stop
   $ minikube update-check
