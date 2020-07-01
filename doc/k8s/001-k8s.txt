@@ -21,15 +21,15 @@ Tilstand
   Current state: clusterets nå-tilstand (drifter fra desired)
 
 Key features
+  Horizontal scaling
+  Self-healing
+  Automate rollouts
+  Automate rollbacks
   Service discovery
   Load balancing
   Storage orchestration
-  Automate rollouts
-  Automate rollbacks
-  Self-healing
-  Secret management
   Configuration management
-  Horizontal scaling
+  Secret management
 
 Objekter
   Defineres vha json/yaml
@@ -40,6 +40,6 @@ Labels
   Key/value par
   Attaches til objekter feks pods
 
-Ressurser
+URL
   https://medium.com/@xcoulon/deploying-your-first-web-app-on-minikube-6e98d2884b3a
 

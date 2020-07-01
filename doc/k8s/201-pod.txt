@@ -13,6 +13,9 @@ API
       name        my-ctr
       image       nginx:alpine
       ...
+    volumes
+      name        data
+      emptyDir    {}
   status          PodStatus (ro)
 
 Pod

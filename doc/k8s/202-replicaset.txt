@@ -1,0 +1,17 @@
+REPLICASET
+
+API
+  apiVersion      apps/v1
+  kind            ReplicaSet
+  metadata        ObjectMeta
+    name          my-rs
+    namespace     default
+    labels        my-key=my-val
+    ...
+  spec            ReplicaSetSpec
+    replicas      5
+    selector      LabelSelector
+    template      PodTemplateSpec
+  ...
+  status          ReplicaSetStatus (ro)
+

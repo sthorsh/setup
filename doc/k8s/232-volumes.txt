@@ -1,0 +1,41 @@
+VOLUMES
+
+Volume
+  References a storage location
+  Har et unikt navn
+  Er attached til en pod
+  Kan være tied til en pods lifetime
+
+Volume mount
+  References a volume
+  Gjør dette vha et navn
+  Definerer how to mount to the volume
+  Definerer en mountPath
+
+Volume typer
+  azureDisk
+  azureFile
+  cephfs
+  configMap - aksess til k8s ressurser, key-value data
+  csi
+  downwardAPI
+  emptyDir - tied to pod lifetime, transiente data
+  fc
+  flexVolume
+  flocker
+  gcePersistentDisk
+  glusterfs
+  hostpath - pod mounter til fs på noden
+  lscsi
+  local
+  nfs - pod mounter til et nfs volume
+  persistentVolumeClaim - abstracted from the details
+  projected
+  portworxVolume
+  quotebyte
+  rbd
+  scaleIO
+  secret - aksess til k8s ressurser, for sensitive data
+  storageos
+  vsphereVolume
+
