@@ -1,8 +1,9 @@
 API
 
 Workload
-  Pod
+  Pod, Container
   ReplicaSet
+  Deployment
   ...
 
 Service
@@ -10,10 +11,14 @@ Service
   ...
 
 Storage
+  Volume
+  ConfigMap
+  PersistentVolumeClaim
   ...
 
 Metadata
   ...
 
 Cluster
+  PersistentVolume
   ...
