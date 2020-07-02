@@ -1,16 +1,16 @@
 POD 
 
 Pod
-  N containere: løs/tett kobling
-  Omgivelse: namespaces, cgroups
+  Containere: løs/tett kobling
+  Omgivelser: namespaces, cgroups
 
 Atomic unit
-  Deployment: pod
-  Scheduling: pod
-  Arbeid: pod
-  Skalering: pod
+  Deployment
+  Scheduling 
+  Arbeid
+  Skalering
   
-Former
+Klasser
   Applikasjonspod
   Systempod: dns, logging mfl
 
@@ -30,6 +30,6 @@ Kommunikasjon
   Inter-pod: pod network
 
 Health probes
-  Readiness probe: is pod/ctr ready?
-  Liveness probe: is pod/ctr alive/healthy?
+  Readiness probe: er pod/ctr klar?
+  Liveness probe: is pod/ctr frisk?
 

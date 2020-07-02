@@ -8,15 +8,20 @@ kubectl
 kubectl <cmd>
   $ kubectl api-resources
 
+  $ kubectl apply -f <dir>
   $ kubectl apply -f <manifest> --record
-  
+
   $ kubectl cluster-info
 
+  $ kubectl config [get-contexts] [view]
+
+  $ kubectl create -f <dir>
   $ kubectl create -f <manifest> --save-config
   $ kubectl create service clusterip my-svc --tcp=80:80 [--dry-run=client] [--output=yaml]
 
+  $ kubectl delete -f <dir>
   $ kubectl delete -f <manifest>
-  $ kubectl delete <type> <name>
+  $ kubectl delete <type> [--force] <name>
 
   $ kubectl describe -f <manifest>
   $ kubectl describe <type> <name>
@@ -26,10 +31,12 @@ kubectl <cmd>
   $ kubectl exec <pod> [-it] -- <cmd>
   $ kubectl exec <pod> -- curl 172.17.0.2:80
 
-  $ kubectl explain <type>
+  $ kubectl explain <kind>.<field>...
 
   $ kubectl get -f <manifest> 
-  $ kubectl get <type> <name> [--output=yaml] [--show-labels]
+  $ kubectl get <type> <name> [-o yaml] [--show-labels]
+
+  $ kubectl logs -f <pod>
 
   $ kubectl port-forward pod/my-pod 8080:80 (localhost:8080)
   $ kubectl port-forward deployment/my-dpm 8080:80 (localhost:8080)

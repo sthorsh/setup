@@ -1,24 +1,18 @@
-API
+API 
 
-Workload
-  Pod, Container
-  ReplicaSet
-  Deployment
+Objekter
+  Pod v1 core
+  Container v1 core
+  ReplicaSet v1 apps
+  Deployment v1 apps
   ...
-
-Service
-  Service
+  Service v1 core
   ...
-
-Storage
-  Volume
-  ConfigMap
-  PersistentVolumeClaim
+  Volume v1 core
+  ConfigMap v1 core
+  PersistentVolumeClaim v1 core
   ...
-
-Metadata
+  <metadata>
   ...
-
-Cluster
-  PersistentVolume
+  PersistentVolume v1 core
   ...

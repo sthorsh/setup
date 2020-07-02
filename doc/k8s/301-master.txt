@@ -2,8 +2,8 @@ MASTER
 
 API server
   Frontend
-  Eksponerer REST API
-  Konsumerer JSON (fra manifest)
+  Konsumerer JSON
+  Eksponerer HTTP REST API
   Kommuniserer over TCP port 443
   
 Controller manager
@@ -27,6 +27,6 @@ Scheduler
   
 Store/database
   Clusterets konfigurasjon
-  Clusterets tilstand
+  Clusterets tilstand (API-objekter)
   Distribuert nosql key-value database (etcd)
 

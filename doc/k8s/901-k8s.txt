@@ -16,8 +16,12 @@ Cluster
   When you deploy k8s, you get a cluster (k8s)
   If you’re running k8s, you’re running a cluster (redhat)
 
-Tilstand
-  Desired state: ønsket clustertilstand (vha manifest)
+Cluster konfig
+  Imperativ: ad-hoc
+  Deklarativ: manifest
+
+Cluster tilstand
+  Desired state: ønsket clustertilstand (manifest)
   Current state: clusterets nå-tilstand (drifter fra desired)
 
 Key features
@@ -31,10 +35,9 @@ Key features
   Configuration management
   Secret management
 
-Objekter
-  Defineres vha json/yaml
-  Opprettes ved å "throw it at the API-server"
-  Refererer til "proper first class REST objects"
+Objekter vs ressurser
+  API objekter
+  REST ressurser
 
 Labels
   Key/value par
