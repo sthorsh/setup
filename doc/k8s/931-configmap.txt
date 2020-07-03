@@ -1,0 +1,20 @@
+CONFIGMAP
+
+Konfigurasjon
+  Key-value data
+
+Aksess fra app
+  Alt1: env vars
+  Alt2: volumes dvs fs
+
+Definisjon
+  $ kubectl apply -f configMap.yml
+  $ kubectl create cm app-cfg --from-file app.cfg
+  $ kubectl create cm app-cfg --from-env-file app.cfg
+  $ kubectl create cm app-cfg --from-literal key₁=val₁ ... (dev)
+  
+Bruk
+  pod.spec.containers.env
+  pod.spec.containers.envFrom (✓)
+  pod.spec.containers.volumeMount (✓)
+

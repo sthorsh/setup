@@ -1,0 +1,36 @@
+API RQ RS
+
+Sekvens
+  Klient request
+  Connection: ✓
+  Autentisering: ✓
+  Autorisasjon: ✓
+  Admission control: ✓
+  Server respons: 2xx, 4xx, 5xx
+  
+Request
+  Verb
+  URL
+  
+Verb
+  POST - create
+  GET - read
+  PUT - update
+  PATCH - update
+  DELETE - delete
+
+URL
+  http://ip:port/api/v1/pods
+  http://ip:port/api/v1/namespaces/default/pods/app-pod/...?param&...
+  http://ip:port/apis/apps/v1/deployments
+  http://ip:port/apis/apps/v1/namespaces/default/deployments/app-dpm/...?param&...
+  
+Respons
+  200 OK
+  201 Created
+  202 Accepted
+  401 Unauthorized
+  403 Access Denied
+  404 Not Found
+  500 Internal Server Error
+

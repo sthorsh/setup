@@ -4,9 +4,11 @@ kubectl
   $ kubectl<cr>
   $ kubectl <ht>
   $ kubectl <cmd> --help
+  $ kubectl <cmd> -v 6..9
   
 kubectl <cmd>
   $ kubectl api-resources
+  $ kubectl api-versions
 
   $ kubectl apply -f <dir>
   $ kubectl apply -f <manifest> --record
@@ -31,16 +33,18 @@ kubectl <cmd>
   $ kubectl exec <pod> [-it] -- <cmd>
   $ kubectl exec <pod> -- curl 172.17.0.2:80
 
-  $ kubectl explain <kind>.<field>...
+  $ kubectl explain pod.spec --api-version v1
 
   $ kubectl get -f <manifest> 
-  $ kubectl get <type> <name> [-o yaml] [--show-labels]
+  $ kubectl get <kind> [name] -o yaml --show-labels
 
   $ kubectl logs -f <pod>
 
   $ kubectl port-forward pod/my-pod 8080:80 (localhost:8080)
   $ kubectl port-forward deployment/my-dpm 8080:80 (localhost:8080)
   $ kubectl port-forward service/my-svc 8080:80 (localhost:8080)
+
+  $ kubectl proxy
 
   $ kubectl replace ...
 
