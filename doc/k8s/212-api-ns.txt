@@ -1,0 +1,20 @@
+API NAMESPACE
+
+Namespace
+  Naming boundary
+  Security boundary (RBAC)
+
+Namespaces
+  app-ns
+  default
+  kube-public
+  kube-system: k8s
+
+Status/faser
+  Active
+  Terminating
+
+Ressurser
+  Resource quota
+  Resource limit ranges
+

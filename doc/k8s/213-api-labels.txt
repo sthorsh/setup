@@ -1,0 +1,26 @@
+API LABELS
+
+Label
+  Key/value-par
+  Ikke-hierarkisk
+  Keys <= 63 tegn
+  Values <= 253 tegn
+
+Selector CLI
+  $ kubectl get pods --selector <query>
+
+Selector API
+  DeploymentSpec.selector → pod template labels
+  ReplicaSetSpec.selector → pod template labels
+  ServiceSpec.selector → pod labels
+  PodSpec.nodeSelector → node labels
+
+Queries
+  key
+  !key
+  key=value
+  key!=value
+  key in (str, ...) (or)
+  key notin (str, ...)
+  query₁, query₂, ... (and)
+

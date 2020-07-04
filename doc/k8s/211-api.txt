@@ -1,32 +1,20 @@
 API 
 
-Namespace
-  Naming boundary
-  Security boundary (RBAC)
-
-Objekter
-  core v1 Namespace
+core
   core v1 Pod (ns)
-  core v1 Container
   core v1 Service (ns)
-  core v1 Volume 
   core v1 ConfigMap (ns)
   core v1 PersistentVolumeClaim (ns)
+  core v1 Namespace
   core v1 PersistentVolume 
-  ...
+
+apps
   apps/v1 Deployment (ns)
   apps/v1 ReplicaSet (ns)
-  ...
+
+rbac
   rbac.authorization.k8s.io/v1 Role (ns)
-  ... 
+
+storage
   storage.k8s.io/v1 StorageClass
-  ...
-
------------------------
-Organisering
-  Namespaces
-  Labels
-  Annoteringer
-
-  
 
