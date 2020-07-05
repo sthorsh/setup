@@ -1,5 +1,7 @@
 NODE
 
+TODO: for hver kubectl cmd: cf $ kubectl get events (for presis forståelse)
+
 Kubelet
   K8s agent installert på en linux host
   Registrerer host som node i clusteret

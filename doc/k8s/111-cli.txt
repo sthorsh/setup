@@ -5,8 +5,9 @@ kubectl
   $ kubectl <ht>
   $ kubectl <cmd> --help
   $ kubectl <cmd> -v 6..9
-  
+
 kubectl <cmd>
+  $ kubectl annotate <resource> <name> key=value
   $ kubectl api-resources --namespaced
   $ kubectl api-versions
 
@@ -38,16 +39,17 @@ kubectl <cmd>
   $ kubectl get -f <manifest> 
   $ kubectl get <kind> [name] --namespace app-ns --selector <query>
   $ kubectl get <kind> [name] --show-kind --show-labels -o yaml
+  $ kubectl get events
 
-  $ kubectl label pod ws-pod app=v1 (create)
-  $ kubectl label pod ws-pod app=v2 --overwrite (update)
-  $ kubectl label pod ws-pod app- (delete)
+  $ kubectl label <resource> <name> key=value (create)
+  $ kubectl label <resource> <name> key=value --overwrite (update)
+  $ kubectl label <resource> <name> key- (delete)
 
   $ kubectl logs -f <pod>
 
-  $ kubectl port-forward pod/my-pod 8080:80 (localhost:8080)
-  $ kubectl port-forward deployment/my-dpm 8080:80 (localhost:8080)
-  $ kubectl port-forward service/my-svc 8080:80 (localhost:8080)
+  $ kubectl port-forward pod/my-pod 8080:80 & (localhost:8080)
+  $ kubectl port-forward deployment/my-dpm 8080:80 & (localhost:8080)
+  $ kubectl port-forward service/my-svc 8080:80 & (localhost:8080)
 
   $ kubectl proxy
 

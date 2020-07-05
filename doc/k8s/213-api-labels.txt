@@ -2,20 +2,29 @@ API LABELS
 
 Label
   Key/value-par
-  Ikke-hierarkisk
-  Keys <= 63 tegn
-  Values <= 253 tegn
+  Assosisert med objekter/ressurser
+
+Label selector
+  Identifiserer en gruppe (mengde) objekter
+  The core grouping primitive in kubernetes
+
+Labels CRUD
+  $ kubectl label pod <name> key=value (create)
+  $ kubectl get pod <name> --show-labels (read)
+  $ kubectl get pod <name> --label-columns key₁,... (read)
+  $ kubectl label pod <name> key=value --overwrite (update)
+  $ kubectl label pod <name> key- (delete)
 
 Selector CLI
-  $ kubectl get pods --selector <query>
+  $ kubectl <cmd> <resource> --selector <query>
 
-Selector API
-  DeploymentSpec.selector → pod template labels
-  ReplicaSetSpec.selector → pod template labels
-  ServiceSpec.selector → pod labels
-  PodSpec.nodeSelector → node labels
+Selectors API
+  deployment.spec.selector: app=nginx
+  replicaset.spec.selector: app=nginx, pod-template-hash=1609499587
+  service.spec.selector: app=nginx
+  pod.spec.nodeSelector → node (pod scheduling)
 
-Queries
+Query
   key
   !key
   key=value

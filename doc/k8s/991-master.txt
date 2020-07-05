@@ -1,5 +1,7 @@
 MASTER
 
+TODO: for hver kubectl cmd: cf $ kubectl get events (for presis forståelse)
+
 API server
   Frontend
   Konsumerer JSON

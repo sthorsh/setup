@@ -1,0 +1,42 @@
+PODS
+
+Pod
+  Abstraksjon: cf PodSpec
+  Wrapper/omgivelse/ressurser + containere 
+  Enhet for deployment, skalering, scheduling, workload
+  Prosess i et cluster: pod → container(e) → prosess(er)
+  
+Klassifisering
+  Single-container: løs kobling
+  Multi-container: tett kobling (producer → consumer)
+
+Klassifisering
+  App-pod
+  Systempod: dns, logging mfl
+
+Livssyklus
+  "Creating": cli or manifest
+  Scheduling: scheduler pod → node
+  Downloading: kubelet docker pull
+  Pending: kubelet docker create → running or failed
+  Starting: kubelet docker start
+  Running/ready
+  Terminating: succedded or failed
+
+Restart
+  Always
+  OnFailure
+  Never
+
+Health
+  Liveness probe: is pod live?
+  Readiness probe: is pod ready?
+
+Nettverk
+  Pod: <ip>
+  Container: <port>
+
+Kommunikasjon
+  Intra-pod: 127.0.0.1
+  Inter-pod: pod network
+
