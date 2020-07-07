@@ -58,9 +58,13 @@ kubectl <cmd>
 
   $ kubectl replace ...
 
-  $ kubectl rollout <cmd> ...
-  $ kubectl rollout status <type> <name>
-
+  $ kubectl rollout history deployment <name> [--revision=N]
+  $ kubectl rollout status deployment <name> (exit status 0 or 1)
+  $ kubectl rollout pause deployment <name> 
+  $ kubectl rollout resume deployment <name> 
+  $ kubectl rollout restart deployment <name> 
+  $ kubectl rollout undo deployment <name> [--to-revision=N]
+                                                                 x77
   $ kubectl run ws-pod --image=nginx
                               
   $ kubectl set image deployment dpm-nginx ctr-nginx=nginx:1.19 --record

@@ -14,12 +14,12 @@ Controller manager
   cloud-controller-manager
 
 Controller
-  Overvåker current state
-    • poll via API-server
-    • watch via API-server
-  Gjenoppretter desired state
-    • genererer cmd e.g scale
-    • sender cmd til API-server
+  Ansvar for pod lifecycle
+  Overvåker current state:
+    • poll
+    • watch (notification)
+  Opprettholder desired state:
+    • sender cmd e.g scale til API-server
 
 Controllere for pods
   Deployment/ReplicaSet/Pod/Container

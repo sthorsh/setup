@@ -1,0 +1,30 @@
+DEPLOYMENT
+
+Deployment
+  Cf manifest
+  Ruller ut ReplicaSet
+  
+Skalering
+  Cf kubectl scale ...
+  Cf deployment.spec.replicas 
+
+Oppdatering
+  Endre pod template
+  Apply deployment
+  K8s beregner ny pod-template-hash
+  K8s ruller ut dpm → nytt rs → nye pods
+    
+Strategier
+  RollingUpdate
+  Recreate: gir nedetid
+  
+CLI kubectl
+  $ kubectl rollout pause ...
+  $ kubectl rollout resume ...
+  $ kubectl rollout undo ... --revision=N
+
+Feil ved utrulling
+  Cf minReadySeconds
+  Cf progressDeadlineSeconds
+  Cf RollingUpdateDeployment.maxUnavailable
+
