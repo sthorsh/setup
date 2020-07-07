@@ -4,19 +4,23 @@ TODO: for hver kubectl cmd: cf $ kubectl get events (for presis forståelse)
 
 API server
   Frontend
+  The core information hub
   Konsumerer JSON
   Eksponerer HTTP REST API
   Kommuniserer over TCP port 443
   
 Controller manager
-  Deployment controller
-  Endpoint controller
-  Job controller
+  Kommuniserer med API server
+  Monitorerer current state
+  Gjenoppretter desired state
+  Implementer livssyklus for controllere
   Namespace controller
-  Node controller
+  Deployment controller
   ReplicaSet controller
-  Ser etter endringer i clusteret
-  Holder faktisk tilstand == ønsket tilstand
+  Job controller
+  Endpoint controller
+  Node controller
+  ...
 
 Scheduler
   Sjekker manifest for nye pods

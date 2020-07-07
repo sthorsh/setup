@@ -28,8 +28,11 @@ kubectl <cmd>
 
   $ kubectl describe -f <manifest>
   $ kubectl describe <type> <name>
+  $ kubectl describe rs dpm-nginx-75767d4bc | grep "Controlled by"
+  $ kubectl describe replicasets.apps | grep "Controlled by" → Deployment/dpm-nginx
+  $ kubectl describe pod dpm-nginx-75767d4bc-9kvnm | grep "Controlled by" → ReplicaSet/dpm-nginx-75767d4bc
 
-  $ kubectl edit <type> <name>
+  $ kubectl edit <type> <name> (→ vim)
 
   $ kubectl exec <pod> [-it] -- <cmd>
   $ kubectl exec <pod> -- curl 172.17.0.2:80
@@ -56,8 +59,11 @@ kubectl <cmd>
   $ kubectl replace ...
 
   $ kubectl rollout <cmd> ...
+  $ kubectl rollout status <type> <name>
 
   $ kubectl run ws-pod --image=nginx
+                              
+  $ kubectl set image deployment dpm-nginx ctr-nginx=nginx:1.19 --record
   
   $ kubectl scale -f <manifest> --replicas=5
   $ kubectl scale <type> <name> --replicas=5

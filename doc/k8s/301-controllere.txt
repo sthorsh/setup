@@ -1,0 +1,30 @@
+CONTROLLERE
+
+Prinsipp 1
+  Imperativ konfigurasjon
+  Deklarativ konfigurasjon (✓)
+
+Prinsipp 2
+  Current state
+  Desired state
+
+Controller manager
+  Kjører controllere
+  kube-controller-manager
+  cloud-controller-manager
+
+Controller
+  Overvåker current state
+    • poll via API-server
+    • watch via API-server
+  Gjenoppretter desired state
+    • genererer cmd e.g scale
+    • sender cmd til API-server
+
+Controllere for pods
+  Deployment/ReplicaSet/Pod/Container
+  DaemonSet/Pod/Container
+  StatefulSet/Pod/Container
+  Job/Pod/Container
+  CronJob/Pod/Container
+  

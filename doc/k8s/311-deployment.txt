@@ -1,0 +1,16 @@
+DEPLOYMENT
+
+Ny deployment
+  Cf manifest
+  
+Oppdatere deployment
+  Endring i PodTemplate e.g image
+  Label pod-template-hash får ny verdi
+  K8s ruller ut dpm → nytt rs → nye pods
+    
+Kontrollere rollout
+  
+Rulle tilbake deployment
+    
+Deployment skalering
+  

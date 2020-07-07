@@ -12,7 +12,7 @@ Klassifisering
 
 Klassifisering
   App-pod
-  Systempod: dns, logging mfl
+  Systempod: cf namespace kube-system
 
 Livssyklus
   "Creating": cli or manifest

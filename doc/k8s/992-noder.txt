@@ -3,6 +3,8 @@ NODE
 TODO: for hver kubectl cmd: cf $ kubectl get events (for presis forståelse)
 
 Kubelet
+  Ansvar for container lifecycle
+  -------------------------------
   K8s agent installert på en linux host
   Registrerer host som node i clusteret
   Poller apiserver på master for arbeid
@@ -21,4 +23,8 @@ Kube proxy
   Gir hver pod en ip-addr
   Gir hver container i pod en tcp port
   Sørger for lastabalansering for pods → service → pods
+
+Node failure
+  Transient: < 5 min (k8s venter)
+  Permanent: > 5 min (k8s agerer)
   

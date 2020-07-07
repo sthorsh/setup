@@ -5,7 +5,6 @@ Namespace
   Security boundary (RBAC)
 
 Namespaces
-  app-ns
   default
   kube-public
   kube-system: k8s
