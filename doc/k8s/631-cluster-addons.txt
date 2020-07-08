@@ -1,11 +1,14 @@
-ADDONS
+ADDON PODS
 
 Komponenter
-  Cluster DNS (systempod)
+  DNS
+  Dashboard
+  Ingress controller
   ...
 
-Cluster DNS
+DNS
   DNS server
+  For pods, servicer, noder
   Name: kube-dns-86f4d74b45-6cpsj
   Namespace: kube-system
   ...

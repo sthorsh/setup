@@ -5,6 +5,7 @@ Komponenter
   Controller manager
   Scheduler
   Cluster store
+  Kubelet/kube-proxy/container-runtime (for systempods)
   
 API-server
   Kommunikasjonshub

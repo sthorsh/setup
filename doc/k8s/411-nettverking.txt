@@ -1,0 +1,60 @@
+Requirements/rules
+  1. Alle pod'er kan kommunisere med hverandre på alle noder
+  2. Alle noder kan kommunisere med alle pod'er
+  3. Ingen Network Address Translation (NAT) (straight IP network connectivty)
+  Altså: alle pod'er og alle noder kan nå hverandre med "real" ip-adresser
+  som er "on the nodes and the pods themselves" 
+  Lab: a single un-NATed (static) IP address per pod
+  Lab: direct routing - configure infrastructure to support IP reachability between pods on nodes (/(etc/hosts))
+
+Scenario #1
+  Ctr-til-ctr i pod
+  Over localhost
+  Using namespaces
+
+Scenario #2
+  Pod-til-pod i node
+  Over layer2 software bridge på noden
+  Using the real IPs of the pods themselves
+
+Scenario #3
+  Pod-til-pod på en annen node: kube-proxy₁ <-> kube-proxy₂ (pod networking)
+  Over layer2/3 connectivity
+    alt1: overlay/sw-defined network: calico, flannel or weavenet
+    alt2: network infrastructure
+  Using the real IPs of the pods
+  
+Scenario #4
+  Extusr-til-extsvc-til-pod
+  Over kube-proxy
+  Using ?
+
+Forbindelser
+  Lag 4: tcp port
+  Lag 3: ip adresse
+  Lag 2: mac adresse
+
+Master TCP-porter
+  2379-2380 → etcd
+  8443 → API-server
+  8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy → DNS-servers
+  10250 → kubelet
+  localhost:10251 → scheduler
+  localhost:10252 → controller manager
+  30000 → dashboard
+
+Node TCP-porter
+  10250 → kubelet
+  30001-32767 → node port
+  
+-------------------
+Modell
+
+Topologi
+
+Pod networking internals
+
+CNI
+
+DNS
+

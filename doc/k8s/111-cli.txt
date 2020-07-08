@@ -1,4 +1,4 @@
-CLI
+KUBECTL
 
 kubectl
   $ kubectl<cr>
@@ -6,7 +6,7 @@ kubectl
   $ kubectl <cmd> --help
   $ kubectl <cmd> -v 6..9
 
-kubectl <cmd>
+kubectl [cmd] [type] [name] [flags]
   $ kubectl annotate <resource> <name> key=value
   $ kubectl api-resources --namespaced
   $ kubectl api-versions
@@ -15,6 +15,8 @@ kubectl <cmd>
   $ kubectl apply -f <manifest> --record
 
   $ kubectl cluster-info
+
+  $ kubectl completion bash
 
   $ kubectl config [get-contexts] [view]
 
@@ -39,10 +41,10 @@ kubectl <cmd>
 
   $ kubectl explain pod.spec --api-version v1
 
-  $ kubectl get -f <manifest> 
-  $ kubectl get <kind> [name] --namespace app-ns --selector <query>
-  $ kubectl get <kind> [name] --show-kind --show-labels -o yaml
-  $ kubectl get events
+  $ kubectl get -f <manifest> -o wide
+  $ kubectl get <kind> [name] --namespace app-ns --selector <query> -o wide
+  $ kubectl get <kind> [name] --show-kind --show-labels -o yaml -o wide
+  $ kubectl get events -o wide
 
   $ kubectl label <resource> <name> key=value (create)
   $ kubectl label <resource> <name> key=value --overwrite (update)
@@ -60,15 +62,15 @@ kubectl <cmd>
 
   $ kubectl rollout history deployment <name> [--revision=N]
   $ kubectl rollout status deployment <name> (exit status 0 or 1)
-  $ kubectl rollout pause deployment <name> 
-  $ kubectl rollout resume deployment <name> 
-  $ kubectl rollout restart deployment <name> 
+  $ kubectl rollout pause deployment <name>
+  $ kubectl rollout resume deployment <name>
+  $ kubectl rollout restart deployment <name>
   $ kubectl rollout undo deployment <name> [--to-revision=N]
                                                                  x77
   $ kubectl run ws-pod --image=nginx
-                              
+
   $ kubectl set image deployment dpm-nginx ctr-nginx=nginx:1.19 --record
-  
+
   $ kubectl scale -f <manifest> --replicas=5
   $ kubectl scale <type> <name> --replicas=5
-                                   
+

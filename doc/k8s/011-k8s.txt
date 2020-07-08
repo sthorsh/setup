@@ -22,6 +22,19 @@ Tilstand
   Current state: drifter
   Desired state: vha manifest
 
+Sekvens "ny pod"
+  1. Klient sender request til API-server
+  2. API-server lagrer request i cluster store
+  3. Controller manager observerer endring (ny pod)
+  4. Pod controller iverksetter ("spinn opp ny pod")
+  5. Scheduler observer endring (ny pod)
+  6. Scheduler "binder" ny pod til node (pod → node)
+  7. Kubelet observerer endring (ny workload)
+  8. Kubelet spinner opp container(e)           
+  9. Controllere overvåker clusteret
+ 10. Controllere korrigerer avvik fra desired state
+     ...
+
 URL
   https://github.com/kubernetes/examples
   https://medium.com/@xcoulon/deploying-your-first-web-app-on-minikube-6e98d2884b3a

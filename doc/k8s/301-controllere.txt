@@ -21,7 +21,7 @@ Controller
   Opprettholder desired state:
     • sender cmd e.g scale til API-server
 
-Controllere for pods
+Pod controllere
   Deployment/ReplicaSet/Pod/Container
   DaemonSet/Pod/Container
   StatefulSet/Pod/Container
