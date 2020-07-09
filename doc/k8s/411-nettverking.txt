@@ -1,33 +1,34 @@
-Requirements/rules
-  1. Alle pod'er kan kommunisere med hverandre på alle noder
-  2. Alle noder kan kommunisere med alle pod'er
-  3. Ingen Network Address Translation (NAT) (straight IP network connectivty)
-  Altså: alle pod'er og alle noder kan nå hverandre med "real" ip-adresser
-  som er "on the nodes and the pods themselves" 
-  Lab: a single un-NATed (static) IP address per pod
-  Lab: direct routing - configure infrastructure to support IP reachability between pods on nodes (/(etc/hosts))
+NETTVERKING
 
-Scenario #1
-  Ctr-til-ctr i pod
-  Over localhost
-  Using namespaces
+Nettverksmodell
+  Alle pods kan snakke med alle andre pods på alle noder (cf pod nettverk)
+  Agenter på en node kan snakke med alle pods på den noden (kubelet, kube-proxy)
+  NAT er n/a dvs pod-nettverking er basert på faktiske (real) IP adresser
 
-Scenario #2
-  Pod-til-pod i node
-  Over layer2 software bridge på noden
-  Using the real IPs of the pods themselves
+Nettverkstopologi
+  Pod nettverk: range iht pod-network-cidr e.g 192.168.0.0/16 (pod id addr) (calico)
+  Cluster nettverk: service type clusterip, range iht service-clusterip param (?) (svc ip addr)
+  Node nettverk: "the real network" i datasenteret eller skyen (node ip addr)
 
-Scenario #3
-  Pod-til-pod på en annen node: kube-proxy₁ <-> kube-proxy₂ (pod networking)
-  Over layer2/3 connectivity
-    alt1: overlay/sw-defined network: calico, flannel or weavenet
-    alt2: network infrastructure
-  Using the real IPs of the pods
+Scenarier
+  Ctr-til-ctr i pod: if lo, bruker namespaces (?)
+  Pod-til-pod i node: if eth0 → L2 sw-bridge/tunnel-if, bruker pod "real" ip addr (calico: tunnel)
+  Pod-til-pod mellom noder: if ? → overlay nettverk (el L3/L2 connectivity), bruker pod "real" ip addr
+  Til-svc: if ? → kube-proxy, fra interne (clusterip) el eksterne klienter (nodeport)
   
-Scenario #4
-  Extusr-til-extsvc-til-pod
-  Over kube-proxy
-  Using ?
+CNI 3
+  Definerer standardisering
+  Implementerer standardisering
+
+Cluster DNS 8
+  ...
+------------------------------------
+
+Lab Nocentino
+  A single un-NATed (static) IP address per pod
+  Direct routing: configure infrastructure to support IP reachability between pods on nodes cf /etc/hosts
+
+===================================
 
 Forbindelser
   Lag 4: tcp port
@@ -46,15 +47,45 @@ Master TCP-porter
 Node TCP-porter
   10250 → kubelet
   30001-32767 → node port
-  
--------------------
-Modell
 
-Topologi
+===================================
+POD NETTVERK(ING)
 
-Pod networking internals
+NODE NETTVERK(ING)
 
-CNI
+CLUSTER NETTVERK(ING)
+-----------------------------------
+CLUSTER DNS
+===================================
+SERVICES
 
-DNS
+Service typer
+- ClusterIP
+- NodePort
+- LoadBalancer
+
+Service discovery
+- DNS: real pod/service IP → ?
+- Env vars: real pod/service IP → ?
+===================================
+INGRESS
+Arkitektur
+
+Use cases
+- TLS encryption
+- Path based routing
+- Name based virtual hosts
+
+
+
+
+
+
+
+
+
+
+
+
+
 

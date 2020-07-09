@@ -1,0 +1,31 @@
+Installer VM
+  Installer virtualbox
+  Installer vagrant
+
+Master node
+  Installer kubeadm
+  Installer kubectl
+  Installer kubelet
+  Installer docker 
+
+Bootstrap cluster
+  $ kubeadm init
+  ✓ Pre-flight checks: pulls ctr images
+  ✓ Creates self-signed CA: /etc/kubernetes/pki/
+  ✓ Generates kubeconfig files: /etc/kubernetes/
+  ✓ Generates static pod manifests: /etc/kubernetes/manifests/
+  ✓ Starts up the control plane
+  ✓ Taints the master
+  ✓ Generates a bootstrap token
+  ✓ Starts addon-pods: dns, kube-proxy
+  
+Konfigurer pod nettverking
+  Cf calico
+  
+Legg til noder i clusteret
+  $ kubeadm join
+    Download cluster information
+    Node submits a CSR
+    CA signs the CSR automatically
+    Configures kubelet.conf
+      

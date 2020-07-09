@@ -6,14 +6,6 @@ K8s
   When you deploy k8s, you get a cluster (k8s)
   If you’re running k8s, you’re running a cluster (redhat)
 
-Containerisering
-  En app (my-app) 
-  som er en prosess (nginx) 
-  som kjører i en container (my-ctr) 
-  som kjører i en pod (my-pod) 
-  på en node (minikube) 
-  i et cluster (k8s)
-
 Konfigurasjon
   Imperativt: ad-hoc
   Deklarativt: manifest
@@ -22,20 +14,36 @@ Tilstand
   Current state: drifter
   Desired state: vha manifest
 
-Sekvens "ny pod"
-  1. Klient sender request til API-server
-  2. API-server lagrer request i cluster store
-  3. Controller manager observerer endring (ny pod)
-  4. Pod controller iverksetter ("spinn opp ny pod")
-  5. Scheduler observer endring (ny pod)
-  6. Scheduler "binder" ny pod til node (pod → node)
-  7. Kubelet observerer endring (ny workload)
-  8. Kubelet spinner opp container(e)           
-  9. Controllere overvåker clusteret
- 10. Controllere korrigerer avvik fra desired state
-     ...
+Komponenter e.g deployment
+   1. Klient sender manifest til API-server
+   2. API-server parser manifestet
+   3. API-server lagrer objekter i cluster store (trigger watch)
+   4. Controller manager (pga watch) starter ReplicaSetController
+   5. ReplicaSetController sender melding om ny pod til Scheduler
+   6. Scheduler velger node for ny pod
+   7. Scheduler lagrer beslutning i cluster store
+   8. Kubelet på noden poller API-server for ny workload
+   9. Kubelet melder container runtime: "pull ned image"
+  10. Kubelet melder container runtime: "spinn opp pod/container"
+  11. Controllere overvåker clusteret
+  12. Controllere korrigerer avvik fra desired state
+
+Containerisering
+  En app (my-app) 
+  som er en prosess (nginx) 
+  som kjører i en container (my-ctr) 
+  som kjører i en pod (my-pod) 
+  på en node (minikube) 
+  i et cluster (k8s)
+
+Service
+  En service er backet av 
+  en deployment er backet av
+  et replica set er backet av
+  en pod (er backet av en container)
 
 URL
-  https://github.com/kubernetes/examples
+  https://matthewpalmer.net/kubernetes-app-developer/articles/install-kubernetes-ubuntu-tutorial.html
   https://medium.com/@xcoulon/deploying-your-first-web-app-on-minikube-6e98d2884b3a
+  https://github.com/kubernetes/examples
 

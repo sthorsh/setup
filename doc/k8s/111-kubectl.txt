@@ -1,0 +1,74 @@
+KUBECTL
+
+kubectl [cmd] [subcmd] [type] [name] [opts] [global_opts]
+
+  $ kubectl <ht>
+  $ kubectl <cmd> <ht>
+  $ kubectl <cmd> <cr>
+  $ kubectl --help
+  $ kubectl <cmd> --help
+
+  $ kubectl annotate <type> <name> key₁=val₁
+
+  $ kubectl api-resources
+  $ kubectl api-versions
+
+  $ kubectl apply -f <file|dir> --record [-v6]
+
+  $ kubectl cluster-info [dump]
+
+  $ kubectl completion bash
+
+  $ kubectl config <subcmd>
+
+  $ kubectl create deployment dpm --image=nginx [--dry-run -o yaml]
+  $ kubectl create service clusterip svc --tcp 8080:80 [--dry-run -o yaml]
+  $ kubectl create -f <file|dir> --save-config
+
+  $ kubectl delete <type> [name] [--all] [--force] [-v6]
+  $ kubectl delete -f <file|dir> [-v6]
+
+  $ kubectl describe <type> [--namespace ...] <name>
+  $ kubectl describe -f <file|dir>
+
+  $ kubectl exec <podname> -- <cmd>
+  $ kubectl exec <podname> -- ps
+  $ kubectl exec <podname> -it -- sh
+
+  $ kubectl explain <type>.<field>...
+  $ kubectl explain service.spec.ports
+
+  $ kubectl expose deployment cmp --port=80 --target-port=8080
+
+  $ kubectl get all [--all-namespaces]
+  $ kubectl get <type> [--namespace ...] [name] [--selector <query>] [-o wide --show-labels] [-o yaml] [--watch]
+  $ kubectl get events --watch
+  $ kubectl get -f <file|dir>
+
+  $ kubectl label <type> <name> key=val (create)
+  $ kubectl label <type> <name> key=val --overwrite (update)
+  $ kubectl label <type> <name> key- (delete)
+
+  $ kubectl logs <podname> [-c ctr] --follow
+
+  $ kubectl port-forward <type>/<name> [local_port:remote_port] &
+
+  $ kubectl options
+
+  $ kubectl proxy &
+
+  $ kubectl rollout history <type> <name> [--revision N]
+  $ kubectl rollout status <type> <name>
+  $ kubectl rollout pause <type> <name>
+  $ kubectl rollout resume <type> <name>
+  $ kubectl rollout restart <type> <name>
+  $ kubectl rollout undo <type> <name> [--to-revision N]
+
+  $ kubectl run <podname> --image nginx
+
+  $ kubectl set <subcmd> <type> <name> [opts]
+  $ kubectl set image deployment dpm ctr=nginx:1.19 --record
+
+  $ kubectl scale <type> <name> --replicas 5
+  $ kubectl scale -f <file|dir> --replicas 5
+
