@@ -120,6 +120,7 @@ alias xsc='xclip -selection clipboard'
 [ -f ~/bin/completion/cheat.bash ] && source ~/bin/completion/cheat.bash
 [ -f ~/bin/completion/gradle.bash ] && source ~/bin/completion/gradle.bash
 [ -f ~/bin/completion/minikube.bash ] && source ~/bin/completion/minikube.bash
+[ -f ~/bin/completion/vagrant ] && source ~/bin/completion/vagrant
 
 # Start programs
 ! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa )

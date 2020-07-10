@@ -42,6 +42,13 @@ Service
   et replica set er backet av
   en pod (er backet av en container)
 
+Installasjon
+  Fra scratch: https://linuxacademy.com/course/kubernetes-the-hard-way/
+  Med kubeadm
+  Med minikube
+  I skyen IAAS
+  I skyen PAAS
+
 URL
   https://matthewpalmer.net/kubernetes-app-developer/articles/install-kubernetes-ubuntu-tutorial.html
   https://medium.com/@xcoulon/deploying-your-first-web-app-on-minikube-6e98d2884b3a

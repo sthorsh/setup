@@ -1,19 +1,19 @@
 NETTVERKING
 
-Nettverksmodell
-  Alle pods kan snakke med alle andre pods på alle noder (cf pod nettverk)
-  Agenter på en node kan snakke med alle pods på den noden (kubelet, kube-proxy)
-  NAT er n/a dvs pod-nettverking er basert på faktiske (real) IP adresser
+Modell (for _pod_ nettverket)
+  Hver pod i pod nettverket skal ha en "single un-NATed ip addr" ("the real ip address")
+  Alle pods kan snakke med alle andre pods på alle noder (over L3 overlay network (ELLER L3 infrastruktur))
+  Agenter (kubelet, kube-proxy) på en node kan snakke med alle pods på den noden
 
-Nettverkstopologi
+Topologi
   Pod nettverk: range iht pod-network-cidr e.g 192.168.0.0/16 (pod id addr) (calico)
   Cluster nettverk: service type clusterip, range iht service-clusterip param (?) (svc ip addr)
   Node nettverk: "the real network" i datasenteret eller skyen (node ip addr)
 
-Scenarier
+Patterns
   Ctr-til-ctr i pod: if lo, bruker namespaces (?)
   Pod-til-pod i node: if eth0 → L2 sw-bridge/tunnel-if, bruker pod "real" ip addr (calico: tunnel)
-  Pod-til-pod mellom noder: if ? → overlay nettverk (el L3/L2 connectivity), bruker pod "real" ip addr
+  Pod-til-pod mellom noder: if ? → overlay nettverk ELLER L3/L2 connectivity, bruker pod "real" ip addr
   Til-svc: if ? → kube-proxy, fra interne (clusterip) el eksterne klienter (nodeport)
   
 CNI 3
