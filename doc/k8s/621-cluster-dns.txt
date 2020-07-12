@@ -1,0 +1,29 @@
+CLUSTER_DNS
+
+Namespace
+  DNS subdomain: <ns>.svc.<clusterdomain>
+  E.g ns1.svc.cluster.local
+
+Service
+  DNS record: <svcname>.<ns>.svc.<clusterdomain>
+  E.g mysvc.default.svc.cluster.local
+
+Klient
+  Pod
+  ...
+  
+Pod konfig
+  $ kubectl explain pod.spec.dnsPolicy
+  $ kubectl explain pod.spec.dnsConfig
+  I pod/container fs: /etc/resolv.conf
+
+Cluster DNS
+  LB → 2 x coredns.io
+  $ kubectl get service --namespace=kube-system kube-dns
+  $ kubectl describe service --namespace=kube-system kube-dns
+  $ kubectl describe deployments.apps --namespace kube-system coredns
+
+Cluster DNS konfig
+  pod.spec.containers.image.mount: /etcd/coredns
+  → $ kubectl get configmaps --namespace kube-system coredns -o yaml
+

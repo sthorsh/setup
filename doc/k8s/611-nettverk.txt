@@ -1,0 +1,31 @@
+NETTVERK
+
+Nettverksmodell
+  Regel 1: alle pod'er kan snakke med alle andre pod'er på alle noder
+  Regel 2: agenter (e.g kubelet, kube-proxy) på en node kan snakke med alle pod'er på den noden
+  Regel 3: en pod snakker med en annen pod vha dennes pod_ip (uten NATting)
+  
+Nettverkstopologi
+  Nodenettverk: node-cidr-range e.g 192.168.56.101
+  Podnettverk: pod-cidr-range e.g 172.16.222.208
+  Clusternettverk: service-cluster-ip-range e.g 10.96.0.10
+
+Kommunikasjonsmønstre
+  Ctr-til-ctr i pod: pod_if lo → loopback
+  Pod-til-pod i node: pod_if eth0 → bridge/tunnel
+  Pod-til-pod mellom noder: pod_if tunl0 → node_if enp0s3 → overlay el infrastruktur
+  Klient-til-service: klient → kube-proxy → nodeport/clusterip-service
+  
+Implementasjon
+  CNI nettverkplugins: e.g calico
+  Kubenet nettverkplugin: e.g AKS default
+
+Calico
+  Overlay nettverk
+  Bruker tunnel interfaces aka ip-tunneler (ipip)
+  Deployes som ett daemonset med en pod på hver node
+  Allokerer ip-adresser
+  Setter opp interfaces 
+  Setter opp namespaces
+  Konfigurerer bridges og tunnels
+  ...

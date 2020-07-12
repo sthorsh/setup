@@ -1,0 +1,64 @@
+K8S INSTALL
+
+Vbox
+  Install vbox
+
+Vagrant
+  Install vagrant
+  vm1 define: ubuntu 18.04, 172.16.94.10, c1-master1
+  vm2 define: ubuntu 18.04, 172.16.94.11, c1-node1
+  vm3 define: ubuntu 18.04, 172.16.94.12, c1-node2
+
+Install c1-master1
+  Install docker
+    docker.io
+
+  Install k8s
+    kubelet
+    kubectl
+    kubeadm
+
+  Sjekk svc status
+    docker.service: ✓
+    kubelet.service: x
+
+Init c1-master1
+  $ kubeadm init ...
+    Pre-flight checks: permissions, resources, docker mm
+    Konfig sertifikater: /etc/kubernetes/pki/
+  ✓ Konfig kubeconfig: /etc/kubernetes/*.conf
+    Konfig statiske pod manifest: /etc/kubernetes/manifests/
+    Start master: api, controller-manager, scheduler, etcd
+    Taint master: will exec system pods only
+    Create bootstrap token: for joining nodes
+    Start addon-pods: dns pods, kube-proxy pod
+  → Your Kubernetes master has initialized succesfully!
+
+  Konfig admin aksess
+    For kubectl → API-server
+
+  Apply pod nettverk 
+    Cf calico
+
+Install-join c1-node1
+  Install docker
+    docker.io
+
+  Install k8s
+    kubelet
+    kubectl
+    kubeadm
+
+  Sjekk svc status
+    docker.service: ✓
+    kubelet.service: ✓
+
+  $ kubeadm join
+    Download cluster information
+    Submit CSR
+    CA signs CSR: /var/lib/kubelet/pki
+    Konfig kubelet.conf: api-server, sertifikater, ...
+
+Install-join c1-node2
+  Cf c1-node1
+

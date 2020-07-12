@@ -1,0 +1,14 @@
+INGRESS
+
+Hensikt
+ For HTTP
+
+Arkitektur
+
+Use cases
+- TLS encryption
+- Path based routing
+- Name based virtual hosts
+
+TODO
+  → https://morioh.com/p/12ec1b56bf4c

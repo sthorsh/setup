@@ -1,0 +1,55 @@
+SERVICE
+
+Service
+  En service er ETT aksesspunkt (frontend) for N bakenforliggende (backend) pods
+  En service er PERSISTENT (ip, dns), backend pods er flyktige (ephemeral)
+  En service LASTBALANSERER over sine bakenforliggende pods
+  En service er en ABSTRAKSJON rundt en applikasjon/pod (infrastrukturuavhengighet)
+                                                  
+Virkemåte
+  En service har en SELECTOR, en backend pod har en matchende LABEL
+  En service har ett ENDEPUNKT (pod_ip, port) registrert for hver backend pod
+  En service er implementert av en KUBE-PROXY (vha iptables rules)
+  
+ClusterIP
+  URL http://cluster_ip:port e.g http://10.96.0.10:80 (cluster network)
+  Ved k8s init: kube-apiserver --service-cluster-ip-range <string>
+  Ved k8s init: kube-controller-manager --service-cluster-ip-range <string>
+  Gitt deployment av replicaset med N pods med target-svc pod_ip:target-port
+  Ved svc depl: kube-proxy oppdaterer iptables for aksess og lastbalansering
+  Ved svc kall: kube-proxy intercepter, resolver og videresender over pod network
+  Merk: cluster-ip finnes kun i iptables på hver node (kun _inne_ i clusteret)
+  Bruk: svc som ikke trenger å eksponeres ut av clusteret
+  Bruk: cf ingress
+  
+NodePort
+  URL http://node_ip:node_port e.g http://192.168.56.101:30001 (node network)
+  Gitt deployment av replicaset med N pods med target-svc pod_ip:target-port
+  Ved svc depl: k8s deployer en NodePort og en ClusterIP svc
+  Ved svc kall: klient → node-port-svc → cluster-ip-svc → pod
+  NB: ekstern klient kan kalle master eller hvilken som helst node i clusteret (!) 
+  Bruk: svc som må eksponeres ut av clusteret
+  Bruk: cf loadbalancer
+
+LoadBalancer
+  URL http://public_ip:port e.g http://app.acme.com:80 (cloud infrastructure)
+  Gitt deployment av replicaset med N pods med target-svc pod_ip:target-port
+  Ved svc depl: k8s deployer en LoadBalancer, en NodePortIP og en ClusterIP svc
+  Ved svc kall: klient → loadbalancer-svc → node-port-svc → cluster-ip-svc → pod
+
+ExternalName
+  Todo
+
+Headless
+  Todo
+
+Without Selectors
+  Todo
+  
+Service discovery 1
+  Pod → cluster dns 
+
+Service discovery 2
+  En samling environment variables definert i en pod
+  E.g name, namespace, type, port, nodeport, targetport ...
+

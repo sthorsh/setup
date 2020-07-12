@@ -5,7 +5,10 @@ Komponenter
   Controller manager
   Scheduler
   Cluster store
-  Kubelet/kube-proxy/container-runtime (for systempods)
+  Kubelet cf node
+  Kube-proxy cf node
+  Container runtime cf node
+  DNS x 2 cf cluster addons
   
 API-server
   Kommunikasjonshub
@@ -38,3 +41,11 @@ Cluster store
   Implementerer watches på keys (trigger events)
   Feks etcd (distribuert nosql key-value database)
   
+TCP
+  2379-2380 etcd
+  8443 apiserver
+  8443 apiserver → dns
+  10250 kubelet
+  10251 scheduler
+  10252 controller_manager
+

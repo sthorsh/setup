@@ -1,4 +1,4 @@
-NODER
+NODE
 
 Komponenter
   Kubelet
@@ -26,4 +26,8 @@ Kube proxy
 Container runtime
   Kjører containere
   Cf docker runtime
-    
+
+TCP
+  10250 kubelet
+  30001-32767 node_port
+
