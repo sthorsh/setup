@@ -1,14 +1,30 @@
 INGRESS
 
-Hensikt
- For HTTP
+Ingress
+  Konfigurasjon/regler for ekstern aksess til http svc's
+  Opererer på lag 7 (til forskjell fra LoadBalancer)
+✓ Path-based routing: http://ip:port/<path₁ or path₂>
+✓ Virtual hosting: i: http://ip:port/<path> --header 'Host: hostname₁ or hostname₂'
+  URL rewriting
+  Dynamic waiting
+  Session persistency
+✓ TLS/SSL termination (https)
 
-Arkitektur
+IngressController e.g nginx IC
+  Implementerer konfigurasjon/regler i Ingress-instans
+  Kan gi aksess til N >= 1, fremfor N = 1, interne svc's
+  Ruter direkte til pods (bypasser kube-proxy)
+  Mottar request, finner regel, videresender til svc/ep/pods
+  E.g nginx IC som pod i clusteret
+  E.g Azure AppGW som cloud controller utenfor clusteret
 
-Use cases
-- TLS encryption
-- Path based routing
-- Name based virtual hosts
-
-TODO
-  → https://morioh.com/p/12ec1b56bf4c
+Eksponere 1 http service
+  Deploy IngressController (nginx IC)
+  K8s eksponerer nginx IC som en NodePort svc
+  Create, scale og expose deployment som clusterip svc
+  Deploy Ingress: konfigurerer IC  
+  K8s eksponerer nginx IC som en nodeport svc → clusterip svc/ep/pods
+  Klient sender http request til http:<node-ip>:80 (standard NodePort)
+  NodePort_svc ruter request til IC
+  IC ruter request til backend svc/ep/pods iht Ingress (bypasser kube-proxy)
+    

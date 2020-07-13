@@ -50,6 +50,6 @@ Service discovery 1
   Pod → cluster dns 
 
 Service discovery 2
-  En samling environment variables definert i en pod
-  E.g name, namespace, type, port, nodeport, targetport ...
+  En pod har env vars for hver svc tilgjengelig ved pod startup
+  E.g <SVCNAME>_PORT_80_TCP_ADDR, <SVCNAME>_PORT_80_TCP_PORT, ...
 
