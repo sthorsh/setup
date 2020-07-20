@@ -297,6 +297,7 @@ git remote set-url origin git@github.com:sthorsh/setup.git
 echo "installation done, will reboot..."
 
 # Reboot
+sleep 5
 sudo reboot
 
 # AFTER INSTALLATION
