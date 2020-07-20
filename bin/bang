@@ -299,11 +299,11 @@ echo "installation done, will reboot..."
 # Reboot
 sudo reboot
 
-# WHEN DONE
-# Can delete startup script now
+# AFTER INSTALLATION
+# Delete startup script
 # rm ~/bang
 
-# Set desktop background (automation is too much work)
+# Set desktop background
 # Use ~/Pictures/ubuntu-logo.jpg
 
 # Add ssh key to github account
