@@ -294,24 +294,24 @@ dconf write /org/gnome/shell/favorite-apps "[
 git remote set-url origin git@github.com:sthorsh/setup.git
 
 # Done
-echo "installation done..."
+echo "installation done, will reboot..."
+
+# Reboot
+sudo reboot
 
 # WHEN DONE
+# Can delete startup script now
+# rm ~/bang
+
+# Set desktop background (automation is too much work)
+# Use ~/Pictures/ubuntu-logo.jpg
+
 # Add ssh key to github account
 # Cf https://docs.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account#
 
 # Test passwordless github ssh access:
 # $ git commit -a -m "."
 # $ git push origin master
-
-# Set desktop background (automation is too much work)
-# Use ~/Pictures/ubuntu-logo.jpg
-
-# Can delete startup script now
-# rm ~/bang
-
-# Reboot
-# reboot
 
 # TO BE INSTALLED
 # jq
