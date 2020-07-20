@@ -213,7 +213,7 @@ then
   echo "tmux already installed..."
 else
   wget --directory-prefix=install "https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz"
-  tar xf install/tmux-${TMUX_VERSION}.tar.gz
+  tar xf install/tmux-${TMUX_VERSION}.tar.gz -C install
   cd install/tmux-${TMUX_VERSION}
   ./configure; make; sudo make install
   sudo rm -rf /usr/local/src/tmux-\*
