@@ -17,7 +17,6 @@ SQUIRREL_VERSION=3.8.1
 TMUX_VERSION=3.1
 
 # Reminder before running this script
-echo "check version numbers, remove this line, run again..." && exit 0
 
 # Get package list before patching os
 echo "getting package list from github..."
@@ -73,7 +72,7 @@ if [ ! -e ~/tmp ]; then mkdir ~/tmp; fi
 # Install bat
 if command -v bat > /dev/null 2>&1
 then
-  echo "bat installed..."
+  echo "bat already installed..."
 else
   echo "installing bat..."
   wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb
@@ -92,7 +91,7 @@ fi
 # Install tldr
 if command -v tldr > /dev/null 2>&1
 then
-  echo "tldr installed..."
+  echo "tldr already installed..."
 else
   echo "installing tldr..."
   sudo npm install -g tldr
@@ -104,6 +103,7 @@ if command -v tmux > /dev/null 2>&1
 then
   echo "tmux already installed..."
 else
+  echo "installing tmux..."
   wget --directory-prefix=install "https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz"
   tar xf install/tmux-${TMUX_VERSION}.tar.gz -C install
   cd install/tmux-${TMUX_VERSION}
@@ -116,9 +116,9 @@ fi
 # https://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead
 if command -v java > /dev/null 2>&1
 then
-  echo "java installed..."
+  echo "java already installed..."
 else
-  echo "installing java 8..."
+  echo "installing java..."
   wget -c --directory-prefix=install --header "Cookie: oraclelicense=accept-securebackup-cookie" \
     http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
   sudo mkdir /usr/lib/jvm
@@ -129,9 +129,9 @@ fi
 # Install javadoc
 if [ -f /usr/lib/jvm/java/docs  ]
 then
-  echo "java installed..."
+  echo "javadoc already installed..."
 else
-  echo "installing java 8 documentation..."
+  echo "installing javadoc..."
   wget -c --directory-prefix=install --header "Cookie: oraclelicense=accept-securebackup-cookie" \
     https://download.oracle.com/otn-pub/java/jdk/8u261-b12/a4634525489241b9a9e1aa73d9e118e6/jdk-8u261-docs-all.zip
   unzip install/jdk-8u261-docs-all.zip -d install
@@ -141,7 +141,7 @@ fi
 # Install gradle
 if command -v gradle > /dev/null 2>&1
 then
-  echo "gradle installed..."
+  echo "gradle already installed..."
 else
   echo "installing gradle..."
   wget --directory-prefix=install https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
@@ -152,7 +152,7 @@ fi
 # Install maven
 if command -v mvn > /dev/null 2>&1
 then
-  echo "maven installed..."
+  echo "maven already installed..."
 else
   echo "installing maven..."
   wget --directory-prefix=install http://apache.uib.no/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
@@ -163,7 +163,7 @@ fi
 # Install intellij
 if command -v /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1
 then
-  echo "intellij installed..."
+  echo "intellij already installed..."
 else
   echo "installing intellij..."
   wget --directory-prefix=install https://download.jetbrains.com/idea/ideaIC-${IJ_VERSION}-no-jbr.tar.gz
@@ -197,7 +197,7 @@ fi
 # Install postman
 if command -v /opt/Postman/Postman > /dev/null 2>&1
 then
-  echo "postman installed..."
+  echo "postman already installed..."
 else
   echo "installing postman..."
   wget --directory-prefix=install https://dl.pstmn.io/download/latest/linux?arch=64 -O install/postman.tar.gz
@@ -207,7 +207,7 @@ fi
 # Install slack
 if command -v slack > /dev/null 2>&1
 then
-  echo "slack installed..."
+  echo "slack already installed..."
 else
   echo "installing slack..."
   wget --directory-prefix=install "https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb"
@@ -218,7 +218,7 @@ fi
 # Install squirrel
 if [ -f /usr/lib/squirrelsql/squirrel-sql.sh ]
 then
-  echo "squirrel installed..."
+  echo "squirrel already installed..."
 else
   echo "installing squirrel..."
   wget --directory-prefix=install https://sourceforge.net/projects/squirrel-sql/files/1-stable/${SQUIRREL_VERSION}-plainzip/squirrelsql-${SQUIRREL_VERSION}-standard.zip
@@ -243,12 +243,14 @@ then
   echo "git already configured..."
 else
   echo "configure git..."
+  git init
+  sleep 10
+  git remote add origin https://github.com/sthorsh/setup.git
+  sleep 10
   git config --global user.name svein
   git config --global user.email sthorsh@gmail.com
   git config --global color.ui auto
   git config --global core.pager ''
-  git init
-  git remote add origin https://github.com/sthorsh/setup.git
 fi
 
 # Pull from github
@@ -291,11 +293,7 @@ fi
 git remote set-url origin git@github.com:sthorsh/setup.git
 
 # Done
-echo "installation done, will reboot in 5 secs..."
-
-# Reboot
-sleep 5
-sudo reboot
+echo "installation done..."
 
 # AFTER INSTALLATION
 # Delete startup script
@@ -310,6 +308,9 @@ sudo reboot
 # Test passwordless github ssh access:
 # $ git commit -a -m "."
 # $ git push origin master
+
+# Reboot
+# sudo reboot
 
 # TO BE INSTALLED
 # jq
