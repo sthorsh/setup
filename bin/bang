@@ -252,6 +252,15 @@ fi
 echo "pull from github..."
 git pull --rebase origin master
 
+# Configure ssh
+if [ -f ~/.ssh/id_rsa.pub ]
+then
+  echo "ssh key already exists..."
+else
+  echo "creating ssh key..."
+  ssh-keygen -t rsa -b 4096 -C "."
+fi
+
 # Configure tmux
 if [ -d ~/.tmux/plugins/tpm ]
 then
@@ -269,15 +278,6 @@ else
   echo "configure vim..."
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +BundleInstall +qall
-fi
-
-# Create ssh key
-if [ -f ~/.ssh/id_rsa.pub ]
-then
-  echo "ssh key already exists..."
-else
-  echo "creating ssh key..."
-  ssh-keygen -t rsa -b 4096 -C "."
 fi
 
 # Pin to desktop
