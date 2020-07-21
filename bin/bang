@@ -3,7 +3,7 @@
 # To run this script, from ~ do:
 # wget --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/bin/bang
 # chmod +x bang
-# ~/.bang
+# ~/bang
 
 # Usernames
 DOCKER_USER="svein"
@@ -31,21 +31,9 @@ sudo dselect update
 sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
 sudo apt-get -u dselect-upgrade
 
-# To avoid error on first pull from github
+# To avoid error on pull from github
 echo "removing package list..."
 if [ -f ~/etc/dpkg-get-selections.log ]; then rm ~/etc/dpkg-get-selections.log; fi
-
-# Install Chrome
-if command -v google-chrome-stable > /dev/null 2>&1
-then
-  echo "chrome already installed..."
-else
-  echo "installing chrome..."
-  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-  sudo apt-get update
-  sudo apt-get install google-chrome-stable
-fi
 
 # Configure Gnome
 echo "configuring gnome..."
@@ -67,6 +55,15 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "[disabled]"
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-8 []
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings:/ close-tab "[disabled]"
 
+# Remove directories
+echo "removing directories and files..."
+if [ -d ~/Documents ]; then rm -rf ~/Documents/; fi
+if [ -d ~/Music ]; then rm -rf ~/Music/; fi
+if [ -d ~/Public ]; then rm -rf ~/Public/; fi
+if [ -d ~/Templates ]; then rm -rf ~/Templates/; fi
+if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
+if [ -f ~/examples.desktop ]; then rm ~/examples.desktop; fi
+
 # Create directories
 echo "creating directories..."
 if [ ! -e ~/bin ]; then mkdir ~/bin; fi
@@ -76,15 +73,6 @@ if [ ! -e ~/doc ]; then mkdir ~/doc; fi
 if [ ! -e ~/etc ]; then mkdir ~/etc; fi
 if [ ! -e ~/install ]; then mkdir ~/install; fi
 if [ ! -e ~/tmp ]; then mkdir ~/tmp; fi
-
-# Remove directories
-echo "removing directories and files..."
-if [ -d ~/Documents ]; then rm -rf ~/Documents/; fi
-if [ -d ~/Music ]; then rm -rf ~/Music/; fi
-if [ -d ~/Public ]; then rm -rf ~/Public/; fi
-if [ -d ~/Templates ]; then rm -rf ~/Templates/; fi
-if [ -d ~/Videos ]; then rm -rf ~/Videos/; fi
-if [ -f ~/examples.desktop ]; then rm ~/examples.desktop; fi
 
 # Install bat
 if command -v bat > /dev/null 2>&1
@@ -103,6 +91,29 @@ then
 else
   echo "installing manly..."
   pip install --user manly
+fi
+
+# Install tldr
+if command -v tldr > /dev/null 2>&1
+then
+  echo "tldr installed..."
+else
+  echo "installing tldr..."
+  sudo npm install -g tldr
+  tldr --update
+fi
+
+# Install tmux
+if command -v tmux > /dev/null 2>&1
+then
+  echo "tmux already installed..."
+else
+  wget --directory-prefix=install "https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz"
+  tar xf install/tmux-${TMUX_VERSION}.tar.gz -C install
+  cd install/tmux-${TMUX_VERSION}
+  ./configure; make; sudo make install
+  sudo rm -rf /usr/local/src/tmux-\*
+  sudo mv install/tmux-${TMUX_VERSION} /usr/local/src
 fi
 
 # Install java
@@ -131,17 +142,6 @@ else
   sudo mv install/docs /usr/lib/jvm/java
 fi
 
-# Install intellij
-if command -v /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1
-then
-  echo "intellij installed..."
-else
-  echo "installing intellij..."
-  wget --directory-prefix=install https://download.jetbrains.com/idea/ideaIC-${IJ_VERSION}-no-jbr.tar.gz
-  sudo tar -xf install/ideaIC-${IJ_VERSION}-no-jbr.tar.gz -C /usr/lib
-  sudo ln -sf /usr/lib/idea-IC-* /usr/lib/idea-IC
-fi
-
 # Install gradle
 if command -v gradle > /dev/null 2>&1
 then
@@ -164,7 +164,41 @@ else
   sudo ln -sf /usr/lib/apache-maven-${MAVEN_VERSION}/ /usr/lib/apache-maven
 fi
 
-# Install Postman
+# Install intellij
+if command -v /usr/lib/idea-IC/bin/idea.sh > /dev/null 2>&1
+then
+  echo "intellij installed..."
+else
+  echo "installing intellij..."
+  wget --directory-prefix=install https://download.jetbrains.com/idea/ideaIC-${IJ_VERSION}-no-jbr.tar.gz
+  sudo tar -xf install/ideaIC-${IJ_VERSION}-no-jbr.tar.gz -C /usr/lib
+  sudo ln -sf /usr/lib/idea-IC-* /usr/lib/idea-IC
+fi
+
+# Install chrome
+if command -v google-chrome-stable > /dev/null 2>&1
+then
+  echo "chrome already installed..."
+else
+  echo "installing chrome..."
+  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  sudo apt-get update
+  sudo apt-get install google-chrome-stable
+fi
+
+# Install docker
+if command -v docker > /dev/null 2>&1
+then
+  echo "docker already installed..."
+else
+  echo "installing docker..."
+  wget -qO- https://get.docker.com/ | sh
+  sudo groupadd docker
+  sudo usermod -aG docker $DOCKER_USER
+fi
+
+# Install postman
 if command -v /opt/Postman/Postman > /dev/null 2>&1
 then
   echo "postman installed..."
@@ -197,40 +231,6 @@ else
   sudo chmod -R +x /usr/lib/squirrelsql
 fi
 
-# Install tldr
-if command -v tldr > /dev/null 2>&1
-then
-  echo "tldr installed..."
-else
-  echo "installing tldr..."
-  sudo npm install -g tldr
-  tldr --update
-fi
-
-# Install tmux
-if command -v tmux > /dev/null 2>&1
-then
-  echo "tmux already installed..."
-else
-  wget --directory-prefix=install "https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz"
-  tar xf install/tmux-${TMUX_VERSION}.tar.gz -C install
-  cd install/tmux-${TMUX_VERSION}
-  ./configure; make; sudo make install
-  sudo rm -rf /usr/local/src/tmux-\*
-  sudo mv install/tmux-${TMUX_VERSION} /usr/local/src
-fi
-
-# Install docker
-if command -v docker > /dev/null 2>&1
-then
-  echo "docker already installed..."
-else
-  echo "installing docker..."
-  wget -qO- https://get.docker.com/ | sh
-  sudo groupadd docker
-  sudo usermod -aG docker $DOCKER_USER
-fi
-
 # Backup bashrc before first pull from github
 if [ ! -f ~/.bashrc-ubuntu ]; then mv ~/.bashrc ~/.bashrc-ubuntu; fi
 
@@ -248,8 +248,8 @@ else
   git remote add origin https://github.com/sthorsh/setup.git
 fi
 
-# First pull from github
-echo "first pull from github..."
+# Pull from github
+echo "pull from github..."
 git pull --rebase origin master
 
 # Configure tmux
