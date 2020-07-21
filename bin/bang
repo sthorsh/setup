@@ -31,10 +31,6 @@ sudo dselect update
 sudo dpkg --set-selections < ~/etc/dpkg-get-selections.log
 sudo apt-get -u dselect-upgrade
 
-# To avoid error on pull from github
-echo "removing package list..."
-if [ -f ~/etc/dpkg-get-selections.log ]; then rm ~/etc/dpkg-get-selections.log; fi
-
 # Configure Gnome
 echo "configuring gnome..."
 # capslock to ctrl
@@ -231,8 +227,15 @@ else
   sudo chmod -R +x /usr/lib/squirrelsql
 fi
 
-# Backup bashrc before first pull from github
-if [ ! -f ~/.bashrc-ubuntu ]; then mv ~/.bashrc ~/.bashrc-ubuntu; fi
+# Pin favorite apps to desktop
+dconf write /org/gnome/shell/favorite-apps "[
+'google-chrome.desktop',
+'gnome-control-center.desktop',
+'gnome-screenshot.desktop',
+'gnome-terminal.desktop',
+'nautilus.desktop',
+'slack.desktop',
+'update-manager.desktop']"
 
 # Configure git
 if git remote -v | grep origin > /dev/null 2>&1;
@@ -250,6 +253,10 @@ fi
 
 # Pull from github
 echo "pull from github..."
+# Necessary to avoid failed pull
+if [ -f ~/etc/dpkg-get-selections.log ]; then rm ~/etc/dpkg-get-selections.log; fi
+# Backup ubuntu's bashrc
+if [ ! -f ~/.bashrc-ubuntu ]; then mv ~/.bashrc ~/.bashrc-ubuntu; fi
 git pull --rebase origin master
 
 # Configure ssh
@@ -280,21 +287,11 @@ else
   vim +BundleInstall +qall
 fi
 
-# Pin to desktop
-dconf write /org/gnome/shell/favorite-apps "[
-'google-chrome.desktop',
-'gnome-control-center.desktop',
-'gnome-screenshot.desktop',
-'gnome-terminal.desktop',
-'nautilus.desktop',
-'slack.desktop',
-'update-manager.desktop']"
-
 # Change github access from https to passwordless ssh
 git remote set-url origin git@github.com:sthorsh/setup.git
 
 # Done
-echo "installation done, will reboot..."
+echo "installation done, will reboot in 5 secs..."
 
 # Reboot
 sleep 5
