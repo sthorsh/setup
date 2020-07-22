@@ -50,6 +50,16 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "[disabled]"
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-8 []
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings:/ close-tab "[disabled]"
 
+# Pin favorite apps to desktop
+dconf write /org/gnome/shell/favorite-apps "[
+  'gnome-control-center.desktop',
+  'gnome-screenshot.desktop',
+  'gnome-terminal.desktop',
+  'nautilus.desktop',
+  'update-manager.desktop', 
+  'google-chrome.desktop',
+  'slack.desktop']"
+
 # Remove directories
 echo "removing directories and files..."
 if [ -d ~/Documents ]; then rm -rf ~/Documents/; fi
@@ -227,30 +237,20 @@ else
   sudo chmod -R +x /usr/lib/squirrelsql
 fi
 
-# Pin favorite apps to desktop
-dconf write /org/gnome/shell/favorite-apps "[
-'google-chrome.desktop',
-'gnome-control-center.desktop',
-'gnome-screenshot.desktop',
-'gnome-terminal.desktop',
-'nautilus.desktop',
-'slack.desktop',
-'update-manager.desktop']"
-
 # Configure git
 if git remote -v | grep origin > /dev/null 2>&1;
 then
   echo "git already configured..."
 else
   echo "configure git..."
-  git init
-  sleep 10
-  git remote add origin https://github.com/sthorsh/setup.git
-  sleep 10
   git config --global user.name svein
   git config --global user.email sthorsh@gmail.com
   git config --global color.ui auto
   git config --global core.pager ''
+  git init
+  sleep 10
+  git remote add origin https://github.com/sthorsh/setup.git
+  sleep 10
 fi
 
 # Pull from github
