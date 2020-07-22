@@ -16,8 +16,6 @@ SLACK_VERSION=3.3.3
 SQUIRREL_VERSION=3.8.1
 TMUX_VERSION=3.1
 
-# Reminder before running this script
-
 # Get package list before patching os
 echo "getting package list from github..."
 wget --directory-prefix=etc --user=sthorsh --ask-password https://raw.githubusercontent.com/sthorsh/setup/master/etc/dpkg-get-selections.log
@@ -120,6 +118,7 @@ else
   ./configure; make; sudo make install
   sudo rm -rf /usr/local/src/tmux-\*
   sudo mv install/tmux-${TMUX_VERSION} /usr/local/src
+  cd ~
 fi
 
 # Install java
