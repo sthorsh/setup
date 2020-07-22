@@ -241,19 +241,18 @@ if git remote -v | grep origin > /dev/null 2>&1;
 then
   echo "git already configured..."
 else
-  echo "configure git..."
+  echo "configuring git..."
   git config --global user.name svein
   git config --global user.email sthorsh@gmail.com
   git config --global color.ui auto
   git config --global core.pager ''
+  echo "initializing git..."
   git init
-  sleep 10
   git remote add origin https://github.com/sthorsh/setup.git
-  sleep 10
 fi
 
 # Pull from github
-echo "pull from github..."
+echo "pulling from github..."
 # Necessary to avoid failed pull
 if [ -f ~/etc/dpkg-get-selections.log ]; then rm ~/etc/dpkg-get-selections.log; fi
 # Backup ubuntu's bashrc
@@ -274,7 +273,7 @@ if [ -d ~/.tmux/plugins/tpm ]
 then
   echo "tmux already configured..."
 else
-  echo "configure tmux..."
+  echo "configuring tmux..."
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
@@ -283,12 +282,13 @@ if [ -d ~/.vim/bundle/Vundle.vim ]
 then
   echo "vim already configured..."
 else
-  echo "configure vim..."
+  echo "configuring vim..."
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +BundleInstall +qall
 fi
 
-# Change github access from https to passwordless ssh
+# Change github url from https to passwordless ssh
+echo "changing remote git url from https to git..."
 git remote set-url origin git@github.com:sthorsh/setup.git
 
 # Done
