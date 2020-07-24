@@ -1,0 +1,18 @@
+APP_DATA
+
+Hierarki
+  mountPath
+  volumeMounts
+  volumes
+  PersistentVolumeClaim
+  PersistentVolume
+
+Livssyklus
+  Binding: matcher pvc → pv
+  Using: pod bruker pv
+  Reclaim: retain (statisk) el delete (dynamisk)
+
+Provisjonering
+  Statisk: storage, pv, pvc, volume
+  Dynamisk: storage, storageClass, pvc, volume
+
