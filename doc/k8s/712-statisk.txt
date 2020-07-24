@@ -1,0 +1,38 @@
+STATISK
+
+Storage e.g nfs
+  On storage server: install nfs server
+  On storage server: configure nfs export
+  On each worker node: install nfs client
+  On each worker node: test mounting export
+
+PersistentVolume
+  name: pv-nfs-data
+  labels: key=value
+  accessModes: rwo|rwx|rox
+  capacity.storage: 10Gi
+  persistentVolumeReclaimPolicy: Reclaim|Delete
+  nfs.server: ...
+  nfs.path: ...
+  ...
+
+PersistentVolumeClaim (pvc)
+  name: pvc-nfs-data
+  accessModes: rwo|rwx|rox
+  resources.requests.storage: 10Gi
+  resources.limits
+  storageClassName: ...
+  selector: key=value
+                                  
+Volume
+  name: webcontent
+  persistentVolumeClaim: ...
+
+Pod
+  Kubelet eksponerer pv (nfs export) i pod'en
+  svein@c1-master1[~]$ kubectl exec -it nginx-nfs-deployment-596984497d-nh2s6 -- /bin/bash
+                                    
+Node
+  Node (kubelet) mounter pv (nfs export) når k8s starter pod på noden
+  svein@c1-node1[~]$ mount | grep nfs
+  
