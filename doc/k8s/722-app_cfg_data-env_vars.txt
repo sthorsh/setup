@@ -1,0 +1,18 @@
+ENV VARS
+
+Cmdline args
+  Not recommended
+
+Brukerdefinert
+  Kan være definert i container image (don’t)
+  Bør være definert i podspcec.containers.env (do)
+  Alt1: name-value
+  Alt2: valueFrom <location> el <resource>
+
+Systemdefinert
+  En env_var for hver svc ved pod creation
+
+Diverse
+  Env_vars defineres ved oppstart av container
+  Env_vars kan ikke oppdateres etter pod creation  
+

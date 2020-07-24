@@ -6,7 +6,7 @@ Storage e.g nfs
   On each worker node: install nfs client
   On each worker node: test mounting export
 
-PersistentVolume
+PersistentVolume (pv)
   name: pv-nfs-data
   labels: key=value
   accessModes: rwo|rwx|rox
@@ -24,15 +24,20 @@ PersistentVolumeClaim (pvc)
   storageClassName: ...
   selector: key=value
                                   
-Volume
-  name: webcontent
-  persistentVolumeClaim: ...
-
 Pod
-  Kubelet eksponerer pv (nfs export) i pod'en
-  svein@c1-master1[~]$ kubectl exec -it nginx-nfs-deployment-596984497d-nh2s6 -- /bin/bash
-                                    
+  containers:
+    ...
+    volumeMounts:
+    - name: webcontent
+      mountPath: "/usr/share/nginx/html/web-app"
+  volumes:
+  - name: webcontent
+    persistentVolumeClaim:
+      claimName: pvc-nfs-data
+
 Node
-  Node (kubelet) mounter pv (nfs export) når k8s starter pod på noden
-  svein@c1-node1[~]$ mount | grep nfs
-  
+  Node (kubelet) mounter pv (nfs export) når k8s starter pod på noden:
+  $ svein@c1-node1[~]$ mount | grep nfs
+  Node (kubelet) eksponerer pv (nfs export) i pod'en:
+  $ svein@c1-master1[~]$ kubectl exec -it nginx-nfs-deployment-596984497d-nh2s6 -- /bin/bash
+
