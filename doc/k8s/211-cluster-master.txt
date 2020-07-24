@@ -25,15 +25,7 @@ Controller manager
   ...
   
 Scheduler
-  Watcher API-server for nye pods
-  Velger node for nye pods
-  • Affinitet
-  • Constraints
-  • Data locality
-  • Deadlines
-  • Inter-workload interference
-  • Resource requirements
-  ...
+  Cf cluster-master-scheduler.txt
     
 Cluster store
   Key/value store for cluster-data

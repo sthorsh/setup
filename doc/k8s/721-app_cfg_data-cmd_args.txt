@@ -1,0 +1,6 @@
+CMD ARGS
+
+Cmd args
+  pod.spec.containers.command
+  pod.spec.containers.args
+

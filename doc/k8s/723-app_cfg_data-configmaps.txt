@@ -1,25 +1,33 @@
 CONFIGMAPS
 
-.................
-Konfigurasjon
-  Key-value data
+ConfigMap (cm)
+  Key/value-par
 
-Aksess fra app
-  Alt1: env vars
-  Alt2: volumes dvs fs
+Brukstilfeller
+  Cfg av daemons running inside ctr like web servers
+  Cfg av daemons running inside ctr like caching servers
+  Connection strings
+  Hostnames
+  URLs
+  Credentials
+  Env-spesifikk cfg i.e dev, test, qa, prod
 
-Definisjon
-  $ kubectl apply -f configMap.yml
+Imperativ def
   $ kubectl create cm app-cfg --from-file app.cfg
   $ kubectl create cm app-cfg --from-env-file app.cfg
   $ kubectl create cm app-cfg --from-literal key₁=val₁ ... (dev)
-  
-Bruk
-  pod.spec.containers.env
-  pod.spec.containers.envFrom (✓)
-  pod.spec.containers.volumeMount (✓)
 
-..................
-CONFIGMAPS
-For decoupling av mer komplisert app_cfg fra pod lifecycle
+Deklarativ def
+  $ kubectl apply -f configMap.yml
+  
+Eksponering inn i pod
+  Som env_vars (immutable)
+  Som mounted volume → tmpfs-mounted files (kan oppdateres)
+
+Bruk envvar-basert cm i pod
+  pod.spec.containers.envFrom.configMapRef (alle)
+  pod.spec.containers.env.valueFrom.configMapKeyRef (en-og-en)
+
+Bruk volume-basert cm i pod
+  pod.spec.volumes.configMap
 
