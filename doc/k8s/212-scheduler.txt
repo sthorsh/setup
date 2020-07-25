@@ -1,0 +1,33 @@
+SCHEDULER
+
+Scheduler
+  pod/kube-scheduler-c1-master1
+
+Funksjon(er)
+  Assigner pods til noder
+  Dvs schedulerer workloads
+
+Tar hensyn til
+  Ressurser (hw)
+  Policy constraints (sw)
+
+Scheduling
+  Scheduler watches API server for unscheduled pods
+  Scheduler assigner unscheduled pods til noder (node selection)
+    Filtrerer ready noder
+      ✓ pod.spec.containers.resources.requests
+      ✓ pod.spec.nodeName (request to assign pod to specific node)
+      ✓ pod.spec.nodeSelector
+      Produserer en liste filtered nodes
+    Gir score til filtered nodes
+      ✓ pod.spec.affinity.podAffinity
+      ✓ pod.spec.affinity.podAntiAffinity
+      ✓ pod.spec.affinity.nodeAffinity
+      ✓ pod.spec.tolerations (tolerate tainted nodes)
+      Produserer en liste feasible nodes
+    Binder feasible pod til node
+      Velger en av feasible nodes (uavgjort → random)
+      Setter pod.spec.nodeName til feasible_node_name
+  Nodes kubelets watch API server for incoming workloads
+  Nodes kubelets gir ctr runtime beskjed om å starte ctr
+

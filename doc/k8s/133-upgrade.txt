@@ -1,0 +1,22 @@
+UPGRADE
+
+Forberedelser
+  Les Release Notes
+  Kun minor version e.g 1.16 → 1.17 → 1.18
+
+Upgrade master
+  Update apt metadata
+  Update kubeadm package
+  Drain workload on master
+  Run kubeadm upgrade plan
+  Run kubeadm upgrade apply
+  Uncordon master
+  Update kubelet og kubectl
+
+Upgrade worker node(s)
+  Drain workload on node
+  Update kubeadm package
+  Run kubeadm upgrade node
+  Update kubelet og kubectl
+  Uncordon node to allow workload
+

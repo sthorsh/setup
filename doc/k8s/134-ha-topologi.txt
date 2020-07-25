@@ -1,0 +1,30 @@
+HA
+
+API-server
+  Stateless
+  Tre el flere apiservere
+
+Etcd
+  State
+  Tre el flere etcd-noder
+  Utgjør et eget internt|eksternt cluster
+  Replikering mellom etcd-noder
+  Leader selection mellom etcd-noder (quorom)
+
+HA-topologi: stacked etcd
+  Master-node1: apiserver, etcd, controller-manager, scheduler
+  Master-node2: apiserver, etcd
+  Master-node3: apiserver, etcd
+  Loadbalancer: utenfor clusteret, foran apiservere
+  kubectl → LB → apiserver → etcd
+  Worker nodes → LB → apiserver → etcd
+  
+HA-topologi: ekstern etcd
+  Master-node1: apiserver, controller-manager, scheduler
+  Master-node2: apiserver
+  Master-node3: apiserver
+  Eksternt etcd-cluster: etcd x 3
+  Loadbalancer: utenfor clusteret, foran apiservere
+  kubectl → LB → apiserver → etcd
+  Worker nodes → LB → apiserver → etcd
+  

@@ -1,0 +1,29 @@
+ETCD
+
+Etcd
+  Key-value store
+  No-sql database
+  Distribuert database
+  Consensus database (quorum)
+  Systempod pod/etcd-c1-master1
+
+Funksjon
+  Lagrer API-objektenes cfg som data
+  Lagrer API-objektenes state som data
+  Implementerer watches på keys (trigger events)
+
+Cfg
+  $ kubectl describe pod -n kube-system etcd-c1-master1
+  $ less /etc/kubernetes/manifests/etcd.yaml
+  $ ps | grep etcd
+
+Database
+  /var/lib/etcd on svein@c1-master1
+  Mounted inn i pod/etcd-c1-master1
+
+CLI
+  $ etcdctl
+
+API
+  json/http
+

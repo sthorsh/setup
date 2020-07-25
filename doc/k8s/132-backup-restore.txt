@@ -1,0 +1,18 @@
+BACKUP-RESTORE
+
+Backup
+  Bruk etcdctl
+  Ta snapshot (en fil)
+  Krypter sensitive data
+  Kopier til offsite lokasjon
+  Automatiser i form av script
+  Scheduler script som cronjob
+
+Restore
+  Bruk etcdctl
+  Restore backup til e.g /var/lib/restore
+  Flytt data i /var/lib/etcd til en annen folder
+  Stopp etcd pod
+  Flytt data i /var/lib/restore til /var/lib/etcd
+  Kubelet vil restarte etcd pod
+

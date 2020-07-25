@@ -25,16 +25,14 @@ Controller manager
   ...
   
 Scheduler
-  Cf cluster-master-scheduler.txt
+  Cf scheduler
     
-Cluster store
-  Key/value store for cluster-data
-  Persisterer API-objektenes tilstand
-  Implementerer watches på keys (trigger events)
-  Feks etcd (distribuert nosql key-value database)
+Datastore
+  Cf etcd
   
 TCP
-  2379-2380 etcd
+  2379 etcd
+  2380 etcd
   8443 apiserver
   8443 apiserver → dns
   10250 kubelet
