@@ -1,0 +1,25 @@
+LOGGING
+
+Ctrs/pods
+  master[~]$ kubectl logs <pod>
+  master[~]$ kubectl logs <systempod>
+  master[~]$ kubectl logs <pod> -c <ctr>
+  master[~]$ kubectl logs <pod> --follow
+  master[~]$ kubectl logs <pod> --previous
+  worker[~]$ docker logs <ctr>
+  worker[~]$ tail -f /var/log/containers/<ctr-name>_<ctr-id>
+
+Nodes
+  
+
+Control plane
+
+Events
+  Operasjoner på objekter og ressurser
+
+Log rotation
+  E.g logrotate
+
+Log aggregation
+  E.g ELK
+  E.g splunk
