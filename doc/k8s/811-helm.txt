@@ -1,0 +1,20 @@
+HELM
+
+Hva er Helm?
+  Packet manager for k8s
+  Pakketering av objekter
+
+Hvorfor Helm?
+  Deployment - ny "unit of deployment"
+  Versioning - rulle ut, rulle tilbake
+  Customizations (deployments for different releases)
+  Dependencies (between applications)
+
+Helm chart
+
+Helm templates (helm chart customizations)
+
+Helm chart dependencies
+
+Helm chart repositories
+
