@@ -1,25 +1,48 @@
 LOGGING
 
-Ctrs/pods
-  master[~]$ kubectl logs <pod>
-  master[~]$ kubectl logs <systempod>
-  master[~]$ kubectl logs <pod> -c <ctr>
-  master[~]$ kubectl logs <pod> --follow
-  master[~]$ kubectl logs <pod> --previous
-  worker[~]$ docker logs <ctr>
-  worker[~]$ tail -f /var/log/containers/<ctr-name>_<ctr-id>
+Pods/ctrs
+  master$ kubectl [-n ns] logs <pod>
+  master$ kubectl [-n ns] logs <pod> -c <ctr>
+  master$ kubectl [-n ns] logs <pod> -f
+  master$ kubectl [-n ns] logs <pod> -p
 
-Nodes
+Master
+  master$ kubectl logs -n kube-system kube-apiserver-c1-master1  
+  master$ kubectl logs -n kube-system kube-controller-manager-c1-master1  
+  master$ kubectl logs -n kube-system kube-scheduler-c1-master1  
+  master$ kubectl logs -n kube-system etcd-c1-master1  
+  # if apiserver is down
+  master$ docker logs <ctr> 
+  # if docker is down
+  master$ cat /var/log/containers/<ctr>
+  # otherwise check OS logs
+  master$ cat /var/log/syslog
+
+Noder
+  worker$ service kubelet status 
+  worker$ systemctl status kubelet.service --lines 50 --no-pager
+  worker$ journalctl -u kubelet.service --since today --no-pager
+  # if apiserver is down
+  worker$ docker logs <ctr> 
+  # if docker is down
+  worker$ cat /var/log/containers/<ctr>
+  # otherwise check OS logs
+  worker$ cat /var/log/syslog
   
-
-Control plane
-
-Events
-  Operasjoner på objekter og ressurser
-
-Log rotation
-  E.g logrotate
+Events (kun siste timen)
+  master$ kubectl get events 
+  master$ kubectl get events --namespace <ns>
+  master$ kubectl get events --sort-by .metadata.creationTimestamp
+  master$ kubectl get events --watch
+  ...
+  master$ kubectl describe deployments <name> 
+  master$ kubectl describe replicasets <name> 
+  master$ kubectl describe pods <name>
+  ...
 
 Log aggregation
-  E.g ELK
-  E.g splunk
+  ELK, splunk, ...
+
+Log rotation
+  logrotate
+
