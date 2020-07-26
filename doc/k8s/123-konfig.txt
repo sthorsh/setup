@@ -1,6 +1,6 @@
-K8S CONFIGURE
+KONFIGURASJON
 
-Master: svein@c1-master1[~]$ tree /etc/kubernetes/
+svein@c1-master1[~]$ tree /etc/kubernetes/
   /etc/kubernetes/
   ├── admin.conf
   ├── controller-manager.conf
@@ -36,7 +36,7 @@ Master: svein@c1-master1[~]$ tree /etc/kubernetes/
   │   └── sa.pub
   └── scheduler.conf
 
-Node: svein@c1-node1:~$ tree /etc/kubernetes/
+svein@c1-node1:~$ tree /etc/kubernetes/
   /etc/kubernetes/
   ├── kubelet.conf
   ├── manifests

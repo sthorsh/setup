@@ -1,0 +1,9 @@
+CONTROLLER MANAGER
+
+Controller manager
+  Kjører controllere (loops)
+  Watcher API-server for current state
+  Oppdaterer API-server med desired state
+  Deployment controller
+  • Ansvar for pod lifecycle
+  ...

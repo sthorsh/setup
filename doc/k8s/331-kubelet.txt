@@ -1,0 +1,31 @@
+KUBELET
+  
+Kubelet
+  En agent
+  En service (systemd)
+
+Oppgaver
+  Kjører pods (pod lifecycle)
+  Rapporterer pod/node state
+  Eksponerer endepunkter (rest)
+
+Mekanisme
+  Monitorerer API-server (poll, watch)
+
+Endepunkter
+  <ip>:10255/pods
+  <ip>:10255/health (pod live-/readiness prober)
+  <ip>:10255/spec
+
+Service/systemd
+  $ systemctl status kubelet.service
+  $ systemctl enable kubelet.service
+  $ systemctl start kubelet.service
+  $ systemctl restart kubelet.service
+  ...
+  $ journalctl -u kubelet.service
+  ...
+  $ cat /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+  ...
+  $ cat /var/lib/kubelet/config.yaml
+

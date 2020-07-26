@@ -1,0 +1,8 @@
+API-SERVER
+
+API-server
+  Kommunikasjonshub
+  RESTfullt API (utveksler JSON)
+  Kommuniserer over TCP port 443
+  Sender data til etcd for lagring
+    

@@ -1,10 +1,4 @@
-ADDON PODS
-
-Komponenter
-  DNS
-  Dashboard
-  Ingress controller
-  ...
+DNS
 
 DNS
   DNS server

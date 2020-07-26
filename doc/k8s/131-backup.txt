@@ -1,4 +1,4 @@
-BACKUP-RESTORE
+BACKUP
 
 Backup
   Bruk etcdctl

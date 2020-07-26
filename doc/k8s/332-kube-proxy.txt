@@ -1,0 +1,9 @@
+KUBE PROXY
+
+Kube proxy
+  En nettverksproxy (iptables)
+  Monitorerer API-server (poll, watch)
+  Implementerer nettverking (ruting, services, lastbalanse)
+  Hver pod: en ip-addresse
+  Hver container: en tcp-port
+  ...

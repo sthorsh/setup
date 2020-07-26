@@ -1,4 +1,4 @@
-STATISK
+STATISK PROVISJONERING
 
 Storage e.g nfs
   On storage server: install nfs server

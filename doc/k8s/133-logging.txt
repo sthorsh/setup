@@ -11,10 +11,13 @@ Master
   master$ kubectl logs -n kube-system kube-controller-manager-c1-master1  
   master$ kubectl logs -n kube-system kube-scheduler-c1-master1  
   master$ kubectl logs -n kube-system etcd-c1-master1  
+
   # if apiserver is down
   master$ docker logs <ctr> 
+
   # if docker is down
   master$ cat /var/log/containers/<ctr>
+
   # otherwise check OS logs
   master$ cat /var/log/syslog
 
@@ -22,10 +25,13 @@ Noder
   worker$ service kubelet status 
   worker$ systemctl status kubelet.service --lines 50 --no-pager
   worker$ journalctl -u kubelet.service --since today --no-pager
+
   # if apiserver is down
   worker$ docker logs <ctr> 
+
   # if docker is down
   worker$ cat /var/log/containers/<ctr>
+
   # otherwise check OS logs
   worker$ cat /var/log/syslog
   
@@ -34,11 +40,10 @@ Events (kun siste timen)
   master$ kubectl get events --namespace <ns>
   master$ kubectl get events --sort-by .metadata.creationTimestamp
   master$ kubectl get events --watch
-  ...
+  
   master$ kubectl describe deployments <name> 
   master$ kubectl describe replicasets <name> 
   master$ kubectl describe pods <name>
-  ...
 
 Log aggregation
   ELK, splunk, ...

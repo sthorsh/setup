@@ -1,4 +1,4 @@
-DYNAMISK
+DYNAMISK PROVISJONERING
 
 Storage e.g nfs
   Cf statisk provisjonering

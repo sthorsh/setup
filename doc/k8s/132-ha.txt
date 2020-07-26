@@ -1,4 +1,4 @@
-HA
+HIGH-AVAILABILITY
 
 API-server
   Stateless

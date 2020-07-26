@@ -1,0 +1,45 @@
+CLUSTER
+
+Cluster
+  Kontrollplan
+  Arbeidernoder
+  Add-ons
+
+Komponenter
+  API-server
+  Controller manager
+  Scheduler
+  Etcd
+  Kubelet
+  Kube proxy
+  Container runtime
+  DNS
+  Dashboard
+  Ingress controller
+  ...
+  
+TCP
+  2379 etcd
+  2380 etcd
+  8443 apiserver
+  8443 apiserver → dns
+  10250 kubelet
+  10251 scheduler
+  10252 controller_manager
+  30001-32767 node_port
+
+Troubleshooting kontrollplan
+  1. Is the server online i.e up and running?
+  2. Is the server reachable over the network?
+  3. Does systemd start docker?
+  4. Does systemd start the kubelet? 
+  5. Is there a kube-proxy pod running on the node?
+  6. Are the static pod manifests in /etc/kubernetes/manifests ok?
+  7. Are the control plane pods running on the master?
+
+Troubleshooting arbeidernoder
+  1. Is the server online i.e up and running?
+  2. Is the server reachable over the network?
+  3. Does systemd start docker?
+  4. Does systemd start the kubelet? 
+  5. Is there a kube-proxy pod running on the node?
