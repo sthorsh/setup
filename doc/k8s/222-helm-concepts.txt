@@ -25,15 +25,20 @@ Helm chart
   En pakke som definerer en app
 
 Struktur
-  Ett chart for en komponent
-  Ett umbrella chart for N komponenter (cf helm3 lab6)
+  Standalone chart
+  Umbrella chart i.e parent chart + child-/subcharts
 
+Templates
+  Maler for manifester/objektdefinisjoner
+  En template inneholder direktiver/plassholdere
+  En engine erstatter direktiver med data (values) el kode
+  Data: Chart, File, K8s, Release, Template, Value (values.yaml)
+  Kode: TODO
+  Template engine output: manifest/objektdefinisjon
+  
 Avhengigheter
   Subcharts
   Eksterne charts
-
-Templater
-  
 
 Endringer
   Endring av verdier: ny release revision

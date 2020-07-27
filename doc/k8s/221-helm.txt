@@ -1,6 +1,6 @@
 HELM
 
-helm
+helm v3.1.1
   $ helm create
 
   $ helm install
@@ -8,13 +8,12 @@ helm
   $ helm rollback
   $ helm uninstall
 
+  $ helm template
+
   $ helm list
 
   $ helm status
   $ helm history
 
   $ helm get all
-
-NB 
-  Forskjeller i kommandoer helm2 og helm3
 
