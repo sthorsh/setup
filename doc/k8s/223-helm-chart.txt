@@ -1,0 +1,40 @@
+HELM CHARTS
+
+Helm chart
+  Et helm chart er en pakke
+  Et helm chart er en definisjon av en app
+
+Chart struktur
+  chart-demo/                         chart name = folder name
+  ├── charts                          deps: ext|sub
+  │   └── mongodb-7.8.4.tgz           deps: dep₁ as archive
+  ├── Chart.yaml                      chart metadata,  dep₂ as ref (helm3)
+  ├── crds                            crds: custom resource definitions
+  ├── LICENSE                         docs: optional
+  ├── README.md                       docs: markdown
+  ├── requirements.yaml               deps: dep₃ as ref (helm2)
+  ├── templates                       tpls: customizable maler dvs objektdefs med plassholdere
+  │   ├── deployments.yaml            tpls: tpl
+  │   ├── _helpers.tpl                tpls: helper functions
+  │   ├── ingress.yaml                tpls: tpl
+  │   ├── NOTES.txt                   docs: howto, urls etc
+  │   ├── service.yaml                tpls: tpl
+  │   └── tests                       test
+  │       └── test-connection.yaml    test: pod for testing
+  ├── values.schema.json              docs: schema for values.yaml
+  └── values.yaml                     tpls: verdier for plassholdere i templates
+
+Chart.yaml
+  apiVersion                          helm version: v1 or v2
+  name                                chart-demo
+  type                                application (or library)
+  appVersion                          app version: 1.16.0
+  description                         text
+  version                             chart version: major.minor.patch e.g 0.1.0
+  dependencies:                       chart deps
+    ...
+
+Endringer av chart
+  Endring av verdier → release revision
+  Endring av chart filstruktur → ny release (chart version)
+

@@ -1,11 +1,28 @@
 HELM
 
+CLI
+  $ helm create
+  $ helm get all
+  $ helm history
+  $ helm install
+  $ helm list
+  $ helm rollback
+  $ helm status
+  $ helm uninstall
+  $ helm upgrade
+  ...
+
 Packet manager for k8s
-  Helm/charts, apt/deb 
+  Helm/charts, apt/deb
   Run $ helm install demo-mysql stable/mysql (apt install)
   Run $ helm upgrade demo-mysql (apt update)
   Run $ helm uninstall demo-mysql (apt remove)
   Tenk på k8s (helm) som et OS (apt) for et cluster av maskiner
+
+Med og uten helm
+  Helm vs kubectl
+  En app installeres som en entitet definert av et chart vs uavhengige yaml-filer
+  En release er en instans av et chart vs instanser av uavhengige yaml-filer
 
 Helm2 vs Helm3
   Helm2
@@ -18,12 +35,12 @@ Helm2 vs Helm3
     Krav til installasjon: restricte Tillers rettigheter med en service account
     Krav til installasjon: kryptering av gRPC
   Helm3
-    Klient helm 
+    Klient helm
     Helm -http> apiserver
     Helm3 (library) bruker k8s klient til å snakke med api-server
     Helm3 (library) bruker k8s REST API og dets security layer (som alle andre k8s klienter)
     Helm3 lagrer release manifests/cfg/history som k8s secrets (i samme ns som app)
-    
+
 Helm2 vs Helm3
   Helm2
     Download/install helm2
@@ -43,16 +60,10 @@ Hvordan Helm3?
   Helm connecter til api-server
   K8s instansierer objekter i default|... namespace (som kubectl)
   ...
-  Three-way merge patches update: old chart, new chart, live state
 
-Med og uten helm
-  Helm vs kubectl
-  En app installeres som en entitet definert av et chart vs uavhengige yaml-filer
-  En release er en instans av et chart vs instanser av uavhengige yaml-filer
+Helm release
 
-Hvorfor Helm?
-  Deployment - ny "unit of deployment"
-  Versioning - rulle ut, rulle tilbake
-  Customizations (deployments for different releases)
-  Dependencies (between applications)
+Helm update
+  Three-way merge patches update
+  Old chart, new chart, live state
 

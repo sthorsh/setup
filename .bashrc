@@ -127,7 +127,8 @@ alias xsc='xclip -selection clipboard'
 [[ -d $AMQ_HOME ]] && ! activemq status >/dev/null && activemq start >/dev/null 
 ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
 
-#source <(kubectl completion bash)
+source <(kubectl completion bash)
+source <(helm completion bash)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 #export SDKMAN_DIR="/home/svein/.sdkman"

@@ -1,5 +1,0 @@
-Rekkefølge
-  ConfigMap → Pod → Service → Ingress
-  Secret → Pod → Service
-  Secret → PV → PVC → Pod → Service
-  
