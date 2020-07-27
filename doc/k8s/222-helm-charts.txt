@@ -1,0 +1,7 @@
+HELM CHARTS
+
+Helm charts
+  Et chart er en pakke
+  Et chart er en definisjon av en app
+  En release er en instans at et chart
+  
