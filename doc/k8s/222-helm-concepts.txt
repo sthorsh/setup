@@ -1,0 +1,52 @@
+HELM
+
+Helm
+  En package manager
+  En app kan rulles ut som en entitet
+  En app kan opdateres som en entitet
+  En app kan rulles tilbake som en entitet
+  En app kan avinstalleres som en entitet
+  
+Helm v2
+  https://v2.helm.sh/
+  Klient: helm
+  Server: tiller (pod)
+  Kommunikasjon: helm → tiller → apiserver
+  Tiller kjører med rollen "cluster-admin"
+  Krav: en tiller service account med færre rettigheter
+  Krav: kryptering med SSL av gRPC mellom helm og tiller
+  
+Helm v3
+  https://v3.helm.sh/
+  Klient: helm
+  Kommunikasjon: helm → apiserver
+
+Helm chart
+  En pakke som definerer en app
+
+Struktur
+  Ett chart for en komponent
+  Ett umbrella chart for N komponenter (cf helm3 lab6)
+
+Avhengigheter
+  Subcharts
+  Eksterne charts
+
+Templater
+  
+
+Endringer
+  Endring av verdier: ny release revision
+  Endring av filstruktur: ny chart version
+
+Helm release
+  En instans av et helm chart
+  E.g ett chart, en release, ett cluster
+  E.g ett chart, flere releaser, samme cluster e.g db (konflikt)
+  E.g ett chart, flere releaser, ulike cluster e.g dev/test/prod
+
+Helm release update
+  Three-way merge patches update
+  Old chart, new chart, live state
+
+Repositories

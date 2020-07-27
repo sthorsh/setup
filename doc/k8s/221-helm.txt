@@ -1,0 +1,20 @@
+HELM
+
+helm
+  $ helm create
+
+  $ helm install
+  $ helm upgrade
+  $ helm rollback
+  $ helm uninstall
+
+  $ helm list
+
+  $ helm status
+  $ helm history
+
+  $ helm get all
+
+NB 
+  Forskjeller i kommandoer helm2 og helm3
+

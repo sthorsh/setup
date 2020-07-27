@@ -1,7 +1,0 @@
-HELM CHART DEPENDENCIES
-
-Dependencies
-  Dep on ext charts
-  Dep on sub charts
-
-
