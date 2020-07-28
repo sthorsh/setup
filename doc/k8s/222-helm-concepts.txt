@@ -1,57 +1,58 @@
 HELM
 
 Helm
-  En package manager
-  En app kan rulles ut som en entitet
-  En app kan opdateres som en entitet
-  En app kan rulles tilbake som en entitet
-  En app kan avinstalleres som en entitet
+  En pakkemanager
   
+Hvorfor
+  Helm opererer på chart/release (objekter) som en entitet → enkelt, raskt, trygt
+  Helm templating → fleksibelt
+  Pakker, deps, repos → gjenbruk
+  ...
+    
 Helm v2
-  https://v2.helm.sh/
+  https://v2.helm.sh/docs
   Klient: helm
   Server: tiller (pod)
   Kommunikasjon: helm → tiller → apiserver
   Tiller kjører med rollen "cluster-admin"
   Krav: en tiller service account med færre rettigheter
   Krav: kryptering med SSL av gRPC mellom helm og tiller
-  
+    
 Helm v3
-  https://v3.helm.sh/
+  https://v3.helm.sh/docs/
   Klient: helm
   Kommunikasjon: helm → apiserver
-
-Helm chart
-  En pakke som definerer en app
-
-Struktur
-  Standalone chart
-  Umbrella chart i.e parent chart + child-/subcharts
-
-Templates
-  Maler for manifester/objektdefinisjoner
-  En template inneholder direktiver/plassholdere
-  En engine erstatter direktiver med data (values) el kode
-  Data: Chart, File, K8s, Release, Template, Value (values.yaml)
-  Kode: TODO
-  Template engine output: manifest/objektdefinisjon
   
-Avhengigheter
-  Subcharts
-  Eksterne charts
-
-Endringer
-  Endring av verdier: ny release revision
-  Endring av filstruktur: ny chart version
-
+Helm chart
+  Et katalogstruktur
+  
+Helm chart struktur
+  Chart: ett chart, N objekter (standalone)
+  Umbrella chart: ett parent chart, M subcharts, N objekter
+  
+Templates
+  En mal for et manifest
+  En template engine prosesserer malen
+  Direktiver ersattes med data (values) 
+  Direktiver ersattes med kode (logikk)
+  Template engine output'er et manifest
+  Cf https://v3.helm.sh/docs/chart_template_guide/
+    
 Helm release
   En instans av et helm chart
   E.g ett chart, en release, ett cluster
   E.g ett chart, flere releaser, samme cluster e.g db (konflikt)
   E.g ett chart, flere releaser, ulike cluster e.g dev/test/prod
+  
+Helm chart package
+  Et arkiv
+  E.g frontend-1.2.2.tgz
 
-Helm release update
-  Three-way merge patches update
-  Old chart, new chart, live state
-
-Repositories
+Avhengigheter
+  Subcharts
+  Eksterne charts
+  
+Helm repositories
+  En http server
+  E.g apache, nginx, chartmuseum
+  

@@ -1,19 +1,25 @@
 HELM
 
-helm v3.1.1
-  $ helm create
+helm
+  $ helm create [chart]
 
-  $ helm install
-  $ helm upgrade
-  $ helm rollback
-  $ helm uninstall
+  $ helm template [chart]
+  $ helm install [release] [chart] --dry-run -debug
 
-  $ helm template
+  $ helm install [release] [chart]
+  $ helm upgrade [release] [chart]
+  $ helm rollback [release]
+  $ helm uninstall [release]
 
   $ helm list
+  $ helm status [release]
+  $ helm history [release]
+  $ helm get ... [release]
+  
+  $ helm package [chart]
 
-  $ helm status
-  $ helm history
+  $ helm dependency [chart] build|list|update
 
-  $ helm get all
+  $ helm repo add|index|list|remove|update
+  $ helm search hub|repo
 
