@@ -23,6 +23,7 @@ export JAVA_HOME=/usr/lib/jvm/java
 export JFROG_HOME=/home/svein/jfrog/
 export LESS='--LINE-NUMBERS --LONG-PROMPT'
 export MAVEN_HOME=/usr/lib/apache-maven
+export PATH="$PATH:/home/svein/.minishift/cache/oc/v3.11.0/linux"
 export PROMPT_COMMAND="${PROMPT_COMMAND:=history -a; history -c; history -r; $PROMPT_COMMAND}"
 export VISUAL=/usr/bin/vim
 
@@ -121,6 +122,7 @@ alias xsc='xclip -selection clipboard'
 [ -f ~/bin/completion/gradle.bash ] && source ~/bin/completion/gradle.bash
 [ -f ~/bin/completion/minikube.bash ] && source ~/bin/completion/minikube.bash
 [ -f ~/bin/completion/minishift.bash ] && source ~/bin/completion/minishift.bash
+[ -f ~/bin/completion/oc.bash ] && source ~/bin/completion/oc.bash
 [ -f ~/bin/completion/vagrant ] && source ~/bin/completion/vagrant
 
 # Start programs
