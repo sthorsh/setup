@@ -1,36 +1,23 @@
 HELM
 
 Helm
-  En pakkemanager
-  
-Hvorfor
-  Helm opererer på chart/release (objekter) som en entitet → enkelt, raskt, trygt
-  Helm templating → fleksibelt
-  Pakker, deps, repos → gjenbruk
-  ...
-    
-Helm v2
-  https://v2.helm.sh/docs
-  Klient: helm
-  Server: tiller (pod)
-  Kommunikasjon: helm → tiller → apiserver
-  Tiller kjører med rollen "cluster-admin"
-  Krav: en tiller service account med færre rettigheter
-  Krav: kryptering med SSL av gRPC mellom helm og tiller
-    
-Helm v3
-  https://v3.helm.sh/docs/
-  Klient: helm
-  Kommunikasjon: helm → apiserver
+  En pakkemanager 
+  Cf docker, mvn, npm (ish)
   
 Helm chart
-  Et katalogstruktur
+  Et katalogstruktur (exploded chart)
+  Et arkiv e.g frontend-1.2.2.tgz (packaged chart)
+  Cf def https://v3.helm.sh/docs/topics/architecture/
   
 Helm chart struktur
-  Chart: ett chart, N objekter (standalone)
-  Umbrella chart: ett parent chart, M subcharts, N objekter
+  Ett chart, N objekter (standalone chart)
+  Ett parent chart, M subcharts, N objekter (umbrella chart)
   
-Templates
+Helm chart deps
+  Subcharts
+  Eksterne charts
+  
+Helm chart templates
   En mal for et manifest
   En template engine prosesserer malen
   Direktiver ersattes med data (values) 
@@ -38,21 +25,26 @@ Templates
   Template engine output'er et manifest
   Cf https://v3.helm.sh/docs/chart_template_guide/
     
-Helm release
-  En instans av et helm chart
-  E.g ett chart, en release, ett cluster
-  E.g ett chart, flere releaser, samme cluster e.g db (konflikt)
-  E.g ett chart, flere releaser, ulike cluster e.g dev/test/prod
-  
-Helm chart package
-  Et arkiv
-  E.g frontend-1.2.2.tgz
+Helm chart repos
+    E.g https://kubernetes-charts.storage.googleapis.com/
 
-Avhengigheter
-  Subcharts
-  Eksterne charts
+Helm chart hub
+  Cf https://hub.helm.sh
   
-Helm repositories
-  En http server
-  E.g apache, nginx, chartmuseum
+Helm release
+  En kjørende instans av et chart
+  Kombinert med en bestemt konfigurasjon
+  Cf https://v3.helm.sh/docs/topics/architecture
+
+Helm v2
+  Helm klient
+  Helm server: tiller (k8s pod)
+  Dvs helm → tiller → k8s apiserver
+  Cf https://v2.helm.sh/docs (legacy)
+
+Helm v3
+  Helm klient
+  Helm library
+  Dvs helm → helm_lib → k8s apiserver
+  Cf https://v3.helm.sh
   

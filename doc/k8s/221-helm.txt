@@ -3,8 +3,17 @@ HELM
 helm
   $ helm create [chart]
 
+  $ helm repo add|index|list|remove|update
+  $ helm search repo|hub [keyword]
+  $ helm inspect [all|readme|chart|values] [chart]
+  $ helm fetch [chart]
+
+  $ helm dependency build|list|update [chart] 
+
   $ helm template [chart]
   $ helm install [release] [chart] --dry-run -debug
+
+  $ helm package [chart]
 
   $ helm install [release] [chart]
   $ helm upgrade [release] [chart]
@@ -14,12 +23,5 @@ helm
   $ helm list
   $ helm status [release]
   $ helm history [release]
-  $ helm get ... [release]
+  $ helm get all|hooks|manifest|notes|values [release]
   
-  $ helm package [chart]
-
-  $ helm dependency [chart] build|list|update
-
-  $ helm repo add|index|list|remove|update
-  $ helm search hub|repo
-
