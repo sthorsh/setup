@@ -11,8 +11,8 @@ Konfigurasjon
   Deklarativt: manifest
 
 Tilstand
-  Current state: drifter
   Desired state: vha manifest
+  Current state: drifter
 
 Komponenter e.g deployment
    1. Klient sender manifest til API-server
