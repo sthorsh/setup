@@ -1,5 +1,13 @@
 API 
 
+Workload APIs
+  apiVersion: string
+  kind: string
+  metadata: ObjectMeta
+  spec: [Name]Spec
+  status: [Name]Status]
+
+---------------------------
 core
   core v1 Pod (ns)
   core v1 Service (ns)

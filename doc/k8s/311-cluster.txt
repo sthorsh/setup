@@ -14,8 +14,6 @@ Komponenter
   Kube proxy
   Container runtime
   DNS
-  Dashboard
-  Ingress controller
   ...
   
 TCP

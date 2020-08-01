@@ -23,9 +23,9 @@ kubectl [cmd] [subcmd] [type] [name] [opts] [global_opts]
 
   $ kubectl cordon <nodename>
 
-  $ kubectl create deployment dpm --image=nginx [--dry-run -o yaml]
+  $ kubectl create deployment dpm --image=nginx [--dry-run -o yaml] 
   $ kubectl create service clusterip svc --tcp 8080:80 [--dry-run -o yaml]
-  $ kubectl create -f <file|dir> --save-config
+  $ kubectl create -f <file|dir> --record --save-config
 
   $ kubectl delete <type> [name] [--all] [--force] [-v6]
   $ kubectl delete -f <file|dir> [-v6]

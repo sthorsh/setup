@@ -6,4 +6,35 @@ Controller manager
   Oppdaterer API-server med desired state
   Deployment controller
   • Ansvar for pod lifecycle
-  ...
+   ...
+
+CONTROLLERS
+
+Prinsipp 1
+  Imperativ konfigurasjon
+  Deklarativ konfigurasjon (✓)
+
+Prinsipp 2
+  Current state
+  Desired state
+
+Controller manager
+  Kjører controllere
+  kube-controller-manager
+  cloud-controller-manager
+
+Controller
+  Ansvar for pod lifecycle
+  Overvåker current state:
+    • poll
+    • watch (notification)
+  Opprettholder desired state:
+    • sender cmd e.g scale til API-server
+
+Pod controllere
+  Deployment/ReplicaSet/Pod/Container
+  DaemonSet/Pod/Container
+  StatefulSet/Pod/Container
+  Job/Pod/Container
+  CronJob/Pod/Container
+  

@@ -6,6 +6,8 @@ K8s
   When you deploy k8s, you get a cluster (k8s)
   If you’re running k8s, you’re running a cluster (redhat)
 
+
+
 Konfigurasjon
   Imperativt: ad-hoc
   Deklarativt: manifest

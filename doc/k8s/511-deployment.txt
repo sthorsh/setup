@@ -1,0 +1,46 @@
+DEPLOYMENTS
+
+Deployment
+  Rulle ut: imperativt el deklarativt
+  Oppdatere: ut-av-boksen null nedetid
+  Rulle tilbake: $ kubectl rollout undo ...
+
+Recreate deployment
+  Rull ut deployment v1
+  Kjør v1 ...
+  Slett v1
+  Rull ut deployment v2
+  Stikkord: enkelt, men nedetid
+
+Rullende deployment
+  Rull ut deployment v1
+  Kjør v1 ...
+  Slett v1 & rull ut deployment v2
+  Stikkord: ingen nedetid, men v2 ruller "over" v1
+                              
+Blue-green deployment
+  Rull ut blue public service i prod env (selector blue)
+  Rull ut blue deployment i prod env (4 pods)
+  Rull ut green service i test env (selector green)
+  Rull ut green deployment i test env (4 pods)
+  Test green pods: ok 
+  Endre blue public service selector fra blue til green
+  Slette blue deployment og service (green blir ny blue)
+  Stikkord: "alle" kan teste, 2 servicer, sluttbrukere treffer blue (aldri green), to dupliserte envs
+
+Canary deployment
+  Rull ut service: selector stable
+  Rull ut stable deployment (4 pods)
+  Kjør stable (~100%)
+  Rull ut service: selector stable + canary
+  Rull ut canary deployment (1 pod)
+  Kjør stable (~80%) & test canary (~20%)
+  Test canary pod: ok
+  Skaler canary horisontalt (4 pods)
+  Slett stable
+  Promoter canary til stable
+  Stikkord: sluttbrukere tester, 1 service, sluttbrukere treffer stable og canary, to ulike envs
+
+Rulle tilbake
+  $ kubectl rollout undo ...
+
