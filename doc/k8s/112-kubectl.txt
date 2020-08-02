@@ -1,0 +1,86 @@
+KUBECTL
+
+kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
+
+  $ kubectl <ht>
+  $ kubectl <cmd> <ht>
+  $ kubectl <cmd> <cr>
+  $ kubectl --help
+  $ kubectl <cmd> --help
+
+  $ kubectl annotate RESOURCE NAME KEY=VALUE
+  $ kubectl annotate RESOURCE NAME KEY=VALUE --overwrite
+  $ kubectl annotate RESOURCE NAME KEY-
+
+  $ kubectl api-resources
+
+  $ kubectl api-versions
+
+  $ kubectl apply -f FILE_NAME --record -v6
+
+  $ kubectl cluster-info
+
+  $ kubectl config SUBCMD
+
+  $ kubectl cordon NODE_NAME
+
+  $ kubectl create -f FILE_NAME --record --save-config
+  $ kubectl create deployment DEP_NAME --image=nginx [--dry-run] [-o yaml]
+  $ kubectl create service SVC_TYPE SVC_NAME --tcp 8080:80 [--dry-run] [-o yaml]
+
+  $ kubectl delete -f FILE_NAME
+  $ kubectl delete RESOURCE NAME [--all] [--force]
+
+  $ kubectl describe -f FILE_NAME
+  $ kubectl describe RESOURCE NAME
+
+  $ kubectl drain NODE_NAME
+
+  $ kubectl exec [-it] POD_NAME -- CMD
+
+  $ kubectl explain RESOURCE.FIELD.FIELD...
+
+  $ kubectl expose deployment DEP_NAME --port=80 --target-port=8080 --type=NodePort [--dry-run] [-o yaml] 
+
+  $ kubectl get -f [FILE_NAME]
+  $ kubectl get all --all-namespaces
+  $ kubectl get RESOURCE_NAME [-n ns] NAME 
+  $ kubectl get RESOURCE_NAME [-n ns] NAME --selector query 
+  $ kubectl get RESOURCE_NAME [-n ns] NAME --show-labels
+  $ kubectl get RESOURCE_NAME [-n ns] NAME --output json|jsonpath=expr|wide|yaml
+  $ kubectl get RESOURCE_NAME [-n ns] NAME --watch
+
+  $ kubectl label RESOURCE NAME KEY=VALUE
+  $ kubectl label RESOURCE NAME KEY=VALUE --overwrite
+  $ kubectl label RESOURCE NAME KEY-
+
+  $ kubectl logs POD_NAME [-c ctr] --follow
+
+  $ kubectl port-forward deployment.apps/my-nginx 8181:80 (localhost → pod, no svc)
+  $ kubectl port-forward my-web-6ff4786956-6bp6h 8181:80  (localhost → pod, no svc)
+
+  $ kubectl options (global options: -n namespace, -v6)
+
+  $ kubectl proxy --port=8080 (localhost → apiserver)
+
+  $ kubectl rollout history deployment NAME [--revision N]
+  $ kubectl rollout status  deployment NAME
+  $ kubectl rollout pause   deployment NAME
+  $ kubectl rollout resume  deployment NAME
+  $ kubectl rollout restart deployment NAME
+  $ kubectl rollout undo    deployment NAME [--to-revision N]
+
+  $ kubectl run [POD_NAME] --image nginx
+
+  $ kubectl set SUBCMD 
+
+  $ kubectl scale -f FILE_NAME --replicas 5
+  $ kubectl scale deployment NAME --replicas 5
+
+  $ kubectl taint node NODE_NAME TAINT
+    
+  $ kubectl top pods
+  $ kubectl top nodes
+
+  $ kubectl uncordon NODE_NAME
+
