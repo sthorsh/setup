@@ -1,0 +1,125 @@
+HELM
+
+ARBEIDSFLYT
+  Kildekode → docker images
+  ...
+  Definer k8s ressurser
+    ConfigMap.yaml
+    Deployment.yaml
+    Service.yaml
+    PersistentVolue.yaml
+  ...
+  Lag basic chart
+    Katalogstruktur
+    Legg til ressurrdefs: templates, values
+    Legg til manifest
+    Definer avhengigheter: chart₁ dep chart₂
+    Definer rekkefølge for startup reseourcedefs/objekter
+  ...
+  Lag umbrella chart
+    Katalogstruktur
+  ...
+  Pakk chart
+    Input: chart
+    Output: chart archive (.tar)
+  ...
+  Installer pakke → release
+  Oppdater release
+  Rull tilbale release
+  Avinstaller release
+  ...
+  Publisere arkiv til repo
+
+---------------------------
+LAB
+  Versjonshåndtering
+    Hvordan manage versjoner
+  Customize chart for gjenbruki
+    Templates
+    Output: customizable chart
+  Chart deps
+    Def chart₁ dep til chart₂ i e.g stable mongodb chart
+  Publisere chart
+    Til helm repo
+  Gjenbruke chart
+    Gjenbruke STABLE HELM CHARTS fra helm stable repo
+
+=========================================================
+Helm
+  Pakkemanager for k8s (fig)
+  Gjør det enkelt å installere apps/ressurser i k8s cluster
+
+Chart
+  En pakke
+  En enhet/entitet for >1 ressursdefs
+  Inneholder
+    • manifest (Chart.yaml)
+    • ressursdefs (templates)
+    • default verdier (values.yaml)
+    • avhengigheter (charts)
+  Katalogstruktur
+    Ett chart, ressursdefs (plain chart)
+    Ett parent chart, subcharts, ressursdefs (umbrella chart)
+
+Helm chart #2
+  Et katalogstruktur (exploded chart)
+  Et arkiv e.g frontend-1.2.2.tgz (packaged chart)
+  Cf def https://v3.helm.sh/docs/topics/architecture/
+
+Helm chart struktur #2
+  Ett chart, N objekter (standalone chart)
+  Ett parent chart, M subcharts, N objekter (umbrella chart)
+
+Archive
+  Et tarred og gzipped (og evt signert) helm chart
+
+Release
+  En kjørende instans av et chart
+  Kombinert med en bestemt konfigurasjon
+  Cf https://v3.helm.sh/docs/topics/architecture
+
+Release number
+
+Repository
+    E.g https://kubernetes-charts.storage.googleapis.com/
+
+Hub
+  Cf https://hub.helm.sh
+
+Helm chart deps
+  Subcharts
+  Eksterne charts
+
+Helm chart templates
+  En mal for et manifest
+  En template engine prosesserer malen
+  Direktiver ersattes med data (values)
+  Direktiver ersattes med kode (logikk)
+  Template engine output'er et manifest
+  Cf https://v3.helm.sh/docs/chart_template_guide/
+
+---------------------------------------------------
+Arkitektur (fig)
+  Klient
+  Bibliotek
+
+Helm Library (or SDK)
+  The Helm Library (or SDK) refers to the Go code that interacts directly with the Kubernetes API server to install,
+  upgrade, query, and remove Kubernetes resources. It can be imported into a project to use Helm as a client library
+  instead of a CLI.
+
+---------------------------------------------------
+Helm 3 vs Helm 2
+  Arkitektur: fjernet Tiller
+  Kommandolinjer: evt forskjeller
+  Chart-struktur: evt forskjeller
+  Helm 2 charts skal være kompatible med Helm 3
+  URLs: https://v3.helm.sh, https://v2.helm.sh
+
+---------------------------------------------------
+Hvorfor Helm
+  Forenkling vs kubectl
+  Versjonshåndtering
+  Fleksibilitet (templates)
+  Avhengighetshåndtering
+  Gjenbruk av stabile charts

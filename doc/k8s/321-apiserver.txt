@@ -1,6 +1,7 @@
 API-SERVER
 
 API-server
+  Entrypunkt for k8s cluser (from helm 3 course)
   Kommunikasjonshub
   RESTfullt API (utveksler JSON)
   Kommuniserer over TCP port 443

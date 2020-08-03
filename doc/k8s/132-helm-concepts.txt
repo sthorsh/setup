@@ -1,10 +1,10 @@
 HELM
 
 Helm
-  En pakkemanager 
+  En package manager
   Cf docker, mvn, npm (ish)
   
-Helm chart
+Helm chart directory 
   Et katalogstruktur (exploded chart)
   Et arkiv e.g frontend-1.2.2.tgz (packaged chart)
   Cf def https://v3.helm.sh/docs/topics/architecture/
