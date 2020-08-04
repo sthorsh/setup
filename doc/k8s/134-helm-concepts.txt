@@ -1,0 +1,50 @@
+HELM
+
+Helm
+  En package manager
+  Cf docker, mvn, npm (ish)
+  
+Helm chart directory 
+  Et katalogstruktur (exploded chart)
+  Et arkiv e.g frontend-1.2.2.tgz (packaged chart)
+  Cf def https://v3.helm.sh/docs/topics/architecture/
+  
+Helm chart struktur
+  Ett chart, N objekter (standalone chart)
+  Ett parent chart, M subcharts, N objekter (umbrella chart)
+  
+Helm chart deps
+  Subcharts
+  Eksterne charts
+  
+Helm chart templates
+  En mal for et manifest
+  En template engine prosesserer malen
+  Direktiver ersattes med data (values) 
+  Direktiver ersattes med kode (logikk)
+  Template engine output'er et manifest
+  Cf https://v3.helm.sh/docs/chart_template_guide/
+    
+Helm chart repos
+    E.g https://kubernetes-charts.storage.googleapis.com/
+
+Helm chart hub
+  Cf https://hub.helm.sh
+  
+Helm release
+  En kjørende instans av et chart
+  Kombinert med en bestemt konfigurasjon
+  Cf https://v3.helm.sh/docs/topics/architecture
+
+Helm v2
+  Helm klient
+  Helm server: tiller (k8s pod)
+  Dvs helm → tiller → k8s apiserver
+  Cf https://v2.helm.sh/docs (legacy)
+
+Helm v3
+  Helm klient
+  Helm library
+  Dvs helm → helm_lib → k8s apiserver
+  Cf https://v3.helm.sh
+  

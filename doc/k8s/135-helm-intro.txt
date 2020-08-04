@@ -1,0 +1,100 @@
+HELM
+
+ARKITEKTUR helm 3
+  kubectl → apiserver: What-is-helm: how does Helm work  2:43
+  helm CLI → helm lib → kubectl → apiserver: What-is-helm: how does Helm work 3:06
+
+Arkitektur helm 2
+  helm2: what is helm: a word about helm 2 8:20
+
+HELM
+  Package manager for k8s
+  What-is-helm: analogy with other pkg mngrs (OS, dev, k8s)
+  What-is-helm: helm-analogy (k8s can be seen as OS for cluster of machines)
+  ? - mvn, docker
+
+Kubectl: per-ressurs
+  Installere      $ kubectl apply -f FILE
+  Oppdatere       $ kubectl apply -f FILE
+  Rulle tilbake   $ kubectl rollout deployment NAME
+  Avinstallere    $ kubectl delete -f FILE
+
+Helm: per-chart
+  Installere      $ helm install RELEASE CHART
+  Oppdatere       $ helm upgrade RELEASE CHART
+  Rulle tilbake   $ helm rollback RELEASE
+  Avinstallere    $ helm uninstall RELEASE 
+
+-----------------------------------------------------------------
+CHART
+  Katalog: my-chart/
+  • Manifest: Chart.yaml
+  • Ressursdefs: templates/*.yaml
+    Values: template values
+  • Deps: charts/*.tgz (subcharts, repo charts)
+    Deps lock: Chart.lock
+  • Custom resource definitions: crds/
+  • Docs: README.md, LICENSE, NOTES.TXT, values.schema.json
+  • Test: templates/test/*.yaml
+
+Umbrella chart
+  Katalog: my_parent_chart/
+  • Manifest: Chart.yaml
+  • Deps: charts/<subcharts>
+  Fig: 5: Demo: buildig an umbrella chart 1:03
+
+Manifest
+  apiVersion: v2 (helm version 3)
+  name: chart-name
+  description: ...
+  type: application or library
+  appVersion: any.string feks 1.0 (app version)
+  version: major.minor.patch (chart version, semver 2.0, Δ chart file structure)
+  dependencies:
+  - name: frontend
+    version: ^1.2.3 (range >= 1.2.3, < 2.0.0, cf npm)
+    repository: http://localhost:8080
+  - name: mongodb
+    version: 7.8.x (wildcard >= 7.8.0, < 7.9.0, cf npm)
+    repository: http://kubernetes-charts.storage.googleapis.com
+    ...
+  
+-----------------------------------------------------------------
+Templates
+Values
+
+-----------------------------------------------------------------
+RELEASE CHART
+Release
+  En instans av et chart (kjører i clusteret)
+  F.eks ett chart, en release, ett cluster
+  F.eks ett chart, to releases, samme cluster (db)
+  F.eks ett chart, to releases, ulike cluster (test, prod)
+  Release revision: Δ chart file structure OR Δ values (! chart version)
+  
+-----------------------------------------------------------------
+REPOSITORY
+  HTTP-server: chartmuseum (dedikert helm repo), nginx etc
+  Arkiver: *.tgz
+  Per-arkiv indeks: index.yaml
+  Stable repos: https://kubernetes-charts.storage.googleapis.com/
+  Custom repos: ...
+
+PAKKE CHART → ARKIV
+  $ helm package my-chart
+  Output: my-chart-1.2.3.tgz
+
+SENDE ARKIV TIL REPO
+  Pakk chart: $ helm package my-chart → my-chart-1.2.3.tgz 
+  Lage indeks: $ helm repo index . → index.yaml
+  Send arkiv til repo: $ curl -F ARCHIVE URL
+  Hent liste med charts: $ curl URL | jq . (charts har blitt publisert ✓)
+    
+HENTE ARKIV FRA REPO
+  Definer deps i manifestet
+  $ helm dependency update CHART (uses Chart.yaml, generates Chart.lock)
+
+-----------------------------------------------------------------
+HENTE EKSISTERENDE ARKIV FRA REPO
+
+
