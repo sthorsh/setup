@@ -21,6 +21,8 @@ kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
   $ kubectl cluster-info
 
   $ kubectl config SUBCMD
+  $ kubectl config use-context CONTEXT
+  $ kubectl config view
 
   $ kubectl cordon NODE_NAME
 
@@ -56,10 +58,10 @@ kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
 
   $ kubectl logs POD_NAME [-c ctr] --follow
 
+  $ kubectl options (global options: -n namespace, -v6)
+
   $ kubectl port-forward deployment.apps/my-nginx 8181:80 (localhost → pod, no svc)
   $ kubectl port-forward my-web-6ff4786956-6bp6h 8181:80  (localhost → pod, no svc)
-
-  $ kubectl options (global options: -n namespace, -v6)
 
   $ kubectl proxy --port=8080 (localhost → apiserver)
 
