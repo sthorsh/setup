@@ -30,12 +30,8 @@ helm
   $ helm repo update
   $ helm repo index DIR (create index.yaml)
 
-  $ helm search repo keyword
-  $ helm search hub keyword
+  $ helm search hub|repo KEYWORD
+  $ helm inspect all|chart|readme|values CHART
+  $ helm show values CHART
 
-  $ helm inspect all [chart]
-  $ helm inspect chart [chart]
-  $ helm inspect readme [chart]
-  $ helm inspect values [chart]
-
-  $ helm fetch [chart]
+  $ helm fetch CHART
