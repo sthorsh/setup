@@ -1,16 +1,28 @@
 HELM
 
 Helm
-  En package manager
-  Cf docker, mvn, npm (ish)
-  
-Helm chart
-  Et katalogstruktur (exploded chart)
-  Cf def https://v3.helm.sh/docs/topics/architecture/
-  
-Helm chart struktur
-  Ett chart, N objekter (standalone chart)
-  Ett parent chart, M subcharts, N objekter (umbrella chart)
+  En pakkemanager
+  Et verktøy for å pakke ressursdefs
+
+Fordeler
+  Enklere å installere apps i k8s
+  Enklere å håndtere app-deps i k8s
+  Enklere å håndtere app-versjoner i k8s
+  ...
+
+Chart
+  En pakke
+  Chart.yaml
+  templates
+  ...
+
+Chart arkiv
+  Et taret, gzippet (og signert) chart
+
+----------------------------------------
+Helm chart deps
+  Chart₁ dep → chart₂
+  Parent chart dep → subcharts
   
 Helm chart templates
   En mal for et manifest
@@ -20,10 +32,6 @@ Helm chart templates
   Template engine output'er et manifest
   Cf https://v3.helm.sh/docs/chart_template_guide/
     
-Helm chart deps
-  Subcharts
-  Eksterne charts
-  
 Helm archive
   Et arkiv e.g frontend-1.2.2.tgz (packaged chart)
 
@@ -37,4 +45,128 @@ Helm release
   En kjørende instans av et chart
   Kombinert med en bestemt konfigurasjon
   Cf https://v3.helm.sh/docs/topics/architecture
+
+----------------------------------------
+
+KUBECTL
+  01-kubectl.png
+  02-kubectl.png
+  - Pakketering: enhet/entitet
+  - Versjonering
+  - Tilpasninger: templates
+  - Avhengigheter
+  - Gjenbruk: stabile charts
+
+HELM
+  Package manager
+  11-helm.png
+  12-helm.png
+  13-helm.png
+
+HELM 3
+  Arkitektur Helm3 vs Helm2
+  21-helm3.png
+  22-merge-update.png
+  23-helm2.png
+
+CLI
+  31-helm-cli.png
+  
+CHART/PAKKE
+  Exploded chart
+  my-chart/
+  • Manifest: Chart.yaml
+  • Ressursdefs: templates/*.yaml
+    Values: template values
+  • Deps: charts/*.tgz (subcharts, repo charts)
+    Deps lock: Chart.lock
+  • Custom resource definitions: crds/
+  • Docs: README.md, LICENSE, NOTES.TXT, values.schema.json
+  • Test: templates/test/*.yaml
+  51-chart.png
+  52-chart-yaml.png
+  53-chart-yaml-deps.png
+
+MANIFEST
+  apiVersion: v2 (helm version 3)
+  name: chart-name
+  description: ...
+  type: application or library
+  appVersion: any.string feks 1.0 (app version)
+  version: major.minor.patch (chart version, semver 2.0, Δ chart file structure)
+  dependencies:
+  - name: frontend
+    version: ^1.2.3 (range >= 1.2.3, < 2.0.0, cf npm)
+    repository: http://localhost:8080
+  - name: mongodb
+    version: 7.8.x (wildcard >= 7.8.0, < 7.9.0, cf npm)
+    repository: http://kubernetes-charts.storage.googleapis.com
+    ...
+
+TEMPLATES/VALUES
+  Hvorfor: eliminere hardkoding av verdier (versjonsnr)
+  Hvorfor: ett chart, to releaser evt i samme namespace (dev, test)
+  Template engine = Go template engine
+  Template execution: client-side, før helm → apiserver
+  Direktiver kan ersattes med kode (logikk)
+  Direktiver kan ersattes med data (values)
+  Static test: $ helm template CHART
+  Dynamic test: $ helm install RELEASE CHART --dry-run --debug
+
+AVHENGIGHETER
+  Subcharts
+  Eksterne charts (fra repos)
+
+UMBRELLA CHART
+  Parent chart + subcharts
+  my_parent_chart/
+  • Manifest: Chart.yaml
+  • Deps: charts/<subcharts>
+  54-umbrella-chart.png
+
+ARKIV/PAKKE
+  Tarred gzipped chart
+  $ helm package my-chart → my-chart-1.2.3.tgz
+  71-archive.png
+
+HELM REPO
+  HTTP-server
+  Arkiver: *.tgz
+  Per-arkiv indeks: index.yaml
+  Custom repos
+  Stable repos https://kubernetes-charts.storage.googleapis.com/
+  74-fetch-from-repo.png
+
+SEND ARKIV TIL REPO
+  Pakk chart: $ helm package my-chart → my-chart-1.2.3.tgz
+  Lage indeks: $ helm repo index . → index.yaml
+  Send arkiv til repo: $ curl -F ARCHIVE URL
+  Hent liste med charts: $ curl URL | jq . (charts har blitt publisert ✓)
+
+HENT ARKIV FROM REPO
+  Definer deps i manifestet
+  $ helm dependency update CHART (uses Chart.yaml, generates Chart.lock)
+  72-repo.png
+
+HELM REPO HUB
+  https://hub.helm.sh/
+
+BRUK STABLE CHART
+  Søk: $ helm search repo mysql → stable/mysql 1.6.6
+  Dok: https://hub.helm.sh/charts/stable/mysql → Configuration
+  Legg til dep block i Chart.yaml
+  Last ned: $ helm dependency update guestbook
+  Customize chart: la parent values override child values
+  Installer chart: helm install RELEASE CHART
+
+RELEASE
+  En instans av et chart (kjører i k8s)
+  Kombinert med en bestemt konfigurasjon
+  F.eks ett chart, en release, ett cluster
+  F.eks ett chart, to releases, samme cluster (db)
+  F.eks ett chart, to releases, ulike cluster (test, prod)
+  Release revision: Δ chart file structure OR Δ values (! chart version)
+  81-release.png
+  82-release-revision.png
+  83-chart-version.png
 

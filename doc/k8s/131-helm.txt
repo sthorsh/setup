@@ -1,29 +1,17 @@
 HELM
 
 helm
-  $ helm version
-  $ hem env
-  $ kubectl config current-context
-               
   $ helm create CHART
-                
-  $ helm template -f CHART/values.yaml CHART (render chart templates)
-  
+
+  $ helm package CHART
+
+  $ helm template -f CHART/values.yaml CHART
+
   $ helm dependency list CHART
   $ helm dependency build CHART (uses Chart.lock)
   $ helm dependency update CHART (uses Chart.yaml, generates Chart.lock)
   
-  $ helm list
-  $ helm status RELEASE
-  $ helm history RELEASE
-  $ helm get all|hooks|manifest|notes|values RELEASE
-  $ helm install RELEASE CHART [--dry-run] [--debug]
-  $ helm upgrade RELEASE CHART
-  $ helm rollback RELEASE REVISION_NUMBER
-  $ helm uninstall RELEASE
-  
-  $ helm package CHART
-  
+-----------------------
   $ helm repo list
   $ helm repo add NAME URL
   $ helm repo remove NAME
@@ -31,7 +19,18 @@ helm
   $ helm repo index DIR (create index.yaml)
 
   $ helm search hub|repo KEYWORD
-  $ helm inspect all|chart|readme|values CHART
-  $ helm show values CHART
+  $ helm show all|chart|readme|values CHART
+  $ helm pull CHART
 
-  $ helm fetch CHART
+  $ helm list
+  $ helm status RELEASE
+  $ helm history RELEASE
+  $ helm get all|hooks|manifest|notes|values RELEASE
+
+  $ helm install RELEASE CHART [--dry-run] [--debug]
+  $ helm upgrade RELEASE CHART
+  $ helm rollback RELEASE REVISION_NUMBER
+  $ helm uninstall RELEASE
+
+  $ helm test RELEASE
+
