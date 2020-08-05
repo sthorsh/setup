@@ -305,7 +305,7 @@ echo "installation done..."
 # $ git commit -a -m "."
 # $ git push origin master
 
-# Delete startup script
+# Delete the startup script
 # rm ~/bang
 
 # Reboot
