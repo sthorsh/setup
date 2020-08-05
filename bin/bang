@@ -295,8 +295,6 @@ git remote set-url origin git@github.com:sthorsh/setup.git
 echo "installation done..."
 
 # AFTER INSTALLATION
-# Delete startup script
-# rm ~/bang
 
 # Set desktop background
 # Use ~/Pictures/ubuntu-logo.jpg
@@ -304,9 +302,8 @@ echo "installation done..."
 # Add ssh key to github account
 # Cf https://docs.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account#
 
-# Test passwordless github ssh access:
-# $ git commit -a -m "."
-# $ git push origin master
+# Delete startup script
+# rm ~/bang
 
 # Reboot
 # sudo reboot
