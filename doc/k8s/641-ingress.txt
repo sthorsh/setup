@@ -1,5 +1,10 @@
 INGRESS
 
+Ingress (iflg Philippe Collignon)
+  En reverse proxy 
+  Mapper URLs til applikasjonen
+  Bruker service definisjoner for å få til dette
+
 Ingress
   Konfigurasjon/regler for ekstern aksess til http svc's
   Opererer på lag 7 (til forskjell fra LoadBalancer)

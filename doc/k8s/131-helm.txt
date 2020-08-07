@@ -1,36 +1,50 @@
 HELM
 
 helm
+  $ helm env
+
+  $ helm repo list
+  $ helm repo add NAME URL
+  $ helm repo update
+  $ helm repo remove NAME
+  $ helm repo index DIR
+
+  $ helm search hub KEYWORD
+  $ helm search repo KEYWORD
+
   $ helm create CHART
 
   $ helm package CHART
 
+  $ helm pull stable/mariadb
+  $ helm pull --repo https://kubernetes-charts.storage.googleapis.com/ mariadb
+  $ helm pull https://kubernetes-charts.storage.googleapis.com/mariadb-7.3.14.tgz
+
+  $ helm show all CHART
+  $ helm show chart CHART
+  $ helm show readme CHART
+  $ helm show values CHART
+
   $ helm template -f CHART/values.yaml CHART
 
-  $ helm dependency list CHART
-  $ helm dependency build CHART (uses Chart.lock)
-  $ helm dependency update CHART (uses Chart.yaml, generates Chart.lock)
+  $ helm dep list CHART
+  $ helm dep build CHART
+  $ helm dep update CHART
   
------------------------
-  $ helm repo list
-  $ helm repo add NAME URL
-  $ helm repo remove NAME
-  $ helm repo update
-  $ helm repo index DIR (create index.yaml)
-
-  $ helm search hub|repo KEYWORD
-  $ helm show all|chart|readme|values CHART
-  $ helm pull CHART
-
   $ helm list
   $ helm status RELEASE
   $ helm history RELEASE
   $ helm get all|hooks|manifest|notes|values RELEASE
 
-  $ helm install RELEASE CHART [--dry-run] [--debug]
-  $ helm upgrade RELEASE CHART
-  $ helm rollback RELEASE REVISION_NUMBER
-  $ helm uninstall RELEASE
+  $ helm install RELEASE stable/mariadb [--dry-run] [--debug]
+  $ helm install RELEASE --repo https://kubernetes-charts.storage.googleapis.com/ mariadb
+  $ helm install RELEASE https://kubernetes-charts.storage.googleapis.com/mariadb-7.3.14.tgz
+  $ helm install RELEASE mariadb/
+  $ helm install RELEASE mariadb-7.3.14.tgz
 
   $ helm test RELEASE
+
+  $ helm upgrade RELEASE CHART (treveis merge patch update)
+  $ helm rollback RELEASE REVISION_NUMBER (treveis merge patch update)
+  $ helm uninstall RELEASE
 

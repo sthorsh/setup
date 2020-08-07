@@ -3,7 +3,8 @@ API NAMESPACE
 Namespace
   Naming boundary
   Security boundary (RBAC)
-
+  Et virtuelt cluster (Collignon)
+  
 Namespaces
   default
   kube-public
