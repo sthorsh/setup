@@ -1,0 +1,37 @@
+HELM CUSTOMISERING
+
+Bruk
+  Hardkoding av verdier som endres (variabler)
+  Navnekonflikt mellom objekter fra samme chart men ulik release (dev, test)
+
+Template
+  Direktiver {{ ... }}
+  Direktive erstattes med data eller logikk
+
+Template-data
+  .Chart.Prop
+  .Release.Prop
+  .Values.prop; Value.global.prop ($ helm install --set prop=value ... overstyrer)
+  .Capabilities.Prop
+  .File.?
+  .Template.Prop
+
+Template-logikk
+  Funksjon: f value
+  Pipeline: value | f
+  Skop: with-end
+  Opr: eq|ne|gt|lt|or|and .val₁ .val₂, not val
+  If: if-else-end
+  Løkke: range-end
+  Variabel: {{ $var:= value }}
+  Hjelpefunksjon: _helpers.tpl
+  
+Template engine
+  Input: templates + values.yaml
+  Erstatter direktiver med data
+  Erstatter direktiver med kode
+  Ouput: k8s objektdefinisjoner (manifester)
+
+Teste templating
+  $ helm template CHART
+  $ helm install RELEASE CHART --dry-run --debug
