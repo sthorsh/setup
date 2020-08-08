@@ -10,20 +10,25 @@ Helm
   Tilbakerulling
   Avinnstalering
 
+Chart repo
+  En lokasjon for lagring og deling av packaged charts
+  En HTTP server med en index.yaml og N packaged charts
+  Cf https://kubernetes-charts.storage.googleapis.com 
+  Cf https://kubernetes-charts-incubator.storage.googleapis.com
+  ...
+
 Chart
   clib/ (parent chart)
     Chart.yaml
     Chart.lock
-    charts/
-      chart/... (umbrella subchart)
-      *-M.m.p.tgz (dependency subchart)
+    charts/chart/... (umbrella subchart)
+    charts/*-M.m.p.tgz (dependency subchart)
     crds/
     README.md
-    templates/
-      *.yaml
-      NOTES.txt
-      _helpers.tpl
-      tests/*.yaml
+    templates/*.yaml
+    templates/NOTES.txt
+    templates/_helpers.tpl
+    templates/tests/*.yaml
     values.yaml
     values.schema.json
 
@@ -37,56 +42,43 @@ Chart.yaml
   appVersion: 1.0
   dependencies:
   - name: mongodb
-    version: 7.8.x
+    version: 7.8.x (go semver 2.0)
     repository: http://kubernetes-charts.storage.googleapis.com
-    ...
-
-Customisering
-  Cf helm-customisering
+    condition: mongodb.enabled (partial release)
+    tags: (partial release)
+    - api
 
 Avhengigheter
   Subcharts: exploded charts
   Eksterne charts fra repos cf Chart.yaml
 
-----------------------------------------
-Helm hub/repos
-    Cf https://hub.helm.sh
-    Eg https://kubernetes-charts.storage.googleapis.com/
+Customisering
+  Cf helm-templates.txt
 
-Helm repo
-  Arkiver: *.tgz
-  Per-arkiv indeks: index.yaml
-  Custom repos
-  Stable repos https://kubernetes-charts.storage.googleapis.com/
-----------------------------------------
 Bygge chart
   Cf helm create ...
 
-Bruke chart
-  Hent arkiv from repo
-    Definer deps i manifestet
-    $ helm dependency update CHART (uses Chart.yaml, generates Chart.lock)
-  Bruk stable chart
-    Søk: $ helm search repo mysql → stable/mysql 1.6.6
-    Dok: https://hub.helm.sh/charts/stable/mysql → Configuration
-    Legg til dep block i Chart.yaml
-    Last ned: $ helm dependency update guestbook
-    Customize chart: la parent values override child values
-    Installer chart: helm install RELEASE CHART
-
 Pakke chart
   Et chart som er zip'et og tar'et
-  Navnekonvensjon: clib-version.tgz
-
+  $ helm package core → core-0.1.0.tgz
+  
+Publisere chart
+  Installer chartmuseum repo på localhost
+  $ curl --data-binary "@core-0.1.0.tgz" http://localhost:8080/api/charts
+  
+Bruke chart fra repo
+  $ helm repo add chartmuseum http://localhost:8080 (searchable)
+  $ helm repo update 
+  $ helm search repo core
+  Legg til avhengighet til core i clibs Chart.yaml dependencies 
+  $ helm dependency update clib
+  
 Release chart
   En instans av et chart
   Har en bestemt konfigurasjon
   Har et revisjonsnummer (release revision)
   Helm lagrer release data i k8s som secret sh.helm.release.v1.clib-init.v1
-
-Publisere chart
-  Pakk chart: $ helm package my-chart → my-chart-1.2.3.tgz
-  Lage indeks: $ helm repo index . → index.yaml
-  Send arkiv til repo: $ curl -F ARCHIVE URL
-  Hent liste med charts: $ curl URL | jq . (charts har blitt publisert ✓)
-
+  
+Avinstaller chart
+  $ helm uninstall clib
+  
