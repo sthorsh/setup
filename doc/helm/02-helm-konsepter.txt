@@ -41,12 +41,12 @@ Chart.yaml
   version: M.m.p
   appVersion: 1.0
   dependencies:
-  - name: mongodb
-    version: 7.8.x (go semver 2.0)
-    repository: http://kubernetes-charts.storage.googleapis.com
-    condition: mongodb.enabled (partial release)
-    tags: (partial release)
-    - api
+    - name: mysql
+      version: 7.8.x (go semver 2.0)
+      repository: http://kubernetes-charts.storage.googleapis.com
+      condition: mysql.enabled (partial release)
+      tags: (partial release)
+        - api
 
 Avhengigheter
   Subcharts: exploded charts
@@ -54,6 +54,7 @@ Avhengigheter
 
 Customisering
   Cf helm-templates.txt
+  $ x-www-browser https://hub.helm.sh/charts/stable/mysql
 
 Bygge chart
   Cf helm create ...
@@ -67,11 +68,14 @@ Publisere chart
   $ curl --data-binary "@core-0.1.0.tgz" http://localhost:8080/api/charts
   
 Bruke chart fra repo
-  $ helm repo add chartmuseum http://localhost:8080 (searchable)
-  $ helm repo update 
-  $ helm search repo core
-  Legg til avhengighet til core i clibs Chart.yaml dependencies 
-  $ helm dependency update clib
+  $ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+  $ helm repo update
+  $ helm search repo mysql
+  $ x-www-browser https://hub.helm.sh/charts/stable/mysql (read the docs)
+  $ helm pull stable/mysql (check the src code before adding as dep)
+  Legg til dep til mysql i Chart.yaml e.g core → mysql
+  $ helm dep update core (download chart, create Chart.lock)
+  Customiser; release
   
 Release chart
   En instans av et chart

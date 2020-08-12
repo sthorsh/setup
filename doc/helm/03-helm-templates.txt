@@ -1,4 +1,4 @@
-HELM CUSTOMISERING
+HELM TEMPLATES
 
 Bruk
   Hardkoding av verdier som endres (variabler)

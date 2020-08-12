@@ -11,6 +11,9 @@ helm
   $ helm repo remove NAME
   $ helm repo update
 
+  $ helm search hub KEYWORD
+  $ helm search repo KEYWORD
+
   -------------------
   $ helm create CHART
 
@@ -29,9 +32,8 @@ helm
   $ helm package CHART
   
   ------------------------- 
-  $ helm search hub KEYWORD
-  $ helm search repo KEYWORD
-
+  # Download chart directly without using deps
+  # Useful to look at chart src code before using it as dep
   $ helm pull stable/mariadb
   $ helm pull --repo https://kubernetes-charts.storage.googleapis.com/ mariadb
   $ helm pull https://kubernetes-charts.storage.googleapis.com/mariadb-7.3.14.tgz
