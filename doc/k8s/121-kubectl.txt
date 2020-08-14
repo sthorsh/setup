@@ -2,27 +2,35 @@ KUBECTL
 
 kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
 
-  $ kubectl <ht>
-  $ kubectl <cmd> <ht>
-  $ kubectl <cmd> <cr>
-  $ kubectl --help
-  $ kubectl <cmd> --help
+  kubectl <ht>
+  kubectl <cmd> <ht>
+  kubectl <cmd> <cr>
+  kubectl --help
+  kubectl <cmd> --help
 
-  $ kubectl annotate RESOURCE NAME KEY=VALUE
-  $ kubectl annotate RESOURCE NAME KEY=VALUE --overwrite
-  $ kubectl annotate RESOURCE NAME KEY-
+  kubectl version --short
+  
+  -------------------------
+  kubectl config SUBCMD
+  kubectl options (global options: -n namespace, -v6)
+
+  -------------------------
 
   $ kubectl api-resources
-
   $ kubectl api-versions
-
-  $ kubectl apply -f FILE_NAME --record -v6
-
   $ kubectl cluster-info
 
-  $ kubectl config SUBCMD
-  $ kubectl config use-context CONTEXT
-  $ kubectl config view
+  $ kubectl explain RESOURCE.FIELD.FIELD...
+
+  $ kubectl get -f [FILE_NAME]
+  $ kubectl get all --all-namespaces
+  $ kubectl get RESOURCE_NAME [-n ns] NAME 
+  $ kubectl get RESOURCE_NAME [-n ns] NAME --selector query 
+  $ kubectl get RESOURCE_NAME [-n ns] NAME --show-labels
+  $ kubectl get RESOURCE_NAME [-n ns] NAME --output json|jsonpath=expr|wide|yaml
+  $ kubectl get RESOURCE_NAME [-n ns] NAME --watch
+
+  $ kubectl apply -f FILE_NAME --record -v6
 
   $ kubectl cordon NODE_NAME
 
@@ -40,25 +48,17 @@ kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
 
   $ kubectl exec [-it] POD_NAME -- CMD
 
-  $ kubectl explain RESOURCE.FIELD.FIELD...
-
   $ kubectl expose deployment DEP_NAME --port=80 --target-port=8080 --type=NodePort [--dry-run] [-o yaml] 
 
-  $ kubectl get -f [FILE_NAME]
-  $ kubectl get all --all-namespaces
-  $ kubectl get RESOURCE_NAME [-n ns] NAME 
-  $ kubectl get RESOURCE_NAME [-n ns] NAME --selector query 
-  $ kubectl get RESOURCE_NAME [-n ns] NAME --show-labels
-  $ kubectl get RESOURCE_NAME [-n ns] NAME --output json|jsonpath=expr|wide|yaml
-  $ kubectl get RESOURCE_NAME [-n ns] NAME --watch
+  $ kubectl annotate RESOURCE NAME KEY=VALUE
+  $ kubectl annotate RESOURCE NAME KEY=VALUE --overwrite
+  $ kubectl annotate RESOURCE NAME KEY-
 
   $ kubectl label RESOURCE NAME KEY=VALUE
   $ kubectl label RESOURCE NAME KEY=VALUE --overwrite
   $ kubectl label RESOURCE NAME KEY-
 
   $ kubectl logs POD_NAME [-c ctr] --follow
-
-  $ kubectl options (global options: -n namespace, -v6)
 
   $ kubectl port-forward deployment.apps/my-nginx 8181:80 (localhost → pod, no svc)
   $ kubectl port-forward my-web-6ff4786956-6bp6h 8181:80  (localhost → pod, no svc)
