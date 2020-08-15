@@ -1,6 +1,6 @@
 KUBECTL
 
-kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
+kubectl [cmd] [subcmds] [type] [name] [global_opts] [cmd_opts]
 
   kubectl <ht> 
   kubectl <cr> 
@@ -19,35 +19,36 @@ kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
   kubectl explain RESOURCE.FIELD.FIELD...
 
   ----------------------------------
-    kubectl apply -f FILE --record -v6
+  kubectl apply -f FILE --record -v6
   
-    kubectl create -f FILE --record --save-config
-    kubectl create deployment DEP_NAME --image=nginx [--dry-run] [-o yaml]
-    kubectl create service SVC_TYPE SVC_NAME --tcp 8080:80 [--dry-run] [-o yaml]
+  kubectl create configmap CM_NAME ...
+  kubectl create deployment DEP_NAME --image=nginx [--dry-run] [-o yaml]
+  kubectl create service SVC_TYPE SVC_NAME --tcp 8080:80 [--dry-run] [-o yaml]
+  kubectl create -f FILE --record --save-config
   
-    kubectl rollout status  deployment NAME
-    kubectl rollout history deployment NAME [--revision N]
-    kubectl rollout restart deployment NAME
-    kubectl rollout pause   deployment NAME
-    kubectl rollout resume  deployment NAME
-    kubectl rollout undo    deployment NAME [--to-revision N]
+  kubectl run [POD_NAME] --image IMAGE
   
-    kubectl run [POD_NAME] --image nginx
+  kubectl expose TYPE NAME --port=80 --target-port=8080 --type=NodePort [--dry-run] [-o yaml] 
+  kubectl expose -f FILE --port=80 --target-port=8080 --type=NodePort [--dry-run] [-o yaml] 
   
-    kubectl expose -f FILE --port=80 --target-port=8080 --type=NodePort [--dry-run] [-o yaml] 
-    kubectl expose TYPE NAME --port=80 --target-port=8080 --type=NodePort [--dry-run] [-o yaml] 
+  kubectl rollout status deployment NAME
+  kubectl rollout history deployment NAME [--revision N]
+  kubectl rollout restart deployment NAME
+  kubectl rollout pause deployment NAME
+  kubectl rollout resume deployment NAME
+  kubectl rollout undo deployment NAME [--to-revision N]
   
   ----------------------------------
-    kubectl get -f [FILE]
-    kubectl get all --all-namespaces
     kubectl get RESOURCE_NAME [-n ns] NAME 
     kubectl get RESOURCE_NAME [-n ns] NAME --selector query 
     kubectl get RESOURCE_NAME [-n ns] NAME --show-labels
     kubectl get RESOURCE_NAME [-n ns] NAME --output json|jsonpath=expr|wide|yaml
     kubectl get RESOURCE_NAME [-n ns] NAME --watch
+    kubectl get all --all-namespaces
+    kubectl get -f [FILE]
   
-    kubectl describe -f FILE
     kubectl describe RESOURCE NAME
+    kubectl describe -f FILE
   
   ----------------------------------
     kubectl exec [-it] POD_NAME -- CMD
@@ -62,8 +63,8 @@ kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
   ----------------------------------
     kubectl set SUBCMD 
   
-    kubectl scale -f FILE --replicas 5
     kubectl scale deployment NAME --replicas 5
+    kubectl scale -f FILE --replicas 5
     
     kubectl annotate RESOURCE NAME KEY=VALUE
     kubectl annotate RESOURCE NAME KEY=VALUE --overwrite
@@ -74,7 +75,7 @@ kubectl [cmd] [subcmd] [type] [name] [global_opts] [cmd_opts]
     kubectl label RESOURCE NAME KEY-
   
   ----------------------------------
-  s kubectl delete -f FILE
+    kubectl delete -f FILE
     kubectl delete RESOURCE NAME [--all] [--force]
   
     ------------------------
