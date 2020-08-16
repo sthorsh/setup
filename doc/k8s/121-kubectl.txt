@@ -39,16 +39,14 @@ kubectl [cmd] [subcmds] [type] [name] [global_opts] [cmd_opts]
   kubectl rollout undo deployment NAME [--to-revision N]
   
   ----------------------------------
-    kubectl get RESOURCE_NAME [-n ns] NAME 
-    kubectl get RESOURCE_NAME [-n ns] NAME --selector query 
-    kubectl get RESOURCE_NAME [-n ns] NAME --show-labels
-    kubectl get RESOURCE_NAME [-n ns] NAME --output json|jsonpath=expr|wide|yaml
-    kubectl get RESOURCE_NAME [-n ns] NAME --watch
-    kubectl get all --all-namespaces
-    kubectl get -f [FILE]
-  
-    kubectl describe RESOURCE NAME
-    kubectl describe -f FILE
+  kubectl get all [--all-namespaces]
+  kubectl get RESOURCE_NAME [NAME] [--namespace ns] [--selector query] 
+  kubectl get RESOURCE_NAME [NAME] [--output json|jsonpath=expr|wide|yaml] [--show-labels] [--watch]
+  kubectl get -f [FILE]
+
+  kubectl describe all [--all-namespaces]
+  kubectl describe RESOURCE_NAME [NAME] [--namespace ns] [--selector query] 
+  kubectl describe -f FILE
   
   ----------------------------------
     kubectl exec [-it] POD_NAME -- CMD
