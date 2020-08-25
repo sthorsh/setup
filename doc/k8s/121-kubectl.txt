@@ -8,74 +8,70 @@ kubectl [cmd] [subcmds] [type] [name] [global_opts] [cmd_opts]
   kubectl <cmd> <ht> 
   kubectl <cmd> <cr> 
  
-  ---------------------
+  -----------------------------
   kubectl config SUBCMD
 
   kubectl version --short
-
   kubectl cluster-info [dump]
+  kubectl proxy --port=8080 (kubectl som reverse proxy)
 
+  -----------------------------
   kubectl api-resources
   kubectl api-versions
-
   kubectl explain RESOURCE.FIELD.FIELD...
 
-  kubectl proxy --port=8080 (run kubectl as a reverse proxy)
-
-  ---------------------
-  kubectl create configmap NAME ...
-  kubectl create deployment NAME --image=IMAGE [--dry-run] [-o yaml]
-  kubectl create service TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
+  kubectl create configmap NAME [--dry-run] [-o yaml]
+  kubectl create deployment NAME --image=IMAGE
+  kubectl create service TYPE NAME --tcp 8080:80
   kubectl create -f FILE --record --save-config
 
-  kubectl run POD --image IMAGE
-    
-  kubectl expose TYPE NAME --port=80 --target-port=8080 --type=NodePort [--dry-run] [-o yaml] 
-  kubectl expose -f FILE --port=80 --target-port=8080 --type=NodePort [--dry-run] [-o yaml] 
+  kubectl run POD --image IMAGE [--dry-run] [-o yaml]
+      
+  kubectl expose TYPE NAME --type=NodePort --port=8080 --target-port=80 [--dry-run] [-o yaml] 
+  kubectl expose -f FILE --port=80 --target-port=8080 --type=NodePort
 
   kubectl apply -f FILE --record -v6
 
-  ---------------------
-  kubectl get all OR RESOURCE [NAME]
-  kubectl get all OR RESOURCE [NAME] [--all-namespaces] [--namespace NS] [--selector QUERY] 
-  kubectl get all OR RESOURCE [NAME] [--output wide|yaml|json [--show-labels] [--watch]
-  kubectl get -f [FILE]
-
-  kubectl describe all OR RESOURCE [NAME]
-  kubectl describe all OR RESOURCE [NAME] [--all-namespaces] [--namespace NS] [--selector QUERY] 
-  kubectl describe -f [FILE]
-
-  kubectl logs POD [-c CTR] [--follow] [--prefix] [--timestamp]
-
-  kubectl exec [-it] POD -- CMD
-
-  ---------------------
-  kubectl annotate RESOURCE NAME KEY=VALUE [--overwrite] OR KEY-
-  
-  kubectl label RESOURCE NAME KEY=VALUE [--overwrite] or KEY-
-  
-  kubectl set SUBCMD 
-
-  kubectl taint node NODE TAINT
-  kubectl drain NODE
-  kubectl cordon NODE
-  kubectl uncordon NODE
-  
-  -----------------------------
-    kubectl delete RESOURCE NAME [--all] [--force]
-    kubectl delete -f FILE
-==============================================================================================
- 
   kubectl rollout status deployment NAME
   kubectl rollout history deployment NAME [--revision N]
   kubectl rollout restart deployment NAME
   kubectl rollout pause deployment NAME
   kubectl rollout resume deployment NAME
   kubectl rollout undo deployment NAME [--to-revision N]
-  
- kubectl scale deployment NAME --replicas 5
+    
+  kubectl scale deployment NAME --replicas 5
   kubectl scale -f FILE --replicas 5
 
-  ! ubectl port-forward deployment.apps/my-nginx 8181:80 (localhost → pod, no svc)
-  ! kubectl port-forward my-web-6ff4786956-6bp6h 8181:80  (localhost → pod, no svc)
+  -----------------------------
+  kubectl get all OR RESOURCE [NAME] [--all-namespaces] [--namespace NS] [--selector QUERY] 
+  kubectl get all OR RESOURCE [NAME] [--output wide|yaml|json [--show-labels] [--watch]
+  kubectl get -f [FILE]
 
+  kubectl describe all OR RESOURCE [NAME] [--all-namespaces] [--namespace NS] [--selector QUERY] 
+  kubectl describe -f [FILE]
+
+  kubectl logs POD [-c CTR] [--follow] [--prefix] [--timestamp]
+
+  -----------------------------
+  kubectl exec [-it] POD -- CMD
+
+  kubectl port-forward POD 8181:80 (localhost → pod, no new svc)
+
+  -----------------------------
+  kubectl annotate RESOURCE NAME KEY=VALUE [--overwrite] OR KEY-
+    
+  kubectl label RESOURCE NAME KEY=VALUE [--overwrite] or KEY-
+    
+  kubectl cp FILE POD:/PATH
+
+  kubectl set SUBCMD 
+
+  kubectl taint node NODE TAINT
+  kubectl drain NODE
+  kubectl cordon NODE
+  kubectl uncordon NODE
+    
+  -----------------------------
+  kubectl delete RESOURCE NAME [--all] [--force]
+  kubectl delete -f FILE
+ 
