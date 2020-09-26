@@ -1,0 +1,23 @@
+CLUSTER
+
+Cluster
+  Kontrollplan
+  Arbeidernoder
+  Add-ons: DNS, ...
+
+Kontrollplan
+  API-server
+  Kontrollermanager
+  Scheduler
+  Etcd
+  Kubelet
+  Kube proxy
+  Container runtime
+  DNS
+  ...
+
+Arbeidernoder
+  Kubelet
+  Kube proxy
+  Container runtime
+  

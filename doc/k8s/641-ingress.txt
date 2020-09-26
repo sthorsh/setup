@@ -1,30 +1,33 @@
 INGRESS
 
-Ingress (iflg Philippe Collignon)
-  En reverse proxy 
-  Mapper URLs til applikasjonen
-  Bruker service definisjoner for å få til dette
+Arkitektur
+  Ingress
+  IngressController
 
 Ingress
-  Konfigurasjon/regler for ekstern aksess til http svc's
-  Opererer på lag 7 (til forskjell fra LoadBalancer)
-✓ Path-based routing: http://ip:port/<path₁ or path₂>
-✓ Virtual hosting: i: http://ip:port/<path> --header 'Host: hostname₁ or hostname₂'
-  URL rewriting
-  Dynamic waiting
-  Session persistency
-✓ TLS/SSL termination (https)
+  Def av aksessregler for HTTP-tjenester
 
-IngressController e.g nginx IC
-  Implementerer konfigurasjon/regler i Ingress-instans
-  Kan gi aksess til N >= 1, fremfor N = 1, interne svc's
-  Ruter direkte til pods (bypasser kube-proxy)
-  Mottar request, finner regel, videresender til svc/ep/pods
-  E.g nginx IC som pod i clusteret
-  E.g Azure AppGW som cloud controller utenfor clusteret
+Ingresscontroller
+  Impl av aksessregler
+  Eksponerer en eller flere tjenester
+  Mottar request
+  Finner regel
+  Sender videre til (lastbalanserer over) endepunkter/pods
+  En http reverse proxy
+  Alt1: pod i cluster (nginx)
+  Alt2: cloud ingress controller utenfor cluster (azure appgw)
 
-Eksponere 1 http service
-  Deploy IngressController (nginx IC)
+Brukstilfeller
+  En tjeneste
+  Flere tjenester vha path-based routing: http://ip:port/<path₁ or path₂>
+    Flere tjenester vha virtual hosting: http://ip:port/<path> --header 'Host: hostname₁ or hostname₂'
+    URL rewriting
+    Dynamic waiting
+    Session persistency
+    TLS/SSL terminering
+  
+Eksponere en tjeneste 
+  Apply 
   K8s eksponerer nginx IC som en NodePort svc
   Create, scale og expose deployment som clusterip svc
   Deploy Ingress: konfigurerer IC  

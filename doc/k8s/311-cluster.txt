@@ -3,9 +3,9 @@ CLUSTER
 Cluster
   Kontrollplan
   Arbeidernoder
-  Add-ons
+  Add-ons: DNS, ...
 
-Komponenter
+Kontrollplan
   API-server
   Controller manager
   Scheduler
@@ -15,6 +15,11 @@ Komponenter
   Container runtime
   DNS
   ...
+
+Arbeidernoder
+  Kubelet
+  Kube proxy
+  Container runtime
   
 TCP
   2379 etcd

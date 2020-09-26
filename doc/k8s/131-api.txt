@@ -1,0 +1,27 @@
+API
+
+API
+  Lage, lese, oppdatere, slette k8s REST ressursobjekter (CRUD)
+  Cf https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/
+
+API-objekt
+  Gruppe: apps
+  Versjon: v1
+  Kind: Deployment
+
+API-ressurs
+  Navn: deployments
+  Kortnavn: deploy
+  Gruppe: apps
+  Versjon: v1
+  Namespaced: true
+  Kind: Deployment
+
+API-request
+
+API-server
+  Mottar JSON fra klient
+  Persisterer data i etcd
+  Sender respons til klient
+  Kommuniserer over HTTP/HTTPS
+
