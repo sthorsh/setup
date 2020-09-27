@@ -1,2 +1,0 @@
-Autentisering/autorisasjon
-  https://www.openlogic.com/blog/granting-user-access-your-kubernetes-cluster

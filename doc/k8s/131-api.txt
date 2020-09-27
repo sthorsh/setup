@@ -1,15 +1,16 @@
 API
 
 API
-  Lage, lese, oppdatere, slette k8s REST ressursobjekter (CRUD)
+  Lese/lage/oppdatere/slette ressurser
+  Spesielle requests: kubectl exec, logs, --watch
   Cf https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/
 
-API-objekt
+Objekt e.g
   Gruppe: apps
   Versjon: v1
   Kind: Deployment
 
-API-ressurs
+Ressurs e.g
   Navn: deployments
   Kortnavn: deploy
   Gruppe: apps
@@ -17,11 +18,57 @@ API-ressurs
   Namespaced: true
   Kind: Deployment
 
-API-request
+URL
+  URL₁: http[s]://apiserver:port/api/VERSION/RESOURCE_TYPE[/RESOURCE_NAME]
+  URL₂: http[s]://apiserver:port/api/VERSION/namespaces/NS/RESOURCE_TYPE[/RESOURCE_NAME]
+  URL₃: http[s]://apiserver:port/apis/GROUP/VERSION/RESOURCE_TYPE[/RESOURCE_NAME]
+  URL₄: http[s]://apiserver:port/apis/GROUP/VERSION/namespaces/NS/RESOURCE_TYPE[/RESOURCE_NAME]
 
-API-server
-  Mottar JSON fra klient
-  Persisterer data i etcd
-  Sender respons til klient
-  Kommuniserer over HTTP/HTTPS
+Lese
+  GET URL₁|URL₂|URL₃|URL₄
+  Request body: - 
+  Response code: 200 OK, 4xx, 5xx
+  Response body: json
+
+Lage
+  POST URL₁|URL₂|URL₃|URL₄
+  Request body: json
+  Response code: 201 Created, 4xx, 5xx
+  Response body: json
+  
+Lage/overskrive
+  PUT URL₁|URL₂|URL₃|URL₄
+  Request body: json
+  Response code: 200 OK, 201 Created, 4xx, 5xx
+  Response body: json
+
+Oppdatere
+  PATCH URL₁|URL₂|URL₃|URL₄
+  Request body: json
+  Response code: 200 OK, 4xx, 5xx
+  Response body: json
+  
+Slette
+  DELETE URL₁|URL₂|URL₃|URL₄
+  Request body: -
+  Response code: 200 OK, 4xx, 5xx
+  Response body: -
+
+Logs
+  GET http://apiserver:port/api/VERSION/namespaces/NS/pods/POD/log
+  Request body: -
+  Response code: 200 OK, 4xx, 5xx
+  Response body: log fra container
+  
+Watch
+  GET URL₁|URL₂|URL₃|URL₄?fieldSelector=metadata.name=NAME&resourceVersion=N&watch=true
+  Request body: -
+  Response code: 200 OK, 4xx, 5xx
+  Response body: notifikasjoner
+
+Exec
+  POST http://apiserver:port/api/VERSION/namespaces/NS/pods/POD/exec?command=CMD
+  Request body: -
+  Response code: 200 OK, 4xx, 5xx
+  Response body: output fra kommando
 
