@@ -6,4 +6,10 @@ API-server
   RESTfullt API (utveksler JSON)
   Kommuniserer over TCP port 443
   Sender data til etcd for lagring
+
+API request
+  Connection
+  Authentication
+  Authorization
+  Admission control
     

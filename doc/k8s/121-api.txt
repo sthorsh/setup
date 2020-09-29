@@ -54,19 +54,19 @@ Slette
   Response code: 200 OK, 4xx, 5xx
   Response body: -
 
-Logs
+--watch
+  GET URL₁|URL₂|URL₃|URL₄?resourceVersion=123456789&watch=true
+  Request body: -
+  Response code: 200 OK, 4xx, 5xx
+  Response body: notifikasjoner
+
+logs
   GET http://apiserver:port/api/VERSION/namespaces/NS/pods/POD/log
   Request body: -
   Response code: 200 OK, 4xx, 5xx
   Response body: log fra container
   
-Watch
-  GET URL₁|URL₂|URL₃|URL₄?fieldSelector=metadata.name=NAME&resourceVersion=N&watch=true
-  Request body: -
-  Response code: 200 OK, 4xx, 5xx
-  Response body: notifikasjoner
-
-Exec
+exec
   POST http://apiserver:port/api/VERSION/namespaces/NS/pods/POD/exec?command=CMD
   Request body: -
   Response code: 200 OK, 4xx, 5xx

@@ -8,72 +8,79 @@ KUBECTL
   kubectl <cmd> <cr>
   kubectl <cmd> --help
 
-  kubectl options → -n -v6 ...
+  kubectl options (-n NS, -v 6..N)
 
   ---------
   kubectl config SUBCMD --help
 
+  kubectl proxy [--port=8080] & (connects, authenticates)
+
+  ---------
   kubectl version --short
+
   kubectl cluster-info [dump]
 
-  kubectl api-resources [--api-group GROUP]
+  kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
+
   kubectl api-versions
 
   kubectl explain RESOURCE.FIELD... [--api-version VERSION]
 
   ---------
-    kubectl apply -f FILE|DIR --record [--dry-run] [-o yaml]
-    
-    kubectl create cm NAME [--from-literal k=v] [--dry-run] [-o yaml]
+    kubectl create ns NAME [--dry-run] [-o yaml]
     kubectl create deployment NAME --image=IMAGE [--dry-run] [-o yaml]
     kubectl create svc TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
+    kubectl create cm NAME [--from-literal k=v] [--dry-run] [-o yaml]
     kubectl create -f FILE|DIR --record --save-config
     
+    kubectl run NAME --image IMAGE [--dry-run] [-o yaml]
+
     kubectl expose RESOURCE NAME --type=NodePort --port=8080 --target-port=80 [--dry-run] [-o yaml]
     kubectl expose -f FILE --type=NodePort --port=80 --target-port=8080
-    
-    kubectl run NAME --image IMAGE [--dry-run] [-o yaml]
-    
-    kubectl annotate RESOURCE NAME KEY=VALUE [--overwrite] OR KEY-
-    
-    kubectl cordon NODE
-    
-    kubectl cp FILE POD:/PATH
-    
-    kubectl delete RESOURCE NAME [--all] [--force]
-    kubectl delete -f FILE|DIR
-    
-    kubectl describe all OR RESOURCE [NAME] [-A] [-n NS] [-l QUERY]
-    kubectl describe -f [FILE]
-    
-    kubectl drain NODE
-    
-    kubectl exec [-it] POD -- CMD
-    
-    kubectl get all OR RESOURCE [NAME] [-A] [-n NS] [-l QUERY]
-    kubectl get all OR RESOURCE [NAME] [-o wide|yaml|json [--show-labels] [-w]
-    kubectl get -f [FILE]
-    
-    kubectl label RESOURCE NAME K=V [--overwrite] or K-
-    
-    kubectl logs POD [-c CTR] [-f] [--timestamp]
-    
-    kubectl port-forward POD 8080:80 (curl localhost:8080)
-    
-    kubectl proxy --port=8080 (curl localhost:8080/version)
-    
+
+    kubectl apply -f FILE|DIR --record [--dry-run] [-o yaml]
+
+  ---------
     kubectl rollout status RESOURCE NAME [--revision N]
     kubectl rollout history RESOURCE NAME [--revision N]
     kubectl rollout restart|pause|resume RESOURCE NAME
     kubectl rollout undo RESOURCE NAME [--to-revision N]
     
-    kubectl scale RESOURCE NAME --replicas 5
+    kubectl scale RESOURCE NAME --replicas 5 [-l QUERY]
     kubectl scale -f FILE --replicas 5
+   
+  ---------
+    kubectl get all [-A] [-l QUERY] or RESOURCE [-A] [-l QUERY] OR RESOURCE NAME [-A]
+    kubectl get all OR RESOURCE [NAME] [-o wide|yaml|json [--show-labels] [--watch &]
+    kubectl get -f [FILE]
     
-    kubectl set env|image|resources|selector|serviceaccount|subject --help
+    kubectl describe all OR RESOURCE [NAME] [-A] [-l QUERY]
+    kubectl describe -f [FILE]
     
-    kubectl taint node NODE TAINT
+    kubectl logs POD [-c CTR] [-l QUERY] [-f] [--timestamp]
+
+  ---------
+    kubectl edit RESOURCE NAME
+
+    kubectl label RESOURCE NAME K=V [--overwrite] or K- [-l QUERY]
+
+    kubectl annotate RESOURCE NAME KEY=VALUE [--overwrite] OR KEY- [-l QUERY]
     
-    kubectl uncordon NODE
+    kubectl set env|image|resources|selector|serviceaccount|subject --help [-l QUERY]
+
+    kubectl cp FILE POD:/PATH
     
+    kubectl exec [-it] POD -- CMD
+    
+    kubectl port-forward POD 8080:80 (curl localhost:8080)
+    
+  ----------
+    kubectl cordon NODE [-l QUERY]
+    kubectl drain NODE [-l QUERY]
+    kubectl taint node NODE TAINT [-l QUERY]
+    kubectl uncordon NODE [-l QUERY]
+
+  ---------
+    kubectl delete RESOURCE NAME [--all] [-l QUERY] [--force]
+    kubectl delete -f FILE|DIR
     
