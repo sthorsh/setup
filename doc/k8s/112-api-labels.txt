@@ -29,7 +29,7 @@ Query
   !key
   key=value
   key!=value
-  key in (str, ...) (or)
-  key notin (str, ...)
-  query₁, query₂, ... (and)
+  key in (str₁,str₂,...) (or)
+  key notin (str₁,str₂,...)
+  query₁,query₂,... (and)
 
