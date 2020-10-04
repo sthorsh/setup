@@ -1,0 +1,111 @@
+POD
+
+pod.spec
+  activeDeadlineSeconds            integer
+  affinity                         Object
+  automountServiceAccountToken     boolean
+* containers                       []Object - single-/multi-container
+    args                           []string
+    command                        []string
+    env                            []Object
+    envFrom                        []Object
+    image                          string
+    imagePullPolicy                string
+    lifecycle                      Object
+    livenessProbe                  Object
+*   name                           string
+    ports                          []Object
+    readinessProbe                 Object
+    resources                      Object
+    securityContext                Object
+    startupProbe                   Object
+    stdin                          boolean
+    stdinOnce                      boolean
+    terminationMessagePath         string
+    terminationMessagePolicy       string
+    tty                            boolean
+    volumeDevices                  []Object
+    volumeMounts                   []Object
+    workingDir                     string
+  dnsConfig                        Object
+  dnsPolicy                        string
+  enableServiceLinks               boolean
+  ephemeralContainers              []Object
+  hostAliases                      []Object
+  hostIPC                          boolean
+  hostNetwork                      boolean
+  hostPID                          boolean
+  hostname                         string
+  imagePullSecrets                 []Object
+  initContainers                   []Object
+  nodeName                         string
+  nodeSelector                     map[string]string
+  overhead                         map[string]string
+  preemptionPolicy                 string
+  priority                         integer
+  priorityClassName                string
+  readinessGates                   []Object
+  restartPolicy                    string
+  runtimeClassName                 string
+  schedulerName                    string
+  securityContext                  Object
+  serviceAccount                   string - default
+  serviceAccountName               string - default
+  shareProcessNamespace            boolean
+  subdomain                        string
+  terminationGracePeriodSeconds    integer
+  tolerations                      []Object
+  topologySpreadConstraints        []Object
+  volumes                          []Object
+
+pod.status
+  conditions                       []Object
+  containerStatuses                []Object
+  ephemeralContainerStatuses       []Object
+  hostIP                           string         
+  initContainerStatuses            []Object
+  message                          string
+  nominatedNodeName                string
+  phase                            string
+  podIP                            string - 172.16.222.231
+  podIPs                           []Object
+  qosClass                         string
+  reason                           string
+  startTime                        string
+  
+=================================================
+  Pod
+    Abstraksjon: cf PodSpec
+    Wrapper/omgivelse/ressurser + containere 
+    Enhet for deployment, skalering, scheduling, workload
+    Prosess i et cluster: pod → container(e) → prosess(er)
+    
+  Klassifisering
+    App-pod
+    Systempod: cf namespace kube-system
+  
+  Livssyklus
+    "Creating": cli or manifest
+    Scheduling: scheduler pod → node
+    Downloading: kubelet docker pull
+    Pending: kubelet docker create → running or failed
+    Starting: kubelet docker start
+    Running/ready
+    Terminating: succedded or failed
+  
+  Restart
+    Always
+    OnFailure
+    Never
+  
+  Health
+    Liveness probe: is pod live?
+    Readiness probe: is pod ready?
+  
+  Nettverk
+    Pod: ip
+    Container: port
+  
+  Kommunikasjon
+    Intra-pod: 127.0.0.1
+    Inter-pod: pod network

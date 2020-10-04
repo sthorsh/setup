@@ -6,8 +6,6 @@ K8s
   When you deploy k8s, you get a cluster (k8s)
   If you’re running k8s, you’re running a cluster (redhat)
 
-
-
 Konfigurasjon
   Imperativt: ad-hoc
   Deklarativt: manifest
@@ -30,13 +28,13 @@ Komponenter e.g deployment
   11. Controllere overvåker clusteret
   12. Controllere korrigerer avvik fra desired state
 
-Containerisering
-  En app (my-app) 
-  som er en prosess (nginx) 
-  som kjører i en container (my-ctr) 
-  som kjører i en pod (my-pod) 
-  på en node (minikube) 
-  i et cluster (k8s)
+App
+  En containerisert app er 
+  en prosess som kjører i 
+  en container som "kjører" i (an environment for running process(es))
+  en pod som "kjører" på  (a pod is not a process, but an environment for running container(s)) (en logisk host/maskin)
+  en node i (pid 1234) (en fysisk el virtuell host/maskin)
+  et cluster                                             
 
 Service
   En service er backet av 

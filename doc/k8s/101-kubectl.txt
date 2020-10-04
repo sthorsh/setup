@@ -8,22 +8,18 @@ KUBECTL
   kubectl <cmd> <cr>
   kubectl <cmd> --help
 
+  ---------
   kubectl options (-n NS, -v 6..N)
 
   ---------
   kubectl config SUBCMD --help
-
   kubectl proxy [--port=8080] & (connects, authenticates)
 
   ---------
   kubectl version --short
-
   kubectl cluster-info [dump]
-
   kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
-
   kubectl api-versions
-
   kubectl explain RESOURCE.FIELD... [--api-version VERSION]
 
   ---------
@@ -47,13 +43,13 @@ KUBECTL
   kubectl scale -f FILE --replicas 5
   
   ---------
-  kubectl get RESOURCE NAME
-  kubectl get RESOURCE [-A] [-l QUERY] ...
-  kubectl get all [-A] [-l QUERY] ...
+  kubectl get RESOURCE NAME (nb: events)
+  kubectl get RESOURCE [-A] [-l LABEL_QUERY] ...
+  kubectl get all [-A] [-l LABEL_QUERY] ...
   kubectl get RESOURCE[S] -L key₁,key₂,... -o json|wide|yaml --show-labels --watch &
   kubectl get -f [FILE]
   
-  kubectl describe RESOURCE[S] (e.g svc, ep, nodes)
+  kubectl describe RESOURCE[S] (nb: svc, ep, nodes)
   kubectl describe -f [FILE]
   
   ---------
@@ -76,9 +72,10 @@ KUBECTL
   kubectl exec [-it] POD -- CMD
   
   kubectl logs POD [-c CTR] [-f] [--timestamp]
-  kubectl logs -l QUERY [-c CTR] [-f] [--timestamp]
+  kubectl logs -l LABEL_QUERY [-c CTR] [-f] [--timestamp]
 
-  kubectl port-forward POD 8080:80 (curl localhost:8080)
+  kubectl port-forward POD 8181:8080 & (hello-app)
+  kubectl port-forward POD 8181:80 & (nginx)
   
   ---------
   kubectl cordon NODE[S]
@@ -89,4 +86,13 @@ KUBECTL
   ---------
   kubectl delete RESOURCE[S] [--force]
   kubectl delete -f FILE|DIR
+
+LABEL_QUERY
+  key
+  !key
+  key=value
+  key!=value
+  key in (str₁,str₂,...) (or)
+  key notin (str₁,str₂,...)
+  query₁,query₂,... (and)
 
