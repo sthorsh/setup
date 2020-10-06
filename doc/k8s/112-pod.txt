@@ -4,7 +4,7 @@ pod.spec
   activeDeadlineSeconds            integer
   affinity                         Object
   automountServiceAccountToken     boolean
-* containers                       []Object - single-/multi-container
+* containers                       []Object: single-/multi-container
     args                           []string
     command                        []string
     env                            []Object
@@ -12,12 +12,12 @@ pod.spec
     image                          string
     imagePullPolicy                string
     lifecycle                      Object
-    livenessProbe                  Object
+    livenessProbe                  Object: exec, tcpSocket, httpGet
 *   name                           string
     ports                          []Object
-    readinessProbe                 Object
+    readinessProbe                 Object: exec, tcpSocket, httpGet
     resources                      Object
-    securityContext                Object
+    securityContext                Object: exec, tcpSocket, httpGet
     startupProbe                   Object
     stdin                          boolean
     stdinOnce                      boolean
@@ -45,12 +45,12 @@ pod.spec
   priority                         integer
   priorityClassName                string
   readinessGates                   []Object
-  restartPolicy                    string
+  restartPolicy                    string: Always, OnFailure, Never
   runtimeClassName                 string
   schedulerName                    string
-  securityContext                  Object
-  serviceAccount                   string - default
-  serviceAccountName               string - default
+  securityContext                  Object: {}
+  serviceAccount                   string: default
+  serviceAccountName               string: default
   shareProcessNamespace            boolean
   subdomain                        string
   terminationGracePeriodSeconds    integer
@@ -59,53 +59,16 @@ pod.spec
   volumes                          []Object
 
 pod.status
-  conditions                       []Object
-  containerStatuses                []Object
+  conditions                       []Object: PodScheduled, Initialized, ContainersReady, Ready
+  containerStatuses                []Object: Waiting, Running, Terminated
   ephemeralContainerStatuses       []Object
-  hostIP                           string         
+  hostIP                           string: 192.168.56.102 (fysisk host)
   initContainerStatuses            []Object
   message                          string
   nominatedNodeName                string
-  phase                            string
-  podIP                            string - 172.16.222.231
+  phase                            string: Pending, Running, Succeeded, Failed, Unknown
+  podIP                            string: 172.16.222.231 (logisk host)
   podIPs                           []Object
   qosClass                         string
   reason                           string
   startTime                        string
-  
-=================================================
-  Pod
-    Abstraksjon: cf PodSpec
-    Wrapper/omgivelse/ressurser + containere 
-    Enhet for deployment, skalering, scheduling, workload
-    Prosess i et cluster: pod → container(e) → prosess(er)
-    
-  Klassifisering
-    App-pod
-    Systempod: cf namespace kube-system
-  
-  Livssyklus
-    "Creating": cli or manifest
-    Scheduling: scheduler pod → node
-    Downloading: kubelet docker pull
-    Pending: kubelet docker create → running or failed
-    Starting: kubelet docker start
-    Running/ready
-    Terminating: succedded or failed
-  
-  Restart
-    Always
-    OnFailure
-    Never
-  
-  Health
-    Liveness probe: is pod live?
-    Readiness probe: is pod ready?
-  
-  Nettverk
-    Pod: ip
-    Container: port
-  
-  Kommunikasjon
-    Intra-pod: 127.0.0.1
-    Inter-pod: pod network

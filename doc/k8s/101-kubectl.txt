@@ -43,13 +43,14 @@ KUBECTL
   kubectl scale -f FILE --replicas 5
   
   ---------
-  kubectl get RESOURCE NAME (nb: events)
+  kubectl get RESOURCE NAME (events, ...)
   kubectl get RESOURCE [-A] [-l LABEL_QUERY] ...
   kubectl get all [-A] [-l LABEL_QUERY] ...
   kubectl get RESOURCE[S] -L key₁,key₂,... -o json|wide|yaml --show-labels --watch &
   kubectl get -f [FILE]
   
-  kubectl describe RESOURCE[S] (nb: svc, ep, nodes)
+  kubectl describe RESOURCE[S] (svc, ep, nodes, ...)
+  kubectl describe RESOURCE[S] | grep "restart count"
   kubectl describe -f [FILE]
   
   ---------
@@ -70,6 +71,7 @@ KUBECTL
   kubectl cp FILE POD:/PATH
   
   kubectl exec [-it] POD -- CMD
+  kubectl exec [-it] POD -- /usr/bin/killall CMD (container restart)
   
   kubectl logs POD [-c CTR] [-f] [--timestamp]
   kubectl logs -l LABEL_QUERY [-c CTR] [-f] [--timestamp]
