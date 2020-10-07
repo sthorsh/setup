@@ -1,0 +1,22 @@
+DEPLOYMENT
+
+deployment.spec
+  paused                      boolean
+  progressDeadlineSeconds     integer
+  revisionHistoryLimit        integer
+  strategy                    Object
+  minReadySeconds             integer
+  replicas                    integer
+  selector*                   Object  
+  template*                   Object  
+  
+deployment.status
+  availableReplicas           integer
+  collisionCount              integer
+  conditions                  []Object
+  observedGeneration          integer
+  readyReplicas               integer
+  replicas                    integer
+  unavailableReplicas         integer
+  updatedReplicas             integer
+  

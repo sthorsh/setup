@@ -4,7 +4,7 @@ pod.spec
   activeDeadlineSeconds            integer
   affinity                         Object
   automountServiceAccountToken     boolean
-* containers                       []Object: single-/multi-container
+  containers*                      []Object: single-/multi-container
     args                           []string
     command                        []string
     env                            []Object
@@ -13,7 +13,7 @@ pod.spec
     imagePullPolicy                string
     lifecycle                      Object
     livenessProbe                  Object: exec, tcpSocket, httpGet
-*   name                           string
+    name*                          string
     ports                          []Object
     readinessProbe                 Object: exec, tcpSocket, httpGet
     resources                      Object
