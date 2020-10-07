@@ -1,5 +1,35 @@
 CLUSTER
 
+Kontrollplan
+  kube-apiserver-c1-master1              
+  kube-controller-manager-c1-master1     
+    deployment-controller
+    replicaset-controller
+    daemonset-controller
+    statefulset-controller
+    job-controller
+    cronjob-controller
+    node-controller
+    service-controller
+    endpoint-controller
+    ingress-controller
+    namespace-controller
+    persistentvolume-controller
+    ...
+  kube-scheduler-c1-master1                
+  etcd-c1-master1                          
+  kube-proxy-rcv25                          
+  calico-kube-controllers-578894d4cd-lpjvp 
+  calico-node-stx2q                        
+  coredns-66bff467f8-77c9j                 
+  coredns-66bff467f8-8fdxj                 
+
+Arbeidernoder
+  Kubelet
+  kube-proxy-sz9vs
+  Container runtime 
+
+-------------------------
 Cluster
   Kontrollplan
   Arbeidernoder

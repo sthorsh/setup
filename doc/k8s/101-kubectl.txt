@@ -23,26 +23,6 @@ KUBECTL
   kubectl explain RESOURCE.FIELD... [--api-version VERSION]
 
   ---------
-  kubectl create ns NAME [--dry-run] [-o yaml]
-  kubectl create deployment NAME --image=IMAGE [--dry-run] [-o yaml]
-  kubectl create svc TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
-  kubectl create cm NAME [--from-literal k=v] [--dry-run] [-o yaml]
-  kubectl create -f FILE|DIR --record --save-config
-  
-  kubectl run NAME --image IMAGE [--dry-run] [-o yaml]
-
-  kubectl expose RESOURCE NAME --type=NodePort --port=8080 --target-port=80 [--dry-run] [-o yaml]
-  kubectl expose -f FILE --type=NodePort --port=80 --target-port=8080
-
-  kubectl apply -f FILE|DIR --record [--dry-run] [-o yaml]
-
-  kubectl rollout SUBCMD --help
-  kubectl rollout status|history|restart|pause|resume|undo RESOURCE [NAME] OPTS
-  
-  kubectl scale RESOURCE[S] --replicas 5
-  kubectl scale -f FILE --replicas 5
-  
-  ---------
   kubectl get RESOURCE NAME (events, ...)
   kubectl get RESOURCE [-A] [-l LABEL_QUERY] ...
   kubectl get all [-A] [-l LABEL_QUERY] ...
@@ -54,18 +34,18 @@ KUBECTL
   kubectl describe -f [FILE]
   
   ---------
-  kubectl annotate RESOURCE[S] key=value
-  kubectl annotate RESOURCE[S] key=value --overwrite
-  kubectl annotate RESOURCE[S] key-
+  kubectl run NAME --image IMAGE [--dry-run] [-o yaml]
 
-  kubectl label RESOURCE[S] key=value
-  kubectl label RESOURCE[S] key=value --overwrite
-  kubectl label RESOURCE[S] key-
+  kubectl create ns NAME [--dry-run] [-o yaml]
+  kubectl create deployment NAME --image=IMAGE [--dry-run] [-o yaml]
+  kubectl create svc TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
+  kubectl create cm NAME [--from-literal k=v] [--dry-run] [-o yaml]
+  kubectl create -f FILE|DIR --record --save-config
 
-  kubectl set SUBCMD --help
-  kubectl set env|image|resources|selector|serviceaccount|subject RESOURCE[S] ...
+  kubectl expose RESOURCE NAME --type=NodePort --port=8080 --target-port=80 [--dry-run] [-o yaml]
+  kubectl expose -f FILE --type=NodePort --port=80 --target-port=8080
 
-  kubectl edit RESOURCE[S]
+  kubectl apply -f FILE|DIR --record [--dry-run] [-o yaml]
 
   ---------
   kubectl cp FILE POD:/PATH
@@ -79,6 +59,36 @@ KUBECTL
   kubectl port-forward POD 8181:8080 & (hello-app)
   kubectl port-forward POD 8181:80 & (nginx)
   
+  ---------
+  kubectl scale RESOURCE[S] --replicas 5
+  kubectl scale -f FILE --replicas 5
+
+  kubectl rollout SUBCMD --help
+  kubectl rollout status RESOURCE [NAME] 
+  kubectl rollout history RESOURCE [NAME] (edit podTemplate → new revision)
+  kubectl rollout restart RESOURCE [NAME] 
+  kubectl rollout pause|resume RESOURCE [NAME] 
+  kubectl rollout undo RESOURCE [NAME] --to-revision=N 
+  
+  ---------
+  kubectl annotate RESOURCE[S] key=value
+  kubectl annotate RESOURCE[S] key=value --overwrite
+  kubectl annotate RESOURCE[S] key-
+
+  kubectl label RESOURCE[S] key=value
+  kubectl label RESOURCE[S] key=value --overwrite
+  kubectl label RESOURCE[S] key-
+
+  kubectl set SUBCMD --help
+  kubectl set env RESOURCE[S] ...
+  kubectl set image RESOURCE[S] ... --record
+  kubectl set resources RESOURCE[S] ...
+  kubectl set selector RESOURCE[S] ...
+  kubectl set serviceaccount RESOURCE[S] ...
+  kubectl set subject RESOURCE[S] ...
+
+  kubectl edit RESOURCE[S]
+
   ---------
   kubectl cordon NODE[S]
   kubectl uncordon NODE[S]

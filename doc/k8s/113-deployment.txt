@@ -5,10 +5,17 @@ deployment.spec
   progressDeadlineSeconds     integer
   revisionHistoryLimit        integer
   strategy                    Object
-  minReadySeconds             integer
   replicas                    integer
+  minReadySeconds             integer
   selector*                   Object  
-  template*                   Object  
+    matchLabels               map[string]string
+      key: value              
+    matchExpressions:         []Object
+    - key: KEY
+      operator: OP            In, NotIn, Exists, DoesNotExist
+      values:
+        - VALUE
+  template*                   Object (endring → nytt rs, ny pod-template-hash, ny revision)
   
 deployment.status
   availableReplicas           integer
