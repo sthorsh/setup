@@ -1,5 +1,4 @@
 KUBECTL
-
   kubectl [cmd] [subcmds] [type] [name] [global_opts] [cmd_opts]
   
   kubectl <ht>
@@ -10,42 +9,69 @@ KUBECTL
 
   ---------
   kubectl options (-n NS, -v 6..N)
-
-  ---------
-  kubectl config SUBCMD --help
-  kubectl proxy [--port=8080] & (connects, authenticates)
-
-  ---------
   kubectl version --short
+
+  kubectl config SUBCMD --help
+  kubectl proxy [--port 8080] & (connects, authenticates)
+
   kubectl cluster-info [dump]
   kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
   kubectl api-versions
-  kubectl explain RESOURCE.FIELD... [--api-version VERSION]
+  kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
 
   ---------
-  kubectl get RESOURCE NAME (events, ...)
-  kubectl get RESOURCE [-A] [-l LABEL_QUERY] ...
-  kubectl get all [-A] [-l LABEL_QUERY] ...
-  kubectl get RESOURCE[S] -L key₁,key₂,... -o json|wide|yaml --show-labels --watch &
-  kubectl get -f [FILE]
+  kubectl get RESOURCE NAME
+  kubectl get RESOURCE [-A] [-l QUERY]
+  kubectl get all [-A] [-l QUERY] 
+  kubectl get RESOURCE(s) -L key₁,... -o json|wide|yaml --show-labels --watch &
+  kubectl get -f FILE
   
-  kubectl describe RESOURCE[S] (svc, ep, nodes, ...)
-  kubectl describe RESOURCE[S] | grep "restart count"
-  kubectl describe -f [FILE]
+  kubectl describe RESOURCE NAME
+  kubectl describe RESOURCE [-A] [-l QUERY]
+  kubectl describe all [-A] [-l QUERY] 
+  kubectl describe -f FILE
   
   ---------
-  kubectl run NAME --image IMAGE [--dry-run] [-o yaml]
+  kubectl run NAME --image=IMAGE [--dry-run] [-o yaml]
 
   kubectl create ns NAME [--dry-run] [-o yaml]
-  kubectl create deployment NAME --image=IMAGE [--dry-run] [-o yaml]
-  kubectl create svc TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
   kubectl create cm NAME [--from-literal k=v] [--dry-run] [-o yaml]
+  kubectl create deploy NAME --image=IMAGE [--dry-run] [-o yaml]
+  kubectl create svc TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
   kubectl create -f FILE|DIR --record --save-config
 
-  kubectl expose RESOURCE NAME --type=NodePort --port=8080 --target-port=80 [--dry-run] [-o yaml]
-  kubectl expose -f FILE --type=NodePort --port=80 --target-port=8080
+  kubectl expose RESOURCE NAME --type NodePort --port 8080 --target-port 80 [--dry-run] [-o yaml]
+  kubectl expose -f FILE --type NodePort --port 8080 --target-port 80
 
   kubectl apply -f FILE|DIR --record [--dry-run] [-o yaml]
+
+  ---------
+  kubectl rollout status deploy|ds|sts NAME 
+  kubectl rollout history deploy|ds|sts NAME --revision N
+  kubectl rollout undo deploy|ds|sts NAME --to-revision=N 
+  kubectl rollout restart deploy|ds|sts [NAME]
+  kubectl rollout pause|resume deploy NAME 
+  
+  kubectl scale deploy|rs|sts --replicas 5
+  kubectl scale -f FILE --replicas 5
+
+  ---------
+  kubectl edit RESOURCE NAME --record
+
+  kubectl label RESOURCE (NAME or -l QUERY or --all) key=value --record
+  kubectl label RESOURCE (NAME or -l QUERY or --all) key=value --overwrite --record
+  kubectl label RESOURCE (NAME or -l QUERY or --all) key- --record
+
+  kubectl annotate RESOURCE (NAME or -l QUERY or --all) key=value --record
+  kubectl annotate RESOURCE (NAME or -l QUERY or --all) key=value --overwrite --record
+  kubectl annotate RESOURCE (NAME or -l QUERY or --all) key- --record
+
+  kubectl set sa deploy|rs|ds|sts|job NAME SA --record
+  kubectl set image pod|deploy|rs|ds NAME CONTAINER_NAME=CONTAINER_IMAGE --record
+  kubectl set resources deploy|rs|ds|sts|job NAME --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi --record
+  kubectl set env deploy|rs|ds|sts|job NAME VAR=VALUE
+  kubectl set selector service NAME 'env=uat' --record
+  kubectl set subject rolebinding NAME --user=USER --group=group
 
   ---------
   kubectl cp FILE POD:/PATH
@@ -54,52 +80,23 @@ KUBECTL
   kubectl exec [-it] POD -- /usr/bin/killall CMD (container restart)
   
   kubectl logs POD [-c CTR] [-f] [--timestamp]
-  kubectl logs -l LABEL_QUERY [-c CTR] [-f] [--timestamp]
 
-  kubectl port-forward POD 8181:8080 & (hello-app)
   kubectl port-forward POD 8181:80 & (nginx)
-  
-  ---------
-  kubectl scale RESOURCE[S] --replicas 5
-  kubectl scale -f FILE --replicas 5
-
-  kubectl rollout SUBCMD --help
-  kubectl rollout status RESOURCE [NAME] 
-  kubectl rollout history RESOURCE [NAME] (edit podTemplate → new revision)
-  kubectl rollout restart RESOURCE [NAME] 
-  kubectl rollout pause|resume RESOURCE [NAME] 
-  kubectl rollout undo RESOURCE [NAME] --to-revision=N 
-  
-  ---------
-  kubectl annotate RESOURCE[S] key=value
-  kubectl annotate RESOURCE[S] key=value --overwrite
-  kubectl annotate RESOURCE[S] key-
-
-  kubectl label RESOURCE[S] key=value
-  kubectl label RESOURCE[S] key=value --overwrite
-  kubectl label RESOURCE[S] key-
-
-  kubectl set SUBCMD --help
-  kubectl set env RESOURCE[S] ...
-  kubectl set image RESOURCE[S] ... --record
-  kubectl set resources RESOURCE[S] ...
-  kubectl set selector RESOURCE[S] ...
-  kubectl set serviceaccount RESOURCE[S] ...
-  kubectl set subject RESOURCE[S] ...
-
-  kubectl edit RESOURCE[S]
+  kubectl port-forward POD 8181:8080 & (hello-app)
 
   ---------
-  kubectl cordon NODE[S]
-  kubectl uncordon NODE[S]
-  kubectl drain NODE[S]
-  kubectl taint node NODE[S] TAINT
+  kubectl cordon NODE
+  kubectl uncordon NODE
+  kubectl drain NODE
+  kubectl taint node NODE TAINT
 
   ---------
-  kubectl delete RESOURCE[S] [--force]
+  kubectl delete RESOURCE NAME [--force]
+  kubectl delete RESOURCE -l QUERY [--force]
+  kubectl delete RESOURCE --all [--force]
   kubectl delete -f FILE|DIR
 
-LABEL_QUERY
+QUERY
   key
   !key
   key=value
