@@ -20,15 +20,15 @@ KUBECTL
   kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
 
   ---------
-  kubectl get RESOURCE NAME
-  kubectl get RESOURCE [-A] [-l QUERY]
   kubectl get all [-A] [-l QUERY] 
+  kubectl get RESOURCE [-A] [-l QUERY]
+  kubectl get RESOURCE NAME
   kubectl get RESOURCE(s) -L key₁,... -o json|wide|yaml --show-labels --watch &
   kubectl get -f FILE
   
-  kubectl describe RESOURCE NAME
-  kubectl describe RESOURCE [-A] [-l QUERY]
   kubectl describe all [-A] [-l QUERY] 
+  kubectl describe RESOURCE [-A] [-l QUERY]
+  kubectl describe RESOURCE NAME
   kubectl describe -f FILE
   
   ---------
@@ -46,13 +46,13 @@ KUBECTL
   kubectl apply -f FILE|DIR --record [--dry-run] [-o yaml]
 
   ---------
-  kubectl rollout status deploy|ds|sts NAME 
-  kubectl rollout history deploy|ds|sts NAME --revision N
-  kubectl rollout undo deploy|ds|sts NAME --to-revision=N 
-  kubectl rollout restart deploy|ds|sts [NAME]
+  kubectl rollout status deploy NAME 
+  kubectl rollout history deploy NAME --revision N
+  kubectl rollout undo deploy NAME --to-revision=N (rollback e.g fra rs₂ → rs₁)
+  kubectl rollout restart deploy [NAME]
   kubectl rollout pause|resume deploy NAME 
   
-  kubectl scale deploy|rs|sts --replicas 5
+  kubectl scale deploy --replicas 5
   kubectl scale -f FILE --replicas 5
 
   ---------
@@ -66,19 +66,19 @@ KUBECTL
   kubectl annotate RESOURCE (NAME or -l QUERY or --all) key=value --overwrite --record
   kubectl annotate RESOURCE (NAME or -l QUERY or --all) key- --record
 
-  kubectl set sa deploy|rs|ds|sts|job NAME SA --record
-  kubectl set image pod|deploy|rs|ds NAME CONTAINER_NAME=CONTAINER_IMAGE --record
-  kubectl set resources deploy|rs|ds|sts|job NAME --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi --record
-  kubectl set env deploy|rs|ds|sts|job NAME VAR=VALUE
+  kubectl set sa deploy NAME SA --record
+  kubectl set image pod|deploy NAME CONTAINER_NAME=CONTAINER_IMAGE --record
+  kubectl set resources deploy NAME --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi --record
+  kubectl set env deploy NAME VAR=VALUE
   kubectl set selector service NAME 'env=uat' --record
   kubectl set subject rolebinding NAME --user=USER --group=group
 
   ---------
   kubectl cp FILE POD:/PATH
-  
+
   kubectl exec [-it] POD -- CMD
   kubectl exec [-it] POD -- /usr/bin/killall CMD (container restart)
-  
+
   kubectl logs POD [-c CTR] [-f] [--timestamp]
 
   kubectl port-forward POD 8181:80 & (nginx)
@@ -91,9 +91,9 @@ KUBECTL
   kubectl taint node NODE TAINT
 
   ---------
-  kubectl delete RESOURCE NAME [--force]
-  kubectl delete RESOURCE -l QUERY [--force]
   kubectl delete RESOURCE --all [--force]
+  kubectl delete RESOURCE -l QUERY [--force]
+  kubectl delete RESOURCE NAME [--force]
   kubectl delete -f FILE|DIR
 
 QUERY

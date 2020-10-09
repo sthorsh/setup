@@ -5,6 +5,12 @@ Deployment
   Oppdatere: ut-av-boksen null nedetid
   Rulle tilbake: $ kubectl rollout undo ...
 
+Rullende deployment
+  Rull ut deployment v1
+  Kjør v1 ...
+  Slett v1 & rull ut deployment v2
+  Stikkord: ingen nedetid, men v2 ruller "over" v1
+                              
 Recreate deployment
   Rull ut deployment v1
   Kjør v1 ...
@@ -12,12 +18,6 @@ Recreate deployment
   Rull ut deployment v2
   Stikkord: enkelt, men nedetid
 
-Rullende deployment
-  Rull ut deployment v1
-  Kjør v1 ...
-  Slett v1 & rull ut deployment v2
-  Stikkord: ingen nedetid, men v2 ruller "over" v1
-                              
 Blue-green deployment
   Rull ut blue public service i prod env (selector blue)
   Rull ut blue deployment i prod env (4 pods)

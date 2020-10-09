@@ -1,29 +1,33 @@
 DEPLOYMENT
 
 deployment.spec
-  paused                      boolean
-  progressDeadlineSeconds     integer
-  revisionHistoryLimit        integer
-  strategy                    Object
-  replicas                    integer
-  minReadySeconds             integer
-  selector*                   Object  
-    matchLabels               map[string]string
-      key: value              
-    matchExpressions:         []Object
-    - key: KEY
-      operator: OP            In, NotIn, Exists, DoesNotExist
-      values:
-        - VALUE
-  template*                   Object (endring → nytt rs, ny pod-template-hash, ny revision)
+  minReadySeconds: 0                      integer
+  paused: false                           boolean
+  progressDeadlineSeconds: 600            integer
+  replicas: 1                             integer
+  revisionHistoryLimit: 10                integer (rs)
+  selector:                               Object (required)
+    matchLabels:                          map[string]string
+      app: d1   
+    matchExpressions:                     []Object
+    - expr₁                               e.g {key: app, operator: Exists}
+    - expr₂                               e.g {key: xxx, operator: DoesNotExist}
+    - expr₃                               e.g {key: app, operator: In, values: [d1]}
+    - expr₄                               e.g {key: app, operator: NotIn, values: [d2]}
+  strategy:                               Object
+    type: RollingUpdate|Recreate          string
+    rollingUpdate:                        Object
+      maxSurge: N or N%                   string
+      maxUnavailable: N or N%             string
+  template*                               Object: update → nytt rs, nye pods, ny pod-template-hash
   
 deployment.status
-  availableReplicas           integer
-  collisionCount              integer
-  conditions                  []Object
-  observedGeneration          integer
-  readyReplicas               integer
-  replicas                    integer
-  unavailableReplicas         integer
-  updatedReplicas             integer
+  availableReplicas                       integer
+  collisionCount                          integer
+  conditions                              []Object
+  observedGeneration                      integer
+  readyReplicas                           integer
+  replicas                                integer
+  unavailableReplicas                     integer
+  updatedReplicas                         integer
   
