@@ -40,7 +40,7 @@ KUBECTL
   kubectl create svc TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
   kubectl create -f FILE|DIR --record --save-config
 
-  kubectl expose RESOURCE NAME --type NodePort --port 8080 --target-port 80 [--dry-run] [-o yaml]
+  kubectl expose pod|deploy|rs|svc NAME --type NodePort --port 8080 --target-port 80 [--dry-run] [-o yaml]
   kubectl expose -f FILE --type NodePort --port 8080 --target-port 80
 
   kubectl apply -f FILE|DIR --record [--dry-run] [-o yaml]

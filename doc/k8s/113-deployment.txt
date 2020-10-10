@@ -20,6 +20,7 @@ deployment.spec
       maxSurge: N or N%                   string
       maxUnavailable: N or N%             string
   template*                               Object: update → nytt rs, nye pods, ny pod-template-hash
+    ...
   
 deployment.status
   availableReplicas                       integer
