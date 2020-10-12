@@ -49,8 +49,8 @@ pod.spec
   runtimeClassName                 string
   schedulerName                    string
   securityContext                  Object: {}
-  serviceAccount                   string: default
-  serviceAccountName               string: default
+  serviceAccount (deprecated)      string
+  serviceAccountName               string: pod → sa → secret/token
   shareProcessNamespace            boolean
   subdomain                        string
   terminationGracePeriodSeconds    integer

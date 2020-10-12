@@ -8,16 +8,22 @@ KUBECTL
   kubectl <cmd> --help
 
   ---------
-  kubectl options (-n NS, -v 6..N)
-  kubectl version --short
+  kubectl options (-as='...', -n NS, -v 6..N)
 
   kubectl config SUBCMD --help
-  kubectl proxy [--port 8080] & (connects, authenticates)
+  kubectl config view [--raw]
 
-  kubectl cluster-info [dump]
+  kubectl cluster-info
+  kubectl version --short
+
   kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
   kubectl api-versions
   kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
+
+  kubectl auth can-i VERB [TYPE | TYPE/NAME | NONRESOURCEURL]
+  kubectl auth reconcile -f FILENAME
+
+  kubectl proxy [--port 8080] & (connects, authenticates)
 
   ---------
   kubectl get all [-A] [-l QUERY] 

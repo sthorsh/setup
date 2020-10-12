@@ -1,0 +1,56 @@
+AUTENTISERING
+
+RQ prosessering
+  Autentisering
+  Autorisasjon
+  Admission control
+
+RQ kilder → apiserver
+  Brukere: kubectl
+  SAs: apps in pods
+  Kontrollplan-tjeneste: scheduler
+  Kontrollplan-tjeneste: controller manager
+  Noder: kubelet
+  Noder: kube-proxy
+
+Autentisering plugins/metoder
+✓ Sertifikater
+    Default for kubeadm
+    Brukernavn: CN i cert (brukes for autorisasjon)
+  Tokens
+    HTTP Authorization Header
+    Brukes av SAs
+  Basic HTTP
+    Statisk passordfil
+  Ekstern katalogtjeneste
+    AD
+  OIDC
+    ...
+
+Brukere
+  For autentisering av "named users"
+  Faktiske mennesker
+  Brukernavn-/id
+  Ekstern autentiseringsmekanisme
+  API-objekt: n/a
+  Men, username brukes for aksesskontroll og logging
+  Brukere (users) kan aggregeres i grupper (groups)
+  
+Service accounts
+  For autentisering/autorisasjon av pod/app/prosess
+  API-objekt: ServiceAccount (namespaced)
+  Name
+  Namespace
+  Credential: secret/token
+  Hvert ns har en default sa som lages når ns opprettes
+  Alle pod'er må tilordnes en sa (ellers får de default sa)
+
+Service account credentials
+  1.Credentials lagres som en secret
+    CA sertifikat: trust apiserver's sert
+    Token: for autentisering til apiserver
+    Namespace: skoper ressurser som man vil aksessere
+  2.Image pull secret
+    Aksess til container register
+  SA secrets mountes inn i pod som filer vha Volume:
+    /var/run/secrets/kubernetes.io/serviceaccount
