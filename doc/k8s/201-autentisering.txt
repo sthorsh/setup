@@ -1,56 +1,91 @@
-AUTENTISERING
+KUBECONFIG FILE
+  apiVersion: v1
+  kind: Config
+  preferences: {}
+  clusters:
+    - cluster:
+        certificate-authority-data: ... (base64 enc ca.crt)
+        server: https://192.168.56.101:6443 (k8s apiserver)
+      name: kubernetes
+  contexts:
+    - context:
+        cluster: kubernetes
+        user: kubernetes-admin
+      name: kubernetes-admin@kubernetes
+  current-context: kubernetes-admin@kubernetes
+  users:
+    - name: kubernetes-admin
+      user:
+        client-certificate-data: ... (klient sender dette base64 enc cert til apiserver for autentisering)
+        client-key-data: ... (klient private key)
+................................................................................
+SERTIFIKAT
 
-RQ prosessering
-  Autentisering
-  Autorisasjon
-  Admission control
+Nytt sertifikat for ny user
 
-RQ kilder → apiserver
-  Brukere: kubectl
-  SAs: apps in pods
-  Kontrollplan-tjeneste: scheduler
-  Kontrollplan-tjeneste: controller manager
-  Noder: kubelet
-  Noder: kube-proxy
+  # Create private key
+  $ openssl genrsa -out demouser.key 2048
 
-Autentisering plugins/metoder
-✓ Sertifikater
-    Default for kubeadm
-    Brukernavn: CN i cert (brukes for autorisasjon)
-  Tokens
-    HTTP Authorization Header
-    Brukes av SAs
-  Basic HTTP
-    Statisk passordfil
-  Ekstern katalogtjeneste
-    AD
-  OIDC
-    ...
+  # Create CSR
+  $ openssl req -new -key demouser.key -out demouser.csr -subj "/CN=demouser"
 
-Brukere
-  For autentisering av "named users"
-  Faktiske mennesker
-  Brukernavn-/id
-  Ekstern autentiseringsmekanisme
-  API-objekt: n/a
-  Men, username brukes for aksesskontroll og logging
-  Brukere (users) kan aggregeres i grupper (groups)
+  # Encode CSR
+  $ cat demouser.csr | base64 | tr -d "\n" > demouser.base64.csr 
+
+  # Apply CertificateSigningRequest
+  $ cat <<EOF | kubectl apply -f -
+    apiVersion: certificates.k8s.io/v1beta1
+    kind: CertificateSigningRequest
+    metadata:
+      name: demouser
+    spec:
+      groups:
+      - system:authenticated
+      request: $(cat demouser.base64.csr)
+      usages:
+      - client auth
+    EOF
+
+  # Approve CSR
+  $ kubectl certificate approve demouser
+
+  # Get, decode, redirect cert
+  $ kubectl get csr demouser -o jsonpath='{ .status.certificate }' | base64 --decode > demouser.crt
+
+  # Read cert
+  $ openssl x509 -in demouser.crt -text -noout
   
-Service accounts
-  For autentisering/autorisasjon av pod/app/prosess
-  API-objekt: ServiceAccount (namespaced)
-  Name
-  Namespace
-  Credential: secret/token
-  Hvert ns har en default sa som lages når ns opprettes
-  Alle pod'er må tilordnes en sa (ellers får de default sa)
+Bygg kubeconfig file for autentisering
+  Bruk xxx.key + xxx.crt i kubeconfig
+  Bruk kubeconfig til autentisering mot apiserver
 
-Service account credentials
-  1.Credentials lagres som en secret
-    CA sertifikat: trust apiserver's sert
-    Token: for autentisering til apiserver
-    Namespace: skoper ressurser som man vil aksessere
-  2.Image pull secret
-    Aksess til container register
-  SA secrets mountes inn i pod som filer vha Volume:
-    /var/run/secrets/kubernetes.io/serviceaccount
+Bruk key+crt for kryptering
+  TODO
+  
+................................................................................
+KONTROLLPLANNODE 
+/etc/kubernetes/
+  manifests/
+  pki/
+  admin.conf (kubeconfig file: kubernetes-admin login apiserver)
+  controller-manager.conf (kubeconfig file: login apiserver)
+  kubelet.conf (kubeconfig file: login apiserver)
+  scheduler.conf (kubeconfig file: login apiserver)
+
+/etc/kubernetes/pki/
+  etcd/
+  apiserver-etcd-client.crt
+  apiserver-etcd-client.key
+  apiserver-kubelet-client.crt
+  apiserver-kubelet-client.key
+  apiserver.crt (public cert, used for http encryption)
+  apiserver.key (private key)
+  ca.crt (public cert)
+  ca.key (private key)
+  front-proxy-ca.crt
+  front-proxy-ca.key
+  front-proxy-client.crt
+  front-proxy-client.key
+  sa.key (private key)
+  sa.pub (public key)
+

@@ -10,8 +10,7 @@ KUBECTL
   ---------
   kubectl options (-as='...', -n NS, -v 6..N)
 
-  kubectl config SUBCMD --help
-  kubectl config view [--raw]
+  kubectl config view [--kubeconfig=FILE] [--raw]
 
   kubectl cluster-info
   kubectl version --short
@@ -20,6 +19,8 @@ KUBECTL
   kubectl api-versions
   kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
 
+  kubectl certificate ...
+  
   kubectl auth can-i VERB [TYPE | TYPE/NAME | NONRESOURCEURL]
   kubectl auth reconcile -f FILENAME
 
