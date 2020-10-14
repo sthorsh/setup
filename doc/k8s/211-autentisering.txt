@@ -1,23 +1,24 @@
 KUBECONFIG FILE
-  apiVersion: v1
-  kind: Config
-  preferences: {}
-  clusters:
-    - cluster:
-        certificate-authority-data: ... (base64 enc ca.crt)
-        server: https://192.168.56.101:6443 (k8s apiserver)
-      name: kubernetes
-  contexts:
-    - context:
-        cluster: kubernetes
-        user: kubernetes-admin
-      name: kubernetes-admin@kubernetes
-  current-context: kubernetes-admin@kubernetes
-  users:
-    - name: kubernetes-admin
-      user:
-        client-certificate-data: ... (klient sender dette base64 enc cert til apiserver for autentisering)
-        client-key-data: ... (klient private key)
+
+apiVersion: v1
+clusters:
+  - cluster:
+      certificate-authority-data: ... (base64 ca.crt)
+      server: https://192.168.56.101:6443 (apiserver)
+    name: kubernetes
+contexts:
+  - context:
+      cluster: kubernetes (lokasjon)
+      user: kubernetes-admin (legitimasjon)
+      namespace: ...
+    name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
+users:
+  - name: kubernetes-admin
+    user:
+      client-certificate-data: ... (base64 cert, token, password)
+      client-key-data: ... (private key)
+
 ................................................................................
 SERTIFIKAT
 
@@ -55,12 +56,34 @@ Nytt sertifikat for ny user
   # Read cert
   $ openssl x509 -in demouser.crt -text -noout
   
-Bygg kubeconfig file for autentisering
-  Bruk xxx.key + xxx.crt i kubeconfig
-  Bruk kubeconfig til autentisering mot apiserver
+Bygg kubeconfig-fil
 
-Bruk key+crt for kryptering
-  TODO
+  # Set cluster
+  $ kubectl config set-cluster kubernetes-demo \ 
+  --server=https://192.168.56.101:6443 \
+  --certificate-authority=ca.crt \
+  --embed-certs=true \
+  --kubeconfig=demouser.conf
+  
+  # Set credentials
+  $ kubectl config set-credentials demouser \
+  --client-key=demouser.key
+  --client-certificate=demouser.crt \
+  --embed-certs=true \
+  --kubeconfig=demouser.conf
+
+  # Set context
+  $ kubectl config set-context demouser@kubernetes-demo  \
+  --cluster=kubernetes-demo \
+  --user=demouser \
+  --kubeconfig=demouser.conf
+
+  # Set current context
+  $ kubectl config use-context demouser@kubernetes-demo --kubeconfig=demouser.conf
+
+Bruk kubeconfig
+  autentisering
+  kryptering
   
 ................................................................................
 KONTROLLPLANNODE 

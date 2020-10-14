@@ -8,21 +8,34 @@ KUBECTL
   kubectl <cmd> --help
 
   ---------
-  kubectl options (-as='...', -n NS, -v 6..N)
+  kubectl options → --as='...'
+  kubectl options → --kubeconfig FILE
+  kubectl options → --namespace NS
+  kubectl options → -v6..N
 
-  kubectl config view [--kubeconfig=FILE] [--raw]
-
-  kubectl cluster-info
   kubectl version --short
+  kubectl cluster-info [dump]
+
+  kubectl config view [--minify] [--raw]
+  kubectl config get-clusters
+  kubectl config set-cluster ...
+  kubectl config delete-cluster ...
+  kubectl config get-contexts
+  kubectl config set-context ...
+  kubectl config rename-context ...
+  kubectl config delete-context ...
+  kubectl config current-context
+  kubectl config use-context ...
+  kubectl config unset current-context
+  kubectl config set-credentials ...
+  kubectl config unset users
+
+  kubectl auth can-i VERB [TYPE | TYPE/NAME | NONRESOURCEURL]
+  kubectl auth reconcile -f FILENAME
 
   kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
   kubectl api-versions
   kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
-
-  kubectl certificate ...
-  
-  kubectl auth can-i VERB [TYPE | TYPE/NAME | NONRESOURCEURL]
-  kubectl auth reconcile -f FILENAME
 
   kubectl proxy [--port 8080] & (connects, authenticates)
 
