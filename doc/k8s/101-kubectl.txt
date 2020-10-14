@@ -14,7 +14,8 @@ KUBECTL
   kubectl options → -v6..N
 
   kubectl version --short
-  kubectl cluster-info [dump]
+
+  kubectl certificate approve | deny
 
   kubectl config view [--minify] [--raw]
   kubectl config get-clusters
@@ -33,6 +34,7 @@ KUBECTL
   kubectl auth can-i VERB [TYPE | TYPE/NAME | NONRESOURCEURL]
   kubectl auth reconcile -f FILENAME
 
+  kubectl cluster-info [dump]
   kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
   kubectl api-versions
   kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
