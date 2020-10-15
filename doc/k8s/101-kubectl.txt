@@ -15,8 +15,6 @@ KUBECTL
 
   kubectl version --short
 
-  kubectl certificate approve | deny
-
   kubectl config view [--minify] [--raw]
   kubectl config get-clusters
   kubectl config set-cluster ...
@@ -30,6 +28,8 @@ KUBECTL
   kubectl config unset current-context
   kubectl config set-credentials ...
   kubectl config unset users
+
+  kubectl certificate approve | deny
 
   kubectl auth can-i VERB [TYPE | TYPE/NAME | NONRESOURCEURL]
   kubectl auth reconcile -f FILENAME

@@ -1,25 +1,3 @@
-KUBECONFIG FILE
-
-apiVersion: v1
-clusters:
-  - cluster:
-      certificate-authority-data: ... (base64 ca.crt)
-      server: https://192.168.56.101:6443 (apiserver)
-    name: kubernetes
-contexts:
-  - context:
-      cluster: kubernetes (lokasjon)
-      user: kubernetes-admin (legitimasjon)
-      namespace: ...
-    name: kubernetes-admin@kubernetes
-current-context: kubernetes-admin@kubernetes
-users:
-  - name: kubernetes-admin
-    user:
-      client-certificate-data: ... (base64 cert, token, password)
-      client-key-data: ... (private key)
-
-................................................................................
 SERTIFIKAT
 
 Nytt sertifikat for ny user
@@ -85,30 +63,3 @@ Bruk kubeconfig
   autentisering
   kryptering
   
-................................................................................
-KONTROLLPLANNODE 
-/etc/kubernetes/
-  manifests/
-  pki/
-  admin.conf (kubeconfig file: kubernetes-admin login apiserver)
-  controller-manager.conf (kubeconfig file: login apiserver)
-  kubelet.conf (kubeconfig file: login apiserver)
-  scheduler.conf (kubeconfig file: login apiserver)
-
-/etc/kubernetes/pki/
-  etcd/
-  apiserver-etcd-client.crt
-  apiserver-etcd-client.key
-  apiserver-kubelet-client.crt
-  apiserver-kubelet-client.key
-  apiserver.crt (public cert, used for http encryption)
-  apiserver.key (private key)
-  ca.crt (public cert)
-  ca.key (private key)
-  front-proxy-ca.crt
-  front-proxy-ca.key
-  front-proxy-client.crt
-  front-proxy-client.key
-  sa.key (private key)
-  sa.pub (public key)
-
