@@ -15,6 +15,14 @@ KUBECTL
 
   kubectl version --short
 
+  kubectl cluster-info [dump]
+  kubectl proxy [--port 8080] & (connects, authenticates)
+
+  kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
+  kubectl api-versions
+  kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
+
+  ---------
   kubectl config view [--minify] [--raw]
   kubectl config get-clusters
   kubectl config set-cluster ...
@@ -34,13 +42,6 @@ KUBECTL
   kubectl auth can-i VERB [TYPE | TYPE/NAME | NONRESOURCEURL]
   kubectl auth reconcile -f FILENAME
 
-  kubectl cluster-info [dump]
-  kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
-  kubectl api-versions
-  kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
-
-  kubectl proxy [--port 8080] & (connects, authenticates)
-
   ---------
   kubectl get all [-A] [-l QUERY] 
   kubectl get RESOURCE [-A] [-l QUERY]
@@ -56,9 +57,10 @@ KUBECTL
   ---------
   kubectl run NAME --image=IMAGE [--dry-run] [-o yaml]
 
-  kubectl create ns NAME [--dry-run] [-o yaml]
   kubectl create cm NAME [--from-literal k=v] [--dry-run] [-o yaml]
   kubectl create deploy NAME --image=IMAGE [--dry-run] [-o yaml]
+  kubectl create ns NAME [--dry-run] [-o yaml]
+  kubectl create sa NAME [--dry-run] [-o yaml]
   kubectl create svc TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
   kubectl create -f FILE|DIR --record --save-config
 
