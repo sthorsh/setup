@@ -8,19 +8,12 @@ KUBECTL
   kubectl <cmd> --help
 
   ---------
-  kubectl options → --as='...'
+  kubectl options → --as=system:serviceaccount:NS:SA
   kubectl options → --kubeconfig FILE
   kubectl options → --namespace NS
   kubectl options → -v6..N
 
   kubectl version --short
-
-  kubectl cluster-info [dump]
-  kubectl proxy [--port 8080] & (connects, authenticates)
-
-  kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
-  kubectl api-versions
-  kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
 
   ---------
   kubectl config view [--minify] [--raw]
@@ -39,8 +32,17 @@ KUBECTL
 
   kubectl certificate approve | deny
 
-  kubectl auth can-i VERB [TYPE | TYPE/NAME | NONRESOURCEURL]
+  kubectl auth can-i --list
+  kubectl auth can-i VERB TYPE|TYPE/NAME|NONRESOURCEURL
   kubectl auth reconcile -f FILENAME
+
+  ---------
+  kubectl cluster-info [dump]
+  kubectl proxy [--port 8080] & (connects, authenticates)
+
+  kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
+  kubectl api-versions
+  kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
 
   ---------
   kubectl get all [-A] [-l QUERY] 
@@ -60,6 +62,8 @@ KUBECTL
   kubectl create cm NAME [--from-literal k=v] [--dry-run] [-o yaml]
   kubectl create deploy NAME --image=IMAGE [--dry-run] [-o yaml]
   kubectl create ns NAME [--dry-run] [-o yaml]
+  kubectl create role demorole --verb=get,list --resource=pods
+  kubectl create rolebinding demorolebinding --role=demorole --serviceaccount=default:mysvcaccount1
   kubectl create sa NAME [--dry-run] [-o yaml]
   kubectl create svc TYPE NAME --tcp 8080:80 [--dry-run] [-o yaml]
   kubectl create -f FILE|DIR --record --save-config

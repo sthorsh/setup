@@ -34,15 +34,15 @@ Service Account (sa)
   Credentials defineres og lagres i K8s (token)
   SA brukes for autentisering, autorisasjon, kryptering
   Hvert ns har en default sa (default)
-  Hver pod refererer til en sa e.g default
+  Hver pod refererer til en sa i samme ns e.g default
   Hver sa har en liste med secrets e.g default-token-6z6hs
-  Hver secret har data med elementer ca.crt, namespace, token
-  I container fs: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-  I container fs: /var/run/secrets/kubernetes.io/serviceaccount/namespace
-  I container fs: /var/run/secrets/kubernetes.io/serviceaccount/token
+  Hver sa secret har data med elementer ca.crt, namespace, token
+! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/namespace
+! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/token
   Ved opprettelse av en sa lager en controller en secret automatisk
 
-Autentisering
+Autentisering plugins (authn)
   Basic HTTP
     • statisk passordfil
   Token
@@ -55,6 +55,13 @@ Autentisering
     • gir støtte for SSO
   ...
 
-Autorisasjon
+Autorisasjon plugins (authz)
   RBAC
-
+  • definerer roller
+  • binder users til roller
+  Node
+  • aksess til kubelet on nodes
+  ABAC
+  • basert på policies + attributter
+  
+  
