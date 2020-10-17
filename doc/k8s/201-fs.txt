@@ -1,0 +1,9 @@
+FILSYSTEM
+
+Kontrollplan
+    
+Container
+  /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+  /var/run/secrets/kubernetes.io/serviceaccount/namespace
+  /var/run/secrets/kubernetes.io/serviceaccount/token
+

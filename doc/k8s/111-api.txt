@@ -1,0 +1,28 @@
+API
+
+API
+  Lese/lage/oppdatere/slette ressurser
+  Spesielle requests: kubectl exec, logs, --watch
+  Cf https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/
+
+Objekt e.g
+  Gruppe: apps
+  Versjon: v1
+  Kind: Deployment
+
+Ressurs e.g
+  Navn: deployments
+  Kortnavn: deploy
+  Gruppe: apps
+  Versjon: v1
+  Namespaced: true
+  Kind: Deployment
+
+Workloads
+  $ kubectl explain pod
+  $ kubectl explain deployment
+  $ kubectl explain daemonset
+  $ kubectl explain job
+
+Config and storage
+  $ kubectl explain secret

@@ -1,24 +1,8 @@
-API
-
-API
-  Lese/lage/oppdatere/slette ressurser
-  Spesielle requests: kubectl exec, logs, --watch
-  Cf https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/
-
-Objekt e.g
-  Gruppe: apps
-  Versjon: v1
-  Kind: Deployment
-
-Ressurs e.g
-  Navn: deployments
-  Kortnavn: deploy
-  Gruppe: apps
-  Versjon: v1
-  Namespaced: true
-  Kind: Deployment
+API REQUEST
 
 URL
+  URL : http[s]://apiserver:port/version
+  ...
   URL₁: http[s]://apiserver:port/api/VERSION/RESOURCE_TYPE[/RESOURCE_NAME]
   URL₂: http[s]://apiserver:port/api/VERSION/namespaces/NS/RESOURCE_TYPE[/RESOURCE_NAME]
   URL₃: http[s]://apiserver:port/apis/GROUP/VERSION/RESOURCE_TYPE[/RESOURCE_NAME]

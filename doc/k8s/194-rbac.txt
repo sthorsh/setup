@@ -1,52 +1,11 @@
 RBAC
 
-Autorisasjon
-  Tillate requestor å utføre action på ressurs: ja/nei
-  Basert på Restful API semantikk verb on noun: e.g get pods
-  Regler tillater å utføre action på ressurs: default er deny
-  K8s binder subjekter til regler: svc accounts, users, groups
-
-RBAC
-  Rollebasert aksesskontroll
-  Authz plugin enabled på apiserver
-
 Subjekt
   User
   Group
   Service Account
   
-API objekter
-  Role
-  RoleBinding
-  ClusterRole
-  ClusterRoleBinding
-
 Role
-  Definerer verb on noun (hva)
-  Namespaced
-  Består av en eller flere regler i.e verb on noun
-  Default for k8s er deny verb on noun (regler allows)
-
-RoleBinding
-  Definerer subjekter (hvem)
-  Refererer til Roles
-  Namespaced
-
-ClusterRole
-  Cf Role
-  På tvers av namespace evt cluster-wide
-  Default ClusteRoles: admin, edit, view, cluster-admin, ...
-
-ClusterRoleBinding
-  Cf RoleBinding
-  På tvers av namespace evt cluster-wide
-
-Kombinasjoner
-  RoleBinding → Role (pods)
-  RoleBinding → ClusterRole (pods)
-  ClusterRoleBinding → ClusterRole (pv, noder)
-
-Role API
   apiVersion: rbac.authorization.k8s.io/v1
   kind: Role
   metadata:
@@ -55,9 +14,19 @@ Role API
   rules:
   - apiGroups: [""]
     resources: ["pods"]
-    verbs: [*, "get", "list", "create", "update", "patch", "watch", "delete", "deletecollection"]
+    verbs: [*]
 
-RoleBinding API
+ClusterRole
+  apiVersion: rbac.authorization.k8s.io/v1
+  kind: ClusterRole
+  metadata:
+    name: democlusterrole
+  rules:
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: [*]
+
+RoleBinding
   apiVersion: rbac.authorization.k8s.io/v1
   kind: RoleBinding
   metadata:
@@ -70,6 +39,31 @@ RoleBinding API
   subjects:
   - apiGroup: rbac.authorization.k8s.io
     kind: User | Group | ServiceAccount
-    name: mysvcaccount1 | demouser | demogroup                
+    name: demouser | demogroup | demosa
     namespace: ns1
   
+ClusterRoleBinding
+  apiVersion: rbac.authorization.k8s.io/v1
+  kind: ClusterRoleBinding
+  metadata:
+    name: democlusterrolebinding
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: democlusterrole
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User | Group | ServiceAccount
+    name: demouser | demogroup | demosa
+
+Verb
+  *, get, list, create, update, patch, watch, delete, deletecollection
+
+Default ClusteRoles
+  admin, edit, view, cluster-admin, ...
+ 
+Kombinasjoner
+  Subjekt → RoleBinding → Role (pods)
+  Subjekt → RoleBinding → ClusterRole (pods)
+  Subjekt → ClusterRoleBinding → ClusterRole (pv, noder)
+             

@@ -13,8 +13,6 @@ KUBECTL
   kubectl options → --namespace NS
   kubectl options → -v6..N
 
-  kubectl version --short
-
   ---------
   kubectl config view [--minify] [--raw]
   kubectl config get-clusters
@@ -37,12 +35,14 @@ KUBECTL
   kubectl auth reconcile -f FILENAME
 
   ---------
+  kubectl version --short
+
   kubectl cluster-info [dump]
   kubectl proxy [--port 8080] & (connects, authenticates)
 
   kubectl api-resources [--api-group GROUP] [--namespaced=true|false]
   kubectl api-versions
-  kubectl explain RESOURCE.FIELD₁.FIELD₂... [--api-version VERSION]
+  kubectl explain RESOURCE.FIELD.... [--api-version VERSION] [--recursive]
 
   ---------
   kubectl get all [-A] [-l QUERY] 
