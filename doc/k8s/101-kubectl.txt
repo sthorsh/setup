@@ -8,25 +8,32 @@ KUBECTL
   kubectl <cmd> --help
 
   ---------
-  kubectl options → --as=system:serviceaccount:NS:SA
-  kubectl options → --kubeconfig FILE
-  kubectl options → --namespace NS
-  kubectl options → -v6..N
-
+  kubectl options → --as=USERNAME
+  kubectl options → --certificate-authority=home/svein/tmp/ca.crt 
+  kubectl options → --client-certificate=/home/svein/tmp/client.crt  
+  kubectl options → --client-key=/home/svein/tmp/client.key get pods
+  kubectl options → --kubeconfig=/home/svein/tmp/config
+  kubectl options → --namespace=default
+  kubectl options → --server=https://192.168.56.101:6443 
+  kubectl options → --username=kubernetes-admin
+  kubectl options →  -v6
+                      
   ---------
   kubectl config view [--minify] [--raw]
   kubectl config get-clusters
-  kubectl config set-cluster ...
-  kubectl config delete-cluster ...
   kubectl config get-contexts
-  kubectl config set-context ...
-  kubectl config rename-context ...
-  kubectl config delete-context ...
   kubectl config current-context
-  kubectl config use-context ...
-  kubectl config unset current-context
-  kubectl config set-credentials ...
-  kubectl config unset users
+    kubectl config set PROPERTY_NAME PROPERTY_VALUE
+    kubectl config set-cluster c1 --embed-certs --certificate-authority=PATH --server=URL
+    kubectl config set-context kubernetes-admin@c1 --cluster=c1 --user=kubernetes-admin
+    kubectl config set-credentials kubernetes-admin --username=admin --password=admin
+    kubectl config set-credentials kubernetes-admin --token=BEARER_TOKEN
+    kubectl config set-credentials kubernetes-admin --embed-certs --client-certificate=PATH --client-key=PATH
+    ubectl config rename-context  kubernetes-admin@c1 NEW_NAME
+    kubectl config use-context kubernetes-admin@c1  
+    kubectl config delete-cluster c1
+    kubectl config delete-context kubernetes-admin@c1
+    kubectl config unset PROPERTY
 
   kubectl certificate approve | deny
 
