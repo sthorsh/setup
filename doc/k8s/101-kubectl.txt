@@ -8,34 +8,41 @@ KUBECTL
   kubectl <cmd> --help
 
   ---------
-  kubectl options → --as=USERNAME
-  kubectl options → --certificate-authority=home/svein/tmp/ca.crt 
-  kubectl options → --client-certificate=/home/svein/tmp/client.crt  
-  kubectl options → --client-key=/home/svein/tmp/client.key get pods
-  kubectl options → --kubeconfig=/home/svein/tmp/config
-  kubectl options → --namespace=default
-  kubectl options → --server=https://192.168.56.101:6443 
-  kubectl options → --username=kubernetes-admin
-  kubectl options →  -v6
+  kubectl options
+  → --as=default
+    --certificate-authority=ca.crt 
+    --client-certificate=client.crt  
+    --client-key=client.key
+    --kubeconfig=config
+    --cluster=kubernetes
+    --context=kubernetes-admin@kubernetes
+    --namespace=default
+    --password=admin
+    --server=https://192.168.56.101:6443 
+    --token=$TOKEN
+    --user=kubernetes-admin
+    --username=admin      
+    --v=6
                       
   ---------
   kubectl config view [--minify] [--raw]
   kubectl config get-clusters
+  kubectl config set-cluster c1 --certificate-authority=ca.crt --embed-certs --server=https://192.168.56.101:6443 
+  kubectl config delete-cluster c1
   kubectl config get-contexts
+  kubectl config set-context kubernetes-admin@c1 --cluster c1 --user=kubernetes-admin
+  kubectl config rename-context OLD_NAME NEW_NAME
+  kubectl config delete-context kubernetes-admin@c1
   kubectl config current-context
-    kubectl config set PROPERTY_NAME PROPERTY_VALUE
-    kubectl config set-cluster c1 --embed-certs --certificate-authority=PATH --server=URL
-    kubectl config set-context kubernetes-admin@c1 --cluster=c1 --user=kubernetes-admin
-    kubectl config set-credentials kubernetes-admin --username=admin --password=admin
-    kubectl config set-credentials kubernetes-admin --token=BEARER_TOKEN
-    kubectl config set-credentials kubernetes-admin --embed-certs --client-certificate=PATH --client-key=PATH
-    ubectl config rename-context  kubernetes-admin@c1 NEW_NAME
-    kubectl config use-context kubernetes-admin@c1  
-    kubectl config delete-cluster c1
-    kubectl config delete-context kubernetes-admin@c1
-    kubectl config unset PROPERTY
+  kubectl config use-context kubernetes-admin@c1  
+  kubectl config set-credentials kubernetes-admin --username=admin --password=admin
+  kubectl config set-credentials kubernetes-admin --token=$TOKEN
+  kubectl config set-credentials kubernetes-admin --client-certificate client.crt --embed-certs --client-key client.key
+  kubectl config set PROPERTY_NAME PROPERTY_VALUE
+  kubectl config unset PROPERTY_NAME
 
-  kubectl certificate approve | deny
+  kubectl certificate approve
+  kubectl certificate deny
 
   kubectl auth can-i --list
   kubectl auth can-i VERB TYPE|TYPE/NAME|NONRESOURCEURL
