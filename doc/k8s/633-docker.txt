@@ -1,8 +1,0 @@
-DOCKER
-
-Docker
-  Kjører containere
-  Cf docker runtime
-
-Service
-  $ systemctl <cmd> docker

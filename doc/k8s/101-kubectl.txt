@@ -8,8 +8,8 @@ KUBECTL
   kubectl <cmd> --help
 
   ---------
-  kubectl options
-  → --as=default
+  kubectl options →
+    --as=default
     --certificate-authority=ca.crt 
     --client-certificate=client.crt  
     --client-key=client.key

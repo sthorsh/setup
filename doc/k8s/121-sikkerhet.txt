@@ -1,20 +1,34 @@
 SIKKERHET
 
-Klient/server
-  Bruker → apiserver
-  Service Account → apiserver
-  Scheduler → apiserver
-  Controller manager → apiserver
-  Kubelet → apiserver
-  Kube-proxy → apiserver
+Klient
+  Bruker
+  Service account
+  Scheduler
+  Controller manager
+  Kubelet
+  Kube-proxy
+
+API request
+  Autentisering
+  Autorisasjon
+  Admission control
+  Requestprosessering
+  
+Autentisering
+  Basic HTTP
+  Autentiseringstoken
+  Klientsertifikat
+  OIDC
   ...
 
-Apiserver trinn
-  Autentisering ✓
-  Autorisasjon  ✓ 
-  Adgangskontroll ✓
-  Prosessering av request
-  
+Autentiseringstoken
+  HTTP Authorization Header
+
+Kientsertifikat
+  Brukernavn: CN
+  Gruppenavn: OU
+
+---------------------------------------
 Bruker
   Et menneske aksesserer apiserver e.g kubectl
   Apiserver autentiserer: User Account e.g admin
@@ -42,26 +56,14 @@ Service Account (sa)
 ! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/token
   Ved opprettelse av en sa lager en controller en secret automatisk
 
-Autentisering plugins (authn)
-  Basic HTTP
-    • statisk passordfil
-  Token
-    • HTTP Authorization Header
-  Sertifikat
-    • brukernavn CN
-    • gruppenavn O/OU
-  OIDC
-    • ekstern provider
-    • gir støtte for SSO
-  ...
 
-Autorisasjon plugins (authz)
+Rq authz
   RBAC
-  • definerer roller
-  • binder users til roller
+    • definerer roller
+    • binder users til roller
   Node
-  • aksess til kubelet on nodes
+    • aksess til kubelet on nodes
   ABAC
-  • basert på policies + attributter
-  
+    • basert på policies + attributter
+  ...
   
