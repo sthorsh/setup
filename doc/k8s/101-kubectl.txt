@@ -9,7 +9,8 @@ KUBECTL
 
   ---------
   kubectl options →
-    --as=default
+    --as=john.doe@acme.com
+    --as-group=system:masters
     --certificate-authority=ca.crt 
     --client-certificate=client.crt  
     --client-key=client.key

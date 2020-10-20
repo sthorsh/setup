@@ -1,5 +1,12 @@
-SERTIFIKAT
+SERTIFIKATER
 
+# Lese client cert
+$ kubectl config view --raw -o jsonpath='{ .users[*].user.client-certificate-data  }' | base64 --decode > client.crt
+$ openssl x509 -in client.crt -text -noout
+$ openssl x509 -in client.crt -text -noout | grep Issuer
+$ openssl x509 -in client.crt -text -noout | grep Subject
+
+--------------------------------------------------
 Nytt sertifikat for ny user
 
   # Create private key

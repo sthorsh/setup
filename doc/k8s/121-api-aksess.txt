@@ -9,7 +9,7 @@ Brukere
   User accounts
   Service accounts
 
-User accounts
+User account
   For mennesker
   Håndteres utenfor k8s
   Skop: globalt
@@ -18,8 +18,15 @@ User accounts
 Service account
   For prosesser
   Håndteres internt i k8s
-  Skop: namespaced
+  Skop: namespace 
   API objekt: ServiceAccount
+  Hvert ns har en sa (default)
+  Hver pod refererer til en sa i samme ns
+  Hver sa har en liste med secrets
+  Hver secret har data: ca.crt, namespace, token
+  Container: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt (trust)
+  Container: /var/run/secrets/kubernetes.io/serviceaccount/namespace (scope)
+  Container: /var/run/secrets/kubernetes.io/serviceaccount/token (authn, encrypt)
 
 API-request
   Knyttet til vanlig bruker
@@ -27,51 +34,23 @@ API-request
   Anonym request
   User impersonation
   
-Autentisering
-  Klientsertifikat
-  Auth/bearer/sa tokens
-  HTTP basic auth
-  Autentiseringsproxy (SAML mfl)
-  OIDC
-  ...
-
 Attributter
   Brukernavn: kube-admin
-  UID
+  UID:
   Gruppenavn: system:authenticated, ...
   Ekstrafelt: map of strings
 
-=======================================================================
-https://kubernetes.io/docs/reference/access-authn-authz/authentication/
-
-Kientsertifikat
+Klientsertifikat
+  Authn: gyldig sertifikat
+  Authz: CN, OU
   Brukernavn: CN
   UID: ?
   Gruppenavn: OUs
 
-Autentiseringstoken
-  Hvert namespace har en service account
-  Hver service account ref til en secret
-  Hver secret har ca.crt, namespace og token
-
----------------------------------------
-  Credentials defineres og lagres utenfor K8s:
-    • passordfil
-    • autentiseringstoken
-    • klientsertifikat
-    • katalogtjeneste
-  Brukernavn brukes ifm autorisasjon, adgangskontroll og logging
-  En eller flere brukere kan organiseres i en eller flere grupper
-  
-Service Account (sa)
-  Credentials defineres og lagres i K8s (token)
-  SA brukes for autentisering, autorisasjon, kryptering
-  Hver pod refererer til en sa i samme ns e.g default
-  Hvert ns har en sa "default" 
-  Hver sa har en liste med secrets e.g default-token-6z6hs
-  Hver sa secret har data med elementer ca.crt, namespace, token
-! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/namespace
-! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/token
-  Ved opprettelse av en sa lager en controller en secret automatisk
+Service account token
+  Authn: gyldig token
+  Authz: brukernavn, gruppenavn
+  Brukernavn: system:serviceaccount:(NS):(SA)
+  UID: 
+  Gruppenavn: system:serviceaccounts, system:serviceaccounts:(NS)
 
