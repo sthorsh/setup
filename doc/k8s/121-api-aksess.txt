@@ -1,54 +1,73 @@
-SIKKERHET
+AKSESS
 
-Klient
-  Bruker
-  Service account
-  Scheduler
-  Controller manager
-  Kubelet
-  Kube-proxy
-
-API request
+Aksess
   Autentisering
   Autorisasjon
   Admission control
-  Requestprosessering
+
+Brukere
+  User accounts
+  Service accounts
+
+User accounts
+  For mennesker
+  Håndteres utenfor k8s
+  Skop: globalt
+  API objekt: n/a
+  
+Service account
+  For prosesser
+  Håndteres internt i k8s
+  Skop: namespaced
+  API objekt: ServiceAccount
+
+API-request
+  Knyttet til vanlig bruker
+  Knyttet til service account
+  Anonym request
+  User impersonation
   
 Autentisering
-  Basic HTTP
-  Autentiseringstoken
   Klientsertifikat
+  Auth/bearer/sa tokens
+  HTTP basic auth
+  Autentiseringsproxy (SAML mfl)
   OIDC
   ...
 
-Autentiseringstoken
-  HTTP Authorization Header
+Attributter
+  Brukernavn: kube-admin
+  UID
+  Gruppenavn: system:authenticated, ...
+  Ekstrafelt: map of strings
+
+=======================================================================
+https://kubernetes.io/docs/reference/access-authn-authz/authentication/
 
 Kientsertifikat
   Brukernavn: CN
-  Gruppenavn: OU
+  UID: ?
+  Gruppenavn: OUs
+
+Autentiseringstoken
+  Hvert namespace har en service account
+  Hver service account ref til en secret
+  Hver secret har ca.crt, namespace og token
 
 ---------------------------------------
-Bruker
-  Et menneske aksesserer apiserver e.g kubectl
-  Apiserver autentiserer: User Account e.g admin
-  API objekt: n/a
   Credentials defineres og lagres utenfor K8s:
     • passordfil
-    • tokens
-    • sertifikat
+    • autentiseringstoken
+    • klientsertifikat
     • katalogtjeneste
   Brukernavn brukes ifm autorisasjon, adgangskontroll og logging
   En eller flere brukere kan organiseres i en eller flere grupper
   
 Service Account (sa)
-  Prosess i container i pod aksesserer apiserver
-  Apiserver autentiserer: Service Account e.g default
-  API objekt: ServiceAccount (namespaced)
   Credentials defineres og lagres i K8s (token)
   SA brukes for autentisering, autorisasjon, kryptering
-  Hvert ns har en default sa (default)
   Hver pod refererer til en sa i samme ns e.g default
+  Hvert ns har en sa "default" 
   Hver sa har en liste med secrets e.g default-token-6z6hs
   Hver sa secret har data med elementer ca.crt, namespace, token
 ! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
@@ -56,14 +75,3 @@ Service Account (sa)
 ! I container fs: /var/run/secrets/kubernetes.io/serviceaccount/token
   Ved opprettelse av en sa lager en controller en secret automatisk
 
-
-Rq authz
-  RBAC
-    • definerer roller
-    • binder users til roller
-  Node
-    • aksess til kubelet on nodes
-  ABAC
-    • basert på policies + attributter
-  ...
-  
