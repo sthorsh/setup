@@ -24,9 +24,6 @@ Service account
   Hver pod refererer til en sa i samme ns
   Hver sa har en liste med secrets
   Hver secret har data: ca.crt, namespace, token
-  Container: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt (trust)
-  Container: /var/run/secrets/kubernetes.io/serviceaccount/namespace (scope)
-  Container: /var/run/secrets/kubernetes.io/serviceaccount/token (authn, encrypt)
 
 API-request
   Knyttet til vanlig bruker
@@ -54,3 +51,8 @@ Service account token
   UID: 
   Gruppenavn: system:serviceaccounts, system:serviceaccounts:(NS)
 
+Autorisasjon
+  RBAC
+  Node
+  ABAC
+  
