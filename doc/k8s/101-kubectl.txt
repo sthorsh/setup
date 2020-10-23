@@ -42,8 +42,8 @@ KUBECTL
   kubectl config set PROPERTY_NAME PROPERTY_VALUE
   kubectl config unset PROPERTY_NAME
 
-  kubectl certificate approve
-  kubectl certificate deny
+  kubectl certificate approve NAME
+  kubectl certificate deny NAME
 
   kubectl auth can-i --list
   kubectl auth can-i VERB TYPE|TYPE/NAME|NONRESOURCEURL

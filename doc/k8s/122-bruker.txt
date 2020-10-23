@@ -1,0 +1,43 @@
+BRUKER
+
+Lage nytt sertifikat for ny bruker
+
+  # Lag private key
+  $ openssl genrsa -out alice.key 2048
+
+  # Lag CSR
+  $ openssl req -new -key alice.key -out alice.csr -^Cbj "/CN=alice"
+
+  # Enkode CSR
+  $ cat alice.csr | base64 | tr -d "\n" > alice.base64.csr
+
+  # Last opp CSR
+  $ cat <<EOF | kubectl apply -f -
+    apiVersion: certificates.k8s.io/v1beta1
+    kind: CertificateSigningRequest
+    metadata:
+      name: alice
+    spec:
+      groups:
+      - system:authenticated
+      request: $(cat alice.base64.csr)
+      usages:
+      - client auth
+    EOF
+
+  # Godjenn CSR
+  $ kubectl certificate approve alice
+
+  # Last ned sertifikat
+  $ kubectl get csr alice -o jsonpath='{ .status.certificate  }' > alice.base64.crt
+  
+  # Dekode sertifikat
+  $ base64 --decode alice.base64.crt > alice.crt
+
+  # Les sertifikat
+  $ openssl x509 -in alice.crt -text -noout
+  $ openssl x509 -in alice.crt -text -noout | grep Issuer
+  $ openssl x509 -in alice.crt -text -noout | grep Validity --after-context=2
+  $ openssl x509 -in alice.crt -text -noout | grep Subject:
+  $ openssl x509 -in alice.crt -text -noout | grep extensions --after-context=4
+

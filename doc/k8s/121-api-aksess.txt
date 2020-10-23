@@ -6,10 +6,10 @@ Aksess
   Admission control
 
 Brukere
-  User accounts
-  Service accounts
+  Bruker (user)
+  Service account
 
-User account
+Bruker
   For mennesker
   Håndteres utenfor k8s
   Skop: globalt
