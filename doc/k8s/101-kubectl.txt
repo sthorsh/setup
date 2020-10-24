@@ -12,35 +12,41 @@ KUBECTL
     --as=john.doe@acme.com
     --as-group=system:masters
     --certificate-authority=ca.crt 
-    --client-certificate=client.crt  
-    --client-key=client.key
+    --client-certificate=alice.crt  
+    --client-key=alice.key
+    --cluster=c1
+    --context=alice@c1
+    --insecure-skip-tls-verify
     --kubeconfig=config
-    --cluster=kubernetes
-    --context=kubernetes-admin@kubernetes
     --namespace=default
     --password=admin
     --server=https://192.168.56.101:6443 
     --token=$TOKEN
-    --user=kubernetes-admin
-    --username=admin      
+    --user=alice
+    --username=alice
     --v=6
+
+  kubectl --client-certificate alice.crt --client-key alice.key \
+          --certificate-authority ca.crt --server=https://192.168.56.101:6443 version --short
                       
   ---------
-  kubectl config view [--minify] [--raw]
-  kubectl config get-clusters
-  kubectl config set-cluster c1 --certificate-authority=ca.crt --embed-certs --server=https://192.168.56.101:6443 
-  kubectl config delete-cluster c1
-  kubectl config get-contexts
-  kubectl config set-context kubernetes-admin@c1 --cluster c1 --user=kubernetes-admin
-  kubectl config rename-context OLD_NAME NEW_NAME
-  kubectl config delete-context kubernetes-admin@c1
-  kubectl config current-context
-  kubectl config use-context kubernetes-admin@c1  
-  kubectl config set-credentials kubernetes-admin --username=admin --password=admin
-  kubectl config set-credentials kubernetes-admin --token=$TOKEN
-  kubectl config set-credentials kubernetes-admin --client-certificate client.crt --embed-certs --client-key client.key
-  kubectl config set PROPERTY_NAME PROPERTY_VALUE
-  kubectl config unset PROPERTY_NAME
+  export KUBECONFIG=alice.config
+
+  kubectl [--kubeconfig=alice.config] config view --minify --raw
+  kubectl [--kubeconfig=alice.config] config get-clusters
+  kubectl [--kubeconfig=alice.config] config set-cluster c1 --certificate-authority=ca.crt --server=https://192.168.56.101:6443 --embed-certs
+  kubectl [--kubeconfig=alice.config] config delete-cluster c1
+  kubectl [--kubeconfig=alice.config] config get-contexts
+  kubectl [--kubeconfig=alice.config] config set-context alice@c1 --user=alice --cluster c1
+  kubectl [--kubeconfig=alice.config] config rename-context CTX1 CTX2
+  kubectl [--kubeconfig=alice.config] config delete-context alice@c1
+  kubectl [--kubeconfig=alice.config] config current-context
+  kubectl [--kubeconfig=alice.config] config use-context alice@c1  
+  kubectl [--kubeconfig=alice.config] config set-credentials alice --client-certificate alice.crt --client-key alice.key --embed-certs
+  kubectl [--kubeconfig=alice.config] config set-credentials libra --token=$TOKEN 
+  kubectl [--kubeconfig=alice.config] config set-credentials alice --username=$USER --password=$PASSWORD 
+  kubectl [--kubeconfig=alice.config] config set PROPERTY_NAME PROPERTY_VALUE 
+  kubectl [--kubeconfig=alice.config] config unset PROPERTY_NAME
 
   kubectl certificate approve NAME
   kubectl certificate deny NAME

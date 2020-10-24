@@ -27,7 +27,7 @@ Lage/overskrive
   Response body: json
 
 Oppdatere
-  PATCH URL₁|URL₂|URL₃|URL₄
+  PATCH URL₁|URL₂|URL₃|URL₄ - e.g $ kubectl scale deployment nginx --replicas=3 -v6 → GET + PATCH
   Request body: json
   Response code: 200 OK, 4xx, 5xx
   Response body: json

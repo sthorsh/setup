@@ -1,7 +1,5 @@
 BRUKER
 
-Lage nytt sertifikat for ny bruker
-
   # Lag private key
   $ openssl genrsa -out alice.key 2048
 
