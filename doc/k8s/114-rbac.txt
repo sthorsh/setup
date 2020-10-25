@@ -1,69 +1,70 @@
 RBAC
 
-Subjekt
-  User
-  Group
-  Service Account
-  
-Role
-  apiVersion: rbac.authorization.k8s.io/v1
-  kind: Role
-  metadata:
-    name: demorole
-    namespace: ns1
-  rules:
-  - apiGroups: [""]
-    resources: ["pods"]
-    verbs: [*]
+Subjekter
+  User: cluster-wide
+  Group: cluster-wide
+  ServiceAccount: namespaced
 
-ClusterRole
+Bindinger
+  $ kubectl get clusterrolebindings
+  $ kubectl get rolebindings [-A]
+  $ kubectl create clusterrolebinding crb1 --user=u1 --clusterrole=cr1
+  $ kubectl create rolebinding rb1 --user=u1 --role=r1 --namespace=ns1
+
+ClusterRoleBinding
   apiVersion: rbac.authorization.k8s.io/v1
-  kind: ClusterRole
+  kind: ClusterRoleBinding
   metadata:
-    name: democlusterrole
-  rules:
-  - apiGroups: [""]
-    resources: ["nodes"]
-    verbs: [*]
+    name: crb1
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User|Group|ServiceAccount
+    name: username
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: cr1
 
 RoleBinding
   apiVersion: rbac.authorization.k8s.io/v1
   kind: RoleBinding
   metadata:
-    name: demorolebinding
+    name: rb1
+    namespace: ns1
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User|Group|ServiceAccount
+    name: username
     namespace: ns1
   roleRef:
     apiGroup: rbac.authorization.k8s.io
-    kind: Role
-    name: demorole
-  subjects:
-  - apiGroup: rbac.authorization.k8s.io
-    kind: User | Group | ServiceAccount
-    name: demouser | demogroup | demosa
-    namespace: ns1
-  
-ClusterRoleBinding
+    kind: ClusterRole|Role
+    name: cr1|r1
+
+Roller
+  $ kubectl get clusterroles → cluster-admin, admin, edit, view
+  $ kubectl get roles [-A]
+  $ kubectl create clusterrole cr1 --verb=get,list --resource=pods
+  $ kubectl create role r1 --verb=get,list --resource=pods --namespace=ns1
+
+ClusterRole
   apiVersion: rbac.authorization.k8s.io/v1
-  kind: ClusterRoleBinding
+  kind: ClusterRole
   metadata:
-    name: democlusterrolebinding
-  roleRef:
-    apiGroup: rbac.authorization.k8s.io
-    kind: ClusterRole
-    name: democlusterrole
-  subjects:
-  - apiGroup: rbac.authorization.k8s.io
-    kind: User | Group | ServiceAccount
-    name: demouser | demogroup | demosa
+    name: cr1
+  rules:
+  - apiGroups: ["*", "", ...]
+    resources: ["*", "nodes", "persistentVolumes", ...]
+    verbs: ["*", "get", "list", "watch", "create", "update", "patch", "delete", "deleteCollection"]
 
-Verb
-  *, get, list, create, update, patch, watch, delete, deletecollection
+Role
+  apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    name: r1
+    namespace: ns1
+  rules:
+  - apiGroups: ["*", "", ...]
+    resources: ["*", "pods", ...]
+    verbs: ["*", "get", "list", "watch", "create", "update", "patch", "delete", "deleteCollection"]
 
-Default ClusteRoles
-  admin, edit, view, cluster-admin, ...
- 
-Kombinasjoner
-  Subjekt → RoleBinding → Role (pods)
-  Subjekt → RoleBinding → ClusterRole (pods)
-  Subjekt → ClusterRoleBinding → ClusterRole (pv, noder)
-             

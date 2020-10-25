@@ -1,4 +1,5 @@
 KUBECTL
+
   kubectl [cmd] [subcmds] [type] [name] [global_opts] [cmd_opts]
   
   kubectl <ht>
