@@ -1,0 +1,22 @@
+MOVEMENT
+
+init 
+  Treet
+  Indeks
+  Repository
+
+clone
+  # tre ← indeks ← repo ← rem_repo
+  
+add
+  # tre → indeks
+
+mv
+  # tre → indeks
+
+rm
+  # tre → indeks
+
+commit
+  # indeks → repo
+  
