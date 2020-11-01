@@ -15,6 +15,7 @@ Tag
   Feks .git/refs/tags/clib-v1.2.3 → 7b398de...
 
 Commit
+  Er et snapshot av (en del av) et filsystem
   Er et objekt
   Har en peker til et tree
   Har en peker til sin(e) parent commit(s)

@@ -11,7 +11,7 @@ status
 
 --------------------------------------------------
 add
-  Add til index
+  Change wtree; add til index
 
 mv
   Move in wtree; move in index

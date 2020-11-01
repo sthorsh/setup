@@ -1,51 +1,7 @@
 GIT
 
-config
-  git config --list
-
-init 
-  git init
-  git init DIR
-
-clone
-  # tre ← indeks ← repo ← rem_repo
-  git clone REPO
-  git clone REPO DIR
-
-status
-  git status 
-
-diff
-  git diff
-  git diff --stage
-  git diff COMMIT₁ COMMIT₂
-  
-add
-  # tre → indeks
-  # aka track/stage
-  git add .
-  git add PATH
-
-mv
-  # tre → indeks
-  git mv FILE₁ FILE₂
-
-rm
-  # tre → indeks
-  git rm FILES
-
-commit
-  # indeks → repo
-  git commit -m "commit snapshot"
-  git commit -a -m "..."
-  
-log
-  git log
-  git log --oneline
-  
-===============================================
-  git reset ...               
-  git restore ...             
+git reset ...               
+git restore ...             
 
 --------------------------------
 COMMITS
@@ -67,26 +23,23 @@ COMMITS
     $ git reflog; git cherry-pick <commit>
   
 --------------------------------
-BRANCHES
+BRANCH
   git branch <name>
+  git branch --delete <name>
+
+  git checkout
   git switch <name>
 
-  git merge <branch>
-  git merge --no-ff <branch>
   git rebase <branch>
 
-  git branch --delete <name>
+MERGE
+  git merge <branch>
+  git merge --no-ff <branch>
 
 --------------------------------
 TAGS
   git tag <name>
   git tag --delete <name>
-
---------------------------------
-REMOTES
-  git pull
-  git fetch                   
-  git push                    
 
 --------------------------------
 LOW LEVEL
