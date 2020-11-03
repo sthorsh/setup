@@ -1,26 +1,22 @@
 GIT
 
 help
-  git help
-  git help CMD
+  git help [CMD]
 
 -------------------
 config
-  git config --list
+  git config [--list]
 
 -------------------
 init 
-  git init
-  git init DIR
+  git init [DIR]
 
 clone
-  git clone REPO 
-  git clone REPO DIR
+  git clone REPO [DIR]
 
 -------------------
 status
-  git status
-  git status --short
+  git status [--short]
   
 diff
   git diff
@@ -28,17 +24,10 @@ diff
   git diff COMMIT₁ COMMIT₂
   
 log
-  git log 
-  git log -5
-  git log --all
-  git log --graph 
-  git log --oneline
-  git log --patch
-  git log --stat
+  git log [-5] [--all] [--graph ] [--oneline] [--patch] [--stat]
 
 -------------------
 add
-  git add .
   git add PATH
 
 mv
@@ -55,33 +44,43 @@ commit
   
 -------------------
 checkout
+  git checkout COMMIT
   git checkout -b b1
   git checkout b1
-  git checkout COMMIT
 
+-------------------
 branch
+  git branch -a
+  git branch b1
+  git branch -d b1
 
 switch
+  git switch b1
 
 merge
+  git merge b1
+
+-------------------
+reset
+  git reset [--soft] [--mixed] [--hard] COMMIT
 
 -------------------
 remote
   git remote -v
   
 pull
-  git pull 
-  git pull --rebase 
-  git pull --ff
+  git pull [--rebase] [--ff]
 
 fetch
   git fetch
 
 push
-  git push 
-  git push origin 
-  git push origin master
-  ...
-
+  git push [origin] [master]
+  git push --set-upstream origin b1
+  git push origin --delete b1
+  
 -------------------
 stash
+  git stash list
+  git stash show
+  git stash
