@@ -1,31 +1,58 @@
-HEAD
-  Er en ref til current branch (*)
-  Er en fil med ref til en fil
-  Feks HEAD → refs/head/master
-  Feks HEAD → commit (detached HEAD)
+MODEL
 
-Branch
-  Er en ref til en commit
-  Er en fil med en commit-id (rw)
-  Feks git/refs/heads/master → 7b398de...
+Git
+  Map (bytesekvens → hash)
+  Persistent map (.git)
+  Stupid content tracker (commit)
+  High-level versioned file system
+  Version control system (log, branch)
+  Distributed version control system (remote)
 
-Tag
-  Er en ref til en commit
-  Er en fil med en commit-id (ro)
-  Feks .git/refs/tags/clib-v1.2.3 → 7b398de...
+---
+Blob
+  Et objekt
+  Arbitrary content e.g tekstfil
+  
+Tree
+  Et objekt
+  En katalog
+  Peker til fil(er)
+  Peker til katalog(er)
 
-Commit
-  Er et snapshot av (en del av) et filsystem
-  Er et objekt
-  Har en peker til et tree
-  Har en peker til sin(e) parent commit(s)
+Commit 
+  Et objekt
+  Peker til tree (snapshot)
+  Peker til parent commit(s)
   Unreachable commit: kan ikke nås vha branch el tag
 
-Tree
-  Er et objekt
-  Representerer en katalog
+Annotert tag
+  Et objekt
+  Peker til objekt e.g commit
+  RO dvs kan ikke flyttes (?)
 
-Blob
-  Er et objekt
-  Representerer en fil i en katalog
+Branch
+  En peker
+  b1 → commit
+  RW dvs kan flyttes
+
+HEAD
+  En peker
+  HEAD → branch → commit
+  HEAD → commit (detached HEAD)
+
+Tag
+  En peker
+  t1 → commit
+  RO dvs kan ikke flyttes (?)
+
+-----
+.git/
+  HEAD → branch → commit
+  HEAD → commit
+  objects/blob
+  objects/tree
+  objects/commit
+  objects/annotert_tag
+  refs/heads/branch → commit (rw)
+  refs/tags/tag → commit (ro)
 

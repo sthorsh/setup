@@ -1,4 +1,4 @@
-FILER/OMRÅDER
+AREAS
 
 Filer
   Untracked

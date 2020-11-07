@@ -1,31 +1,28 @@
 GIT
 
 help
-  git help [CMD]
+  git help
+  git help CMD
 
 -------------------
 config
-  git config [--list]
+  git config 
+  git config --list
 
 -------------------
 init 
-  git init [DIR]
+  git init
+  git init DIR
 
 clone
-  git clone REPO [DIR]
+  git clone REPO
+  git clone REPO DIR
 
 -------------------
 status
-  git status [--short]
+  git status
+  git status --short
   
-diff
-  git diff
-  git diff --staged
-  git diff COMMIT₁ COMMIT₂
-  
-log
-  git log [-5] [--all] [--graph ] [--oneline] [--patch] [--stat]
-
 -------------------
 add
   git add PATH
@@ -39,14 +36,22 @@ rm
 
 -------------------
 commit
-  git commit -m "..."
-  git commit -a -m "..."
-  
--------------------
-checkout
-  git checkout COMMIT
-  git checkout -b b1
-  git checkout b1
+  git commit -m ...
+  git commit -a -m ...
+ 
+branch
+
+tag 
+  git tag t1
+  git tag -a t1 -m "message"
+=============================================================================================
+log
+  git log -5 --all --graph --oneline --patch --stat ...
+
+diff
+  git diff
+  git diff --staged
+  git diff COMMIT₁ COMMIT₂
 
 -------------------
 branch
@@ -57,10 +62,17 @@ branch
 switch
   git switch b1
 
+checkout
+  git checkout b1
+  git checkout -b b1
+  git checkout COMMIT
+
 merge
   git merge b1
 
 -------------------
+-------------------
+rebase 
 reset
   git reset [--soft] [--mixed] [--hard] COMMIT
 
