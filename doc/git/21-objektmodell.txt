@@ -1,0 +1,46 @@
+OBJEKTMODELL
+
+Git
+  Map (bytesekvens → hash)
+  Persistent map (.git)
+  Stupid content tracker (commit)
+  High-level versioned file system
+  Version control system (log, branch)
+  Distributed version control system (remote)
+
+---
+HEAD
+  En peker til en branch-peker (current branch)
+  En peker til et commit-objekt (detached HEAD)
+  Cf HEAD
+
+Branch
+  En peker til et commit-objekt
+  Cf refs/heads/
+
+Tag
+  En peker til et commit-objekt (lettvekt)
+  En peker til et tag-objekt (annotert tag)
+  Cf refs/tags/
+
+Tag
+  Et objekt for en annotert tag
+  Har peker til et objekt e.g commit
+  Cf objects/
+
+Commit 
+  Et objekt for en commit
+  Har peker til et tree-objekt
+  Har pekere til parents commit-objekter
+  Cf objects/
+
+Tree
+  Et objekt for en katalog
+  Har pekere til tree-objekter
+  Har pekere til blob-objekter
+  Cf objects/
+
+Blob
+  Et objekt for arbitrary content e.g tekstfiler
+  Cf objects/
+  

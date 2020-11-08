@@ -1,82 +1,81 @@
 GIT
 
-help
-  git help
-  git help CMD
+git help
+git help CMD
 
 -------------------
-config
-  git config 
-  git config --list
+git config 
+git config --list
 
 -------------------
-init 
-  git init
-  git init DIR
+git init
+git init DIR
 
-clone
-  git clone REPO
-  git clone REPO DIR
+git clone REPO
+git clone REPO DIR
 
 -------------------
-status
-  git status
-  git status --short
+git status
+git status --short
   
 -------------------
-add
-  git add PATH
+git add PATH
 
-mv
-  git mv FILE₁ FILE₂
+git mv FILE₁ FILE₂
 
-rm
-  git rm FILES
-  git rm FILES --cached
+git rm FILES
+git rm FILES --cached
 
 -------------------
 commit
   git commit -m ...
   git commit -a -m ...
  
-branch
-
-tag 
-  git tag t1
-  git tag -a t1 -m "message"
-=============================================================================================
 log
   git log -5 --all --graph --oneline --patch --stat ...
 
+-------------------
+branch
+  git branch -v
+  git branch b1
+  git branch -d b1
+
+checkout
+  git checklkj
+
+switch
+  git switch b1
+
+merge
+  git merge b1
+
+-------------------
+tag 
+  git tag
+  git tag t1
+  git tag -a t1 -m "message"
+
+
+
+
+
+*********************************************************************************************
 diff
   git diff
   git diff --staged
   git diff COMMIT₁ COMMIT₂
-
--------------------
-branch
-  git branch -a
-  git branch b1
-  git branch -d b1
-
-switch
-  git switch b1
 
 checkout
   git checkout b1
   git checkout -b b1
   git checkout COMMIT
 
-merge
-  git merge b1
-
--------------------
--------------------
 rebase 
+
 reset
   git reset [--soft] [--mixed] [--hard] COMMIT
 
--------------------
+---------------------------------------------------------------------------------------------
 remote
   git remote -v
   
@@ -91,7 +90,7 @@ push
   git push --set-upstream origin b1
   git push origin --delete b1
   
--------------------
+---------------------------------------------------------------------------------------------
 stash
   git stash list
   git stash show

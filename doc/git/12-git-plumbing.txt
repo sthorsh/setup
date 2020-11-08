@@ -12,3 +12,5 @@ cat-file
   git cat-file -t 58f3805
   git cat-file -p 58f3805
 
+update-ref
+  git update-ref -m "Move b1" refs/heads/b1 c7e9efd
