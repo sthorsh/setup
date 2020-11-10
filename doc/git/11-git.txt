@@ -39,6 +39,11 @@ git branch
 git branch b1
 git branch -d b1
 
+git tag
+git tag t1
+git tag -a t1 -m "..."
+git tag -d t1
+
 git checkout b1
 git checkout COMMIT
 
@@ -46,15 +51,9 @@ git switch b1
 
 git merge b1
 
--------
-
-git tag
-git tag t1
-git tag -a t1 -m "..."
-git tag -d t1
+git rebase 
 
 *********************************************************************************************
-git rebase 
 
 git reset --soft COMMIT
 git reset --hard COMMIT

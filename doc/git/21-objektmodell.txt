@@ -10,8 +10,8 @@ Git
 
 ---
 HEAD
-  En peker til en branch-peker (current branch)
-  En peker til et commit-objekt (detached HEAD)
+  Enten en peker til en branch-peker (current branch)
+  Eller en peker til et commit-objekt (detached HEAD)
   Cf HEAD
 
 Branch
@@ -19,8 +19,8 @@ Branch
   Cf refs/heads/
 
 Tag
-  En peker til et commit-objekt (lettvekt)
-  En peker til et tag-objekt (annotert tag)
+  Enten en peker til et commit-objekt (lettvekt)
+  Eller en peker til et tag-objekt (annotert tag)
   Cf refs/tags/
 
 Tag
@@ -29,15 +29,15 @@ Tag
   Cf objects/
 
 Commit 
-  Et objekt for en commit
-  Har peker til et tree-objekt
-  Har pekere til parents commit-objekter
+  Et objekt for en commit (et snapshot)
+  Har pekere til parents commit-objekter (history)
+  Har peker til et tree-objekt (content)
   Cf objects/
 
 Tree
   Et objekt for en katalog
-  Har pekere til tree-objekter
-  Har pekere til blob-objekter
+  Har pekere til tree-objekter (content)
+  Har pekere til blob-objekter (content)
   Cf objects/
 
 Blob
