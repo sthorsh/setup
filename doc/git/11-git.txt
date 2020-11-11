@@ -51,7 +51,7 @@ git switch b1
 
 git merge b1
 
-git rebase 
+git rebase master (move HEAD, commit copies, mv HEAD, mv b1)
 
 *********************************************************************************************
 
