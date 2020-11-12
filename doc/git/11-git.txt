@@ -20,7 +20,7 @@ git diff
 git diff --staged
 git diff COMMIT₁ COMMIT₂
 
-git log ---all --graph --oneline
+git log -5 --all --graph --oneline
 
 -------------------
 git add PATH
@@ -35,15 +35,19 @@ git commit -m ...
 git commit -a -m ...
 
 -------------------
-git branch
-git branch b1
-git branch -d b1
+git branch -a -v      (show)
+git branch b1         (create)
+git branch -m old new (rename)
+git branch -d b1      (delete)
 
-git tag
-git tag t1
-git tag -a t1 -m "..."
-git tag -d t1
+-------------------
+git tag               (show)  
+git tag t1            (create)
+git tag -a t1 -m "."  (create)
+git tag -d t1         (delete)
 
+-------------------
+git checkout -b b1
 git checkout b1
 git checkout COMMIT
 
@@ -53,26 +57,26 @@ git merge b1
 
 git rebase master (move HEAD, commit copies, mv HEAD, mv b1)
 
-*********************************************************************************************
-
+-------------------
 git reset --soft COMMIT
 git reset --hard COMMIT
 git reset --mixed COMMIT
 
----------------------------------------------------------------------------------------------
+-------------------
 git remote -v
   
-git pull 
+git fetch
+
+git pull
+git pull --no-rebase
 git pull --rebase
 git pull --ff
-
-git fetch
 
 git push [origin] [master]
 git push --set-upstream origin b1
 git push origin --delete b1
   
----------------------------------------------------------------------------------------------
+-------------------
 git stash list
 git stash show
 git stash

@@ -4,9 +4,9 @@ Git
   Map (bytesekvens → hash)
   Persistent map (.git)
   Stupid content tracker (commit)
-  High-level versioned file system
-  Version control system (log, branch)
-  Distributed version control system (remote)
+  High-level versioned file system (snapshot)
+  Version control system (branch, tag, merge, ...)
+  Distributed version control system (remote, ...)
 
 ---
 HEAD

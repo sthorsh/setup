@@ -1,16 +1,15 @@
 GIT PLUMBING
 
-count-objects
-  git count-objects
+git count-objects
 
-hash-object
-  git hash-object --stdin
-  echo "Apple Pie" | git hash-object --stdin
-  echo "Apple Pie" | git hash-object --stdin -w
+git hash-object --stdin
+echo "foobar" | git hash-object --stdin
+echo "foobar" | git hash-object --stdin -w
 
-cat-file  
-  git cat-file -t 58f3805
-  git cat-file -p 58f3805
+git cat-file -t 58f3805
+git cat-file -p 58f3805
 
-update-ref
-  git update-ref -m "Move b1" refs/heads/b1 c7e9efd
+git show-ref HEAD or BRANCH
+
+git update-ref refs/heads/b1 c7e9efd -m "..."
+
