@@ -40,7 +40,7 @@ export VISUAL=/usr/bin/vim
 
 # PS
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 case "$TERM" in
@@ -50,9 +50,11 @@ if [ "$color_prompt" != yes ]; then
     PS1='\u@\h \w \$ '
   else
     if [[ ${EUID} != 0 ]] ; then
+        export PS1="\[\e[06;36m\]\u@\h \w \$(parse_git_branch) $\[\e[00m\] "
         #export PS1='\[\e[01;32m\]\u@\h\[\e[01;34m\][\w]\[\e[01;32m\]\$\[\e[00m\] '
-        #export PS1="\[\e[06;32m\]\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[32m\]$ "
-        export PS1="\[\e[06;32m\]\u@\h\[\e[01;34m\][\w]\[\033[30m\]\$(parse_git_branch)\[\033[32m\]$\[\e[00m\] "
+        #export PS1="\[\e[02;32m\]\u@\h\[\033[34m\][\w]\[\033[33m\]\$(parse_git_branch)\[\033[32m\]$\[\e[00m\] "
+        #export PS1="\[\e[06;32m\]\u@\h\[\e[01;34m\][\w]\[\033[30m\]\$(parse_git_branch)\[\033[34m\] $ \[\e[00m\]"
+        #export PS1="\[\e[01;32m\]\u@\h\[\e[01;34m\] \w \[\033[33m\]\$(parse_git_branch)\[\e[00m\] $ "
     else
         PS1='\e[01;31m\h \W \$\e[00m '
     fi

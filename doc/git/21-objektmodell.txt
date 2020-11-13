@@ -43,4 +43,7 @@ Tree
 Blob
   Et objekt for arbitrary content e.g tekstfiler
   Cf objects/
-  
+
+---
+Regler
+  Aldri rebase en public branch  
