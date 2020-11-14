@@ -1,7 +1,4 @@
-GIT
-
-git reset ...               
-git restore ...             
+LAG EN GITIGNOREFILE
 
 --------------------------------
 COMMITS
@@ -20,35 +17,14 @@ COMMITS
     $ git revert commit
   
   retrieve commits
-    $ git reflog; git cherry-pick <commit>
+    $ git reflog; 
+    $ git cherry-pick <commit>
   
---------------------------------
-BRANCH
-  git branch <name>
-  git branch --delete <name>
+git restore
+  Discard fra wtree: git restore <file>
+  Unstage fra index: git restore --staged <file>
 
-  git checkout
-  git switch <name>
-
-  git rebase <branch>
-
-MERGE
-  git merge <branch>
-  git merge --no-ff <branch>
-
---------------------------------
-TAGS
-  git tag <name>
-  git tag --delete <name>
-
---------------------------------
-LOW LEVEL
-  git cat-file
-
-  ls                          
-  git ls-files                
-  git ls-tree -r HEAD         
-
-  git show-ref --head
-  ...
+git reset
+  F1: reset index fra repo for <path>
+  F2: reset HEAD (soft); reset index (mixed); reset wtree (hard)
 
