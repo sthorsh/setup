@@ -1,4 +1,4 @@
-OBJEKTMODELL
+TEORI
 
 Git
   Distributed version control system (remote, ...)
@@ -8,7 +8,7 @@ Git
   Persistent map (.git)
   Map (bytesekvens → hash)
 
------
+----
 HEAD
   Enten en peker til en branch-peker (current branch)
   Eller en peker til et commit-objekt (detached HEAD)
@@ -44,6 +44,19 @@ Blob
   Et objekt for arbitrary content e.g tekstfiler
   Cf objects/
 
------
+-------
+Områder
+  Arbeidstre
+  Indeks  
+  Lokalt repo
+  Remote repo
+  Stash
+
+Spør to spm for hver cmd
+  Hvordan flytter denne cmd'en data på tvers av områder?
+  Hvordan endrer denne cmd'en repositoriet?
+
+------
 Regler
   Aldri rebase en public branch  
+
