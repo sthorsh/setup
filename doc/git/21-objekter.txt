@@ -1,14 +1,14 @@
 OBJEKTMODELL
 
 Git
-  Map (bytesekvens → hash)
-  Persistent map (.git)
-  Stupid content tracker (commit)
-  High-level versioned file system (snapshot)
-  Version control system (branch, tag, merge, ...)
   Distributed version control system (remote, ...)
+  Version control system (branch, tag, merge, ...)
+  High-level versioned file system (snapshot)
+  Stupid content tracker (commit)
+  Persistent map (.git)
+  Map (bytesekvens → hash)
 
----
+-----
 HEAD
   Enten en peker til en branch-peker (current branch)
   Eller en peker til et commit-objekt (detached HEAD)
@@ -44,6 +44,6 @@ Blob
   Et objekt for arbitrary content e.g tekstfiler
   Cf objects/
 
----
+-----
 Regler
   Aldri rebase en public branch  

@@ -16,14 +16,6 @@ git clone REPO [DIR]
 git status
 git status --short
   
-git log -5 
-git log --all 
-git log --graph 
-git log --oneline
-git log BRANCH 
-
-git reflog
-
 git diff                            unstaged changes
 git diff --cached                   staged changes
 git diff HEAD                       unstaged + staged changes
@@ -34,6 +26,14 @@ git diff BRANCH1 BRANCH2            diff branch tips
 git diff BRANCH...master            diff base master_tip
 git diff BRANCH1 BRANCH2 FILE       diff in file on branches
 
+git log -5 
+git log --all 
+git log --graph 
+git log --oneline
+git log BRANCH 
+
+git reflog
+
 -------------------
 git add PATH
 
@@ -43,7 +43,7 @@ git rm FILES
 git rm FILES --cached
 
 -------------------
-git commit -am ...
+git commit -am "..."
 
 -------------------
 git branch -a -v                    show
@@ -51,6 +51,12 @@ git branch b1                       create
 git branch -m old new               rename
 git branch -d b1                    delete
                                     
+git tag                             show  
+git tag t1                          create
+git tag -a t1 -m "."                create
+git tag -d t1                       delete
+                             
+-------------------                 
 git checkout -b b1                  create-checkout
 git checkout TARGET                 checkout target branch
 git checkout COMMIT                 checkout commit → detached HEAD
@@ -71,12 +77,6 @@ git reset --soft COMMIT
 git reset --hard COMMIT
 git reset --mixed COMMIT
 
--------------------                 
-git tag                             show  
-git tag t1                          create
-git tag -a t1 -m "."                create
-git tag -d t1                       delete
-                             
 -------------------
 git remote -v
 git remote add NAME URL
