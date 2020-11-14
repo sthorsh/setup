@@ -1,4 +1,4 @@
-TEORI
+HOW GIT WORKS
 
 Git
   Distributed version control system (remote, ...)
@@ -7,6 +7,17 @@ Git
   Stupid content tracker (commit)
   Persistent map (.git)
   Map (bytesekvens → hash)
+
+-------
+Områder
+  Arbeidstre
+  Indeks: .git/index
+  Repository: .git/objects etc
+  Stash
+
+Spør to spm for hver cmd
+  Hvordan flytter denne cmd'en data på tvers av områder?
+  Hvordan endrer denne cmd'en repositoriet?
 
 ----
 HEAD
@@ -43,18 +54,6 @@ Tree
 Blob
   Et objekt for arbitrary content e.g tekstfiler
   Cf objects/
-
--------
-Områder
-  Arbeidstre
-  Indeks  
-  Lokalt repo
-  Remote repo
-  Stash
-
-Spør to spm for hver cmd
-  Hvordan flytter denne cmd'en data på tvers av områder?
-  Hvordan endrer denne cmd'en repositoriet?
 
 ------
 Regler
