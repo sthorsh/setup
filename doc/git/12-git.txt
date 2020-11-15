@@ -8,23 +8,22 @@ git config
 git config --list
 
 -------------------
-git init [DIR]
+git init [DIR]                      init new project
 
-git clone REPO [DIR]
+git clone REPO [DIR]                clone existing project
 
--------------------
-git status
-git status --short
+----------
+git status [--short]
   
-git diff                            unstaged changes
-git diff --cached                   staged changes
+git diff                            unstaged changes (git status: red)
+git diff --cached                   staged changes (git status: green)
 git diff HEAD                       unstaged + staged changes
+git diff BRANCH1 BRANCH2            diff branch tips
+git diff BRANCH1...BRANCH2          diff branch1 base
+git diff BRANCH1 BRANCH2 FILE       diff file
 git diff COMMIT                     diff wtree commit
 git diff --cached COMMIT            diff index commit
 git diff COMMIT1 COMMIT2            diff commits
-git diff BRANCH1 BRANCH2            diff branch tips
-git diff BRANCH...master            diff base master_tip
-git diff BRANCH1 BRANCH2 FILE       diff in file on branches
 
 git log -5 
 git log --all 
@@ -35,18 +34,7 @@ git log BRANCH
 git reflog
 
 -------------------
-git add PATH
-
-git mv FILE₁ FILE₂
-
-git rm FILES
-git rm FILES --cached
-
--------------------
-git commit -am "..."
-
--------------------
-git branch -a -v                    show
+git branch -av                      show all verbose
 git branch b1                       create
 git branch -m old new               rename
 git branch -d b1                    delete
@@ -56,14 +44,26 @@ git tag t1                          create
 git tag -a t1 -m "."                create
 git tag -d t1                       delete
                              
--------------------                 
-git checkout -b b1                  create-checkout
-git checkout TARGET                 checkout target branch
+-------------------
+git add PATH                        stage file(r)
+
+git mv SRC DST                      rename fil(er)
+
+git rm FILE                         rm fra wtree og index
+git rm FILE --cached                rm fra index (unstage)
+
+-------------------
+git commit -am "..."                commit fil(er)
+
+-------------------                
+git checkout -b b1                  create-checkout branch
+git checkout BRANCH                 checkout target branch (cf switch)
 git checkout COMMIT                 checkout commit → detached HEAD
 git checkout --track REPO/REF       start tracking remote branch                                    
         
-git switch b1                       
+git switch b1                       mv HEAD; update index; update wtree
                                     
+-------------------------                          
 git merge SOURCE -m "..."           do ff-merge or create merge-commit
 git merge --abort                   abort merge
                                     
@@ -72,7 +72,7 @@ git rebase -i master                pick, squash etc
 
 git cherry-pick COMMIT
 
--------------------
+-----------------------
 git reset --soft COMMIT
 git reset --hard COMMIT
 git reset --mixed COMMIT
@@ -95,3 +95,4 @@ git push -d REPO REF                delete remote branch
 git stash list
 git stash show
 git stash
+

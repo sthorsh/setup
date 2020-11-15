@@ -8,52 +8,59 @@ Git
   Persistent map (.git)
   Map (bytesekvens → hash)
 
--------
-Områder
-  Arbeidstre
-  Indeks: .git/index
-  Repository: .git/objects etc
-  Stash
+-------------
+Stash
 
-Spør to spm for hver cmd
-  Hvordan flytter denne cmd'en data på tvers av områder?
-  Hvordan endrer denne cmd'en repositoriet?
+Arbeidstre
+  Clean|dirty state
+
+Indeks
+  .git/index
+
+Repository
+  .git/objects/ mfl
+
+Remote repository
+
+To spm for hver CMD
+  Hvordan CMD evt "flytter" data?
+  Hvordan CMD evt forandrer repositoriet?
 
 ----
 HEAD
-  Enten en peker til en branch-peker (current branch)
-  Eller en peker til et commit-objekt (detached HEAD)
-  Cf HEAD
+  Ref til current branch (og current commit)
+  Evt ref til current commit (detached head)
+  Cf peker .git/HEAD
 
 Branch
-  En peker til et commit-objekt
-  Cf refs/heads/
+  Ref til commit (entrypunkt til commit-historikk)
+  Cf pekere .git/refs/heads/
 
 Tag
-  Enten en peker til et commit-objekt (lettvekt)
-  Eller en peker til et tag-objekt (annotert tag)
-  Cf refs/tags/
+  Ref til commit (entrypunkt til commit-historikk)
+  Evt ref til et tag-objekt (annotert tag)
+  Cf pekere .git/refs/tags/ immutables
 
-Tag
-  Et objekt for en annotert tag
-  Har peker til et objekt e.g commit
-  Cf objects/
+Tag-objekt
+  Representer annotert tag
+  Peker til et objekt e.g commit
+  Cf objektdb .git/objects/ immutables
 
-Commit 
-  Et objekt for en commit (et snapshot)
-  Har pekere til parents commit-objekter (history)
-  Har peker til et tree-objekt (content)
-  Cf objects/
+Commit-objekt
+  Representer commit/snapshot
+  Peker til parent commits (historikk)
+  Peker til et tree (arbeidstreets rot)
+  Cf objektdb .git/objects/ immutables
 
-Tree
-  Et objekt for en katalog
-  Har pekere til tree-objekter (content)
-  Har pekere til blob-objekter (content)
-  Cf objects/
+Tree-objekt
+  Representer katalog
+  Peker til trees (fs)
+  Peker til blobs (fs)
+  Cf objektdb .git/objects/ immutables
 
-Blob
-  Et objekt for arbitrary content e.g tekstfiler
-  Cf objects/
+Blob-objekt
+  Representer e.g tekstfiler
+  Cf objektdb .git/objects/ immutables
 
 ------
 Regler
