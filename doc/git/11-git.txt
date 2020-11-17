@@ -44,6 +44,15 @@ git tag t1                          create
 git tag -a t1 -m "."                create
 git tag -d t1                       delete
                              
+-------------------                
+git checkout -b b1                  create-checkout branch
+git checkout BRANCH                 checkout target branch (cf switch)
+git checkout COMMIT                 checkout commit (detached HEAD)
+git checkout --track REPO/REF       start tracking remote branch                                    
+cit checkout HEAD file              wtree <- index <- repo
+        
+git switch b1                       mv HEAD; update index; update wtree
+                                    
 -------------------
 git add PATH                        stage file(r)
 
@@ -52,19 +61,11 @@ git mv SRC DST                      rename fil(er)
 git rm FILE                         rm fra wtree og index
 git rm FILE --cached                rm fra index (unstage)
 
--------------------
+--------------------
 git commit -am "..."                commit fil(er)
 
--------------------                
-git checkout -b b1                  create-checkout branch
-git checkout BRANCH                 checkout target branch (cf switch)
-git checkout COMMIT                 checkout commit → detached HEAD
-git checkout --track REPO/REF       start tracking remote branch                                    
-        
-git switch b1                       mv HEAD; update index; update wtree
-                                    
--------------------------                          
-git merge SOURCE -m "..."           do ff-merge or create merge-commit
+-------------------
+git merge SOURCE -m "..."           ff-merge or merge-commit
 git merge --abort                   abort merge
                                     
 git rebase master                   mv HEAD to master, cp/replay commits, mv HEAD, mv b1
@@ -72,10 +73,19 @@ git rebase -i master                pick, squash etc
 
 git cherry-pick COMMIT
 
------------------------
-git reset --soft COMMIT
-git reset --hard COMMIT
-git reset --mixed COMMIT
+git reset HEAD                      align index/repo (unstage) 
+git reset --hard HEAD               align wtree/index/repo
+git reset --soft COMMIT             mv current branch
+git reset COMMIT                    mv current branch; align index/repo
+git reset --hard COMMIT             mv current branch; align wtree/index/repo
+git reset HEAD file                 align index/repo (unstage) 
+
+-------------------
+git stash list
+git stash show
+git stash --include-untracked       stash <- wtree/index
+git stash apply stash@{0}           stash -> wtree/index
+git stash clear                     
 
 -------------------
 git remote -v
@@ -91,8 +101,3 @@ git push REPO REF
 git push -u REPO REF                push new branch → merge/pull request url
 git push -d REPO REF                delete remote branch
   
--------------------
-git stash list
-git stash show
-git stash
-
