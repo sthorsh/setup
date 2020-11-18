@@ -33,6 +33,11 @@ git log BRANCH
 
 git reflog
 
+git show <ref>
+git show <commit>
+
+git blame <file>
+
 -------------------
 git branch -av                      show all verbose
 git branch b1                       create
@@ -44,17 +49,9 @@ git tag t1                          create
 git tag -a t1 -m "."                create
 git tag -d t1                       delete
                              
--------------------                
-git checkout -b b1                  create-checkout branch
-git checkout BRANCH                 checkout target branch (cf switch)
-git checkout COMMIT                 checkout commit (detached HEAD)
-git checkout --track REPO/REF       start tracking remote branch                                    
-cit checkout HEAD file              wtree <- index <- repo
-        
-git switch b1                       mv HEAD; update index; update wtree
-                                    
 -------------------
-git add PATH                        stage file(r)
+git add PATH                        stage filer
+git add --patch FILE                stage hunks
 
 git mv SRC DST                      rename fil(er)
 
@@ -62,23 +59,37 @@ git rm FILE                         rm fra wtree og index
 git rm FILE --cached                rm fra index (unstage)
 
 --------------------
-git commit -am "..."                commit fil(er)
+git commit -am "..."                commit filer
+git commit --patch ...              commit hunks
+
+-------------------                
+git checkout -b b1                  create-checkout branch
+git checkout BRANCH                 checkout target branch (cf switch)
+git checkout COMMIT                 checkout commit (detached HEAD)
+git checkout --track REPO/REF       start tracking remote branch                                    
+git checkout HEAD FILE              wtree<index<repo (filer)
+git checkout --patch HEAD           wtree<index<repo (hunks)
+        
+git switch b1                       mv HEAD; update index; update wtree
+                                    
+git restore <file>                  wtree<index<repo (discard)
+git restore --staged  <file>        index<repo (unstage)
 
 -------------------
 git merge SOURCE -m "..."           ff-merge or merge-commit
 git merge --abort                   abort merge
                                     
+git cherry-pick COMMIT
+
 git rebase master                   mv HEAD to master, cp/replay commits, mv HEAD, mv b1
 git rebase -i master                pick, squash etc
 
-git cherry-pick COMMIT
-
 git reset HEAD                      align index/repo (unstage) 
 git reset --hard HEAD               align wtree/index/repo
+git reset HEAD file                 align index/repo (unstage) 
 git reset --soft COMMIT             mv current branch
 git reset COMMIT                    mv current branch; align index/repo
 git reset --hard COMMIT             mv current branch; align wtree/index/repo
-git reset HEAD file                 align index/repo (unstage) 
 
 -------------------
 git stash list
