@@ -1,5 +1,28 @@
 GIT
 
+git add PATHSPEC                      stage untracked, modified, deleted files
+git add --patch PATHSPEC              stage hunks
+
+git blame FILE                        annotate file
+
+git branch -avv                       list local, upstream, remote-tracking
+git branch BRANCH [REF|COMMIT]        create local
+git branch -t BRANCH REMOTE/REPO      create local, upstream
+git branch -u REMOTE/REPO             set upstream
+git branch --unset-upstream BRANCH    if remote branch is deleted
+git branch -m BRANCH NEW_NAME         rename
+git branch -d BRANCH                  delete local
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                    
+git checkout -b b1                    create-checkout branch
+git checkout BRANCH                   checkout target branch
+git checkout COMMIT                   checkout commit (detached HEAD)
+git checkout --track REPO/REF         start tracking remote branch                                    
+git checkout HEAD FILE                wtree<index<repo
+git checkout --patch HEAD             wtree<index<repo (hunks)
+        
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 git help
 git help CMD
 
@@ -8,9 +31,9 @@ git config
 git config --list
 
 -------------------
-git init [DIR]                      init new project
+git init [DIR]                      init project
 
-git clone REPO [DIR]                clone existing project
+git clone REPO [DIR]                clone project
 
 ----------
 git status [--short]
@@ -23,36 +46,31 @@ git diff BRANCH1...BRANCH2          diff branch1 base
 git diff BRANCH1 BRANCH2 FILE       diff file
 git diff COMMIT                     diff wtree commit
 git diff --cached COMMIT            diff index commit
-git diff COMMIT1 COMMIT2            diff commits
+git diff COMMIT₁ COMMIT2            diff commits
 
 git log -5 
 git log --all 
 git log --graph 
+git log --grep EXP
 git log --oneline
-git log BRANCH 
+git log BRANCH
+git log BRANCH₁ BRANCH₂
 
 git reflog
+git reflog REF
+git reflog refs/heads/master
 
-git show <ref>
-git show <commit>
+git show REF
+git show COMMIT
 
-git blame <file>
 
 -------------------
-git branch -av                      show all verbose
-git branch b1                       create
-git branch -m old new               rename
-git branch -d b1                    delete
-                                    
 git tag                             show  
-git tag t1                          create
-git tag -a t1 -m "."                create
-git tag -d t1                       delete
+git tag TAG                         create
+git tag -a TAG -m "."               create
+git tag -d TAG                      delete
                              
 -------------------
-git add PATH                        stage filer
-git add --patch FILE                stage hunks
-
 git mv SRC DST                      rename fil(er)
 
 git rm FILE                         rm fra wtree og index
@@ -61,16 +79,13 @@ git rm FILE --cached                rm fra index (unstage)
 --------------------
 git commit -am "..."                commit filer
 git commit --patch ...              commit hunks
+git commit --amend                  rewrite project history (current commit)
+
+git revert COMMIT                   rewrite project history
 
 -------------------                
-git checkout -b b1                  create-checkout branch
-git checkout BRANCH                 checkout target branch (cf switch)
-git checkout COMMIT                 checkout commit (detached HEAD)
-git checkout --track REPO/REF       start tracking remote branch                                    
-git checkout HEAD FILE              wtree<index<repo (filer)
-git checkout --patch HEAD           wtree<index<repo (hunks)
-        
-git switch b1                       mv HEAD; update index; update wtree
+git switch BRANCH                   mv HEAD; update index; update wtree
+git switch -c BRANCH                create-switch
                                     
 git restore <file>                  wtree<index<repo (discard)
 git restore --staged  <file>        index<repo (unstage)
@@ -82,7 +97,7 @@ git merge --abort                   abort merge
 git cherry-pick COMMIT
 
 git rebase master                   mv HEAD to master, cp/replay commits, mv HEAD, mv b1
-git rebase -i master                pick, squash etc
+git rebase -i COMMIT                rewrite project history f.o.m COMMIT
 
 git reset HEAD                      align index/repo (unstage) 
 git reset --hard HEAD               align wtree/index/repo
@@ -90,6 +105,8 @@ git reset HEAD file                 align index/repo (unstage)
 git reset --soft COMMIT             mv current branch
 git reset COMMIT                    mv current branch; align index/repo
 git reset --hard COMMIT             mv current branch; align wtree/index/repo
+
+git filter-repo ...                 rewrite project history
 
 -------------------
 git stash list
@@ -109,6 +126,6 @@ git pull --ff
 git pull --rebase
 
 git push REPO REF
-git push -u REPO REF                push new branch → merge/pull request url
+git push -u REPO REF                create remote branch
 git push -d REPO REF                delete remote branch
   

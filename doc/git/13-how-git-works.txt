@@ -63,6 +63,8 @@ Blob-objekt
   Cf objektdb .git/objects/ immutables
 
 ------
-Regler
+Beste praksis
   Aldri rebase en public branch  
+  Never rebase shared commits (PP)
+  Be careful when you revert merge commits
 
