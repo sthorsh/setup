@@ -1,0 +1,23 @@
+ARBEIDSFLYT
+
+Distribusjonsmodell
+  P2P
+  Sentralisert
+  Pull request (PR)
+  Diktator/løytnant
+
+Branchingmodell
+  Integrasjon: main/master/trunk
+  Feature/topic
+  Release
+  Hotfix
+
+Constraints
+  Merge eller rebase? 
+  ...
+
+Regler
+  Aldri rebase en public branch  
+  Never rebase shared commits (PP)
+  Be careful when you revert merge commits
+
