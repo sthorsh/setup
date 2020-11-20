@@ -1,26 +1,25 @@
 GIT
+                                              
+git add PATHSPEC                              stage untracked, modified, deleted files
+git add --patch PATHSPEC                      stage hunks
 
-git add PATHSPEC                      stage untracked, modified, deleted files
-git add --patch PATHSPEC              stage hunks
+git blame FILE                                annotate file
 
-git blame FILE                        annotate file
+git branch -avv                               list local, upstream, remote-tracking
+git branch NEW_BRANCH [REF|COMMIT]            create local
+git branch -t NEW_BRANCH REMOTE/REPO          create local + upstream
+git branch -u REMOTE/REPO                     set upstream
+git branch --unset-upstream BRANCH            hvis remote er slettet
+git branch -m BRANCH NEW_NAME                 rename
+git branch -d BRANCH                          delete local
 
-git branch -avv                       list local, upstream, remote-tracking
-git branch BRANCH [REF|COMMIT]        create local
-git branch -t BRANCH REMOTE/REPO      create local, upstream
-git branch -u REMOTE/REPO             set upstream
-git branch --unset-upstream BRANCH    if remote branch is deleted
-git branch -m BRANCH NEW_NAME         rename
-git branch -d BRANCH                  delete local
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                                    
-git checkout -b b1                    create-checkout branch
-git checkout BRANCH                   checkout target branch
-git checkout COMMIT                   checkout commit (detached HEAD)
-git checkout --track REPO/REF         start tracking remote branch                                    
-git checkout HEAD FILE                wtree<index<repo
-git checkout --patch HEAD             wtree<index<repo (hunks)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+git checkout BRANCH                           wtree<index<repo; HEAD → BRANCH
+git checkout COMMIT                           wtree<index<repo; detached HEAD → COMMIT
+git checkout -b NEW_BRANCH [REF|COMMIT]       wtree<index<repo; NEW_BRANCH → COMMIT; HEAD → NEW_BRANCH
+git checkout -b NEW_BRANCH -t REMOTE/REPO     wtree<index<repo; NEW_BRANCH → COMMIT; set upstream; HEAD → NEW_BRANCH
+git checkout HEAD FILE                        wtree<index<repo files
+git checkout -p HEAD                          wtree<index<repo hunks
         
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 git help
@@ -62,7 +61,6 @@ git reflog refs/heads/master
 
 git show REF
 git show COMMIT
-
 
 -------------------
 git tag                             show  
