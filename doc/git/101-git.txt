@@ -1,25 +1,25 @@
 GIT
                                               
-git add PATHSPEC                              stage untracked, modified, deleted files
+git add PATHSPEC                              stage untracked|modified|deleted files
 git add --patch PATHSPEC                      stage hunks
 
-git blame FILE                                annotate file
+git blame FILE                                annoter fil
 
-git branch -avv                               list local, upstream, remote-tracking
-git branch NEW_BRANCH [REF|COMMIT]            create local
-git branch -t NEW_BRANCH REMOTE/REPO          create local + upstream
-git branch -u REMOTE/REPO                     set upstream
-git branch --unset-upstream BRANCH            hvis remote er slettet
-git branch -m BRANCH NEW_NAME                 rename
-git branch -d BRANCH                          delete local
+git branch -avv                               list local|upstream|remote-tracking branches
+git branch b1 [REF|COMMIT]                    create b1 [at REF|COMMIT]
+git branch b1 -t REMOTE/REPO                  create b1; set upstream
+git branch b1 -u REMOTE/REPO                  set upstream
+git branch b1 --unset-upstream                unset upstream
+git branch b1 -m b2                           rename b1
+git branch b1 -d                              delete b1
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-git checkout BRANCH                           wtree<index<repo; HEAD → BRANCH
-git checkout COMMIT                           wtree<index<repo; detached HEAD → COMMIT
-git checkout -b NEW_BRANCH [REF|COMMIT]       wtree<index<repo; NEW_BRANCH → COMMIT; HEAD → NEW_BRANCH
-git checkout -b NEW_BRANCH -t REMOTE/REPO     wtree<index<repo; NEW_BRANCH → COMMIT; set upstream; HEAD → NEW_BRANCH
-git checkout HEAD FILE                        wtree<index<repo files
-git checkout -p HEAD                          wtree<index<repo hunks
+git checkout b1                               restore wtree; switch to b1
+git checkout COMMIT                           restore wtree; switch to commit (detached head)
+git checkout -b b1 [REF|COMMIT]               restore wtree; create b1 at REF|COMMIT; switch to b1
+git checkout -b b1 -t REMOTE/REPO             restore wtree; create b1; set upstream; switch to b1
+git checkout HEAD PATHSPEC                    restore wtree files
+git checkout -p PATHSPEC                      restore wtree hunks
         
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 git help
