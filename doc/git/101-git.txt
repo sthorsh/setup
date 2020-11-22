@@ -6,34 +6,37 @@ git blame FILE                                annoter fil
 
 git branch -avv                               list local|upstream|remote-tracking branches
 git branch b1 [REF|COMMIT]                    create b1
-git branch b1 -t REMOTE/REPO                  create b1; set upstream
-git branch b1 -u REMOTE/REPO                  set upstream
-git branch b1 --unset-upstream                unset upstream
+git branch b1 -t REMOTE/REPO                  create b1; set b1-upstream
+git branch b1 -u REMOTE/REPO                  set b1-upstream
+git branch b1 --unset-upstream                unset b1-upstream
 git branch b1 -m b2                           rename b1
 git branch b1 -d                              delete b1
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-  git checkout b1                               update wtree, HEAD → b1
-  git checkout t1|COMMIT                        update wtree, detached HEAD → commit
-  git checkout -b b1 [REF|COMMIT]               update wtree, create b1; HEAD → b1
-  git checkout -b b1 -t REMOTE/REPO             update wtree, create b1; set upstream; HEAD → b1
-  git checkout HEAD PATH                        update wtree files
-  git checkout -p PATH                          update wtree hunks
+git checkout b1                               HEAD → b1; update wtree
+git checkout t1|COMMIT                        detached HEAD → commit; update wtree
+git checkout -b b1 [REF|COMMIT]               create b1; HEAD → b1; update wtree
+git checkout -t REMOTE/REPO                   create b1; set b1-upstream; HEAD → b1; update wtree
+git checkout HEAD PATH                        update wtree files
+git checkout -p PATH                          update wtree hunks
+
+git cherry-pick b1|COMMITS                    cp; commit; mv branch|HEAD; update wtree
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-git help
-git help CMD
+git clone REPO [DIR]                clone project
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
--------------------
+git commit -am "..."                commit filer
+git commit --patch ...              commit hunks
+git commit --amend                  rewrite project history (current commit)
+
 git config
 git config --list
 
--------------------
 git init [DIR]                      init project
 
-git clone REPO [DIR]                clone project
+git help
+git help CMD
 
-----------
 git status [--short]
 
 git diff                            unstaged changes (git status: red)
@@ -61,37 +64,27 @@ git reflog refs/heads/master
 git show REF
 git show COMMIT
 
--------------------
 git tag                             show
 git tag TAG                         create
 git tag -a TAG -m "."               create
 git tag -d TAG                      delete
 
--------------------
 git mv SRC DST                      rename fil(er)
 
 git rm FILE                         rm fra wtree og index
 git rm FILE --cached                rm fra index (unstage)
 
---------------------
-git commit -am "..."                commit filer
-git commit --patch ...              commit hunks
-git commit --amend                  rewrite project history (current commit)
-
 git revert COMMIT                   rewrite project history
 
--------------------
 git switch BRANCH                   mv HEAD; update index; update wtree
 git switch -c BRANCH                create-switch
 
 git restore <file>                  wtree<index<repo (discard)
 git restore --staged  <file>        index<repo (unstage)
 
--------------------
 git merge SOURCE -m "..."           ff-merge or merge-commit
 git merge --abort                   abort merge
 
-git cherry-pick COMMIT
 
 git rebase master                   mv HEAD to master, cp/replay commits, mv HEAD, mv b1
 git rebase -i COMMIT                rewrite project history f.o.m COMMIT
@@ -105,14 +98,12 @@ git reset --hard COMMIT             mv current branch; align wtree/index/repo
 
 git filter-repo ...                 rewrite project history
 
--------------------
 git stash list
 git stash show
 git stash --include-untracked       stash <- wtree/index
 git stash apply stash@{0}           stash -> wtree/index
 git stash clear
 
--------------------
 git remote -v
 git remote add NAME URL
 
