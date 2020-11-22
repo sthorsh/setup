@@ -23,8 +23,8 @@ Repository
 Remote repository
 
 To spm for hver CMD
-  Hvordan CMD evt "flytter" data?
   Hvordan CMD evt forandrer repositoriet?
+  Hvordan CMD evt "flytter" data mellom områder?
 
 ----
 HEAD
