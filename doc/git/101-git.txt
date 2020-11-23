@@ -21,13 +21,16 @@ git checkout -p PATH                          update wtree hunks
 
 git cherry-pick b1|COMMITS                    cp; commit; mv branch|HEAD; update wtree
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-git clone REPO [DIR]                clone project
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+git clone REPO [DIR]                          clone project
 
-git commit -am "..."                commit filer
-git commit --patch ...              commit hunks
-git commit --amend                  rewrite project history (current commit)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+git commit -a                                all known_changed|mv'ed|rm'ed files
+git commit [FILES]  
+git commit --interactive|patch
+git commit -m MSG                            create commit; branch|HEAD → commit
+  git commit --amend                            rewrite project history (current commit)
+  git commit --patch ...                        commit hunks
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 git config
 git config --list
