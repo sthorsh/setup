@@ -1,6 +1,7 @@
 GIT
 
-it                                   use
+git                                   use
+
 git help -a                           cmds
 git help -c                           config
 git help -g                           guides
