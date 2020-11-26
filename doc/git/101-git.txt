@@ -1,76 +1,87 @@
 GIT
 
-git help
+it                                   use
+git help -a                           cmds
+git help -c                           config
+git help -g                           guides
+git help CMD                          help cmd
+git help GUIDE                        help guide
 
-git config
-git config --list
+git config                            use
+git config -l                         list vars
+git config section.key                get value
+git config section.key value          set value
 
-git remote
+git init [DIR]                        init project
 
-git init
+git clone REPO [DIR]                  clone project
 
-git clone
+git remote -v                         show remote + fetch|push url
+git remote add NAME URL               init; remote-add; fetch; branch -t; checkout
+git remote rm NAME                    remove remote
 
-git add PATH                             stage untracked|modified|deleted files
-git add --patch PATH                     stage hunks
+----------
+git add PATH                          stage untracked|modified|deleted files
+git add --patch PATH                  stage hunks
 
-git blame FILE                           annoter fil
+git branch -avv                       list local|upstream|remote-tracking branches
+git branch b1 [REF|COMMIT]            create b1
+git branch b1 -t REMOTE/REPO          create b1; set b1-upstream
+git branch b1 -u REMOTE/REPO          set b1-upstream
+git branch b1 --unset-upstream        unset b1-upstream
+git branch b1 -m b2                   rename b1
+git branch b1 -d                      delete b1
 
-git branch -avv                          list local|upstream|remote-tracking branches
-git branch b1 [REF|COMMIT]               create b1
-git branch b1 -t REMOTE/REPO             create b1; set b1-upstream
-git branch b1 -u REMOTE/REPO             set b1-upstream
-git branch b1 --unset-upstream           unset b1-upstream
-git branch b1 -m b2                      rename b1
-git branch b1 -d                         delete b1
+git checkout b1                       HEAD → b1; update wtree
+git checkout t1|COMMIT                detached HEAD → commit; update wtree
+git checkout -b b1 [REF|COMMIT]       create b1; HEAD → b1; update wtree
+git checkout -t REMOTE/REPO           create b1; set b1-upstream; HEAD → b1; update wtree
+git checkout HEAD PATH                update wtree files
+git checkout -p PATH                  update wtree hunks
 
-git checkout b1                          HEAD → b1; update wtree
-git checkout t1|COMMIT                   detached HEAD → commit; update wtree
-git checkout -b b1 [REF|COMMIT]          create b1; HEAD → b1; update wtree
-git checkout -t REMOTE/REPO              create b1; set b1-upstream; HEAD → b1; update wtree
-git checkout HEAD PATH                   update wtree files
-git checkout -p PATH                     update wtree hunks
+git cherry-pick b1|COMMITS            cp; commit; mv branch|HEAD; update wtree
 
-git cherry-pick b1|COMMITS               cp; commit; mv branch|HEAD; update wtree
-
-git clone REPO [DIR]                     clone project
-
-git commit -m MSG                        commit git-add|mv|rm OR mv|rm; git-add
-git commit -m MSG FILES                  commit known && modified|rm'ed FILES
-git commit -am MSG                       commit all known && modified|rm'ed files
-git commit --interactive -m MSG          commit files
-git commit --patch -m MSG                commit hunks
-git commit --amend -m MSG                commit improved commit (rewrite history)
+git commit -m MSG                     commit git-add|mv|rm OR mv|rm; git-add
+git commit -m MSG FILES               commit known && modified|rm'ed FILES
+git commit -am MSG                    commit all known && modified|rm'ed files
+git commit --interactive -m MSG       commit files
+git commit --patch -m MSG             commit hunks
+git commit --amend -m MSG             commit improved commit (rewrite history)
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-git diff                            unstaged changes (git status: red)
-git diff --cached                   staged changes (git status: green)
-git diff HEAD                       unstaged + staged changes
-git diff BRANCH1 BRANCH2            diff branch tips
-git diff BRANCH1...BRANCH2          diff branch1 base
-git diff BRANCH1 BRANCH2 FILE       diff file
-git diff COMMIT                     diff wtree commit
-git diff --cached COMMIT            diff index commit
-git diff COMMIT₁ COMMIT2            diff commits
+  git blame FILE                        annotate file
+  
+  git diff                            unstaged changes (git status: red)
+  git diff --cached                   staged changes (git status: green)
+  git diff HEAD                       unstaged + staged changes
+  git diff BRANCH1 BRANCH2            diff branch tips
+  git diff BRANCH1...BRANCH2          diff branch1 base
+  git diff BRANCH1 BRANCH2 FILE       diff file
+  git diff COMMIT                     diff wtree commit
+  git diff --cached COMMIT            diff index commit
+  git diff COMMIT₁ COMMIT2            diff commits
+  
+  git log -5
+  git log --all
+  git log --graph
+  git log --grep EXP
+  git log --oneline
+  git log BRANCH
+  git log BRANCH₁ BRANCH₂
+  
+  git reflog
+  git reflog REF
+  git reflog refs/heads/master
+  
+  git show REF
+  git show COMMIT
+  
+  git status [--short]
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 git fetch
 
 git filter-repo ...                 rewrite project history
-
-git help
-git help CMD
-
-git init [DIR]                      init project
-
-git log -5
-git log --all
-git log --graph
-git log --grep EXP
-git log --oneline
-git log BRANCH
-git log BRANCH₁ BRANCH₂
 
 git merge SOURCE -m "..."           ff-merge or merge-commit
 git merge --abort                   abort merge
@@ -88,13 +99,7 @@ git push -d REPO REF                delete remote branch
 git rebase master                   mv HEAD to master, cp/replay commits, mv HEAD, mv b1
 git rebase -i COMMIT                rewrite project history f.o.m COMMIT
 
-git reflog
-git reflog REF
-git reflog refs/heads/master
-
-git remote -v           
-git remote add NAME URL git reset HEAD                      align index/repo (unstage)
-
+git reset HEAD                      align index/repo (unstage)
 git reset --hard HEAD               align wtree/index/repo
 git reset HEAD file                 align index/repo (unstage)
 git reset --soft COMMIT             mv current branch
@@ -109,17 +114,12 @@ git revert COMMIT                   rewrite project history
 git rm FILE                         rm fra wtree og index
 git rm FILE --cached                rm fra index (unstage)
 
-git show REF
-git show COMMIT
-
 git stash list
 git stash show
 git stash --include-untracked       stash <- wtree/index
 git stash apply stash@{0}           stash -> wtree/index
 git stash clear
  
-git status [--short]
-
 git switch BRANCH                   mv HEAD; update index; update wtree
 git switch -c BRANCH                create-switch
 
