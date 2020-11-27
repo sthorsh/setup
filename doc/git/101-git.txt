@@ -22,9 +22,18 @@ git remote add NAME URL               init; remote-add; fetch; branch -t; checko
 git remote rm NAME                    remove remote
 
 ----------
+git blame FILE                        annotate file
+
+----------
 git add PATH                          stage untracked|modified|deleted files
 git add --patch PATH                  stage hunks
 
+git mv SRC DST                        mv/rename SRC
+
+git rm FILE                           rm from wtree og index
+git rm FILE --cached                  rm aka unstage from index 
+
+----------
 git branch -avv                       list local|upstream|remote-tracking branches
 git branch b1 [REF|COMMIT]            create b1
 git branch b1 -t REMOTE/REPO          create b1; set b1-upstream
@@ -50,44 +59,39 @@ git commit --patch -m MSG             commit hunks
 git commit --amend -m MSG             commit improved commit (rewrite history)
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  git blame FILE                        annotate file
-  
-  git diff                            unstaged changes (git status: red)
-  git diff --cached                   staged changes (git status: green)
-  git diff HEAD                       unstaged + staged changes
-  git diff BRANCH1 BRANCH2            diff branch tips
-  git diff BRANCH1...BRANCH2          diff branch1 base
-  git diff BRANCH1 BRANCH2 FILE       diff file
-  git diff COMMIT                     diff wtree commit
-  git diff --cached COMMIT            diff index commit
-  git diff COMMIT₁ COMMIT2            diff commits
-  
-  git log -5
-  git log --all
-  git log --graph
-  git log --grep EXP
-  git log --oneline
-  git log BRANCH
-  git log BRANCH₁ BRANCH₂
-  
-  git reflog
-  git reflog REF
-  git reflog refs/heads/master
-  
-  git show REF
-  git show COMMIT
-  
-  git status [--short]
+  git diff                            wtree vs index
+  git diff --cached                   index vs repo
+  git diff HEAD                       wtree + index vs repo
+  git diff BRANCH₁ BRANCH₂            tip₁ vs tip₂ eg diff master origin/master
+  git diff BRANCH₁...BRANCH₂          todo
+  git diff COMMIT                     wtree v commit
+  git diff --cached COMMIT            index vs commit
+  git diff COMMIT₁ COMMIT₂            commit₁ vs commit₂
+  git diff BRANCH₁ BRANCH₁ FILE       file₁ vs file₂
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+git log -5
+git log --all
+git log --graph
+git log --grep EXP
+git log --oneline
+git log BRANCH
+git log BRANCH₁ BRANCH₂
+
+git reflog
+git reflog REF
+git reflog refs/heads/master
+
+git show REF
+git show COMMIT
+
+git status [--short]
+
 git fetch
 
 git filter-repo ...                 rewrite project history
 
 git merge SOURCE -m "..."           ff-merge or merge-commit
 git merge --abort                   abort merge
-
-git mv SRC DST                      rename fil(er)
 
 git pull --no-rebase
 git pull --ff
@@ -111,9 +115,6 @@ git restore <file>                  wtree<index<repo (discard)
 git restore --staged  <file>        index<repo (unstage)
 
 git revert COMMIT                   rewrite project history
-
-git rm FILE                         rm fra wtree og index
-git rm FILE --cached                rm fra index (unstage)
 
 git stash list
 git stash show
