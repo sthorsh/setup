@@ -1,81 +1,43 @@
-GIT
+GIT                                               
 
-git                                   use
+git                                               use
 
-git help -a                           cmds
-git help -c                           config
-git help -g                           guides
-git help CMD                          help cmd
-git help GUIDE                        help guide
+git help -a                                       cmds
+git help -c                                       config
+git help -g                                       guides
+git help CMD                                      help cmd
+git help GUIDE                                    help guide
 
-git config                            use
-git config -l                         list vars
-git config section.key                get value
-git config section.key value          set value
+git config                                        use
+git config -l                                     list vars
+git config section.key                            get value
+git config section.key value                      set value
 
-git init [DIR]                        init project
+git init [DIR]                                    init project
 
-git clone REPO [DIR]                  clone project
+git clone REPO [DIR]                              clone project
 
-git remote -v                         show remote + fetch|push url
-git remote add NAME URL               init; remote-add; fetch; branch -t; checkout
-git remote rm NAME                    remove remote
-
-----------
-git blame FILE                        annotate file
+git remote -v                                     show remote + fetch|push url
+git remote add NAME URL                           init; remote-add; fetch; branch -t; checkout
+git remote rm NAME                                remove remote
 
 ----------
-git add PATH                          stage untracked|modified|deleted files
-git add --patch PATH                  stage hunks
+git blame FILE                                    annotate file
 
-git mv SRC DST                        mv/rename SRC
-
-git rm FILE                           rm from wtree og index
-git rm FILE --cached                  rm aka unstage from index 
-
-----------
-git branch -avv                       list local|upstream|remote-tracking branches
-git branch b1 [REF|COMMIT]            create b1
-git branch b1 -t REMOTE/REPO          create b1; set b1-upstream
-git branch b1 -u REMOTE/REPO          set b1-upstream
-git branch b1 --unset-upstream        unset b1-upstream
-git branch b1 -m b2                   rename b1
-git branch b1 -d                      delete b1
-
-git checkout b1                       HEAD → b1; update wtree
-git checkout t1|COMMIT                detached HEAD → commit; update wtree
-git checkout -b b1 [REF|COMMIT]       create b1; HEAD → b1; update wtree
-git checkout -t REMOTE/REPO           create b1; set b1-upstream; HEAD → b1; update wtree
-git checkout HEAD PATH                update wtree files
-git checkout -p PATH                  update wtree hunks
-
-git cherry-pick b1|COMMITS            cp; commit; mv branch|HEAD; update wtree
-
-git commit -m MSG                     commit git-add|mv|rm OR mv|rm; git-add
-git commit -m MSG FILES               commit known && modified|rm'ed FILES
-git commit -am MSG                    commit all known && modified|rm'ed files
-git commit --interactive -m MSG       commit files
-git commit --patch -m MSG             commit hunks
-git commit --amend -m MSG             commit improved commit (rewrite history)
+git diff [PATHS]                                  wtree vs index
+git diff PATH₁ PATH₂                              file₁ vs file₂ OR dir₁ vs dir₂
+git diff --staged [PATHS]                         index vs HEAD
+git diff COMMIT [PATHS]                           wtree vs HEAD|branch|tag|commit
+git diff --staged COMMIT [PATHS]                  index vs HEAD|branch|tag|commit 
+git diff COMMIT₁ COMMIT₂ [PATHS]                  HEAD|branch|tag|commit vs HEAD|branch|tag|commit
+git diff COMMIT₁...COMMIT₂ [PATHS]                synonym: git diff $(git merge-base A B) B
+git diff commit₁ commit₂ commit₃ ... [PATHS]      merge-commit + ≥2 parent-commits
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  git diff                            wtree vs index
-  git diff --cached                   index vs repo
-  git diff HEAD                       wtree + index vs repo
-  git diff BRANCH₁ BRANCH₂            tip₁ vs tip₂ eg diff master origin/master
-  git diff BRANCH₁...BRANCH₂          todo
-  git diff COMMIT                     wtree v commit
-  git diff --cached COMMIT            index vs commit
-  git diff COMMIT₁ COMMIT₂            commit₁ vs commit₂
-  git diff BRANCH₁ BRANCH₁ FILE       file₁ vs file₂
-
-git log -5
-git log --all
-git log --graph
-git log --grep EXP
-git log --oneline
-git log BRANCH
-git log BRANCH₁ BRANCH₂
+git log [PATHS]                                   synonym: git log HEAD
+git log OPTS [PATHS]                              -N --all --graph --grep --oneline
+git log COMMITS₁ [PATHS]                          HEAD|branch|tag|commit
+git log COMMITS₁ ^COMMITS₂ [PATHS]                HEAD|branch|tag|commit
 
 git reflog
 git reflog REF
@@ -85,6 +47,41 @@ git show REF
 git show COMMIT
 
 git status [--short]
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+----------
+git add PATH                                      stage untracked|modified|deleted files
+git add --patch PATH                              stage hunks
+
+git mv SRC DST                                    mv/rename SRC
+
+git rm FILE                                       rm from wtree og index
+git rm FILE --cached                              rm aka unstage from index 
+
+----------
+git branch -avv                                   list local|upstream|remote-tracking branches
+git branch b1 [REF|COMMIT]                        create b1
+git branch b1 -t REMOTE/REPO                      create b1; set b1-upstream
+git branch b1 -u REMOTE/REPO                      set b1-upstream
+git branch b1 --unset-upstream                    unset b1-upstream
+git branch b1 -m b2                               rename b1
+git branch b1 -d                                  delete b1
+
+git checkout b1                                   HEAD → b1; update wtree
+git checkout t1|COMMIT                            detached HEAD → commit; update wtree
+git checkout -b b1 [REF|COMMIT]                   create b1; HEAD → b1; update wtree
+git checkout -t REMOTE/REPO                       create b1; set b1-upstream; HEAD → b1; update wtree
+git checkout HEAD PATH                            update wtree files
+git checkout -p PATH                              update wtree hunks
+
+git cherry-pick b1|COMMITS                        cp; commit; mv branch|HEAD; update wtree
+
+git commit -m MSG                                 commit git-add|mv|rm OR mv|rm; git-add
+git commit -m MSG FILES                           commit known && modified|rm'ed FILES
+git commit -am MSG                                commit all known && modified|rm'ed files
+git commit --interactive -m MSG                   commit files
+git commit --patch -m MSG                         commit hunks
+git commit --amend -m MSG                         commit improved commit (rewrite history)
 
 git fetch
 
