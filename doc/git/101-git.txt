@@ -52,8 +52,8 @@ git reflog [OPTS] HEAD|BRANCH                   -
 git reflog [OPTS] refs/heads/master             -
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-git show REF
-git show COMMIT
+git show [HEAD]                                 show last commit
+git show [--shortstat] OBJECT                   show branch|tag|commit|tree|file
 
 git status [--short]
 
