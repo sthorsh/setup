@@ -51,11 +51,13 @@ git reflog [OPTS]                               -
 git reflog [OPTS] HEAD|BRANCH                   -
 git reflog [OPTS] refs/heads/master             -
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 git show [HEAD]                                 show last commit
 git show [--shortstat] OBJECT                   show branch|tag|commit|tree|file
 
-git status [--short]
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+git status                                     show untracked|modified|staged files
+git status --short
+git status --show-stash
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ----------
