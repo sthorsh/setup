@@ -67,22 +67,26 @@ git stash pop stash@{N}                         unstash (stash -> wtree)
 git stash drop stash@{N}                        drop entry
 git stash clear                                 clear stash
  
-----------
 git add PATH                                    stage untracked|modified|deleted files
 git add --patch PATH                            stage hunks
   
 git mv SRC DST                                  mv/rename SRC
   
 git rm FILE                                     rm from wtree and index
-git rm FILE --cached                            rm from index i.e unstage
+git rm --cached FILE                            rm from index (unstage)
+  
+git restore PATH                                wtree<index
+git restore --staged PATH                       index<HEAD (unstage)
+git restore --worktree --staged PATH            wtree<index<HEAD
+git restore --source TREE PATH                  TREE: branch, tag or commit
   
 ----------
-  git commit -m MSG                              commit git-add|mv|rm OR mv|rm; git-add
-  git commit -m MSG FILES                        commit known && modified|rm'ed FILES
-  git commit -am MSG                             commit all known && modified|rm'ed files
-  git commit --interactive -m MSG                commit files
-  git commit --patch -m MSG                      commit hunks
-  git commit --amend -m MSG                      commit improved commit (rewrite history)
+git commit -m MSG                               git-add|mv|rm OR mv|rm; git-add
+git commit -a -m MSG                            all known && modified|rm'ed files
+git commit FILES -m MSG                         only known && modified|rm'ed FILES
+git commit --amend -m MSG                       (re)commit (history rewrite)
+git commit --interactive -m MSG                 files
+git commit --patch -m MSG                       hunks
   
   git branch -avv                                list local|upstream|remote-tracking branches
   git branch b1 [REF|COMMIT]                     create b1
@@ -110,8 +114,6 @@ git rm FILE --cached                            rm from index i.e unstage
   ----------
   git cherry-pick b1|COMMITS                                   cp; commit; mv branch|HEAD; update wtree
   
-  git filter-repo ...                            rewrite project history
-  
   git merge SOURCE -m "..."                      ff-merge or merge-commit
   git merge --abort                              abort merge
   
@@ -125,9 +127,6 @@ git rm FILE --cached                            rm from index i.e unstage
   git reset COMMIT                               mv current branch; align index/repo
   git reset --hard COMMIT                        mv current branch; align wtree/index/repo
    
-  git restore <file>                             wtree<index<repo (discard)
-  git restore --staged  <file>                   index<repo (unstage)
-  
   git revert COMMIT                              rewrite project history
   
   ----------------------------------------------

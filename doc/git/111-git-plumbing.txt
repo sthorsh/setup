@@ -9,10 +9,11 @@ echo "foobar" | git hash-object --stdin -w
 git cat-file -t 58f3805
 git cat-file -p 58f3805
 
+  
 git merge-base BRANCH1 BRANCH2
 
-git ls-files
-git ls-tree -r HEAD
+git ls-files -s                               index
+git ls-tree -r HEAD       
 git ls-remote
 
 git show-ref --head
@@ -20,3 +21,5 @@ git show-ref HEAD or BRANCH
 
 git update-ref refs/heads/b1 c7e9efd -m "..."
 
+Script?
+git filter-repo ...                            rewrite project history

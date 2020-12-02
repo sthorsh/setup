@@ -8,7 +8,15 @@ Git
   Persistent map (.git)
   Map (bytesekvens → hash)
 
+------------------
+TRE TRÆR 
+  Arbeidskatalog: $ tree
+  Indeks: $ git ls-files -s
+  Hode: $ git cat-file -p HEAD; $ git ls-tree -r HEAD
+  Cf https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified#_the_three_trees
+
 -------------
+FEM AREAS
 Stash
 
 Arbeidstre
