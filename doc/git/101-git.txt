@@ -89,17 +89,17 @@ git branch b1 --unset-upstream                  unset b1-upstream
 git branch b1 -m b2                             rename b1
 git branch b1 -d                                delete b1
   
-git tag                                         show
-git tag TAG                                     create
-git tag -a TAG -m "."                           create
-git tag -d TAG                                  delete
-  
 git commit -m MSG                               git-add|mv|rm OR mv|rm; git-add
 git commit -a -m MSG                            all known && modified|rm'ed files
 git commit FILES -m MSG                         only known && modified|rm'ed FILES
 git commit --amend -m MSG                       (re)commit (history rewrite)
 git commit --interactive -m MSG                 files
 git commit --patch -m MSG                       hunks
+  
+git tag                                         show tags
+git tag TAG                                     create tag
+git tag -a TAG -m "."                           create annotated tag
+git tag -d TAG                                  delete tag
   
   git checkout b1                                HEAD → b1; update wtree
   git checkout t1|COMMIT                         detached HEAD → commit; update wtree
@@ -108,8 +108,8 @@ git commit --patch -m MSG                       hunks
   git checkout HEAD PATH                         update wtree files
   git checkout -p PATH                           update wtree hunks
   
-  git switch BRANCH                              mv HEAD; update index; update wtree
-  git switch -c BRANCH                           create-switch
+git switch BRANCH                              HEAD → b1; wtree<index<HEAD
+git switch -c BRANCH                           create b1; switch to b1
   
   ----------
   git cherry-pick b1|COMMITS                                   cp; commit; mv branch|HEAD; update wtree
