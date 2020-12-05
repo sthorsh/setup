@@ -61,9 +61,9 @@ git show [--shortstat] OBJECT                       show branch|tag|commit|tree|
 ----------
 git stash list                                      list stash
 git stash show                                      show stash entry
-git stash [-m MSG]                                  stash (stash <- wtree/index)
-git stash apply stash@{N}                           unstash (stash -> wtree)
-git stash pop stash@{N}                             unstash (stash -> wtree)
+git stash -m MSG                                    stash stash<wtree<index
+git stash apply stash@{N}                           unstash stash>wtree
+git stash pop stash@{N}                             unstash stash>wtree
 git stash drop stash@{N}                            drop entry
 git stash clear                                     clear stash
  
@@ -75,13 +75,6 @@ git mv SRC DST                                      stage wtree>index
 git rm FILE                                         stage wtree>index
 git rm --cached FILE                                unstage index<HEAD
   
-----------
-git commit [FILES] -m MSG                           commit index>HEAD
-git commit [FILES] -am MSG                          stage-commit wtree>HEAD
-git commit --amend -m MSG                           commit amend_commit (history rewrite)
-
-git revert COMMIT                                   commit revert_commit
-
 ----------
 git branch -avv                                     list local|upstream|remote-tracking branches
 git branch b1 [REF|COMMIT]                          create b1
@@ -96,6 +89,12 @@ git tag t1                                          create t1
 git tag -a t1 -m "."                                create annotated t1
 git tag -d t1                                       delete t1
   
+git commit [FILES] -m MSG                           create commit index>HEAD
+git commit [FILES] -am MSG                          create commit wtree>HEAD
+git commit --amend -m MSG                           create amend_commit (history rewrite)
+
+git revert COMMIT                                   create revert_commit
+
 git checkout b1|t1|COMMIT                           mv HEAD; wtree<HEAD
 git checkout -b b2 b1|t1|COMMIT                     create b2; mv HEAD; wtree<HEAD
 git checkout -t REMOTE/b1                           create b1; set upstream; mv HEAD; wtree<HEAD
@@ -109,20 +108,19 @@ git restore PATH                                    restore wtree<index
 git restore --staged PATH                           unstage index<HEAD
 git restore --staged --worktree PATH                unstage-restore wtree<HEAD
   
-git reset COMMIT [FILE]                             mv HEAD [and branch]; unstage index<HEAD
-git reset --soft COMMIT                             mv HEAD [and branch]
-git reset --hard COMMIT                             mv HEAD [and branch]; wtree<HEAD
+git reset b1|t1|COMMIT [FILE]                       mv HEAD [and branch]; unstage index<HEAD
+git reset --soft b1|t1|COMMIT                       mv HEAD [and branch]
+git reset --hard b1|t1|COMMIT                       mv HEAD [and branch]; wtree<HEAD
    
------------------
-  git merge SOURCE -m MSG                       commit merge_commit OR ff-merge or merge-commit
-  git merge --abort                              abort merge
+----------
+git merge SOURCE -m MSG                             create merge_commit OR perform ff merge
 
-  git cherry-pick b1|COMMITS                     cp; commit; mv branch|HEAD; wtree
+git cherry-pick b1|COMMITS                          create cherry_commit; mv branch/HEAD; wtree<HEAD
 
-  git rebase master                              mv HEAD to master, cp/replay commits, mv HEAD, mv b1
-  git rebase -i COMMIT                           rewrite project history f.o.m COMMIT
+git rebase BRANCH                                   create rebase_commits; mv HEAD/current_branch; wtree<HEAD
+git rebase --interactive BRANCH                     create interactive rebase_commits
   
-  ----------------------------------------------
+-----------------
   git fetch
   
   git pull --no-rebase
