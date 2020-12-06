@@ -96,6 +96,7 @@ alias awkde="cat ~/doc/awk/exp.txt"
 alias awkdv="awk --dump-variables=$(tty) ''"
 alias awkdf="awk 'BEGIN { for(key in FUNCTAB) print FUNCTAB[key] }' | sort"
 alias cs="cheat"
+alias datetime="date '+%Y-%m-%dT%H:%M:%S'"
 alias egrep='egrep --ignore-case --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --ignore-case --color=auto'
