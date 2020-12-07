@@ -1,139 +1,130 @@
 GIT                                               
 
-git TAB
+git TAB                              completion
 
-git blame FILE
-
-git branch -avv                   list local|remote-tracking|upstream branches
-git branch b [H|B|T|A]            create b
-git branch -d b                   delete b
-git branch -m b new_name          rename b
-git branch b -t UPSTREAM          create b; set upstream e.g origin/b
-git branch -u UPSTREAM b          set upstream
-git branch --unset-upstream b     unset upstream
+git blame FILE                       annotate file
+                                    
+git branch -avv                      list local|remote-tracking|upstream branches
+git branch b [H|R|C]                 create b
+git branch -d b                      delete b
+git branch -m b new_name             rename b
+git branch b -t origin/b             create b; set upstream
+git branch -u origin/b b             set upstream
+git branch --unset-upstream b        unset upstream
   
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  git checkout FILE                 restore wtree<index 
-  git checkout H|B|T|A FILE         restore wtree<index<H|B|T|A
-git checkout H|B|T|A              m HEAD; update wtree<H|B|T|A
-  git checkout -b b H|B|T|A         mv HEAD; create b; update wtree<H|B|T|A
-  git checkout -t UPSTREAM          mv HEAD; create b; set upstream; update wtree<HEAD
-  git checkout -b B -t UPSTREAM     eq git checkout B (if B is not found and UPSTREAM exists)
-                                          
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-git help
-git help --all
-git help --config
-git help --guides
-git help CMD                                        
-git help GUIDE                                    
+git checkout H|R|C                   mv HEAD; update wtree<H|R|C
+git checkout -b b H|R|C              create b; checkout H|R|C
+git checkout -t origin/b             create b; set upstream; checkout H|R|C
+git checkout PATH                    overwrite wtree<index 
+git checkout H|R|C PATH              overwrite wtree<index<H|R|C
+                                             
+git cherry-pick R|C ...              create commits; mv HEAD; update wtree<HEAD
 
-----------
-git config                                          use
-git config -l                                       list vars
-git config section.key                              get value
-git config section.key value                        set value
+git clone URL [DIR]                  clone project
 
-git init [DIR]                                      init project
+git commit [FILES] -m MSG            create commits; mv HEAD
+git commit -am MSG                   stage changes; create commits; mv HEAD
+git commit --amend -m MSG            create commit; mv HEAD
 
-git clone REPO [DIR]                                clone project
-
-git remote -v                                       show remote + fetch|push url
-git remote add NAME URL                             init; remote-add; fetch; branch -t; checkout
-git remote rm NAME                                  remove remote
-
-----------
-git status                                          show untracked|modified|staged
-git status --ignored                                show ignored
-git status --show-stash                             show stash
-
-git log [HEAD] [PATHS]                              -
-git log [HEAD] -N [PATHS]                           -
-git log [HEAD] --decorate=full [PATHS]              print ref name prefix
-git log [HEAD] --source [PATHS]                     print ref name by which commit was reached
-git log [HEAD] --all [PATHS]                        commit limiting
-git log [HEAD] --grep=REGEXP [PATHS]                commit limiting
-git log [HEAD] --not [PATHS]                        commit limiting
-git log [HEAD] --since=yyyy--mm-dd [PATHS]          commit limiting
-git log [HEAD] --graph [PATHS]                      commit formatting
-git log [HEAD] --oneline [PATHS]                    commit formatting
-git log [OPTS] COMMITS₁ [PATHS]                     include HEAD|branch|tag|commit
-git log [OPTS] COMMITS₁ ^COMMITS₂ [PATHS]           include ^exclude HEAD|branch|tag|commit
-git log [OPTS] COMMMIT₁...COMMIT₂                   $ git log A B --not $(git merge-base --all A B)
-
-git reflog [OPTS]                                   -
-git reflog [OPTS] HEAD|BRANCH                       -
-git reflog [OPTS] refs/heads/master                 -
-
-git diff [PATHS]                                    wtree vs index
-git diff PATH₁ PATH₂                                file₁ vs file₂ OR dir₁ vs dir₂
-git diff --staged [PATHS]                           index vs HEAD
-git diff COMMIT [PATHS]                             wtree vs HEAD|branch|tag|commit
-git diff --staged COMMIT [PATHS]                    index vs HEAD|branch|tag|commit 
-git diff COMMIT₁ COMMIT₂ [PATHS]                    HEAD|branch|tag|commit vs HEAD|branch|tag|commit
-git diff COMMIT₁...COMMIT₂ [PATHS]                  $ git diff $(git merge-base A B) B
-git diff commit₁ commit₂ commit₃ ... [PATHS]        merge-commit + ≥2 parent-commits
-
-git show [HEAD]                                     show last commit
-git show [--shortstat] OBJECT                       show branch|tag|commit|tree|file
-
-----------
-git stash list                                      list stash
-git stash show                                      show stash entry
-git stash -m MSG                                    stash stash<wtree<index
-git stash apply stash@{N}                           unstash stash>wtree
-git stash pop stash@{N}                             unstash stash>wtree
-git stash drop stash@{N}                            drop entry
-git stash clear                                     clear stash
+git config                           usage
+git config --list                    list all
+git config --show-scope              global|local|...
+git config --show-origin             filename
+git config section.key               get value
+git config section.key value         set value
  
-----------
-git add PATH                                        stage untracked|modified|deleted files
-git add --patch PATH                                stage hunks
-  
-git mv SRC DST                                      stage wtree>index
-  
-git rm FILE                                         stage: wtree>index
-git rm --cached FILE                                unstage: rm from index
-  
-----------
-git tag                                             show tags
-git tag t1                                          create t1
-git tag -a t1 -m "."                                create annotated t1
-git tag -d t1                                       delete t1
-  
-git commit [FILES] -m MSG                           create commit index>HEAD
-git commit [FILES] -am MSG                          create commit wtree>HEAD
-git commit --amend -m MSG                           create amend_commit (history rewrite)
+git diff [PATHS]                     wtree vs index
+git diff --staged [PATHS]            index vs HEAD
+git diff H|R|C [PATHS]               wtree vs commit
+git diff --staged H|R|C [PATHS]      index vs commit
+git diff H|R|C H|R|C [PATHS]         commit vs commit
+git diff H|R|C...H|R|C [PATHS]       eq git diff $(git merge-base A B) B
 
-git revert COMMIT                                   create revert_commit
+git fetch [-pv] [REMOTE] [R]         prune verbose
 
-git switch b1                                       mv HEAD; wtree<HEAD
-git switch -c b2                                    create b2; mv HEAD; wtree<HEAD
-  
-git reset b1|t1|COMMIT [FILE]                       mv HEAD [and branch]; unstage index<HEAD
-git reset --soft b1|t1|COMMIT                       mv HEAD [and branch]
-git reset --hard b1|t1|COMMIT                       mv HEAD [and branch]; wtree<HEAD
-   
-git restore PATH                                    restore wtree<index
-git restore --staged PATH                           unstage index<HEAD
-git restore --staged --worktree PATH                unstage-restore wtree<HEAD
-  
-----------
-git merge SOURCE -m MSG                             create merge_commit OR perform ff merge
+git help                             -
+git help --all                       -
+git help --config                    -
+git help --guides                    -
+git help CMD                         -              
+git help GUIDE                       -            
 
-git cherry-pick b1|COMMITS                          create cherry_commit; mv branch/HEAD; wtree<HEAD
+git init [DIR]                       init project
 
-git rebase BRANCH                                   create rebase_commits; mv HEAD/current_branch; wtree<HEAD
-git rebase --interactive BRANCH                     create interactive rebase_commits
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+git log [OPTS] [RR] [PATH]            synopsis
+git log -N                            commit limiting
+  git log --all                         commit limiting
+  git log --grep=REGEXP                 commit limiting
+  git log --not                         commit limiting
+  git log --since=yyyy-mm-dd            commit limiting
+  git log --decorate=full               ref name prefix
+  git log --graph                       commit formatting
+  git log --oneline                     commit formatting
+  git log --source                      ref by which commit was reached
+  git log COMMITS₁                      include HEAD|branch|tag|commit
+  git log COMMITS₁ ^COMMITS₂            include ^exclude HEAD|branch|tag|commit
+  git log COMMMIT₁...COMMIT₂            eq git log A B --not $(git merge-base --all A B)
+  git log PATH
+
+  git merge SOURCE -m MSG                             create merge_commit OR perform ff merge
   
------------------
-  git fetch
-  
+  git mv SRC DST                                      stage wtree>index
   git pull --no-rebase
   git pull --ff
   git pull --rebase
   
   git push REPO REF
-  git push -u REPO REF                           create remote branch
-  git push -d REPO REF                           delete remote branch
-
+  git push -u REPO REF                                create remote branch
+  git push -d REPO REF                                delete remote branch
+  
+  git rebase BRANCH                                   create rebase_commits; mv HEAD/current_branch; wtree<HEAD
+  git rebase --interactive BRANCH                     create interactive rebase_commits
+    
+  git reflog [OPTS]                                   -
+  git reflog [OPTS] HEAD|BRANCH                       -
+  git reflog [OPTS] refs/heads/master                 -
+  
+  git remote -v                                       show remote + fetch|push url
+  git remote add NAME URL                             init; remote-add; fetch; branch -t; checkout
+  git remote prune NAME                               prune 
+  git remote rm NAME                                  remove remote
+  
+  git reset b1|t1|COMMIT [FILE]                       mv HEAD [and branch]; unstage index<HEAD
+  git reset --soft b1|t1|COMMIT                       mv HEAD [and branch]
+  git reset --hard b1|t1|COMMIT                       mv HEAD [and branch]; wtree<HEAD
+     
+  git restore PATH                                    restore wtree<index
+  git restore --staged PATH                           unstage index<HEAD
+  git restore --staged --worktree PATH                unstage-restore wtree<HEAD
+    
+  git revert COMMIT                                   create revert_commit
+  
+  git rm FILE                                         stage: wtree>index
+  git rm --cached FILE                                unstage: rm from index
+    
+  git show [HEAD]                                     show last commit
+  git show [--shortstat] OBJECT                       show branch|tag|commit|tree|file
+  
+  git stage PATH                                      stage untracked|modified|deleted files
+  git stage --patch PATH                              stage hunks
+    
+  git stash list                                      list stash
+  git stash show                                      show stash entry
+  git stash -m MSG                                    stash stash<wtree<index
+  git stash apply stash@{N}                           unstash stash>wtree
+  git stash pop stash@{N}                             unstash stash>wtree
+  git stash drop stash@{N}                            drop entry
+  git stash clear                                     clear stash
+   
+  git status                                          show branch, tracking, staged, modified, untracked
+  git status --ignored                                show ignored
+  git status --show-stash                             show stash
+  
+  git switch b1                                       mv HEAD; wtree<HEAD
+  git switch -c b2                                    create b2; mv HEAD; wtree<HEAD
+    
+  git tag                                             show tags
+  git tag t1                                          create t1
+  git tag -a t1 -m "."                                create annotated t1
+  git tag -d t1                                       delete t1
