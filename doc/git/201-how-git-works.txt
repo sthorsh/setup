@@ -1,6 +1,8 @@
 HOW GIT WORKS
 
-Git
+------------------
+GIT
+------------------
   Distributed version control system (remote, ...)
   Version control system (branch, tag, merge, ...)
   High-level versioned file system (snapshot)
@@ -9,14 +11,16 @@ Git
   Map (bytesekvens → hash)
 
 ------------------
-TRE TRÆR 
+TRÆR
+------------------
   Arbeidskatalog: $ tree
   Indeks: $ git ls-files -s
   Hode: $ git cat-file -p HEAD; $ git ls-tree -r HEAD
   Cf https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified#_the_three_trees
 
--------------
-FEM AREAS
+------------------
+AREAS
+------------------
 Stash
 
 Arbeidstre
@@ -34,7 +38,9 @@ To spm for hver CMD
   Hvordan CMD evt forandrer repositoriet?
   Hvordan CMD evt "flytter" data mellom områder?
 
-----
+------------------
+OBJEKTER
+------------------
 HEAD
   Ref til current branch (og current commit)
   Evt ref til current commit (detached head)

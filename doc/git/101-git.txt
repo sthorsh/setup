@@ -1,4 +1,6 @@
+-------------------------------------
 GIT                                                       
+-------------------------------------
 
 git TAB                                           completion
 
@@ -18,9 +20,39 @@ git init [DIR]                                    init project
 
 git clone URL [DIR]                               clone project
 
---------------
+-------------------------------------
+git status --ignored                              branch|upstream|staged|unstaged|untracked|ignored
+  
 git blame FILE                                    annotate file
                                          
+git diff [PATHS]                                  wtree vs index
+git diff --staged [PATHS]                         index vs HEAD
+git diff H|R|C [PATHS]                            wtree vs commit
+git diff --staged H|R|C [PATHS]                   index vs commit
+git diff H|R|C H|R|C [PATHS]                      commit vs commit
+git diff H|R|C...H|R|C [PATHS]                    eq git diff $(git merge-base A B) B
+
+git log -N                                        number
+git log --all                                     show all refs/
+git log --grep=REGEXP                             grep commit msgs
+git log --since=DATE                              e.g yyyy-mm-dd
+git log --decorate=full                           show prefix ref names
+git log --graph                                   -
+git log --oneline                                 -
+git log --source                                  show ref by which commit was reached
+git log REVISION_RANGE                            cf $ man gitrevisions
+git log PATH                                      e.g filename
+
+git reflog [OPTS]                                 show reflog
+git reflog [OPTS] H|B                             show reflog for head|branch
+git reflog [OPTS] refs/heads/master               alternative ref notation
+  
+git show [OBJECT]                                 show H|B|T|C|tree|file
+git show --shortstat [OBJECT]                     -
+git show --stat [OBJECT]                          -
+git show --name-status [OBJECT]                   -
+  
+-------------------------------------
 git branch -avv                                   list local|upstream|remote-tracking branches
 git branch b [H|R|C]                              create b
 git branch -d b                                   delete b
@@ -41,24 +73,6 @@ git commit [FILES] -m MSG                         create commit; mv HEAD
 git commit -am MSG                                stage changes; create commit; mv HEAD
 git commit --amend -m MSG                         create amend_commit; mv HEAD
 
-git diff [PATHS]                                  wtree vs index
-git diff --staged [PATHS]                         index vs HEAD
-git diff H|R|C [PATHS]                            wtree vs commit
-git diff --staged H|R|C [PATHS]                   index vs commit
-git diff H|R|C H|R|C [PATHS]                      commit vs commit
-git diff H|R|C...H|R|C [PATHS]                    eq git diff $(git merge-base A B) B
-
-git log -N                                        number
-git log --all                                     show all refs/
-git log --grep=REGEXP                             grep commit msgs
-git log --since=DATE                              e.g yyyy-mm-dd
-git log --decorate=full                           show prefix ref names
-git log --graph                                   -
-git log --oneline                                 -
-git log --source                                  show ref by which commit was reached
-git log REVISION_RANGE                            cf $ man gitrevisions
-git log PATH                                      e.g filename
-
 git merge -m msg R|C ...                          create merge_commit OR do ff merge
 git merge -m msg                                  merge in current branch's upstream
 git merge --ff --no-ff                            default: ff
@@ -70,50 +84,42 @@ git rebase UPSTREAM                               git switch upstream; create re
 git rebase -i UPSTREAM                            interactive
 git rebase --abort|quit|skip|continue             if conflict
 
-  git reflog [OPTS]                               -
-  git reflog [OPTS] HEAD|BRANCH                   -
-  git reflog [OPTS] refs/heads/master             -
-  
-  git reset b1|t1|COMMIT [FILE]                   mv HEAD [and branch]; unstage index<HEAD
-  git reset --soft b1|t1|COMMIT                   mv HEAD [and branch]
-  git reset --hard b1|t1|COMMIT                   mv HEAD [and branch]; wtree<HEAD
+git reset [HEAD] [PATH]                           unstage ie index<HEAD
+git reset --hard [HEAD]                           discard ie wtree<HEAD
+git reset H|B|T|C [PATH]                          mv HEAD and *B to B|T|C; unstage 
+git reset --soft H|B|T|C                          mv HEAD and *B to B|T|C 
+git reset --hard H|B|T|C                          mv HEAD and *B to B|T|C; discard
      
-  git restore PATH                                restore wtree<index
-  git restore --staged PATH                       unstage index<HEAD
-  git restore --staged --worktree PATH            unstage-restore wtree<HEAD
+git restore PATH                                  restore ie wtree<index
+git restore --staged PATH                         unstage ie index<HEAD
+git restore --staged --worktree PATH              unstage-restore ie wtree<HEAD
     
-  git revert COMMIT                               create revert_commit
+git revert H|B|T|C                                create revert_commit
   
-  git rm FILE                                     stage ie wtree>index
-  git rm --cached FILE                            unstage ie rm from index
+git rm PATH                                       rm file from wtree and index
+git rm --cached PATH                              rm file from index 
     
-  git show [HEAD]                                 show last commit
-  git show [--shortstat] OBJECT                   show branch|tag|commit|tree|file
-  
-  git stage PATH                                  stage untracked|modified|deleted files
-  git stage --patch PATH                          stage hunks
+git stage PATH                                    stage untracked|modified|deleted files
+git stage --patch PATH                            stage hunks
     
-  git stash list                                  list stash
-  git stash show                                  show stash entry
-  git stash -m MSG                                stash stash<wtree<index
-  git stash apply stash@{N}                       unstash stash>wtree
-  git stash pop stash@{N}                         unstash stash>wtree
-  git stash drop stash@{N}                        drop entry
-  git stash clear                                 clear stash
-   
-  git status                                      show branch, tracking, staged, modified, untracked
-  git status --ignored                            show ignored
-  git status --show-stash                         show stash
-  
-  git switch b1                                   mv HEAD; wtree<HEAD
-  git switch -c b2                                create b2; mv HEAD; wtree<HEAD
+git switch B                                      mv HEAD; wtree<HEAD
+git switch --create B H|B|T|C                     create B; mv HEAD; wtree<HEAD
     
-  git tag                                         show tags
-  git tag t1                                      create t1
-  git tag -a t1 -m "."                            create annotated t1
-  git tag -d t1                                   delete t1
+git tag                                           show tags
+git tag T [H|R|C]                                 create tag
+git tag -a T -m MSG                               create annotated tag
+git tag -d T                                      delete tag
 
--------------
+-------------------------------------
+git stash -m MSG                                  stash ie stash<wtree<index
+git stash list                                    show list
+git stash show ENTRY                              show stash entry
+git stash apply ENTRY                             unstash stash>wtree
+git stash pop ENTRY                               unstash stash>wtree
+git stash drop ENTRY                              drop entry
+git stash clear                                   drop all entries
+   
+-------------------------------------
 https://stackoverflow.com/questions/44995423/does-upstream-branch-have-be-a-remote-branch
 git remote -v                                     show remote w/urls
   git remote add NAME URL                         init; remote-add; fetch; branch -t; checkout
@@ -130,4 +136,31 @@ git remote -v                                     show remote w/urls
   git push -v REMOTE +SRCOBJ:DSTREF               update remote refs; send objects
   git push -v -u REMOTE +SRCOBJ:DSTREF            create remote branch
   git push -v -d REMOTE +SRCOBJ:DSTREF            delete remote branch
+
+-------------------------------------
+GIT PLUMBING
+-------------------------------------
+
+git count-objects
+
+git hash-object --stdin
+echo "foobar" | git hash-object --stdin
+echo "foobar" | git hash-object --stdin -w
+
+git cat-file -t 58f3805
+git cat-file -p 58f3805
+
   
+git merge-base BRANCH1 BRANCH2
+
+git ls-files -s                               index
+git ls-tree -r HEAD       
+git ls-remote
+
+git show-ref --head
+git show-ref HEAD or BRANCH
+
+git update-ref refs/heads/b1 c7e9efd -m "..."
+
+Script?
+git filter-repo ...                            rewrite project history
