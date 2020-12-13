@@ -120,22 +120,25 @@ git stash drop ENTRY                              drop entry
 git stash clear                                   drop all entries
    
 -------------------------------------
-https://stackoverflow.com/questions/44995423/does-upstream-branch-have-be-a-remote-branch
-git remote -v                                     show remote w/urls
-  git remote add NAME URL                         init; remote-add; fetch; branch -t; checkout
-  git remote prune NAME                           prune 
-  git remote rm NAME                              remove remote
-  git remote update --prune
-  
-  git pull -v REMOTE +SRCOBJ:DSTREF                 eq git fetch [opts]; git merge [opts]
-  git pull -vr REMOTE +SRCOBJ:DSTREF                eq git fetch [opts]; git rebase [opts]
-  
-  git fetch -v REMOTE +SRCOBJ:DSTREF                download refs and objects from REMOTE
-  git fetch -vp REMOTE +SRCOBJ:DSTREF               prune remote tracking refs deleted on REMOTE (noop?)
+git remote -v                                     show remotes
+git remote add REMOTE URL                         create entry in .git/config
+git remote -v update -p [REMOTE]                  fetch REMOTE objects & refs
+git remote remove REMOTE                          remove entry in .git/config
 
-  git push -v REMOTE +SRCOBJ:DSTREF               update remote refs; send objects
-  git push -v -u REMOTE +SRCOBJ:DSTREF            create remote branch
-  git push -v -d REMOTE +SRCOBJ:DSTREF            delete remote branch
+git fetch -pv                                     cf remote.origin.fetch
+git fetch -pv origin +SRC:DST                     cp origin src → local remote-tracking dst
+git fetch -pv REMOTE +SRC:DST                     cp remote src → local remote-tracking dst          
+                                                                      
+git pull -pv[r]                                   git fetch; git merge [or rebase]
+git pull -pv[r] origin +SRC:DST                   git fetch; git merge [or rebase]
+git pull -pv[r] REMOTE +SRC:DST                   git fetch; git merge [or rebase]
+
+  git push -v REMOTE +SRC:DST               update remote refs; send objects
+  git push -v -u REMOTE +SRC:DST            create remote branch
+  git push -v -d REMOTE +SRC:DST            delete remote branch
+
+
+https://stackoverflow.com/questions/44995423/does-upstream-branch-have-be-a-remote-branch
 
 -------------------------------------
 GIT PLUMBING
@@ -164,3 +167,14 @@ git update-ref refs/heads/b1 c7e9efd -m "..."
 
 Script?
 git filter-repo ...                            rewrite project history
+
+-------------------------------------
+GIT EXAMPLES
+-------------------------------------
+Checking out local remote-tracking branch
+$ git init
+$ git remote add origin git@gitlab.com:sthorsh/alfa.git
+$ git fetch -pv origin
+$ git branch master -t origin/master
+$ git checkout master
+
