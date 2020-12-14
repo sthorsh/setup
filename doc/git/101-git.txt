@@ -125,17 +125,19 @@ git remote add REMOTE URL                         create entry in .git/config
 git remote -v update -p [REMOTE]                  fetch REMOTE objects & refs
 git remote remove REMOTE                          remove entry in .git/config
 
-git fetch -pv                                     cf remote.origin.fetch
-git fetch -pv origin +SRC:DST                     cp origin src → local remote-tracking dst
-git fetch -pv REMOTE +SRC:DST                     cp remote src → local remote-tracking dst          
-                                                                      
-git pull -pv[r]                                   git fetch; git merge [or rebase]
-git pull -pv[r] origin +SRC:DST                   git fetch; git merge [or rebase]
-git pull -pv[r] REMOTE +SRC:DST                   git fetch; git merge [or rebase]
+git pull -vp[r] [--dry-run]                       fetch; merge [or rebase]
+git pull -vp[r] origin +SRC:DST                   fetch; merge [or rebase]
+git pull -vp[r] REMOTE +SRC:DST                   fetch; merge [or rebase]
 
-  git push -v REMOTE +SRC:DST               update remote refs; send objects
-  git push -v -u REMOTE +SRC:DST            create remote branch
-  git push -v -d REMOTE +SRC:DST            delete remote branch
+git fetch -vp [--dry-run]                         eq git fetch -vp origin remote.origin.fetch
+git fetch -vp origin +SRC:DST                     cp origin src to local remote-tracking dst
+git fetch -vp REMOTE +SRC:DST                     cp remote src to local remote-tracking dst          
+                                                                      
+git push -v [--dry-run]                           eq git push -v branch.*.remote push.default
+git push -v origin +SRC:DST                       cp local src to origin dst
+git push -v REMOTE +SRC:DST                       cp local src to remote dst
+git push -vd REMOTE +SRC:DST                      delete remote-tracking and remote branch
+git push -vu REMOTE +SRC:DST                      set upstream; create remote-tracking and remote branch
 
 
 https://stackoverflow.com/questions/44995423/does-upstream-branch-have-be-a-remote-branch
