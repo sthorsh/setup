@@ -7,17 +7,17 @@ Distribusjonsmodell
   Diktator/løytnant
 
 Branchingmodell
-  Integrasjon: main/master/trunk
-  Feature/topic
+  Master
+  Feature
   Release
   Hotfix
 
 Constraints
-  Merge eller rebase? 
+  Merge eller rebase?
   ...
 
 Regler
-  Aldri rebase en public branch  
+  Aldri rebase en public branch
   Never rebase shared commits (PP)
   Be careful when you revert merge commits
-
+  ...

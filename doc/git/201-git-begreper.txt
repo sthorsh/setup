@@ -1,0 +1,62 @@
+BEGREPER
+
+Git
+  Map: key bytes, value hash/sha-1
+  Persistent map: .git
+  Stupid content tracker: commit
+  Version control system: commit → parents
+  High-level versioned file system: trees, blobs
+  Distributed version control system: remote etc
+
+Areas
+  Stash
+  Wtree
+  Index
+  Repository
+  Remote repository
+
+Trees
+  Wtree
+  Index
+  HEAD → branch → current_commit
+
+Questions
+  How does CMD change the repository?
+  How does CMD move data between areas?
+
+Objekter
+  HEAD
+    Ref til current branch (og current commit)
+    Evt ref til current commit (detached head)
+    Cf peker .git/HEAD
+  
+  Branch
+    Ref til commit (entrypunkt til commit-historikk)
+    Cf pekere .git/refs/heads/
+  
+  Tag
+    Ref til commit (entrypunkt til commit-historikk)
+    Evt ref til et tag-objekt (annotert tag)
+    Cf pekere .git/refs/tags/ immutables
+  
+  Tag-objekt
+    Representer annotert tag
+    Peker til et objekt e.g commit
+    Cf objektdb .git/objects/ immutables
+  
+  Commit-objekt
+    Representer commit/snapshot
+    Peker til parent commits (historikk)
+    Peker til et tree (arbeidstreets rot)
+    Cf objektdb .git/objects/ immutables
+  
+  Tree-objekt
+    Representer katalog
+    Peker til trees (fs)
+    Peker til blobs (fs)
+    Cf objektdb .git/objects/ immutables
+  
+  Blob-objekt
+    Representer e.g tekstfiler
+    Cf objektdb .git/objects/ immutables
+  

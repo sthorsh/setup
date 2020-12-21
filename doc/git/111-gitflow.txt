@@ -1,0 +1,59 @@
+GITFLOW
+
+Branches  
+  Master branch
+  Hotfix branch: created off master
+  Release branch: created off develop (live branch)
+  Develop branch: next release
+  Feature branch: cf feature branch model
+  Feature branch: cf feature branch model
+  ...
+
+Install
+  apt-get install git-flow
+
+Commands
+  git flow version
+  -----
+  git flow TAB
+  git flow help
+  git flow SUBCMD help
+  -----
+  git flow init
+  git flow config
+  -----
+  git flow log
+  -----
+  git flow feature help
+  git flow feature list
+  git flow feature start NAME
+  git flow feature checkout
+  git flow feature diff
+  git flow feature rename
+  git flow feature rebase
+  git flow feature pull NAME
+  git flow feature track NAME
+  git flow feature publish NAME
+  git flow feature delete
+  git flow feature finish NAME
+  -----
+  git flow release help
+  git flow release list
+  git flow release start NAME
+  git flow release publish NAME
+  git flow release track NAME
+  git flow release finish NAME
+  git flow release delete NAME
+  -----
+  git flow hotfix help
+  git flow hotfix list
+  git flow hotfix start NAME
+  git flow hotfix publish NAME
+  git flow hotfix track NAME
+  git flow hotfix finish NAME
+  git flow hotfix delete NAME
+  -----
+  git flow bugfix
+  -----
+  git flow support
+
