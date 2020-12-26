@@ -1,0 +1,31 @@
+KAFKA CLUSTER
+
+Kafka
+  Meldingssystem
+  Pub-sub semantikk
+  Hendelsesdrevet plattform
+  Distribuert commit-log i.e db
+
+Topic T
+  Name
+  Partitions: 1..N
+  Replication-factor: 1..N per topic
+
+Partisjon P
+  En loggfil
+  Cf /tmp/kafka-logs/T-P/00000000000000000000.log
+
+Replikering
+  Replication factor
+  In-sync replicas (ISR)
+
+Offset
+
+Broker
+  Retention period: 7 days
+  
+Zookeeper
+  Controller
+  Leader
+  Follower
+

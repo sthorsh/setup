@@ -1,0 +1,26 @@
+KAFKA PRODUCER
+
+Producer
+  properties
+  keySerializer
+  valueSerializer
+
+ProducerConfig
+  key.serializer: 
+  value.serializer:
+  acks: 1
+  bootstrap.servers: ""
+  buffer.memory: 33554432 (bytes)
+  compression.type: none
+  retries: 2147483647
+  batch.size: 16384 (bytes)
+  partitioner.class: DefaultPartitioner (sticky)
+  ...
+  
+ProducerRecord
+  Topic*
+  Timestamp
+  Partition
+  Key
+  Value*
+

@@ -1,0 +1,22 @@
+KAFKA CLI
+
+$ kafka-server-start.sh config/server-1.properties
+
+$ kafka-topics.sh --create --topic t --partitions 1 --replication-factor 1 --zookeeper localhost:2181
+$ kafka-topics.sh --delete --topic t --zookeeper localhost:2181
+$ kafka-topics.sh --describe --topic t --zookeeper localhost:2181
+$ kafka-topics.sh --list --zookeeper localhost:2181
+
+$ kafka-console-producer.sh --topic t --broker-list localhost:9092,localhost:9093,localhost:9094
+
+$ kafka-console-consumer.sh --topic t --from-beginning --bootstrap-server localhost:9092,localhost:9093,localhost:9094
+
+/tmp/kafka-logs/
+  topic1-0/
+
+/usr/lib/kafka_2.13-2.4.0/
+  bin/
+  config/
+  libs/
+  logs/
+
