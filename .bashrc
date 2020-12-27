@@ -21,6 +21,7 @@ export HISTSIZE=100000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M "
 export JAVA_HOME=/usr/lib/jvm/java
 export JFROG_HOME=/home/svein/jfrog/
+export KAFKA_HOME=/usr/lib/kafka
 export LESS='--LINE-NUMBERS --LONG-PROMPT'
 export MAVEN_HOME=/usr/lib/apache-maven
 export PATH="$PATH:/home/svein/.minishift/cache/oc/v3.11.0/linux"
@@ -30,10 +31,10 @@ export VISUAL=/usr/bin/vim
 # PATH
 [[ ":$PATH:" != *${AMQ_HOME}/bin* ]] && export PATH=${PATH}:${AMQ_HOME}/bin
 [[ ":$PATH:" != *${FOP_HOME} ]] && export PATH=${PATH}:${FOP_HOME}
-[[ ":$PATH:" != *${JAVA_HOME}/bin* ]] && export PATH=${PATH}:${JAVA_HOME}/bin
-[[ ":$PATH:" != *${MAVEN_HOME}/bin* ]] && export PATH=${PATH}:${MAVEN_HOME}/bin
 [[ ":$PATH:" != *${GRADLE_HOME}/bin* ]] && export PATH=${PATH}:${GRADLE_HOME}/bin
-
+[[ ":$PATH:" != *${JAVA_HOME}/bin* ]] && export PATH=${PATH}:${JAVA_HOME}/bin
+[[ ":$PATH:" != *${KAFKA_HOME}/bin* ]] && export PATH=${PATH}:${KAFKA_HOME}/bin
+[[ ":$PATH:" != *${MAVEN_HOME}/bin* ]] && export PATH=${PATH}:${MAVEN_HOME}/bin
 
 # TERM
 [[ -n "$DISPLAY" && "$TERM" == "xterm" ]] && export TERM=xterm-256color
@@ -50,7 +51,7 @@ if [ "$color_prompt" != yes ]; then
     PS1='\u@\h \w \$ '
   else
     if [[ ${EUID} != 0 ]] ; then
-        export PS1="\[\e[06;36m\]\u@\h \w \$(parse_git_branch) $\[\e[00m\] "
+        export PS1="\[\e[06;36m\]\u@\h \w \$(parse_git_branch)\n$\[\e[00m\] "
         #export PS1='\[\e[01;32m\]\u@\h\[\e[01;34m\][\w]\[\e[01;32m\]\$\[\e[00m\] '
         #export PS1="\[\e[02;32m\]\u@\h\[\033[34m\][\w]\[\033[33m\]\$(parse_git_branch)\[\033[32m\]$\[\e[00m\] "
         #export PS1="\[\e[06;32m\]\u@\h\[\e[01;34m\][\w]\[\033[30m\]\$(parse_git_branch)\[\033[34m\] $ \[\e[00m\]"

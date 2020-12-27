@@ -1,4 +1,75 @@
-KAFKA CONSUMER
+KAFKA KONSUMENT
 
-Consumer
+Topologi
+  Konsument
+  Konsumentgruppe
+
+Konsument
+  Sett konfigurasjon/properties/settings
+  Subscribe på topics ELLER assign partisjoner
+  Poll/fetch data og returner consumer records
+  Prosesser consumer records
+  Commit consumer offsets
+  Fetch/refresh metadata iht metadata.max.age.ms
+  Send periodisk heartbeat iht heartbeat.interval.ms
+                                
+Konfigurasjon
+  bootstrap.servers: ""
+  key.deserializer:
+  value.deserializer:
+  group.id: null
+  heartbeat.interval.ms: 3000 (3 secs)
+  session.timeout.ms: 10000
+  enable.auto.commit: true
+  auto.commit.interval.ms: 5000
+  auto.offset.reset: latest
+  metadata.max.age.ms: 300000 (5 mins)
+  ...
+
+Subscribe/assign API
+  Subscribe: konsument tracker topic(s)
+  Assign: konsument tracker partisjon(er)
+
+Poll API
+  Tråd₁ kaller poll(timeout)
+  Kafka returnerer batch m/records
+  Tråd₁ parser records
+  Tråd₁ deserialiserer records
+  Tråd₁ grupperer records
+  Tråd₁ returnerer consumer records
+
+Konsumentrecord
+  Topic*
+  Partition
   Offset
+  Key
+  Value*
+
+Prosessering
+  Tråd₁ prosesserer konsumentrecords
+
+Konsumentoffset
+  Last committed offset (LCO)
+  Current offset (CO)
+  Log-end offset (LO)
+  Uncommitted offsets: fra LCO til CO
+
+Commit av offset
+  Auto-commit: cf enable.auto.commit
+  Manuell commit: cf commitSync() (evt)
+  
+Tråder
+  Per-konsument: en tråd
+  Per-konsument: flere tråder
+
+Gruppe
+  En gruppe av N konsumenter
+  Konsumentene har felles group.id
+  Konsumentene subscribe'er samme topics
+  En utpekt broker blir gruppekoordinator
+
+Rebalansering av gruppe
+  Hvis en konsument feiler
+  Hvis en ny konsument legges til
+  Hvis en ny partisjon legges tii
+

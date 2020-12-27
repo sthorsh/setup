@@ -6,10 +6,10 @@ Producer
   valueSerializer
 
 ProducerConfig
+  bootstrap.servers: ""
   key.serializer: 
   value.serializer:
   acks: 1
-  bootstrap.servers: ""
   buffer.memory: 33554432 (bytes)
   compression.type: none
   retries: 2147483647
@@ -19,8 +19,8 @@ ProducerConfig
   
 ProducerRecord
   Topic*
-  Timestamp
   Partition
+  Timestamp
   Key
   Value*
 
