@@ -1,0 +1,21 @@
+CLUSTER
+
+Cluster
+  Brokere: 1..N
+
+Brokere
+  Controller
+
+Controller
+  Tilordner topic partisjoner
+  Monitorerer for feil
+
+/tmp/kafka-logs/
+  topic1-0/
+
+/usr/lib/kafka_2.13-2.4.0/
+  bin/
+  config/
+  libs/
+  logs/
+

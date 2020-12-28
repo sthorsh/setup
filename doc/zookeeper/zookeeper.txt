@@ -1,0 +1,50 @@
+ZOOKEEPER
+
+Zookeeper
+  Cluster/DS koordinator
+  Forvalter data som må være synkronisert i et cluster/DS
+  Fastholder et konsistent bilde av tilstanden i et cluster/DS
+
+Arkitektur
+  Master/ZKClient: broker
+  Workers/ZKClient: brokere
+  Ensemble: 3,5,7 zookeeper servere
+
+Oppgaver
+  Hvilken node er master?
+  Hvilke workers er tilgjengelige?
+  Hvilke oppgaver er tilordnet hvilke workers?
+
+Features
+  Master election
+  Group management
+  Metadata
+  Notifikasjoner (til klienter ved endring av znode)
+  Failure detection
+  Failure recovery
+
+Feil
+  Master feiler: må failover til backup
+  Worker feiler: må redistribuere workers arbeid
+  Nettverksfeil: deler av nettverket kan ikke se resten
+
+Quorum
+  ?
+
+Implementasjon
+  API 
+  Distribuert filsystem (erstatt fil med znode)
+
+API
+  create
+  delete
+  exists
+  setData
+  getData
+  getChildren
+
+Filsystem
+  Rot
+  Ephemeral znodes
+  Persistent znodes
+

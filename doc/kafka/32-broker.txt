@@ -1,6 +1,4 @@
-KAFKA CLUSTER
-
-Cluster
+BROKER
 
 Broker
   Retention period: 7 days
@@ -23,13 +21,4 @@ Partisjon
 Replika  
   Replikeringsfaktor
   In-sync replicas (ISR)
-
-/tmp/kafka-logs/
-  topic1-0/
-
-/usr/lib/kafka_2.13-2.4.0/
-  bin/
-  config/
-  libs/
-  logs/
 
