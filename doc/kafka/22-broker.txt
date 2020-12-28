@@ -1,0 +1,35 @@
+KAFKA CLUSTER
+
+Cluster
+
+Broker
+  Retention period: 7 days
+  
+Topic
+  Name
+
+Partisjon
+  En loggfil
+  Cf /tmp/kafka-logs/T-P/00000000000000000000.log
+
+  Record
+
+  Offsets
+    Topic: __consumer_offsets     
+    PartitionCount: 50      
+    ReplicationFactor: 1    
+    Configs: compression.type=producer,...
+  
+Replika  
+  Replikeringsfaktor
+  In-sync replicas (ISR)
+
+/tmp/kafka-logs/
+  topic1-0/
+
+/usr/lib/kafka_2.13-2.4.0/
+  bin/
+  config/
+  libs/
+  logs/
+
