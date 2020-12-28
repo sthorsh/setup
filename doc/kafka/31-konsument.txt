@@ -24,6 +24,9 @@ Konfigurasjon
   auto.commit.interval.ms: 5000
   auto.offset.reset: latest
   metadata.max.age.ms: 300000 (5 mins)
+  fetch.min.bytes: 1
+  max.partition.fetch.bytes: 1048576
+  max.poll.records: 500
   ...
 
 Subscribe/assign API
@@ -66,9 +69,13 @@ Gruppe
   En gruppe av N konsumenter
   Konsumentene har felles group.id
   Konsumentene subscribe'er samme topics
-  En utpekt broker blir gruppekoordinator
 
-Rebalansering av gruppe
+Gruppekoordinator
+  En utpekt broker er gruppekoordinator
+  Setter konsument:partisjon ratio til 1:1 (balansering)
+  Overflødige konsumenter vil være idle
+
+Grupperebalansering
   Hvis en konsument feiler
   Hvis en ny konsument legges til
   Hvis en ny partisjon legges tii

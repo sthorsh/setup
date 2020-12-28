@@ -1,7 +1,0 @@
-KAFKA ZOOKEEPER
-
-Zookeeper
-  Controller
-  Leader
-  Follower
-

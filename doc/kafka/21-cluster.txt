@@ -1,5 +1,7 @@
 KAFKA CLUSTER
 
+Cluster
+
 Broker
   Retention period: 7 days
   
@@ -10,13 +12,13 @@ Partisjon
   En loggfil
   Cf /tmp/kafka-logs/T-P/00000000000000000000.log
 
-Record
+  Record
 
-Consumer offsets
-  Topic: __consumer_offsets     
-  PartitionCount: 50      
-  ReplicationFactor: 1    
-  Configs: compression.type=producer,...
+  Offsets
+    Topic: __consumer_offsets     
+    PartitionCount: 50      
+    ReplicationFactor: 1    
+    Configs: compression.type=producer,...
   
 Replika  
   Replikeringsfaktor
