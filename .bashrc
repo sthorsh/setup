@@ -24,7 +24,6 @@ export JFROG_HOME=/home/svein/jfrog/
 export KAFKA_HOME=/usr/lib/kafka
 export LESS='--LINE-NUMBERS --LONG-PROMPT'
 export MAVEN_HOME=/usr/lib/apache-maven
-export PATH="$PATH:/home/svein/.minishift/cache/oc/v3.11.0/linux"
 export PROMPT_COMMAND="${PROMPT_COMMAND:=history -a; history -c; history -r; $PROMPT_COMMAND}"
 export VISUAL=/usr/bin/vim
 
@@ -35,6 +34,8 @@ export VISUAL=/usr/bin/vim
 [[ ":$PATH:" != *${JAVA_HOME}/bin* ]] && export PATH=${PATH}:${JAVA_HOME}/bin
 [[ ":$PATH:" != *${KAFKA_HOME}/bin* ]] && export PATH=${PATH}:${KAFKA_HOME}/bin
 [[ ":$PATH:" != *${MAVEN_HOME}/bin* ]] && export PATH=${PATH}:${MAVEN_HOME}/bin
+export PATH="$PATH:/home/svein/.minishift/cache/oc/v3.11.0/linux"
+export PATH="$PATH:/usr/share/zookeeper/bin"
 
 # TERM
 [[ -n "$DISPLAY" && "$TERM" == "xterm" ]] && export TERM=xterm-256color
