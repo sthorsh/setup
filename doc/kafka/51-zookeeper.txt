@@ -1,0 +1,16 @@
+KAFKA-ZOOKEEPER
+
+Kafka bruker ZK
+  Lagring av metadata
+  Notifikasjoner ved endring
+
+Klienter
+  Produsenter: send meldinger inn
+  Konsumenter: fetch meldinger ut
+  Admin-tools: create/delete topics, sikkerhet e.g acl
+
+Features
+  Konsument: hvilken offset konsument sist fetchet fra (offset fetch fra zk; offset commit til zk) (før zk, nå kafka)
+  Konsument: hvilken gruppe konsument er medlem i (før zk, nå kafka)
+  Admintool: create/delete topic (før zk, nå api kafka)
+

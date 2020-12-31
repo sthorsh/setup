@@ -1,21 +1,45 @@
 CLUSTER
 
-Cluster
-  Brokere: 1..N
+Kafka
+  $KAFKA_HOME
 
-Brokere
+------------------
+  Cluster
+    Brokere: 1..N
+  
+  Brokere
+    Controller
+  
   Controller
-
-Controller
-  Tilordner topic partisjoner
-  Monitorerer for feil
-
-/tmp/kafka-logs/
-  topic1-0/
-
-/usr/lib/kafka_2.13-2.4.0/
-  bin/
-  config/
-  libs/
-  logs/
-
+    Tilordner topic partisjoner
+    Monitorerer for feil
+  
+  /tmp/kafka-logs/
+    topic1-0/
+  
+  /usr/lib/kafka_2.13-2.4.0/
+    bin/
+    config/
+    libs/
+    logs/
+  
+  There are five major APIs in Kafka:
+    Admin API – used to manage Kafka topics, brokers and other Kafka objects.
+    Producer API – Permits an application to publish streams of records.
+    Consumer API – Permits an application to subscribe to topics and processes streams of records.
+    Connector API – Executes the reusable producer and consumer APIs that can link the topics to the existing applications.
+    Streams API – This API converts the input streams to output and produces the result.
+  
+  Kafka supports two types of topics: Regular and compacted. Regular topics can be configured with a retention time or a
+  space bound. If there are records that are older than the specified retention time or if the space bound is exceeded for
+  a partition, Kafka is allowed to delete old data to free storage space. By default, topics are configured with a
+  retention time of 7 days, but it's also possible to store data indefinitely. For compacted topics, records don't expire
+  based on time or space bounds. Instead, Kafka treats later messages as updates to older message with the same key and
+  guarantees never to delete the latest message per key. Users can delete messages entirely by writing a so-called
+  tombstone message with null-value for a specific key.
+  
+  Kafka runs on a cluster of one or more servers (called brokers), and the partitions of all topics are distributed across
+  the cluster nodes. Additionally, partitions are replicated to multiple brokers. This architecture allows Kafka to
+  deliver massive streams of messages in a fault-tolerant fashion and has allowed it to replace some of the conventional
+  messaging systems like Java Message Service (JMS), Advanced Message Queuing Protocol (AMQP), etc.
+  

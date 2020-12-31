@@ -26,6 +26,7 @@ export LESS='--LINE-NUMBERS --LONG-PROMPT'
 export MAVEN_HOME=/usr/lib/apache-maven
 export PROMPT_COMMAND="${PROMPT_COMMAND:=history -a; history -c; history -r; $PROMPT_COMMAND}"
 export VISUAL=/usr/bin/vim
+export ZOOKEEPER_HOME=/opt/zooinspector
 
 # PATH
 [[ ":$PATH:" != *${AMQ_HOME}/bin* ]] && export PATH=${PATH}:${AMQ_HOME}/bin
@@ -34,6 +35,7 @@ export VISUAL=/usr/bin/vim
 [[ ":$PATH:" != *${JAVA_HOME}/bin* ]] && export PATH=${PATH}:${JAVA_HOME}/bin
 [[ ":$PATH:" != *${KAFKA_HOME}/bin* ]] && export PATH=${PATH}:${KAFKA_HOME}/bin
 [[ ":$PATH:" != *${MAVEN_HOME}/bin* ]] && export PATH=${PATH}:${MAVEN_HOME}/bin
+[[ ":$PATH:" != *${ZOOKEEPER_HOME}/bin* ]] && export PATH=${PATH}:${ZOOKEEPER_HOME}/bin
 export PATH="$PATH:/home/svein/.minishift/cache/oc/v3.11.0/linux"
 export PATH="$PATH:/usr/share/zookeeper/bin"
 
@@ -135,6 +137,7 @@ alias xsc='xclip -selection clipboard'
 [ -f ~/bin/completion/minishift.bash ] && source ~/bin/completion/minishift.bash
 [ -f ~/bin/completion/oc.bash ] && source ~/bin/completion/oc.bash
 [ -f ~/bin/completion/vagrant ] && source ~/bin/completion/vagrant
+[ -f ~/bin/completion/kafka.bash ] && source ~/bin/completion/kafka.bash
 
 # Start programs
 ! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa )
