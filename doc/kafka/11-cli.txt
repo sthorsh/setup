@@ -1,36 +1,50 @@
-CLI
+KAFKA CLI
 
 kafka-broker-api-versions.sh --version
 
-kafka-configs.sh --zookeeper :2181 --entity-type topics --entity-name t --describe
-kafka-configs.sh --zookeeper :2181 --alter --entity-type topics --entity-name t --add-config retention.ms=1000000
+kafka-dump-log.sh --files /var/log/kafka/server1/t1-0/00000000000000000000.log --print-data-log
 
-kafka-console-consumer.sh --bootstrap-server :9092,:9093,:9094 --topic t --from-beginning
-
-kafka-console-producer.sh --broker-list :9092,:9093,:9094 --topic t
-
-kafka-consumer-groups.sh --bootstrap-server :9092 --describe --group gid
-
-kafka-consumer-perf-test.sh --broker-list :9092,:9093,:9094 --topic t --messages 10000
-
-kafka-dump-log.sh --print-data-log --files /tmp/kafka-logs-0/t-0/00000000000000000070.log
-
-kafka-leader-election.sh --bootstrap-server :9092 --path-to-json-file leader-election.json --election-type preferred
-
-kafka-log-dirs.sh --bootstrap-server :9092 --describe
-
-kafka-producer-perf-test.sh --producer-props bootstrap.servers=:9092 --topic t --throughput 50 --num-records 5000 --record-size 512
-
-kafka-replica-verification.sh --broker-list :9092,:9093,:9094
-
-kafka-server-start.sh config/server-0.properties
+----------
+kafka-server-start.sh config/server1.properties
 
 kafka-server-stop.sh
   
-kafka-topics.sh --zookeeper :2181 --create --topic t --partitions 1 --replication-factor 1
-kafka-topics.sh --zookeeper :2181 --list
-kafka-topics.sh --zookeeper :2181 --describe
-kafka-topics.sh --zookeeper :2181 --describe --topic t 
-kafka-topics.sh --zookeeper :2181 --alter --topic t --partitions 4
-kafka-topics.sh --zookeeper :2181 --delete --topic t
+----------
+kafka-topics.sh --bootstrap-server localhost:2181 --list
+kafka-topics.sh --bootstrap-server localhost:2181 --describe
+kafka-topics.sh --bootstrap-server localhost:2181 --create --topic t1 --partitions 1 --replication-factor 1
+kafka-topics.sh --bootstrap-server localhost:2181 --describe --topic t1
+kafka-topics.sh --bootstrap-server localhost:2181 --alter --topic t1 --partitions 4
+kafka-topics.sh --bootstrap-server localhost:2181 --delete --topic t1
+
+----------
+kafka-console-producer.sh --broker-list localhost:9092,... --topic t1
+  
+kafka-producer-perf-test.sh --producer-props bootstrap.servers=:9092 --topic t1 --num-records 1000 --record-size 4 --throughput 50
+  
+----------
+kafka-console-consumer.sh --bootstrap-server localhost:9092,... --topic t1 [--from-beginning]
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic t1 --consumer-property group.id=g1
+      
+kafka-consumer-groups.sh --bootstrap-server :9092 --list
+kafka-consumer-groups.sh --bootstrap-server :9092 --describe --group g1
+kafka-consumer-groups.sh --bootstrap-server :9092 --describe --group g1 --members --verbose
+kafka-consumer-groups.sh --bootstrap-server :9092 --describe --group g1 --state
+kafka-consumer-groups.sh --bootstrap-server :9092 --reset-offsets --group g1 --topic t1 --to-latest [--execute]
+kafka-consumer-groups.sh --bootstrap-server :9092 --delete --group g1
+      
+kafka-consumer-perf-test.sh --broker-list localhost:9092,... --topic t1 --messages 1000
+      
+----------
+kafka-leader-election.sh --bootstrap-server localhost:9092 --election-type preferred --path-to-json-file leader-election.json
+      
+kafka-log-dirs.sh --bootstrap-server localhost:9092 --describe
+kafka-log-dirs.sh --bootstrap-server localhost:9092 --describe --topic-list t1
+      
+kafka-replica-verification.sh --broker-list localhost:9092,...
+      
+----------
+kafka-configs.sh --bootstrap-server localhost:9092 --describe --entity-type brokers --entity-name 1
+kafka-configs.sh --zookeeper localhost:2181 --describe --entity-type topics --entity-name t1
+kafka-configs.sh --zookeeper localhost:2181 --alter --entity-type topics --entity-name t1 --add-config retention.ms=1000000
 

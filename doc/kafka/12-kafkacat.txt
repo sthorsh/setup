@@ -1,0 +1,27 @@
+KAFKACAT
+
+P
+  echo payload | kc -b ...
+  kc -P -b localhost:9092 -t t1
+  kc -P -b localhost:9092 -t t1 -p0
+  kc -P -b localhost:9092 -t t1 -K:
+
+C
+  kc -b localhost:9092 -t t1
+  kc -b localhost:9092 -t t1 -p0
+  kc -b localhost:9092 -t t1 -K:
+  kc -b localhost:9092 -t t1 -o beginning|N|-N|end
+  kc -b localhost:9092 -t t1 -c N
+  kc -b localhost:9092 -t t1 -J
+  kc -b localhost:9092 -t t1 -f '[%t][%p] %T %o %k %s\n'
+  
+G
+
+M
+  kc -L -b localhost:9092
+  kc -L -b localhost:9092 -t t1
+
+Q
+
+X
+

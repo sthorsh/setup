@@ -1,0 +1,19 @@
+BROKER
+
+Broker
+
+Config
+  num.partitions: 1
+  log.retention.hours: 168 (7 days)
+  ...
+
+Consumer offsets
+  Cf /var/log/kafka/server1/__consumer_offsets-0/*
+
+Replikering
+  Redundans
+  Replikeringsfaktor
+  Per-topic, ikke partisjon
+  Hver replika er leader el follower for en partisjon
+  In-sync replicas (ISR)
+

@@ -1,0 +1,23 @@
+TOPIC
+
+Topic
+  En named feed/stream of messages (logisk)
+  En samling med 1..N commit logfiles (fysisk)
+
+Config
+  cleanup.policy: delete, compact
+  retention.ms: 604800000 (7 days)
+  ...
+  
+Partisjon
+  En time-ordered sekvens med immutable events (logisk)
+  En commit-log cf /var/log/kafka/server1/t1-0/ (fysisk)
+
+Message/record
+  Et immutable event
+  Timestamp: epoch UTC
+  Offset: N
+  Key: k1
+  Headers: metadata
+  Payload: binære data
+  

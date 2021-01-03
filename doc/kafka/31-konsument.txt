@@ -45,8 +45,11 @@ Konsumentrecord
   Topic*
   Partition
   Offset
+  Timestamp
+  Checksum
   Key
   Value*
+  Headers
 
 Prosessering
   Tråd₁ prosesserer konsumentrecords
@@ -56,6 +59,13 @@ Konsumentoffset
   Current offset (CO)
   Log-end offset (LO)
   Uncommitted offsets: fra LCO til CO
+
+Konsumentoffset
+  Konsument forvalter offset
+  Konsument connecter til broker
+  Alt1: konsument fetcher fra beginning (offset 0)
+  Alt2: konsument fetcher fra siste offset
+  ...
 
 Commit av offset
   Auto-commit: cf enable.auto.commit

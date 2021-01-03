@@ -10,17 +10,45 @@ ProducerConfig
   key.serializer: 
   value.serializer:
   acks: 1
+  batch.size: 16384 (bytes)
   buffer.memory: 33554432 (bytes)
   compression.type: none
-  retries: 2147483647
-  batch.size: 16384 (bytes)
   partitioner.class: DefaultPartitioner (sticky)
+  retries: 2147483647
   ...
-  
+
 ProducerRecord
   Topic*
   Partition
   Timestamp
   Key
+  Headers
   Value*
+
+  API send()
+    Serialiserering
+    Partisjonering
+    Batching
+    Komprimering
+    Buffering
+  
+Serialisering
+  StringSerializer
+  ...
+
+Partisjonering (default)
+  Partition number in message record
+  Key in message record: use hash value
+  Otherwise: sticky (previously round robin)
+
+Batching
+  Lager producer batch
+
+Komprimering
+  None
+  GZip
+  Snappy  
+  ...
+
+
 
