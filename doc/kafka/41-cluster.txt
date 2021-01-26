@@ -1,8 +1,11 @@
-CLUSTER
+CLUSTER (DS)
 
 Cluster
-  Et DS med 1..N brokere
-
+  En gruppe brokere                 cf zookeeper cluster membership
+  En broker på en maskin            cluster of one
+  To brokere på en/to maskiner      cluster of two
+  ...
+  
 Controller
 
 Replikering

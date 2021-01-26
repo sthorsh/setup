@@ -21,8 +21,8 @@ READLINE
   C-xq                           word_ → "word" _
   C-xu                           word_ → WORD _
 
-  C-A-y                          copy second [or Nth] word
-  A-. ...                        copy [Nth or] last word
+  C-A-y                          copy 1st [or Nth] arg
+  A-. ...                        copy [Nth or] last arg
 
   C-i                            complete var: $ $_
   C-i                            complete tilde: $ ~_
@@ -30,11 +30,10 @@ READLINE
   C-i                            complete cmd: $ a_
   C-i                            complete file: $ /_
   A-{                            complete braces: $ A-{
-  A-C-p                          complete pattern: $ _
-  A-C-i                          complete history: $ _
+  C-A-i                          dynamic-complete-history: $ _
 
-  A-C-e                          expand macros
-  A-C-g                          glob ie expand pattern containing wildcard * ? []
+  C-A-e                          shell-expand-line: $ $BASH_
+  C-x *                          glob-expand-word: $ ls *_
 
   C-f                            forward-char
   A-f                            forward-word

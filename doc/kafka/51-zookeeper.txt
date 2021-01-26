@@ -1,6 +1,7 @@
 KAFKA-ZOOKEEPER
 
 Kafka bruker ZK
+  Grouping of brokers to form a cluster
   Lagring av metadata
   Notifikasjoner ved endring
 

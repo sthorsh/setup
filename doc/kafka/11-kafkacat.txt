@@ -1,0 +1,30 @@
+KAFKACAT
+
+List metadata
+  kc -L -b host:9092
+  kc -L -b host:9092 -t t1
+
+Query metadata
+  kc -Q -b host:9092 -t t1:0:1610079845352 
+
+Produce data (pub)
+  echo payload | kc -b ...
+  kc -P -b host:9092 -t t1
+  kc -P -b host:9092 -t t1 -p0
+  kc -P -b host:9092 -t t1 -K:
+
+Consume data (sub)
+  kc -C -b host:9092 -t t1
+  kc -C -b host:9092 -t t1 -f '[%t][%p] %T %o %k %s\n'
+  kc -C -b host:9092 -t t1 -J
+  kc -C -b host:9092 -t t1 -o beginning|N|-N|end
+  kc -C -b host:9092 -t t1 -c N
+  kc -C -b host:9092 -t t1 -p 0
+  kc -C -b host:9092 -t t1 -K :
+  
+Consumer group
+  kc -C -b host:9092 -G g1 t1
+
+TODO
+  Update version → -f %h
+

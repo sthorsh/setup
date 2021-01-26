@@ -80,7 +80,6 @@ bind '"\e\C-f":shell-forward-word'
 bind '"\e\C-b":shell-backward-word'
 bind '"\C-]":character-search'
 bind '"\C-[":character-search-backward'
-bind '"\e\C-p":glob-expand-word'
 bind '"\C-q":unix-filename-rubout'
 bind '"\e\C-m":start-kbd-macro'
 
