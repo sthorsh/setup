@@ -2,27 +2,30 @@ READLINE
 
   A-N                            digit-arg
 
-  C-p ...                        previous line
-  C-n ...                        next line
-  C-o ...                        operate-next line
+  C-f                            forward-char
+  A-f                            forward-word
+  C-A-f                          shell-forward-word
+  C-e                            eol
+  C-b                            backward-char
+  A-b                            backward-word
+  C-A-b                          shell-backward-word (bashrc)
+  C-a                            bol (bashrc)
+  C-] x                          char-search x (bashrc)
+  C-[ x                          char-search-backward x (bashrc)
 
-  C-r [phrase] C-r ... C-[gjm]   reverse search line
-  C-s [phrase] C-s ... C-[gjm]   search line
-
-  ...                            self-insert
+  abc...                         self-insert
   C-v                            quoted-insert
+  C-x '                          '' (bashrc)
+  C-x "                          "" (bashrc)
+  C-x (                          () (bashrc)
+  C-x {                          {} (bashrc)
+  C-x [                          [] (bashrc)
+  C-x :                          :: (bashrc)
+  C-x p                          edit path (bashrc)
+  C-x q                          quote word_ (bashrc)
+  C-x u                          upcase word_ (bashrc)
 
-  C-x'                           ''
-  C-x"                           ""
-  C-x(                           ()
-  C-x{                           {}
-  C-x[                           []
-  C-xp                           PATH=_...
-  C-xq                           word_ → "word" _
-  C-xu                           word_ → WORD _
-
-  C-A-y                          copy 1st [or Nth] arg
-  A-. ...                        copy [Nth or] last arg
+  C-y [A-y]                      paste [rotate kill ring]
 
   C-i                            complete var: $ $_
   C-i                            complete tilde: $ ~_
@@ -35,34 +38,19 @@ READLINE
   C-A-e                          shell-expand-line: $ $BASH_
   C-x *                          glob-expand-word: $ ls *_
 
-  C-f                            forward-char
-  A-f                            forward-word
-  C-A-f                          shell-forward-word
-  C-e                            eol
-  C-b                            backward-char
-  A-b                            backward-word
-  C-A-b                          shell-backward-word
-  C-a                            bol
-  C-]                            char-search
-  C-[                            char-search-backward
-  C-@                            set-mark
-  C-x C-x                        exchange-point-and-mark
+  A-c                 		 capitalize-word (broken by tmux)
+  A-l 		                 downcase-word (broken by tmux)
+  A-u                            upcase-word
+  C-t                            transpose/tug-char →
+  A-t                            transpose/tug-word →
 
-  A-c                            capitalize word
-  A-l                            lowercase word
-  A-u                            uppercase word
-  C-t                            tug/transpose char →
-  A-t                            tug/transpose word →
-
-  C-d                            delete char at cursor
-  A-d                            cut/kill word at cursor
-  C-k                            cut/kill line at cursor
-  C-h                            delete char before cursor
-  C-q                            cut/kill word before cursor
-  C-w                            cut/kill word before cursor
-  C-u                            cut/kill line before cursor
-
-  C-y [A-y]                      paste [rotate] kill-ring
+  C-d                            del char at _
+  A-d                            kill word at _
+  C-k                            kill line at _
+  C-h                            del char before _
+  C-q                            kill word before _ (bashrc)
+  C-w                            kill word before _
+  C-u                            kill line before _
 
   C-x C-u                        undo
   A-r                            revert-line
@@ -70,9 +58,20 @@ READLINE
   C-g                            abort
   C-j                            accept-line (lf, nix eol)
   C-m                            accept-line (cr, mac eol)
+------------
 
-  C-A-m                          start macro
-  C-x )                          end macro
+  C-r [phrase] C-r ... C-[gjm]   reverse search line
+  C-s [phrase] C-s ... C-[gjm]   search line
+
+  C-p ...                        previous line
+  C-n ...                        next line
+  C-o ...                        operate-next line
+
+  C-A-y                          copy 1st [or Nth] arg
+  A-. ...                        copy [Nth or] last arg
+
+  C-A-a                          start macro (bashrc)
+  C-A-s                          end macro (bashrc)
   C-x e                          execute macro
 
   C-x C-e                        edit-and-execute-command
