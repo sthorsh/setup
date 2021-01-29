@@ -13,6 +13,12 @@ READLINE
   C-] x                          char-search x (bashrc)
   C-[ x                          char-search-backward x (bashrc)
 
+  C-p ...                        previous line
+  C-n ...                        next line
+
+  C-r [phrase] C-r ... C-[gjm]   reverse search line
+  C-s [phrase] C-s ... C-[gjm]   search line
+
   abc...                         self-insert
   C-v                            quoted-insert
   C-x '                          '' (bashrc)
@@ -25,7 +31,10 @@ READLINE
   C-x q                          quote word_ (bashrc)
   C-x u                          upcase word_ (bashrc)
 
-  C-y [A-y]                      paste [rotate kill ring]
+  C-y [A-y]                      yank [rotate kill ring]
+
+  C-A-y                          yank 1st [or Nth] arg
+  A-. ...                        yank [Nth or] last arg
 
   C-i                            complete var: $ $_
   C-i                            complete tilde: $ ~_
@@ -58,21 +67,12 @@ READLINE
   C-g                            abort
   C-j                            accept-line (lf, nix eol)
   C-m                            accept-line (cr, mac eol)
-------------
 
-  C-r [phrase] C-r ... C-[gjm]   reverse search line
-  C-s [phrase] C-s ... C-[gjm]   search line
-
-  C-p ...                        previous line
-  C-n ...                        next line
   C-o ...                        operate-next line
 
-  C-A-y                          copy 1st [or Nth] arg
-  A-. ...                        copy [Nth or] last arg
-
-  C-A-a                          start macro (bashrc)
-  C-A-s                          end macro (bashrc)
-  C-x e                          execute macro
+  C-A-a                          start-kbd-macro (bashrc)
+  C-A-s                          end-kbd-macro (bashrc)
+  C-x e                          call-laste-kbd-macro
 
   C-x C-e                        edit-and-execute-command
 

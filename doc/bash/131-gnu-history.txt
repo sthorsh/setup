@@ -1,0 +1,32 @@
+HISTORY
+
+Kommandolinje
+  !N                              cmd N
+  !-N                             cmd N linjer tilbake
+  !!                              eq !-1
+  !#                              cmd skrevet så langt
+  !str                            cmd som starter m/str
+  !?str                           cmd som inneholder str
+  ^str₁^str₂                      eq !!:s/str₁/str₂/
+
+Ord
+  ![cmd]:N                        ord N
+  ![cmd][:]^                      ord 1
+  ![cmd][:]$                      siste ord
+  ![cmd]:N-M                      ord N-M
+  ![cmd]:-N                       ord 0-N
+  ![cmd][:]*                      ord 1-$
+  ![cmd]:x*                       ord N-$
+  ![cmd]:x-                       ord N-($-1)
+
+Modifikator
+  ![cmd][:][word]:h               ~/tmp/file.dat → ~/tmp
+  ![cmd][:][word]:r               ~/tmp/file.dat → ~/tmp/file
+  ![cmd][:][word]:t               ~/tmp/file.dat → file.dat
+  ![cmd][:][word]:e               ~/tmp/file.dat → .dat
+  ![cmd][:][word]:q               $word → $word
+  ![cmd][:][word]:s/old/new       old → new  1st occurrence
+  ![cmd][:][word]:gs/old/new      old → new, all occurrences
+  ![cmd][:][word]:Gs/old/new      old → new, for each word in line
+  ![cmd][:][word]:&               repeat previous s/old/new
+
