@@ -1,0 +1,42 @@
+AAD
+
+AAD
+  Cloud
+  AuthN mekanisme/svc
+  AuthZ mekanisme/svc
+
+-------------------------------
+AuthN
+
+AuthN fetaures #1 (mgmt)
+  Admin apps
+  Admin brukere
+  Admin devices
+
+AuthN fetaures #2 (internet scale)
+  AuthN standarder
+  AuthN protokoller
+
+AuthN fetaures #3 (sikkerhet)
+  Information protection (AIP)
+  Intrusion detection system (IDS)
+  ...
+
+Authn MS
+  AAD
+  AAD connect: bidireksjonal synk
+  On-premises AD
+
+AuthN standarder
+  ...
+
+AuthN protokoller
+  OAuth
+  OIDC
+  SAML
+  WsFED
+
+-------------------------------
+AuthZ
+
+-------------------------------
