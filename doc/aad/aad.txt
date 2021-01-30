@@ -2,41 +2,66 @@ AAD
 
 AAD
   Cloud
-  AuthN mekanisme/svc
-  AuthZ mekanisme/svc
+  AuthN svc
+  AuthZ svc
 
--------------------------------
-AuthN
+AAD GUI ADMIN...
+✓ Brukere               users
+✓ Brukergrupper         groups
+  Organisasjoner        organizational relationships
+✓ Roller                roles and administrators
+  Enterprise apps       e.g github
+  Enheter               devices
+  App registrering      NL
+  Identitetsstyring     identity governance
+  App proxy
+  Lisenser              licenses
+  AADC                  Azure AD Connect
+  Domenenavn            custom domain names
+  Mobilitet             mobility MDM and MAM
+  Passord               password reset
+  
+Brukere
+  Navn: svein.thorshaug@bouvet.no
+  Brukernavn: svein.thorshaug@bouvet.no
+  Brukertype: member
+  Konto: MS/liveID|GitHub|Google|AAD/orgkonto
+  Rolle: admin, user
 
-AuthN fetaures #1 (mgmt)
-  Admin apps
-  Admin brukere
-  Admin devices
+Apps
+  Single-tenant
+  Multi-tenant: across multiple AADs
+  Enterprise app
+  Public client
+  Confidential
 
-AuthN fetaures #2 (internet scale)
-  AuthN standarder
-  AuthN protokoller
-
-AuthN fetaures #3 (sikkerhet)
-  Information protection (AIP)
-  Intrusion detection system (IDS)
+Standarder
+  SCIM: identity providers
   ...
 
-Authn MS
+AADC
   AAD
-  AAD connect: bidireksjonal synk
-  On-premises AD
+  AADC: toveis synk
+  On-premises AD: kerberos, domenekontroller
 
-AuthN standarder
-  ...
+-----
+AUTHN
 
-AuthN protokoller
-  OAuth
-  OIDC
-  SAML
-  WsFED
+AuthN
+  Protokoller/standarder: OIDC, OAuth, SAML, WS-Federation
+  For internet-facing apps
+  Fungerer på flere devices
+  Fungerer mellom organisasjoner
+  
+OIDC
 
--------------------------------
-AuthZ
+OAuth (2006)
 
--------------------------------
+SAML (2003)
+  AuthN
+  AuthZ
+  SAML token
+  SAML protokoller for authn
+  Use case #1: web browser SSO scenarier
+  Use case #2: for web apis
+
