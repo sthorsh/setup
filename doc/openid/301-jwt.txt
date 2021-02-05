@@ -1,0 +1,39 @@
+JWT
+
+Tokens
+  Klient: requests token (app)
+  Issuer: utsteder token (AzP)
+  Ressurs: konsumerer tokens (api)
+
+JWT
+  Enkoding: json
+  Claim: loggedInAs admin
+  Kryptering: hmac-sha-256 mfl
+  Signatur: rsa mfl
+  Standard: https://tools.ietf.org/html/rfc7519
+
+JWT header
+  typ: JWT
+  alg: HS256
+
+JWT claims
+  iss: https://azp.fifty.eu (azp)
+  sub: 248289761001 (user)
+  aud: s6BhdRkqt3 (app)
+  iat: 1612281234
+  exp: 1612284616
+  ...
+  client: libra
+  scope: read, ...
+
+JWT signatur
+  RSASHA256(
+    base64UrlEncode(header) + "." +
+    base64UrlEncode(payload),
+    public_key|cert,
+    private_key 
+  )
+
+Serialisering
+  base64(header).base64(claims).base64(signature)
+

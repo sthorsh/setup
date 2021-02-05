@@ -1,0 +1,77 @@
+CODE FLOW
+
+Registrering
+  app_id: 1612502005
+  redirect_uri₁: https://app/callback₁
+  redirect_uri₂: https://app/callback₂
+  app_secret: secret
+  ...
+  
+-----
+Start
+  https://app/resource
+
+Autorisasjonsrequest
+  GET /authorize?
+    client_id=app_id&
+    redirect_uri=https://app/callback₁&
+    response_type=code&
+    scope=resource&
+    state=123
+
+Autentisering
+  Username: username
+  Password: password
+
+Samtykkeerklæring
+  EU gir app aksess til ressurs
+
+Autorisasjonsrespons
+  GET /callback?
+    code=authz_code&
+    state=123
+
+--------------------------
+Tokenrequest: client → AzS
+  POST /token?
+    client_id: app_id&
+    redirect_uri=https://app/callback₂&
+    grant_type=authorization_code&
+    authorization_code=...
+  Authorization: Basic (app_id:secret)
+
+Tokenrespons
+  POST /callback
+  {
+    access_token: jwt,
+    expires_in: 3600,
+    token_type: Bearer,
+    refresh_token: jwt
+  }
+
+-----------
+API request
+  GET /resource
+  Authorization: Bearer access_token
+
+API respons
+  {
+    data
+  }
+
+---------------------
+Token refresh request
+  POST /token?
+    client_id: app_id&
+    grant_type=refresh_token&
+    refresh_token=jwt
+  Authorization: Basic (app_id:secret)
+
+Token refresh respons
+  POST /callback
+  {
+    access_token: jwt,
+    expires_in: 3600,
+    token_type: Bearer,
+    refresh_token: jwt
+  }

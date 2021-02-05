@@ -1,0 +1,34 @@
+OIDC
+
+OIDC
+  API autentisering
+
+OAuth2
+  Bruker OAuth2 code flow for server-baserte apps
+  Bruker OAuth2 implicit flow for klient-baserte apps
+
+Features
+  Discovery av oidc provider
+  Dynamisk registrering av app
+  Session management feks how to logout
+
+Begreper
+  Identitetstoken
+  Userinfo-endepunkt
+
+Parter
+  Ressurseier RO: bruker
+  Brukeragent UA
+  Klient: applikasjon
+  Identitetprovider IdP
+  Autorisasjonsprovider AzP
+  Tokenprovider TP
+  Brukerinformasjonsendepunkt
+  Ressurs: API
+  Ressursserver RS: server
+
+Tokens
+  Aksesstoken: sikker utveksling forutsetter TLS
+  Identitetstoken
+  Refreshtoken
+               

@@ -1,0 +1,57 @@
+AAD
+
+Applikasjon
+  Name: libraapp
+  Type: single-tenant i.e 1 AAD
+  Type: multi-tenant i.e >1 AADs
+  Type: multi-tenant + MS liveID
+  Type: public/native e.g js SPA
+  Type: confidential/web e.g web API (access/bearer token)
+  Redirect URI: https://host:port/path
+  Permissions: User.Read for MS graph
+  Application/client ID: 559513bd-0c19-4c1a-87cd-851a26afd5fc
+  Directory/tenant ID: 72f988bf-86f1-41af-91ab-2d7cd011db48 
+  Object ID: 712da123-86f1-41af-91ab-2d7cd011db48 
+  Certificates: create crt; upload crt; add crt to AAD
+  Secret: mysecret 7fead123-86f1-414f-911b-2d7cd0feab45   
+  Service principal: libraapp
+
+Service Principal
+  appId: 559513bd-0c19-4c1a-87cd-851a26afd5fc (username)
+  displayName: librasp
+  name: http://librasp
+  password: e763725a-5eee-40e8-a466-dc88d980f415
+  tenant: 72f988bf-86f1-41af-91ab-2d7cd011db48
+  
+Bruker
+  Navn: svein.thorshaug@bouvet.no
+  Brukernavn: svein.thorshaug@bouvet.no
+  Brukertype: member
+  Konto: MS/liveID|GitHub|Google|AAD/orgkonto
+  Rolle: admin, user
+
+Gruppe
+  Navn: G1
+  Type: Security|Office 365
+  Members: usernames, service principals 
+
+Rolle
+  
+AuthN
+  OAuth
+  OIDC
+  SAML
+  WS-Federation (standard)
+
+AuthZ
+  RBAC
+
+Føderering
+  Azure AD
+  Azure AD Connect
+  Active Directory Federation Services
+  Active Directory
+  
+Standarder
+  SCIM
+

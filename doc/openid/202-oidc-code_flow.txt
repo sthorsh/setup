@@ -1,0 +1,84 @@
+OIDC CODE FLOW
+
+Registrering i AzP
+  app_id: 1612502005
+  secret: <password>
+  redirect_uri₁: https://app/callback₁
+  ...
+  resource_uri₁: https://api/endpoint₁ (authz)
+  ...
+  
+Innlogging
+  https://app/login
+
+Autorisasjonsrequest
+  GET /authorize?
+    client_id=app_id&
+    scope=openid profile ...& (oidc #1)
+    redirect_uri=https://app/callback&
+    response_type=code&
+    state=123
+
+Autentisering
+  Username: username
+  Password: password
+
+Samtykkeerklæring
+  EU gir app aksess til ressurs
+
+Autorisasjonsrespons
+  GET /callback?
+    code=authz_code&
+    state=123
+
+Tokenrequest
+  POST /token?
+    grant_type=authorization_code&
+    authorization_code=authz code&
+    redirect_uri=https://app/callback
+  Authorization: Basic (app_id:secret)
+
+Tokenrespons
+  POST /callback
+  {
+    access_token: jwt,
+    id_token: jwt, (oidc #2)
+    expires_in: 3600,
+    token_type: Bearer,
+    refresh_token: jwt
+  }
+
+Autentisering (oidc #3)
+  App validerer id_token claims
+  iss: https://idp
+  sub: 248289761001 (uid)
+  aud: s6BhdRkqt3 (app_id)
+  exp: 1612502005 (epoch)
+  ...
+
+Profilrequest (oidc #4)
+  GET /userinfo 
+  Authorization: Bearer access_token
+
+Profilrespons (oidc #5)
+  {
+    sub: 248289761001, (uid)
+    name: John Doe,
+    email: johndoe@example.com
+  }
+
+API request
+  GET /resource
+  Authorization: Bearer access_token
+
+API respons
+  {
+    data
+  }
+
+Token refresh
+  POST /token?
+    grant_type=refresh_token&
+    refresh_token=jwt
+  Authorization: Basic (app_id:secret)
+
