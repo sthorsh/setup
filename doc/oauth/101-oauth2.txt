@@ -1,0 +1,46 @@
+AUTH2
+
+OAuth2
+  Autorisasjonsrammeverk
+  Protokoll for delegering
+  Designet spesifikt for HTTP
+
+Roller
+  Bruker: ressurseier (RO)
+  Brukeragent: browser (UA)
+  Applikasjon: klient (app)
+  API[server]: ressursserver (RS)
+  Autorisasjonsserver: (AzS)
+
+App
+  Web server (ws)
+  Browser-basert/SPA
+  A2A/S2S/M2M
+  Førsteparts
+  
+Grant
+  Authorization code
+  Implicit
+  Client credentials
+  Password
+
+App → grant
+  Web server: authz code [+ PKCE]
+  Browser-basert: authz code [+ PKCE] (evt implicit)
+  App2app: client credentials
+  Førstparts: password
+
+Libra
+  GUI: implicit
+  S2S: token exchange
+  Initdata: password
+  Insomnia: password
+
+Error types
+  400 invalid_request
+  400 invalid_grant
+  400 unauthorized client
+  400 unsupported_grant_type
+  400 invalid_scope
+  401 invalid_client
+
