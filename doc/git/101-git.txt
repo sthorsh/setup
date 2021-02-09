@@ -55,6 +55,7 @@ Cmds
   git branch -avv                                   list local|upstream|remote-tracking branches
   git branch b [H|R|C]                              create b
   git branch -d b                                   delete b
+  git branch -d -r b                                delete remote-tracking origin/b
   git branch -m b new_name                          rename b
   git branch b -t UPSTREAM                          create b; set upstream e.g origin/b
   git branch -u UPSTREAM b                          set upstream e.g origin/b
