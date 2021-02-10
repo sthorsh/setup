@@ -36,8 +36,7 @@ Autorisasjon RS
     expires_in: 3600&
     state=STATE
  
--------------------------
-Klient validerer id_token
+Validere id-token
   exp: EPOCH
   iss: https://idp
   aud: CLIENT_ID
@@ -64,6 +63,9 @@ API RS
 API RQ
   https://rs/api
   Authorization: Bearer ACCESS_TOKEN
+
+Validere aksesstoken
+  ...
 
 API RS
   Data JSON

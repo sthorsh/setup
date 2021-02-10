@@ -1,46 +1,65 @@
-AUTH2
+OAUTH 2.0
 
-OAuth2
-  Autorisasjonsrammeverk
-  Protokoll for delegering
-  Designet spesifikt for HTTP
+OAuth 2.0
+  Rammeverk for autorisasjon
+  Spesifikasjon for sikring av HTTP API'er
+  Protokoll for delegering av skopet API-aksess
 
 Roller
-  Bruker: ressurseier (RO)
-  Brukeragent: browser (UA)
-  Applikasjon: klient (app)
-  API[server]: ressursserver (RS)
-  Autorisasjonsserver: (AzS)
+  Sluttbruker (EU)
+  Brukeragent (UA, typisk nettleser)
+  Klientapplikasjon (CA)
+  API/ressursserver (RS)
+  Autorisasjonsserver (AzS)
 
-App
-  Web server (ws)
-  Browser-basert/SPA
-  A2A/S2S/M2M
-  Førsteparts
-  
+Bruker vs klient
+  Brukerautentisering/-akkreditiver
+  Klientautentisering/-akkreditiver
+
+Klientapp
+  Webserver
+  JS i nettleser e.g SPA
+  API-til-API
+  Førstepartsapplikasjon
+
 Grant
-  Authorization code
-  Implicit
-  Client credentials
-  Password
+  Autorisasjonskode
+  Implisitt
+  Klientakkreditiver
+  Passord
 
-App → grant
-  Web server: authz code [+ PKCE]
-  Browser-basert: authz code [+ PKCE] (evt implicit)
-  App2app: client credentials
-  Førstparts: password
+Klientapp og grant
+  Webserver: autorisasjonskode
+  JS i nettleser: implisitt
+  API-til-API: klientakkreditiver
+  Førstpartsapp: passord
 
-Libra
-  GUI: implicit
-  S2S: token exchange
-  Initdata: password
-  Insomnia: password
+Klientapp og grant OAuth 2.0 BCP
+  Webserver: autorisasjonskode + PKCE
+  JS i nettleser: autorisasjonskode + PKCE
+  API-til-API: klientakkreditiver
+  Førstpartsapp: autorisasjonskode + PKCE
 
-Error types
+Endepunkter over TLS
+  /authz: brukerinteraksjon via brukeragent
+  /token: m2m interaksjon (uten brukeragent)
+
+Skop
+  Hele APIet e.g acme_api
+  Aksesstype e.g acme_api.read
+  Funksjonalitet e.g acme_api.feed
+
+Feiltyper
   400 invalid_request
   400 invalid_grant
   400 unauthorized client
   400 unsupported_grant_type
   400 invalid_scope
   401 invalid_client
+
+Libra
+  GUI: implisitt
+  API-til-API: token exchange
+  Initdata: passord
+  Insomnia: passord
 

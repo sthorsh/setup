@@ -1,0 +1,24 @@
+TOKEN EXCHANGE
+
+Token exchange RQ
+  POST /token
+  Host: auth.fifty.eu
+  Authorization: Basic YXBpMTpzb21lc2VjcmV0
+  Content-Type: application/x-www-form-urlencoded
+  ...
+  grant_type=token-exchange&
+  resource=https://backend.fifty.eu/api2&
+  subject_token=RNDHEX32
+  subject_token_type=access_token|refresh_token|id_token|saml|jwt
+
+Token exchange RS
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+  ...
+  {
+    access_token: RNDHEX32
+    issued_token_type:access_token,
+    token_type:Bearer,
+    expires_in:60
+  }
+  

@@ -22,7 +22,7 @@ Autorisasjon RQ
     scope=openid profile API&
     state=STATE
 
-Autorisasjon
+Prosessering
   AzS validerer client_id
   AzS validerer redirect_uri 
   Bruker autentiserer seg (login)
@@ -56,8 +56,7 @@ Token RS
     expires_in: 3600,
   }
 
--------------------------
-Klient validerer id_token
+Validere id-token
   exp: EPOCH
   iss: https://idp
   aud: CLIENT_ID
@@ -79,11 +78,3 @@ API RS
     name: John Doe,
     email: johndoe@example.com
   }
-------
-API RQ
-  https://rs/api
-  Authorization: Bearer ACCESS_TOKEN
-
-API RS
-  Data JSON
-
