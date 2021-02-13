@@ -1,0 +1,11 @@
+KLIENTAPP 
+
+Config
+  client_id         s6BhdRkqt3              
+  client_secret     t50ad4a92j
+  op_host           azure-ad.fifty.eu
+  op_post           443
+  ep_auth           /authz
+  ep_token          /token
+  ep_userinfo       /userinfo
+

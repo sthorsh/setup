@@ -1,0 +1,38 @@
+OPENID PROVIDER
+
+Brukere
+  Fifty
+  Non-fifty
+  
+Systembrukere
+  ASIDOwner
+  AWIDOwner
+  Authorities
+  ...
+
+Skop
+  Globalt default skop
+  Per-apptype default skop
+  Ett libra skop
+  Ett libra skop per subapp
+  ...
+
+Klientnavn
+  Nordic Libra
+
+Klientid
+  CLIENT_ID
+
+Klientsecret
+  CLIENT_SECRET
+
+Redirect URI
+  REDIRECT_URI
+  Implisitt flyt: bruk eksakt URI
+  Implisitt flyt: ikke bruk path
+  Implisitt flyt: ikke bruk wildcard
+
+CORS
+  SPA: hostet i fifty.eu (loadLibra)
+  AZS: hostet i fifty.eu → trenger ikke CORS
+  

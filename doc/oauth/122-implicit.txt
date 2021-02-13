@@ -1,0 +1,65 @@
+OIDC IMPLISITT
+
+RO/UA
+  Kaller klientapp
+
+---------
+Klientapp
+  Redirecter UA til IDP /auth
+
+RQ /auth
+  response_type=id_token [token]
+  client_id=CLIENT_ID
+  redirect_uri=REDIRECT_URI
+  scope=openid [SCOPE]
+  state=[STATE]
+  response_mode=fragment
+
+IDP
+  Validerer CLIENT_ID
+  Validerer REDIRECT_URI
+  Bruker autentiserer seg
+  Bruker autoriserer skop
+  Genererer ACCESS_TOKEN
+  Genererer ID_TOKEN
+  Redirecter UA til REDIRECT_URI
+
+RS REDIRECT_URI
+  access_token: ACCESS_TOKEN
+  token_type: Bearer
+  expires_in: [3600]
+  scope: [SCOPE]
+  state: [STATE]
+  id_token: ID_TOKEN
+
+---------
+Klientapp
+  Validerer [STATE]
+  Validerer id_token
+  Kaller IDP /userinfo
+  
+RQ
+  Authorization: Bearer ACCESS_TOKEN
+  Body
+
+IDP
+  Validerer AT
+
+RS
+  Additional claims
+
+---------
+Klientapp
+  Kaller RS /api
+
+Rq
+  Authorization: Bearer ACCESS_TOKEN
+  Body
+
+RS
+  Alt1: validerer aksessttoken
+  Alt2: sender til IDP for validering
+
+Rs
+  Ressurs
+

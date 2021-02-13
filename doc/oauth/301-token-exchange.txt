@@ -3,7 +3,7 @@ TOKEN EXCHANGE
 Token exchange RQ
   POST /token
   Host: auth.fifty.eu
-  Authorization: Basic YXBpMTpzb21lc2VjcmV0
+  Authorization: Basic ...
   Content-Type: application/x-www-form-urlencoded
   ...
   grant_type=token-exchange&

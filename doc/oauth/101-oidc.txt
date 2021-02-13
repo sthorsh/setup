@@ -1,0 +1,76 @@
+OIDC
+
+Entiteter
+  Sluttbruker (EU)
+  Brukeragent (UA)
+  Klientapp (RP)
+  OpenID provider (OP)
+  API provider (RS)
+
+Klientapp
+  Serverapps
+  JS* e.g Angular SPA → API
+  API-til-API
+  Førstepartsapp
+
+OP endepunkter
+  /auth: via UA
+  /token: utenom UA
+  /userinfo: utenom UA
+
+Autentisering EU
+  Login m/brukerakkreditiver i OP
+  Login m/brukerakkreditiver i RP
+         
+Autentisering RP
+  Basic autentisering iht RFC 7617
+  Basic autentisering iht RFC 6749
+  Klientakkreditiver i HTTP POST body
+
+Flyt/grant
+  Autorisasjonskode
+  Implisitt
+  Klientakkreditiver
+  Ressurseierakkreditiver
+  Hybrid
+
+Klientapp og flyt
+  Serverapps: autorisasjonskode
+  JS* e.g Angular SPA → API: implisitt
+  API-til-API: klientakkreditiver
+  Førstpartsapp: ressurseierakkreditiver
+
+Responsetyper
+  code
+  token
+  id_token
+  code token
+  code id_token
+  token id_token
+  code token id_token
+  none
+  client_credentials
+  password
+
+Skop
+  openid profile email address phone offline_access
+  E.g contacts
+  E.g contacts.read
+  E.g https://op/auth/scopes/user/contacts.readonly
+
+Response mode
+  query
+  fragment
+  form post
+  Cf https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#ResponseModes
+
+Aksesstokens
+  JWT el ustrukturerte data
+
+Identitetstoken
+  Alltid JWT
+  Cf https://openid.net/specs/openid-connect-core-1_0.html#IDToken
+  Cf https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens
+  
+Refresh tokens
+  ...

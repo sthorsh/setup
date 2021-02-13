@@ -1,0 +1,82 @@
+OIDC AUTORISASJONSKODE
+
+RO/UA
+  Kaller klientapp
+
+---------
+Klientapp
+  Redirecter UA til IDP /auth
+
+RQ /auth
+  response_type=code
+  client_id=CLIENT_ID
+  redirect_uri=REDIRECT_URI
+  scope=openid [SCOPE]
+  state=[STATE]
+  response_mode=[RESPONSE_MODE]
+
+IDP
+  Validerer CLIENT_ID
+  Validerer REDIRECT_URI
+  Bruker autentiserer seg
+  Bruker autoriserer skop
+  Genererer CODE
+  Redirecter UA til REDIRECT_URI
+
+RS REDIRECT_URI
+  code=CODE
+  state=[STATE]
+
+---------
+Klientapp
+  Validerer [STATE]
+  Kaller IDP /token
+
+RQ /token
+  grant_type=authorization_code
+  client_id=CLIENT_ID
+  client_secret=CLIENT_SECRET
+  redirect_uri=REDIRECT_URI
+  code=CODE
+
+IDP
+  Validerer CLIENT_ID
+  Validerer CLIENT_SECRET
+  Genererer ACCESS_TOKEN
+  Genererer ID_TOKEN signert med private key
+
+Token RS
+  access_token: ACCESS_TOKEN
+  token_type: Bearer
+  expires_in: [3600]
+  scope: [SCOPE]
+  refresh_token: [REFRESH_TOKEN]
+  id_token: ID_TOKEN
+
+---------
+Klientapp
+  Validerer id_token data
+  Validerer id_token signatur vha IDP public key iht oidc discovery
+  Kaller IDP /userinfo
+
+RQ /userinfo
+  access_token: ACCESS_TOKEN
+  
+Userinfo RS
+  Claims for delegating user
+
+---------
+Klientapp
+  Kaller RS /api
+
+API RQ
+  Authorization: Bearer ACCESS_TOKEN
+  Body
+
+Ressurs
+  Alt1: validere selv
+  Alt2: sende til IDP for validering
+  Validerer aksesstoken
+
+API RS
+  Body

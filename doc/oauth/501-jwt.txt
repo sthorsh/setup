@@ -12,11 +12,16 @@ JWT
   Signatur: rsa mfl
   Standard: https://tools.ietf.org/html/rfc7519
 
+JWT
+  Header
+  Payload (claims)
+  Signatur
+
 JWT header
   typ: JWT
   alg: HS256
 
-JWT claims
+JWT payload
   iss: https://azp.fifty.eu (azp)
   sub: 248289761001 (user)
   aud: s6BhdRkqt3 (app)
