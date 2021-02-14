@@ -1,0 +1,29 @@
+JWT
+
+Header
+  alg: RS256
+  kid: HEX32
+  typ: JWT
+
+Payload
+  iss: https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc
+  sub: EU_ID 
+  aud: CLIENT_ID
+  amr:  https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens#the-amr-claim
+  auth_time: 1613282209
+  iat: 1613282219
+  nbf: 1613282219
+  exp: 1613282519
+  nonce: n-0S6_WzA2Mj
+  at_hash: 77QmUPtjPfzWtF2AnpK9RQ
+
+Signatur
+  arg₁: base64UrlEncode(header)
+  arg₂: base64UrlEncode(payload)
+  arg₃: public_key|cert
+  arg₄: private_key   
+  signature: hmac_sha265(arg₁, arg₂, arg₃, arg₄)
+
+Serialisering
+  base64(header).base64(payload).base64(signature)
+

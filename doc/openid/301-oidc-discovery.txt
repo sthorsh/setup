@@ -1,17 +1,14 @@
 OIDC DISCOVERY
 
-URL
-  https://azs/.well-known/openid-configuration
-
-Response
+PLUS4U OP
 {
   "uuAppErrorMap": {},
   "issuer": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc",
   "authorization_endpoint": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/auth",
-  "userinfo_endpoint": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/getIdentity",
   "token_endpoint": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/grantToken",
   "token_introspection_endpoint": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/introspectToken",
   "token_revocation_endpoint": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/revokeToken",
+  "userinfo_endpoint": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/getIdentity",
   "end_session_endpoint": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/logout",
   "check_session_iframe": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/uveCheckSession",
   "jwks_uri": "https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc/listKeys",
@@ -31,10 +28,10 @@ Response
   "grant_types_supported": [
     "authorization_code",
     "implicit",
+    "client_credentials"
     "password",
     "refresh_token",
     "urn:ietf:params:oauth:grant-type:token-exchange",
-    "client_credentials"
   ],
   "acr_values_supported": [
     "none",

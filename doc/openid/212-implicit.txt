@@ -1,0 +1,74 @@
+IMPLISITT FLOW
+
+EU/UA
+  Kaller klient
+  Velger Log In
+
+---------
+Klient
+  Redirecter UA til IDP /auth
+
+Request
+  response_type=id_token [token]
+  client_id=CLIENT_ID
+  redirect_uri=REDIRECT_URI
+  scope=openid [SCOPE]
+  state=[STATE]
+  response_mode=fragment
+
+IDP
+  Validerer CLIENT_ID
+  Validerer REDIRECT_URI
+  Bruker autentiserer seg
+  Bruker autoriserer skop
+  Genererer ID_TOKEN signert med private key
+  Genererer ACCESS_TOKEN
+  Redirecter UA til REDIRECT_URI
+
+UA
+  Ekstraher tokens fra URI fragment
+  Submit tokens til RP REDIRECT_URI
+
+Response 
+  id_token: ID_TOKEN
+  access_token: ACCESS_TOKEN
+  token_type: Bearer
+  expires_in: [3600]
+  scope: [SCOPE]
+  state: [STATE]
+
+---------
+Klient
+  Validerer [STATE]
+  Validerer id_token payload: iss, sub, aud, amr, nbf, exp, nonce, at-hash
+  Validerer id_token signatur: cf oidc discovery document → IDP public key
+  Kaller IDP /userinfo
+  
+Request
+  ACCESS_TOKEN
+
+IDP
+  Validerer ACCESS_TOKEN
+
+Response
+  sub: EU_ID
+  given_name: John ✓
+  family_name: Doe ✓
+  email: john@doe.com ✓
+  identity_token: ID_TOKEN
+  access_token: ACCESS_TOKEN
+
+---------
+Klient
+  Kaller RS /api
+
+Request
+  ACCESS_TOKEN
+
+RS
+  Alt1: validerer ACCESS_TOKEN
+  Alt2: sender ACCESS_TOKEN til IDP for validering
+
+Response
+  Ressursen
+

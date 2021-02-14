@@ -64,13 +64,13 @@ Response mode
   form post
   Cf https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#ResponseModes
 
-Aksesstokens
-  JWT el ustrukturerte data
-
 Identitetstoken
   Alltid JWT
   Cf https://openid.net/specs/openid-connect-core-1_0.html#IDToken
   Cf https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens
   
+Aksesstokens
+  JWT el ustrukturerte data
+
 Refresh tokens
-  ...
+  JWT el ustrukturerte data (?)
