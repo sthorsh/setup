@@ -1,8 +1,8 @@
-IMPLISITT FLYT
+IMPLISITT
 
 EU/UA
-    Kaller RP
-    Velger LogIn
+  Kaller RP
+  Velger login
   
 ----------
 RP
@@ -36,13 +36,11 @@ Rs /auth
   token_type: Bearer
   expires_in: 3600
   state: STATE
-  session_expires_in: 600
-  session_state: SESSION_STATE
   
 RP
   Validerer STATE
-  Validerer ID_TOKEN payload: iss, sub, aud, amr, nbf, exp, nonce, at-hash
-  Validerer ID_TOKEN signatur: vha OP /discovery/v2.0/keys → OP public key
+  Validerer ID_TOKEN payload
+  Validerer ID_TOKEN signatur
   Kaller OP /userinfo og/eller RS /api
   
 ------------

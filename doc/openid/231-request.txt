@@ -1,6 +1,6 @@
-PARAMS
+REQUEST
 
-Responsetyper
+response_type
   code
   token
   id_token
@@ -12,19 +12,18 @@ Responsetyper
   client_credentials
   password
 
-Scope
+scope
   openid profile email address phone offline_access
   E.g contacts
   E.g contacts.read
   E.g https://op/auth/scopes/user/contacts.readonly
 
-Response mode
+response_mode
   query
   fragment
   form post
-  Cf https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#ResponseModes
 
-Grant typer
+grant_type
   authorization_code
   client_credentials
   password

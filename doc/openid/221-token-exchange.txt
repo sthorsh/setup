@@ -1,24 +1,22 @@
 TOKEN EXCHANGE
 
-Token exchange RQ
-  POST /token
-  Host: auth.fifty.eu
-  Authorization: Basic ...
-  Content-Type: application/x-www-form-urlencoded
-  ...
-  grant_type=token-exchange&
-  resource=https://backend.fifty.eu/api2&
-  subject_token=RNDHEX32
-  subject_token_type=access_token|refresh_token|id_token|saml|jwt
+Rq /token
+  grant_type=token-exchange
+  client_id=CLIENT_ID  
+  client_secret=CLIENT_SECRET
+  scope=SCOPE
+  resource=https://rs.domain.tld/api 
+  subject_token=SUBJECT_TOKEN
+  subject_token_type=id_token|access_token|refresh_token|saml|jwt
 
-Token exchange RS
-  HTTP/1.1 200 OK
-  Content-Type: application/json
-  ...
-  {
-    access_token: RNDHEX32
-    issued_token_type:access_token,
-    token_type:Bearer,
-    expires_in:60
-  }
+OP
+  Validerer CLIENT_ID
+  Validerer CLIENT_SECRET
+  Genererer ACCESS_TOKEN
+
+Rs /token
+  access_token: ACCESS_TOKEN
+  issued_token_type:access_token
+  token_type:Bearer
+  expires_in:60
   

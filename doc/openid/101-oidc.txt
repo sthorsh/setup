@@ -40,14 +40,3 @@ OP endepunkter
   /token: utenom UA
   /userinfo: utenom UA
 
-ID-token (IT)
-  Alltid JWT
-  Cf https://openid.net/specs/openid-connect-core-1_0.html#IDToken
-  Cf https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens
-  
-Aksesstoken (AT)
-  JWT el ustrukturerte data
-
-Refresh tokens (RT)
-  JWT el ustrukturerte data (?)
-

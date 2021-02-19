@@ -1,21 +1,24 @@
-AUTORISASJONSKODE FLOW
+AUTHORIZATION_CODE
 
-RO/UA
-  Kaller klientapp
+EU/UA
+  Kaller RP
+  Velger login
+  
+----------
+RP
+  Redirecter UA til OP /auth
 
----------
-Klientapp
-  Redirecter UA til IDP /auth
-
-RQ /auth
+Rq /auth
   response_type=code
   client_id=CLIENT_ID
   redirect_uri=REDIRECT_URI
-  scope=openid [SCOPE]
-  state=[STATE]
-  response_mode=[RESPONSE_MODE]
+  scope=openid SCOPE
+  response_mode=RESPONSE_MODE
+  nonce=NONCE
+  state=STATE
+  prompt=none|login|consent|select_account
 
-IDP
+OP
   Validerer CLIENT_ID
   Validerer REDIRECT_URI
   Bruker autentiserer seg
@@ -23,60 +26,64 @@ IDP
   Genererer CODE
   Redirecter UA til REDIRECT_URI
 
-RS REDIRECT_URI
-  code=CODE
-  state=[STATE]
+Rs /auth
+  code: CODE
+  state: STATE
 
 ---------
-Klientapp
-  Validerer [STATE]
-  Kaller IDP /token
+RP
+  Validerer STATE
+  Kaller OP /token
 
-RQ /token
+Rq /token
   grant_type=authorization_code
   client_id=CLIENT_ID
   client_secret=CLIENT_SECRET
   redirect_uri=REDIRECT_URI
   code=CODE
 
-IDP
+OP
   Validerer CLIENT_ID
   Validerer CLIENT_SECRET
   Genererer ACCESS_TOKEN
   Genererer ID_TOKEN signert med private key
 
-Token RS
+Rs /token
+  id_token: ID_TOKEN
   access_token: ACCESS_TOKEN
   token_type: Bearer
-  expires_in: [3600]
-  scope: [SCOPE]
-  refresh_token: [REFRESH_TOKEN]
-  id_token: ID_TOKEN
+  expires_in: 3600
 
----------
-Klientapp
-  Validerer id_token data
-  Validerer id_token signatur vha IDP public key iht oidc discovery
-  Kaller IDP /userinfo
+RP
+  Validerer ID_TOKEN payload
+  Validerer ID_TOKEN signatur
+  Kaller OP /userinfo og/eller RS /api
 
-RQ /userinfo
-  access_token: ACCESS_TOKEN
+------------
+Rq /userinfo
+  ACCESS_TOKEN
   
-Userinfo RS
-  Claims for delegating user
+OP
+  Validerer ACCESS_TOKEN
+  
+Rs /userinfo
+  sub: 123456789
+  name: John Doe
+  email: john@doe.com
 
----------
-Klientapp
-  Kaller RS /api
-
-API RQ
-  Authorization: Bearer ACCESS_TOKEN
-  Body
-
-Ressurs
-  Alt1: validere selv
-  Alt2: sende til IDP for validering
-  Validerer aksesstoken
-
-API RS
-  Body
+RP
+  Validerer OP TLS sertifikat
+  Dekrypterer respons (hvis kryptert)
+  Validerer OP signatur (hvis signert)
+  Validerer idtoken sub = userinfo sub
+  
+------------
+Rq /api
+  ACCESS_TOKEN
+  
+RS
+  Alt1: validerer ACCESS_TOKEN
+  Alt2: sender ACCESS_TOKEN til OP for validering
+  
+Rs /api
+  Iht GET|POST|PUT|PATH|DELETE
