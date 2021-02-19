@@ -1,0 +1,32 @@
+PARAMS
+
+Responsetyper
+  code
+  token
+  id_token
+  code token
+  code id_token
+  id_token token
+  code id_token token
+  none
+  client_credentials
+  password
+
+Scope
+  openid profile email address phone offline_access
+  E.g contacts
+  E.g contacts.read
+  E.g https://op/auth/scopes/user/contacts.readonly
+
+Response mode
+  query
+  fragment
+  form post
+  Cf https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#ResponseModes
+
+Grant typer
+  authorization_code
+  client_credentials
+  password
+  refresh_token
+

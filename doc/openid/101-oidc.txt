@@ -1,0 +1,53 @@
+OIDC
+
+Entiteter
+  Sluttbruker (EU)
+  Brukeragent (UA)
+  Klientapp (RP)
+  OpenID provider (OP)
+  API provider (RS)
+
+Klientapp
+  Serverapps
+  JS* e.g SPA → API
+  API-til-API
+  Førstepartsapp
+
+Flyt
+  Autorisasjonskode
+  Implisitt
+  Klientakkreditiver
+  Resource owner password credentials (ROPC)
+  Hybrid (openid)
+
+Klientapp → flyt
+  Serverapps: autorisasjonskode
+  JS* e.g SPA → API: implisitt
+  API-til-API: klientakkreditiver
+  Førstpartsapp: ROPC
+
+Autentisering for EU
+  Login m/brukerakkreditiver i OP
+  Login m/brukerakkreditiver i RP
+         
+Autentisering for RP
+  Basic autentisering iht RFC 7617
+  Basic autentisering iht RFC 6749
+  Klientakkreditiver i HTTP POST body
+
+OP endepunkter
+  /auth: via UA
+  /token: utenom UA
+  /userinfo: utenom UA
+
+ID-token (IT)
+  Alltid JWT
+  Cf https://openid.net/specs/openid-connect-core-1_0.html#IDToken
+  Cf https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens
+  
+Aksesstoken (AT)
+  JWT el ustrukturerte data
+
+Refresh tokens (RT)
+  JWT el ustrukturerte data (?)
+

@@ -1,22 +1,24 @@
-IMPLISITT FLOW
+IMPLISITT FLYT
 
 EU/UA
-  Kaller klient
-  Velger Log In
-
----------
-Klient
-  Redirecter UA til IDP /auth
-
-Request
-  response_type=id_token [token]
+    Kaller RP
+    Velger LogIn
+  
+----------
+RP
+  Redirecter UA til OP /auth
+  
+Rq /auth
+  response_type=idtoken [token]
   client_id=CLIENT_ID
   redirect_uri=REDIRECT_URI
-  scope=openid [SCOPE]
-  state=[STATE]
-  response_mode=fragment
-
-IDP
+  scope=openid SCOPE
+  response_mode=RESPONSE_MODE
+  nonce=NONCE
+  state=STATE
+  prompt=none|login|consent|select_account
+  
+OP
   Validerer CLIENT_ID
   Validerer REDIRECT_URI
   Bruker autentiserer seg
@@ -24,51 +26,51 @@ IDP
   Genererer ID_TOKEN signert med private key
   Genererer ACCESS_TOKEN
   Redirecter UA til REDIRECT_URI
-
+  
 UA
-  Ekstraher tokens fra URI fragment
-  Submit tokens til RP REDIRECT_URI
-
-Response 
+  Sender tokens til REDIRECT_URI
+  
+Rs /auth
   id_token: ID_TOKEN
   access_token: ACCESS_TOKEN
   token_type: Bearer
-  expires_in: [3600]
-  scope: [SCOPE]
-  state: [STATE]
-
----------
-Klient
-  Validerer [STATE]
-  Validerer id_token payload: iss, sub, aud, amr, nbf, exp, nonce, at-hash
-  Validerer id_token signatur: cf oidc discovery document → IDP public key
-  Kaller IDP /userinfo
+  expires_in: 3600
+  state: STATE
+  session_expires_in: 600
+  session_state: SESSION_STATE
   
-Request
+RP
+  Validerer STATE
+  Validerer ID_TOKEN payload: iss, sub, aud, amr, nbf, exp, nonce, at-hash
+  Validerer ID_TOKEN signatur: vha OP /discovery/v2.0/keys → OP public key
+  Kaller OP /userinfo og/eller RS /api
+  
+------------
+Rq /userinfo
   ACCESS_TOKEN
-
-IDP
+  
+OP
   Validerer ACCESS_TOKEN
+  
+Rs /userinfo
+  sub: 123456789
+  name: John Doe
+  email: john@doe.com
 
-Response
-  sub: EU_ID
-  given_name: John ✓
-  family_name: Doe ✓
-  email: john@doe.com ✓
-  identity_token: ID_TOKEN
-  access_token: ACCESS_TOKEN
-
----------
-Klient
-  Kaller RS /api
-
-Request
+RP
+  Validerer OP TLS sertifikat
+  Dekrypterer respons (hvis kryptert)
+  Validerer OP signatur (hvis signert)
+  Validerer idtoken sub = userinfo sub
+  
+------------
+Rq /api
   ACCESS_TOKEN
-
+  
 RS
   Alt1: validerer ACCESS_TOKEN
-  Alt2: sender ACCESS_TOKEN til IDP for validering
-
-Response
-  Ressursen
-
+  Alt2: sender ACCESS_TOKEN til OP for validering
+  
+Rs /api
+  Iht GET|POST|PUT|PATH|DELETE
+  
