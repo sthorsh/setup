@@ -1,0 +1,34 @@
+RESPONSE
+
+id_token
+  Header: ?
+  Claims: iss ,sub ,aud ,amr ,nbf ,exp ,nonce at-hash
+  Signatur: OP signerer med private key; RP verifiserer med OP public key
+  
+access_token
+  eyJhbGciOiJFUzI1NiIsImtpZCI6IjllciJ9.eyJhdWQiOiJo
+  dHRwczovL2JhY2tlbmQuZXhhbXBsZS5jb20iLCJpc3MiOiJodHRwczovL2FzLmV
+  4YW1wbGUuY29tIiwiZXhwIjoxNDQxOTE3NTkzLCJpYXQiOjE0NDE5MTc1MzMsIn
+  N1YiI6ImJkY0BleGFtcGxlLmNvbSIsInNjb3BlIjoiYXBpIn0.40y3ZgQedw6rx
+  f59WlwHDD9jryFOr0_Wh3CGozQBihNBhnXEQgU85AI9x3KmsPottVMLPIWvmDCM
+  y5-kdXjwhw
+  {
+    "alg": "ES256",
+    "kid": "9er"
+  }
+  {
+    "aud": "https://backend.example.com",
+    "iss": "https://as.example.com",
+    "exp": 1441917593,
+    "iat": 1441917533,
+    "sub": "bdc@example.com",
+    "scope": "api"
+  }
+  {
+    signatur
+  }
+  Cf https://tools.ietf.org/html/rfc8693
+
+refresh_token
+  JWT el ustrukturerte data
+
