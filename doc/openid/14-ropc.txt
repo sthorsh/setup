@@ -1,19 +1,28 @@
-CLIENT CREDENTIALS
+PASSWORD
 
+EU/UA
+  Kaller RP
+  Velger login
+
+----------
 RP
+  Bruker autentiserer seg
+  Bruker autoriserer skop (?)
   Kaller OP /token
 
---------
 Rq /token
-  grant_type=client_credentials
-  client_id=CLIENT_ID 
-  client_secret=CLIENT_SECRET 
+  grant_type=password
+  client_id=CLIENT_ID
+  client_secret=CLIENT_SECRET
+  username=USERNAME
+  password=PASSWORD
   scope=SCOPE
 
 OP
   Validerer CLIENT_ID
-  Validerer CLIENT_SECRET 
-  Genererer ACCESS_TOKEN 
+  Validerer CLIENT_SECRET
+  Validerer brukerakkreditiver
+  Genererer ACCESS_TOKEN
 
 Rs /token
   access_token: ACCESS_TOKEN
@@ -22,15 +31,15 @@ Rs /token
 
 RP
   Kaller RS /api
-  
+
 ------------
 Rq /api
   ACCESS_TOKEN
-  
+
 RS
   Alt1: validerer ACCESS_TOKEN
   Alt2: sender ACCESS_TOKEN til OP for validering
-  
+
 Rs /api
   Iht GET|POST|PUT|PATH|DELETE
-  
+

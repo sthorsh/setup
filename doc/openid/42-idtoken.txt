@@ -9,11 +9,11 @@ Payload
   iss: https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-75f7d37e4efc4b0f9815e90427f9fc44/oidc
   sub: EU_ID 
   aud: CLIENT_ID
-  amr:  https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens#the-amr-claim
   auth_time: 1613282209
   iat: 1613282219
   nbf: 1613282219
   exp: 1613282519
+  amr:  https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens#the-amr-claim
   nonce: hhpsd5vjil10
   at_hash: 77QmUPtjPfzWtF2AnpK9RQ
 

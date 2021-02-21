@@ -1,0 +1,47 @@
+OIDC
+
+Parter
+  Sluttbruker: end user (EU)
+  Brukeragent: user agent (UA)
+  Klientapp: relying party (RP)
+  Autentiseringsserver: OpenID provider (OP)
+  API provider: resource server (RS)
+
+RP
+  Serverapp
+  JS e.g SPA
+  API
+  Førstepartsapp
+
+Flyter
+  Authz code
+  Implisitt: client secret n/a
+  Client credentials: EU n/a
+  RO[P]C
+  OpenID hybrid
+
+RP → flyt
+  Serverapp: authz code
+  JS e.g SPA: implisitt
+  API: client credentials
+  Førstpartsapp: ROPC
+
+Autentisering av EU
+  Brukerakkreditiver i OP (authz code, implisitt)
+  Brukerakkreditiver i RP (ROPC)
+
+Autentisering av RP
+  Basic autentisering cf RFC 7617
+  Basic autentisering cf RFC 6749
+  Klientakkreditiver i HTTP POST body
+
+Endepunkter OP
+  /auth: via UA, TLS required
+  /token: utenom UA, TLS required
+  /userinfo: utenom UA, TLS required
+
+Tokens
+  Access token (AT)
+  ID token (IT)
+  Refresh token (RT)
+
