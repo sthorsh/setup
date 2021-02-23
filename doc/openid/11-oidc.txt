@@ -1,0 +1,53 @@
+OIDC
+
+Parter
+  Sluttbruker: end user EU
+  Brukeragent: user agent UA
+  Klientapp: relying party RP
+  Autentiseringsserver: OpenID provider OP
+  API provider: resource server RS
+
+RP
+  Serverapp
+  JS e.g SPA
+  Førstepartsapp
+  API provider
+
+Flyter
+  Authz code
+  Implisitt: client secret n/a
+  ROPC
+  Client credentials: EU n/a
+  OpenID hybrid
+
+RP → flyt
+  Serverapp: authz code
+  JS e.g SPA: implisitt
+  Førstpartsapp: ROPC
+  API: client credentials
+
+Autentisering av EU
+  Brukerakkreditiver i OP (authz code, implisitt)
+  Brukerakkreditiver i RP (ROPC)
+
+Autentisering av RP
+  Cf RFC 7617
+  Cf RFC 6749
+  POST HTTP body m/klientakkreditiver
+
+Endepunkter OP
+  /auth: via UA, TLS required
+  /token: utenom UA, TLS required
+  /userinfo: utenom UA, TLS required
+  /introspect: token introspection
+  /.well-known/openid-configuration
+
+OIDC discovery
+  https://login.microsoftonline.com/7027e50b-f28b-48c2-b913-7e474d0f2a4e/v2.0/.well-known/openid-configuration
+  https://uuappg01-eu-w-1.plus4u.net/uu-oidc-maing02/84723967990176188-3c85a6c704374e0f93992e9923236281/oidc/.well-known/openid-configuration
+
+Tokens
+  Access token (AT)
+  ID token (IT)
+  Refresh token (RT)
+
