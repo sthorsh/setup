@@ -1,0 +1,24 @@
+ID_TOKEN cf https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens
+
+Header
+  ...
+
+Payload
+  aud: GUID
+  iss: https://login.microsoftonline.com/GUID/v2.0
+  iat: 1441917533
+  nbf: 1441917533
+  exp: 1441917593
+  at_hash: STRING
+  email: svein.thorshaug@fifty.eu
+  name: Svein Thorshaug
+  oid: GUID
+  preferred_username: svein.thorshaug@fifty.eu
+  sub: STRING
+  tid: GUID
+  upn: svein.thorshaug@fifty.eu
+  ver: 1.0|2.0
+  
+Signatur
+  ...
+

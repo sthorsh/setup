@@ -1,0 +1,67 @@
+OIDC
+
+Parter
+  Sluttbruker: end user EU, resource owner RO
+  Brukeragent: user agent UA
+  Klientapp: relying party RP
+  Autentiseringsserver: auth server AS, openid provider AS
+  API1 provider: resource server RS1 e.g gateway
+  API2 provider: resource server RS2
+
+Autorisasjonskode
+  EU-autentisering
+  RP-autentisering: confidential klient dvs _KAN_ preloades|konfigureres med client_secret som EU ikke kan se 
+  Kan be om refresh token
+
+Implisitt
+  EU-autentisering
+  Ingen RP-autentisering: public klient dvs kan _IKKE_ preloades|konfigureres med client_secret som EU ikke kan se
+  This flow takes place entirely within the browser
+  Kan IKKE be om refresh token, siden tokens ikke kan lagres trygt
+  
+ROPC
+  EU-autentisering
+  RP-autentisering
+  Kan be om refresh token
+
+Klientakkreditiver
+  EU n/a pga M2M
+  RP-autentisering
+  Kan IKKE be om refresh token, kan heller bare spør om et nytt AT
+
+EU autentisering
+  Autorisasjonskode: i AS
+  Implisitt: i AS
+  ROPC: brukerakkreditiver i RP
+  Klientakkreditiver: n/a
+
+RP
+  Serverapp: autorisasjonskode
+  JS e.g React SPA: implisitt
+  Førstepartsapp: ROPC
+  API provider: klientakkreditiver
+
+RP autentisering
+  client_secret_basic
+  client_secret_post
+  client_secret_jwt
+  private_key_jwt
+  none e.g implisitt flyt
+
+AS metadata
+  /.well-known/openid-configuration
+
+AS endepunkter
+  /auth: via UA, TLS required
+  /token: UA n/a dvs M2M, TLS required
+  /userinfo: UA n/a dvs M2M, TLS required
+  /introspect: UA n/a dvs M2M, TLS required
+
+AS feiltyper
+  invalid_request
+  invalid_grant
+  unsupported_grant_type
+  invalid_client
+  unauthorized_client
+  invalid_scope
+

@@ -1,0 +1,34 @@
+IMPLISITT cf https://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth
+
+1.1 EU velger login i RP
+
+2.1 RP > AS /.well-known/openid-configuration
+
+3.1 RP via UA redirect sender rq til AS /auth
+    > response_type=idtoken token
+    > client_id=ID
+    > redirect_uri=URI
+    > scope=API openid profile email
+
+3.2 AS validerer rq params
+    AS autentiserer EU
+    AS autoriserer RPs skop
+
+3.3 AS via UA redirect sender rs til RP /callback
+    < access_token: AT
+    < token_type: Bearer
+    < expires_in: 3600
+    < id_token: IT
+
+3.4 RP validerer AT cf at_hash
+    RP validerer IT
+
+4.1 Evt RP → AS /userinfo
+
+5.1 RP sender rq til RS /api
+    > AT|IT
+
+5.2 RS validerer AT|IT evt via AS /introspect
+
+5.3 AS returnerer rs til RP
+

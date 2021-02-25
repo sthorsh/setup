@@ -1,0 +1,22 @@
+TOKEN_EXCHANGE cf https://tools.ietf.org/html/rfc8693
+
+1.1 POST /token HTTP/1.1
+    Host: AS
+    Authorization: Basic ... (client_secret_basic)
+    Content-type: application/x-www-form-urlencoded
+    ...  
+    grant_type=urn:[...]:token-exchange&
+    subject_token=AT1|IT1|...&
+    subject_token_type=urn:[...]:access_token|id_token|...&
+    resource=https://rs2/api2
+  
+1.2 HTTP/1.1 200 OK
+    Content-type: application/json
+    ...
+    {
+      access_token: AT2|IT2|...,
+      issued_token_type: urn:[...]:access_token|id_token|...
+      token_type: Bearer,
+      expires_in: 3600,
+    }
+

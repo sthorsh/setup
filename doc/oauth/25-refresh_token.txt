@@ -1,0 +1,22 @@
+REFRESH_TOKEN cf https://openid.net/specs/openid-connect-core-1_0.html#RefreshTokens
+
+1.1 POST /token HTTP/1.1
+    Host: AS
+    Authorization: Basic ... (client_secret_basic)
+    Content-type: application/x-www-form-urlencoded
+    ...  
+    grant_type=refresh_token&
+    client_id=ID&
+    scope=API&
+    refresh_token=RT
+  
+1.2 HTTP/1.1 200 OK
+    Content-type: application/json
+    ...
+    {
+      access_token: AT,
+      token_type: Bearer,
+      expires_in: 3600,
+      refresh_token: RT
+    }
+

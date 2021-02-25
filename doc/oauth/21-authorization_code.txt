@@ -1,0 +1,48 @@
+AUTHORIZATION_CODE cf https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth
+
+1.1 EU velger login i RP
+
+2.1 RP → AS /.well-known/openid-configuration
+
+3.1 RP via UA redirect sender rq til AS /auth
+    > response_type=code
+    > client_id=ID
+    > redirect_uri=URI
+    > scope=API openid profile email offline_access
+
+3.2 AS validerer rq params
+    AS autentiserer EU
+    AS autoriserer RPs skop
+
+3.3 AS via UA redirect sender rs til RP /callback
+    < code=CODE
+
+3.4 RP validerer rs
+
+4.1 RP sender rq til AS /token
+    > grant_type=authorization_code
+    > code=CODE
+    > redirect_uri=URI
+
+4.2 AS autentiserer RP cf client_secret_basic
+    AS validerer rq
+
+4.3 AS returnerer rs til RP
+    < access_token: AT
+    < token_type: Bearer
+    < expires_in: 3600
+    < id_token: IT
+    < refresh_token: RT
+
+4.4 RP validerer AT cf at_hash
+    RP validerer IT
+
+5.1 Evt RP → AS /userinfo
+
+6.1 RP sender rq til RS /api
+    > AT|IT
+
+6.2 RS validerer AT|IT evt via AS /introspect
+
+6.3 AS returnerer rs til RP
+

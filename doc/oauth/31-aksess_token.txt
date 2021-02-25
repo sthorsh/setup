@@ -1,0 +1,34 @@
+AKSESS_TOKEN cf https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens
+
+Header
+  ...
+
+Payload
+  aud: GUID
+  iss: https://login.microsoftonline.com/GUID/v2.0
+  iat: 1441917533
+  nbf: 1441917533
+  exp: 1441917593
+  azp: CLIENT_ID
+  azpacr: 0|1|2
+  name: Svein Thorshaug
+  oid: GUID
+  preferred_username: svein.thorshaug@fifty.eu
+  scope: User.read openid profile email
+  sub: STRING
+  tid: GUID
+  upn: svein.thorshaug@fifty.eu
+  ver: 1.0|2.0
+  
+Signatur
+  ...
+
+Om ATs
+  AT representerer ikke en autentisert bruker (oauth != autentisering)
+  AT sitt intended audience er the proteced resource
+  En klient skal ikke ha behov for å se innholdet i AT
+  En klient skal ikke ha behov for å validere AT
+  En klient skal kun be om et AT fra autorisasjonsserveren, og så videresende AT til klienten
+  En klient er ikke i stand til å reliably verifisere et AT
+  En autorisasjonsserver har ingen forpliktelser (kontrakt) overfor sine klienter mtp et ATs format
+
