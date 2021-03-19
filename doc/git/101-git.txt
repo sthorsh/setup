@@ -3,11 +3,13 @@ GIT
 Cmds
   git TAB                                           completion
   
+  --------------------
   git help                                          -
   git help --all|config|guides                      -
   git help CMD                                      -
   git help GUIDE                                    -
   
+  --------------------
   git config                                        usage
   git config --list                                 list all
   git config --show-scope                           global|local|...
@@ -15,22 +17,14 @@ Cmds
   git config section.key                            get value
   git config section.key value                      set value
   
-  git init [DIR]                                    init project
-  
+  --------------------
   git clone URL [DIR]                               clone project
+
+  git init [DIR]                                    initialize project
   
   --------------------
-  git status --ignored                              branch|upstream|staged|unstaged|untracked|ignored
-  
-  git blame FILE                                    annotate file
-  
-  git diff [PATHS]                                  wtree vs index
-  git diff --staged [PATHS]                         index vs HEAD
-  git diff H|R|C [PATHS]                            wtree vs commit
-  git diff --staged H|R|C [PATHS]                   index vs commit
-  git diff H|R|C H|R|C [PATHS]                      commit vs commit
-  git diff H|R|C...H|R|C [PATHS]                    eq git diff $(git merge-base A B) B
-  
+  git status [--ignored]                            branch|upstream|staged|unstaged|untracked|ignored
+
   git log -N                                        number
   git log --all                                     show all refs/
   git log --grep=REGEXP                             grep commit msgs
@@ -46,70 +40,81 @@ Cmds
   git reflog [OPTS] H|B                             show reflog for head|branch
   git reflog [OPTS] refs/heads/master               alternative ref notation
   
+  git blame FILE                                    annotate file
+  
+  git diff [PATHS]                                  wtree vs index
+  git diff --staged [PATHS]                         index vs HEAD
+  git diff H|R|C [PATHS]                            wtree vs commit
+  git diff --staged H|R|C [PATHS]                   index vs commit
+  git diff H|R|C H|R|C [PATHS]                      commit vs commit
+  git diff H|R|C...H|R|C [PATHS]                    eq git diff $(git merge-base A B) B
+  
   git show [OBJECT]                                 show H|B|T|C|tree|file
   git show --shortstat [OBJECT]                     -
   git show --stat [OBJECT]                          -
   git show --name-status [OBJECT]                   -
+
+  git show-ref --head
   
   ---------------
-  git branch -avv                                   list local|upstream|remote-tracking branches
-  git branch b [H|R|C]                              create b
-  git branch -d b                                   delete b
-  git branch -d -r b                                delete remote-tracking origin/b
-  git branch -m b new_name                          rename b
-  git branch b -t UPSTREAM                          create b; set upstream e.g origin/b
-  git branch -u UPSTREAM b                          set upstream e.g origin/b
-  git branch --unset-upstream b                     unset upstream
-  
-  git checkout H|R|C                                mv HEAD; update wtree<H|R|C
-  git checkout -b b H|R|C                           create b; checkout H|R|C
-  git checkout -t UPSTREAM                          create b; set upstream e.g origin/b; checkout H|R|C
+  git branch -avv                                   list local|tracking|upstream branches
+  git branch b [R|C]                                create b
+  git branch b --track origin/b                     create b; set upstream
+  git branch b --move new_name                      rename b
+  git branch b --set-upstream-to origin/b           set upstream
+  git branch b --unset-upstream                     unset upstream
+  git branch b --delete                             delete b
+  git branch origin/b --delete --remotes            delete tracking branch
+                                                                                         
+  git checkout R|C                                  mv HEAD; update wtree<R|C
+  git checkout -b b [R|C]                           create b; checkout R|C
+  git checkout -t origin/b                          create b; set upstream; checkout R|C
   git checkout PATH                                 overwrite wtree<index
-  git checkout H|R|C PATH                           overwrite wtree<index<H|R|C
-  
-  git cherry-pick R|C ...                           create cherry_commits; mv HEAD; update wtree<HEAD
-  
+  git checkout R|C PATH                             overwrite wtree<index<H|R|C
+    
+  git cherry-pick R|C ...                           create cherry_commit; mv HEAD; update wtree<HEAD
+    
   git commit [FILES] -m MSG                         create commit; mv HEAD
   git commit -am MSG                                stage changes; create commit; mv HEAD
   git commit --amend -m MSG                         create amend_commit; mv HEAD
-  
-  git merge -m msg R|C ...                          create merge_commit OR do ff merge
-  git merge -m msg                                  merge in current branch's upstream
-  git merge --ff --no-ff                            default: ff
-  git merge --abort|quit|continue                   if conflict
-  
-  git mv PATH NEW_NAME                              stage ie wtree>index
-  
-  git rebase UPSTREAM                               git switch upstream; create rebase_commits
-  git rebase -i UPSTREAM                            interactive
-  git rebase --abort|quit|skip|continue             if conflict
-  
-  git reset [HEAD] [PATH]                           unstage ie index<HEAD
-  git reset --hard [HEAD]                           discard ie wtree<HEAD
-  git reset H|B|T|C [PATH]                          mv HEAD and *B to B|T|C; unstage
-  git reset --soft H|B|T|C                          mv HEAD and *B to B|T|C
-  git reset --hard H|B|T|C                          mv HEAD and *B to B|T|C; discard
-  
-  git restore PATH                                  restore ie wtree<index
-  git restore --staged PATH                         unstage ie index<HEAD
-  git restore --staged --worktree PATH              unstage-restore ie wtree<HEAD
-  
-  git revert H|B|T|C                                create revert_commit
-  
-  git rm PATH                                       rm file from wtree and index
-  git rm --cached PATH                              rm file from index
-  
-  git stage PATH                                    stage untracked|modified|deleted files
-  git stage --patch PATH                            stage hunks
-  
-  git switch B                                      mv HEAD; wtree<HEAD
-  git switch --create B H|B|T|C                     create B; mv HEAD; wtree<HEAD
-  
-  git tag                                           show tags
-  git tag T [H|R|C]                                 create tag
-  git tag -a T -m MSG                               create annotated tag
-  git tag -d T                                      delete tag
-  
+    
+    git merge R|C -m msg                            create merge_commit OR do ff merge
+    git merge -m msg                                  merge in current branch's upstream
+    git merge --ff --no-ff                            default: ff
+    git merge --abort|quit|continue                   if conflict
+    
+    git mv PATH NEW_NAME                              stage ie wtree>index
+    
+    git rebase UPSTREAM                               git switch upstream; create rebase_commits
+    git rebase -i UPSTREAM                            interactive
+    git rebase --abort|quit|skip|continue             if conflict
+    
+    git reset [HEAD] [PATH]                           unstage ie index<HEAD
+    git reset --hard [HEAD]                           discard ie wtree<HEAD
+    git reset H|B|T|C [PATH]                          mv HEAD and *B to B|T|C; unstage
+    git reset --soft H|B|T|C                          mv HEAD and *B to B|T|C
+    git reset --hard H|B|T|C                          mv HEAD and *B to B|T|C; discard
+    
+    git restore PATH                                  restore ie wtree<index
+    git restore --staged PATH                         unstage ie index<HEAD
+    git restore --staged --worktree PATH              unstage-restore ie wtree<HEAD
+    
+    git revert H|B|T|C                                create revert_commit
+    
+    git rm PATH                                       rm file from wtree and index
+    git rm --cached PATH                              rm file from index
+    
+    git stage PATH                                    stage untracked|modified|deleted files
+    git stage --patch PATH                            stage hunks
+    
+    git switch B                                      mv HEAD; wtree<HEAD
+    git switch --create B H|B|T|C                     create B; mv HEAD; wtree<HEAD
+    
+    git tag                                           show tags
+    git tag T [H|R|C]                                 create tag
+    git tag -a T -m MSG                               create annotated tag
+    git tag -d T                                      delete tag
+    
   ----------------
   git stash -m MSG                                  stash ie stash<wtree<index
   git stash list                                    show list

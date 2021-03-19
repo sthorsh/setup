@@ -24,39 +24,38 @@ Questions
   How does CMD change the repository?
   How does CMD move data between areas?
 
-Objekter
-  HEAD
-    Ref til current branch (og current commit)
-    Evt ref til current commit (detached head)
-    Cf peker .git/HEAD
-  
-  Branch
-    Ref til commit (entrypunkt til commit-historikk)
-    Cf pekere .git/refs/heads/
-  
-  Tag
-    Ref til commit (entrypunkt til commit-historikk)
-    Evt ref til et tag-objekt (annotert tag)
-    Cf pekere .git/refs/tags/ immutables
-  
-  Tag-objekt
-    Representer annotert tag
-    Peker til et objekt e.g commit
-    Cf objektdb .git/objects/ immutables
-  
-  Commit-objekt
-    Representer commit/snapshot
-    Peker til parent commits (historikk)
-    Peker til et tree (arbeidstreets rot)
-    Cf objektdb .git/objects/ immutables
-  
-  Tree-objekt
-    Representer katalog
-    Peker til trees (fs)
-    Peker til blobs (fs)
-    Cf objektdb .git/objects/ immutables
-  
-  Blob-objekt
-    Representer e.g tekstfiler
-    Cf objektdb .git/objects/ immutables
-  
+HEAD
+  Ref til ref
+  Evt ref til commit (detached head)
+  Cf .git/HEAD
+
+Branch
+  Ref til commit
+  Cf .git/refs/heads/
+
+Tracking branch
+  Ref til commit
+  Cf .git/refs/remotes/
+
+Tag
+  Ref til commit
+  Evt ref til tag-objekt (annotert tag)
+  Cf .git/refs/tags/ immutables
+
+Tag-objekt
+  Peker til objekt e.g commit
+  Cf objektdb .git/objects/ immutables
+
+Commit-objekt
+  Peker til parent commit(s)
+  Peker til tree (arbeidstreets rot)
+  Cf objektdb .git/objects/ immutables
+
+Tree-objekt
+  Peker til trees (tenk fs)
+  Peker til blobs (tenk fs)
+  Cf objektdb .git/objects/ immutables
+
+Blob-objekt
+  Cf objektdb .git/objects/ immutables
+
