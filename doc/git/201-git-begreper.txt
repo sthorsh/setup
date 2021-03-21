@@ -59,3 +59,7 @@ Tree-objekt
 Blob-objekt
   Cf objektdb .git/objects/ immutables
 
+=========================
+References
+https://www.atlassian.com/git/tutorials/refs-and-the-reflog
+
