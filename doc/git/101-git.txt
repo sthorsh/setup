@@ -1,126 +1,122 @@
-GIT                                                   
+GIT                                             
 
-  git TAB                                           
-  
-  git help                                          
-  git help --all|config|guides                      
-  git help CMD                                      
-  git help GUIDE                                    
-  
-  git config                                       bruk
-  git config --list --show-scope --show-origin     list
-  git config section.key                           get verdi feks user.name
-  git config section.key value                     set value
-  
-  git clone URL [DIR]                              klone prosjekt
+git                                             usage
+git TAB                                         vis cmds
+git help -a | CMD                               vis alle cmds
+git help -c                                     vis alle config vars
 
-  git init [DIR]                                   initialiser prosjekt
-  
-  --------------------
-  git status --ignored                             branch, upstream, staged, unstaged, untracked, ignored
+--------------------
+git config                                      usage
+git config TAB                                  vis sections
+git config SECTION.TAB                          vis keys
+git config -l [--show-scope --show-origin]      vis config vars
+git config SECTION.KEY                          get config var
+git config SECTION.KEY VALUE                    set config var
 
-  git diff [PATHS]                                 wtree vs index
-  git diff R|C [PATHS]                             wtree vs commit
-  git diff --staged [PATHS]                        index vs HEAD
-  git diff --staged R|C [PATHS]                    index vs commit
-  git diff R|C R|C [PATHS]                         commit vs commit
-  git diff R|C...R|C [PATHS]                       git diff $(git merge-base A B) B
-  
-  git log                                          commitlog
-  git log -5                                       5 siste
-  git log --all                                    alle refs
-  git log --oneline                                en linje
-  git log --graph                                  graf
-  git log --decorate=full                          prefiks refs
-  git log [opts] PATH                              fil
-  
-  git reflog [OPTS]                                referanselog
-  
-  git blame FILE                                   annotasjoner
+--------------------
+git init [DIR]                                  init prosjekt
 
-  ----------------
-  git stash -m MSG                                 stash<wtree<index
-  git stash list                                   list
-  git stash show ENTRY                             show entry
-  git stash apply ENTRY                            stash>wtree>index
-  git stash pop ENTRY                              stash>wtree>index; stash drop
-  git stash drop ENTRY                             drop entry
-  git stash clear                                  clear list
-    
-  git stage PATH                                   stage untracked|modified|deleted fil(er)
-    
-  git mv PATH NEW_NAME                             mv wtree>index
+git clone URL [DIR]                             klon prosjekt
 
-  git rm PATH                                      rm wtree>index
-  git rm --cached PATH                             rm index
+--------------------
+git status --ignored                            vis branch, upstream, staged, unstaged, untracked, ignored
 
-  git reset₁ [HEAD] [PATH]                         unstage ie index<HEAD
-  git reset₁ --hard [HEAD]                         discard ie wtree<index<HEAD
+git diff [PATHS]                                vis diff wtree index
+git diff R|C [PATHS]                            vis diff wtree commit
+git diff --staged [PATHS]                       vis diff index HEAD
+git diff --staged R|C [PATHS]                   vis diff index commit
+git diff R|C R|C [PATHS]                        vis diff commit commit
 
-  git restore PATH                                 restore dvs wtree<index
-  git restore --staged PATH                        unstage dvs index<HEAD
-  git restore --staged --worktree PATH             discard dvs wtree<index<HEAD
-    
-  ---------------
-  git commit [FILES] -m MSG                        ny commit; set branch|HEAD
-  git commit -am MSG                               stage; commit
-  git commit --amend -m MSG                        ny amend_commit; set branch|HEAD
-    
-  git reset₂ R|C [PATH]                            set branch|HEAD; unstage
-  git reset₂ --soft R|C                            set branch|HEAD
-  git reset₂ --hard R|C                            set branch|HEAD; discard
+git log -N                                      vis commitlog for HEAD
+git log --oneline                               vis 1 linje per commit
+git log --graph                                 vis commitlog som graf
+git log --all                                   vis commitlog for HEAD og refs/*
+git log REVISION_RANGE                          vis commitlog for revision range
+git log PATH                                    vis commitlog for fil(er)
 
-  git revert R|C                                   ny revert_commit; set branch|HEAD
-    
-  git branch -avv                                  vis local branches, upstreams, tracking branches
-  git branch b [R|C]                               ny branch
-  git branch b --track origin/b                    ny branch; set upstream
-  git branch b --move new_name                     rename branch
-  git branch b --set-upstream-to origin/b          set upstream
-  git branch b --unset-upstream                    unset upstream
-  git branch b --delete                            slett branch
-  git branch origin/b --delete --remotes           slett tracking branch
-                                                                                          
-  git tag                                          vis tags
-  git tag t [R|C]                                  ny tag
-  git tag t --annotate -m MSG                      ny annotert tag
-  git tag t --delete                               slett tag
-    
-  git checkout R|C                                 set HEAD; oppdater wtree<index<R|C
-  git checkout -b b [R|C]                          create b; checkout
-  git checkout --track origin/b                    create b; set upstream; checkout 
-      
-  git switch b                                     set HEAD; wtree<index<HEAD
-  git switch --create b [R|C]                      ny branch; mv switch
+----------------
+git stash list                                  vis stash
+git stash show ENTRY                            vis entry
+git stash -m MSG                                stash dvs stash<wtree<index
+git stash apply ENTRY [--index]                 unstash dvs stash>wtree[>index]
+git stash pop ENTRY [--index]                   unstash dvs stash>wtree[>index]
+git stash drop ENTRY                            slett entry
+git stash clear                                 slett entries
 
-  git cherry-pick R|C ...                          ny cherry_commit; set branch|HEAD; update wtree<index<HEAD
-      
-  git merge₁ R|C -m msg                            ny merge_commit; set branch|HEAD EL set branch|HEAD (ff merge)
-  git merge₁ --abort|quit|continue                 hvis konflikt
-    
-  git rebase BRANCH                                set HEAD; nye rebase_commits; set HEAD; set branch
-  git rebase -i BRANCH                             interaktive rebase
-  git rebase --abort|quit|skip|continue            hvis konflikt
-    
-  -------------
-  git remote -v                                    vis remotes
-  git remote -v update [REMOTE]                    fetch updates
-  git remote add REMOTE URL                        nytt innslag i .git/config
-  git remote remove REMOTE                         slett innslag i .git/config
-    
-    git fetch -v                                     git fetch origin remote.origin.fetch
-    git fetch -v REMOTE                              git fetch REMOTE remote.REMOTE.fetch
-    git fetch -v REMOTE REFSPEC                      git fetch REMOTE remote_branch:tracking_branch
+----------------
+git add|stage PATH                              stage untracked|modified|deleted PATH dvs wtree>index
 
-    git merge₂ -m msg                                git merge UPSTREAM
+git mv SRC DST                                  stage dvs wtree>index
+                                                           
+git rm PATH                                     stage dvs wtree>index
+git rm --cached PATH                            untrack PATH; rm fra index
 
-    git pull [--rebase] -v                           fetch; ff-merge|merge|rebase
-    git pull [--rebase] -v REMOTE                    fetch; ff-merge|merge|rebase
-    git pull [--rebase] -v REMOTE REFSPEC            fetch; ff-merge|merge|rebase
-    
-    git push -v                                      eq git push -v branch.*.remote push.default
-    git push -v REMOTE                               ...
-    git push -v REMOTE REFSPEC                       cp local src to remote dst
-    git push -d -v REMOTE REFSPEC                    delete tracking og remote branch
-    git push -u -v REMOTE REFSPEC                    set upstream; ny tracking og remote branch
-    
+git reset₁ [PATH]                               unstage dvs index<HEAD
+git reset₁ --hard                               discard dvs wtree<index<HEAD
+
+git restore PATH                                restore dvs wtree<index
+git restore --staged PATH                       unstage dvs index<HEAD
+git restore --worktree --staged PATH            discard dvs wtree<index<HEAD
+
+---------------
+git branch -avv                                 vis branches, upstreams, tracking branches
+git branch b1 [R|C]                             ny branch
+git branch b1 --track origin/b1                 ny branch; set upstream
+git branch --set-upstream-to=origin/b1 b1       set upstream
+git branch --unset-upstream b1                  unset upstream
+git branch --move b1 NAME                       rename branch
+git branch --delete b1                          slett branch
+git branch --delete --remotes origin/b1         slett tracking branch
+
+git tag                                         vis tags
+git tag t1 [R|C]                                ny tag
+git tag t1 --annotate -m MSG                    ny annotert tag
+git tag --delete t1                             slett tag
+
+git checkout R|C                                update HEAD
+git checkout -b b1 [R|C]                        ny branch; checkout branch
+git checkout --track origin/b1                  ny branch; set upstream; checkout branch
+
+git switch b1                                   update HEAD
+git switch --create b1 [R|C]                    ny branch; switch to branch
+
+git reset₂ R|C [PATH]                           update branch; unstage
+git reset₂ --soft R|C                           update branch 
+git reset₂ --hard R|C                           update branch; discard
+
+git commit -m MSG                               ny commit; set parent; update branch
+git commit -am MSG                              stage; commit
+git commit --amend -m MSG                       ny commit; set parent; update branch 
+
+git revert R|C                                  ny commit; set parent; update branch
+
+git cherry-pick R|C                             ny commit; set parent; update branch
+git cherry-pick --abort|continue|quit|skip      hvis konflikt
+
+git merge R|C -m MSG                            ny commit; set parents; update branch
+git merge -m MSG                                git merge UPSTREAM (etter git fetch)
+git merge --abort|continue|quit                 hvis konflikt
+
+git rebase BRANCH                               nye commits; set parent; update branch
+git rebase -i BRANCH                            interaktiv rebase
+git rebase --abort|continue|quit|skip           hvis konflikt
+
+-------------
+git remote -v                                   vis remotes
+git remote add REMOTE URL                       nytt innslag i .git/config
+git remote remove REMOTE                        slett innslag i .git/config
+
+git fetch -v                                    fetch origin +refs/heads/*:refs/remotes/origin/*
+git fetch REMOTE -v                             fetch REMOTE +refs/heads/*:refs/remotes/REMOTE/*
+git fetch REMOTE REFSPEC -v                     fetch REMOTE REFSPEC
+
+git pull [--rebase] -v                          fetch; ff|merge|rebase
+git pull REMOTE [--rebase] -v                   fetch; ff|merge|rebase
+git pull REMOTE REFSPEC [--rebase] -v           fetch; ff|merge|rebase
+
+  git push -v                                     eq git push -v branch.*.remote push.default
+  git push REMOTE -v
+  git push REMOTE REFSPEC -v                      cp local src to remote dst
+  git push --set-upstream REMOTE REFSPEC -v       set upstream; ny tracking branch; ny remote branch
+  git push --delete REMOTE REFSPEC -v             delete tracking og remote branch
+
