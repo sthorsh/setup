@@ -103,20 +103,20 @@ git rebase --abort|continue|quit|skip           hvis konflikt
 
 -------------
 git remote -v                                   vis remotes
-git remote add REMOTE URL                       nytt innslag i .git/config
-git remote remove REMOTE                        slett innslag i .git/config
+git remote add REMOTE URL                       ny remote
+git remote remove REMOTE                        slett remote
 
-git fetch -v                                    fetch origin +refs/heads/*:refs/remotes/origin/*
-git fetch REMOTE -v                             fetch REMOTE +refs/heads/*:refs/remotes/REMOTE/*
-git fetch REMOTE REFSPEC -v                     fetch REMOTE REFSPEC
+  git fetch -v                                    cf git fetch --help
+  git fetch REMOTE -v                             cf git fetch --help
+  git fetch REMOTE REFSPEC -v                     cf git fetch --help
 
-git pull [--rebase] -v                          fetch; ff|merge|rebase
-git pull REMOTE [--rebase] -v                   fetch; ff|merge|rebase
-git pull REMOTE REFSPEC [--rebase] -v           fetch; ff|merge|rebase
+  git pull [--rebase] -v                          cf git pull --help
+  git pull REMOTE [--rebase] -v                   cf git pull --help
+  git pull REMOTE REFSPEC [--rebase] -v           cf git pull --help
 
-  git push -v                                     eq git push -v branch.*.remote push.default
-  git push REMOTE -v
-  git push REMOTE REFSPEC -v                      cp local src to remote dst
+  git push -v                                     cf git push --help
+  git push REMOTE -v                              cf git push --help
+  git push REMOTE REFSPEC -v                      cf git push --help
   git push --set-upstream REMOTE REFSPEC -v       set upstream; ny tracking branch; ny remote branch
-  git push --delete REMOTE REFSPEC -v             delete tracking og remote branch
+  git push --delete REMOTE REFSPEC -v             slett tracking branch; slett remote branch
 
