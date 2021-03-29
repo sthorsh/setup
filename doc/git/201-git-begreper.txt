@@ -1,4 +1,4 @@
-BEGREPER
+GIT BEGREPER
 
 Git
   Map: key bytes, value hash/sha-1
@@ -56,30 +56,6 @@ Tree-objekt
 
 Blob-objekt
   Cf objektdb .git/objects/ immutables
-
----------
-Cmds
-  How does CMD change the repository?
-  How does CMD move data between areas?
-
-Fetch
-  Hvor skal git hente fra?
-    - Fra et "remote" repository
-    - I prioritert rekkefølge: REMOTE | current branch's upstream | default remote dvs origin
-  Hva skal git hente?   
-    - Refs dvs branches iht refspec lhs
-    - Refs dvs tags 
-    - Objekter 
-  Hva skal git oppdatere?
-    - refs iht refspec rhs feks tracking branches dvs refs/remotes/origin/ (refdb)
-    - refs dvs tags dvs refs/tags/ (refdb)
-    - objekter dvs objects/ (objektdb)
-
-Pull
-  Cf fetch
-  Hvordan skal git oppdatere lokale branches? Fast-forward, merge eller rebase
-
-Push
 
 =========================
 References

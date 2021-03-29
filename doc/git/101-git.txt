@@ -110,12 +110,12 @@ git remote remove REMOTE                        slett remote
   git fetch REMOTE -v                             cf git fetch --help
   git fetch REMOTE REFSPEC -v                     cf git fetch --help
 
-  git pull [--rebase] -v                          cf git pull --help
-  git pull REMOTE [--rebase] -v                   cf git pull --help
+  git pull [--rebase] -v                          cf git pull --help, krever upstream
+  git pull REMOTE [--rebase] -v                   cf git pull --help, krever upstream
   git pull REMOTE REFSPEC [--rebase] -v           cf git pull --help
 
-  git push -v                                     cf git push --help
-  git push REMOTE -v                              cf git push --help
+  git push -v                                     cf git push --help, krever upstream
+  git push REMOTE -v                              cf git push --help, krever upstream
   git push REMOTE REFSPEC -v                      cf git push --help
   git push --set-upstream REMOTE REFSPEC -v       set upstream; ny tracking branch; ny remote branch
   git push --delete REMOTE REFSPEC -v             slett tracking branch; slett remote branch

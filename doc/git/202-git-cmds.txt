@@ -1,0 +1,33 @@
+GIT CMDS
+
+Cmds
+  How does CMD change the repository?
+  How does CMD move data between areas?
+
+Remote repository 
+  REMOTE dvs i .git/config feks origin
+  URL feks git@gitlab.com:sthorsh/test.git
+  ...
+
+Fetch
+  Hvor dvs hvilke(n) remote(s) skal git hente fra?
+    - Fra en eksplisitt REMOTE
+    - Ellers; fra current branch's upstream
+    - Ellers; fra alle remotes med --all
+    - Ellers; per default fra origin
+  Hva skal git hente?   
+    - Refs dvs branches iht refspec SRC:DST lhs dvs src feks refs/heads/*
+    - Refs dvs tags feks refs/tags/*
+    - Objekter 
+  Hva skal git oppdatere?
+    - Refs iht refspec SRC:DST rhs dvs dst feks tracking branches dvs refs/remotes/origin/* (refdb)
+    - Refs dvs tags dvs refs/tags/* (refdb)
+    - Objekter dvs objects/ (objektdb)
+
+Pull
+  Cf fetch
+  Hva oppdaterer git? Current branch
+  Hvordan oppdaterer git lokal branch? Fast-forward, merge eller rebase
+
+Push
+
