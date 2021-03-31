@@ -9,7 +9,7 @@ git help -c                                     vis alle config vars
 git config                                      usage
 git config TAB                                  vis sections
 git config SECTION.TAB                          vis keys
-git config -l [--show-scope --show-origin]      vis config vars
+git config -l [--show-scope --show-origin]      vis config vars, global ~/.gitconfig EL local .git/config
 git config SECTION.KEY                          get config var
 git config SECTION.KEY VALUE                    set config var
 
@@ -62,9 +62,9 @@ git restore --worktree --staged PATH            discard dvs wtree<index<HEAD
 git branch -avv                                 vis branches, upstreams, tracking branches
 git branch b1 [R|C]                             ny branch
 git branch b1 --track origin/b1                 ny branch; set upstream
-git branch --set-upstream-to=origin/b1 b1       set upstream
+git branch --set-upstream-to=origin/b1 b1       set branch.b1.remote og branch.b1.merge
 git branch --unset-upstream b1                  unset upstream
-git branch --move b1 NAME                       rename branch
+git branch --move b1 NEW_NAME                   rename branch
 git branch --delete b1                          slett branch
 git branch --delete --remotes origin/b1         slett tracking branch
 
@@ -83,6 +83,7 @@ git switch --create b1 [R|C]                    ny branch; switch to branch
 git reset₂ R|C [PATH]                           update branch; unstage
 git reset₂ --soft R|C                           update branch 
 git reset₂ --hard R|C                           update branch; discard
+git reset₂ --merge                              kanseller merge konflikt
 
 git commit -m MSG                               ny commit; set parent; update branch
 git commit -am MSG                              stage; commit
@@ -94,7 +95,7 @@ git cherry-pick R|C                             ny commit; set parent; update br
 git cherry-pick --abort|continue|quit|skip      hvis konflikt
 
 git merge R|C -m MSG                            ny commit; set parents; update branch
-git merge -m MSG                                git merge UPSTREAM (etter git fetch)
+git merge -m MSG                                fletter UPSTREAM inn i current branch
 git merge --abort|continue|quit                 hvis konflikt
 
 git rebase BRANCH                               nye commits; set parent; update branch
@@ -102,21 +103,23 @@ git rebase -i BRANCH                            interaktiv rebase
 git rebase --abort|continue|quit|skip           hvis konflikt
 
 -------------
-git remote -v                                   vis remotes
-git remote add REMOTE URL                       ny remote
-git remote remove REMOTE                        slett remote
+git remote -v                                   vis remote repos
+git remote add NAME URL                         nytt remote repo
+git remote remove NAME                          slett remote repo
+                                                
+git fetch -v                                    branch.CURRENT_BRANCH.remote|origin remote.REPO.fetch
+git fetch REPO -v                               REPO remote.REPO.fetch
+git fetch REPO SRC -v                           NAME SRC:DST (DST = remote.NAME.fetch RHS)
+git fetch REPO SRC:DST -v                       NAME SRC:DST
 
-  git fetch -v                                    cf git fetch --help
-  git fetch REMOTE -v                             cf git fetch --help
-  git fetch REMOTE REFSPEC -v                     cf git fetch --help
+  git pull [--rebase] -v                        cf fetch; git merge branch.CURRENT_BRANCH.merge|remote.NAME.fetch #1
+  git pull NAME [--rebase] -v                   cf fetch; git merge
+  git pull NAME SRC [--rebase] -v               cf fetch; git merge DST ...
+  git pull NAME SRC:DST [--rebase] -v           cf fetch; git merge DST ...
 
-  git pull [--rebase] -v                          cf git pull --help, krever upstream
-  git pull REMOTE [--rebase] -v                   cf git pull --help, krever upstream
-  git pull REMOTE REFSPEC [--rebase] -v           cf git pull --help
-
-  git push -v                                     cf git push --help, krever upstream
-  git push REMOTE -v                              cf git push --help, krever upstream
-  git push REMOTE REFSPEC -v                      cf git push --help
-  git push --set-upstream REMOTE REFSPEC -v       set upstream; ny tracking branch; ny remote branch
-  git push --delete REMOTE REFSPEC -v             slett tracking branch; slett remote branch
+  git push -v                                   krever upstream
+  git push NAME -v                              krever upstream
+  git push NAME REFSPEC -v                      
+  git push --set-upstream NAME REFSPEC -v       set upstream; ny tracking branch; ny remote branch
+  git push --delete NAME REFSPEC -v             slett tracking branch; slett remote branch
 
