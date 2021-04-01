@@ -62,7 +62,7 @@ git restore --worktree --staged PATH            discard dvs wtree<index<HEAD
 git branch -avv                                 vis branches, upstreams, tracking branches
 git branch b1 [R|C]                             ny branch
 git branch b1 --track origin/b1                 ny branch; set upstream
-git branch --set-upstream-to=origin/b1 b1       set branch.b1.remote og branch.b1.merge
+git branch --set-upstream-to=origin/b1 b1       set branch.b1.merge, branch.b1.remote
 git branch --unset-upstream b1                  unset upstream
 git branch --move b1 NEW_NAME                   rename branch
 git branch --delete b1                          slett branch
@@ -104,22 +104,23 @@ git rebase --abort|continue|quit|skip           hvis konflikt
 
 -------------
 git remote -v                                   vis remote repos
-git remote add NAME URL                         nytt remote repo
-git remote remove NAME                          slett remote repo
+git remote add NAME URL                         set remote.NAME.fetch, remote.NAME.url
+git remote remove NAME                          unset remote.NAME.fetch, remote.NAME.url
                                                 
-git fetch -v                                    branch.CURRENT_BRANCH.remote|origin remote.REPO.fetch
-git fetch REPO -v                               REPO remote.REPO.fetch
-git fetch REPO SRC -v                           NAME SRC:DST (DST = remote.NAME.fetch RHS)
-git fetch REPO SRC:DST -v                       NAME SRC:DST
+git fetch -v                                    repo cf --help 23, refspec cf --help 390
+git fetch NAME -v                               repo NAME, refspec --help 390
+git fetch NAME SRC -v                           repo NAME, refspec --help 390
+git fetch NAME SRC:DST -v                       repo NAME, refspec --help 390
 
-  git pull [--rebase] -v                        cf fetch; git merge branch.CURRENT_BRANCH.merge|remote.NAME.fetch #1
-  git pull NAME [--rebase] -v                   cf fetch; git merge
-  git pull NAME SRC [--rebase] -v               cf fetch; git merge DST ...
-  git pull NAME SRC:DST [--rebase] -v           cf fetch; git merge DST ...
+git pull [opts] -v                              fetch; ff|merge|rebase iht opts, cf --help 9, 351, 596
+git pull NAME [opts] -v                         fetch; ff|merge|rebase iht opts, cf --help 9, 351, 596
+git pull NAME SRC [opts] -v                     fetch; ff|merge|rebase iht opts, cf --help 9, 351, 596
+git pull NAME SRC:DST [opts] -v                 fetch; ff|merge|rebase iht opts, cf --help 9, 351, 596
 
-  git push -v                                   krever upstream
-  git push NAME -v                              krever upstream
-  git push NAME REFSPEC -v                      
-  git push --set-upstream NAME REFSPEC -v       set upstream; ny tracking branch; ny remote branch
-  git push --delete NAME REFSPEC -v             slett tracking branch; slett remote branch
+  git push -v                                     
+  git push NAME -v                                
+  git push NAME SRC -v                        
+  git push NAME SRC:DST -v                        
+  git push --set-upstream NAME REFSPEC -v         set upstream; ny tracking branch; ny remote branch
+  git push --delete NAME REFSPEC -v               slett tracking branch; slett remote branch
 
