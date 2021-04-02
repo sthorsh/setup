@@ -1,41 +1,25 @@
 GIT                                                   
 
-Cmds
-  git blame FILE                                   annotasjoner
+git blame FILE                           vis annotasjoner
 
-  git reflog [OPTS]                                referanselog
+git cat-file -t OBJEKT                   vis objekttype
+git cat-file -p OBJEKT                   pretty-print objekt
 
-  git show [OBJECT]                                     show R|C|tree|file
+git count-objects -Hv                    tell objekter
 
-  git show-ref --head
+git hash-object --stdin                  hash objekt
+echo foo | git hash-object --stdin       hash objekt
+echo foo | git hash-object --stdin -w    hash objekt; skriv objekt til objektdb
 
-Plumbing cmds
-  git cat-file -t SHA-1                             show object type
-  git cat-file -p SHA-1                             pretty-print object
-  
-  git count-objects -Hv                             count objects
-  
-  git hash-object --stdin                           create sha-1
-  echo foo | git hash-object --stdin                create sha-1
-  echo foo | git hash-object --stdin -w             create sha-1; write object into db
-  
-  git ls-files --stage                              ls index
-  git ls-tree -r HEAD                               ls tree object
-  git ls-remote                                     ls remote refs
-  
-  git merge-base B₁ B₂                              merge bases
-  
-  git show-ref --head|H|B                           show refs in local repo
-  
-  git update-ref refs/heads/b1 SHA-1                mv ref
+git ls-files --stage                     list indeks
+git ls-tree -r HEAD                      list tree objekt
+git ls-remote                            list remote refs
 
-External cmds
-  git filter-repo ...                               cf https://github.com/newren/git-filter-repo
-
-E.g checkout remote-tracking branch
-  git init                                          init git
-  git remote add origin URL                         add remote
-  git fetch -pv origin                              fetch origin 
-  git branch master -t origin/master                create tracking branch
-  git checkout master                               checkout tracking branch
+git merge-base B₁ B₂                     flett baser
   
+git reflog                               vis referanselog
+
+git show-ref --head                      vis refs
+
+git update-ref refs/heads/b1 OBJEKT      flytt ref
+

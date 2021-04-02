@@ -1,4 +1,4 @@
-ARBEIDSFLYT
+WORKFLOW
 
 Distribusjonsmodell
   P2P

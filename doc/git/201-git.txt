@@ -1,0 +1,21 @@
+GIT
+
+Git
+  Map: key bytes, value hash/sha-1
+  Persistent map: .git
+  Stupid content tracker: commit
+  Version control system: commit → parents
+  High-level versioned file system: trees, blobs
+  Distributed version control system: remote etc
+
+Areas
+  Stash
+  Wtree
+  Index
+  Repository
+  Remote repository
+
+Trees
+  Wtree
+  Index
+  HEAD → branch → current_commit

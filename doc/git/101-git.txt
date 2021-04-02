@@ -62,7 +62,7 @@ git restore --worktree --staged PATH            discard dvs wtree<index<HEAD
 git branch -avv                                 vis branches, upstreams, tracking branches
 git branch b1 [R|C]                             ny branch
 git branch b1 --track origin/b1                 ny branch; set upstream
-git branch --set-upstream-to=origin/b1 b1       set branch.b1.merge, branch.b1.remote
+git branch --set-upstream-to=origin/b1 b1       set upstream; set branch.b1.merge, branch.b1.remote
 git branch --unset-upstream b1                  unset upstream
 git branch --move b1 NEW_NAME                   rename branch
 git branch --delete b1                          slett branch
@@ -87,7 +87,7 @@ git reset₂ --merge                              kanseller merge konflikt
 
 git commit -m MSG                               ny commit; set parent; update branch
 git commit -am MSG                              stage; commit
-git commit --amend -m MSG                       ny commit; set parent; update branch 
+git commit --amend -m MSG                       ny commit; set parent; update branch (n/a etter push)
 
 git revert R|C                                  ny commit; set parent; update branch
 
@@ -104,23 +104,23 @@ git rebase --abort|continue|quit|skip           hvis konflikt
 
 -------------
 git remote -v                                   vis remote repos
-git remote add NAME URL                         set remote.NAME.fetch, remote.NAME.url
-git remote remove NAME                          unset remote.NAME.fetch, remote.NAME.url
+git remote add REMOTE URL                       legg til remote repo; set remote.REMOTE.url, remote.REMOTE.fetch
+git remote remove REMOTE                        slett remote repo; slett remote.REMOTE.*
                                                 
-git fetch -v                                    repo cf --help 23, refspec cf --help 390
-git fetch NAME -v                               repo NAME, refspec --help 390
-git fetch NAME SRC -v                           repo NAME, refspec --help 390
-git fetch NAME SRC:DST -v                       repo NAME, refspec --help 390
+git fetch [opts] -v                             repo cf --help, refspec cf --help 
+git fetch [opts] -v REMOTE                      repo REMOTE, refspec --help
+git fetch [opts] -v REMOTE SRC                  repo REMOTE, refspec --help
+git fetch [opts] -v REMOTE SRC:DST              repo REMOTE, refspec --help
+                    
+git pull [opts] -v                              fetch; ff|merge|rebase iht opts, current branch cf --help
+git pull [opts] -v  REMOTE                      fetch; ff|merge|rebase iht opts, current branch cf --help
+git pull [opts] -v  REMOTE SRC                  fetch; ff|merge|rebase iht opts, current branch cf --help
+git pull [opts] -v  REMOTE SRC:DST              fetch; ff|merge|rebase iht opts, current branch cf --help
 
-git pull [opts] -v                              fetch; ff|merge|rebase iht opts, cf --help 9, 351, 596
-git pull NAME [opts] -v                         fetch; ff|merge|rebase iht opts, cf --help 9, 351, 596
-git pull NAME SRC [opts] -v                     fetch; ff|merge|rebase iht opts, cf --help 9, 351, 596
-git pull NAME SRC:DST [opts] -v                 fetch; ff|merge|rebase iht opts, cf --help 9, 351, 596
-
-  git push -v                                     
-  git push NAME -v                                
-  git push NAME SRC -v                        
-  git push NAME SRC:DST -v                        
-  git push --set-upstream NAME REFSPEC -v         set upstream; ny tracking branch; ny remote branch
-  git push --delete NAME REFSPEC -v               slett tracking branch; slett remote branch
+git push [opts] -v                              repo cf --help, refspec cf --help
+git push [opts] -v REMOTE                       refspec cf --help 
+git push [opts] -v REMOTE SRC                   refspec cf --help 
+git push [opts] -v REMOTE SRC:DST               refspec cf --help 
+git push --delete -v REMOTE SRC                 slett tracking branch; slett remote branch
+git push --set-upstream -v REMOTE SRC           ny tracking branch; set upstream; ny remote branch
 

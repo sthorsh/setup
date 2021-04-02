@@ -55,5 +55,5 @@ Commands
   -----
   git flow bugfix
   -----
-  git flow support
+  git flow suppor]bt
 
