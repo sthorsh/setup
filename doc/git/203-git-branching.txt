@@ -1,0 +1,38 @@
+GIT BRANCHING
+
+3.1 Git branching - branches in a nutshell
+
+  Some people refer to Git’s branching model as its killer feature.
+  
+  The way Git branches is incredibly lightweight, making branching operations nearly instantaneous.
+  
+  Git encourages workflows that branch and merge often, even multiple times in a day. 
+  
+  Mastering this feature can entirely change the way that you develop.
+  
+  When you make a commit, Git stores a commit object that contains a pointer to the snapshot of the content you staged.
+  
+  A branch in Git is simply a lightweight movable pointer to a commit.
+  
+  A branch in Git is actually a simple file that contains the 40 character SHA-1 checksum of the commit it points to.
+
+3.2 Git branching - basic branching and merging
+  
+  This is an important point to remember: when you switch branches, Git resets your working directory to look like it
+  did the last time you committed on that branch. It adds, removes, and modifies files automatically to make sure your
+  working copy is what the branch looked like on your last commit to it.
+
+  Git does a simple three-way merge, using the two snapshots pointed to by the branch tips and the common ancestor of
+  the two. Instead of just moving the branch pointer forward, Git creates a new snapshot that results from this three-way
+  merge and automatically creates a new commit that points to it. This is referred to as a merge commit, and is special in
+  that it has more than one parent.
+
+  Now that your work is merged in, you have no further need for the iss53 branch. You can close the issue in your
+  issue-tracking system, and delete the branch
+
+3.3 Git branching - branch management
+ -
+
+3.4 Git branching - branching workflows
+  
+
