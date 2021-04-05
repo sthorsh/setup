@@ -1,64 +1,61 @@
 GIT                                             
 
-git                                            usage
+git                                            vis bruk
 git TAB                                        vis cmds
 git help -a                                    vis alle cmds
 git help -c                                    vis alle config vars
 git help CMD                                   vis help CMD
-  
---------------------                           
-git config                                     usage
+    
+git config                                     vis bruk
 git config TAB                                 vis sections
 git config SECTION.TAB                         vis keys
 git config -l [--show-origin --show-scope]     vis config vars
 git config SECTION.KEY                         get config var
 git config SECTION.KEY VALUE                   set config var
-
---------------------
+    
 git init [DIR]                                 init prosjekt
-
+    
 git clone URL [DIR]                            klon prosjekt
-  
+      
+git remote                                     vis remote repos
+git remote show REMOTE                         vis remote repo REMOTE
+git remote add REMOTE URL                      legg til remote repo; set remote.REMOTE.*
+git remote remove REMOTE                       slett remote repo; slett remote.REMOTE.*
+                                                 
 --------------------
-git status --ignored                           vis branch, upstream, staged|unstaged|untracked|ignored files
-git status                                     etter merge-konflikt: vis unmerged paths mm
-
-git diff [FILES]                               vis diff wd index
-git diff COMMIT [FILES]                        vis diff wd commit
-git diff --staged [FILES]                      vis diff index HEAD
-git diff --staged COMMIT [FILES]               vis diff index commit
-git diff COMMIT1 COMMIT2 [FILES]               vis diff commit1 commit2
-
+git status [--ignored]                         vis branch, upstream, staged|unstaged|untracked[|ignored] files
+git status                                     vis unmerged paths etter merge-konflikt
+  
 git log -N                                     vis commitlog for HEAD             
-git log --oneline                              vis 1 linje per commit             
+git log --oneline                              vis commitlog som 1 linje per commit
 git log --graph                                vis commitlog som graf             
 git log --all                                  vis commitlog for HEAD og refs/*   
 git log REVISION_RANGE                         vis commitlog for revision range   
 git log FILES                                  vis commitlog for fil(er)          
 
-----------------
-git stash list                                 vis stash
-git stash show ENTRY                           vis entry
-git stash -m MSG                               stash dvs stash<wd<index
-git stash apply ENTRY [--index]                unstash dvs stash>wd[>index]
-git stash pop ENTRY [--index]                  unstash dvs stash>wd[>index]
-git stash drop ENTRY                           slett entry
-git stash clear                                slett entries
-
-----------------
-git add|stage FILES                            stage untracked|modified|deleted FILES
+git diff [FILES]                               vis diff wd index
+git diff --staged [FILES]                      vis diff index HEAD
+git diff COMMIT [FILES]                        vis diff wd commit
+git diff --staged COMMIT [FILES]               vis diff index commit
+git diff COMMIT1 COMMIT2 [FILES]               vis diff commit1 commit2
   
-git mv SRC DST                                 mv fil i wd og index
-                                               
-git rm FILES                                   rm filer i wd og index
-git rm --cached FILES                          rm filer i index dvs untrack fil
+-------------
+git fetch [opts] -v                            repo cf --help, refspec cf --help 
+git fetch [opts] -v REMOTE                     repo REMOTE, refspec --help
+git fetch [opts] -v REMOTE SRC                 repo REMOTE, refspec --help
+git fetch [opts] -v REMOTE SRC:DST             repo REMOTE, refspec --help
+                      
+git pull [opts] -v                             fetch; ff|merge|rebase iht opts, current branch cf --help
+git pull [opts] -v  REMOTE                     fetch; ff|merge|rebase iht opts, current branch cf --help
+git pull [opts] -v  REMOTE SRC                 fetch; ff|merge|rebase iht opts, current branch cf --help
+git pull [opts] -v  REMOTE SRC:DST             fetch; ff|merge|rebase iht opts, current branch cf --help
   
-git reset₁ [FILES]                             unstage dvs index<HEAD
-git reset₁ --hard                              discard dvs wd<index<HEAD
-  
-git restore FILES                              restore dvs wd<index
-git restore --staged FILES                     unstage dvs index<HEAD
-git restore --worktree --staged FILES          discard dvs wd<index<HEAD
+git push [opts] -v                             repo cf --help, refspec cf --help
+git push [opts] -v REMOTE                      refspec cf --help 
+git push [opts] -v REMOTE SRC                  refspec cf --help 
+git push [opts] -v REMOTE SRC:DST              refspec cf --help 
+git push --set-upstream -v REMOTE SRC          set upstream; ny remote-tracking ref; ny remote branch
+git push --delete -v REMOTE SRC                slett remote-tracking ref; slett remote branch
   
 ---------------
 git branch -avv                                vis branches
@@ -85,10 +82,12 @@ git checkout b1                                ny tracking branch; checkout bran
 git switch b1                                  update HEAD
 git switch --create b1 [COMMIT]                ny branch; switch til branch
   
-git reset₂ COMMIT [PATH]                       update branch; unstage
-git reset₂ --soft COMMIT                       update branch 
-git reset₂ --hard COMMIT                       update branch; discard
-git reset₂ --merge                             kanseller merge konflikt
+git reset COMMIT [PATH]                        update branch; unstage
+git reset --soft COMMIT                        update branch 
+git reset --hard COMMIT                        update branch; discard
+git reset --hard                               discard dvs wd<index<HEAD
+git reset [FILES]                              unstage dvs index<HEAD
+git reset --merge                              kanseller merge konflikt
 
 -------------
 git commit -m MSG                              ny commit; set parent; update branch
@@ -108,26 +107,23 @@ git rebase BRANCH                              nye commits; set parent; update b
 git rebase -i BRANCH                           interaktiv rebase
 git rebase --abort|continue|quit|skip          hvis konflikt
 
--------------
-git remote                                     vis remote repos
-git remote show REMOTE                         vis remote repo
-git remote add REMOTE URL                      legg til remote repo; set remote.REMOTE.url, remote.REMOTE.fetch
-git remote remove REMOTE                       slett remote repo; slett remote.REMOTE.*
+----------------
+git add|stage FILES                            stage untracked|modified|deleted FILES
+  
+git mv SRC DST                                 mv fil i wd og index
                                                
-git fetch [opts] -v                            repo cf --help, refspec cf --help 
-git fetch [opts] -v REMOTE                     repo REMOTE, refspec --help
-git fetch [opts] -v REMOTE SRC                 repo REMOTE, refspec --help
-git fetch [opts] -v REMOTE SRC:DST             repo REMOTE, refspec --help
-                    
-git pull [opts] -v                             fetch; ff|merge|rebase iht opts, current branch cf --help
-git pull [opts] -v  REMOTE                     fetch; ff|merge|rebase iht opts, current branch cf --help
-git pull [opts] -v  REMOTE SRC                 fetch; ff|merge|rebase iht opts, current branch cf --help
-git pull [opts] -v  REMOTE SRC:DST             fetch; ff|merge|rebase iht opts, current branch cf --help
-
-git push [opts] -v                             repo cf --help, refspec cf --help
-git push [opts] -v REMOTE                      refspec cf --help 
-git push [opts] -v REMOTE SRC                  refspec cf --help 
-git push [opts] -v REMOTE SRC:DST              refspec cf --help 
-git push --delete -v REMOTE SRC                slett remote-tracking ref; slett remote branch
-git push --set-upstream -v REMOTE SRC          ny remote-tracking ref; set upstream; ny remote branch
+git rm FILES                                   rm filer i wd og index
+git rm --cached FILES                          rm filer i index dvs untrack fil
+  
+git restore FILES                              restore dvs wd<index
+git restore --staged FILES                     unstage dvs index<HEAD
+git restore --worktree --staged FILES          discard dvs wd<index<HEAD
+  
+git stash list                                 vis stash
+git stash show ENTRY                           vis entry
+git stash -m MSG                               stash dvs stash<wd<index
+git stash apply ENTRY [--index]                unstash dvs stash>wd[>index]
+git stash pop ENTRY [--index]                  unstash dvs stash>wd[>index]
+git stash drop ENTRY                           slett entry
+git stash clear                                slett entries
 

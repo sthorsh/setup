@@ -34,5 +34,16 @@ GIT BRANCHING
  -
 
 3.4 Git branching - branching workflows
+  Long-Running Branches
+    Have several branches that are always open and use them for different stages of your development cycle.
+    The branches are at various levels of stability; when they reach a more stable level, they’re merged into the branch
+    above them.
+    - master branch: code that is entirely stable, code that has been or will be released  
+    - develop branch: code not necessarily stable, work in progress, used to test stabiity
+    - topic branches: short-lived branches
+  Topic branches
+    A topic branch is a short-lived branch that you create and use for a single particular feature or related work.
+    Your work is separated into silos where all the changes in that branch have to do with that topic.
+    You can keep the changes there for minutes, days, or months, and merge them in when they’re ready.
+    It’s easier to see what has happened during code review.
   
-
