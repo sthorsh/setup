@@ -11,11 +11,7 @@ git hash-object --stdin                  hash objekt
 echo foo | git hash-object --stdin       hash objekt
 echo foo | git hash-object --stdin -w    hash objekt; skriv objekt til objektdb
 
-git ls-files --stage                     list indeks
-git ls-tree -r HEAD                      list tree objekt
-git ls-remote REMOTE                     list remote refs
-
-git merge-base B₁ B₂                     flett baser
+git merge-base COMMIT COMMIT ...         vis common ancestor(s)
   
 git reflog                               vis referanselog
 

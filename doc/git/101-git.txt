@@ -1,13 +1,14 @@
 GIT                                             
 
-git                                            vis bruk
-git TAB                                        vis cmds
-git help -a                                    vis alle cmds
-git help -c                                    vis alle config vars
-git help CMD                                   vis help CMD
+git                                               vis bruk
+git TAB                                           vis cmds
+git help -a                                       vis alle cmds
+git help -c                                       vis alle config vars
+git help CMD                                      vis help CMD
     
-git config                                     vis bruk
-git config TAB                                 vis sections
+--------------------
+git config                                        vis bruk
+git config TAB                                    vis sections
 git config SECTION.TAB                         vis keys
 git config -l [--show-origin --show-scope]     vis config vars
 git config SECTION.KEY                         get config var
@@ -17,11 +18,6 @@ git init [DIR]                                 init prosjekt
     
 git clone URL [DIR]                            klon prosjekt
       
-git remote                                     vis remote repos
-git remote show REMOTE                         vis remote repo REMOTE
-git remote add REMOTE URL                      legg til remote repo; set remote.REMOTE.*
-git remote remove REMOTE                       slett remote repo; slett remote.REMOTE.*
-                                                 
 --------------------
 git status [--ignored]                         vis branch, upstream, staged|unstaged|untracked[|ignored] files
 git status                                     vis unmerged paths etter merge-konflikt
@@ -33,13 +29,22 @@ git log --all                                  vis commitlog for HEAD og refs/*
 git log REVISION_RANGE                         vis commitlog for revision range   
 git log FILES                                  vis commitlog for fil(er)          
 
+git ls-remote                                  vis remote refs
+git ls-tree -r COMMIT                          vis committre
+git ls-files -s                                vis indekstre
+
 git diff [FILES]                               vis diff wd index
 git diff --staged [FILES]                      vis diff index HEAD
 git diff COMMIT [FILES]                        vis diff wd commit
 git diff --staged COMMIT [FILES]               vis diff index commit
 git diff COMMIT1 COMMIT2 [FILES]               vis diff commit1 commit2
-  
+
 -------------
+git remote                                     vis remote repos
+git remote show REMOTE                         vis remote repo REMOTE
+git remote add REMOTE URL                      legg til remote repo; set remote.REMOTE.*
+git remote remove REMOTE                       slett remote repo; slett remote.REMOTE.*
+                                               
 git fetch [opts] -v                            repo cf --help, refspec cf --help 
 git fetch [opts] -v REMOTE                     repo REMOTE, refspec --help
 git fetch [opts] -v REMOTE SRC                 repo REMOTE, refspec --help
@@ -59,7 +64,6 @@ git push --delete -v REMOTE SRC                slett remote-tracking ref; slett 
   
 ---------------
 git branch -avv                                vis branches
-git branch --merged|no-merged [BRANCH]         vis merged|no-merged branches
 git branch b1 [COMMIT]                         ny branch
 git branch b1 --track origin/b1                ny tracking branch
 git branch --set-upstream-to=origin/b1 [b1]    set upstream; set branch.b1.remote; set branch.b1.merge
@@ -67,46 +71,44 @@ git branch --unset-upstream [b1]               unset upstream
 git branch --move [b1] NEW_NAME                rename branch
 git branch --delete b1                         slett branch
 git branch --delete --remotes origin/b1        slett remote-tracking ref
-  
+    
 git tag                                        vis tags
-git tag t1 [COMMIT]                            ny tag
-git tag t1 --annotate -m MSG                   ny annotert tag
-git tag --delete t1                            slett tag
-  
-git checkout COMMIT                            update HEAD
-git checkout -b b1 [COMMIT]                    ny branch; checkout branch
-git checkout -b b1 origin/b1                   ny tracking branch; checkout branch
-git checkout --track origin/b1                 ny tracking branch; checkout branch (snarvei)
-git checkout b1                                ny tracking branch; checkout branch (snarvei for snarvei)
-  
+git tag t [COMMIT]                             ny tag
+git tag t --annotate -m MSG                    ny annotert tag
+git tag --delete t                             slett tag
+    
+git checkout BRANCH                            update HEAD
+git checkout -b b1 [COMMIT]                    ny branch; switch til b1
+git checkout b1                                ny tracking branch; set upstream; switch til b1
+git checkout -b b1 origin/b2                   ny tracking branch; set upstream; switch til b1
+    
 git switch b1                                  update HEAD
-git switch --create b1 [COMMIT]                ny branch; switch til branch
-  
-git reset COMMIT [PATH]                        update branch; unstage
+git switch --create b1 [COMMIT]                ny branch; switch til b1
+    
+git reset COMMIT [FILES]                       update branch; unstage
 git reset --soft COMMIT                        update branch 
 git reset --hard COMMIT                        update branch; discard
-git reset --hard                               discard dvs wd<index<HEAD
 git reset [FILES]                              unstage dvs index<HEAD
-git reset --merge                              kanseller merge konflikt
+git reset --hard                               discard dvs wd<index<HEAD
 
 -------------
-git commit -m MSG                              ny commit; set parent; update branch
-git commit -am MSG                             stage; commit
-git commit --amend -m MSG                      ny commit; set parent; update branch (n/a etter push)
-  
-git revert COMMIT                              ny commit; set parent; update branch
-  
-git cherry-pick COMMIT                         ny commit; set parent; update branch
-git cherry-pick --abort|continue|quit|skip     hvis konflikt
-  
-git merge COMMIT -m MSG                        ny commit; set parents; update branch
-git merge -m MSG                               flett UPSTREAM inn i current branch
+git commit -m MSG                              ny commit
+git commit -am MSG                             stage; ny commit
+git commit --amend -m MSG                      erstatt tip of current branch med ny commit
+      
+git merge BRANCH                               flett BRANCH inn i current branch
+git merge                                      flett UPSTREAM inn i current branch 
 git merge --abort|continue|quit                hvis konflikt
-  
-git rebase BRANCH                              nye commits; set parent; update branch
-git rebase -i BRANCH                           interaktiv rebase
+      
+git cherry-pick COMMIT ...                     reapply commits i current branch
+git cherry-pick --abort|continue|quit|skip     hvis konflikt
+      
+git rebase -i COMMIT                           rediger current branch
+git rebase BRANCH                              reapply current branch i BRANCH
 git rebase --abort|continue|quit|skip          hvis konflikt
 
+git revert COMMIT ...                          reverser commits med nye commits
+    
 ----------------
 git add|stage FILES                            stage untracked|modified|deleted FILES
   

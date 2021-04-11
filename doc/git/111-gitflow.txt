@@ -6,7 +6,6 @@ Branches
   Release branch: created off develop (live branch)
   Develop branch: next release
   Feature branch: cf feature branch model
-  Feature branch: cf feature branch model
   ...
 
 Install
