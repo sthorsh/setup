@@ -1,0 +1,55 @@
+Howto's
+    https://codebots.com/docs/ubuntu-18-04-virtual-machine-setup
+    https://hadisinaee.github.io/posts/setting-up-ubuntu-server-18.04-on-virtualbox-6/
+
+1.  Last ned og installer VirtualBox
+    https://download.virtualbox.org/virtualbox/6.1.22/virtualbox-6.1_6.1.22-144080~Ubuntu~bionic_amd64.deb
+    Klikk på .deb-fil
+
+2.  Last ned Ubuntu image
+    http://releases.ubuntu.com/18.04.3/ubuntu-18.04.3-live-server-amd64.iso
+     
+3.  Start VirtualBox og lag ny VM
+    Ved feil: https://superuser.com/questions/1438279/how-to-sign-a-kernel-module-ubuntu-18-04
+    ...
+    Name: c1-cp1
+    Machine Folder: /home/svein/virtualbox/vms
+    Type: Linux
+    Version: Ubuntu (64-bit)
+    ...
+    Memory size: 2048 MB
+    ...
+    Virtual hard disk size: 20 GB
+    
+4.  Start VM
+    Normal Start
+
+15. Lag default bruker
+    Your name: svein
+    Your servers name: c1-cp1
+    Pick a username: svein
+    Choose a password: test1234
+    ...
+
+23. Add host only adapter
+    Disable DHCP Server since we want to assign a static private IP address to this machine.
+
+Restart VM
+    Headless Start
+
+SSH, bash, vim
+    $ ssh svein@c1-cp1
+    # exit
+    $ echo "192.168.56.100 c1-cp1" >> /etc/hosts
+    $ ssh-copy-id -i ~/.ssh/id_rsa.pub svein@c1-cp1
+  
+    $ scp .bashrc svein@c1-cp1:/home/svein
+    $ scp .vimrc svein@c1-cp1:/home/svein
+
+    $ ssh svein@c1-cp1
+    $ sed -i 's/33m/36m/' ~/.bashrc
+    # mkdir -p .vim/bundle/ .vim/colors/
+    # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    # exit
+    $ scp .vim/colors/wombat256.vim svein@c1-cp1:/home/svein/.vim/colors/
+
