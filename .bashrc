@@ -54,7 +54,7 @@ if [ "$color_prompt" != yes ]; then
     PS1='\u@\h \w \$ '
   else
     if [[ ${EUID} != 0 ]] ; then
-        export PS1="\[\e[06;36m\]\u@\h \w \$(parse_git_branch)\n$\[\e[00m\] "
+        export PS1="\[\e[01;32m\]\u@\h \w \$(parse_git_branch)\n$\[\e[00m\] "
         #export PS1='\[\e[01;32m\]\u@\h\[\e[01;34m\][\w]\[\e[01;32m\]\$\[\e[00m\] '
         #export PS1="\[\e[02;32m\]\u@\h\[\033[34m\][\w]\[\033[33m\]\$(parse_git_branch)\[\033[32m\]$\[\e[00m\] "
         #export PS1="\[\e[06;32m\]\u@\h\[\e[01;34m\][\w]\[\033[30m\]\$(parse_git_branch)\[\033[34m\] $ \[\e[00m\]"

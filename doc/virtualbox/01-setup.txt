@@ -47,7 +47,7 @@ SSH, bash, vim
     $ scp .vimrc svein@c1-cp1:/home/svein
 
     $ ssh svein@c1-cp1
-    $ sed -i 's/33m/36m/' ~/.bashrc
+    $ sed -i 's/33m/32m/' ~/.bashrc
     # mkdir -p .vim/bundle/ .vim/colors/
     # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     # exit
