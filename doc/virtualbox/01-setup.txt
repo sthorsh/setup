@@ -15,7 +15,7 @@ Start VirtualBox
 Lag VM
   Ved feil cf https://superuser.com/questions/1438279/how-to-sign-a-kernel-module-ubuntu-18-04
   
-  Name: c1-cp1
+  Name: c1-cp1 (HOST)
   Machine Folder: /home/svein/virtualbox/lab
   Type: Linux
   Version: Ubuntu (64-bit)
@@ -32,7 +32,7 @@ Installer Ubuntu
 
   Profile setup
   Your name: svein
-  Your servers name: c1-cp1
+  Your servers name: c1-cp1 (HOST)
   Pick a username: svein
   Choose a password: test1234
   
@@ -47,34 +47,48 @@ Login
 
 Oppdater OS
   Cf 21
+
+Shutdown VM
+  $ sudo shutdown now
   
 Setup SSH
   Cf 23-26
   Cf https://hadisinaee.github.io/posts/setting-up-ubuntu-server-18.04-on-virtualbox-6/
+  /etc/netplan/01-host-only.yaml:
+    network:
+      version: 2
+      ethernets:
+        enp0s8:
+          dhcp4: no
+          dhcp6: no
+          addresses: [192.168.56.100/24]
+          gateway4: 192.168.0.1
+          nameservers:
+            addresses: [8.8.8.8, 8.8.4.4]
   
 Restart VM
   Headless Start
 
 ssh
-  $ echo "192.168.56.100 c1-cp1" >> /etc/hosts
-  $ ssh-copy-id -i ~/.ssh/id_rsa.pub svein@c1-cp1
-  $ ssh svein@c1-cp1
+  $ echo "192.168.56.100 HOST" >> /etc/hosts
+  $ ssh-copy-id -i ~/.ssh/id_rsa.pub svein@HOST
+  $ ssh svein@HOST
   # exit
   
 bash
-  $ scp ~/.bashrc svein@c1-cp1:/home/svein
-  $ ssh svein@c1-cp1
+  $ scp ~/.bashrc svein@HOST:/home/svein
+  $ ssh svein@HOST
   # sed -i 's/32m/33m/' ~/.bashrc
   # source ~/.bashrc
   # exit
 
 vim
-  $ scp ~/.vimrc svein@c1-cp1:/home/svein
-  $ ssh svein@c1-cp1
+  $ scp ~/.vimrc svein@HOST:/home/svein
+  $ ssh svein@HOST
   # mkdir -p .vim/bundle/ .vim/colors/
   # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   # exit
-  $ scp ~/.vim/colors/wombat256.vim svein@c1-cp1:/home/svein/.vim/colors/
-  $ ssh svein@c1-cp1
+  $ scp ~/.vim/colors/wombat256.vim svein@HOST:/home/svein/.vim/colors/
+  $ ssh svein@HOST
   # exit
 
