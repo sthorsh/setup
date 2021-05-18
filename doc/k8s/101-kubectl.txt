@@ -1,5 +1,9 @@
 KUBECTL
 
+  [reset] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+  ----------
+
+
   kubectl [cmd] [subcmds] [type] [name] [global_opts] [cmd_opts]
   
   kubectl <ht>
