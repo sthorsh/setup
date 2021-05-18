@@ -146,6 +146,7 @@ alias xsc='xclip -selection clipboard'
 [[ -d $AMQ_HOME ]] && ! activemq status >/dev/null && activemq start >/dev/null 
 ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
 
+source <(kubeadm completion bash)
 source <(kubectl completion bash)
 source <(helm completion bash)
 

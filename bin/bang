@@ -106,6 +106,17 @@ else
   tldr --update
 fi
 
+# Install docker
+if command -v docker > /dev/null 2>&1
+then
+  echo "docker already installed..."
+else
+  echo "installing docker..."
+  wget -qO- https://get.docker.com/ | sh
+  sudo groupadd docker
+  sudo usermod -aG docker $DOCKER_USER
+fi
+
 # Install tmux
 if command -v tmux > /dev/null 2>&1
 then
@@ -190,17 +201,6 @@ else
   sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
   sudo apt-get update
   sudo apt-get install google-chrome-stable
-fi
-
-# Install docker
-if command -v docker > /dev/null 2>&1
-then
-  echo "docker already installed..."
-else
-  echo "installing docker..."
-  wget -qO- https://get.docker.com/ | sh
-  sudo groupadd docker
-  sudo usermod -aG docker $DOCKER_USER
 fi
 
 # Install postman
