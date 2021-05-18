@@ -144,7 +144,7 @@ alias xsc='xclip -selection clipboard'
 # Start programs
 ! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa )
 [[ -d $AMQ_HOME ]] && ! activemq status >/dev/null && activemq start >/dev/null 
-! pgrep clipit >/dev/null 2>&1 && ( clipit & )
+which clipit && ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
 
 source <(kubeadm completion bash)
 source <(kubectl completion bash)
