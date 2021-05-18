@@ -144,11 +144,11 @@ alias xsc='xclip -selection clipboard'
 # Start programs
 ! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa )
 [[ -d $AMQ_HOME ]] && ! activemq status >/dev/null && activemq start >/dev/null 
-which clipit && ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
+which clipit > /dev/null && ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
 
-source <(kubeadm completion bash)
-source <(kubectl completion bash)
-source <(helm completion bash)
+which kubeadm > /dev/null && source <(kubeadm completion bash)
+which kubectl > /dev/null && source <(kubectl completion bash)
+which helm > /dev/null && source <(helm completion bash)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 #export SDKMAN_DIR="/home/svein/.sdkman"
