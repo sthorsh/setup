@@ -5,6 +5,8 @@ kubeadm
 
   config      manage configuration for a kubeadm cluster persisted in a ConfigMap in the cluster
               e.g kubeadm config print init-defaults | tee ClusterConfiguration.yaml
+    [preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+
 
   help        help about any command
 
