@@ -1,0 +1,25 @@
+kubeadm
+  certs       commands related to handling kubernetes certificates
+
+  completion  output shell completion code for the specified shell (bash or zsh)
+
+  config      manage configuration for a kubeadm cluster persisted in a ConfigMap in the cluster
+              e.g kubeadm config print init-defaults | tee ClusterConfiguration.yaml
+
+  help        help about any command
+
+  init        run this command in order to set up the Kubernetes control plane
+              cf https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/
+              e.g kubeadm init --config=ClusterConfiguration.yaml --cri-socket /run/containerd/containerd.sock
+
+  join        run this on any machine you wish to join an existing cluster
+              e.g kubeadm join 172.16.94.10:6443 --token xguxr9.zungfo8srvsxwk3h --discovery-token-ca-cert-hash sha256:...
+
+  reset       performs a best effort revert of changes made to this host by 'kubeadm init' or 'kubeadm join'
+
+  token       manage bootstrap tokens
+
+  upgrade     upgrade your cluster smoothly to a newer version with this command
+
+  version     print the version of kubeadm
+
