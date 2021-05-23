@@ -142,7 +142,7 @@ alias xsc='xclip -selection clipboard'
 [ -f ~/bin/completion/kafka.bash ] && source ~/bin/completion/kafka.bash
 
 # Start programs
-! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa )
+[ -f ~/.ssh/id_rsa ] && ! pgrep ssh-agent > /dev/null 2>&1 && ( eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa )
 [[ -d $AMQ_HOME ]] && ! activemq status >/dev/null && activemq start >/dev/null 
 which clipit > /dev/null && ! pgrep clipit >/dev/null 2>&1 && ( clipit & )
 

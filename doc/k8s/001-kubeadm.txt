@@ -1,0 +1,49 @@
+kubeadm
+
+  kubeadm
+
+  kubeadm help CMD
+
+  kubeadm completion bash
+
+  kubeadm version 
+
+  kubeadm config print init-defaults
+  kubeadm config print join-defaults
+  kubeadm config images list --config=ClusterConfiguration.yaml
+  kubeadm config images pull --config=ClusterConfiguration.yaml --cri-socket=/run/containerd/containerd.sock
+  kubeadm config migrate
+
+  kubeadm init [flags]
+  kubeadm init --config=ClusterConfiguration.yaml --cri-socket=/run/containerd/containerd.sock
+  kubeadm init phase preflight --config=ClusterConfiguration.yaml
+  kubeadm init phase certs all --config=ClusterConfiguration.yaml
+  kubeadm init phase kubeconfig all --config=ClusterConfiguration.yaml
+  kubeadm init phase kubelet-start --config=ClusterConfiguration.yaml --cri-socket=/run/containerd/containerd.sock
+  kubeadm init phase control-plane all --config=ClusterConfiguration.yaml
+  kubeadm init phase etcd local --config=ClusterConfiguration.yaml
+  kubeadm init phase upload-config all --config=ClusterConfiguration.yaml
+  kubeadm init phase upload-certs --config=ClusterConfiguration.yaml
+  kubeadm init phase mark-control-plane --config=ClusterConfiguration.yaml
+  kubeadm init phase bootstrap-token --config=ClusterConfiguration.yaml
+  kubeadm init phase kubelet-finalize all --config=ClusterConfiguration.yaml
+  kubeadm init phase addon all --config=ClusterConfiguration.yaml
+
+    kubeadm join [api-server-endpoint] [flags]
+    kubeadm join phase PHASE
+
+    kubeadm certs certificate-key
+    kubeadm certs check-expiration
+    kubeadm certs generate-csr
+    kubeadm certs renew CRT(S)
+
+    kubeadm token create|generate|list|delete
+
+    kubeadm reset [flags]
+    kubeadm reset phase PHASE 
+
+    kubeadm upgrade apply
+    kubeadm upgrade diff
+    kubeadm upgrade node phase PHASE
+    kubeadm upgrade plan
+
