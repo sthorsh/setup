@@ -1,0 +1,33 @@
+Applikasjkon
+  Pods
+  Svcs
+  ...
+  
+Kubelet
+  En agent
+  Lytter på api-server for nye pod'er tilordnet noden
+  Implementerer pod lifecycle dvs start, stopp osv
+  Implementerer liveness probes
+  Implementerer readiness probes
+  Rapporterer pod state til kontrollplannoden
+  Rapporterer node state til kontrollplannoden
+
+Kube-proxy
+  En pod
+  Lytter på api-server for endringer i nettverkstopologi
+  Vanligvis implementert vha iptables
+  Implementerer appservices
+  Ruter apprequester inn i clusteret til riktig pod
+  Implementerer lastbalansering over N pods bak en fe-svc
+
+Containerd
+  Pulls images fra container image register
+  Starter og kjører containere
+
+Calico
+  En add-on pod (aka plugin)
+  Implementerer et podnettverk 
+
+OS
+  Swap off
+

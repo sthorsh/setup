@@ -8,13 +8,22 @@ kubeadm
 
   kubeadm version 
 
+  kubeadm certs certificate-key
+  kubeadm certs check-expiration
+  kubeadm certs generate-csr
+  kubeadm certs renew CRT(S)
+
+  kubeadm token list
+  kubeadm token create [--print-join-command]
+  kubeadm token generate
+  kubeadm token delete
+
   kubeadm config print init-defaults
   kubeadm config print join-defaults
   kubeadm config images list --config=ClusterConfiguration.yaml
   kubeadm config images pull --config=ClusterConfiguration.yaml --cri-socket=/run/containerd/containerd.sock
   kubeadm config migrate
 
-  kubeadm init [flags]
   kubeadm init --config=ClusterConfiguration.yaml --cri-socket=/run/containerd/containerd.sock
   kubeadm init phase preflight --config=ClusterConfiguration.yaml
   kubeadm init phase certs all --config=ClusterConfiguration.yaml
@@ -29,21 +38,25 @@ kubeadm
   kubeadm init phase kubelet-finalize all --config=ClusterConfiguration.yaml
   kubeadm init phase addon all --config=ClusterConfiguration.yaml
 
-    kubeadm join [api-server-endpoint] [flags]
-    kubeadm join phase PHASE
+  kubeadm join 192.168.56.100:6443 --token TOKEN --discovery-token-ca-cert-hash HASH
+  kubeadm join --discovery-file path/to/file.conf
+  kubeadm join --discovery-file https://url/file.conf
+  kubeadm join phase preflight 192.168.56.100:6443 --token TOKEN --discovery-token-ca-cert-hash HASH 
+  kubeadm join phase control-plane-prepare all 192.168.56.100:6443 --token TOKEN --discovery-token-ca-cert-hash HASH
+  kubeadm join phase kubelet-start 192.168.56.100:6443 --token TOKEN --discovery-token-ca-cert-hash HASH 
+  kubeadm join phase control-plane-join all
 
-    kubeadm certs certificate-key
-    kubeadm certs check-expiration
-    kubeadm certs generate-csr
-    kubeadm certs renew CRT(S)
+  kubeadm reset
+  kubeadm reset phase cleanup-node
+  kubeadm reset phase preflight
+  kubeadm reset phase remove-etcd-member
+  kubeadm reset phase update-cluster-status
 
-    kubeadm token create|generate|list|delete
-
-    kubeadm reset [flags]
-    kubeadm reset phase PHASE 
-
-    kubeadm upgrade apply
-    kubeadm upgrade diff
-    kubeadm upgrade node phase PHASE
-    kubeadm upgrade plan
+  kubeadm upgrade apply [v1.20.7]
+  kubeadm upgrade diff [v1.20.7]
+  kubeadm upgrade node phase
+  kubeadm upgrade node phase preflight
+  kubeadm upgrade node phase control-plane
+  kubeadm upgrade node phase kubelet-config
+  kubeadm upgrade plan [v1.20.7]
 

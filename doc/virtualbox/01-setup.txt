@@ -74,7 +74,7 @@ ssh
   $ ssh-copy-id -i ~/.ssh/id_rsa.pub svein@HOST
   $ ssh svein@HOST
   # exit
-  
+
 bash
   $ scp ~/.bashrc svein@HOST:/home/svein
   $ ssh svein@HOST
@@ -92,3 +92,14 @@ vim
   $ ssh svein@HOST
   # exit
 
+autojump
+  $ ssh svein@HOST
+  # sudo apt-get install autojump
+  # exit
+
+For k8s lab
+  Disable swap
+  Legg til innslag for alle andre noder i /etc/hosts
+  
+  
+  
