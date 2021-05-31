@@ -2,62 +2,60 @@ API
   API-objekter: representerer tilstand
   Imperativ konfigurasjon: vha kommandoer
   Deklarativ konfigurasjon: vha manifester
-  Implementasjon: HTTP verb dvs CRUD, RESTfullt API, JSON
+  Implementasjon: JSON, RESTful API, HTTPs
 
 API-server
-  Clusterets aksessupunkt
+  Aksesspunkt, kommunikasjonshub
   Mottar eksterne og interne requests
-  Alle konfigurasjonsendringer går gjennom API-serveren
-  Sender nye og oppdaterte API-objekter til etcd for persistens
+  Sender nye API-objekter til etcd for lagring
+  Oppdaterer API-objekter feks etter schedulering
+  Alle konfigurasjonsendringer (CRUD) går gjennom API-serveren til etcd
 
 Controller manager
-  Lytter på api-server for nye pods
-  Manager for controllere aka controller loops
-  Implementerer lifecycle functions for controllere
-  Controllere definerer clusterets desired state feks Deployment
-  Controllere overvåker clusterets running state
-  Controllere overvåker feks Pod state: er pod up and running?
-  Controllere overvåker feks Pod health vha prober: er app i pod up, running og healthy?
+  Manager for controllere
+  Overvåker API-server for nye API-objekter feks Deployment
+  Implementerer controller lifecycle funksjoner dvs start, ...
+  En controller definerer clusterets desired state (lagres i etcd)
+  Controllere overvåker clusterets running state som rapportert fra kubelet
   Controllere oppdaterer API-server med ny konfigurasjonen når desired state != running state
 
 Scheduler
-  Lytter på api-server for ikke-schedulerte pod'er
+  Overvåker API-server for unscheduled pods
+  Evaluerer manifestene dvs hvilke ressurser ønskes
+  Evaluerer nodene dvs hvilke ressurser finnes
   Hensyntar administrative policies
   Hensyntar affinitet og anti-affinitet
-  Hensyntar ressurser som etterspørres i manifester
-  Hensyntar tilgjengelige ressurser på nodene
-  Schedulerer dvs tilordner nye pod'er til noder
+  Schedulerer dvs tilordner nye pods til bestemte noder
   
 etcd
-  Clusterets datalager
+  Datalager
   Lagrer API-objekter som key-value par
 
 CoreDNS
-  En add-on pod
-  DNS serveren som brukes inne i clusteret
-  Hver pod er konfigurert med (1) ip-addr til fe-svc for coredns og (2) search suffix domain
-  Pods, svcs og noder registrerer sin ip-addr i coredns når de opprettes
-  Apps bruker coreDNS for service discovery
+  Intern DNS-server
+  Applikasjoner bruker coredns for service discovery
+  Hver pod er konfigurert med coredns' fe-svc IP-adresse 
+  Hver pod er konfigurert med coredns' search suffix domain
+  Pods, svcs og noder registrerer sine IP-adresser i coredns
 
 Kubelet
+  Agent
   Overvåker /etc/kubernetes/manifests/
-  Ruller ut pods iht statiske manifests
+  Starter pods definert i /etc/kubernetes/manifests/
 
 Kube-proxy
-  En pod
-  Lytter på api-server for endringer i nettverkstopologi
+  Overvåker API-server for endringer i nettverkstopologi
+  Implementerer services
+  Ruter eksterne requester til riktig pod
+  Implementerer lastbalansering for en fe-svc foran N pods
   Vanligvis implementert vha iptables
-  Implementerer appservices
-  Ruter apprequester inn i clusteret til riktig pod
-  Implementerer lastbalansering over N pods bak en fe-svc
   
 Containerd
   Pulls images fra container image register
   Starter og kjører containere
 
 Calico
-  En add-on pod (aka plugin)
-  Implementerer et podnettverk
+  Implementerer podnettverk
 
 OS
   Swap off

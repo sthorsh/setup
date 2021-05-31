@@ -4,8 +4,8 @@ Applikasjkon
   ...
   
 Kubelet
-  En agent
-  Lytter på api-server for nye pod'er tilordnet noden
+  Agent
+  Overvåker API-server for nye pod'er tilordnet noden
   Implementerer pod lifecycle dvs start, stopp osv
   Implementerer liveness probes
   Implementerer readiness probes
@@ -13,20 +13,18 @@ Kubelet
   Rapporterer node state til kontrollplannoden
 
 Kube-proxy
-  En pod
-  Lytter på api-server for endringer i nettverkstopologi
+  Overvåker API-server for endringer i nettverkstopologi
+  Implementerer services
+  Ruter eksterne requester til riktig pod
+  Implementerer lastbalansering for en fe-svc foran N pods
   Vanligvis implementert vha iptables
-  Implementerer appservices
-  Ruter apprequester inn i clusteret til riktig pod
-  Implementerer lastbalansering over N pods bak en fe-svc
 
 Containerd
   Pulls images fra container image register
   Starter og kjører containere
 
 Calico
-  En add-on pod (aka plugin)
-  Implementerer et podnettverk 
+  Implementerer podnettverk
 
 OS
   Swap off

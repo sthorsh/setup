@@ -9,32 +9,32 @@ containerd
   Last kjernemoduler
   Setup sysctl params
   Installer containerd (apt)
-  Lag config fil /etc/containerd/config.toml
+  Lag config-fil /etc/containerd/config.toml
   Restart containerd
   Konfigurer systemctl til å starte containerd.service ved boot
   
 kubeadm, kubectl, kubelet
   Legg til Google's apt repo i /etc/apt/sources.list
   Installer kubelet, kubeadm og kubectl (apt)
-  Pin installasjon til versjon 1.20.1 (apt-mark)
+  Pin installasjon til versjon feks 1.20.1 (apt-mark)
   Konfigurer systemctl til å starte kubelet.service ved boot
 
-Cluster
-  Lag cluster config-fil (kubeadm config)
-  Initaliser cluster (kubeadm init)
+Initialiser kontrollplanet
+  Lag en cluster config-fil (kubeadm config)
+  Initialiser kontrollplanet (kubeadm init)
 
 Pod nettverk
   Last ned fil for pod-nettverket (calico.yaml)
-  Deploy fil for pod-nettverket (kubectl apply)
+  Rull ut et pod-nettverk (kubectl apply)
 
 NODER
 containerd
-  Som kontrollplannode
+  Som kontrollplannoden
 
 kubeadm, kubectl, kubelet
-  Som kontrollplannode  
+  Som kontrollplannoden
 
-Join node til cluster
+Join node til clusteret
   Skriv ut join kommando (kubeadm token)
   Join node til clusteret (kubeadm join)
 

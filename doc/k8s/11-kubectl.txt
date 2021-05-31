@@ -1,0 +1,49 @@
+kubectl
+
+Help
+  $ kubectl ctrl-i
+  $ kubectl ctrl-j
+  $ kubectl options
+
+Cmd help
+  $ kubectl ARG ctrl-i
+  $ kubectl ARG ctrl-j
+  $ kubetcl ARG --help
+
+Syntaks
+  $ kubectl CMD TYPE NAME FLAGS
+  $ kubectl CRUD_OP RESOURCE(S) OUTPUT
+
+Tab completion
+  $ kubectl g[tab] po[tab] p[tab] --[tab]
+
+Manifester
+  $ kubectl create TYPE NAME --dry-run=client -o yaml > NAME.yaml
+
+Ressurser
+  https://kubernetes.io/docs/reference/kubectl/kubectl/
+  https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+Kommandoer
+  version
+  completion
+  options
+
+  cluster-info
+
+  api-resources
+  api-versions
+  explain   
+
+  apply           API-objekt, deklarativt
+  create          API-objekt, imperativt
+  run             en naken pod, imperativt
+
+  get  
+  describe  
+
+  exec  
+  logs  
+
+  delete  
+
