@@ -19,6 +19,8 @@ Tab completion
 
 Manifester
   $ kubectl create TYPE NAME --dry-run=client -o yaml > NAME.yaml
+  $ kubectl expose TYPE NAME --dry-run=client -o yaml > NAME.yaml
+  $ kubectl run TYPE NAME --dry-run=client -o yaml > NAME.yaml
 
 Ressurser
   https://kubernetes.io/docs/reference/kubectl/kubectl/
@@ -31,19 +33,27 @@ Kommandoer
 
   cluster-info
 
+  config 
+
+  auth
+
   api-resources
   api-versions
   explain   
 
-  apply           API-objekt, deklarativt
-  create          API-objekt, imperativt
-  run             en naken pod, imperativt
+  apply               create ressurs, deklarativt
+  create              create ressurs, imperativt
+  expose              create service, imperativt
+  run                 create naken pod, imperativt
 
   get  
   describe  
 
   exec  
   logs  
+
+  edit                update ressurs on-the-fly i etcd
+  scale               update deployment
 
   delete  
 

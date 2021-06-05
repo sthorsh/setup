@@ -12,7 +12,7 @@ API-server
   Alle konfigurasjonsendringer (CRUD) går gjennom API-serveren til etcd
 
 Controller manager
-  Manager for controllere
+  Manager for controllere dvs deployment-controller mfl
   Overvåker API-server for nye API-objekter feks Deployment
   Implementerer controller lifecycle funksjoner dvs start, ...
   En controller definerer clusterets desired state (lagres i etcd)
@@ -20,6 +20,7 @@ Controller manager
   Controllere oppdaterer API-server med ny konfigurasjonen når desired state != running state
 
 Scheduler
+  Feks default-scheduler
   Overvåker API-server for unscheduled pods
   Evaluerer manifestene dvs hvilke ressurser ønskes
   Evaluerer nodene dvs hvilke ressurser finnes

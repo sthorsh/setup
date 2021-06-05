@@ -1,0 +1,65 @@
+BRUKERE
+
+Brukere
+- Mennesker
+- Håndteres av eksterne systemer
+- API objekt User finnes ikke
+- Brukernavn brukes for autorisering og logging
+- Brukere kan samles i grupper
+
+SeviceAccounts
+- Prosesser
+- Hver pod må ha en sa
+- Hvert ns har en default sa
+- Håndteres av k8s (?)
+- API objekt: ServiceAccount
+- Til hvert SA objekt er det bundet et akkreditiv
+- Akkreditivet er lagret som en Secret i clusteret
+- Secret inneholder ca.crt (trust apiserver cert)
+- Secret inneholder token (for authn)
+- Secret inneholder ns (for authz)
+- Secret kan inneholde image pull secret
+- I pod: Container Mounts 
+  /var/run/secrets/kubernetes.io/serviceaccount
+- I pod: Volumes sa1-token-9nbz5 Type Secret 
+  (a Volume populated by a Secret)
+- SA → Secret → base64(token)
+
+---------------------------------------------------------
+AUTENTISERING
+Scenarier
+- Kubectl: bruker
+- Pod: SA
+- Kontrollplankomponenter CM og Scheduler: see modul 2
+- Node kubelet: ?
+- Node kube-proxy: ?
+
+Sertifikat
+- Mest vanlig
+- Default for kubeadm
+- Brukernavn i Subject CN i sertifikatet
+
+Token
+- Token i HTTP Authorization header
+- Token er encodet (base64?)
+- Token inneholder brukernavn mm
+- Feks service-account-token for pods
+- Feks bootstrap token for node join
+- Feks static token file for brukerautentisering
+
+Basic HTTP
+- Statisk passordfil med bruknavn og passord
+
+OIDC for ekstern IdP
+- Feks Azure AD
+- En sentralisert brukerdatabase og SSO
+
+---------------------------------------------------------
+AUTORISERING
+
+Rollebasert aksesskontroll (RBAC)
+
+Attributtbasert aksesskontroll (ABAC)
+
+Node
+

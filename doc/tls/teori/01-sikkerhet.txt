@@ -1,0 +1,11 @@
+NETTVERK
+
+Autentisitet
+  Verifisere at avsender av en melding er korrekt
+
+Konfidensialitet
+  Beskytte innholdet i en melding
+
+Integritet
+  Verifisere at innholdet i en melding er korrekt
+

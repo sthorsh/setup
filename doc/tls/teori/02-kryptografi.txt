@@ -1,0 +1,47 @@
+KRYPTOGRAFI
+
+Generator for tilfeldige tall
+  Random number generator (RNG)
+  True random number generator (TRNG)
+  Pseudo random number generator (PRNG)
+
+Nøkkel
+  En bitsekvens 
+  Er tilfeldig feks PRNG  
+  Er av fast lengde feks 128 bits
+
+Signaturalgoritme (PKI)
+  Algoritme feks DSA
+  Brukes for autentisitet og integritet i en PKI
+  Verifiserer forfatter, dato og tid for signering (autentisitet)
+  Autentiserer inholdet på signeringstidspunktet (integritet)
+  Må kunne verifiseres av en tredjepart (til forskjell fra en MAC)
+  Signering tar data; gir hashverdi dvs signaturen
+  Kryptering tar privat nøkkel + signatur; gir kryptert signatur
+  Dekryptering tar public nøkkel + kryptert signatur; gir hashverdi
+  Verifisering beregner hashverdi; sjekker at denne er lik mottatt signatur
+  
+Meldingsautentiseringskode MAC
+  Nøklet hashfunksjon feks HMAC-SHA256
+  Brukes for autentisitet og integritet
+  Tar nøkkel + data av variabel lengde; gir MAC-verdi av fast lengde feks 256 bit
+  Melding og MAC-verdi kan sendes sammen
+
+Asymmetrisk krypteringalgoritme (PKI)
+  Algoritme feks RSA, DH
+  Brukes for konfidensialitet i en PKI
+  Kryptering tar public nøkkel + klartekst; gir chiffertekst
+  Dekryptering tar privat nøkkel + chiffertekst; gir klartekst
+
+Symmetrisk krypteringalgoritme
+  Algoritme feks AES
+  Brukes for konfidensialitet
+  Kryptering tar nøkkel + klartekst; gir chiffertekst
+  Dekryptering tar nøkkel + chiffertekst; gir klartekst
+
+Hashfunksjon
+  Funksjon feks SHA256
+  Brukes for integritet                          
+  Tar data av variabel lengde; gir hashverdi av fast lengde feks 256 bit
+  Melding og hashverdi må sendes hver for seg
+
