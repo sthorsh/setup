@@ -1,5 +1,11 @@
 KRYPTOGRAFI
 
+Byggeklosser
+  Primitiver: feks en algoritme
+  Schemes: feks digital signatur
+  Protokoll: feks TLS
+  Protokollimplementasjon: feks et bibliotek
+
 Generator for tilfeldige tall
   Random number generator (RNG)
   True random number generator (TRNG)
@@ -10,8 +16,8 @@ Nøkkel
   Er tilfeldig feks PRNG  
   Er av fast lengde feks 128 bits
 
-Signaturalgoritme (PKI)
-  Algoritme feks DSA
+Digital signatur algoritme (asymmetrisk, PKI)
+  Algoritme/scheme feks DSA
   Brukes for autentisitet og integritet i en PKI
   Verifiserer forfatter, dato og tid for signering (autentisitet)
   Autentiserer inholdet på signeringstidspunktet (integritet)
@@ -27,7 +33,7 @@ Meldingsautentiseringskode MAC
   Tar nøkkel + data av variabel lengde; gir MAC-verdi av fast lengde feks 256 bit
   Melding og MAC-verdi kan sendes sammen
 
-Asymmetrisk krypteringalgoritme (PKI)
+Asymmetrisk krypteringalgoritme (asymmetrisk, PKI)
   Algoritme feks RSA, DH
   Brukes for konfidensialitet i en PKI
   Kryptering tar public nøkkel + klartekst; gir chiffertekst

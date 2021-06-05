@@ -1,0 +1,17 @@
+TLS
+
+OSI
+  L6 protokoll
+
+Subprotokoller
+  Handshake: params, autentisering, nøkkelutveksling
+
+Handshake
+  K > S ClientHello         klientens kapabiliteter og preferanser
+  K < S ServerHello         connection params som er valgt
+  K < S Certificate         serverens X.509 sertifikatkjede
+  K < S ServerKeyExchange
+  
+  
+  
+
