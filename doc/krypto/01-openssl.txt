@@ -1,0 +1,57 @@
+OPENSSL
+
+openssl version
+
+openssl help
+
+----------
+# Hashfunksjon
+cat FILE | openssl dgst --sha512
+
+# Hashet passord
+echo pwd | openssl dgst --sha512
+
+# Saltet hashet passord
+openssl passwd -1 -salt Etg2ExUR pwd
+
+----------
+# Generere sk
+openssl rand --hex 32
+
+# Krypter fil
+openssl enc -aes-256-ecb -in secret.txt -K 6822db94d664d0992f2126a6c6d14f29e013a0ef61e5653ef7e624c5b830a523 > secret.enc
+
+# Dekrypter fil
+openssl enc -aes-256-ecb -d -in secret.enc -K 6822db94d664d0992f2126a6c6d14f29e013a0ef61e5653ef7e624c5b830a523
+
+----------
+# Generer sk vha pbkdf og krypter fil
+openssl enc -aes-256-ecb -in secret.txt -pbkdf2 >| secret.enc
+
+# Dekrypter fil
+openssl enc -aes-256-ecb -d -in secret.enc -pbkdf2
+
+----------
+# Generer sk og krypter fil vha blokkchiffer
+openssl enc -aes-256-cbc -in secret.enc -pbkdf2
+
+# Dekrypter fil
+openssl enc -aes-256-cbc -d -in secret.enc -pbkdf2
+
+----------
+# DHKE
+# Generer params g og n
+openssl genpkey -genparam -algorithm DH -out params.pem
+
+# Generer privat nøkkel a
+openssl genpkey -paramfile params.pem -out my_private_key.pem
+openssl genpkey -paramfile params.pem -out their_private_key.pem
+
+# Generer public nøkkel g^a mod n
+openssl pkey -in my_private_key.pem -pubout -out my_public_key.pem
+openssl pkey -in their_private_key.pem -pubout -out their_public_key.pem
+
+# Derive shared secret g^ab mod n (kan brukes for å generere symmetrisk nøkkel)
+openssl pkeyutl -derive -inkey my_private_key.pem -peerkey their_public_key.pem -out shared_secret.bin
+openssl pkeyutl -derive -inkey their_private_key.pem -peerkey my_public_key.pem -out shared_secret.bin
+

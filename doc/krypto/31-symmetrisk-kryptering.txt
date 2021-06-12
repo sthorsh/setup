@@ -1,0 +1,19 @@
+SYMMETRISK KRYPTERING
+
+Scheme
+  gen(seed) -> sk
+  enc(klartekst, sk) -> chiffertekst
+  dec(chiffertekst, sk) -> klartekst
+
+Egenskaper
+  Toveis dvs kryptering og dekryptering
+
+Symmetrisk nøkkel
+  Bitsekvens
+  Tilfeldige bits
+  Konstant lengde feks 256
+  Brukes til kryptering og dekryptering
+  Brukes til signering og verifisering
+  Bør bare brukes en gang (aka sesjonsnøkkel)
+  Aka hemmelig/privat/secret/session/shared/symmetrisk key (sk)
+

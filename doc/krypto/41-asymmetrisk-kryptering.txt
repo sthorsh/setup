@@ -1,0 +1,20 @@
+ASYMMETRISK KRYPTERING
+
+Asymmetrisk nøkkelpar
+  Offentlig/public nøkkel (pk)
+  Hemmelig/privat/secret nøkkel (sk)
+
+Offentlig nøkkel
+  Kryptering av utgående meldinger
+  Verifisering av innkommende meldinger
+
+Hemmelig nøkkel
+  Dekryptering av innkommende meldinger
+  Signering av utgående meldinger
+  
+Scheme
+  Algoritme G(seed) -> sk₁, pk₁
+  Algoritme G(seed) -> sk₂, pk₂
+  Algoritme K(pk, klartekst) -> chiffertekst
+  Algoritme D(sk, chiffertekst) -> klartekst
+

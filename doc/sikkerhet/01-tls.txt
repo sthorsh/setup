@@ -1,0 +1,41 @@
+TLS
+
+OSI
+  L7 HTTP request
+  L6 TLS record                 handshake i klartekst
+  L5 n/a                        n/a
+  L4 TCP segment                metadata i klartekst
+  L3 IP package                 metadata i klartekst
+  L2 Ethernet frame             metadata i klartekst
+  L1 bit                        metadata i klartekst
+
+Forbindelse
+  Handshake
+  Applikasjonsdata
+  Closure
+
+Handshake
+  K > S ClientHello             supportert: version, random, session_id, cipher_suites, compression_methods, extensions
+  K < S ServerHello             valgt: version, random, session_id, cipher_suite, compression_method, extensions
+  K < S Certificate             X.509 sertifikatekjede ASN.1 DER enkodet: main, intermediaries (root n/a) 
+  K < S ServerKeyExchange       input til generering av 384-bit shared key aka the master secret 
+  K < S CertificateRequest      supportert: public key algoritmer, signaturalgoritmer og CAs
+  K < S ServerHelloDone         alle handshake meldinger sendt
+  K > S Certificate             sertifikat(kjede?) cf server Certificate, server bruker public key ved CertificatVerify
+  K > S ClientKeyExchange       input til generering av 384-bit shared key aka the master secret
+  K > S CertificateVerify       signatur for handshake-meldinger sendt dvs beviser relasjon mellom privat og public key
+  K > S ChangeCipherSpec        enabler kryptering
+  K > S Finished                kryptert melding, server verifiserer handshake-integritet vha MAC-verdi
+  K < S ChangeCipherSpec        enabler kryptering
+  K < S Finished                kryptert melding, klient verifiserer handshake-integritet vha MAC-verdi
+
+Cipher suite                    feks TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+  Algoritme autentisering       RSA 
+  Algoritme nøkkelutveksling    ECDHE
+  Algoritme kryptering          AES
+  Nøkkellengde kryptering       128 
+  Modus kryptering              GCM
+  Algoritme MAC                 SHA256
+  PRF                           feks HMAC-SHA256
+  Hashfunksjon Finished         TLS 1.2
+  Lengde verify_data            TLS 1.2

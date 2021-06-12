@@ -1,0 +1,16 @@
+PKI
+
+Asymmetrisk signaturalgoritme
+  Verifiserer forfatter, dato og tid for signering (autentisitet)
+  Autentiserer inholdet på signeringstidspunktet (integritet)
+  Må kunne verifiseres av en tredjepart (til forskjell fra en MAC)
+  Signering tar data; gir hashverdi dvs signaturen
+  Kryptering tar privat nøkkel + signatur; gir kryptert signatur
+  Dekryptering tar public nøkkel + kryptert signatur; gir hashverdi
+  Verifisering beregner hashverdi; sjekker at denne er lik mottatt signatur
+  Algoritme/scheme feks DSA
+
+Sertifikat (PKI)
+  Offentlig nøkkel
+  Signatur
+

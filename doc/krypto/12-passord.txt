@@ -1,0 +1,10 @@
+PASSORD
+
+Entropi
+  H = L log₂N
+
+Hashed passord
+
+Hashed salted passord
+
+

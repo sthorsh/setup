@@ -1,0 +1,19 @@
+DHKE
+
+DHKE naivt
+  A: sk a, pk g^a mod n (alice)
+  B: sk b, pk g^b mod n (bob)
+  Felles base: g = 2
+  Felles modulus: n = 26
+  A: a=3, g^a mod n = 8
+  B: b=7, g^b mod n = 24
+  A: shared symmetrisk nøkkel = 24^3 mod 26 = 18
+  B: shared symmetrisk nøkkel = 8^7 mod 26 = 18 
+
+DHKE params n og g
+  n: primtall (fermats lille teorem)
+  g: ikke multiple av n (fermats lille teorem)
+  g og n har ingen felles faktorer (er relativt primiske)
+  Modulus n: primtall
+  Base g: g^a mod n != 1
+  

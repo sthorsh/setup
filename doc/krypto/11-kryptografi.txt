@@ -1,0 +1,14 @@
+KRYPTOGRAFI
+
+Kryptering
+  Klartekst
+  Nøkkel
+  Chiffertekst
+
+Krypteringsrelasjoner
+  Confusion: komplisere relasjonen mellom nøkkel og chiffertekst
+  Diffusion: komplisere relasjonen mellom klartekst og chiffertekst
+
+Initialiseringsvektor (IV)
+  ...
+

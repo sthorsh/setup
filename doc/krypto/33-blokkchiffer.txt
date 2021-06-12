@@ -1,0 +1,19 @@
+BLOKKCHIFFER
+
+Kryptering
+  Klartekst
+  Initialiseringsvektor
+  Nøkkel
+  Chiffertekst
+
+Operasjonsmodi
+  ECB: electronic codebook
+  CBC: cipher block chaining (bruk denne per default)
+  CFB: cipher feedback
+  OFB: output feedback
+  ...
+
+Initialiseringsvektor
+  CBC gjør XOR med IV første klartekstblokk
+  Hver melding krever en ny IV dvs gjenbruk er n/a
+
