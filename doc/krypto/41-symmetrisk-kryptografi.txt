@@ -1,0 +1,38 @@
+SYMMETRISK KRYPTOGRAFI
+
+Nøkkel
+  En symmetrisk hemmelig nøkkel
+
+Sesjonsnøkkel
+  En nøkkel som brukes kun en gang
+
+----------
+Kryptering
+  A krypterer data vha nøkkel
+  B dekrypterer data vha nøkkel
+
+Scheme
+  keygen(seed) -> nøkkel
+  enc(klartekst, nøkkel) -> chiffertekst
+  dec(chiffertekst, nøkkel) -> klartekst
+
+Algoritmer
+  Kryptering: trinn "ned"
+  Dekryptering: trinn i revers dvs "opp" (wind up)
+
+One-time pad
+  deliv eryat ninet hirty (klartekst)
+  mampe bvqdi jqorj wrelz (engangsnøkkel, like lang som klartekst)
+  pexxz fmodb wybvc dzvex (chiffertekst)
+
+---------
+Signering
+  A signerer data vha nøkkel
+  B verifiserer data vha nøkkel
+    TODO: HMAC      ? Algoritmen er toveis dvs reverserbar 
+
+  Signering scheme
+    keygen(seed) -> nøkkel
+    sign(data, nøkkel) -> signatur
+    verify(data, nøkkel) -> signatur
+

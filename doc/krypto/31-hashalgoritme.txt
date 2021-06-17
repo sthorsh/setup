@@ -1,0 +1,31 @@
+HASHALGORITMER
+
+Hashalgoritme
+  Input: melding m, variabel lengde
+  Output: hashverdi h(m), fast lengde
+
+Notasjon
+  h(m) -> hash[verdi]|digest|[finger]avtrykk|sjekksum|ecc
+  
+Egenskaper
+  Deterministisk: samme m gir samme h(m)
+  Uforutsigbar: gitt m; umulig å forutse h(m)
+  Skredeffekt: liten endring i m gir stor endring i h(m)
+
+Sikkerhetsegenskaper
+  Enveisfunksjon: gitt h(m); umulig å finne m
+  Svak kollisjonsresistens: gitt m₁; umulig å finne h(m₂) = h(m₁)
+  Sterk kollisjonsresistens: umulig å finne m₁ og m₂ hvor h(m₁) = h(m₂)
+
+SHA
+  SHA-1: er en komprimeringsfunksjon, deprecated
+  SHA-2: er en komprimeringsfunksjon, sikker
+  SHA-3: basert på Keccak-algoritmen, neste generasjon
+
+Komprimeringsfunksjon
+  State₀ = initaliseringsvektor IV
+  State₁ = h(state₀, blokk₁)
+  State₂ = h(state₁, blokk₂)
+  State₃ = h(state₂, pad(blokk₃))
+  Hashverdi = finalize(state₃)
+

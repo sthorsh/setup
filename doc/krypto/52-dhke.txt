@@ -1,5 +1,10 @@
 DHKE
 
+PK/SK
+  PK/SK er tall
+  PK/SK kan kun brukes en gang
+  DHKE er basert på en trapdoor funksjon (en annen enn RSA)
+
 DHKE naivt
   A: sk a, pk g^a mod n (alice)
   B: sk b, pk g^b mod n (bob)

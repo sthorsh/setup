@@ -1,0 +1,46 @@
+Sertifikat
+  Et digitalt signert dokument
+  Identifiserer en organisasjon
+  Identifikasjonen kan verifiseres
+  Er signert av en autoritet (CA, trust)
+
+Sertifikatkomponenter
+  Utsteder: DN feks CertSign
+  Validitet: 15/8/2020-15/8/2021
+  Subjekt: DN feks acme.com
+  Subjekts public key: ...
+  Utsteders signatur: ...
+
+Sertifikatkjede: chain of trust
+  Rotsertfikat: en sentral autoritet, 20-30 år
+    iss: rot-CA dvs selvsignert
+    sub: rot-CA
+  Signingsertifikat: en offentlig utsteders kunder, 5-20 år
+    iss: rot-CA
+    sub: CA
+  Applikasjonssertifikat: en app el et domene, 1 mnd - 1 år
+    iss: CA
+    sub: acme.com
+
+Sertifikatbundle
+  Rot- og signeringssertifikat(er)
+
+PKCS standarder (kronologisk: #10 -> #7 -> #12)
+  #7: x.509 def sertkomponenter inkl DN
+  #10: CSR
+  #12: private key containers
+
+Certificate signing protocol
+  O: organisasjon
+  CA: autoritet
+  O generer nøkkelpar
+  O send CSR til CA
+  O motta signert sertifikat
+  O pakk private nøkkel, sertifikat og trust chain (for bruk av webserver el app)
+
+CSR
+  Subjekt: DN
+  Subjekts public key
+  Subjekts signatur dvs signert med subjekts privat nøkkel
+
+

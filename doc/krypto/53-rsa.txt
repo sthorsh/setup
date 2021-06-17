@@ -1,0 +1,42 @@
+RSA
+
+Anvendelser
+  Digital signatur
+  Kryptere sesjonsnøkler
+  Validere JWTs
+  Autentisere SSH logins
+
+PK/SK
+  PK/SK er (inverse) funksjoner
+  PK/SK kan brukes flere ganger
+  PK representerer identitet
+  RSA er basert på en trapdoor funksjon
+
+Params
+  m: message
+  c: ciphertext
+  e: enc component ie (part of the) pk
+  d: dec component ie (part of the) sk
+  p: stort primtall
+  q: stort primtall
+  n: modulus
+
+Inverse funksjoner
+  c = f(m)
+  m = f^-1(c)
+
+Trapdoor-funksjon
+  n = pq -> {p, q} | n
+
+Eksponentpar        
+  c = m^e mod n
+  m = c^d mod n  
+
+RSA
+  Velg to store primtall p og q
+  Multipliser p og q for å få n
+  Velg e (konvensjon: primtallet 65537)
+  Finn d vha extended euclidian algoritmen
+  Public key: f(x) = x^e mod n
+  Privat key: f(x) = x^d mod n
+

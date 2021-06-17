@@ -1,0 +1,27 @@
+AES
+
+Kryptering
+  Blokk: 128 bits
+  Nøkkel: 128, 192, 256 bits
+  Runder: 10, 12, 14
+  State: 4x4 array
+
+  Om beskrivelsen nedenfor 
+  • Gjelder prosessering av _en_ blokk
+  • Antar en symmetrisk nøkkel eksisterer
+
+  1. KeyExpansion: fra symmetrisk nøkkel, generer 10 round key blocks
+  2. AddRoundKey: state_array XOR round_key₁
+  3. For 1 ≤ i < 10:
+     1. SubBytes: erstatt hver state array byte fra en oppslagstabell
+     2. ShiftRows: syklisk shift de tre siste radene i state array'et
+     3. MixColumns: bland (flett) state array kolonner inn i hverandre
+     4. AddRoundKey: state_array XOR neste round_key
+  4. For i == 10:
+     1. SubBytes
+     2. ShiftRows
+     3. AddRoundKey
+    
+Dekryptering
+  Reverser kryptering trinn 1-4
+  

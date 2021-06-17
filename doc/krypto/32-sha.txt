@@ -1,0 +1,27 @@
+SHA-1
+
+Algoritme
+  Blokk: 512 bits
+  Ord: 16/32 bits
+  Runder: 80 iterasjoner
+  State: 160 bits (5x32)
+  Hashverdi: 160 bits
+  Sikkerhet mot kollisjonsangrep: < 63 bits
+  
+  Gitt melding M, IV H₀-H₄, hashverdi H
+
+  1. Sett IV = H₀, H₁, H₂, H₃, H₄ hver av 32 bit
+  2. Pad og append til M så M's lengde er N • 512 bits
+  3. Del M i N 512-bit blokker, og hver blokk i 16 32-bit ord 
+
+  For hver blokk utfør 80 iterasjoner i
+    4. For 16 ≤ i ≤ 79: 
+       W(i) = S¹(W(i-3) XOR W(i-8) XOR W(i-14) XOR W(i-16))
+    5. Sett A=H₀, B=H₁, C=H₂, D=H₃, E=H₄
+    6. For 0 ≤ i ≤ 79: 
+       TEMP = S⁵ * (A) + f(i; B, C, D) + E + W(i) + K(i)
+       Sett E=D, D=C, C=S³⁰(B), B=A, A=TEMP
+    7. Sett H₀=H₀+A, H₁=H₁+B, H₂=H₂+C, H₃=H₃+D, H₄=H₄+E  
+
+  8. Sett H = S¹²⁸(H₀) OR S⁹⁶(H₁) OR S⁶⁴(H₂) OR S³²(H₃) OR H₄
+
