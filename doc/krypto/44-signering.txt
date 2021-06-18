@@ -1,0 +1,12 @@
+SYMMETRISK KRYPTOGRAFI
+
+Signering
+  A signerer data vha nøkkel
+  B verifiserer data vha nøkkel
+    TODO: HMAC      ? Algoritmen er toveis dvs reverserbar 
+
+  Signering scheme
+    keygen(seed) -> nøkkel
+    sign(data, nøkkel) -> signatur
+    verify(data, nøkkel) -> signatur
+

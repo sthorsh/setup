@@ -22,17 +22,17 @@ Kryptering/dekryptering
   Lag₂: nøkkel
   Lag₃: chiffertekst
 
-Confusion
-  Å skjule relasjonen mellom en nøkkel og chiffertekst  
-  Hensikten med confusion er å eliminere mønstre i nøkkelen
-  Mønstre i nøkkel må ikke manifestere seg som mønstre i chiffertekst
-  Endring av _en_ bit i nøkkel må ikke endre kun en bit i chiffertekst
-  Teknikk: aes
-
 Diffusjon
   Å skjule relasjonen mellom klartekst og chiffertekst
   Hensikten med diffusjon er å eliminere mønstre i chiffertekst
   Mønstre i klartekst må ikke manifestere seg som mønstre i chiffertekst
   Endring av _en_ bit i klartekst må ikke endre kun en bit i chiffertekst
-  Teknikk: blokkchiffer
+  Diffusjon er en egenskap ved hashalgoritmer og krypteringsalgoritmer (cbc)
   
+Confusion
+  Å skjule relasjonen mellom en nøkkel og chiffertekst  
+  Hensikten med confusion er å eliminere mønstre i nøkkelen
+  Mønstre i nøkkel må ikke manifestere seg som mønstre i chiffertekst
+  Endring av _en_ bit i nøkkel må ikke endre kun en bit i chiffertekst
+  Confusion er en egenskap ved krypteringsalgoritmer (siden de bruker nøkler)
+

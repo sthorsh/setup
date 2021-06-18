@@ -1,0 +1,43 @@
+SYMMETRISK KRYPTOGRAFI
+
+Kryptering
+  A krypterer data vha nøkkel
+
+Dekryptering
+  B dekrypterer data vha nøkkel
+  Reverserer trinn fra kryptering
+
+Blokkchiffer feks AES
+  Krypteringsalgoritme
+  Dekrypteringsalgoritme
+  Opererer på blokker av tegn
+
+Flytchiffer
+  Krypteringsalgoritme
+  Dekrypteringsalgoritme
+  Opererer på individuelle tegn
+
+Scheme kryptering
+  keygen(seed) -> nøkkel
+  enc(klartekst, nøkkel) -> chiffertekst
+
+Scheme dekryptering
+  keygen(seed) -> nøkkel
+  dec(chiffertekst, nøkkel) -> klartekst
+
+Initialiseringsvektor (IV)
+  Et random carry inn i første blokk
+  Dvs første_blokks_klartekst XOR IV
+  Samme hensikt som salt for passord
+  En IV kan distribueres i klartekst
+  En IV kan ikke gjenbrukes av meldinger
+  
+Operasjonsmodus ECB
+  Ingen diffusjon
+
+Operasjonsmodus CBC
+  Et carry inn i en blokk
+  Dvs klartekst XOR forrige_blokks_ciphertekst
+  Bør være default valg 
+  Egnet for parallel dekryptering
+
