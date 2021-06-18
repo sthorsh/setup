@@ -7,16 +7,6 @@ Dekryptering
   B dekrypterer data vha nøkkel
   Reverserer trinn fra kryptering
 
-Blokkchiffer feks AES
-  Krypteringsalgoritme
-  Dekrypteringsalgoritme
-  Opererer på blokker av tegn
-
-Flytchiffer
-  Krypteringsalgoritme
-  Dekrypteringsalgoritme
-  Opererer på individuelle tegn
-
 Scheme kryptering
   keygen(seed) -> nøkkel
   enc(klartekst, nøkkel) -> chiffertekst
@@ -25,13 +15,21 @@ Scheme dekryptering
   keygen(seed) -> nøkkel
   dec(chiffertekst, nøkkel) -> klartekst
 
+Blokkchiffer
+  Opererer på blokker av tegn
+  Feks aes-128-cbc
+
+Flytchiffer
+  Opererer på individuelle tegn
+  Feks aes-128-ofb
+
 Initialiseringsvektor (IV)
   Et random carry inn i første blokk
   Dvs første_blokks_klartekst XOR IV
   Samme hensikt som salt for passord
   En IV kan distribueres i klartekst
   En IV kan ikke gjenbrukes av meldinger
-  
+
 Operasjonsmodus ECB
   Ingen diffusjon
 

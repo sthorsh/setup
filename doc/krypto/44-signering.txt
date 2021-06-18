@@ -1,12 +1,28 @@
 SYMMETRISK KRYPTOGRAFI
 
 Signering
-  A signerer data vha nøkkel
-  B verifiserer data vha nøkkel
-    TODO: HMAC      ? Algoritmen er toveis dvs reverserbar 
+  Å signere data vha nøkkel
+  
+Verifisering
+  Å verifisere data vha nøkkel
+  Samme trinn som ved signering
+  Verifiserer autentisitet dvs avsender er korrekt
+  Verifiserer integritet dvs innhold er uforandret
 
-  Signering scheme
-    keygen(seed) -> nøkkel
-    sign(data, nøkkel) -> signatur
-    verify(data, nøkkel) -> signatur
+Scheme signering
+  keygen(seed) -> nøkkel
+  sign(klartekst, nøkkel) -> mac
 
+Scheme verifisering
+  keygen(seed) -> nøkkel
+  verify(klartekst, nøkkel) -> mac
+
+MAC
+  Hash-basert
+  Andre teknikker ...
+
+Hash-basert
+  HMAC cf rfc2104 (TLS)
+  HMAC-SHA256 cf rfc4868
+  Andre hash-baserte teknikker ...
+  

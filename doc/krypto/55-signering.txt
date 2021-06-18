@@ -1,0 +1,26 @@
+ASYMMETRISK KRYPTERING
+
+Signatur
+  Dokument/melding
+  Digital signatur som vedlegg
+
+Signatur
+  Verifiserer forfatter, dato og tid for signering (autentisitet)
+  Autentiserer inholdet på signeringstidspunktet (integritet)
+  Må kunne verifiseres av en tredjepart (til forskjell fra en MAC)
+
+Signering/verifisering
+  d: dokument før aes-kryptering
+  s: signatur før aes-kryptering
+  D: dokument etter aes-dekryptering
+  S: signatur etter aes-dekryptering
+  ...
+  sha256(d) -> dgst1
+  pad(dgst1) -> padded_digest x1
+  f(x) = x^d mod n -> s
+  Eier distribuerer dokument D + signatur S
+  sha256(D) -> dgst2
+  pad(dgst2) -> padded_digest x2
+  f(x) = S^e mod n -> result
+  Hvis x2 == result ? verifisering ok : verifisering err
+  
