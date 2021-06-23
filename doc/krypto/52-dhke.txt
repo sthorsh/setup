@@ -1,10 +1,23 @@
 DHKE
 
-PK/SK
-  PK/SK er tall
-  PK/SK kan kun brukes en gang
-  DHKE er basert på en trapdoor funksjon (en annen enn RSA)
+Inverse funksjoner
+  exp: c = (a^b)
+  log: b = (log₈c)
 
+Invers trapdoor-funksjon
+  exp i modulus n: c = (a^b) % n
+  log i modulus n: b = (log₈c) % n
+
+Algebra
+  g^ab = g^ba
+  (g^a)^b = (g^b)^a
+  (g^a % n)^b % n = (g^b % n)^a % n
+
+DHKE
+  Grunntall g
+  Modulus n
+
+--------------------------
 DHKE naivt
   A: sk a, pk g^a mod n (alice)
   B: sk b, pk g^b mod n (bob)
@@ -14,6 +27,11 @@ DHKE naivt
   B: b=7, g^b mod n = 24
   A: shared symmetrisk nøkkel = 24^3 mod 26 = 18
   B: shared symmetrisk nøkkel = 8^7 mod 26 = 18 
+
+Nøkkelpar
+  PK/SK er tall
+  PK/SK kan kun brukes en gang
+  DHKE er basert på en trapdoor funksjon (en annen enn RSA)
 
 DHKE params n og g
   n: primtall (fermats lille teorem)

@@ -12,6 +12,12 @@ Klasser av kryptografiske algoritmer
   PKI
   Digitale sertifikater
 
+Funksjoner
+  Hashing: enveisfunksjoner
+  Symmetrisk kryptering: toveis/reversible funksjoner
+  Hashing og symmetrisk kryptering: komprimeringsfunksjoner
+  Asymmetrisk kryptering: inverse trapdoor-funksjoner
+
 Entropi
   Graden av uforutsigbarhet i antall bits
   En melding med lav entropi er forutsigbar
@@ -35,4 +41,17 @@ Confusion
   Mønstre i nøkkel må ikke manifestere seg som mønstre i chiffertekst
   Endring av _en_ bit i nøkkel må ikke endre kun en bit i chiffertekst
   Confusion er en egenskap ved krypteringsalgoritmer (siden de bruker nøkler)
+
+Symmetrisk kryptering
+  En nøkkel
+  Ubegrenset størrelse på data 
+  Brukes til utveksling av meldinger
+  Melding og nøkkel må utveksles i to ulike kanaler
+
+Asymmetrisk kryptering
+  Et nøkkelpar
+  Begrenset størrelse på data 
+  Brukes til utveksling av symmetriske nøkler
+  Symmetrisk nøkkel (nøkkelparams) kan etableres over åpen kanal
+
 
