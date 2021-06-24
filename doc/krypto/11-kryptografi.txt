@@ -13,10 +13,13 @@ Klasser av kryptografiske algoritmer
   Digitale sertifikater
 
 Funksjoner
-  Hashing: enveisfunksjoner
-  Symmetrisk kryptering: toveis/reversible funksjoner
-  Hashing og symmetrisk kryptering: komprimeringsfunksjoner
-  Asymmetrisk kryptering: inverse trapdoor-funksjoner
+  Enveisfunksjoner: hashing
+  Toveis/reversible funksjoner: symmetrisk kryptering
+  Komprimeringsfunksjoner: hashing
+  Komprimeringsfunksjoner: symmetrisk kryptering
+  Invers trapdoor-funksjon exp i moduluse: asymmetrisk kryptering DHKE
+  Invers trapdoor-funksjon primtallfaktorisering (?):  asymm kryptering RSA ???
+  Invers trapdoor-funksjon (?):  asymm kryptering EC ????
 
 Entropi
   Graden av uforutsigbarhet i antall bits
@@ -44,14 +47,13 @@ Confusion
 
 Symmetrisk kryptering
   En nøkkel
-  Ubegrenset størrelse på data 
-  Brukes til utveksling av meldinger
+  Datastørrelse (DTU) kan typisk variere
+  Brukes primært til utveksling av meldinger
   Melding og nøkkel må utveksles i to ulike kanaler
 
 Asymmetrisk kryptering
   Et nøkkelpar
-  Begrenset størrelse på data 
-  Brukes til utveksling av symmetriske nøkler
+  Datastørrelse (DTU) er typisk fixed 
+  Brukes primært til utveksling av symmetriske nøkler
   Symmetrisk nøkkel (nøkkelparams) kan etableres over åpen kanal
-
 

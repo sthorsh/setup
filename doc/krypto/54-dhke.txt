@@ -1,0 +1,28 @@
+DHKE
+
+Params
+  g               grunntall, et primtall
+  n               modulus, et primtall
+  a               Ada privat nøkkel
+  A = g^a % n     Ada public nøkkel   
+  b               Bob privat nøkkel   
+  B = g^b % n     Bob public nøkkel
+  s = B^a % n     Ada secret
+  s = A^b % n     Bob secret
+
+Eksempel
+  g = 5
+  n = 23
+  a = 4
+  A = 5^4 % 23 = 4
+  b = 3
+  B = 5^3 % 23 = 10
+  Ada s = 10^4 % 23 = 18
+  Bob s = 4^3 % 23 = 18
+
+Fullfør nøkkelutveksling
+  Genererer symmetrisk AES nøkkel vha hash(s)
+
+Regler
+  Aldri gjenbruk private DH nøkler dvs genererer ny secret for hver melding
+                        s4
