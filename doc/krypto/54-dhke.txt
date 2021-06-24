@@ -25,4 +25,12 @@ Fullfør nøkkelutveksling
 
 Regler
   Aldri gjenbruk private DH nøkler dvs genererer ny secret for hver melding
-                        s4
+
+Inverse funksjoner
+  exp
+  mod
+
+Inverse trapdoor funksjon
+  exp i mod
+  log i mod : diskret log problem
+
