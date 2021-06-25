@@ -1,42 +1,45 @@
 RSA
 
-Params
-  p: stort primtall
-  q: stort primtall
-  n: modulus
-  e: enc component ie (part of the) pk
-  d: dec component ie (part of the) sk
-  m: message
-  c: ciphertext
+Algoritme
+  p: stort, tilfeldig primtall
+  q: stort, tilfeldig primtall
+  n: RSA modulus
+  e: public eksponent
+  d: privat eksponent
+  m: melding
+  c: chiffertekst
+  ...
+  RSA velger p 
+  RSA velger q 
+  RSA beregner n = f(p, q) = pq (trapdoor-funksjon)
+  RSA velger e = 65537 iht konvensjon
+  RSA finner d vha utvidet euklidiansk algoritme
 
-RSA
-  Velg to store primtall p og q
-  Multipliser p og q for å få n
-  Velg e (konvensjon: primtallet 65537)
-  Finn d vha extended euclidian algoritmen
-  Public key: f(x) = x^e mod n
-  Privat key: f(x) = x^d mod n
+Eksempel
+    p=11
+    q=5
+    n=55
 
+Nøkkelpar
+  RSA beregner c = enc(k) = f(k, e, n) = k^e % n (public key funksjon)
+  RSA beregner k = dec(c) = f(c, d, n) = c^d % n (privat key funksjon)
+
+Kryptere symmetrisk nøkkel
+  RSA beregner c = enc(m) = f(m, e, n) = m^e % n (public key funksjon)
+  RSA beregner m = dec(c) = f(c, d, n) = c^d % n (privat key funksjon)
+
+Digital signatur
+
+JWT validering
+
+SSH login
+
+...
+
+----------------------------------
 PK/SK
   PK/SK er (inverse) funksjoner
   PK/SK kan brukes flere ganger
   PK representerer identitet
   RSA er basert på en trapdoor funksjon
-
-Inverse funksjoner
-  c = f(m)
-  m = f^-1(c)
-
-Trapdoor-funksjon
-  n = pq -> {p, q} | n
-
-Eksponentpar        
-  c = m^e mod n
-  m = c^d mod n  
-
-Anvendelser
-  Digital signatur
-  Kryptere sesjonsnøkler
-  Validere JWTs
-  Autentisere SSH logins
 

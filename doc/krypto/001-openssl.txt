@@ -125,10 +125,13 @@ openssl enc -d -aes-256-cbc -in file.enc -K $(xxd -ps -c 32 session_key.bin) -iv
     
 ---------------------- Signere/verifisere ------------------------
   
-# Ada beregner hash (sha) og signerer fil (key)
+# Alice beregner hash og lager digital signatur (key)
 openssl dgst -sha256 -sign key.pem -out signature.bin file.txt
+
+# Alice distribuerer pkey, signatur og fil
+cp alice-pkey.pem signature.bin file.txt ../bob/
     
-# Bob verifiser autentisitet (pkey) og integritet (sha)
+# Bob verifiser autentisitet (pkey) og integritet (hash)
 openssl dgst -sha256 -verify ada_pkey.pem -signature signature.bin file.txt
     
   ##################################################################
