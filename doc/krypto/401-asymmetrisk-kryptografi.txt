@@ -1,14 +1,19 @@
-ASYMMETRISK KRYPTERING
+ASYMMETRISK KRYPTOGRAFI
 
 Nøkkelpar
   Privat nøkkel
   Offentlig nøkkel 
 
-Hemmelig nøkkel
-  Eier bruker k til å dekryptere inndata
-  Eier bruker k til å signere utdata
-  
-Offentlig nøkkel
-  Andre bruker pk til å kryptere utdata som sendes til eier
-  Andre bruker pk til å verifisere inndata som kommer fra eier
+DHKE
+  Nøkler er tall
+  Kan kun brukes en gang
+  Brukes til utveksling av symmetrisk nøkkel
 
+RSA
+  Nøkler er funksjoner
+  Kan brukes mange ganger
+  Brukes til kryptering av paddet symmetrisk nøkkel
+  Brukes til kryptering av paddet hash (digital signatur)
+  Brukes ifm jwt
+  Brukes ifm ssh
+  

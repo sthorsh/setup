@@ -50,31 +50,31 @@ openssl enc -aes-256-cbc -d -in FILE.enc -pbkdf2
 
 -------------------- Generere DH nøkkelpar ----------------------
 
-# Ada genererer params g og n
+# Alice genererer params g og n
 openssl genpkey -genparam -algorithm DH -out params.pem
   
-# Ada genererer privat nøkkel a
-openssl genpkey -paramfile params.pem -out private_key.pem
+# Alice genererer privat nøkkel a
+openssl genpkey -paramfile params.pem -out key.pem
   
-# Ada genererer public nøkkel A=g^a % n
-openssl pkey -in private_key.pem -pubout -out ada_public_key.pem
+# Alice genererer public nøkkel A=g^a % n
+openssl pkey -in key.pem -pubout -out alice_pubkey.pem
   
 # Bob genererer privat nøkkel b
-openssl genpkey -paramfile params.pem -out private_key.pem
+openssl genpkey -paramfile params.pem -out key.pem
   
 # Bob genererer public nøkkel B=g^b % n
-openssl pkey -in private_key.pem -pubout -out bob_public_key.pem
+openssl pkey -in key.pem -pubout -out bob_pubkey.pem
 
 ----------------- Utveksle symmetrisk nøkkel -------------------
 
-# Ada beregner 1024-bits shared secret s=B^a % n
-openssl pkeyutl -derive -inkey private_key.pem -peerkey bob_public_key.pem -out secret.bin
+# Alice beregner 1024-bits shared secret s=B^a % n
+openssl pkeyutl -derive -inkey key.pem -peerkey bob_pubkey.pem -out secret.bin
 
-# Ada genererer 256-bits symmetrisk aes nøkkel
+# Alice genererer 256-bits symmetrisk aes nøkkel
 cat secret.bin | openssl dgst -sha256 > aes_key.txt
 
 # Bob beregner 1024-bits shared secret s=A^b % n
-openssl pkeyutl -derive -inkey private_key.pem -peerkey ada_public_key.pem -out secret.bin
+openssl pkeyutl -derive -inkey key.pem -peerkey alice_pubkey.pem -out secret.bin
   
 # Bob genererer 256-bits symmetrisk aes nøkkel
 cat secret.bin | openssl dgst -sha256 > aes_key.txt
@@ -85,17 +85,17 @@ cat secret.bin | openssl dgst -sha256 > aes_key.txt
 
 -------------------- Generere RSA nøkkelpar ----------------------
 
-# Ada genererer privat nøkkel
+# Alice genererer privat nøkkel
 openssl genpkey -algorithm RSA -out key.pem
   
-# Ada skriver ut privat nøkkel
+# Alice skriver ut privat nøkkel
 openssl rsa -in key.pem -text -noout
     
-# Ada ekstraherer public nøkkel fra privat nøkkel
-openssl rsa -in key.pem -pubout -out ada_pkey.pem
+# Alice ekstraherer public nøkkel fra privat nøkkel
+openssl rsa -in key.pem -pubout -out alice_pkey.pem
   
-# Ada skriver ut public nøkkel
-openssl rsa -pubin -in ada_pkey.pem -text -noout
+# Alice skriver ut public nøkkel
+openssl rsa -pubin -in alice_pkey.pem -text -noout
   
 # Bob genererer privat nøkkel
 openssl genpkey -algorithm RSA -out key.pem
@@ -105,16 +105,16 @@ openssl rsa -in key.pem -pubout -out bob_pkey.pem
     
 ------------- Kryptere/dekryptere symmetrisk nøkkel --------------
   
-# Ada genererer symmetrisk nøkkel
+# Alice genererer symmetrisk nøkkel
 openssl rand -out session_key.bin 32
     
-# Ada genererer initvektor
+# Alice genererer initvektor
 openssl rand -out iv.bin 16
     
-# Ada krypterer fil vha sesjonsnøkkel
+# Alice krypterer fil vha sesjonsnøkkel
 openssl enc -aes-256-cbc -in file.txt -K $(xxd -pc -c 32 session_key.bin) -iv $(xxd -pc iv.bin) -out file.enc
 
-# Ada krypterer sesjonsnøkkel vha Bobs public nøkkel
+# Alice krypterer sesjonsnøkkel vha Bobs public nøkkel
 openssl rsautl -encrypt -in session_key.bin -pubin -inkey bob_pkey.pem -out session_key.enc
     
 # Bob dekrypterer sesjonsnøkkel vha sin private nøkkel
@@ -132,7 +132,7 @@ openssl dgst -sha256 -sign key.pem -out signature.bin file.txt
 cp alice-pkey.pem signature.bin file.txt ../bob/
     
 # Bob verifiser autentisitet (pkey) og integritet (hash)
-openssl dgst -sha256 -verify ada_pkey.pem -signature signature.bin file.txt
+openssl dgst -sha256 -verify alice_pkey.pem -signature signature.bin file.txt
     
   ##################################################################
   #                           SERTIFIKATER                         #
