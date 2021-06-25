@@ -123,13 +123,13 @@ openssl rsautl -decrypt -in session_key.enc -inkey key.pem -out session_key.bin
 # Bob dekrypterer fil vha sesjonsnøkkel
 openssl enc -d -aes-256-cbc -in file.enc -K $(xxd -ps -c 32 session_key.bin) -iv $(xxd -ps iv.bin) -out file.txt
     
-  #################### Signering/verifisering ######################
+---------------------- Signere/verifisere ------------------------
   
-  # A beregner hashverdi; A signerer hashverdi med privat RSA nøkkel
-  openssl dgst -sha256 -sign a_private_key.pem -out signature.bin FILE.txt
+# Ada beregner hash (sha) og signerer fil (key)
+openssl dgst -sha256 -sign key.pem -out signature.bin file.txt
     
-  # B verifiser autentisitet (privat nøkkel) og integritet (hashverdi)
-  openssl dgst -sha256 -verify a_public_key.pem -signature signature.bin file.txt
+# Bob verifiser autentisitet (pkey) og integritet (sha)
+openssl dgst -sha256 -verify ada_pkey.pem -signature signature.bin file.txt
     
   ##################################################################
   #                           SERTIFIKATER                         #
