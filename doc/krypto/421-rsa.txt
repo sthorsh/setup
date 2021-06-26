@@ -24,22 +24,13 @@ Nøkkelpar
   RSA beregner c = enc(k) = f(k, e, n) = k^e % n (public key funksjon)
   RSA beregner k = dec(c) = f(c, d, n) = c^d % n (privat key funksjon)
 
-Kryptere symmetrisk nøkkel
+Sesjonsnøkkel
   RSA beregner c = enc(m) = f(m, e, n) = m^e % n (public key funksjon)
   RSA beregner m = dec(c) = f(c, d, n) = c^d % n (privat key funksjon)
 
-Digital signatur
+Signatur
 
-JWT validering
+JWT
 
-SSH login
-
-...
-
-----------------------------------
-PK/SK
-  PK/SK er (inverse) funksjoner
-  PK/SK kan brukes flere ganger
-  PK representerer identitet
-  RSA er basert på en trapdoor funksjon
+SSH
 

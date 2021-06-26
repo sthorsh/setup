@@ -4,6 +4,12 @@ Nøkkelpar
   Privat nøkkel
   Offentlig nøkkel 
 
+Asymmetrisk kryptering
+  Et nøkkelpar
+  Datastørrelse (DTU) er typisk fixed 
+  Brukes primært til utveksling av symmetriske nøkler
+  Symmetrisk nøkkel (nøkkelparams) kan etableres over åpen kanal
+
 DHKE
   Nøkler er tall
   Kan kun brukes en gang

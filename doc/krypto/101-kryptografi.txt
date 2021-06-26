@@ -1,35 +1,14 @@
 KRYPTOGRAFI
 
-Klasser av kryptografiske algoritmer
-  Tallgeneratorer
-  Kryptologiske hashfunksjoner (CHF)
-  Symmetrisk kryptering
-  Blokkchiffer
-  Flytchiffer
-  Symmetriske signaturer
-  Asymmetrisk kryptering
-  Asymmetriske signaturer
-  PKI
-  Digitale sertifikater
-
-Funksjoner
-  Enveisfunksjoner: hashing
-  Toveis/reversible funksjoner: symmetrisk kryptering
-  Komprimeringsfunksjoner: hashing
-  Komprimeringsfunksjoner: symmetrisk kryptering
-  Invers trapdoor-funksjon exp i moduluse: asymmetrisk kryptering DHKE
-  Invers trapdoor-funksjon primtallfaktorisering (?):  asymm kryptering RSA ???
-  Invers trapdoor-funksjon (?):  asymm kryptering EC ????
+Kryptering/dekryptering
+  Klartekst
+  Nøkkel
+  Chiffertekst
 
 Entropi
   Graden av uforutsigbarhet i antall bits
   En melding med lav entropi er forutsigbar
   En melding med høy entropi er uforutsigbar
-
-Kryptering/dekryptering
-  Lag₁: klartekst
-  Lag₂: nøkkel
-  Lag₃: chiffertekst
 
 Diffusjon
   Å skjule relasjonen mellom klartekst og chiffertekst
@@ -44,16 +23,4 @@ Confusion
   Mønstre i nøkkel må ikke manifestere seg som mønstre i chiffertekst
   Endring av _en_ bit i nøkkel må ikke endre kun en bit i chiffertekst
   Confusion er en egenskap ved krypteringsalgoritmer (siden de bruker nøkler)
-
-Symmetrisk kryptering
-  En nøkkel
-  Datastørrelse (DTU) kan typisk variere
-  Brukes primært til utveksling av meldinger
-  Melding og nøkkel må utveksles i to ulike kanaler
-
-Asymmetrisk kryptering
-  Et nøkkelpar
-  Datastørrelse (DTU) er typisk fixed 
-  Brukes primært til utveksling av symmetriske nøkler
-  Symmetrisk nøkkel (nøkkelparams) kan etableres over åpen kanal
 
