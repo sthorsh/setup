@@ -1,12 +1,11 @@
 KRYPTOGRAFI
 
-Kryptering/dekryptering
-  Klartekst
-  Nøkkel
-  Chiffertekst
+Informasjon
+  Antall mulige tilstander 2^n feks 32
+  Mengden informasjon er log₂2^n feks 5
 
 Entropi
-  Graden av uforutsigbarhet i antall bits
+  En melding har N bits entropi
   En melding med lav entropi er forutsigbar
   En melding med høy entropi er uforutsigbar
 
@@ -23,4 +22,16 @@ Confusion
   Mønstre i nøkkel må ikke manifestere seg som mønstre i chiffertekst
   Endring av _en_ bit i nøkkel må ikke endre kun en bit i chiffertekst
   Confusion er en egenskap ved krypteringsalgoritmer (siden de bruker nøkler)
+
+Kryptering/dekryptering
+  Klartekst
+  Nøkkel
+  Chiffertekst
+
+Funksjoner
+  Enveis
+  Toveis
+  Inverse
+  Trapdoor
+  Komprimering
 

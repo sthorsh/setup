@@ -1,0 +1,14 @@
+HASHALGORITMER
+
+Egenskaper
+  Input: melding m, variabel lengde
+  Output: hashverdi h(m), fast lengde
+  Deterministisk: samme m gir samme h(m)
+
+Sikkerhetsegenskaper
+  Enveisfunksjon: gitt h(m); umulig å finne m
+  Svak kollisjonsresistens: gitt m₁; umulig å finne h(m₂) = h(m₁)
+  Sterk kollisjonsresistens: umulig å finne m₁ og m₂ hvor h(m₁) = h(m₂)
+  Uforutsigbar: gitt m; umulig å forutse h(m) dvs høy entropi
+  Skredeffekt: liten endring i m gir stor endring i h(m)
+

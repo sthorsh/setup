@@ -1,27 +1,47 @@
 SHA-1
 
+Params
+  m             melding ≤ 2^64 bits 
+  iv            initialiseringsvektor h₀-h₇
+  h             hashverdi dvs resultatet
+
+Verdier
+  State size    256 bits
+  Block size    512 bits
+  Word size     32 bits
+  Runder        64
+  Output size   256 bits
+
 Algoritme
-  Blokk: 512 bits
-  Ord: 16/32 bits
-  Runder: 80 iterasjoner
-  State: 160 bits (5x32)
-  Hashverdi: 160 bits
-  Sikkerhet mot kollisjonsangrep: < 63 bits
+  Gitt melding
+
+  Init hashverdier h0-h7 (state)
   
-  Gitt melding M, IV H₀-H₄, hashverdi H
+  Pad melding til lengde N•512 bits
 
-  1. Sett IV = H₀, H₁, H₂, H₃, H₄ hver av 32 bit
-  2. Pad og append til M så M's lengde er N • 512 bits
-  3. Del M i N 512-bit blokker, og hver blokk i 16 32-bit ord 
+  Del melding i N blokker 
 
-  For hver blokk utfør 80 iterasjoner i
-    4. For 16 ≤ i ≤ 79: 
-       W(i) = S¹(W(i-3) XOR W(i-8) XOR W(i-14) XOR W(i-16))
-    5. Sett A=H₀, B=H₁, C=H₂, D=H₃, E=H₄
-    6. For 0 ≤ i ≤ 79: 
-       TEMP = S⁵ * (A) + f(i; B, C, D) + E + W(i) + K(i)
-       Sett E=D, D=C, C=S³⁰(B), B=A, A=TEMP
-    7. Sett H₀=H₀+A, H₁=H₁+B, H₂=H₂+C, H₃=H₃+D, H₄=H₄+E  
+  For hver blokk
 
-  8. Sett H = S¹²⁸(H₀) OR S⁹⁶(H₁) OR S⁶⁴(H₂) OR S³²(H₃) OR H₄
+    Init w[0..63] dvs 2048 bits
+
+    Kopier blokk inn i w[0..15]
+    
+    For i fra 16 til 63
+      ... 
+      w[i] := w[i-16] + ... + w[i-7] + ...
+      
+    Init vars a=h0, b=h1, c=h2, d=h3, e=h4, f=h5, g=h6, h=h7
+  
+    for i fra 0 til 63 dvs for hvert word
+      bitvis ops
+        temp1 := f(e,f,g,h, w[i], k[i])
+        temp2 := f(a,b,c)
+      h=g, g=f, f=e, e=d+temp1, d=c, c=b, b=a, a=temp1+temp2
+    
+    h0 := h0 + a
+    ...
+    h7 := h7 + h
+
+  hash := h0 append h1 ... h6 append h7
 
