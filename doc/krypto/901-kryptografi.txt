@@ -9,13 +9,6 @@ Entropi
   En melding med lav entropi er forutsigbar
   En melding med høy entropi er uforutsigbar
 
-Diffusjon
-  Å skjule relasjonen mellom klartekst og chiffertekst
-  Hensikten med diffusjon er å eliminere mønstre i chiffertekst
-  Mønstre i klartekst må ikke manifestere seg som mønstre i chiffertekst
-  Endring av _en_ bit i klartekst må ikke endre kun en bit i chiffertekst
-  Diffusjon er en egenskap ved hashalgoritmer og krypteringsalgoritmer (cbc)
-  
 Confusion
   Å skjule relasjonen mellom en nøkkel og chiffertekst  
   Hensikten med confusion er å eliminere mønstre i nøkkelen
@@ -23,6 +16,13 @@ Confusion
   Endring av _en_ bit i nøkkel må ikke endre kun en bit i chiffertekst
   Confusion er en egenskap ved krypteringsalgoritmer (siden de bruker nøkler)
 
+Diffusjon
+  Å skjule relasjonen mellom klartekst og chiffertekst
+  Hensikten med diffusjon er å eliminere mønstre i chiffertekst
+  Mønstre i klartekst må ikke manifestere seg som mønstre i chiffertekst
+  Endring av _en_ bit i klartekst må ikke endre kun en bit i chiffertekst
+  Diffusjon er en egenskap ved hashalgoritmer og krypteringsalgoritmer (cbc)
+  
 Kryptering/dekryptering
   Klartekst
   Nøkkel

@@ -1,173 +1,156 @@
 OPENSSL
-    
-# openssl
+      
 openssl help
 openssl list -help
 openssl version
     
---------------------
+---------- RNG ---------- 
+    
 # Random bytes
 openssl rand -hex 32
     
-##################################################################
-#                            HASH                                #
-##################################################################
-    
+---------- CHF ----------
+
 # Beregne hash
 openssl dgst -sha256 file
       
 # Beregne saltet hash
 openssl passwd -1 -salt SALT PASSWORD
       
-##################################################################
-#                              AES                               #
-##################################################################
-    
-##### AES CBC
-
-# Nøkkel
-export KEY=$(openssl rand -hex 32)
-
-# Initvektor
-export IV=$(openssl rand -hex 16)
-    
-# Krypter fil
-openssl enc -aes-256-cbc -iv $IV -K $KEY -base64 -p -in file -out file.enc
-    
-# Dekrypter fil
-openssl enc -d -aes-256-cbc -iv $IV -K $KEY -base64 -in file.enc -out file
-    
----  
-
-##### AES CBC PBKDF
-
-# Krypter fil 
-openssl enc -aes-256-cbc -pbkdf2 -base64 -p -in file -out file.enc
-
-# Dekrypter fil
-openssl enc -d -aes-256-cbc -pbkdf2 -base64 -in file.enc -out file
+-------- AES CBC --------
+  
+  # Nøkkel
+  export KEY=$(openssl rand -hex 32)
+  
+  # Initvektor
+  export IV=$(openssl rand -hex 16)
       
-##################################################################
-#                              MAC                               #
-##################################################################
-
-##### HMAC
-
-# Nøkkel
-export KEY=$(openssl rand -hex 32)
-
-# Beregne HMAC
-openssl dgst -sha256 -hmac $KEY file
-   
-    
-    ##################################################################
-    #                              DHKE                              #
-    ##################################################################
-    
-    -------------------- Generere DH nøkkelpar ----------------------
-    
-    # Alice genererer params g og n
-    openssl genpkey -genparam -algorithm DH -out params.pem
+  # Krypter fil
+  openssl enc -aes-256-cbc -iv $IV -K $KEY -base64 -p -in file -out file.enc
       
-    # Alice genererer privat nøkkel a
-    openssl genpkey -paramfile params.pem -out key.pem
+  # Dekrypter fil
+  openssl enc -d -aes-256-cbc -iv $IV -K $KEY -base64 -in file.enc -out file
       
-    # Alice genererer public nøkkel A=g^a % n
-    openssl pkey -in key.pem -pubout -out alice_pubkey.pem
-      
-    # Bob genererer privat nøkkel b
-    openssl genpkey -paramfile params.pem -out key.pem
-      
-    # Bob genererer public nøkkel B=g^b % n
-    openssl pkey -in key.pem -pubout -out bob_pubkey.pem
-    
-    ----------------- Utveksle symmetrisk nøkkel -------------------
-    
-    # Alice beregner 1024-bits shared secret s=B^a % n
-    openssl pkeyutl -derive -inkey key.pem -peerkey bob_pubkey.pem -out secret.bin
-    
-    # Alice genererer 256-bits symmetrisk aes nøkkel
-    cat secret.bin | openssl dgst -sha256 -out aes_key.txt
-    
-    # Bob beregner 1024-bits shared secret s=A^b % n
-    openssl pkeyutl -derive -inkey key.pem -peerkey alice_pubkey.pem -out secret.bin
-      
-    # Bob genererer 256-bits symmetrisk aes nøkkel
-    cat secret.bin | openssl dgst -sha256 -out aes_key.txt
-    
-    ##################################################################
-    #                              RSA                               #
-    ##################################################################
-    
-    -------------------- Generere RSA nøkkelpar ----------------------
-    
-    # Alice genererer privat nøkkel
-    openssl genpkey -algorithm RSA -out key.pem
-      
-    # Alice skriver ut privat nøkkel
-    openssl rsa -in key.pem -text -noout
+  --------------------
+  AES CBC PBKDF
+  
+  # Krypter fil 
+  openssl enc -aes-256-cbc -pbkdf2 -base64 -p -in file -out file.enc
+  
+  # Dekrypter fil
+  openssl enc -d -aes-256-cbc -pbkdf2 -base64 -in file.enc -out file
         
-    # Alice ekstraherer public nøkkel fra privat nøkkel
-    openssl rsa -in key.pem -pubout -out alice_pkey.pem
+  --------------------
+  HMAC
+  
+  # Nøkkel
+  export KEY=$(openssl rand -hex 32)
+  
+  # Beregne HMAC
+  openssl dgst -sha256 -hmac $KEY file
+     
       
-    # Alice skriver ut public nøkkel
-    openssl rsa -pubin -in alice_pkey.pem -text -noout
+  -------------------- 
+  DHKE
       
-    # Bob genererer privat nøkkel
-    openssl genpkey -algorithm RSA -out key.pem
-      
-    # Bob ekstraherer public nøkkel fra privat nøkkel
-    openssl rsa -in key.pem -pubout -out bob_pkey.pem
-        
-    ------------- Kryptere/dekryptere symmetrisk nøkkel --------------
-      
-    # Alice genererer symmetrisk nøkkel
-    openssl rand -out session_key.bin 32
-        
-    # Alice genererer initvektor
-    openssl rand -out iv.bin 16
-        
-    # Alice krypterer fil vha sesjonsnøkkel
-    openssl enc -aes-256-cbc -in file.txt -K $(xxd -pc -c 32 session_key.bin) -iv $(xxd -pc iv.bin) -out file.enc
+  # Alice genererer params g og n
+  openssl genpkey -genparam -algorithm DH -out params.pem
     
-    # Alice krypterer sesjonsnøkkel vha Bobs public nøkkel
-    openssl rsautl -encrypt -in session_key.bin -pubin -inkey bob_pkey.pem -out session_key.enc
-        
-    # Bob dekrypterer sesjonsnøkkel vha sin private nøkkel
-    openssl rsautl -decrypt -in session_key.enc -inkey key.pem -out session_key.bin
-        
-    # Bob dekrypterer fil vha sesjonsnøkkel
-    openssl enc -d -aes-256-cbc -in file.enc -K $(xxd -ps -c 32 session_key.bin) -iv $(xxd -ps iv.bin) -out file.txt
-        
-    ---------------------- Signere/verifisere ------------------------
-      
-    # Alice beregner hash og lager digital signatur (key)
-    openssl dgst -sha256 -sign key.pem -out signature.bin file.txt
+  # Alice genererer privat nøkkel a
+  openssl genpkey -paramfile params.pem -out key.pem
     
-    # Alice distribuerer pkey, signatur og fil
-    cp alice-pkey.pem signature.bin file.txt ../bob/
+  # Alice genererer public nøkkel A=g^a % n
+  openssl pkey -in key.pem -pubout -out alice_pubkey.pem
+    
+  # Bob genererer privat nøkkel b
+  openssl genpkey -paramfile params.pem -out key.pem
+    
+  # Bob genererer public nøkkel B=g^b % n
+  openssl pkey -in key.pem -pubout -out bob_pubkey.pem
+  
+  ----------------- Utveksle symmetrisk nøkkel -------------------
+  
+  # Alice beregner 1024-bits shared secret s=B^a % n
+  openssl pkeyutl -derive -inkey key.pem -peerkey bob_pubkey.pem -out secret.bin
+  
+  # Alice genererer 256-bits symmetrisk aes nøkkel
+  cat secret.bin | openssl dgst -sha256 -out aes_key.txt
+  
+  # Bob beregner 1024-bits shared secret s=A^b % n
+  openssl pkeyutl -derive -inkey key.pem -peerkey alice_pubkey.pem -out secret.bin
+    
+  # Bob genererer 256-bits symmetrisk aes nøkkel
+  cat secret.bin | openssl dgst -sha256 -out aes_key.txt
+  
+  -------------------- 
+  RSA                             
+  
+  -------------------- Generere RSA nøkkelpar ----------------------
+  
+  # Alice genererer privat nøkkel
+  openssl genpkey -algorithm RSA -out key.pem
+    
+  # Alice skriver ut privat nøkkel
+  openssl rsa -in key.pem -text -noout
+      
+  # Alice ekstraherer public nøkkel fra privat nøkkel
+  openssl rsa -in key.pem -pubout -out alice_pkey.pem
+    
+  # Alice skriver ut public nøkkel
+  openssl rsa -pubin -in alice_pkey.pem -text -noout
+    
+  # Bob genererer privat nøkkel
+  openssl genpkey -algorithm RSA -out key.pem
+    
+  # Bob ekstraherer public nøkkel fra privat nøkkel
+  openssl rsa -in key.pem -pubout -out bob_pkey.pem
+      
+  ------------- Kryptere/dekryptere symmetrisk nøkkel --------------
+    
+  # Alice genererer symmetrisk nøkkel
+  openssl rand -out session_key.bin 32
+      
+  # Alice genererer initvektor
+  openssl rand -out iv.bin 16
+      
+  # Alice krypterer fil vha sesjonsnøkkel
+  openssl enc -aes-256-cbc -in file.txt -K $(xxd -pc -c 32 session_key.bin) -iv $(xxd -pc iv.bin) -out file.enc
+  
+  # Alice krypterer sesjonsnøkkel vha Bobs public nøkkel
+  openssl rsautl -encrypt -in session_key.bin -pubin -inkey bob_pkey.pem -out session_key.enc
+      
+  # Bob dekrypterer sesjonsnøkkel vha sin private nøkkel
+  openssl rsautl -decrypt -in session_key.enc -inkey key.pem -out session_key.bin
+      
+  # Bob dekrypterer fil vha sesjonsnøkkel
+  openssl enc -d -aes-256-cbc -in file.enc -K $(xxd -ps -c 32 session_key.bin) -iv $(xxd -ps iv.bin) -out file.txt
+      
+  ---------------------- Signere/verifisere ------------------------
+    
+  # Alice beregner hash og lager digital signatur (key)
+  openssl dgst -sha256 -sign key.pem -out signature.bin file.txt
+  
+  # Alice distribuerer pkey, signatur og fil
+  cp alice-pkey.pem signature.bin file.txt ../bob/
+      
+  # Bob verifiser autentisitet (pkey) og integritet (hash)
+  openssl dgst -sha256 -verify alice_pkey.pem -signature signature.bin file.txt
+      
+  -------------------- 
+  SERTIFIKATER                         
         
-    # Bob verifiser autentisitet (pkey) og integritet (hash)
-    openssl dgst -sha256 -verify alice_pkey.pem -signature signature.bin file.txt
-        
-      ##################################################################
-      #                           SERTIFIKATER                         #
-      ##################################################################
-      
-      # Generer RSA nøkkelpar for CSR
-      openssl genpkey -algorithm RSA -out privat_key.pem
-      openssl rsa -in privat_key.pem -pubout -out public_key.pem
-      
-      # Generer CSR
-      TODO
-      
-      # Vis sertifikatinformasjon
-      openssl x509 -in acme.crt -text -noout
-      
-      ##################################################################
-      #                                 TLS                            #
-      ##################################################################
-      
-      # TLS
-      openssl s_client -connect microsoft.com:443 -showcerts
-      
+  # Generer RSA nøkkelpar for CSR
+  openssl genpkey -algorithm RSA -out privat_key.pem
+  openssl rsa -in privat_key.pem -pubout -out public_key.pem
+  
+  # Generer CSR
+  TODO
+  
+  # Vis sertifikatinformasjon
+  openssl x509 -in acme.crt -text -noout
+  
+  
+  -------------------- 
+  # TLS
+  openssl s_client -connect microsoft.com:443 -showcerts
+  

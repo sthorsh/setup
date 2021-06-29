@@ -1,0 +1,23 @@
+HMAC
+
+Params
+  m       melding feks jwt header.payload
+  k       symmetrisk nøkkel
+  ipad    konstant (inner padding)
+  opad    konstant (outer padding)
+  h       hashfunksjon feks sha256
+  b       block size dvs 512 bits
+  n       hash value size dvs 256 bits
+  
+Algoritme
+  Pad k til b bits
+
+  Beregn k XOR ipad -> s1
+  Append m til s1
+  Beregn h(iv, s1, m) -> hash1
+
+  Pad hash1 til b bits
+  Beregn k XOR opad -> s2
+  Append hash1 til s2
+  Beregn h(iv, s2, hash1) -> hash2 feks jwt signature
+

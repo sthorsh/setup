@@ -1,14 +1,20 @@
-HASHALGORITMER
+CHF
+
+Hashfunksjon
+  h(m) -> hash
 
 Egenskaper
-  Input: melding m, variabel lengde
-  Output: hashverdi h(m), fast lengde
+  Tar melding m av variabel lengde
+  Returnerer hashverdi av fast lengde
+  Enveis: umulig å finne m; gitt h(m)
+  Komprimerer/reduserer informasjonen 
   Deterministisk: samme m gir samme h(m)
-
-Sikkerhetsegenskaper
-  Enveisfunksjon: gitt h(m); umulig å finne m
-  Svak kollisjonsresistens: gitt m₁; umulig å finne h(m₂) = h(m₁)
-  Sterk kollisjonsresistens: umulig å finne m₁ og m₂ hvor h(m₁) = h(m₂)
-  Uforutsigbar: gitt m; umulig å forutse h(m) dvs høy entropi
+  Uforutsigbar: gitt m; umulig å forutse h(m) (dvs har høy entropi)
   Skredeffekt: liten endring i m gir stor endring i h(m)
+  Kollisjonsresistens: umulig å finne m₁ og m₂ slik at h(m₁) = h(m₂)
 
+Anvendelser
+  Filnedlasting
+  Passordlagring
+  JWT signatur/verifisering
+  ...

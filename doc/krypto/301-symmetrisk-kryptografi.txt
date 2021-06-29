@@ -1,23 +1,17 @@
 SYMMETRISK KRYPTOGRAFI
 
-Nøkkel
-  En symmetrisk hemmelig nøkkel
+Krypteringsfunksjon
+  enc(m, k) -> chiffertekst
+  dec(chiffertekst, k) -> m
 
-Symmetrisk kryptering
-  En nøkkel
-  Datastørrelse (DTU) kan typisk variere
-  Brukes primært til utveksling av meldinger
-  Melding og nøkkel må utveksles i to ulike kanaler
+Egenskaper
+  Toveis dvs reversibel
+  Bevarer informasjonen
+  Må kunne bruke nøkkel flere ganger (confusion)  
+  Nøkkel må kunne være kortere enn tekst (confusion)
+  Må komplisere relasjon mellom klartekst og chiffertekst (diffusjon)
 
 Anvendelser
-  Chiffertekst
-  Autentikator
-
-Chiffertekst
-  chiffertekst = enc(msg)  
-
-Autentikator (MAC)
-  mac = mac(msg, key)
-  Endring msg → endring mac
-  Endring key → endring mac
-
+  Utveksling av meldinger
+  Signering i form av MAC
+  
