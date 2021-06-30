@@ -16,7 +16,7 @@ Diffusjon
   Endring av _en_ bit i klartekst må ikke endre kun en bit i chiffertekst
   Diffusjon er en egenskap ved hashalgoritmer og krypteringsalgoritmer (cbc)
   
-Forvirring (confusion)
+Konfusjon
   Å skjule relasjonen mellom en nøkkel og chiffertekst  
   Hensikten med confusion er å eliminere mønstre i nøkkelen
   Mønstre i nøkkel må ikke manifestere seg som mønstre i chiffertekst

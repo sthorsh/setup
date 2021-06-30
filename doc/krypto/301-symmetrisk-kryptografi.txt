@@ -3,39 +3,28 @@ SYMMETRISK KRYPTOGRAFI
 Params
   pt klartekst
   sk symmetrisk nøkkel
-  ct ciphertext
+  ct chiffertekst
                      
 Krypteringsfunksjoner
   enc(pt, sk) -> ct
   dec(ct, sk) -> pt
 
 Egenskaper
-  All informasjonen i pt finnes i ct (enc er lossless)
-  Enc i revers gir dec (enc er toveis/reversibel)
-    Nøkkel må kunne brukes flere ganger (confusion)  
-    Nøkkel må kunne være kortere enn tekst (confusion)
-    Må komplisere relasjon mellom klartekst og chiffertekst (diffusjon)
+  Enc er tapsfri: enc bevarer all informasjon i pt
+  Enc er to-veis: enc er reverserbar (i form av dec)
+  Enc tilfører diffusjon: enc sprer pt over ct
+  Enc tilfører konfusjon: enc kan gjenbruke sk
+  Enc tilfører konfusjon: enc tillater at sk er kortere enn pt
+
+Blokkchiffer
+  Opererer på blokker av tegn
+  Feks aes-128-cbc
   
-  Anvendelser
-    Utveksling av meldinger (aes)
-    Signering i form av MAC (hmac)
-    
-  Blokkchiffer
-    Opererer på blokker av tegn
-    Feks aes-128-cbc
+Flytchiffer
+  Opererer på individuelle tegn
+  Feks aes-128-ofb
+
+Anvendelser
+  Utveksling av meldinger (aes)
+  Signering i form av MAC (hmac)
   
-  Flytchiffer
-    Opererer på individuelle tegn
-    Feks aes-128-ofb
-  
-  Initialiseringsvektor (IV)
-    Et random carry inn i første blokk
-    Dvs første_blokks_klartekst XOR IV
-    Samme hensikt som salt for passord
-    En IV kan distribueres i klartekst
-    En IV kan ikke gjenbrukes av meldinger
-  
-  Modus
-    CBC
-    ECB
-    ...

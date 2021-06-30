@@ -1,0 +1,9 @@
+CBC
+    
+Initialiseringsvektor (IV)
+    Et random carry inn i første blokk
+    Dvs første_blokks_klartekst XOR IV
+    Samme hensikt som salt for passord
+    En IV kan distribueres i klartekst
+    En IV kan ikke gjenbrukes av meldinger
+  
