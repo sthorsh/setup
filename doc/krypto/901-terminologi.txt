@@ -1,8 +1,13 @@
 KRYPTOGRAFI
 
+Kryptografi
+  Subjekt: kryptografiske primitiver
+  Verb: genererer, hasher, krypterer, signerer etc
+  Objekt: nøkler, meldinger, plaintekst, dokumenter etc
+
 Informasjon
-  Antall mulige tilstander 2^n feks 32
   Mengden informasjon er log₂2^n feks 5
+  Antall mulige tilstander er 2^n feks 32
 
 Entropi
   En melding har N bits entropi
@@ -34,4 +39,5 @@ Funksjoner
   Inverse
   Komprimering
   Trapdoor (fallem)
+  PBKDF
 

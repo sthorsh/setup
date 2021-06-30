@@ -1,11 +1,12 @@
 AES
 
-Kryptering
+Params
   Blokk: 128 bits
   Nøkkel: 128, 192, 256 bits
   Runder: 10, 12, 14
   State: 4x4 array
 
+Algoritme
   Om beskrivelsen nedenfor 
   • Gjelder prosessering av _en_ blokk
   • Antar en symmetrisk nøkkel eksisterer
@@ -22,6 +23,3 @@ Kryptering
      2. ShiftRows
      3. AddRoundKey
     
-Dekryptering
-  Reverser kryptering trinn 1-4
-  
