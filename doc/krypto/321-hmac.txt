@@ -17,6 +17,7 @@ Algoritme
   Beregn h(iv, s1, m) -> hash1
 
   Pad hash1 til b bits
+
   Beregn k XOR opad -> s2
   Append hash1 til s2
   Beregn h(iv, s2, hash1) -> hash2 feks jwt signature

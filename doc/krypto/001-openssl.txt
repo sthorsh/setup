@@ -6,15 +6,18 @@ openssl version
     
 ---------- RNG ---------- 
     
-# Random bytes
+# Nøkkel
 openssl rand -hex 32
+
+# Initvektor
+openssl rand -hex 16
     
 ---------- CHF ----------
 
-# Beregne hash
+# Hash
 openssl dgst -sha256 file
       
-# Beregne saltet hash
+# Saltet hash
 openssl passwd -1 -salt SALT PASSWORD
       
 -------- AES CBC --------
@@ -48,40 +51,7 @@ openssl passwd -1 -salt SALT PASSWORD
   
   # Beregne HMAC
   openssl dgst -sha256 -hmac $KEY file
-     
       
-  -------------------- 
-  DHKE
-      
-  # Alice genererer params g og n
-  openssl genpkey -genparam -algorithm DH -out params.pem
-    
-  # Alice genererer privat nøkkel a
-  openssl genpkey -paramfile params.pem -out key.pem
-    
-  # Alice genererer public nøkkel A=g^a % n
-  openssl pkey -in key.pem -pubout -out alice_pubkey.pem
-    
-  # Bob genererer privat nøkkel b
-  openssl genpkey -paramfile params.pem -out key.pem
-    
-  # Bob genererer public nøkkel B=g^b % n
-  openssl pkey -in key.pem -pubout -out bob_pubkey.pem
-  
-  ----------------- Utveksle symmetrisk nøkkel -------------------
-  
-  # Alice beregner 1024-bits shared secret s=B^a % n
-  openssl pkeyutl -derive -inkey key.pem -peerkey bob_pubkey.pem -out secret.bin
-  
-  # Alice genererer 256-bits symmetrisk aes nøkkel
-  cat secret.bin | openssl dgst -sha256 -out aes_key.txt
-  
-  # Bob beregner 1024-bits shared secret s=A^b % n
-  openssl pkeyutl -derive -inkey key.pem -peerkey alice_pubkey.pem -out secret.bin
-    
-  # Bob genererer 256-bits symmetrisk aes nøkkel
-  cat secret.bin | openssl dgst -sha256 -out aes_key.txt
-  
   -------------------- 
   RSA                             
   
@@ -136,6 +106,38 @@ openssl passwd -1 -salt SALT PASSWORD
   # Bob verifiser autentisitet (pkey) og integritet (hash)
   openssl dgst -sha256 -verify alice_pkey.pem -signature signature.bin file.txt
       
+  -------------------- 
+  DHKE
+      
+  # Alice genererer params g og n
+  openssl genpkey -genparam -algorithm DH -out params.pem
+    
+  # Alice genererer privat nøkkel a
+  openssl genpkey -paramfile params.pem -out key.pem
+    
+  # Alice genererer public nøkkel A=g^a % n
+  openssl pkey -in key.pem -pubout -out alice_pubkey.pem
+    
+  # Bob genererer privat nøkkel b
+  openssl genpkey -paramfile params.pem -out key.pem
+    
+  # Bob genererer public nøkkel B=g^b % n
+  openssl pkey -in key.pem -pubout -out bob_pubkey.pem
+  
+  ----------------- Utveksle symmetrisk nøkkel -------------------
+  
+  # Alice beregner 1024-bits shared secret s=B^a % n
+  openssl pkeyutl -derive -inkey key.pem -peerkey bob_pubkey.pem -out secret.bin
+  
+  # Alice genererer 256-bits symmetrisk aes nøkkel
+  cat secret.bin | openssl dgst -sha256 -out aes_key.txt
+  
+  # Bob beregner 1024-bits shared secret s=A^b % n
+  openssl pkeyutl -derive -inkey key.pem -peerkey alice_pubkey.pem -out secret.bin
+    
+  # Bob genererer 256-bits symmetrisk aes nøkkel
+  cat secret.bin | openssl dgst -sha256 -out aes_key.txt
+  
   -------------------- 
   SERTIFIKATER                         
         

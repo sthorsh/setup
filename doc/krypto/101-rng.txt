@@ -1,8 +1,5 @@
 TALLGENERATORER
 
-Pseudo
-  Algoritme
-
-Ekte
-  Maskinvare
+Funksjon
+  keygen(seed) -> key
 

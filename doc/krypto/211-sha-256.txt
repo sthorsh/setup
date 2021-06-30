@@ -1,4 +1,4 @@
-SHA-1
+SHA-256
 
 Egenskaper
   Block size    512 bits
