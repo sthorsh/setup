@@ -1,25 +1,29 @@
 AES
 
-Params
-  Blokk: 128 bits
-  Nøkkel: 128, 192, 256 bits
-  Runder: 10, 12, 14
-  State: 4x4 array
+AES params
+  Blokk: 128 bits dvs 16 bytes
+  Nøkkel: 128, 192, 256 bits (sk)
 
-Algoritme
-  Om beskrivelsen nedenfor 
-  • Gjelder prosessering av _en_ blokk
-  • Antar en symmetrisk nøkkel eksisterer
+Rijndael params
+  State: 4x4 grid dvs 16 bytes
+  Runder: 10, 12, 14 cf nøkkel
 
-  1. KeyExpansion: fra symmetrisk nøkkel, generer 10 round key blocks
-  2. AddRoundKey: state_array XOR round_key₁
-  3. For 1 ≤ i < 10:
-     1. SubBytes: erstatt hver state array byte fra en oppslagstabell
-     2. ShiftRows: syklisk shift de tre siste radene i state array'et
-     3. MixColumns: bland (flett) state array kolonner inn i hverandre
-     4. AddRoundKey: state_array XOR neste round_key
-  4. For i == 10:
-     1. SubBytes
-     2. ShiftRows
-     3. AddRoundKey
-    
+AES-128 Rijndael
+
+  Ordne blokk i grid
+
+  KeyExpansion: ekspander sk til rundenøkler rk0-rk9
+
+  AddRoundKey: grid XOR k0
+
+  Runde 1-10
+    SubBytes: bytt ut hver grid byte fra en oppslagstabell (substitusjon)
+
+    ShiftRows: shift rad 2, 3, 4 hhv 1, 2, 3 mot venstre (permutasjon)
+
+    MixColumns: multipliser kolonne 1-4 med en 4x4 matrise (permutasjon)
+
+    AddRoundKey: grid XOR rk0-rk9
+
+  Resultat: out comes a 128-bit block of total gibberish dvs chiffertekst
+
