@@ -12,27 +12,21 @@ Krypteringsfunksjoner
   enc(pt, sk) -> ct
   dec(ct, sk) -> pt
 
-Egenskaper
-  Enc er tapsfri: bevarer informasjonen i pt
-  Enc er to-veis: hvert trinn er reverserbart
-  Enc tilfører diffusjon: sprer pt ut over ct
-  Enc tilfører konfusjon: sk kan være kortere enn pt
-  Enc tilfører konfusjon: kan bruke sk mer enn en gang
+Krav til egenskaper
+  Bevare informasjonen (tapsfri)
+  Reverserbare operasjoner (toveis)
+  Tilføre diffusjon mellom pt og ct
+  Tilføre konfusjon mellom sk og ct
+  Alt1: operere på blokker med data (blokkchiffer)
+  Alt2: operere på en strøm av data (flytchiffer)
 
-Algoritmer
-  One-time pad
-  DES
-  Triple DES
-  AES
-
----------------------
 Blokkchiffer
-  Opererer på blokker av tegn
-  Feks aes-128-cbc
-  
+  AES
+  DES
+
 Flytchiffer
-  Opererer på individuelle tegn
-  Feks aes-128-ofb
+  Engangsnøkler (one-time pad)
+  RC4
 
 ---------------------
 Params

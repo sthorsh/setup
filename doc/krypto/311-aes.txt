@@ -1,29 +1,28 @@
-AES
+AES/Rijndael
 
-AES params
+Params
   Blokk: 128 bits dvs 16 bytes
   Nøkkel: 128, 192, 256 bits (sk)
-
-Rijndael params
   State: 4x4 grid dvs 16 bytes
-  Runder: 10, 12, 14 cf nøkkel
+  Runder: 10, 12, 14
+  Rundenøkler: 11, 13, 15 (rk)
 
-AES-128 Rijndael
-
+AES-128
   Ordne blokk i grid
 
-  KeyExpansion: ekspander sk til rundenøkler rk0-rk9
+  KeyExpansion: ekspander sk til rk0-rk10
 
-  AddRoundKey: grid XOR k0
+  AddRoundKey: grid XOR rk0
 
   Runde 1-10
-    SubBytes: bytt ut hver grid byte fra en oppslagstabell (substitusjon)
+
+    SubBytes: bytt ut hver grid byte fra en S-box (substitusjon)
 
     ShiftRows: shift rad 2, 3, 4 hhv 1, 2, 3 mot venstre (permutasjon)
 
     MixColumns: multipliser kolonne 1-4 med en 4x4 matrise (permutasjon)
 
-    AddRoundKey: grid XOR rk0-rk9
+    AddRoundKey: grid XOR rk1-rk10
 
   Resultat: out comes a 128-bit block of total gibberish dvs chiffertekst
 
