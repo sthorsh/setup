@@ -26,5 +26,5 @@ Anvendelser
   Hashing av passord - kan ikke være for raske
   KDF -> nøkkel
   Hashing av filer -> integritet
-  Hashing av melding + nøkkel -> signatur feks JWT
+  Hashing av melding + nøkkel -> digital signatur feks JWT
 

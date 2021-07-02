@@ -1,14 +1,14 @@
 HMAC
 
 Params
+  k       nøkkel
   m       melding feks jwt header.payload
-  k       symmetrisk nøkkel
   ipad    konstant (inner padding)
   opad    konstant (outer padding)
   h       hashfunksjon feks sha256
   b       block size dvs 512 bits
   n       hash value size dvs 256 bits
-  
+
 Algoritme
   Pad k til b bits
 
