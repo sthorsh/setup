@@ -1,4 +1,4 @@
-KRYPTOGRAFI
+TEORI
 
 Kryptografi
   Subjekt: kryptografiske primitiver
@@ -7,7 +7,7 @@ Kryptografi
 
 Informasjon
   Mengden informasjon er log₂2^n feks 5
-  Antall mulige tilstander er 2^n feks 32
+  Antall valg dvs mulige tilstander er 2^n feks 32
 
 Entropi
   En melding har N bits entropi
@@ -35,9 +35,9 @@ Kryptering/dekryptering
 
 Funksjoner
   Enveis
+  Komprimering
+  PBKDF
   Toveis
   Inverse
-  Komprimering
   Trapdoor (fallem)
-  PBKDF
 
