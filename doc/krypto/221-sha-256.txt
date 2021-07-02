@@ -1,6 +1,6 @@
 SHA-256
 
-Egenskaper
+Params
   Block size    512 bits
   State size    256 bits
   Word size     32 bits
@@ -9,31 +9,27 @@ Egenskaper
 
 Algoritme
 
-  Init hashverdier h0-h7 (state)
+  Pad melding til N • 512 bits
 
-  Init array av konstanter k[0..63]
+  Init konstanter k[0..63]
 
-  Pad melding til lengde N • 512 bits
-
-  Del melding i N blokker 
+  Init intern state h₀-h₇
 
   For hver blokk
-   
-    Init w[0..63] dvs 2048 bits
+
+    a=h₀; b=h₁; c=h₂; d=h₃; e=h₄; f=h₅; g=h₆; h=h₇
+
+    Init w[0..63]
     Kopier blokk inn i w[0..15]
-    for i fra 16 til 63
-      s0 = f(w[i-15])
-      s1 = f(w[i-2])
-      w[i] = w[i-16] + s0 + w[i-7] + s1
-      
-    Init vars a=h0; b=h1; c=h2; d=h3; e=h4; f=h5; g=h6; h=h7
-   
-    for i fra 0 til 63 dvs for hvert word
-      temp1 = f(e, f, g, h, w[i], k[i])
-      temp2 = f(a, b, c)
-      h=g; g=f; f=e; e=d+temp1; d=c; c=b; b=a; a=temp1+temp2
-    
-    h0+=a; h1+=b; h2+=c; h3+=d; h4+=e; h5+=f; h6+=g; h7+=h
-   
-  hash = h0 append h1 append h2 append h3 append h4 append h5 append h6 append h7
+    for i=16..63
+      w[i] = w[i-16] + f(w[i-15]) + w[i-7] + f(w[i-2])
+
+    for i=0..63
+      temp₁ = f(e, f, g, h, w[i], k[i])
+      temp₂ = f(a, b, c)
+      h=g; g=f; f=e; e=d+temp₁; d=c; c=b; b=a; a=temp₁+temp₂
+
+    h₀+=a; h₁+=b; h₂+=c; h₃+=d; h₄+=e; h₅+=f; h₆+=g; h₇+=h
+
+  hash = h₀||h₁||h₂||h₃||h₄||h₅||h₆||h₇
 
