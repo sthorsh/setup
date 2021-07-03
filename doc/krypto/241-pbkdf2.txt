@@ -1,4 +1,30 @@
 PBKDF2
 
+Params
+  dk      avledet nøkkel
+  dklen   feks 1024 bits
+  prf     hmac-sha256
+  hlen    256 bits
+  p       passord/-frase
+  s       salt feks 128-bit
+  c       antall iterasjoner prf feks 4
+  i       index
+
+Funksjon
+  dk = pbdkf2(prf, p, s, c, i) 
+
 Algoritme
+
+  prf₀₀(p, s||int(1)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) XOR prf₀₃(p, prf₀₂) -> t₁
+  prf₀₀(p, s||int(2)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) XOR prf₀₃(p, prf₀₂) -> t₁
+  prf₀₀(p, s||int(3)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) XOR prf₀₃(p, prf₀₂) -> t₁
+  prf₀₀(p, s||int(4)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) XOR prf₀₃(p, prf₀₂) -> t₁
+
+  dk = t₁ || t₂ || t₃ || t₄
+
+  Alle iterasjoner av prf bruker salt som nøkkel
+  Første iterasjon av prf i hver rad bruker salt || int(1) som input
+  Resterende iterasjoner av prf i hver rad bruker output fra forrige prf som input
   
+Ressurs
+  https://www.wikidata.org/wiki/Q3952834#/media/File:Pbkdf2_nist.png
