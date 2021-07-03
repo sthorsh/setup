@@ -1,5 +1,0 @@
-TALLGENERATORER
-
-Funksjon
-  keygen(seed) -> key
-
