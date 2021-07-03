@@ -1,0 +1,24 @@
+HMAC-SHA256
+
+Params
+  k       nøkkel
+  m       melding
+  h       sha256
+  b       sha256 block size i.e 512 bits
+  k₁      ipad (indre nøkkel)
+  k₂      opad (ytre nøkkel)
+
+Algoritme
+
+  if len(k) > b then k=h(k)
+  lf len(k) < b then k=pad(k)
+
+  k₁ = k XOR [0x36]
+  k₂ = k XOR [0x5c]
+
+  mac = h(k₂ || h(k₁ || m))
+
+Anvendelser
+  Streamchiffer: www.youtube.com/watch?v=wlSG3pEiQdc
+  JWTs: header.payload.mac
+  PBKDF2

@@ -12,19 +12,19 @@ Egenskaper/krav
   Beverer ikke informasjon (lossy)
   Kan ikke reverseres (enveis)
   Samme m gir alltid samme H (deterministisk)
-  Være uforutsigbar, innføre uorden (entropi)
+  Fremstå pseudo-random, være uforutsigbar, innføre uorden (entropi)
   Skjule mønstre og endringer i m i H (diffusjon)
   Unngå at to meldinger gir samme H (kollisjonsresistent)
-  Være ikke for rask, men rask nok (brute-force resistent)
+  Være rask, men samtidig ikke for rask (gjelder hashing av passord)
 
 Klasser
   CHF
-  KDF
   Nøklete CHF
+  Key derivation function (KDF)
 
 Anvendelser
-  Hashing av passord - kan ikke være for raske
-  KDF -> nøkkel
+  Hashing av passord - h(m) må ikke være for rask
   Hashing av filer -> integritet
   Hashing av melding + nøkkel -> digital signatur feks JWT
+  Hashing av passord/passfrase -> nøkkel (KDF)
 
