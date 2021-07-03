@@ -1,0 +1,15 @@
+KDF
+
+Params
+  dk  avledet nøkkel
+  kdf nøkkelavledningsfunksjon feks pbkdf2
+  prf pseudorandom funksjon feks hmac-sha256
+  km  nøkkelmateriale dvs nøkkel, passord, passfrase, secret mm
+
+Funksjon
+  dk = kdf(km)
+
+Bruk
+  Nøkkelavledning
+  Passord-hashing
+
