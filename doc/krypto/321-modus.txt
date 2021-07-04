@@ -1,0 +1,35 @@
+MODUS
+
+Egenskaper
+  Kryptografisk sikker
+  Parallell kryptering
+  Parallell dekryptering
+  Ingen koblinger mellom blokker
+
+ECB
+  Krypter blokk₁: enc(pt₁, sk)
+  Krypter blokk₂: enc(pt₂, sk)
+  Krypter blokk₃: enc(pad(pt₃), sk)
+
+CBC
+  Krypter blokk₁: enc(pt₁ XOR IV, sk)
+  Krypter blokk₂: enc(pt₂ XOR ct₁, sk)
+  Krypter blokk₃: enc(pad(pt₃) XOR ct₂, sk)
+  
+CTR
+  Krypter blokk₁: enc(nonce+1, sk) XOR pt₁
+  Krypter blokk₂: enc(nonce+2, sk) XOR pt₂        
+  Krypter blokk₃: enc(nonce+3, sk) XOR pt₃        
+  ...
+  (De)krypter blokk₁: enc(nonce+1, sk) XOR ct₁
+  (De)krypter blokk₂: enc(nonce+2, sk) XOR ct₂        
+  (De)krypter blokk₃: enc(nonce+3, sk) XOR ct₃        
+
+GCM
+  GCM is defined for block ciphers with a block size of 128 bits
+  GCM is designed to provide both data authenticity (integrity) and confidentiality
+  GCM can take full advantage of parallel processing
+  GCM can make efficient use of an instruction pipeline or a hardware pipeline
+  GCM is used in SSH, TLS 1.2, TLS 1.3, OpenVPN, IPsec, ...
+  GCM is supported byu Intel who added the PCLMULQDQ instruction in 2014
+

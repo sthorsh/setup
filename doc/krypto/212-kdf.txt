@@ -7,7 +7,7 @@ Params
   km  nøkkelmateriale dvs nøkkel, passord, passfrase, secret mm
 
 Funksjon
-  dk = kdf(km)
+  dk = kdf(km) (kdf bruker en prf)
 
 Bruk
   Nøkkelavledning

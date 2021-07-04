@@ -1,39 +1,29 @@
-SYMMETRISK KRYPTOGRAFI
+SYMMETRISK KRYPTERING
 
-Nøkkel
-
----------------------
 Params
-  pt melding i klartekst
-  sk symmetrisk nøkkel
-  ct melding i chiffertekst
-                     
+  pt klartekst
+  sk symmetrisk nøkkel el nøkkelstrøm
+  ct chiffertekst
+
 Krypteringsfunksjoner
   enc(pt, sk) -> ct
   dec(ct, sk) -> pt
 
-Krav til egenskaper
-  Bevare informasjonen (tapsfri)
-  Reverserbare operasjoner (toveis)
-  Tilføre diffusjon mellom pt og ct
-  Tilføre konfusjon mellom sk og ct
-  Alt1: operere på blokker med data (blokkchiffer)
-  Alt2: operere på en strøm av data (flytchiffer)
+Egenskaper/krav
+  Krypterer pt til ct vha sk
+  Bevare informasjonen i pt (tapsfri)
+  Består av reverserbare operasjoner (toveis)
+  Fremstå pseudo-random, innføre uorden (prf, entropi)
+  Skjule mønstre og endringer i pt i ct (diffusjon)
+  Skjule mønstre og endringer i sk i ct (konfusjon)
+  Opererer på datablokker el datastrømmer (blokk-/flytchiffer)
 
 Blokkchiffer
   AES
   DES
+  ...
 
 Flytchiffer
-  Engangsnøkler (one-time pad)
   RC4
-
----------------------
-Params
-  m  melding
-  sk symmetrisk nøkkel
-                     
-Signaturfunksjoner
-  sign(m, sk) -> mac
-  verify(m, sk) -> mac
-
+  OTP (engangsnøkkel)
+  ...

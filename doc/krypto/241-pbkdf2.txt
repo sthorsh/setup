@@ -7,24 +7,23 @@ Params
   hlen    256 bits
   p       passord/-frase
   s       salt feks 128-bit
-  c       antall iterasjoner prf feks 4
+  c       antall iterasjoner prf feks 3
   i       index
 
 Funksjon
   dk = pbdkf2(prf, p, s, c, i) 
 
 Algoritme
-
-  prf₀₀(p, s||int(1)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) XOR prf₀₃(p, prf₀₂) -> t₁
-  prf₀₀(p, s||int(2)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) XOR prf₀₃(p, prf₀₂) -> t₁
-  prf₀₀(p, s||int(3)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) XOR prf₀₃(p, prf₀₂) -> t₁
-  prf₀₀(p, s||int(4)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) XOR prf₀₃(p, prf₀₂) -> t₁
+  prf₀₀(p, s||int(1)) XOR prf₀₁(p, prf₀₀) XOR prf₀₂(p, prf₀₁) -> t₁
+  prf₁₀(p, s||int(2)) XOR prf₁₁(p, prf₁₀) XOR prf₁₂(p, prf₁₁) -> t₂
+  prf₂₀(p, s||int(3)) XOR prf₂₁(p, prf₂₀) XOR prf₂₂(p, prf₂₁) -> t₃
+  prf₃₀(p, s||int(4)) XOR prf₃₁(p, prf₃₀) XOR prf₃₂(p, prf₃₁) -> t₄
 
   dk = t₁ || t₂ || t₃ || t₄
 
-  Alle iterasjoner av prf bruker salt som nøkkel
-  Første iterasjon av prf i hver rad bruker salt || int(1) som input
-  Resterende iterasjoner av prf i hver rad bruker output fra forrige prf som input
+  Alle instanser av prf bruker salt som nøkkel
+  Første instans av prf i hver rad tar salt||int(i) som input
+  Resterende instanser av prf tar forrige prf's output som input
   
 Ressurs
   https://www.wikidata.org/wiki/Q3952834#/media/File:Pbkdf2_nist.png

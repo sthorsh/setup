@@ -19,6 +19,6 @@ Algoritme
   mac = h(k₂ || h(k₁ || m))
 
 Anvendelser
+  Signatur feks JWTs: header.payload.mac
   Streamchiffer: www.youtube.com/watch?v=wlSG3pEiQdc
-  JWTs: header.payload.mac
   PBKDF2

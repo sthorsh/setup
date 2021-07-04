@@ -9,11 +9,11 @@ Hashfunksjon
 
 Egenskaper/krav
   Mapper vilkårlige data til fixed-size bitstring
-  Beverer ikke informasjon (lossy)
+  Bevarer ikke informasjonen i pt (lossy)
   Kan ikke reverseres (enveis)
-  Samme m gir alltid samme H (deterministisk)
   Fremstå pseudo-random, innføre uorden (prf, entropi)
   Skjule mønstre og endringer i m i H (diffusjon)
+  Samme m gir alltid samme H (deterministisk)
   Unngå at to meldinger gir samme H (kollisjonsresistent)
   Være rask, men samtidig ikke for rask (gjelder hashing av passord)
 
