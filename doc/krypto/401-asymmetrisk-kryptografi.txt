@@ -1,6 +1,14 @@
 ASYMMETRISK KRYPTOGRAFI
 
 Nøkkelpar
-  Privat nøkkel
-  Public nøkkel
+  Privat nøkkel prk
+  Public nøkkel pbk
+
+Funksjon kryptering
+  enc(pt, pbk) -> ct
+  dec(ct, prk) -> pt
+
+Funksjon digital signatur
+  enc(pt, prk) -> ct (ds)
+  dec(ct, pbk) -> pt (ds)
 
