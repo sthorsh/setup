@@ -34,3 +34,13 @@ JWT
 
 SSH
 
+----------------------------------------------
+RSA
+  Nøkler er funksjoner
+  Kan brukes mange ganger
+  Brukes til kryptering av paddet symmetrisk nøkkel
+  Brukes til kryptering av paddet hash (digital signatur)
+  Brukes ifm jwt
+  Brukes ifm ssh
+  
+

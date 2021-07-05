@@ -1,0 +1,29 @@
+KRYPTERING
+
+Params
+  pt klartekst
+  sk symmetrisk nøkkel el nøkkelstrøm
+  ct chiffertekst
+
+Funksjon kryptering
+  enc(pt, sk) -> ct
+  dec(ct, sk) -> pt
+
+Egenskaper/krav
+  Krypterer pt til ct vha sk
+  Bevare informasjonen i pt (tapsfri)
+  Består av reverserbare operasjoner (toveis)
+  Fremstå pseudo-random, innføre uorden (prf, entropi)
+  Skjule mønstre og endringer i pt i ct (diffusjon)
+  Skjule mønstre og endringer i sk i ct (konfusjon)
+  Opererer på datablokker el datastrømmer (blokk-/flytchiffer)
+
+Blokkchiffer
+  AES
+  DES
+  ...
+
+Flytchiffer
+  RC4
+  OTP (engangsnøkkel)
+  ...

@@ -2,24 +2,5 @@ ASYMMETRISK KRYPTOGRAFI
 
 Nøkkelpar
   Privat nøkkel
-  Offentlig nøkkel 
+  Public nøkkel
 
-Asymmetrisk kryptering
-  Et nøkkelpar
-  Datastørrelse (DTU) er typisk fixed 
-  Brukes primært til utveksling av symmetriske nøkler
-  Symmetrisk nøkkel (nøkkelparams) kan etableres over åpen kanal
-
-DHKE
-  Nøkler er tall
-  Kan kun brukes en gang
-  Brukes til utveksling av symmetrisk nøkkel
-
-RSA
-  Nøkler er funksjoner
-  Kan brukes mange ganger
-  Brukes til kryptering av paddet symmetrisk nøkkel
-  Brukes til kryptering av paddet hash (digital signatur)
-  Brukes ifm jwt
-  Brukes ifm ssh
-  

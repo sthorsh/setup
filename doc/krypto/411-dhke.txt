@@ -1,5 +1,35 @@
 DHKE
 
+Params
+  A       alice
+  prkA    privat nøkkel alice
+  pbkA    public nøkkel alice
+  B       bob
+  prkB    privat nøkkel bob
+  pbkB    public nøkkel bob
+  secret  nøkkelmateriale
+  sk      symmetrisk nøkkel feks AES
+  skLen   bitlengde sk
+
+Algoritme
+  A genererer prkA
+  A genererer pbkA
+  A sender pbkA til B
+  B genererer prkB
+  B genererer pbkB
+  B sender pbkB til A
+
+  A genererer secret
+  A krypterer secret med pbkB
+  A sender kryptert secret til B
+  B dekrypterer kryptert secret med prkB
+  
+  A avleder sk vha pbdkf2(prf, secret, salt, c, skLen)
+  B avleder sk vha pbdkf2(prf, secret, salt, c, skLen)
+  
+
+-----------------
+
   Params
     g               grunntall, et primtall
     n               modulus, et primtall
@@ -32,12 +62,6 @@ DHKE
     Ada s = 10^4 % 23 = 18
     Bob s = 4^3 % 23 = 18
   
-  Fullfør nøkkelutveksling
-    Genererer symmetrisk AES nøkkel vha hash(s)
-  
-  Regler
-    Aldri gjenbruk private DH nøkler dvs genererer ny secret for hver melding
-  
   Inverse funksjoner
     exp
     mod
@@ -46,3 +70,12 @@ DHKE
     exp i mod
     log i mod : diskret log problem
   
+-------------------------------------
+DHKE
+  Nøkler er tall
+  Kan kun brukes en gang
+  Brukes til utveksling av symmetrisk nøkkel
+
+Regel
+    Aldri gjenbruk private DH nøkler dvs genererer ny secret for hver melding
+

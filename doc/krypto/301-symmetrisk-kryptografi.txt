@@ -1,29 +1,23 @@
-SYMMETRISK KRYPTERING
+SYMMETRISK KRYPTOGRAFI
 
-Params
-  pt klartekst
-  sk symmetrisk nøkkel el nøkkelstrøm
-  ct chiffertekst
+Nøkkel
+  Symmetrisk nøkkel
 
-Krypteringsfunksjoner
-  enc(pt, sk) -> ct
-  dec(ct, sk) -> pt
+Nøkkelstrøm
+  Kontinuerlig bitstrøm
 
-Egenskaper/krav
-  Krypterer pt til ct vha sk
-  Bevare informasjonen i pt (tapsfri)
-  Består av reverserbare operasjoner (toveis)
-  Fremstå pseudo-random, innføre uorden (prf, entropi)
-  Skjule mønstre og endringer i pt i ct (diffusjon)
-  Skjule mønstre og endringer i sk i ct (konfusjon)
-  Opererer på datablokker el datastrømmer (blokk-/flytchiffer)
+Sesjonsnøkkel
+  Nøkkel som brukes en gang
 
-Blokkchiffer
-  AES
-  DES
-  ...
+Hovednøkkel
+  Brukes til å generere andre nøkler
 
-Flytchiffer
-  RC4
-  OTP (engangsnøkkel)
-  ...
+Rundenøkkel
+  Nøkkel som er generert fra en hovednøkkel
+
+Subnøkkel
+  Nøkkel som er generert fra en hovednøkkel
+
+Engangsnøkkel
+  En krypteringsalgoritme i.e one-timepad (OTP)
+
