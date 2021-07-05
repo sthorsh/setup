@@ -1,81 +1,31 @@
 DHKE
 
 Params
-  A       alice
-  prkA    privat nøkkel alice
-  pbkA    public nøkkel alice
-  B       bob
-  prkB    privat nøkkel bob
-  pbkB    public nøkkel bob
-  secret  nøkkelmateriale
-  sk      symmetrisk nøkkel feks AES
-  skLen   bitlengde sk
+  A        alice
+  prkA     alice privat nøkkel
+  pbkA     alice public nøkkel
+  B        bob
+  prkB     bob privat nøkkel
+  pbkB     bob public nøkkel
+  p        primtall
+  g        generator, for hvert tall n finnes g^k slik at n = g^k % p
+  secret   nøkkelmateriale
+  sk       symmetrisk nøkkel (feks AES)
 
-Algoritme
+Protokoll
+  A genererer params g og p
   A genererer prkA
-  A genererer pbkA
+  A genererer pbkA = g^prkA % p
   A sender pbkA til B
+  A mottar pbkB fra B
+  A avleder secret = pbkB^prkA % p
+  A avleder sk = pbdkf2(prf, secret, salt, c, skLen)
+
+  B mottar params fra A
   B genererer prkB
-  B genererer pbkB
+  B genererer pbkB = g^prkB % p
   B sender pbkB til A
-
-  A genererer secret
-  A krypterer secret med pbkB
-  A sender kryptert secret til B
-  B dekrypterer kryptert secret med prkB
-  
-  A avleder sk vha pbdkf2(prf, secret, salt, c, skLen)
-  B avleder sk vha pbdkf2(prf, secret, salt, c, skLen)
-  
-
------------------
-
-  Params
-    g               grunntall, et primtall
-    n               modulus, et primtall
-    a               Alice privat nøkkel
-    A = g^a % n     Alice public nøkkel   
-    b               Bob privat nøkkel   
-    B = g^b % n     Bob public nøkkel
-    s = B^a % n     Ada secret
-    s = A^b % n     Bob secret
-
-  Algoritme
-    ...
-    Alice genererer params g og n
-    Alice genererer privat nøkkel a
-    Alice genererer public nøkkel A=g^a % n
-    Alice sender params og public nøkkel (til Bob)
-    Bob genererer privat nøkkel b
-    Bob genererer public nøkkel A=g^a % n
-    Bob sender public nøkkel (til Alice)
-    Alice 
-   
-    
-  Eksempel
-    g = 5
-    n = 23
-    a = 4
-    A = 5^4 % 23 = 4
-    b = 3
-    B = 5^3 % 23 = 10
-    Ada s = 10^4 % 23 = 18
-    Bob s = 4^3 % 23 = 18
-  
-  Inverse funksjoner
-    exp
-    mod
-  
-  Inverse trapdoor funksjon
-    exp i mod
-    log i mod : diskret log problem
-  
--------------------------------------
-DHKE
-  Nøkler er tall
-  Kan kun brukes en gang
-  Brukes til utveksling av symmetrisk nøkkel
-
-Regel
-    Aldri gjenbruk private DH nøkler dvs genererer ny secret for hver melding
+  B mottar pbkA fra A
+  B avleder secret = pbkA^prkB % p
+  B avleder sk = pbdkf2(prf, secret, salt, c, skLen)
 
