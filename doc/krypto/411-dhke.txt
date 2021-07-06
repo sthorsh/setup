@@ -2,11 +2,11 @@ DHKE
 
 Params
   A        alice
-  prkA     alice privat nøkkel
-  pbkA     alice public nøkkel
+  prkA     alice privat nøkkel, et tall
+  pbkA     alice public nøkkel, et tall
   B        bob
-  prkB     bob privat nøkkel
-  pbkB     bob public nøkkel
+  prkB     bob privat nøkkel, et tall
+  pbkB     bob public nøkkel, et tall
   p        primtall
   g        generator, for hvert tall n finnes g^k slik at n = g^k % p
   secret   nøkkelmateriale
