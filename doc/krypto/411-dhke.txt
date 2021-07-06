@@ -1,31 +1,31 @@
 DHKE
 
 Params
+  g        lite primtall
+  n        stort primtall feks 4096 bits
   A        alice
-  prkA     alice privat nøkkel, et tall
-  pbkA     alice public nøkkel, et tall
+  a        tilfeldig tall 1..n
   B        bob
-  prkB     bob privat nøkkel, et tall
-  pbkB     bob public nøkkel, et tall
-  p        primtall
-  g        generator, for hvert tall n finnes g^k slik at n = g^k % p
+  b        tilfeldig tall 1..n
   secret   nøkkelmateriale
-  sk       symmetrisk nøkkel (feks AES)
+  aes_sk   AES symmetrisk nøkkel
 
 Protokoll
-  A genererer params g og p
-  A genererer prkA
-  A genererer pbkA = g^prkA % p
-  A sender pbkA til B
-  A mottar pbkB fra B
-  A avleder secret = pbkB^prkA % p
-  A avleder sk = pbdkf2(prf, secret, salt, c, skLen)
+  A sender g og n til B
+  B sender ack g og n til A
 
-  B mottar params fra A
-  B genererer prkB
-  B genererer pbkB = g^prkB % p
+  A genererer privat nøkkel a
+  B genererer privat nøkkel b
+
+  A avleder public nøkel pbkA = g^a % n
+  B avleder public nøkel pbkB = g^b % n
+
+  A sender pbkA til B
   B sender pbkB til A
-  B mottar pbkA fra A
-  B avleder secret = pbkA^prkB % p
-  B avleder sk = pbdkf2(prf, secret, salt, c, skLen)
+
+  A avleder secret = (g^b)^a % n = g^ab % n
+  B avleder secret = (g^a)^b % n = g^ab % n
+
+  A avleder aes_sk = pbdkf2(prf, secret, salt, c, skLen)
+  B avleder aes_sk = pbdkf2(prf, secret, salt, c, skLen)
 

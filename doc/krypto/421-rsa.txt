@@ -1,6 +1,6 @@
 RSA
 
-Algoritme
+Params
   p: stort, tilfeldig primtall
   q: stort, tilfeldig primtall
   n: RSA modulus
@@ -8,13 +8,15 @@ Algoritme
   d: privat eksponent
   m: melding
   c: chiffertekst
-  ...
-  RSA velger p 
+
+Algoritme
+  RSA velger p  og q
   RSA velger q 
-  RSA beregner n = f(p, q) = pq (trapdoor-funksjon)
+  RSA avleder n = f(p, q) = pq (trapdoor-funksjon)
   RSA velger e = 65537 iht konvensjon
   RSA finner d vha utvidet euklidiansk algoritme
 
+----------------------------
 Eksempel
     p=11
     q=5
