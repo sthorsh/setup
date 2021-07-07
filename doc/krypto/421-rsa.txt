@@ -1,19 +1,15 @@
 RSA
 
 Params
-  p₁ faktor, stort tilfeldig primtall
-  p₂ faktor, stort tilfeldig primtall
-  n  modulus
-  e  public eksponent, lite oddetall, ingen felles faktor med ϕ (n)
-  d  privat eksponent
+  p₁ tilfeldig primtall, >150 siffer
+  p₂ tilfeldig primtall, >150 siffer
+  n  modulus, >300 siffer
+  e  public eksponent dvs nøkkel, lite oddetall, ingen felles faktor med ϕ (n)
+  d  privat eksponent dvs nøkkel, f(e, n)
   k ?
   m  melding
   c  chiffertekst
 
-Nøkler
-  public key  e,n 
-  privat key  d,n
-                
 Funksjoner
   kryptering     c = m^e mod n 
   dekryptering   m = c^d mod n 
@@ -31,26 +27,71 @@ Algoritme
   A velger e=3
   A beregner d=k*ϕ (n)+1/e = (2*3016+1)/3 = 2011
 
+  # Step 4
   A sender n=3127 og e=3 til B
   B beregner c = m^e mod n = 89^3 mod 3127 = 1394
+  
+  # Step 5
   B sender c=1394 til A
   A beregner m = c^d mod n = 1394^2011 mod 3127 = 1394
   
-------------------------------------
-Enveis trapdoor-funksjon #1
-  > lett
-  < lett med informasjon (trapdoor), HARD uten informasjon
+-----------------------------------------
+Step 1
+  Cox brukte primtallfaktorisering for å build the trapdoor soulution
+    • Alle heltall n kan skrives som n = p * q * ... hvor p, q, ... er primtall
+  n = p*q tar < 1 sek
+
+Step 2
+  Cox trengte å finne en FUNKSJON som er AVHENGIG AV å vite faktoriseringen av n
+  Eulers phi-funksjon:
+    • ϕ (n) -> hvor mange heltall er ≤ n og har ingen felles faktorer med n
+  Det er LETT (< 1 sek) å beregne ϕ (n) hvis n er primtall p, ellers UMULIG (∞):
+    • ϕ (p) = p-1
+  ϕ er multiplikativ:
+    • (p*q) = ϕ (p) * ϕ (q)
+  Altså
+    p*q = n
+    n = p*q
+    ϕ (n) = ϕ (p*q)
+    ϕ (n) = ϕ (p) * ϕ (q)
+    ϕ (n) = p-1 * q-1 (det er LETT å beregne ϕ (n) KUN hvis faktorisering av n er kjent - dette er en trapdoor for å finne ϕ (n))
+
+Step 3
+  Cox trengte en sammenheng mellom ϕ (N) og modular exponensiering?
+  Eulers teorem:
+    • m^ϕ (n) = 1 mod n 
+  Altså
+    m^ϕ (n) = 1 mod n 
+    m^k*ϕ (n) = 1^k mod n = 1 mod n
+    m*m^k*ϕ (n) = m*1^k mod n
+    m^k*ϕ (n)+1 = m mod n (Cox sitt GJENNOMBRUDD dvs en ligning for å finne e*d som er avhengig av ϕ (n))
+
+  Innfører e og d:
+    m^e*d = m mod n
+    e*d = k*ϕ (n)+1
+    d = k*ϕ (n)+1 / e (det er LETT å beregne d KUN hvis faktorisering av n er kjent)
+  Det å beregne d er altså en FUNKSJON av n og d: d = f(e, n)
+  Det å beregne d er avhengig av at faktorisering av n er kjent
+  Dvs d er trapdoor'en som tillater Alice å undo effekten av e dvs krypteringen
+  Dvs d skal være Alice sin private nøkkel
   The key is the trapdoor dvs info som gjør det lett å reversere kryptering
 
+Step 4
+  Kryptering: c = m^e mod n
+
+Step 5
+  Dekryptering: m = c^d mod n
+
+------------------------------------
 Modular eksponensiering
   Aka klokkearitmetikk
   BASE raise_to EXPONENT divide_by MODULUS output REMAINDER
-  Lett: m^e mod N = ?
+  Lett: m^e mod n = ?
   HARD: ?^e mod N = c
 
 Funksjoner
-  m^e mod N = c (e: kryptering) 
-  c^d mod N = m (d: dekryptering) 
+  c = m^e mod N = c (e: kryptering) 
+  m = c^d mod N = m (d: dekryptering) 
   ...
   m^ed mod N = m
   A må lage e og d sånn at det er HARD for alle andre å finne d
@@ -62,84 +103,3 @@ Enveis-funkskjon #2: Euklid
   Primtallsfaktorisering er et fundamentalt HARD problem
   LETT: MUL feks 19x31 = 589
   HARD: PTF feks 589 = ..... 19x31
-
-Step 1
-  A lager p1 random primtall > 150 siffer
-  A lager p2 random primtall > 150 siffer
-  A beregner p1 x p2 = N > 300 siffer (tar < 1 sek)
-  A skjuler faktoriseringen av N dvs p1 * p2
-
-Step 2
-  Cox trengte å finne en funksjon som AVHENGER AV å vite faktoriseringen av N
-  Dette førte Cox til Eulers phi-funksjon: beregner "the breakability" for et tall
-  Gitt et tall N
-  ϕ (N) -> HVOR MANGE heltall er ≤ N og har ingen felles faktorer med N
-  Feks ϕ (8) = 4 dvs 1 3 5 7
-  Å beregne ϕ (N) er HARD i alle tilfeller BORTSETT fra: N er PRIMTALL P
-  ϕ (P) = P-1 
-  Feks ϕ (21377) = P-1 = 21376
-  Samtidig: ϕ (A*B) = ϕ (A) * ϕ (B)
-  Så, gitt: N = P1 * P2 
-  ϕ (N) = ϕ (P1) * ϕ (P2) = P1-1 * P2-1
-  ϕ (N) = P1-1 * P2-1
-  Vi har nå en trapdoor for å løse ϕ (N)...
-  Hvis man kjenner faktoriseringen for N så er det lett å finne ϕ (N)
-  Feks: 
-  77 = 7 x 11
-  ϕ (77) = 6 * 10 = 60
-
-Step 3
-  Hvordan connect ϕ (N) til modular exponensiering?
-  Dette førte til Eulers teorem: m^ϕ (n) = 1 mod n 
-  Gitt m=5 n=8
-  m^ϕ (n) = 1 mod n 
-    5^4 = 1 mod 8
-    625 = 1 mod 8
-  m^k*ϕ (n) = 1^k mod n = 1 mod n
-  m*m^k*ϕ (n) = m*1^k mod n
-  m^k*ϕ (n)+1 = m mod n (THE BREAKTHROUGH !!!!!!!!!!!)
-  VI HAR NÅ EN LIGNING FOR Å FINNE e*d SOM ER AVHENGIG AV ϕ (n) dvs:
-  m^e*d = m mod n
-  e*d = k*ϕ (n)+1
-  d = k*ϕ (n)+1 / e   
-  DET ER LETT Å BEREGNE D KUN HVIS FAKTORISERING AV n ER KJENT
-  DVS at d skal være Alice sin private nøkkel
-  d er trapdoor'en som tillater Alice å undo effekten av e dvs krypteringen
-
-
------------------------------------------------
------------------------------------------------
-Algoritme
-  p: stort, tilfeldig primtall
-  q: stort, tilfeldig primtall
-  n: RSA modulus
-  e: public eksponent
-  d: privat eksponent
-  ...
-  RSA velger p 
-  RSA velger q 
-  RSA beregner n = f(p, q) = pq
-  RSA velger e = 65537 iht konvensjon
-  RSA avleder d vha utvidet euklidiansk algoritme
-
-Eksempel
-    p=11
-    q=5
-    n=55
-
-Nøkkelpar
-  RSA beregner c = enc(k) = f(k, e, n) = k^e % n (public key funksjon)
-  RSA beregner k = dec(c) = f(c, d, n) = c^d % n (privat key funksjon)
-
-Sesjonsnøkkel
-  RSA beregner c = enc(m) = f(m, e, n) = m^e % n (public key funksjon)
-  RSA beregner m = dec(c) = f(c, d, n) = c^d % n (privat key funksjon)
-
-RSA
-  Nøkler er funksjoner
-  Kan brukes mange ganger
-  Brukes til kryptering av paddet symmetrisk nøkkel
-  Brukes til kryptering av paddet hash (digital signatur)
-  Brukes ifm jwt
-  Brukes ifm ssh
-  
