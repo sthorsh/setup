@@ -1,13 +1,42 @@
 RSA
 
-Protokoll
+Params
+  p₁ faktor, stort tilfeldig primtall
+  p₂ faktor, stort tilfeldig primtall
+  n  modulus
+  e  public eksponent, lite oddetall, ingen felles faktor med ϕ (n)
+  d  privat eksponent
+  k ?
+  m  melding
+  c  chiffertekst
 
+Nøkler
+  public key  e,n 
+  privat key  d,n
+                
+Funksjoner
+  kryptering     c = m^e mod n 
+  dekryptering   m = c^d mod n 
+              
+Algoritme
+  # Step 1
+  A genererer p₁=53
+  A genererer p₂=59
+  A beregner n=53*59=3127
+
+  # Step 2
+  A beregner ϕ (n) = ϕ (3127) = ϕ (53*59) = ϕ (53) * ϕ (59) = 52*58 = 3016
+
+  # Step 3
+  A velger e=3
+  A beregner d=k*ϕ (n)+1/e = (2*3016+1)/3 = 2011
+
+  A sender n=3127 og e=3 til B
+  B beregner c = m^e mod n = 89^3 mod 3127 = 1394
+  B sender c=1394 til A
+  A beregner m = c^d mod n = 1394^2011 mod 3127 = 1394
+  
 ------------------------------------
-Talleksempel
-
-------------------------------------
-Matematikken
-
 Enveis trapdoor-funksjon #1
   > lett
   < lett med informasjon (trapdoor), HARD uten informasjon
@@ -78,32 +107,20 @@ Step 3
   d er trapdoor'en som tillater Alice å undo effekten av e dvs krypteringen
 
 
-
-  
-
-
-  
-  
-
-
 -----------------------------------------------
-
-  
-
+-----------------------------------------------
 Algoritme
   p: stort, tilfeldig primtall
   q: stort, tilfeldig primtall
   n: RSA modulus
   e: public eksponent
   d: privat eksponent
-  m: melding
-  c: chiffertekst
   ...
   RSA velger p 
   RSA velger q 
-  RSA beregner n = f(p, q) = pq (trapdoor-funksjon)
+  RSA beregner n = f(p, q) = pq
   RSA velger e = 65537 iht konvensjon
-  RSA finner d vha utvidet euklidiansk algoritme
+  RSA avleder d vha utvidet euklidiansk algoritme
 
 Eksempel
     p=11
@@ -118,13 +135,6 @@ Sesjonsnøkkel
   RSA beregner c = enc(m) = f(m, e, n) = m^e % n (public key funksjon)
   RSA beregner m = dec(c) = f(c, d, n) = c^d % n (privat key funksjon)
 
-Signatur
-
-JWT
-
-SSH
-
-----------------------------------------------
 RSA
   Nøkler er funksjoner
   Kan brukes mange ganger
@@ -133,4 +143,3 @@ RSA
   Brukes ifm jwt
   Brukes ifm ssh
   
-
