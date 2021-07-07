@@ -1,20 +1,12 @@
 RSA
 
-Params
-  p₁ tilfeldig primtall, >150 siffer
-  p₂ tilfeldig primtall, >150 siffer
-  n  modulus, >300 siffer
-  e  public eksponent dvs nøkkel, lite oddetall, ingen felles faktor med ϕ (n)
-  d  privat eksponent dvs nøkkel, f(e, n)
-  k ?
-  m  melding
-  c  chiffertekst
-
-Funksjoner
-  kryptering     c = m^e mod n 
-  dekryptering   m = c^d mod n 
-              
 Algoritme
+  p tilfeldig primtall, ≥150 siffer
+  q tilfeldig primtall, ≥150 siffer, omtrent like stort som p
+  n modulus, ≥300 siffer
+  e public eksponent 65537, ingen felles faktor med ϕ (n)
+  d privat eksponent
+
   # Step 1
   A genererer p₁=53
   A genererer p₂=59
@@ -30,76 +22,36 @@ Algoritme
   # Step 4
   A sender n=3127 og e=3 til B
   B beregner c = m^e mod n = 89^3 mod 3127 = 1394
-  
-  # Step 5
   B sender c=1394 til A
   A beregner m = c^d mod n = 1394^2011 mod 3127 = 1394
   
------------------------------------------
-Step 1
-  Cox brukte primtallfaktorisering for å build the trapdoor soulution
-    • Alle heltall n kan skrives som n = p * q * ... hvor p, q, ... er primtall
-  n = p*q tar < 1 sek
+Inverse funksjoner
+  f(x) = x^d mod n (privat nøkkel)
+  f(x) = x^e mod n (public nøkkel)
 
-Step 2
-  Cox trengte å finne en FUNKSJON som er AVHENGIG AV å vite faktoriseringen av n
-  Eulers phi-funksjon:
-    • ϕ (n) -> hvor mange heltall er ≤ n og har ingen felles faktorer med n
-  Det er LETT (< 1 sek) å beregne ϕ (n) hvis n er primtall p, ellers UMULIG (∞):
-    • ϕ (p) = p-1
-  ϕ er multiplikativ:
-    • (p*q) = ϕ (p) * ϕ (q)
-  Altså
-    p*q = n
-    n = p*q
-    ϕ (n) = ϕ (p*q)
-    ϕ (n) = ϕ (p) * ϕ (q)
-    ϕ (n) = p-1 * q-1 (det er LETT å beregne ϕ (n) KUN hvis faktorisering av n er kjent - dette er en trapdoor for å finne ϕ (n))
+Kryptering
+  f(m) = m^e mod n = c
+  f(c) = c^d mod n = m
 
-Step 3
-  Cox trengte en sammenheng mellom ϕ (N) og modular exponensiering?
-  Eulers teorem:
-    • m^ϕ (n) = 1 mod n 
-  Altså
-    m^ϕ (n) = 1 mod n 
-    m^k*ϕ (n) = 1^k mod n = 1 mod n
-    m*m^k*ϕ (n) = m*1^k mod n
-    m^k*ϕ (n)+1 = m mod n (Cox sitt GJENNOMBRUDD dvs en ligning for å finne e*d som er avhengig av ϕ (n))
+Signatur
+  f(m) = pad(hash(m))^d = s
+  f(s) = s^e = pad(hash(m))
 
-  Innfører e og d:
-    m^e*d = m mod n
-    e*d = k*ϕ (n)+1
-    d = k*ϕ (n)+1 / e (det er LETT å beregne d KUN hvis faktorisering av n er kjent)
-  Det å beregne d er altså en FUNKSJON av n og d: d = f(e, n)
-  Det å beregne d er avhengig av at faktorisering av n er kjent
-  Dvs d er trapdoor'en som tillater Alice å undo effekten av e dvs krypteringen
-  Dvs d skal være Alice sin private nøkkel
-  The key is the trapdoor dvs info som gjør det lett å reversere kryptering
+Utledning
+  Step 1: Primtallfaktorisering
+  n = p*q                           
 
-Step 4
-  Kryptering: c = m^e mod n
+  Step 2: Eulers phi-funksjon
+  ϕ (n) = ?                         ϕ (n) er generelt vanskelig
+  ϕ (n) = ϕ (p*q)                   men for primtall er det enkelt
+  ϕ (n) = ϕ (p) * ϕ (q)             ϕ (n) er multiplikativ
+  ϕ (n) = (p-1) * (q-1)             enkelt hvis man kjenner p og q
 
-Step 5
-  Dekryptering: m = c^d mod n
+  Step 3: Modulær eksponensiering
+  m^ϕ (n) = 1 mod n                 eulers teorem
+  m^k*ϕ (n) = 1^k mod n = 1 mod n   opphøyer i k på begge sider
+  m*m^k*ϕ (n) = m*1^k mod n         ganger med m på begge sider
+  m^k*ϕ (n)+1 = m mod n             dette var Cox sitt gjennombrudd
+  e*d = k*ϕ (n)+1                   følger av m^e*d = m mod n
+  d = k*ϕ (n)+1 / e                 d er en trapdoor for å reversere e
 
-------------------------------------
-Modular eksponensiering
-  Aka klokkearitmetikk
-  BASE raise_to EXPONENT divide_by MODULUS output REMAINDER
-  Lett: m^e mod n = ?
-  HARD: ?^e mod N = c
-
-Funksjoner
-  c = m^e mod N = c (e: kryptering) 
-  m = c^d mod N = m (d: dekryptering) 
-  ...
-  m^ed mod N = m
-  A må lage e og d sånn at det er HARD for alle andre å finne d
-  Det krever enveis-funkskjon #2 for å generere d
-
-Enveis-funkskjon #2: Euklid
-  Hvert tall har en og bare en primtallsfaktorisering (PTF) feks 30 = 5*3*2
-  Tenk på denne primtallsfaktoriseringen som en secret key dvs 5*3*2
-  Primtallsfaktorisering er et fundamentalt HARD problem
-  LETT: MUL feks 19x31 = 589
-  HARD: PTF feks 589 = ..... 19x31
