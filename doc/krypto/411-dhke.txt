@@ -3,14 +3,12 @@ DHKE
 Notasjon
   g        lite primtall
   n        stort primtall feks 4096 bits
-  A        alice
   a        tilfeldig tall 1..n
-  B        bob
   b        tilfeldig tall 1..n
   secret   nøkkelmateriale
-  aes_sk   AES symmetrisk nøkkel
+  sk       AES symmetrisk nøkkel
 
-Protokoll
+Algoritme/protokoll
   A sender g og n til B
   B sender ack g og n til A
 
@@ -26,13 +24,17 @@ Protokoll
   A avleder secret = (g^b)^a % n = g^ab % n
   B avleder secret = (g^a)^b % n = g^ab % n
 
-  A avleder aes_sk = pbdkf2(prf, secret, salt, c, skLen)
-  B avleder aes_sk = pbdkf2(prf, secret, salt, c, skLen)
+  A avleder sk = pbdkf2(prf, secret, salt, c, skLen)
+  B avleder sk = pbdkf2(prf, secret, salt, c, skLen)
 
 Inverse funksjoner
-  todo
+  Eksponent
 
-Nøkkeletablering
+Trapdoor funksjon
+  ?
+  (diskret logaritme)
+
+Etablere shared secret
   todo
 
 Utledning

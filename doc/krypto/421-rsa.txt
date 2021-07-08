@@ -7,7 +7,7 @@ Notasjon
   e public eksponent 65537, ingen felles faktor med ϕ (n)
   d privat eksponent
 
-Protokoll
+Algoritme/protokoll
   # Step 1
   A genererer p₁=53
   A genererer p₂=59
@@ -30,6 +30,10 @@ Inverse funksjoner
   f(x) = x^d mod n (privat nøkkel)
   f(x) = x^e mod n (public nøkkel)
 
+Trapdoor-funksjon
+  Lett: p*q = ?
+  Vanskelig: ?*? = n (primtallfaktorisering)
+  
 Kryptering
   f(m) = m^e mod n = c
   f(c) = c^d mod n = m

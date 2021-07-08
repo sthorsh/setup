@@ -6,18 +6,9 @@ Nøkkel
 Nøkkelstrøm
   Kontinuerlig bitstrøm
 
-Sesjonsnøkkel
-  Nøkkel som brukes en gang
-
-Hovednøkkel
-  Brukes til å generere andre nøkler
-
-Rundenøkkel
-  Nøkkel som er generert fra en hovednøkkel
-
-Subnøkkel
-  Nøkkel som er generert fra en hovednøkkel
-
-Engangsnøkkel
-  En krypteringsalgoritme i.e one-timepad (OTP)
+Nøkkeltyper
+  Sesjonsnøkkel: brukes kun en gang
+  Hovednøkkel: genererer andre nøkler
+  Rundenøkkel: er generert fra en hovednøkkel
+  Subnøkkel: er generert fra en hovednøkkel
 

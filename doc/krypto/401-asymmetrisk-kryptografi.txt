@@ -1,32 +1,36 @@
 ASYMMETRISK KRYPTOGRAFI
 
+Notasjon
+  A Alice
+  B Bob
+
 Nøkkelpar
   Privat nøkkel (prk)
   Offentlig nøkkel (pbk)
 
 Aktiviteter
   Lage nøkkelpar
-  Dele offentlige nøkler
-  Nøkkeletablering
-  Kryptering
-  Digitale signaturer
+  Distribuere offentlige nøkler
+  Etablere shared secret
+  Kryptere data ≤ 4 kb
+  Signere/verifisere meldinger
   
 Lage nøkkelpar
   Kryptoalgoritmer (kode)
   Enveisfunksjoner (matte)
 
-Dele offentlige nøkler
+Distribuere offentlige nøkler
   Manuelt
   Sertifikater
 
-Nøkkeletablering
+Etablere shared secret
   DH shared secret
 
-Kryptering
+Kryptere data
   f(m, pbk) = c
   f(c, prk) = m
   
-Digitale signaturer
+Signere meldinger
   f(m, prk) = s
   f(s, pbk) = m
 
