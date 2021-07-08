@@ -1,0 +1,12 @@
+KRYPTO
+
+Primitiver
+
+Schemes
+
+Protokoller
+
+Kryptosystemer
+  Symmetriske
+  Asymmetriske
+  Hybride dvs asymmetriske/symmetriske

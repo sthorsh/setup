@@ -1,14 +1,35 @@
 ASYMMETRISK KRYPTOGRAFI
 
 Nøkkelpar
-  Privat nøkkel prk
-  Public nøkkel pbk
+  Privat nøkkel (prk)
+  Offentlig nøkkel (pbk)
 
-Funksjon kryptering
-  enc(pt, pbk) -> ct
-  dec(ct, prk) -> pt
+Aktiviteter
+  Lage nøkkelpar
+  Dele offentlige nøkler
+  Nøkkeletablering
+  Kryptering
+  Digitale signaturer
+  
+Lage nøkkelpar
+  Kryptoalgoritmer (kode)
+  Enveisfunksjoner (matte)
 
-Funksjon digital signatur
-  enc(pt, prk) -> ct (ds)
-  dec(ct, pbk) -> pt (ds)
+Dele offentlige nøkler
+  Manuelt
+  Sertifikater
+
+Nøkkeletablering
+  DH shared secret
+
+Kryptering
+  f(m, pbk) = c
+  f(c, prk) = m
+  
+Digitale signaturer
+  f(m, prk) = s
+  f(s, pbk) = m
+
+PKCS
+  https://en.wikipedia.org/wiki/PKCS
 

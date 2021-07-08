@@ -1,6 +1,6 @@
 DHKE
 
-Protokoll
+Notasjon
   g        lite primtall
   n        stort primtall feks 4096 bits
   A        alice
@@ -10,6 +10,7 @@ Protokoll
   secret   nøkkelmateriale
   aes_sk   AES symmetrisk nøkkel
 
+Protokoll
   A sender g og n til B
   B sender ack g og n til A
 
