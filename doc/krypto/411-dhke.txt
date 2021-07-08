@@ -29,3 +29,11 @@ Protokoll
   A avleder aes_sk = pbdkf2(prf, secret, salt, c, skLen)
   B avleder aes_sk = pbdkf2(prf, secret, salt, c, skLen)
 
+Inverse funksjoner
+  todo
+
+Nøkkeletablering
+  todo
+
+Utledning
+  todo

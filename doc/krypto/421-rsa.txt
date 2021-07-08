@@ -34,7 +34,7 @@ Kryptering
   f(m) = m^e mod n = c
   f(c) = c^d mod n = m
 
-Signatur
+Digital signatur
   f(m) = pad(hash(m))^d = s
   f(s) = s^e = pad(hash(m))
 
