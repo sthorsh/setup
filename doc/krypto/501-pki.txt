@@ -1,0 +1,14 @@
+PKI
+
+PKI
+  https://en.wikipedia.org/wiki/Public_key_infrastructure
+
+Sertifikater
+  https://en.wikipedia.org/wiki/Public_key_certificate
+
+X509
+  https://en.wikipedia.org/wiki/X.509
+
+PKIX
+  https://en.wikipedia.org/wiki/X.509#PKIX_Working_Group
+
