@@ -9,11 +9,11 @@ Nøkkelpar
   Offentlig nøkkel (pbk)
 
 Aktiviteter
-  Lage nøkkelpar
+  Lage nøkkelpar (*)
   Distribuere offentlige nøkler
-  Etablere shared secret
-  Kryptere data ≤ 4 kb
-  Signere/verifisere meldinger
+  Etablere shared secret (DH)
+  Kryptere data ≤ 4 kb (RSA)
+  Signere/verifisere meldinger (RSA)
   
 Lage nøkkelpar
   Kryptoalgoritmer (kode)
@@ -26,14 +26,14 @@ Distribuere offentlige nøkler
 Etablere shared secret
   DH shared secret
 
-Kryptere data
-  f(m, pbk) = c
-  f(c, prk) = m
-  
-Signere meldinger
-  f(m, prk) = s
-  f(s, pbk) = m
+Digital signatur
+  f(m, prk) = s (krypterer med prk)
+  f(s, pbk) = m (dekrypterer med pbk)
 
+Kryptere data ≤ 4 kb
+  f(m, pbk) = c (krypterer med pbk)
+  f(c, prk) = m (dekrypterer med prk)
+  
 PKCS
   https://en.wikipedia.org/wiki/PKCS
 

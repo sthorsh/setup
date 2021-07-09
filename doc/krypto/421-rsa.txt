@@ -20,7 +20,16 @@ Algoritme/protokoll
   A velger e=3
   A beregner d=k*ϕ (n)+1/e = (2*3016+1)/3 = 2011
 
-  # Step 4
+  # Digital signatur
+  A hasher dvs sha256(m)
+  A padder iht pkcs dvs pad(sha256(m))
+  A kjører signatur = pad(sha256(m))^d mod n (dvs krypterer med prk)
+  B hasher dvs sha256(m)
+  B padder iht pkcs dvs pd₁ = pad(sha256(m)) 
+  B kjører signatur^e mod n = pd₂ (dvs dekrypterer med pbk)
+  B tester pd₁ = pd₂ ? verifisert : feil
+  
+  # Kryptering ≤ 4 kb
   A sender n=3127 og e=3 til B
   B beregner c = m^e mod n = 89^3 mod 3127 = 1394
   B sender c=1394 til A
@@ -34,25 +43,25 @@ Trapdoor-funksjon
   Lett: p*q = ?
   Vanskelig: ?*? = n (primtallfaktorisering)
   
-Kryptering
+Digital signatur
+  f(m) = pad(hash(m))^d mod n = s
+  f(s) = s^e mod n = pad(hash(m))
+
+Kryptering ≤ 4096 bits
   f(m) = m^e mod n = c
   f(c) = c^d mod n = m
 
-Digital signatur
-  f(m) = pad(hash(m))^d = s
-  f(s) = s^e = pad(hash(m))
-
 Utledning
-  Step 1                            primtallfaktorisering
+  # Step 1                          primtallfaktorisering
   n = p*q                           p og q er primtall
 
-  Step 2                            Eulers phi-funksjon
+  # Step 2                          Eulers phi-funksjon
   ϕ (n) = ?                         ϕ (n) er generelt vanskelig
   ϕ (n) = ϕ (p*q)                   ϕ (n) for primtall er lett
   ϕ (n) = ϕ (p) * ϕ (q)             ϕ (n) er multiplikativ
   ϕ (n) = (p-1) * (q-1)             lett hvis p og q er kjent (trapdoor)
 
-  Step 3                            modulær eksponensiering
+  # Step 3                          modulær eksponensiering
   m^ϕ (n) = 1 mod n                 Eulers teorem
   m^k*ϕ (n) = 1^k mod n = 1 mod n   opphøyer i k på begge sider
   m*m^k*ϕ (n) = m*1^k mod n         ganger med m på begge sider
